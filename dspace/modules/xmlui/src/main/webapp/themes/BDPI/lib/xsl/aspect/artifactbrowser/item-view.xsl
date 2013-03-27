@@ -330,6 +330,10 @@
                     <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                 </xsl:attribute>
                 <td class="label-cell">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                <i18n:text>
+                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                     <xsl:value-of select="./@mdschema"/>
                     <xsl:text>.</xsl:text>
                     <xsl:value-of select="./@element"/>
@@ -337,6 +341,9 @@
                         <xsl:text>.</xsl:text>
                         <xsl:value-of select="./@qualifier"/>
                     </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->                    
                 </td>
             <td>
               <xsl:copy-of select="./node()"/>
