@@ -143,9 +143,7 @@
 
 
 <!-- 130327 andre.assada@usp.br nova barra usp by Marcio Eichler, agora com codigo centralizado em server unico -->
-<link rel="stylesheet" type="text/css">
-    <xsl:text>@import url('http://www.sibi.usp.br/barraUSP/styles/index.css');</xsl:text>
-</link>
+<!-- <link rel="stylesheet" type="text/css" href="http://www.sibi.usp.br/barraUSP/styles/index.css" /> -->
 
 <link rel="stylesheet" type="text/css">
     <xsl:text>
@@ -156,9 +154,7 @@
 	</xsl:text>
 </link>
 
-<link rel="stylesheet" type="text/css">
-	<xsl:text>@import url('http://www.sibi.usp.br/barraUSP/styles/slide.css');</xsl:text>
-</link>
+<!-- <link rel="stylesheet" type="text/css" href="http://www.sibi.usp.br/barraUSP/styles/slide.css" /> -->
 <!-- FIM 130327 andre.assada@usp.br nova barra usp by Marcio Eichler, agora com codigo centralizado em server unico FIM -->
 
 
