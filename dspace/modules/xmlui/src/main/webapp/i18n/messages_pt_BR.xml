@@ -2538,7 +2538,7 @@
 <!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
 <!-- ========================================================== -->
 <message key="metadataTrad.dc.contributor.advisor">Conselheiro</message>
-<message key="metadataTrad.dc.contributor.author">Autor(es) secundário(s)</message>
+<message key="metadataTrad.dc.contributor.author">Autor(es)</message>
 <message key="metadataTrad.dc.contributor.editor">Editor(es)</message>
 <message key="metadataTrad.dc.contributor.illustrator">Ilustrador(es)</message>
 <message key="metadataTrad.dc.contributor.other">Outros contribuidor(es)</message>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Vocabulário Controlado USP
+-->
+
+<node id="VCUSP" label="VCUSP">
+	<isComposedBy>
+		<node id="CA100" label="CIÊNCIAS AGRÁRIAS">
+			<isComposedBy>
+				<node id="CA110" label="AGRONOMIA" />
+				<node id="CA120" label="ENGENHARIA DE PESCA" />
+			</isComposedBy>
+		</node>
+		
+		<node id="CB200" label="BIOCIÊNCIAS">
+			<isComposedBy>
+				<node id="CB210" label="BIOLOGIA" />
+				<node id="CB220" label="BOTÂNICA" />
+				<node id="CB230" label="IMUNOLOGIA" />
+				<node id="CB240" label="MICROBIOLOGIA" />
+				<node id="CB250" label="ZOOLOGIA" />
+				</isComposedBy>
+		</node>
+		
+		<node id="CB300" label="CIÊNCIAS DA SAÚDE">
+			<isComposedBy>
+				<node id="CB310" label="EDUCAÇÃO FÍSICA E ESPORTES" />
+				<node id="CB320" label="ENFERMAGEM" />			
+				<node id="CB330" label="MEDICINA" />	
+				<node id="CB340" label="NUTRIÇÃO" />	
+				<node id="CB350" label="ODONTOLOGIA" />	
+				<node id="CB360" label="PSICOLOGIA" />	
+				<node id="CB370" label="SAÚDE PÚBLICA" />	
+				<node id="CB380" label="FARMÁCIA E COSMETOLOGIA" />			
+				<node id="CB390" label="FONOAUDIOLOGIA" />						
+			</isComposedBy>
+		</node>
+		<node id="CB400" label="MEDICINA VETERINÁRIA E ZOOTECNIA">
+			<isComposedBy>
+				<node id="CB410" label="MEDICINA VETERINÁRIA" />
+				<node id="CB420" label="ZOOTECNIA" />				
+			</isComposedBy>
+		</node>
+		<node id="CE500" label="CIÊNCIAS EXATAS">
+			<isComposedBy>
+				<node id="CE510" label="ASTRONOMIA" />
+				<node id="CE520" label="FÍSICA" />				
+				<node id="CE530" label="GEOCIÊNCIAS" />	
+				<node id="CE540" label="GEOFÍSICA" />
+				<node id="CE550" label="MATEMÁTICA" />
+				<node id="CE560" label="QUÍMICA" />
+			</isComposedBy>
+		</node>
+		<node id="CE600" label="CIÊNCIAS EXATAS APLICADAS">
+			<isComposedBy>
+				<node id="CE610" label="CIÊNCIA DA COMPUTAÇÃO" />
+				<node id="CE620" label="ENGENHARIA" />
+				<node id="CE630" label="ESTATÍSTICA E PROBABILIDADE" />				
+				<node id="CE640" label="METEOROLOGIA" />	
+
+			</isComposedBy>
+		</node>
+		<node id="CH700" label="CIÊNCIAS HUMANAS">
+					<isComposedBy>
+				<node id="CH710" label="ADMINISTRAÇÃO, ECONOMIA, ECONOMIA DOMÉSTICA E CONTABILIDADE" />
+				<node id="CH720" label="ARQUEOLOGIA, MITOLOGIA E PRÉ-HISTÓRIA" />
+				<node id="CH730" label="ARQUITETURA, PLANEJAMENTO TERRITORIAL URBANO E HABITAÇÃO" />
+				<node id="CH740" label="ARTES E COMUNICAÇÕES" />
+				<node id="CH750" label="CIÊNCIA DA INFORMAÇÃO E MUSEOLOGIA" />
+				<node id="CH760" label="DIREITO, FILOSOFIA, RELIGIÃO, CIÊNCIAS SOCIAIS E CIÊNCIA MILITAR" />
+				<node id="CH770" label="EDUCAÇÃO, LAZER E RECREAÇÃO" />
+				<node id="CH780" label="HISTÓRIA GERAL, HISTÓRIA DO BRASIL E GEOGRAFIA" />				
+				<node id="CH790" label="LINGÜÍSTICA, LÍNGUAS,TEORIA LITERÁRIA E LITERATURAS" />				
+			</isComposedBy>
+		</node>
+	</isComposedBy>
+</node>
