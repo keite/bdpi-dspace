@@ -339,13 +339,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contSubject = 0">
@@ -371,13 +378,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                     <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contSubject = 0">
@@ -403,13 +417,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contSubject = 0">
@@ -435,13 +456,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contAlternative = 0">
@@ -470,13 +498,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contAbstract = 0">
@@ -505,13 +540,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td class="espacamento_metadados">
                                 <xsl:variable name="contAutor" select="count(following-sibling::dim:field[@element='autor'][@mdschema='usp'][not(@qualifier)])"/>
@@ -541,13 +583,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contAutorEx = 0">
@@ -576,13 +625,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contReferences = 0">
@@ -662,13 +718,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contSponsor = 0">
@@ -699,13 +762,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td class="espacamento_metadados">
                                 <xsl:if test="$contUrl = 0">
@@ -806,13 +876,20 @@
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
                             <td class="label-cell">
-                                <xsl:value-of select="./@mdschema"/>
-                                <xsl:text>.</xsl:text>
-                                <xsl:value-of select="./@element"/>
-                                <xsl:if test="./@qualifier">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
                                     <xsl:text>.</xsl:text>
-                                    <xsl:value-of select="./@qualifier"/>
-                                </xsl:if>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
                             </td>
                             <td>
                                 <xsl:if test="$contAutor = 0">
