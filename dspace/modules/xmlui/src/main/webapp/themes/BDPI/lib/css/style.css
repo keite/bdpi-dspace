@@ -302,6 +302,27 @@ td {
     vertical-align: middle;
 }
 
+
+/* ============================================================ */
+/* 130328 CSS relacionado com a pagina de item-view completo    */
+/* @author Dan Shinkay (SI/EACH/USP)                            */
+/* ===========================================================  */
+
+/* 121015 - Dan - Retira o sublinhado para links no icone autor USP */
+a.removeLinkUSP:link {
+   text-decoration: none;
+}
+
+.espacamento_hr {
+   width: 30%;
+}
+
+/* ================================================================= */
+/* FIM 130328 CSS relacionado com a pagina de item-view completo FIM */
+/* ================================================================= */
+
+
+
 .ds-button-field,
 #aspect_eperson_StartRegistration_list_registration-progress li {
     background-color: #6d859c;

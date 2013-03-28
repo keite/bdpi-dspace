@@ -323,38 +323,554 @@
     </xsl:template>
 
     <xsl:template match="dim:field" mode="itemDetailView-DIM">
-            <tr>
+            <!-- =============================================================================================== -->
+            <!-- 130328 agrupar metadados dentro de um TD, conforme determinacoes da profa. sueli (outubro 2010) -->
+            <!-- @author Dan Shinkai (SI/EACH/USP) -->
+            <!-- =============================================================================================== -->
+            <xsl:choose>
+                <!-- agrupar os metadados dc.subject em uma celula. -->
+                <xsl:when test="@element='subject' and @mdschema='dc' and not(@qualifier)">
+                    <xsl:variable name="contSubject" select="count(following-sibling::dim:field[@element='subject'][@mdschema='dc'][not(@qualifier)])"/>
+                    <xsl:if test="$contSubject = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contSubject = 0">
+                                    <xsl:for-each select="../dim:field[@element='subject'][@mdschema='dc'][not(@qualifier)]">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:text>;</xsl:text>
+                                        <xsl:text> </xsl:text>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+
+                <!-- agrupar os metadados dc.subject.vcusp em uma celula. -->
+                <xsl:when test="@element='subject' and @mdschema='dc' and @qualifier='vcusp'">
+                    <xsl:variable name="contSubject" select="count(following-sibling::dim:field[@element='subject'][@mdschema='dc'][@qualifier='vcusp'])"/>
+                    <xsl:if test="$contSubject = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contSubject = 0">
+                                    <xsl:for-each select="../dim:field[@element='subject'][@mdschema='dc'][@qualifier='vcusp']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:text>;</xsl:text>
+                                        <xsl:text> </xsl:text>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+
+                <!-- agrupar os metadados dc.subject.wos em uma celula. -->
+                <xsl:when test="@element='subject' and @mdschema='dc' and @qualifier='wos'">
+                    <xsl:variable name="contSubject" select="count(following-sibling::dim:field[@element='subject'][@mdschema='dc'][@qualifier='wos'])"/>
+                    <xsl:if test="$contSubject = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contSubject = 0">
+                                    <xsl:for-each select="../dim:field[@element='subject'][@mdschema='dc'][@qualifier='wos']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:text>;</xsl:text>
+                                        <xsl:text> </xsl:text>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>                                                                                    
+
+                <!-- agrupar os metadados dc.title.alternative em uma celula. -->
+                <xsl:when test="@element='title' and @mdschema='dc' and @qualifier='alternative'">
+                    <xsl:variable name="contAlternative" select="count(following-sibling::dim:field[@element='title'][@mdschema='dc'][@qualifier='alternative'])"/>
+                    <xsl:if test="$contAlternative = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contAlternative = 0">
+                                    <xsl:for-each select="../dim:field[@element='title'][@mdschema='dc'][@qualifier='alternative']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:variable name="contAlternativeAtual" select="count(following-sibling::dim:field[@element='title'][@mdschema='dc'][@qualifier='alternative'])"/>
+                                        <xsl:if test="$contAlternative != $contAlternativeAtual">
+                                            <br/>
+                                            <hr/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+
+                <!-- agrupar os metadados dc.description.abstract em uma celula. -->
+                <xsl:when test="@element='description' and @mdschema='dc' and @qualifier='abstract'">
+                    <xsl:variable name="contAbstract" select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='abstract'])"/>
+                    <xsl:if test="$contAbstract = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contAbstract = 0">
+                                    <xsl:for-each select="../dim:field[@element='description'][@mdschema='dc'][@qualifier='abstract']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:variable name="contAbstractAtual" select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='abstract'])"/>
+                                        <xsl:if test="$contAbstract != $contAbstractAtual">
+                                            <br/>
+                                            <hr/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+
+                <!-- agrupar os metadados usp.autor em uma celula. -->
+                <xsl:when test="@element='autor' and @mdschema='usp' and not(@qualifier)">
+                    <xsl:variable name="contAutor" select="count(following-sibling::dim:field[@element='autor'][@mdschema='usp'][not(@qualifier)])"/>
+                    <xsl:if test="$contAutor = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td class="espacamento_metadados">
+                                <xsl:variable name="contAutor" select="count(following-sibling::dim:field[@element='autor'][@mdschema='usp'][not(@qualifier)])"/>
+                                <xsl:if test="$contAutor = 0">
+                                    <xsl:for-each select="../dim:field[@element='autor'][@mdschema='usp'][not(@qualifier)]">
+                                    <xsl:value-of select="current()"/>
+                                        <xsl:variable name="contAutorAtual" select="count(following-sibling::dim:field[@element='autor'][@mdschema='usp'][not(@qualifier)])"/>
+                                        <xsl:if test="$contAutor != $contAutorAtual">
+                                            <br/>
+                                            <br/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+
+                <!-- agrupar os metadados usp.autor.externo em uma celula. -->
+                <xsl:when test="@element='autor' and @mdschema='usp' and @qualifier='externo'">
+                    <xsl:variable name="contAutorEx" select="count(following-sibling::dim:field[@element='autor'][@mdschema='usp'][@qualifier='externo'])"/>
+                    <xsl:if test="$contAutorEx = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contAutorEx = 0">
+                                    <xsl:for-each select="../dim:field[@element='autor'][@mdschema='usp'][@qualifier='externo']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:variable name="contAutorExAtual"  select="count(following-sibling::dim:field[@element='autor'][@mdschema='usp'][@qualifier='externo'])"/>
+                                        <xsl:if test="$contAutorEx != $contAutorExAtual">
+                                            <br/>
+                                            <br/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+                
+                <!-- agrupar os metadados usp.relation.references em uma celula. -->
+                <xsl:when test="@element='relation' and @mdschema='usp' and @qualifier='references'">
+                    <xsl:variable name="contReferences" select="count(following-sibling::dim:field[@element='relation'][@mdschema='usp'][@qualifier='references'])"/>
+                    <xsl:if test="$contReferences = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contReferences = 0">
+                                    <xsl:for-each select="../dim:field[@element='relation'][@mdschema='usp'][@qualifier='references']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:variable name="contReferencesAtual" select="count(following-sibling::dim:field[@element='relation'][@mdschema='usp'][@qualifier='references'])"/>
+                                        <xsl:if test="$contReferences != $contReferencesAtual">
+                                            <br/>
+                                            <hr/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+                
+                
+                <!-- agrupar os metadados dc.description.sponsorship em uma celula. -->
+                <!-- codigo utiliza uma classe java para criar um link nos numeros da Fapesp (em qualquer case) em um campo. 
+                A classe java retorna o campo com as tags HTML necessarias para criar um link. -->
+
+<!-- 130328 andre.assada@usp.br desabilitado por enquanto, para conseguir fazer a migracao por etapas para o dspace 3
+                <xsl:when test="@element='description' and @mdschema='dc' and @qualifier='sponsorship'">
+                <xsl:variable name="contSponsor" select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship'])"/>
+                <xsl:if test="$contSponsor = 0">
+                <tr>
                 <xsl:attribute name="class">
-                    <xsl:text>ds-table-row </xsl:text>
-                    <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
-                    <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                <xsl:text>ds-table-row </xsl:text>
+                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                 </xsl:attribute>
                 <td class="label-cell">
-<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
-                <i18n:text>
-                    <xsl:text>metadataTrad.</xsl:text>
-<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
-                    <xsl:value-of select="./@mdschema"/>
-                    <xsl:text>.</xsl:text>
-                    <xsl:value-of select="./@element"/>
-                    <xsl:if test="./@qualifier">
-                        <xsl:text>.</xsl:text>
-                        <xsl:value-of select="./@qualifier"/>
-                    </xsl:if>
-<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
-                </i18n:text>
-<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->                    
+                <xsl:value-of select="./@mdschema"/>
+                <xsl:text>.</xsl:text>
+                <xsl:value-of select="./@element"/>
+                <xsl:if test="./@qualifier">
+                <xsl:text>.</xsl:text>
+                <xsl:value-of select="./@qualifier"/>
+                </xsl:if>
                 </td>
-            <td>
-              <xsl:copy-of select="./node()"/>
-              <xsl:if test="./@authority and ./@confidence">
-                <xsl:call-template name="authorityConfidenceIcon">
-                  <xsl:with-param name="confidence" select="./@confidence"/>
-                </xsl:call-template>
-              </xsl:if>
-            </td>
-                <td><xsl:value-of select="./@language"/></td>
-            </tr>
+                <td>
+                <xsl:if test="$contSponsor = 0">
+                <xsl:for-each select="../dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship']">
+                <xsl:variable name="copiaNode" select="translate(current(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>                          
+                <xsl:choose>
+                <xsl:when test="contains($copiaNode, 'FAPESP')">
+                <xsl:variable name="fapesp" select="utilUSP:constroiLinkFapesp(current())"/>
+-->
+                <!-- parametro "disable-output-escaping="yes"" permite utilizar tags HTML quando passadas pelo programa JAVA. -->
+<!--
+                <xsl:value-of select="$fapesp" disable-output-escaping="yes" />
+                </xsl:when>
+                <xsl:otherwise>
+                <xsl:value-of select="current()"/>
+                </xsl:otherwise>
+                </xsl:choose>
+                <xsl:variable name="contSponsorAtual"select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship'])"/>
+                <xsl:if test="$contSponsor != $contSponsorAtual">
+                <br/>
+                </xsl:if>
+                </xsl:for-each>
+                </xsl:if>
+                </td>
+                </tr>
+                </xsl:if>
+                </xsl:when> 
+-->
+<!-- 130328 andre.assada@usp.br agrupar dc.description.sponsorship sem usputils (temporario) -->
+                <xsl:when test="@element='description' and @mdschema='dc' and @qualifier='sponsorship'">
+                    <xsl:variable name="contSponsor" select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship'])"/>
+                    <xsl:if test="$contSponsor = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contSponsor = 0">
+                                    <xsl:for-each select="../dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:variable name="contSponsorAtual" select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship'])"/>
+                                        <xsl:if test="$contSponsor != $contSponsorAtual">
+                                            <br/>
+                                            <hr/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+<!-- FIM 130328 andre.assada@usp.br agrupar dc.description.sponsorship sem usputils (temporario) FIM -->
+
+
+                <!-- agrupar os metadados dc.identifier.url em uma celula. -->
+                <xsl:when test="@element='identifier' and @mdschema='dc' and @qualifier='url'">
+                    <xsl:variable name="contUrl" select="count(following-sibling::dim:field[@element='identifier'][@mdschema='dc'][@qualifier='url'])"/>
+                    <xsl:if test="$contUrl = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td class="espacamento_metadados">
+                                <xsl:if test="$contUrl = 0">
+                                    <xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='url']">
+                                        <a>
+                                            <xsl:attribute name="href">
+                                                <xsl:value-of select="current()"/>
+                                            </xsl:attribute>
+                                            <xsl:attribute name="target">_blank</xsl:attribute>
+                                            <!-- Usa-se o current() para recuperar o nivel atual, pois o copy-of copia todos os niveis e -->
+                                            <!-- realiza a postagem dos mesmos evitando uma etapa de verificacao -->
+                                            <xsl:value-of select="current()"/>
+                                        </a>
+                                        <xsl:variable name="contUrlAtual" select="count(following-sibling::dim:field[@element='identifier'][@mdschema='dc'][@qualifier='url'])"/>
+                                        <xsl:if test="$contUrl != $contUrlAtual">
+                                            <br/>
+                                            <br/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+                
+                <!-- agrupar os metadados dc.contributor.author em uma celula. -->
+
+<!-- 130328 andre.assada@usp.br desabilitado por enquanto para possibilitar migracao para DSpace3 por etapas controladas
+
+                <xsl:when test="@element='contributor' and @mdschema='dc' and @qualifier='author'">
+                    <xsl:variable name="contContributor" select="count(following-sibling::dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author'])"/>
+                    <xsl:if test="$contContributor = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contContributor = 0">
+                                    <xsl:for-each select="../dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:variable name="nodeSemAcento" select="translate(./node(), $lowerCase, $upperCase)"/>
+
+                                        <xsl:for-each select="../dim:field[@mdschema='usp'][@element='autor'][not(@qualifier)]">
+                                            <xsl:variable name="uspAutor" select="substring-before(./node(),':')"/>
+                                            <xsl:variable name="uspAutorSemAcento" select="translate($uspAutor,$lowerCase,$upperCase)"/>
+                                            <xsl:if test="$nodeSemAcento=$uspAutorSemAcento">
+                                                <xsl:text> </xsl:text>
+-->
+                                                <!-- recuperar somente o codpes do autor  -->
+<!--
+                                                <xsl:variable name="uspAutorInfo" select="substring-after(./node(),':')"/>
+                                                <xsl:variable name="codpes" select="substring-before($uspAutorInfo,':')"/>
+-->
+                                                <!-- recuperar somente o itemID -->
+<!--
+                                                <xsl:variable name="url" select="../dim:field[@element='identifier'][@qualifier='uri'][@mdschema='dc']"/>
+                                                <xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
+                                                <xsl:variable name="itemID" select="substring-after($urlSub,'/')"/>
+-->
+                                                <!-- insere o itemID e o codpes na URL -->
+<!--
+                                                <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">
+                                                    <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+                                                </a>
+                                            </xsl:if>
+                                        </xsl:for-each>
+
+                                        <xsl:variable name="contContributorAtual" select="count(following- sibling::dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author'])"/>
+                                        <xsl:if test="$contContributor != $contContributorAtual">
+                                            <br/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+-->
+<!-- 130328 andre.assada@usp.br agrupar dc.description.sponsorship sem usputils (temporario) -->
+                <xsl:when test="@element='contributor' and @mdschema='dc' and @qualifier='author'">
+                    <xsl:variable name="contAutor" select="count(following-sibling::dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author'])"/>
+                    <xsl:if test="$contAutor = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+                                <xsl:value-of select="./@mdschema"/>
+                                <xsl:text>.</xsl:text>
+                                <xsl:value-of select="./@element"/>
+                                <xsl:if test="./@qualifier">
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@qualifier"/>
+                                </xsl:if>
+                            </td>
+                            <td>
+                                <xsl:if test="$contAutor = 0">
+                                    <xsl:for-each select="../dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author']">
+                                        <xsl:value-of select="current()"/>
+                                        <xsl:variable name="contAutorAtual" select="count(following-sibling::dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author'])"/>
+                                        <xsl:if test="$contAutor != $contAutorAtual">
+                                            <br/>
+                                            <hr/>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+<!-- FIM 130328 andre.assada@usp.br agrupar dc.description.sponsorship sem usputils (temporario) FIM -->
+
+
+            <!-- =========================================================================================================== -->
+            <!-- / FIM 130328 agrupar metadados dentro de um TD, conforme determinacoes da profa. sueli (outubro 2010) FIM / -->
+            <!-- =========================================================================================================== -->
+
+            <xsl:otherwise>
+                <tr>
+                    <xsl:attribute name="class">
+                        <xsl:text>ds-table-row </xsl:text>
+                        <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                        <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                    </xsl:attribute>
+                    <td class="label-cell">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                    <i18n:text>
+                        <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                        <xsl:value-of select="./@mdschema"/>
+                        <xsl:text>.</xsl:text>
+                        <xsl:value-of select="./@element"/>
+                        <xsl:if test="./@qualifier">
+                            <xsl:text>.</xsl:text>
+                            <xsl:value-of select="./@qualifier"/>
+                        </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                    </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->                    
+                    </td>
+                <td>
+                  <xsl:copy-of select="./node()"/>
+                  <xsl:if test="./@authority and ./@confidence">
+                    <xsl:call-template name="authorityConfidenceIcon">
+                      <xsl:with-param name="confidence" select="./@confidence"/>
+                    </xsl:call-template>
+                  </xsl:if>
+                </td>
+                    <td><xsl:value-of select="./@language"/></td>
+                </tr>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
 
     <!-- don't render the item-view-toggle automatically in the summary view, only when it gets called -->
