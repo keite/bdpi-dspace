@@ -216,7 +216,19 @@
 	                    <xsl:text>(</xsl:text>
 	                    <xsl:if test="dim:field[@element='publisher']">
 	                        <span class="publisher">
+<!-- 130328 - imprimir separados cidade e pais
+@author Dan Shinkai
+do modo como esta, acaba imprimindo cidade e pais, pois temos dc.publisher.local (cidade) e usp.publisher.pais
+por isso precisamos modificar para separar cidade e pais
 	                            <xsl:copy-of select="dim:field[@element='publisher']/node()"/>
+-->
+                                <xsl:value-of select="dim:field[@element='publisher']" />
+                                <xsl:if test="dim:field[@qualifier='pais']">
+                                    <xsl:text>, </xsl:text>
+                                    <xsl:value-of select="dim:field[@qualifier='pais']" />
+                                </xsl:if>
+<!-- FIM 130328 - imprimir separados cidade e pais FIM-->
+
 	                        </span>
 	                        <xsl:text>, </xsl:text>
 	                    </xsl:if>
