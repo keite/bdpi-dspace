@@ -944,7 +944,9 @@
                     </xsl:call-template>
                   </xsl:if>
                 </td>
+<!-- 130327 andre.assada@usp.br nao exibir 3a coluna (idioma do valor de metadado)
                     <td><xsl:value-of select="./@language"/></td>
+-->
                 </tr>
             </xsl:otherwise>
         </xsl:choose>
