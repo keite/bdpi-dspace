@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Vocabulário Controlado USP
+-->
+
+<node id="VCUSP" label="VCUSP">
+	<isComposedBy>
+		<node id="CA100" label="CIÊNCIAS AGRÁRIAS">
+			<isComposedBy>
+				<node id="CA110" label="AGRONOMIA" />
+				<node id="CA120" label="ENGENHARIA DE PESCA" />
+			</isComposedBy>
+		</node>
+		
+		<node id="CB200" label="BIOCIÊNCIAS">
+			<isComposedBy>
+				<node id="CB210" label="BIOLOGIA" />
+				<node id="CB220" label="BOTÂNICA" />
+				<node id="CB230" label="IMUNOLOGIA" />
+				<node id="CB240" label="MICROBIOLOGIA" />
+				<node id="CB250" label="ZOOLOGIA" />
+				</isComposedBy>
+		</node>
+		
+		<node id="CB300" label="CIÊNCIAS DA SAÚDE">
+			<isComposedBy>
+				<node id="CB310" label="EDUCAÇÃO FÍSICA E ESPORTES" />
+				<node id="CB320" label="ENFERMAGEM" />			
+				<node id="CB330" label="MEDICINA" />	
+				<node id="CB340" label="NUTRIÇÃO" />	
+				<node id="CB350" label="ODONTOLOGIA" />	
+				<node id="CB360" label="PSICOLOGIA" />	
+				<node id="CB370" label="SAÚDE PÚBLICA" />	
+				<node id="CB380" label="FARMÁCIA E COSMETOLOGIA" />			
+				<node id="CB390" label="FONOAUDIOLOGIA" />						
+			</isComposedBy>
+		</node>
+		<node id="CB400" label="MEDICINA VETERINÁRIA E ZOOTECNIA">
+			<isComposedBy>
+				<node id="CB410" label="MEDICINA VETERINÁRIA" />
+				<node id="CB420" label="ZOOTECNIA" />				
+			</isComposedBy>
+		</node>
+<!-- editado até aqui - Tiago 20130328 -->		
+		<node id="CE500" label="CIÊNCIAS EXATAS">
+			<isComposedBy>
+				<node id="710" label="Basale medisinske, odontologiske og veterinærmedisinske fag: 710">
+					<isComposedBy>
+						<node id="711" label="Medisinsk molekylærbiologi: 711" />
+						<node id="714" label="Medisinsk genetikk: 714" />
+						<node id="715" label="Medisinsk mikrobiologi: 715" />
+						<node id="716" label="Medisinsk immunologi: 716" />
+						<node id="717" label="Anatomi, fysisk antropologi: 717" />
+						<node id="718" label="Human og veterinærmedisinsk fysiologi: 718" />
+						<node id="719" label="Generell patologi, patologisk anatomi: 719" />
+						<node id="720" label="Rettsmedisin, rettsodontologi: 720" />
+						<node id="721" label="Patofysiologi: 721" />
+						<node id="725" label="Klinisk kjemi: 725" />
+						<node id="726" label="Medisinsk biokjemi: 726" />
+						<node id="728" label="Farmakologi: 728" />
+						<node id="730" label="Toksikologi: 730" />
+						<node id="736" label="Biofarmasi: 736" />
+						<node id="738" label="Farmakognosi: 738" />
+						<node id="739" label="Klinisk farmakologi: 739" />
+					</isComposedBy>
+				</node>
+				<node id="750" label="Klinisk medisinske fag: 750" >
+					<isComposedBy>
+						<node id="751" label="Allmennmedisin: 751" />
+						<node id="752" label="Nevrologi: 752" />
+						<node id="753" label="Dermatologi og venerologi: 753" />
+						<node id="754" label="Oftalmologi: 754" />
+						<node id="755" label="Otorhinolaryngologi: 755" />
+						<node id="756" label="Gynekologi og obstetrikk: 756" />
+						<node id="757" label="Psykiatri, barnepsykiatri: 757" />
+						<node id="758" label="Rettspsykiatri: 758" />
+						<node id="759" label="Reumatologi: 759" />
+						<node id="760" label="Pediatri: 760" />
+						<node id="761" label="Tropemedisin: 761" />
+						<node id="762" label="Onkologi: 762" />
+						<node id="763" label="Radiologi og bildediagnostikk: 763" />
+						<node id="764" label="Fysikalsk medisin og rehabilitering: 764" />
+						<node id="765" label="Anestesiologi: 765" />
+						<node id="770" label="Generell indremedisin: 770" />
+						<node id="771" label="Kardiologi: 771" />
+						<node id="772" label="Nefrologi, urologi: 772" />
+						<node id="773" label="Gasteroenterologi: 773" />
+						<node id="774" label="Endokrinologi: 774" />
+						<node id="775" label="Hematologi: 775" />
+						<node id="776" label="Infeksjonsmedisin: 776" />
+						<node id="777" label="Lungesykdommer: 777" />
+						<node id="778" label="Geriatri: 778" />
+						<node id="780" label="Generell kirurgi: 780" />
+						<node id="781" label="Gasteroenterologisk kirurgi: 781" />
+						<node id="782" label="Kar- og thoraxkirurgi: 782" />
+						<node id="783" label="Traumatologi: 783" />
+						<node id="784" label="Ortopedisk kirurgi: 784" />
+						<node id="785" label="Plastisk kirurgi: 785" />
+						<node id="786" label="Nevrokirurgi: 786" />
+						<node id="787" label="Kjevekirurgi: 787" />
+						<node id="788" label="Endokrin kirurgi: 788" />
+						<node id="799" label="Andre klinisk medisinske fag: 799" />
+					</isComposedBy>
+				</node>
+				<node id="800" label="Helsefag: 800">
+					<isComposedBy>
+						<node id="801" label="Samfunnsmedisin, sosialmedisin: 801" />
+						<node id="802" label="Samfunnsodontologi: 802" />
+						<node id="803" label="Epidemiologi medisinsk og odontologisk statistikk: 803" />
+						<node id="804" label="Forebyggende medisin: 804" />
+						<node id="805" label="Medisinsk/odontologisk etikk, atferdsfag, historie: 805" />
+						<node id="806" label="Helsetjeneste- og helseadministrasjonsforskning: 806" />
+						<node id="807" label="Fysioterapi: 807" />
+						<node id="808" label="Sykepleievitenskap: 808" />
+						<node id="809" label="Yrkesmedisin: 809" />
+						<node id="810" label="Bedriftsmedisin: 810" />
+						<node id="811" label="Ernæring: 811" />
+						<node id="812" label="Samfunnsfarmasi: 812" />
+						<node id="813" label="Næringsmiddelhygiene: 813" />
+						<node id="829" label="Andre helsefag: 829" />
+					</isComposedBy>
+				</node>
+				<node id="830" label="Klinisk odontologiske fag: 830" >
+					<isComposedBy>
+						<node id="831" label="Konserverende tannpleie: 831" />
+						<node id="832" label="Protetikk og bitt funksjon: 832" />
+						<node id="833" label="Kjeveortopedi: 833" />
+						<node id="834" label="Barnetannpleie og kariesprofylakse: 834" />
+						<node id="835" label="Oral kirurgi: 835" />
+						<node id="835" label="Oral medisin: 835" />
+						<node id="836" label="Oral radiologi: 836" />
+						<node id="837" label="Periodonti: 837" />
+						<node id="849" label="Andre kliniske odontologiske fag: 849" />
+					</isComposedBy>
+				</node>
+				<node id="850" label="Idrettsmedisinske fag: 850" >
+					<isComposedBy>
+						<node id="851" label="Treningslære: 851" />
+						<node id="852" label="Bevegelseslære: 852" />
+						<node id="853" label="Doping/idrettsfarmakologi: 853" />
+					</isComposedBy>
+				</node>
+			</isComposedBy>
+		</node>
+		<node id="CE600" label="CIÊNCIAS EXATAS APLICADAS">
+			<isComposedBy>
+				<node id="910" label="Landbruksfag: 910" >
+					<isComposedBy>
+						<node id="911" label="Planteforedling, hagebruk, plantevern, plantepatologi: 911" />
+						<node id="912" label="Husdyravl, oppdrett, forplantning: 912" />
+						<node id="913" label="Jordfag: 913" />
+						<node id="914" label="Naturressursforvaltning: 914" />
+						<node id="915" label="Skogbruk: 915" />
+						<node id="916" label="Landbruksteknologi: 916" />
+						<node id="918" label="Fôring: 918" />
+						<node id="919" label="Andre landbruksfag: 919" />
+					</isComposedBy>
+				</node>
+				<node id="920" label="Fiskerifag: 920" >
+					<isComposedBy>
+						<node id="921" label="Ressursbiologi: 921" />
+						<node id="922" label="Akvakultur: 922" />
+						<node id="923" label="Fiskehelse: 923" />
+						<node id="924" label="Fiskeriteknologi: 924" />
+						<node id="925" label="Fangst: 925" />
+						<node id="929" label="Andre fiskerifag: 929" />
+					</isComposedBy>
+				</node>
+				<node id="950" label="Klinisk veterinærmedisinske fag: 950" >
+					<isComposedBy>
+						<node id="951" label="Reproduksjon: 951" />
+						<node id="952" label="Obstetrikk: 952" />
+						<node id="953" label="Kirurgi: 953" />
+						<node id="954" label="Indremedisin: 954" />
+					</isComposedBy>
+				</node>
+			</isComposedBy>
+		</node>
+		<node id="CH700" label="CIÊNCIAS HUMANAS">
+					<isComposedBy>
+				<node id="910" label="Landbruksfag: 910" >
+					<isComposedBy>
+						<node id="911" label="Planteforedling, hagebruk, plantevern, plantepatologi: 911" />
+						<node id="912" label="Husdyravl, oppdrett, forplantning: 912" />
+						<node id="913" label="Jordfag: 913" />
+						<node id="914" label="Naturressursforvaltning: 914" />
+						<node id="915" label="Skogbruk: 915" />
+						<node id="916" label="Landbruksteknologi: 916" />
+						<node id="918" label="Fôring: 918" />
+						<node id="919" label="Andre landbruksfag: 919" />
+					</isComposedBy>
+				</node>
+				<node id="920" label="Fiskerifag: 920" >
+					<isComposedBy>
+						<node id="921" label="Ressursbiologi: 921" />
+						<node id="922" label="Akvakultur: 922" />
+						<node id="923" label="Fiskehelse: 923" />
+						<node id="924" label="Fiskeriteknologi: 924" />
+						<node id="925" label="Fangst: 925" />
+						<node id="929" label="Andre fiskerifag: 929" />
+					</isComposedBy>
+				</node>
+				<node id="950" label="Klinisk veterinærmedisinske fag: 950" >
+					<isComposedBy>
+						<node id="951" label="Reproduksjon: 951" />
+						<node id="952" label="Obstetrikk: 952" />
+						<node id="953" label="Kirurgi: 953" />
+						<node id="954" label="Indremedisin: 954" />
+					</isComposedBy>
+				</node>
+			</isComposedBy>
+		</node>
+	</isComposedBy>
+</node>
