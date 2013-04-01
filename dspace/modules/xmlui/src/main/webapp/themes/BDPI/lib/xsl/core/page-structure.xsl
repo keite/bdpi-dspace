@@ -548,16 +548,96 @@
     <xsl:template name="buildFooter">
         <div id="ds-footer-wrapper">
             <div id="ds-footer">
+
                 <div id="ds-footer-left">
-                    <a href="http://www.dspace.org/" target="_blank">DSpace software</a> copyright&#160;&#169;&#160;2002-2012&#160; <a href="http://www.duraspace.org/" target="_blank">Duraspace</a>
+                     <table border="0" cellpadding="0" cellspacing="0">
+                     <tr><td>
+                        <div id="ds-footer-logo-sibi">
+                            <a title="Universidade de São Paulo" target="_blank" href="http://www.usp.br/sibi/" id="ds-footer-logo-link">
+                                <span id="ds-footer-logo">&#160;</span>
+                            </a>
+                        </div>
+                        </td>
+                        <td>
+                        <div id="ds-footer-info-sibi">
+                        Rua da Praça do Rel&#243;gio, 109 - Bloco K - 4&#186; andar<br/>
+                        05508-050 - Cidade Universit&#225;ria, S&#227;o Paulo, SP - Brasil<br/>
+                        Tel: (0xx11) 3091-4195 e 3091-1547 Fax: (0xx11) 3091-1567<br/>
+                        E-mail: <a href="mailto:atendimento@sibi.usp.br">atendimento@sibi.usp.br</a><br/>
+                        </div>
+                        </td>
+                      </tr>
+                      </table>
                 </div>
+
                 <div id="ds-footer-right">
-                    <span class="theme-by">Theme by&#160;</span>
-                    <a title="@mire NV" target="_blank" href="http://atmire.com" id="ds-footer-logo-link">
-                    <span id="ds-footer-logo">&#160;</span>
-                    </a>
+
+                    <div id="ds-footer-right-privacy">
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                                <xsl:text>/privacidadeBDPI</xsl:text>
+                            </xsl:attribute>
+                            <b><i18n:text>xmlui.dri2xhtml.structural.privacy</i18n:text></b>
+                        </a>
+                        <xsl:text>&#160;&#160;</xsl:text>
+                    </div>
+                    <div id="ds-footer-right-credits">
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                                <xsl:text>/creditosBDPI</xsl:text>
+                            </xsl:attribute>
+                            <b><i18n:text>xmlui.dri2xhtml.structural.credits</i18n:text></b>
+                        </a>
+                        <xsl:text>&#160;&#160;</xsl:text>
+                    </div>
+                    <div id="ds-footer-right-contact">
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                                <xsl:text>/feedback</xsl:text>
+                            </xsl:attribute>
+                            <b><i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text></b>
+                        </a>
+                        <xsl:text>&#160;&#160;</xsl:text>
+                    </div>
+
+                    <br/>
+                    @2012 - SIBiUSP<br/>
+
+                    <div id="ds-footer-right-rss">
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                                <xsl:text>/register</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="id">
+                                <xsl:text>ds-footer-logo-link</xsl:text>
+                            </xsl:attribute>
+                            <span id="ds-footer-right-rss">&#160;</span>
+                        </a>
+                    </div>
+
+                    <!-- 120427 ADDThis Button BEGIN -->
+                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+                        <a class="addthis_button_facebook"></a>
+                        <a class="addthis_button_twitter"></a>
+                        <a class="addthis_button_google"></a>
+                        <a class="addthis_button_blogger"></a>
+                        <a class="addthis_button_wordpress"></a>
+                        <a class="addthis_button_favorites"></a>
+                        <a class="addthis_button_readitlater"></a>
+                        <a class="addthis_button_email"></a>
+                        <a class="addthis_button_compact"></a>
+                    </div>
+                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207"></script>
+                    <!-- AddThis Button END -->
                 </div>
+
+
                 <div id="ds-footer-links">
+<!--
                     <a>
                         <xsl:attribute name="href">
                             <xsl:value-of
@@ -567,6 +647,7 @@
                         <i18n:text>xmlui.dri2xhtml.structural.contact-link</i18n:text>
                     </a>
                     <xsl:text> | </xsl:text>
+-->
                     <a>
                         <xsl:attribute name="href">
                             <xsl:value-of
@@ -575,6 +656,7 @@
                         </xsl:attribute>
                         <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
                     </a>
+
                 </div>
                 <!--Invisible link to HTML sitemap (for search engines) -->
                 <a class="hidden">

@@ -63,8 +63,6 @@ public class FeedbackForm extends AbstractDSpaceTransformer implements Cacheable
     private static final Message T_submit =
         message("xmlui.ArtifactBrowser.FeedbackForm.submit");
     
-    /*130401 andre.assada@usp.br*/ private static final Message T_adminEmail = message("xmlui.ArtifactBrowser.FeedbackForm.adminEmail");
-
     /**
      * Generate the unique caching key.
      * This key must be unique inside the space of this component.
@@ -108,8 +106,6 @@ public class FeedbackForm extends AbstractDSpaceTransformer implements Cacheable
         feedback.setHead(T_head);
         
         feedback.addPara(T_para1);
-
-        /*130401 andre.assada@usp.br*/ feedback.addPara(T_adminEmail);
         
         List form = feedback.addList("form",List.TYPE_FORM);
         

@@ -118,7 +118,8 @@ select.multiple {
 #ds-header,
 #ds-footer,
 #ds-content {
-    width: 950px;
+/*  width: 950px;*/
+    width: 98%;
     margin: auto;
     position: relative;
 }
@@ -141,14 +142,18 @@ select.multiple {
 }
 
 #ds-footer-wrapper {
-    margin-top: 40px;
+    margin-top: 80px;
+/*130401 andre.assada@usp.br*/    height:100px;
 }
 
 #ds-footer {
     border-top: 1px solid #9CACBA;
     padding-top: 10px;
-    font-size: 93%;
-    line-height: 1.6em;
+/* 130401 andre.assada@usp.br    font-size: 93%; */ font-size: 80%;
+/* 130401 andre.assada@usp.br    line-height: 1.6em; */ line-height: 1.4em;
+/* 130401 andre.assada@usp.br*/    background-color:#EFEFEF;
+/* 130401 andre.assada@usp.br*/    height:100%;
+
 }
 
 #ds-footer-left {
@@ -157,12 +162,48 @@ select.multiple {
 
 #ds-footer-right {
     float:right;
+/* 130401 andre.assada@usp.br*/ text-align: right;
+/* 130401 andre.assada@usp.br*/ padding:5px 30px; 0 0;
 }
 
 #ds-footer-right span.theme-by{
     display: inline-block;
     vertical-align: top;
 }
+
+/* 130401 andre.assada@usp.br*/ #ds-footer-right-rss {
+    background-repeat: no-repeat;
+    background: url('../../images/rss_symbol.png') no-repeat;
+    float:left;
+    width:32px;
+    height:32px;
+}
+
+/* 130401 andre.assada@usp.br */
+#ds-footer-right-contact{
+    float:right;
+}
+#ds-footer-right-credits{
+    float:right;
+}
+#ds-footer-right-privacy{
+    float:right;
+}
+/* FIM 130401 andre.assada@usp.br FIM */
+
+/* 130401 andre.assada@usp.br*/
+.addthis_toolbox{float:right;}
+.addthis_button_compact{}
+.addthis_button_twitter{}
+.addthis_button_facebook{}
+.addthis_button_google{}
+.addthis_button_blogger,
+.addthis_button_wordpress,
+.addthis_button_favorites,
+.addthis_button_email,
+.addthis_button_readitlater{display:none;}
+/* FIM  130401 andre.assada@usp.br FIM */
+
 
 #ds-footer-logo-link {
     text-decoration:none;
@@ -172,10 +213,11 @@ select.multiple {
 
 #ds-footer-logo {
     display: inline-block;
-    background: url('../../images/@mirelogo-small.png');
+/* 130401 andre.assada@usp.br background: url('../../images/@mirelogo-small.png'); */ background: url('../../images/SIBiFooter.png');
     background-repeat: no-repeat;
-    width: 79px;
-    height: 40px;
+/* 130401 andre.assada@usp.br width: 79px;*/ width: 130px;
+/* 130401 andre.assada@usp.br height: 40px;*/ height: 65px;
+    margin: 0 20px;
 }
 
 #ds-footer-links {
@@ -195,13 +237,13 @@ select.multiple {
 
 #ds-body {
     float: left;
-    width: 675px;
-    padding-top: 10px;
+/* 130401 andre.assada@usp.br    width: 675px;*/ width: 83%;
+/* 130401 andre.assada@usp.br    padding-top: 10px;*/ padding-top:5px;
 }
 
 #ds-options-wrapper {
     float: right;
-    width: 249px;
+/* 130401 andre.assada@usp.br    width: 249px;*/width: 13%;
     padding-top:10px;
 }
 

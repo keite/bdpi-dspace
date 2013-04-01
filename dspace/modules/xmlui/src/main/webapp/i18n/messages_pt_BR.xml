@@ -228,11 +228,12 @@
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.title">Dê a sua opinião</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.trail">Dê a sua opinião</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.head">Dê a sua opinião</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.para1">Obrigado por compartilhar sua opinião sobre o sistema DSpace! Seus comentários são bem-vindos!</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.para1">Obrigado por compartilhar sua opinião sobre a BDPI! Seus comentários serão considerados.</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.email">Seu email</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.email_help">Este endereço será usado para que acompanhe a sua opinão.</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.email_help">Este email será utilizado para o acompanhamento das considerações.</message>
 	<message key="xmlui.ArtifactBrowser.FeedbackForm.comments">Comentários</message>
-	<message key="xmlui.ArtifactBrowser.FeedbackForm.submit">Envie sua opinião</message>
+	<message key="xmlui.ArtifactBrowser.FeedbackForm.submit">Enviar comentários</message>
+<!--130401 andre.assada@usp.br --> <message key="xmlui.ArtifactBrowser.FeedbackForm.adminEmail">Email dos administradores: <a href="mailto:suporte_bdpi@sibi.usp.br">atendimento@sibi.usp.br</a></message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.FeedbackSent.java -->
 	<message key="xmlui.ArtifactBrowser.FeedbackSent.title">Dê a sua opinião</message>
@@ -254,7 +255,7 @@
 	<!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
 	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">Navegar</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">Tudo sobre o DSpace</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">Comunidades e Coleções</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">Unidades USP</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_title">Títulos</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_author">Autores</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_subject">Assuntos</message>
