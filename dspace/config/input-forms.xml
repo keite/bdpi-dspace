@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <!DOCTYPE input-forms SYSTEM "input-forms.dtd">
 
 
@@ -545,6 +545,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
    <form name="artigo">
 
      <page number="1">
+	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Instituição</label>
+         <input-type value-pairs-name="contributor">dropdown</input-type>
+         <hint></hint>
+         <required>Preenchimento obrigatório</required>
+       </field>	 
 
        <field>
          <dc-schema>dc</dc-schema>
@@ -575,7 +586,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>true</repeatable>
          <label>* Autor</label>
          <input-type>name</input-type>
-         <hint>Entre com o nome do autor e coautores, na mesma ordem do artigo, indicando o sobrenome e o nome nos respectivos campos. Para cada autor preenchido, clique no botão "Buscar e Adicionar": clique na lista, no nome do autor que corresponde à Unidade/Depto, de maneira a garantir o vínculo do autor com a USP (docente, servidor ou aluno), e, se não é autor USP, clique em "Não existe na lista" para indicar que é um autor externo à USP; se necessário altere a forma de citação e para finalizar, clique no botão "Adicionar".</hint>
+         <hint>Entre com o nome do autor e coautores, na mesma ordem do artigo, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
          <required>Campo obrigatório, entre com pelo menos um autor.</required>
        </field>
 	   
@@ -635,17 +646,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
 	   
-       <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>identifier</dc-element>
-         <dc-qualifier>issn</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>ISSN da revista</label>
-         <input-type>onebox</input-type>
-         <hint>Entre com o ISSN do periódico em que foi publicado o artigo. Ex: 0103-4014</hint>
-         <required></required>
-       </field>
-
 <!-- Tiago 20130326 - Pode ser suprimido   -->
 							 </page>
 							 <page number="2">	   
@@ -658,11 +658,23 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>* Título da Revista</label>
          <input-type>onebox</input-type>
-         <hint>Ex: Revista MATRIZes. Atenção: dê preferência ao título NÃO abreviado da revista</hint>
+         <hint>Digite o ISSN do Periódico e aperte a barra de espaço. Caso o título do periódico não apareça, digite o título, dando preferência ao título NÃO abreviado da revista</hint>
          <required>Título da revista onde o trabalho foi publicado é um campo obrigatório. Ex: Estudos Avançados</required>
        </field>
 
-<!-- Inserido por Tiago 20130327 -->	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>issn</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>ISSN da revista</label>
+         <input-type>onebox</input-type>
+         <hint>Entre com o ISSN do periódico em que foi publicado o artigo. Ex: 0103-4014</hint>
+         <required></required>
+		 <visibility>workflow</visibility>		 
+       </field>
+  
+	   <!-- Inserido por Tiago 20130327 -->	   
 	   <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -673,7 +685,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Digite o volume e o número do artigo.</hint>
          <required></required>
        </field>
-<!-- -->
+<!-- Comentado por Tiago 2013-04-01
 	   
        <field>
          <dc-schema>usp</dc-schema>
@@ -696,18 +708,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Número da edição da revista onde o artigo foi publicado, com eventual periodicidade ou suplemento. Exemplos: 14, 5 (jan/jun), suppl 1</hint>
          <required></required>
        </field>
-
-       <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>date</dc-element>
-         <dc-qualifier>issued</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>* Data de publicação do fascículo</label>
-         <input-type>date</input-type>
-         <hint>Informar, pelo menos, o ano de publicação do fascículo onde o artigo foi publicado</hint>
-         <required>Campo obrigatório - entre com pelo menos o ano de publicação. Ex: 1992</required>
-       </field>
-
+-->
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>description</dc-element>
@@ -730,6 +731,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
 	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Data de publicação do fascículo</label>
+         <input-type>date</input-type>
+         <hint>Informar, pelo menos, o ano de publicação do fascículo onde o artigo foi publicado</hint>
+         <required>Campo obrigatório - entre com pelo menos o ano de publicação. Ex: 1992</required>
+       </field>
+
 	   
        <!-- 110810 para artigos nao se precisa editor (nao se cadastra no Aleph); pode ser uma Authority Control posterior, ms hoje eh um pedido para ser open -->
        <field>
@@ -741,6 +753,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>onebox</input-type>
          <hint>Editor da revista onde o artigo foi publicado. Ex: Editora da Universidade de Brasília - UnB </hint>
          <required></required>
+ 		 <visibility>workflow</visibility>
        </field>
  
 	   
@@ -788,6 +801,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>textarea</input-type>
          <hint>Não é uma citação, é uma imprenta: revista, cidade, volume, número, páginas inicial e final, ano. Ex: "Revista do Hospital das Clínicas, São Paulo, v.6, n.14, p.95-106, 1992"</hint>
          <required></required>
+		 <visibility>workflow</visibility>
        </field>
 
        <field>
@@ -872,7 +886,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
 
-
+<!-- É possivel usar um campo input-type serie aqui? Tiago 2013-04-01 -->
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
@@ -1361,6 +1375,14 @@ it, please enter the types and the actual numbers or codes below.</hint>
      <pair>
        <displayed-value>Outro</displayed-value>
        <stored-value>other</stored-value>
+     </pair>
+    </value-pairs>
+	
+	<!-- Valor para o campo dc.contributor -->
+	<value-pairs value-pairs-name="contributor" dc-term="contributor">
+     <pair>
+       <displayed-value>Universidade de São Paulo</displayed-value>
+       <stored-value>UNIVERSIDADE DE SÃO PAULO</stored-value>
      </pair>
     </value-pairs>
 
