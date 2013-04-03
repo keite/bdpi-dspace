@@ -937,57 +937,7 @@
 <!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->                    
                     </td>
                 <td>
-
-<!-- 130403 andre.assada@usp.br URI, ID origem e DOI by Dan Shinkai -->
-                <xsl:choose>
-
-                   <xsl:when test="@qualifier='uri'">
-                      <a>
-                         <xsl:attribute name="href">
-                            <xsl:value-of select="current()"/>
-                         </xsl:attribute>
-                         <xsl:attribute name="target">_blank</xsl:attribute>
-                         <xsl:value-of select="current()"/>
-                      </a>
-                   </xsl:when>
-
-                   <xsl:when test="@qualifier='id' and @element='origem'">
-                      <a>
-                         <xsl:attribute name="href">
-                            <xsl:value-of select="current()"/>
-                         </xsl:attribute>
-                         <xsl:attribute name="target">_blank</xsl:attribute>
-                         <xsl:value-of select="current()"/>
-                      </a>
-                   </xsl:when>
-
-                    <!-- cria um link para metadados do tipo DOI -->
-                    <xsl:when test="@qualifier='doi'">
-                       <xsl:variable name="primeiroIndex" select="substring(current(),1,1)" />
-                       <xsl:variable name="stringLength" select="string-length(current())" />
-                       <xsl:choose>
-                          <xsl:when test="$primeiroIndex = '1' and $stringLength > 10" >
-                             <a>
-                                <xsl:attribute name="href">
-                                   <xsl:value-of select="concat('http://dx.doi.org/',current())"/>
-                                </xsl:attribute>
-                                <xsl:attribute name="target">_blank</xsl:attribute>
-                                <xsl:value-of select="current()"/>
-                             </a>
-                           </xsl:when>
-                           <xsl:otherwise>
-                              <xsl:value-of select="current()"/>
-                           </xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:when>
-
-                   <xsl:otherwise>
-                      <xsl:value-of select="current()"/>
-                   </xsl:otherwise>
-                </xsl:choose>
-<!-- FIM 120403 andre.assada@usp.br URI, ID origem e DOI by Dan Shinkai FIM -->
-<!--120403 andre.assada@usp.br URI, ID origem e DOI by Dan Shinkai        <xsl:copy-of select="./node()"/> -->
-
+                  <xsl:copy-of select="./node()"/>
                   <xsl:if test="./@authority and ./@confidence">
                     <xsl:call-template name="authorityConfidenceIcon">
                       <xsl:with-param name="confidence" select="./@confidence"/>
