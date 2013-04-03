@@ -46,9 +46,15 @@ select.multiple {
 }
 
 #ds-header-wrapper {
-    background-color: #1F3F5E;
-    color: white;
-    min-width: 950px;
+/* 130403 andre.assada@usp.br    background-color: #1F3F5E;*/
+    /* 130403 andre.assada@usp.br */
+    background-color: #fff;
+    color: #333;
+    background: url('../../images/header.png');
+    /* FIM  130403 andre.assada@usp.br FIM */
+/* 130403 andre.assada@usp.br    color: white; */
+    /*min-width: 640px;*/
+    /* 130403 andre.assada@usp.br */ margin-top:30px;
 }
 
 #ds-header-logo-link {
@@ -58,10 +64,10 @@ select.multiple {
 
 #ds-header-logo {
     float:left;
-    width: 48px;
-    height: 50px;
-    margin-top: 10px;
-    background: url('../../images/dspace-logo-only.png');
+    width: 652px;
+    height: 100px;
+/* 130403 andre.assada@usp.br     background: url('../../images/dspace-logo-only.png'); */
+    background: url('../../images/producao.usp.png');
     background-repeat: no-repeat;
     background-color: transparent;
     margin-right: 15px;
@@ -69,7 +75,7 @@ select.multiple {
 
 #ds-header-logo-text {
     font-size: 400%;
-    color: white;
+    color: #333;
     line-height: 70px;
     font-weight: normal;
     vertical-align: middle;
