@@ -948,7 +948,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
    
-       <!-- 120729 Referencias do artigo: colocar todas juntas, separadas por @@@ -->
+       <!-- 120729 Referencias do artigo: colocar todas juntas, separadas por @@@ 
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>relation</dc-element>
@@ -960,7 +960,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
 		 <visibility>workflow</visibility>		 
        </field>
-	   
+	   -->
 	   
        <!-- 110728 Incluir campo para protecao contra alteracoes ROMEO -->
        <field>
@@ -1000,7 +1000,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 						   </field>
 						   -->
 	   
-       <!-- 110810 Incluir Dúvidas -->
+       <!-- 110810 Incluir Dúvidas 
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>comentarios</dc-element>
@@ -1010,7 +1010,8 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>textarea</input-type>
          <hint>Dúvidas, casos fora do padrão, dicas ou comentários que possam apoiar o desenvolvimento do Manual de Edição de Itens</hint>
          <required></required>
-       </field>
+       </field> 
+	   -->
 
 
      </page>	
