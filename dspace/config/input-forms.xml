@@ -658,7 +658,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>* Título da Revista</label>
          <input-type>onebox</input-type>
-         <hint>Digite o ISSN do Periódico e aperte a barra de espaço. Caso o título do periódico não apareça, digite o título, dando preferência ao título NÃO abreviado da revista</hint>
+         <hint>Digite o ISSN do Periódico em que foi publicado o artigo e aguarde. Caso o título do periódico não apareça, digite o título, dando preferência ao título NÃO abreviado da revista</hint>
          <required>Título da revista onde o trabalho foi publicado é um campo obrigatório. Ex: Estudos Avançados</required>
        </field>
 
@@ -857,7 +857,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>true</repeatable>
          <label>Palavras-chave</label>
          <input-type>onebox</input-type>
-         <hint>Palavras-chave contidas no artigo, não descritas no Vocabulário Controlado USP (VCUSP), nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <hint>Palavras-chave contidas no artigo, nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
          <required></required>
        </field>
 

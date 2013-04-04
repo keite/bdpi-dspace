@@ -1,14 +1,12 @@
-# Item Archived email message
+﻿# Item Archived email message
 #
 # {0}  Title of submission
 # {1}  Name of collection
 # {2}  handle 
 #
-Subject: DSpace: Submission Approved and Archived 
+Subject: Biblioteca Digital da Produção Intelectual: Sua obra foi depositada! 
 
-You submitted: {0}
-
-To collection: {1}
+A obra " {0} " foi depositada na coleção {1}
 
 Your submission has been accepted and archived in DSpace,
 and it has been assigned the following identifier:
