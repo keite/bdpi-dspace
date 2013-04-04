@@ -666,7 +666,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>issn</dc-qualifier>
-         <repeatable>true</repeatable>
+         <repeatable>false</repeatable>
          <label>ISSN da revista</label>
          <input-type>onebox</input-type>
          <hint>Entre com o ISSN do periódico em que foi publicado o artigo. Ex: 0103-4014</hint>
@@ -679,7 +679,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
          <dc-qualifier>ispartofseries</dc-qualifier>
-         <repeatable>true</repeatable>
+         <repeatable>false</repeatable>
          <label>Volume/Número</label>
          <input-type>series</input-type>
          <hint>Digite o volume e o número do artigo.</hint>
