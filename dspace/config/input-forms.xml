@@ -658,7 +658,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>* Título da Revista</label>
          <input-type>onebox</input-type>
-         <hint>Digite o ISSN do Periódico e aperte a barra de espaço. Caso o título do periódico não apareça, digite o título, dando preferência ao título NÃO abreviado da revista</hint>
+         <hint>Digite o ISSN do Periódico em que foi publicado o artigo e aguarde. Caso o título do periódico não apareça, digite o título, dando preferência ao título NÃO abreviado da revista</hint>
          <required>Título da revista onde o trabalho foi publicado é um campo obrigatório. Ex: Estudos Avançados</required>
        </field>
 
@@ -666,7 +666,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>issn</dc-qualifier>
-         <repeatable>true</repeatable>
+         <repeatable>false</repeatable>
          <label>ISSN da revista</label>
          <input-type>onebox</input-type>
          <hint>Entre com o ISSN do periódico em que foi publicado o artigo. Ex: 0103-4014</hint>
@@ -679,7 +679,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
          <dc-qualifier>ispartofseries</dc-qualifier>
-         <repeatable>true</repeatable>
+         <repeatable>false</repeatable>
          <label>Volume/Número</label>
          <input-type>series</input-type>
          <hint>Digite o volume e o número do artigo.</hint>
@@ -857,7 +857,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>true</repeatable>
          <label>Palavras-chave</label>
          <input-type>onebox</input-type>
-         <hint>Palavras-chave contidas no artigo, não descritas no Vocabulário Controlado USP (VCUSP), nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <hint>Palavras-chave contidas no artigo, nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
          <required></required>
        </field>
 
@@ -948,7 +948,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
    
-       <!-- 120729 Referencias do artigo: colocar todas juntas, separadas por @@@ -->
+       <!-- 120729 Referencias do artigo: colocar todas juntas, separadas por @@@ 
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>relation</dc-element>
@@ -960,7 +960,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
 		 <visibility>workflow</visibility>		 
        </field>
-	   
+	   -->
 	   
        <!-- 110728 Incluir campo para protecao contra alteracoes ROMEO -->
        <field>
@@ -1000,7 +1000,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 						   </field>
 						   -->
 	   
-       <!-- 110810 Incluir Dúvidas -->
+       <!-- 110810 Incluir Dúvidas 
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>comentarios</dc-element>
@@ -1010,7 +1010,8 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>textarea</input-type>
          <hint>Dúvidas, casos fora do padrão, dicas ou comentários que possam apoiar o desenvolvimento do Manual de Edição de Itens</hint>
          <required></required>
-       </field>
+       </field> 
+	   -->
 
 
      </page>	
