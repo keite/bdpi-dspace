@@ -102,6 +102,19 @@ select.multiple {
     min-width: 950px;
 }
 
+/*130404 
+andre.assada@usp.br links para conteudo estatico
+*/ #ds-trail-informacoes {
+    background-color: #eee;
+    margin: 0;
+    border-top: 1px solid #9cacba;
+    border-bottom: 1px solid #9cacba;
+    line-height: 138.5%;
+    padding-right:10px;
+    text-align:right;
+}
+
+
 #ds-trail {
     list-style: none;
     line-height: 138.5%;

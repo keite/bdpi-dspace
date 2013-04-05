@@ -40,6 +40,7 @@
     -->
     <xsl:variable name="request-uri" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='URI']"/>
 
+
     <!--
         The starting point of any XSL processing is matching the root element. In DRI the root element is document,
         which contains a version attribute and three top level elements: body, options, meta (in that order).
@@ -145,6 +146,7 @@
 <!-- 130327 andre.assada@usp.br nova barra usp by Marcio Eichler, agora com codigo centralizado em server unico -->
 <!-- <link rel="stylesheet" type="text/css" href="http://www.sibi.usp.br/barraUSP/styles/index.css" /> -->
 
+<!--
 <link rel="stylesheet" type="text/css">
     <xsl:text>
         #header{
@@ -153,6 +155,7 @@
 		}
 	</xsl:text>
 </link>
+-->
 
 <!-- <link rel="stylesheet" type="text/css" href="http://www.sibi.usp.br/barraUSP/styles/slide.css" /> -->
 <!-- FIM 130327 andre.assada@usp.br nova barra usp by Marcio Eichler, agora com codigo centralizado em server unico FIM -->
@@ -302,11 +305,71 @@
 
             <!-- Add the title in -->
             <xsl:variable name="page_title" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title']" />
+
             <title>
                 <xsl:choose>
+<!-- 130405 andre.assada@usp.br paginas estaticas
                         <xsl:when test="starts-with($request-uri, 'page/about')">
                                 <xsl:text>About This Repository</xsl:text>
                         </xsl:when>
+-->
+                        <xsl:when test="starts-with($request-uri, 'page/creditosBDPIEnUS')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/creditosBDPIEnUS.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/creditosBDPIEs')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/creditosBDPIEs.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisPtBR')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/direitosAutoraisPtBR.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisEnUS')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/direitosAutoraisEnUS.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisEs')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/direitosAutoraisEs.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/politicaAcessoPtBR')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/politicaAcessoPtBR.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEnUS')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/politicaAcessoEnUS.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEs')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/politicaAcessoEs.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIPtBR')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/privacidadeBDPIPtBR.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEnUS')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/privacidadeBDPIEnUS.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEs')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/privacidadeBDPIEs.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/sobreBDPIPtBR')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/sobreBDPIPtBR.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/sobreBDPIEnUS')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/sobreBDPIEnUS.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+                        <xsl:when test="starts-with($request-uri, 'page/sobreBDPIEs')">
+                                <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/sobreBDPIEs.xhtml')"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+<!-- FIM 130405 andre.assada@usp.br paginas estaticas FIM -->
                         <xsl:when test="not($page_title)">
                                 <xsl:text>  </xsl:text>
                         </xsl:when>
@@ -432,6 +495,27 @@
     <!-- The header (distinct from the HTML head element) contains the title, subtitle, login box and various
         placeholders for header images -->
     <xsl:template name="buildTrail">
+
+<!-- 130404 andre.assada@usp.br links informativos da bdpi ; o link eh criado no messages_xx.xml para adequar locales -->
+            <div id="ds-trail-informacoes">
+                <i18n:text>paginasEstaticas.politicaAcesso</i18n:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <i18n:text>paginasEstaticas.direitosAutorais</i18n:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <i18n:text>paginasEstaticas.sobreBDPI</i18n:text>
+            </div>
+<!-- FIM 130404 andre.assada@usp.br FIM -->
+
         <div id="ds-trail-wrapper">
             <ul id="ds-trail">
                 <xsl:choose>
@@ -573,23 +657,11 @@
                 <div id="ds-footer-right">
 
                     <div id="ds-footer-right-privacy">
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                                <xsl:text>/privacidadeBDPI</xsl:text>
-                            </xsl:attribute>
-                            <b><i18n:text>xmlui.dri2xhtml.structural.privacy</i18n:text></b>
-                        </a>
+                        <b><i18n:text>paginasEstaticas.privacidade</i18n:text></b>
                         <xsl:text>&#160;&#160;</xsl:text>
                     </div>
                     <div id="ds-footer-right-credits">
-                        <a>
-                            <xsl:attribute name="href">
-                                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-                                <xsl:text>/creditosBDPI</xsl:text>
-                            </xsl:attribute>
-                            <b><i18n:text>xmlui.dri2xhtml.structural.credits</i18n:text></b>
-                        </a>
+                        <b><i18n:text>paginasEstaticas.creditos</i18n:text></b>
                         <xsl:text>&#160;&#160;</xsl:text>
                     </div>
                     <div id="ds-footer-right-contact">
@@ -677,13 +749,12 @@
 -->
 
 
-
-
     <!--
         The template to handle the dri:body element. It simply creates the ds-body div and applies
         templates of the body's child elements (which consists entirely of dri:div tags).
     -->
     <xsl:template match="dri:body">
+
         <div id="ds-body">
             <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='alert'][@qualifier='message']">
                 <div id="ds-system-wide-alert">
@@ -695,6 +766,7 @@
 
             <!-- Check for the custom pages -->
             <xsl:choose>
+<!-- 130405 andre.assada@usp.br paginas estaticas
                 <xsl:when test="starts-with($request-uri, 'page/about')">
                     <div>
                         <h1>About This Repository</h1>
@@ -703,8 +775,103 @@
                             will need to create an additional xsl:when block and match the request-uri to whatever page
                             you are adding. Currently, static pages created through altering XSL are only available
                             under the URI prefix of page/.</p>
-                    </div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/creditosBDPIPtBR.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
                 </xsl:when>
+-->
+                <xsl:when test="starts-with($request-uri, 'page/creditosBDPIPtBR')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/creditosBDPIPtBR.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/creditosBDPIEnUS')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/creditosBDPIEnUS.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/creditosBDPIEs')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/creditosBDPIEs.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisPtBR')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/direitosAutoraisPtBR.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisEnUS')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/direitosAutoraisEnUS.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisEs')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/direitosAutoraisEs.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/politicaAcessoPtBR')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/politicaAcessoPtBR.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEnUS')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/politicaAcessoEnUS.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEs')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/politicaAcessoEs.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIPtBR')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/privacidadeBDPIPtBR.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEnUS')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/privacidadeBDPIEnUS.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEs')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/privacidadeBDPIEs.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/sobreBDPIPtBR')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/sobreBDPIPtBR.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/sobreBDPIEnUS')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/sobreBDPIEnUS.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/sobreBDPIEs')">
+                    <div>
+                        <xsl:variable name="doc" select="document('http://bdpi-treino.sibi.usp.br:8083/andre/xmlui/static/pages/sobreBDPIEs.xhtml')"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+<!-- FIM 130405 andre.assada@usp.br paginas estaticas FIM -->
+
                 <!-- Otherwise use default handling of body -->
                 <xsl:otherwise>
                     <xsl:apply-templates />
