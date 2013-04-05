@@ -232,12 +232,13 @@ andre.assada@usp.br links para conteudo estatico
 
 #ds-footer-logo {
     display: inline-block;
-/* 130401 andre.assada@usp.br background: url('../../images/@mirelogo-small.png'); */ background: url('../../images/SIBiFooter.png');
+/* 130401 andre.assada@usp.br background: url('../../images/@mirelogo-small.png'); */  background: url('../../images/SIBiFooter.png');
     background-repeat: no-repeat;
 /* 130401 andre.assada@usp.br width: 79px;*/ width: 130px;
 /* 130401 andre.assada@usp.br height: 40px;*/ height: 65px;
-    margin: 0 20px;
+    margin: 5px 20px;
 }
+
 
 #ds-footer-links {
     clear: left;
