@@ -661,7 +661,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Digite o ISSN do Periódico em que foi publicado o artigo e aguarde. Caso o título do periódico não apareça, digite o título, dando preferência ao título NÃO abreviado da revista</hint>
          <required>Título da revista onde o trabalho foi publicado é um campo obrigatório. Ex: Estudos Avançados</required>
        </field>
-
+<!-- Comentado em 2013-04-05 por Tiago
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -673,7 +673,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
 		 <visibility>workflow</visibility>		 
        </field>
-  
+ --> 
 	   <!-- Inserido por Tiago 20130327 -->	   
 	   <field>
 		 <dc-schema>dc</dc-schema>
