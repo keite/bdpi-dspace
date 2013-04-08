@@ -18,7 +18,7 @@
 
    <!-- 120709 Josi: inserir as colecoes de Artigos e Materiais de Revistas para form proprio -->
    <name-map collection-handle="123456789/3"   form-name="artigo" />
-   <name-map collection-handle="TREINO/8"      form-name="artigo" />
+   <name-map collection-handle="123456789/54"  form-name="artigo" />
    <name-map collection-handle="TREINO/13"     form-name="artigo" />
    <name-map collection-handle="TREINO/3"      form-name="artigo" />
    <name-map collection-handle="TREINO/18"     form-name="artigo" />
