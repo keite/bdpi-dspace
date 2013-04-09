@@ -646,8 +646,8 @@
 	<message key="xmlui.Submission.submit.DescribeStep.year">Ano</message>
 	<message key="xmlui.Submission.submit.DescribeStep.month">Mês</message>
 	<message key="xmlui.Submission.submit.DescribeStep.day">Dia</message>
-	<message key="xmlui.Submission.submit.DescribeStep.series_name">Nome da série</message>
-	<message key="xmlui.Submission.submit.DescribeStep.report_no">Relatório ou número do trabalho.</message>
+	<message key="xmlui.Submission.submit.DescribeStep.series_name">Volume <i>por exemplo, v.22</i></message>
+	<message key="xmlui.Submission.submit.DescribeStep.report_no">Número <i>por exemplo, n.3</i>.</message>
 	<message key="xmlui.Submission.submit.DescribeStep.controlledvocabulary.link">Categorias de assunto</message>
 <message key="xmlui.Submission.submit.DescribeStep.controlledvocabulary.title">Categorias de assunto</message>
 <message key="xmlui.Submission.submit.DescribeStep.controlledvocabulary.filter.label">Filtro de assuntos</message>
