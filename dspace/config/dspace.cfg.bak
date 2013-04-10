@@ -1309,11 +1309,11 @@ sitemap.engineurls = http://www.google.com/webmasters/sitemaps/ping?sitemap=
 
 #####  Authority Control Settings  #####
 
-plugin.named.org.dspace.content.authority.ChoiceAuthority = \
- org.dspace.content.authority.SampleAuthority = Sample, \
+#plugin.named.org.dspace.content.authority.ChoiceAuthority = \
+# org.dspace.content.authority.SampleAuthority = Sample, \
 # org.dspace.content.authority.LCNameAuthority = LCNameAuthority, \
- org.dspace.content.authority.SHERPARoMEOPublisher = SRPublisher, \
- org.dspace.content.authority.SHERPARoMEOJournalTitle = SRJournalTitle
+# org.dspace.content.authority.SHERPARoMEOPublisher = SRPublisher, \
+# org.dspace.content.authority.SHERPARoMEOJournalTitle = SRJournalTitle
 
 ## The DCInputAuthority plugin is automatically configured with every
 ## value-pairs element in input-forms.xml, namely:
@@ -1330,15 +1330,15 @@ plugin.named.org.dspace.content.authority.ChoiceAuthority = \
 ##
 ## An example using "srsc" can be found later in this section
 
-plugin.selfnamed.org.dspace.content.authority.ChoiceAuthority = \
- org.dspace.content.authority.DCInputAuthority, \
- org.dspace.content.authority.DSpaceControlledVocabulary
+#plugin.selfnamed.org.dspace.content.authority.ChoiceAuthority = \
+# org.dspace.content.authority.DCInputAuthority, \
+# org.dspace.content.authority.DSpaceControlledVocabulary
 
 ## configure LC Names plugin
 #lcname.url = http://alcme.oclc.org/srw/search/lcnaf
 
 ## configure SHERPA/RoMEO authority plugin
-sherpa.romeo.url = http://www.sherpa.ac.uk/romeo/api24.php
+#sherpa.romeo.url = http://www.sherpa.ac.uk/romeo/api24.php
 
 ##
 ## This sets the default lowest confidence level at which a metadata value is included
@@ -1363,26 +1363,25 @@ authority.minconfidence = ambiguous
 ## This sets the lowest confidence level at which a metadata value is included
 ## in an authority-controlled browse (and search) index.  It is a symbolic
 ## keyword from the same set as for the default "authority.minconfidence"
-authority.minconfidence.dc.contributor.author = accepted
+#authority.minconfidence.dc.contributor.author = accepted
 
 ## demo: subject code autocomplete, using srsc as authority
 ## (DSpaceControlledVocabulary plugin must be enabled)
 ## Warning: when enabling this feature any controlled vocabulary configuration in the input-forms.xml for the metadata field will be overridden.
-choices.plugin.dc.subject.vcusp = vcusp
-choices.presentation.dc.subject.vcusp = suggest
-vocabulary.plugin.srsc.hierarchy.store = false
-vocabulary.plugin.srsc.hierarchy.suggest = true
-vocabulary.plugin.srsc.delimiter = "::"
-authority.controlled.dc.subject.vcusp = true
+#choices.plugin.dc.subject = srsc
+#choices.presentation.dc.subject = select
+#vocabulary.plugin.srsc.hierarchy.store = true
+#vocabulary.plugin.srsc.hierarchy.suggest = true
+#vocabulary.plugin.srsc.delimiter = "::"
 
 ## Demo: publisher name lookup through SHERPA/RoMEO:
-choices.plugin.dc.publisher = SRPublisher
-choices.presentation.dc.publisher = suggest
+#choices.plugin.dc.publisher = SRPublisher
+#choices.presentation.dc.publisher = suggest
 
 ## demo: journal title lookup, with ISSN as authority
-choices.plugin.dc.relation.ispartof = SRJournalTitle
-choices.presentation.dc.relation.ispartof = suggest
-authority.controlled.dc.relation.ispartof = true
+#choices.plugin.dc.title.alternative = SRJournalTitle
+#choices.presentation.dc.title.alternative = suggest
+#authority.controlled.dc.title.alternative = true
 
 ## demo: use choice authority (without authority-control) to restrict dc.type on EditItemMetadata page
 #choices.plugin.dc.type = common_types

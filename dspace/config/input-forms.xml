@@ -18,8 +18,8 @@
 
    <!-- 120709 Josi: inserir as colecoes de Artigos e Materiais de Revistas para form proprio -->
    <name-map collection-handle="123456789/3"   form-name="artigo" />
-   <name-map collection-handle="TREINO/8"      form-name="artigo" />
-   <name-map collection-handle="TREINO/13"     form-name="artigo" />
+   <name-map collection-handle="123456789/54"  form-name="artigo" />
+   <name-map collection-handle="123456789/120" form-name="eventos" />
    <name-map collection-handle="TREINO/3"      form-name="artigo" />
    <name-map collection-handle="TREINO/18"     form-name="artigo" />
    <name-map collection-handle="TREINO/1366"   form-name="artigo" />
@@ -660,8 +660,8 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>onebox</input-type>
          <hint>Digite o ISSN do Periódico em que foi publicado o artigo e aguarde. Caso o título do periódico não apareça, digite o título, dando preferência ao título NÃO abreviado da revista</hint>
          <required>Título da revista onde o trabalho foi publicado é um campo obrigatório. Ex: Estudos Avançados</required>
-       </field>
-
+	   </field>
+<!-- Comentado em 2013-04-05 por Tiago
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -673,7 +673,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
 		 <visibility>workflow</visibility>		 
        </field>
-  
+ --> 
 	   <!-- Inserido por Tiago 20130327 -->	   
 	   <field>
 		 <dc-schema>dc</dc-schema>
@@ -1017,6 +1017,302 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </page>	
    </form>
 
+    <!-- FORM Para trabalhos em eventos @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+   <!-- ...................................................... -->
+   <!-- ...................................................... -->
+   <!-- 20130408                                                -->
+   <!-- Criado por SIBi USP                                   -->
+   <!-- Entrada de material apresentado em eventos            -->
+   <!-- ...................................................... -->
+   <!-- ...................................................... -->
+
+   <form name="eventos">
+
+     <page number="1">
+	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Instituição</label>
+         <input-type value-pairs-name="contributor">dropdown</input-type>
+         <hint></hint>
+         <required>Preenchimento obrigatório</required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tipo do material</label>
+         <input-type value-pairs-name="tipoItemArticle">dropdown</input-type>
+         <hint></hint>
+         <required>Tipo do material é de preenchimento obrigatório</required>
+       </field>	   
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>author</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>* Autor</label>
+         <input-type>name</input-type>
+         <hint>Entre com o nome do autor e coautores, na mesma ordem do artigo, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
+         <required>Campo obrigatório, entre com pelo menos um autor.</required>
+       </field>	   
+
+	   <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>autor</dc-element>
+         <dc-qualifier>externo</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Informações sobre os autores externos à USP</label>
+         <input-type>onebox</input-type>
+         <hint>Dados do autor externo no formato: nome como descrito no metadado autor: instituição/depto (extenso e sigla) :c cidade :u UF :p país. Exemplo: Santos, Milena: Universidade de Campinas, Depto de Computação (UNICAMP/DCC) :c Campinas :u SP :p Brasil</hint>
+         <required></required>
+		 <visibility>workflow</visibility>		 
+       </field>
+	   
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Título original da comunicação</label>
+         <input-type>textarea</input-type>
+         <hint>Título do documento no idioma original. Ex: 1992: a redescoberta da Natureza</hint>
+         <required>Título da obra é campo obrigatório. Ex: 1992: a redescoberta da Natureza</required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier>alternative</dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Título traduzido</label>
+         <input-type>textarea</input-type>
+         <hint>Título do artigo em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
+         <required></required>
+       </field>
+	   
+<!-- Tiago 20130326 - Pode ser suprimido   -->
+							 </page>
+							 <page number="2">	   
+	   
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartof</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Nome do evento</label>
+         <input-type>onebox</input-type>
+         <hint>Título não abreviado do evento, número do evento.</hint>
+         <required>Obrigatório informar o nome do evento</required>
+	   </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Data da apresentação da comunicação</label>
+         <input-type>date</input-type>
+         <hint>Informar, pelo menos, o ano do evento</hint>
+         <required>Campo obrigatório - entre com pelo menos o ano do evento. Ex: 1992</required>
+       </field>
+
+	   
+       <!-- 110810 para artigos nao se precisa editor (nao se cadastra no Aleph); pode ser uma Authority Control posterior, ms hoje eh um pedido para ser open -->
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Realizador do evento</label>
+         <input-type>onebox</input-type>
+         <hint>Nome da instituição que realizou o evento</hint>
+         <required></required>
+       </field>
+ 
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>local</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Cidade de realização do evento</label>
+         <input-type>onebox</input-type>
+         <hint>Cidade em que o evento foi realizado</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>pais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>País</label>
+         <input-type>onebox</input-type>
+         <hint>País em que o evento foi realizado</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>citation</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Citação da comunicação</label>
+         <input-type>textarea</input-type>
+         <hint>Ex.</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>URL da comunicação publicada nos anais do evento</label>
+         <input-type>onebox</input-type>
+         <hint>Endereço eletrônico que remete ao texto completo do trabalho publicado nos anais do evento. Ex. </hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Idioma da comunicação</label>
+         <input-type value-pairs-name="iso_languages_ptBR">dropdown</input-type>
+         <hint>Atenção: selecionar o idioma referente ao texto completo da comunicação.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Resumo</label>
+         <input-type>textarea</input-type>
+         <hint>Resumo ou síntese do artigo, nos idiomas descritos no artigo; para cada idioma, clicar no botão "Adicionar"</hint>
+         <required></required>
+       </field>
+   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>vcusp</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Assunto VCUSP</label>
+         <input-type>onebox</input-type>
+         <hint>Utilizar o Vocabulário Controlado USP (VCUSP) para selecionar os assuntos relacionados a este artigo - um assunto por campo.</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+<!--  Tiago  <vocabulary>vcusp</vocabulary> -->
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Palavras-chave</label>
+         <input-type>onebox</input-type>
+         <hint>Palavras-chave contidas no artigo, nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>other</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Palavras-chave sugeridas</label>
+         <input-type>onebox</input-type>
+         <hint>Palavras-chave sugeridas por um bibliotecário, não descritas no Vocabulário Controlado USP (VCUSP) ou no texto do autor, mas que enriquecem a visibilidade do trabalho; descrever nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+       </field>	   
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+		 <repeatable>true</repeatable>
+         <label>Agência de fomento</label>
+         <input-type>onebox</input-type>
+		 <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>notes</dc-qualifier>
+         <repeatable>false</repeatable>
+		 <label>Notas</label>
+         <input-type>textarea</input-type>
+         <hint>Notas descritivas adicionais, tais como prêmios recebidos pelo trabalho, uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tipo de acesso</label>
+         <input-type value-pairs-name="common_right">dropdown</input-type>
+         <hint>Selecione o tipo de acesso permitido ao documento, conforme negociação entre os autores e a editora. ex. Acesso aberto</hint>
+         <required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
+       </field>
+
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>embargo</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Data final de embargo</label>
+         <input-type>onebox</input-type>
+         <hint>Se o artigo está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier>holder</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Detentor dos direitos autorais</label>
+         <input-type>onebox</input-type>
+         <hint>Indique a pessoa ou entidade detentora dos direitos autorais do artigo. Ex: Copyright Springer</hint>
+         <required></required>
+       </field>
+   
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>comentarios</dc-element>
+         <dc-qualifier>direitosautorais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Comentários sobre Direitos Autorais</label>
+         <input-type>textarea</input-type>
+         <hint>Quem, em que data, em que link e quando se encontrou a definição para direitos autorais sobre a disponibilização do texto completo deste item</hint>
+         <required></required>
+       </field>
+
+	   
+     </page>	
+   </form>	   
+
 
  </form-definitions>
 
@@ -1210,6 +1506,10 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <displayed-value>Artigos e outros materiais de revistas científicas</displayed-value>
        <stored-value>article</stored-value>
      </pair>
+     <pair>
+       <displayed-value>Comunicações em eventos</displayed-value>
+       <stored-value>conference paper</stored-value>
+     </pair>	 
     </value-pairs>
 
    <!-- ........................................................... -->
