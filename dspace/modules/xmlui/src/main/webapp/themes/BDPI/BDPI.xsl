@@ -41,6 +41,16 @@
     <xsl:import href="lib/xsl/aspect/artifactbrowser/community-list.xsl"/>
     <xsl:import href="lib/xsl/aspect/artifactbrowser/collection-list.xsl"/>
     <xsl:output indent="yes"/>
-    
+
+<!-- 130411 andre.assada@usp.br retirar busca da capa / pagina inicial (front page)  -->
+<xsl:template name="disable_front-page-search" match="dri:div[@id='aspect.artifactbrowser.FrontPageSearch.div.front-page-search']">
+</xsl:template>
+<!-- FIM 130411 andre.assada@usp.br retirar busca da capa / pagina inicial (front page) FIM -->
+
+<!-- 130411 andre.assada@usp.br retirar lista de comunidades (community list) da capa / pagina inicial (front page) -->
+<xsl:template name="disable_front-page-browse" match="dri:div[@id='aspect.artifactbrowser.CommunityBrowser.div.comunity-browser']">
+</xsl:template>
+<!-- FIM 130411 andre.assada@usp.br retirar lista de comunidades (community list) da capa / pagina inicial (front page) FIM -->
+
 
 </xsl:stylesheet>
