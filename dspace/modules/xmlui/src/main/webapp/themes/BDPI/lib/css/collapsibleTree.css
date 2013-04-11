@@ -1,0 +1,31 @@
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser ul {
+    padding: 10px;
+    margin: -30px 5px 20px -10px;
+}
+
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser li {
+    list-style:none;
+    margin: 0px 0px -20px 50px;
+    padding: 5px;
+    text-indent: -40px;
+}
+
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser ul.hide {
+    display:none;
+}
+
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser span {
+    color:#555;
+}
+
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser, div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser span.collapsed, div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser span.expanded {
+    cursor:default;
+}
+
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser a.community {
+    color: #5e7c5e;
+}
+
+div#aspect_artifactbrowser_CommunityBrowser_div_comunity-browser a.collection {
+    color: #005b7f;
+}

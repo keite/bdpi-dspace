@@ -130,6 +130,10 @@
                     <map:parameter name="stylesheet.screen#4" value="lib/css/jquery-ui-1.8.15.custom.css"/>
                     <map:parameter name="stylesheet.screen#5" value="lib/css/style.css"/>
                     <map:parameter name="stylesheet.screen#6" value="lib/css/authority-control.css"/>
+<!-- 130410 andre.assada@usp.br lista de comunidades expansiveis -->
+                    <map:parameter name="stylesheet.screen#7" value="lib/css/collapsibleTree.css"/>
+<!-- FIM 130410 andre.assada@usp.br lista de comunidades expansiveis FIM -->
+
                 </map:transform>
 
                 <map:transform type="IncludePageMeta">
@@ -140,6 +144,9 @@
                 <map:transform type="IncludePageMeta">
                     <map:parameter name="stylesheet.all" value="lib/css/media.css"/>
                     <map:parameter name="javascript" value="lib/js/jquery-ui-1.8.15.custom.min.js"/>
+<!-- 130410 andre.assada@usp.br lista de comunidades expansiveis -->
+                    <map:parameter name="javascript#1" value="lib/js/collapsibleTree.js"/>
+<!-- FIM 130410 andre.assada@usp.br lista de comunidades expansiveis FIM -->
                     <map:parameter name="theme.path" value="{global:theme-path}"/>
                     <map:parameter name="theme.name" value="{global:theme-name}"/>
                 </map:transform>
