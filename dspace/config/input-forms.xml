@@ -19,8 +19,8 @@
    <!-- 120709 Josi: inserir as colecoes de Artigos e Materiais de Revistas para form proprio -->
    <name-map collection-handle="123456789/3"   form-name="artigo" />
    <name-map collection-handle="123456789/54"  form-name="artigo" />
-   <name-map collection-handle="123456789/120" form-name="eventos" />
-   <name-map collection-handle="TREINO/3"      form-name="artigo" />
+   <name-map collection-handle="123456789/120" form-name="conferenceObject" />
+   <name-map collection-handle="123456789/240" form-name="livro" />
    <name-map collection-handle="TREINO/18"     form-name="artigo" />
    <name-map collection-handle="TREINO/1366"   form-name="artigo" />
    <name-map collection-handle="TREINO/24"     form-name="artigo" />
@@ -1027,7 +1027,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
    <!-- ...................................................... -->
    <!-- ...................................................... -->
 
-   <form name="eventos">
+   <form name="conferenceObject">
 
      <page number="1">
 	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
@@ -1126,7 +1126,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>
 
 	   
-       <!-- 110810 para artigos nao se precisa editor (nao se cadastra no Aleph); pode ser uma Authority Control posterior, ms hoje eh um pedido para ser open -->
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
@@ -1166,7 +1165,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-element>identifier</dc-element>
          <dc-qualifier>citation</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Citação da comunicação</label>
+         <label>Imprenta</label>
          <input-type>textarea</input-type>
          <hint>Ex.</hint>
          <required></required>
@@ -1313,7 +1312,296 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </page>	
    </form>	   
 
+    <!-- FORM para livros @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
+   <!-- ...................................................... -->
+   <!-- ...................................................... -->
+   <!-- 20130408                                               -->
+   <!-- Criado por SIBi USP                                    -->
+   <!-- Entrada de livros                                      -->
+   <!-- ...................................................... -->
+   <!-- ...................................................... -->
+
+   <form name="livro">
+
+     <page number="1">
+	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Instituição</label>
+         <input-type value-pairs-name="contributor">dropdown</input-type>
+         <hint></hint>
+         <required>Preenchimento obrigatório</required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tipo do material</label>
+         <input-type value-pairs-name="tipoItemArticle">dropdown</input-type>
+         <hint></hint>
+         <required>Tipo do material é de preenchimento obrigatório</required>
+       </field>	   
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>author</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>* Autor</label>
+         <input-type>name</input-type>
+         <hint>Entre com o nome do autor e coautores, na mesma ordem do artigo, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
+         <required>Campo obrigatório, entre com pelo menos um autor.</required>
+       </field>	   
+
+	   <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>autor</dc-element>
+         <dc-qualifier>externo</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Informações sobre os autores externos à USP</label>
+         <input-type>onebox</input-type>
+         <hint>Dados do autor externo no formato: nome como descrito no metadado autor: instituição/depto (extenso e sigla) :c cidade :u UF :p país. Exemplo: Santos, Milena: Universidade de Campinas, Depto de Computação (UNICAMP/DCC) :c Campinas :u SP :p Brasil</hint>
+         <required></required>
+		 <visibility>workflow</visibility>		 
+       </field>
+	   
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Título</label>
+         <input-type>textarea</input-type>
+         <hint>Título do livro no idioma original. Ex: 1992: a redescoberta da Natureza</hint>
+         <required>Título do livro é um campo obrigatório. Ex: 1992: a redescoberta da Natureza</required>
+       </field>  
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartof</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Coleção ou série</label>
+         <input-type>onebox</input-type>
+         <hint>Título da coleção ou série, número na coleção (opcional)</hint>
+         <required></required>
+	   </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Data de copyright</label>
+         <input-type>date</input-type>
+         <hint>Informar o ano do copyright do livro</hint>
+         <required>Campo obrigatório - entre com pelo menos o ano. Ex: 1992</required>
+       </field>
+
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Editora</label>
+         <input-type>onebox</input-type>
+         <hint>Nome da editora</hint>
+         <required></required>
+       </field>
+ 
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>local</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Cidade</label>
+         <input-type>onebox</input-type>
+         <hint>Cidade em que o livro foi editado</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>pais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>País</label>
+         <input-type>onebox</input-type>
+         <hint>País em que o livro foi editado</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>isbn</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>ISBN da obra</label>
+         <input-type>onebox</input-type>
+         <hint></hint>
+         <required></required>
+       </field>	   
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>citation</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Citação do livro</label>
+         <input-type>textarea</input-type>
+         <hint>Seguindo o padrão ABNT</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>URL em que o livro está disponível</label>
+         <input-type>onebox</input-type>
+         <hint>Endereço eletrônico que remete ao texto completo do livro, caso esteja disponível. Ex.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Idioma do livro</label>
+         <input-type value-pairs-name="iso_languages_ptBR">dropdown</input-type>
+         <hint>Atenção: selecionar o idioma referente ao texto completo do livro.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Resumo</label>
+         <input-type>textarea</input-type>
+         <hint>Resumo ou síntese do livro, nos idiomas descritos no artigo; para cada idioma, clicar no botão "Adicionar"</hint>
+         <required></required>
+       </field>
+   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>vcusp</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Assunto VCUSP</label>
+         <input-type>onebox</input-type>
+         <hint>Utilizar o Vocabulário Controlado USP (VCUSP) para selecionar os assuntos relacionados a este livro - um assunto por campo.</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+<!--  Tiago  <vocabulary>vcusp</vocabulary> -->
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Palavras-chave</label>
+         <input-type>onebox</input-type>
+         <hint>Palavras-chave contidas no artigo, nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>other</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Palavras-chave sugeridas</label>
+         <input-type>onebox</input-type>
+         <hint>Palavras-chave sugeridas por um bibliotecário, não descritas no Vocabulário Controlado USP (VCUSP) ou no texto do autor, mas que enriquecem a visibilidade do trabalho; descrever nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+       </field>	   
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+		 <repeatable>true</repeatable>
+         <label>Agência de fomento</label>
+         <input-type>onebox</input-type>
+		 <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>notes</dc-qualifier>
+         <repeatable>false</repeatable>
+		 <label>Notas</label>
+         <input-type>textarea</input-type>
+         <hint>Notas descritivas adicionais, tais como prêmios recebidos pelo trabalho, uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tipo de acesso</label>
+         <input-type value-pairs-name="common_right">dropdown</input-type>
+         <hint>Selecione o tipo de acesso permitido ao documento, conforme negociação entre os autores e a editora. ex. Acesso aberto</hint>
+         <required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
+       </field>
+
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>embargo</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Data final de embargo</label>
+         <input-type>onebox</input-type>
+         <hint>Se o livro está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier>holder</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Detentor dos direitos autorais</label>
+         <input-type>onebox</input-type>
+         <hint>Indique a pessoa ou entidade detentora dos direitos autorais do livro. Ex: Copyright Springer</hint>
+         <required></required>
+       </field>
+   
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>comentarios</dc-element>
+         <dc-qualifier>direitosautorais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Comentários sobre Direitos Autorais</label>
+         <input-type>textarea</input-type>
+         <hint>Quem, em que data, em que link e quando se encontrou a definição para direitos autorais sobre a disponibilização do texto completo deste item</hint>
+         <required></required>
+       </field>							 
+							 
+     </page>	
+   </form>	
+
+   
  </form-definitions>
 
 
@@ -1500,15 +1788,63 @@ it, please enter the types and the actual numbers or codes below.</hint>
    <!-- =============================================================================== -->
 
    
-   <!-- ........................................................... -->
+   <!-- Conforme Diretrizes Driver 2.0 - 2013-04-09 - Tiago -->
    <value-pairs value-pairs-name="tipoItemArticle" dc-term="type">
+     <pair>
+       <displayed-value>Anotações e decisões jurisprudenciais</displayed-value>
+       <stored-value>annotation</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Artigo publicado em jornal, revista ou outro tipo de publicação periódica não acadêmica</displayed-value>
+       <stored-value>contributionToPeriodical</stored-value>
+     </pair>	 
      <pair>
        <displayed-value>Artigos e outros materiais de revistas científicas</displayed-value>
        <stored-value>article</stored-value>
      </pair>
      <pair>
+       <displayed-value>Capítulo de livro</displayed-value>
+       <stored-value>bookPart</stored-value>
+     </pair>	 
+     <pair>
        <displayed-value>Comunicações em eventos</displayed-value>
-       <stored-value>conference paper</stored-value>
+       <stored-value>conferenceObject</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Dissertação de mestrado</displayed-value>
+       <stored-value>masterThesis</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Documento científico ou técnico preliminar (que não é publicado em uma série instituicional)</displayed-value>
+       <stored-value>report</stored-value>
+     </pair>		 
+     <pair>
+       <displayed-value>Documento científico ou técnico preliminar que é publicado em uma instituição onde a pesquisa é conduzida</displayed-value>
+       <stored-value>workingPaper</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Livro</displayed-value>
+       <stored-value>book</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Palestra ou apresentação realizada durante um evento acadêmico</displayed-value>
+       <stored-value>lecture</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Patent</displayed-value>
+       <stored-value>patent</stored-value>
+     </pair>		 
+     <pair>
+       <displayed-value>Resenha</displayed-value>
+       <stored-value>review</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Tese de doutorado</displayed-value>
+       <stored-value>doctoralThesis</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Trabalho de conclusão de curso</displayed-value>
+       <stored-value>bachelorThesis</stored-value>
      </pair>	 
     </value-pairs>
 
@@ -1527,12 +1863,12 @@ it, please enter the types and the actual numbers or codes below.</hint>
         <stored-value>review article</stored-value>
      </pair>
 						 
-	<!-- .... ateh esclarecer o que eh isto com todos -->
+	<!-- .... ateh esclarecer o que eh isto com todos 
 	<pair>
 	<displayed-value>Artigo publicado em Anais</displayed-value>
 	<stored-value>proceedings paper</stored-value>
 	</pair>
-						 
+-->						 
      <pair>
        <displayed-value>Atualização de Artigo</displayed-value>
        <stored-value>update article</stored-value>
