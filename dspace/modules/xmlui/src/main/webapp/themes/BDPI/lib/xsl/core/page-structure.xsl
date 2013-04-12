@@ -168,7 +168,8 @@
                     <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
                     <xsl:text>/themes/</xsl:text>
                     <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
-                    <xsl:text>/images/favicon.ico</xsl:text>
+<!-- 130412 andre.assada@usp.br
+                    <xsl:text>/images/favicon.ico</xsl:text> --> <xsl:text>/images/faviconUSP.ico</xsl:text>
                 </xsl:attribute>
             </link>
             <link rel="apple-touch-icon">

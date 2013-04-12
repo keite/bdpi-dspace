@@ -54,7 +54,7 @@ select.multiple {
     /* FIM  130403 andre.assada@usp.br FIM */
 /* 130403 andre.assada@usp.br    color: white; */
     /*min-width: 640px;*/
-    /* 130403 andre.assada@usp.br */ margin-top:30px;
+    /* 130403 andre.assada@usp.br */ margin-top:50px;
 }
 
 #ds-header-logo-link {
@@ -94,32 +94,40 @@ select.multiple {
 }
 
 #ds-trail-wrapper {
+/* 130412 andre.assada@usp.br
     background-color: #b6c8d9;
+*/     background-color: #efefef;
+
     margin: 0;
     padding: 0;
+/* 130412 andre.assada@usp.br
     border-top: 1px solid #9cacba;
     border-bottom: 1px solid #9cacba;
     min-width: 950px;
+*/
 }
 
 /*130404 
 andre.assada@usp.br links para conteudo estatico
 */ #ds-trail-informacoes {
-    background-color: #eee;
+    background-color: #efefef;
     margin: 0;
-    border-top: 1px solid #9cacba;
-    border-bottom: 1px solid #9cacba;
     line-height: 138.5%;
     padding-right:10px;
     text-align:right;
 }
 
+#ds-trail-informacoes a {
+    color: #1F3F5E;
+    font-size:90%
+}
 
 #ds-trail {
     list-style: none;
     line-height: 138.5%;
     margin: 0;
     padding: 3px 0;
+/*130412*/font-size:90%
 }
 
 #ds-trail li {
@@ -138,7 +146,7 @@ andre.assada@usp.br links para conteudo estatico
 #ds-footer,
 #ds-content {
 /*  width: 950px;*/
-    width: 98%;
+    width: 95%;
     margin: auto;
     position: relative;
 }
@@ -269,15 +277,28 @@ andre.assada@usp.br links para conteudo estatico
 
 #ds-options {
     padding: 0;
+/*130412*/    font-size:90%;
+}
+
+/*130412*/ #ds-options a{
+    text-decoration:none;
+    color:#444444;
+}
+
+
+/*130412 andre.assada@usp.br style by Tai Diniz (Brasiliana)*/ #ds-options a:hover {
+    text-decoration:underline;
+    color:#FF6600;
 }
 
 h1.ds-option-set-head {
-    margin-top: 20px;
-    background-color: #f0f2f5;
-    padding: 3px 10px;
-    border: 1px solid #d8e8eb;
-    border-bottom: none;
+/*    margin-top: 20px;*/    margin-top: 10px;
+/*    background-color: #f0f2f5;*/     background-color: #efefef;
+/*    padding: 3px 10px;*/    padding: 20px 0 0 10px;
+/*  border: 1px solid #d8e8eb;
+    border-bottom: none;*/    border-top: 3px solid #FF9900;
     font-size: 108%;
+/*130412 andre.assada@usp.br style by Tai Diniz (Brasiliana)*/    color: #64c5d2;
 }
 
 #ds-search-option-head{
@@ -285,8 +306,11 @@ h1.ds-option-set-head {
 }
 
 div.ds-option-set {
+/*130412 andre.assada@usp.br style by Tai Diniz (Brasiliana)
     border: 1px solid #d8e8eb;
-    border-top: none;
+    border-top: none;*/     background-color: #efefef;
+    padding-bottom:20px;
+
 }
 
 div.ds-option-set ul {
@@ -299,6 +323,7 @@ div.ds-option-set ul {
 div.ds-option-set .ds-sublist-head {
     font-weight: normal;
     font-size: 100%;
+/*130412 andre.assada@usp.br*/    padding-bottom:5px;
 }
 
 div.ds-option-set ul.sublist {
@@ -322,20 +347,24 @@ div#ds-feed-option a
 }
 
 #ds-search-form {
-    margin-bottom: 10px;
+/*    margin-bottom: 10px;*/    margin-bottom: -3px;
 }
 
 #ds-search-form input.ds-text-field{
-    width: 169px;
+/*    width: 169px;*/    width: 67%;
+
 }
 
 #ds-search-form input.ds-button-field {
-    margin-left: 6px;
+/*    margin-left: 6px;*/
+    margin-left: 3px;
 }
 
 #ds-search-form input.ds-text-field,
 #ds-search-form input.ds-button-field{
-    margin-bottom: 10px;
+/*    margin-bottom: 10px;*/
+    margin-bottom: 2px;
+/*130412*/    margin-top: 0px; 
 }
 
 p {
@@ -635,6 +664,8 @@ li.ds-form-item label.ds-composite-component input.ds-text-field{
 
 li.ds-form-item .ds-select-field {
     margin-top: 5px;
+/* 110526 alargar a caixa de selecao das colecoes */
+    width: 500px;
 }
 
 .ds-add-button,
@@ -676,7 +707,8 @@ span.field-help {
     display: block;
     font-size: 93%;
     margin-top: 3px;
-    width: 506px;
+/*    width: 506px;*/
+    width: 95%;
     text-align: justify;
 }
 
@@ -825,16 +857,20 @@ span.field-help {
 .ds-artifact-item {
     padding-top: 15px;
     padding-bottom: 15px;
+/*130412*/    list-style: none;
 }
+
 
 .ds-artifact-item.collection,
 .ds-artifact-item.community {
-    padding-top: 1px;
+/*    padding-top: 1px;*/    padding-top: 5px;
     padding-bottom: 1px;
+/*130412*/     padding-left: -70px;
 }
 
 .community .artifact-title a {
     font-weight: bold;
+/*130412*/    text-decoration:none;
 }
 
 .collection .artifact-title a {
