@@ -197,4 +197,9 @@
     <xsl:template match="dri:options//dri:list[count(child::*)=0]" priority="5">
     </xsl:template>
 
+<!-- 130415 andre.assada@usp.br - fazer com que a caixa 'My Account' ('Minha conta') nao apareca -->
+<xsl:template match="dri:options/dri:list[@n='account']" priority="5">
+</xsl:template>
+<!-- FIM 130415 andre.assada@usp.br - fazer com que a caixa 'My Account' ('Minha conta') nao apareca FIM -->
+
 </xsl:stylesheet>

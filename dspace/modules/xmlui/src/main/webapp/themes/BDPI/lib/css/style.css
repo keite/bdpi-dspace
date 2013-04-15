@@ -54,7 +54,10 @@ select.multiple {
     /* FIM  130403 andre.assada@usp.br FIM */
 /* 130403 andre.assada@usp.br    color: white; */
     /*min-width: 640px;*/
-    /* 130403 andre.assada@usp.br */ margin-top:50px;
+    /* 130403 andre.assada@usp.br */ padding-top:45px;
+    width: 95%;
+    margin: auto;
+    position: relative;
 }
 
 #ds-header-logo-link {
@@ -83,23 +86,25 @@ select.multiple {
 }
 
 #ds-user-box {
-    right: 0;
-    top: 10px;
+/* 130415 andre.assada@usp.br    right: 0;*/ right:0px;
+/* 130415 andre.assada@usp.br    top: 10px;*/ top:70px; z-index:20;
     position: absolute;
-    color: white;
+/* 130415   color: white;*/ color: #000;
 }
 
 #ds-user-box a{
-    color: white;
+/*130415 andre.assada@usp.br    color: white;*/ color:#000;
 }
 
 #ds-trail-wrapper {
 /* 130412 andre.assada@usp.br
     background-color: #b6c8d9;
 */     background-color: #efefef;
-
-    margin: 0;
-    padding: 0;
+/* 130514 andre.assada@usp.br    margin: 0;
+    padding: 0;*/
+    width: 95%;
+    margin: auto;
+    position: relative;
 /* 130412 andre.assada@usp.br
     border-top: 1px solid #9cacba;
     border-bottom: 1px solid #9cacba;
@@ -111,9 +116,9 @@ select.multiple {
 andre.assada@usp.br links para conteudo estatico
 */ #ds-trail-informacoes {
     background-color: #efefef;
-    margin: 0;
-    line-height: 138.5%;
-    padding-right:10px;
+    width: 95%;
+    margin: auto;
+    position: relative;
     text-align:right;
 }
 

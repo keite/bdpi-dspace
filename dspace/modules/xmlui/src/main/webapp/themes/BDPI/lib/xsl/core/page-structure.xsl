@@ -462,6 +462,19 @@
                                     <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
                                     dri:metadata[@element='identifier' and @qualifier='lastName']"/>
                                 </a>
+<!-- 130415 para sumir com a caixa de usuario do ds-options, deve aparecer o link de submissoes no topo. para colocar toda a caixa, esse modo abaixo serve, mas queremos so o link de submissoes.
+                                <xsl:apply-templates select="/dri:document/dri:options/dri:list[@id = 'aspect.viewArtifacts.Navigation.list.account']"/>
+-->
+<!-- 130415 andre.assada@usp.br link de submissoes aparece no topo, para poder sumir com a caixa "minha conta" dos menus ds-options -->
+                                <xsl:text> | </xsl:text>
+                                <a>
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                                        <xsl:text>/submissions</xsl:text>
+                                    </xsl:attribute>
+                                    <i18n:text>xmlui.Submission.Navigation.submissions</i18n:text>
+                                </a>
+<!-- 130415 FIM  andre.assada@usp.br link de submissoes aparece no topo, para poder sumir com a caixa "minha conta" dos menus ds-options FIM -->
                                 <xsl:text> | </xsl:text>
                                 <a>
                                     <xsl:attribute name="href">
