@@ -806,7 +806,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 
        <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>source</dc-element>
+         <dc-element>identifier</dc-element>
          <dc-qualifier>uri</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL do artigo</label>
@@ -1174,7 +1174,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 
        <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>source</dc-element>
+         <dc-element>identifier</dc-element>
          <dc-qualifier>uri</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL da comunicação publicada nos anais do evento</label>
@@ -1464,7 +1464,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 
        <field>
          <dc-schema>dc</dc-schema>
-         <dc-element>source</dc-element>
+         <dc-element>identifier</dc-element>
          <dc-qualifier>uri</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL em que o livro está disponível</label>
