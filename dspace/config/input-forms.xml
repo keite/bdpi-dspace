@@ -1915,23 +1915,23 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </pair>
     </value-pairs>
 
-   <!-- ........................................................... -->
+   <!-- Adaptado para o padrão OPENAIRE Guidelines 2.0 por Tiago em 2013-04-17 -->
    <value-pairs value-pairs-name="common_right" dc-term="rights">
      <pair>
        <displayed-value>Acesso aberto</displayed-value>
-       <stored-value>open access</stored-value>
+       <stored-value>openAccess</stored-value>
      </pair>
   	 <pair>
        <displayed-value>Restrito aos IPs da Universidade de São Paulo</displayed-value>
-       <stored-value>restricted (IP USP)</stored-value>
+       <stored-value>restrictedAccess</stored-value>
      </pair>
  	 <pair>
        <displayed-value>Restrito apenas aos administradores</displayed-value>
-       <stored-value>restricted</stored-value>
+       <stored-value>closedAccess</stored-value>
      </pair>
 	 <pair>
        <displayed-value>Embargado</displayed-value>
-       <stored-value>restricted (embargo)</stored-value>
+       <stored-value>embargoedAccess</stored-value>
      </pair>
    </value-pairs>
 
