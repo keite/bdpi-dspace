@@ -25,6 +25,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842*/
+import org.dspace.app.xmlui.utils.ContextUtil;
+import org.dspace.core.Context;
+/*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
+
 /**
  * This action looks at several places to determine what locale should be used for 
  * this request. We use cocoon's i18nUtils find local method which will look in 
@@ -97,12 +102,23 @@ public class DSpaceLocaleAction extends ServiceableAction implements Configurabl
         }
 
         I18nUtils.storeLocale(objectModel,
+/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842
                               "locale-attribute",
                               localeStr,
                               false,
                               false,
                               false,
                               false);
+*/
+                            "locale-attribute",
+                            localeStr,
+                            false,
+                            true,
+                            false,
+                            false);
+        Context context = ContextUtil.obtainContext(objectModel);
+        context.setCurrentLocale(locale);
+/*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
 
         // Set up a map for sitemap parameters
         Map<String, String> map = new HashMap<String, String>();

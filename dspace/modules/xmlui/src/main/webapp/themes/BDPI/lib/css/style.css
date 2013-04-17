@@ -145,6 +145,14 @@ andre.assada@usp.br links para conteudo estatico
     color: #1F3F5E;
 }
 
+/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842*/
+#ds-language-selection {
+    float: right;
+    margin-right: 5px;
+    line-height: 25px;
+}
+/* FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM */
+
 #no-js-warning,
 #ds-trail,
 #ds-header,

@@ -13,7 +13,7 @@ import org.apache.cocoon.environment.Request;
 import org.apache.cocoon.util.HashUtil;
 import org.apache.excalibur.source.SourceValidity;
 import org.apache.excalibur.source.impl.validity.NOPValidity;
-/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842      import org.dspace.app.util.Util;*/
+import org.dspace.app.util.Util;
 import org.dspace.app.xmlui.cocoon.AbstractDSpaceTransformer;
 import org.dspace.app.xmlui.utils.HandleUtil;
 import org.dspace.app.xmlui.utils.UIException;
@@ -31,13 +31,6 @@ import org.xml.sax.SAXException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
-
-/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842*/
-import java.util.Locale;
-import org.dspace.app.util.Util;
-import org.dspace.core.I18nUtil;
-/*130417 FIM  andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM */
-
 
 /**
  * This transform applies the basic navigational links that should be available
@@ -134,17 +127,6 @@ public class Navigation extends AbstractDSpaceTransformer implements CacheablePr
 
         pageMeta.addMetadata("page","contactURL").addContent(contextPath + "/contact");
         pageMeta.addMetadata("page","feedbackURL").addContent(contextPath + "/feedback");
-
-/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842*/
-        // Add the locale meta data including language dependant labels
-        Locale[] locales = I18nUtil.getSupportedLocales();
-        for (int i=0; i < locales.length; i++) {
-            pageMeta.addMetadata("page", "supportedLocale").addContent(locales[i].toString());
-            // now add the appropriate labels
-            pageMeta.addMetadata("supportedLocale", locales[i].toString()).addContent(locales[i].getDisplayName(locales[i]));
-        }
-        pageMeta.addMetadata("page","currentLocale").addContent(context.getCurrentLocale().toString());
-/*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
 
         DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
         if (dso != null)
