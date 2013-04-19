@@ -145,11 +145,14 @@ public class DSpaceLocaleAction extends ServiceableAction implements Configurabl
     	 */
     	public DSpaceLocaleValidator()
     	{
-            if (ConfigurationManager.getProperty("xmlui.supported.locales") != null)
+/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842            if (ConfigurationManager.getProperty("xmlui.supported.locales") != null) */
+            if (ConfigurationManager.getProperty("xmlui.supported.locales") != null) /*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
+
             {
             	supportedLocales = new ArrayList<Locale>();
             	
-                String supportedLocalesConfig = ConfigurationManager.getProperty("xmlui.supported.locales");
+/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842                String supportedLocalesConfig = ConfigurationManager.getProperty("xmlui.supported.locales"); */
+                String supportedLocalesConfig = ConfigurationManager.getProperty("webui.supported.locales"); /*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
                 
                 String[] parts = supportedLocalesConfig.split(",");
                 

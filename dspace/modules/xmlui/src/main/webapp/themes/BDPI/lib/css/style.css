@@ -122,9 +122,40 @@ andre.assada@usp.br links para conteudo estatico
     text-align:right;
 }
 
+/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842*/
+#ds-language-selection {
+    background-color: transparent;
+    margin-top:-70px;
+    float:right;
+    text-decoration: none;
+    width:100px;
+}
+#ds-language-selection-ptBR {
+    background: url('../../images/locale_ptBR.png') no-repeat;
+    padding:0 10px;
+    display:inline;
+}
+#ds-language-selection-en {
+    background: url('../../images/locale_en.png') no-repeat;
+    padding:0 10px;
+    display:inline;
+}
+#ds-language-selection-es {
+    background: url('../../images/locale_es.png') no-repeat;
+    padding:0 10px;
+    display:inline;
+}
+#ds-language-selection a {
+    color: #FFF;
+    text-decoration: none;
+}
+/* FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM */
+
+
 #ds-trail-informacoes a {
     color: #1F3F5E;
-    font-size:90%
+    font-size: 90%;
+    text-decoration: none;
 }
 
 #ds-trail {
@@ -145,13 +176,6 @@ andre.assada@usp.br links para conteudo estatico
     color: #1F3F5E;
 }
 
-/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842*/
-#ds-language-selection {
-    float: right;
-    margin-right: 5px;
-    line-height: 25px;
-}
-/* FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM */
 
 #no-js-warning,
 #ds-trail,

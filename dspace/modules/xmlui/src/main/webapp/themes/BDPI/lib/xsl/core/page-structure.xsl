@@ -445,7 +445,6 @@
                     <i18n:text>xmlui.dri2xhtml.structural.head-subtitle</i18n:text>
                 </h2>
 
-
                 <xsl:choose>
                     <xsl:when test="/dri:document/dri:meta/dri:userMeta/@authenticated = 'yes'">
                         <div id="ds-user-box">
@@ -502,6 +501,35 @@
                 </xsl:choose>
 
             </div>
+<!-- 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 -->
+            <!-- Display a language selection if more than 1 language is supported -->
+            <xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">
+                <div id="ds-language-selection">
+                    <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']">
+                        <xsl:variable name="locale" select="."/>
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="concat($context-path,'/?locale-attribute=')"/>
+                                <xsl:value-of select="$locale"/>
+                            </xsl:attribute>
+                            <xsl:if test="$locale = 'pt_BR'">
+                                <span id="ds-language-selection-ptBR"></span>
+                            </xsl:if>
+                            <xsl:if test="$locale = 'en'">
+                                <span id="ds-language-selection-en">&#160;</span>
+                            </xsl:if>
+                            <xsl:if test="$locale = 'es'">
+                                <span id="ds-language-selection-es">&#160;</span>
+                            </xsl:if>
+                            <xsl:attribute name="alt">
+                                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='supportedLocale'][@qualifier=$locale]"/>
+                            </xsl:attribute>
+                        </a>
+                    </xsl:for-each>
+                </div>
+            </xsl:if>
+<!-- FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM -->
+
         </div>
     </xsl:template>
 
@@ -531,23 +559,6 @@
 <!-- FIM 130404 andre.assada@usp.br FIM -->
 
         <div id="ds-trail-wrapper">
-<!-- 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 -->
-            <!-- Display a language selection if more than 1 language is supported -->
-            <xsl:if test="count(/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']) &gt; 1">
-                <div id="ds-language-selection">
-                    <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='page'][@qualifier='supportedLocale']">
-                        <xsl:variable name="locale" select="."/>
-                        <a>
-                        <xsl:attribute name="href">
-                            <xsl:value-of select="concat($context-path,'/?locale-attribute=')"/>
-                            <xsl:value-of select="$locale"/>
-                        </xsl:attribute>
-                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='supportedLocale'][@qualifier=$locale]"/>
-                        </a>
-                    </xsl:for-each>
-                </div>
-            </xsl:if>
-<!-- FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM -->
             <ul id="ds-trail">
                 <xsl:choose>
                     <xsl:when test="starts-with($request-uri, 'page/about')">

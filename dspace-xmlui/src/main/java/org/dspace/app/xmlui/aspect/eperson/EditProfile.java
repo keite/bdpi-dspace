@@ -481,7 +481,8 @@ public class EditProfile extends AbstractDSpaceTransformer
      */
     private static Locale[] getSupportedLocales()
     {
-        String ll = ConfigurationManager.getProperty("xmlui.supported.locales");
+/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842        String ll = ConfigurationManager.getProperty("xmlui.supported.locales"); */
+        String ll = ConfigurationManager.getProperty("webui.supported.locales"); /*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
         if (ll != null)
         {
             return I18nUtil.parseLocales(ll);
