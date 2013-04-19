@@ -125,25 +125,24 @@ andre.assada@usp.br links para conteudo estatico
 /*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842*/
 #ds-language-selection {
     background-color: transparent;
-    margin-top:-70px;
-    float:right;
+    margin-top: -60px;
+    position: absolute;
+    right: 0;
+    width: 100px;
     text-decoration: none;
-    width:100px;
+    z-index: 100;
 }
 #ds-language-selection-ptBR {
     background: url('../../images/locale_ptBR.png') no-repeat;
     padding:0 10px;
-    display:inline;
 }
 #ds-language-selection-en {
     background: url('../../images/locale_en.png') no-repeat;
     padding:0 10px;
-    display:inline;
 }
 #ds-language-selection-es {
     background: url('../../images/locale_es.png') no-repeat;
     padding:0 10px;
-    display:inline;
 }
 #ds-language-selection a {
     color: #FFF;
@@ -186,6 +185,7 @@ andre.assada@usp.br links para conteudo estatico
     width: 95%;
     margin: auto;
     position: relative;
+    z-index:10;
 }
 
 /*ie6 uses quirks mode for strict xhtml pages, and in quirks mode margin: auto; doesn't center things*/
