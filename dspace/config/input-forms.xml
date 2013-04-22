@@ -856,6 +856,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
+         <dc-qualifier>isbn</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>ISBN dos anais</label>
+         <input-type>onebox</input-type>
+         <hint>ISBN dos anais em que a obra foi publicada, com 10 ou 13 números. Ex. 9788560323111</hint>
+         <required></required>
+       </field>	   	   
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
          <dc-qualifier>citation</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Imprenta</label>
