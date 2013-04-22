@@ -21,314 +21,7 @@
    <name-map collection-handle="123456789/54"  form-name="artigo" />
    <name-map collection-handle="123456789/120" form-name="conferenceObject" />
    <name-map collection-handle="123456789/240" form-name="livro" />
-   <name-map collection-handle="TREINO/18"     form-name="artigo" />
-   <name-map collection-handle="TREINO/1366"   form-name="artigo" />
-   <name-map collection-handle="TREINO/24"     form-name="artigo" />
-   <name-map collection-handle="TREINO/29"     form-name="artigo" />
-   <name-map collection-handle="TREINO/34"     form-name="artigo" />
-   <name-map collection-handle="TREINO/39"     form-name="artigo" />
-   <name-map collection-handle="TREINO/44"     form-name="artigo" />
-   <name-map collection-handle="TREINO/49"     form-name="artigo" />
-   <name-map collection-handle="TREINO/54"     form-name="artigo" />
-   <name-map collection-handle="TREINO/59"     form-name="artigo" />
-   <name-map collection-handle="TREINO/64"     form-name="artigo" />
-   <name-map collection-handle="TREINO/70"     form-name="artigo" />
-   <name-map collection-handle="TREINO/75"     form-name="artigo" />
-   <name-map collection-handle="TREINO/85"     form-name="artigo" />
-   <name-map collection-handle="TREINO/80"     form-name="artigo" />
-   <name-map collection-handle="TREINO/101"    form-name="artigo" />
-   <name-map collection-handle="TREINO/96"     form-name="artigo" />
-   <name-map collection-handle="TREINO/106"    form-name="artigo" />
-   <name-map collection-handle="TREINO/111"    form-name="artigo" />
-   <name-map collection-handle="TREINO/1361"   form-name="artigo" />
-   <name-map collection-handle="TREINO/143"    form-name="artigo" />
-   <name-map collection-handle="TREINO/148"    form-name="artigo" />
-   <name-map collection-handle="TREINO/153"    form-name="artigo" />
-   <name-map collection-handle="TREINO/138"    form-name="artigo" />
-   <name-map collection-handle="TREINO/158"    form-name="artigo" />
-   <name-map collection-handle="TREINO/90"     form-name="artigo" />
-   <name-map collection-handle="TREINO/117"    form-name="artigo" />
-   <name-map collection-handle="TREINO/127"    form-name="artigo" />
-   <name-map collection-handle="TREINO/122"    form-name="artigo" />
-   <name-map collection-handle="TREINO/132"    form-name="artigo" />
-   <name-map collection-handle="TREINO/164"    form-name="artigo" />
-   <name-map collection-handle="TREINO/209"    form-name="artigo" />
-   <name-map collection-handle="TREINO/179"    form-name="artigo" />
-   <name-map collection-handle="TREINO/184"    form-name="artigo" />
-   <name-map collection-handle="TREINO/189"    form-name="artigo" />
-   <name-map collection-handle="TREINO/169"    form-name="artigo" />
-   <name-map collection-handle="TREINO/194"    form-name="artigo" />
-   <name-map collection-handle="TREINO/199"    form-name="artigo" />
-   <name-map collection-handle="TREINO/174"    form-name="artigo" />
-   <name-map collection-handle="TREINO/204"    form-name="artigo" />
-   <name-map collection-handle="TREINO/290"    form-name="artigo" />
-   <name-map collection-handle="TREINO/215"    form-name="artigo" />
-   <name-map collection-handle="TREINO/220"    form-name="artigo" />
-   <name-map collection-handle="TREINO/225"    form-name="artigo" />
-   <name-map collection-handle="TREINO/230"    form-name="artigo" />
-   <name-map collection-handle="TREINO/235"    form-name="artigo" />
-   <name-map collection-handle="TREINO/240"    form-name="artigo" />
-   <name-map collection-handle="TREINO/245"    form-name="artigo" />
-   <name-map collection-handle="TREINO/250"    form-name="artigo" />
-   <name-map collection-handle="TREINO/255"    form-name="artigo" />
-   <name-map collection-handle="TREINO/260"    form-name="artigo" />
-   <name-map collection-handle="TREINO/265"    form-name="artigo" />
-   <name-map collection-handle="TREINO/270"    form-name="artigo" />
-   <name-map collection-handle="TREINO/275"    form-name="artigo" />
-   <name-map collection-handle="TREINO/280"    form-name="artigo" />
-   <name-map collection-handle="TREINO/285"    form-name="artigo" />
-   <name-map collection-handle="TREINO/296"    form-name="artigo" />
-   <name-map collection-handle="TREINO/306"    form-name="artigo" />
-   <name-map collection-handle="TREINO/311"    form-name="artigo" />
-   <name-map collection-handle="TREINO/316"    form-name="artigo" />
-   <name-map collection-handle="TREINO/331"    form-name="artigo" />
-   <name-map collection-handle="TREINO/326"    form-name="artigo" />
-   <name-map collection-handle="TREINO/321"    form-name="artigo" />
-   <name-map collection-handle="TREINO/336"    form-name="artigo" />
-   <name-map collection-handle="TREINO/341"    form-name="artigo" />
-   <name-map collection-handle="TREINO/346"    form-name="artigo" />
-   <name-map collection-handle="TREINO/301"    form-name="artigo" />
-   <name-map collection-handle="TREINO/351"    form-name="artigo" />
-   <name-map collection-handle="TREINO/356"    form-name="artigo" />
-   <name-map collection-handle="TREINO/362"    form-name="artigo" />
-   <name-map collection-handle="TREINO/367"    form-name="artigo" />
-   <name-map collection-handle="TREINO/372"    form-name="artigo" />
-   <name-map collection-handle="TREINO/377"    form-name="artigo" />
-   <name-map collection-handle="TREINO/383"    form-name="artigo" />
-   <name-map collection-handle="TREINO/388"    form-name="artigo" />
-   <name-map collection-handle="TREINO/393"    form-name="artigo" />
-   <name-map collection-handle="TREINO/398"    form-name="artigo" />
-   <name-map collection-handle="TREINO/403"    form-name="artigo" />
-   <name-map collection-handle="TREINO/409"    form-name="artigo" />
-   <name-map collection-handle="TREINO/414"    form-name="artigo" />
-   <name-map collection-handle="TREINO/419"    form-name="artigo" />
-   <name-map collection-handle="TREINO/424"    form-name="artigo" />
-   <name-map collection-handle="TREINO/435"    form-name="artigo" />
-   <name-map collection-handle="TREINO/430"    form-name="artigo" />
-   <name-map collection-handle="TREINO/460"    form-name="artigo" />
-   <name-map collection-handle="TREINO/445"    form-name="artigo" />
-   <name-map collection-handle="TREINO/470"    form-name="artigo" />
-   <name-map collection-handle="TREINO/465"    form-name="artigo" />
-   <name-map collection-handle="TREINO/455"    form-name="artigo" />
-   <name-map collection-handle="TREINO/450"    form-name="artigo" />
-   <name-map collection-handle="TREINO/440"    form-name="artigo" />
-   <name-map collection-handle="TREINO/475"    form-name="artigo" />
-   <name-map collection-handle="TREINO/486"    form-name="artigo" />
-   <name-map collection-handle="TREINO/491"    form-name="artigo" />
-   <name-map collection-handle="TREINO/481"    form-name="artigo" />
-   <name-map collection-handle="TREINO/496"    form-name="artigo" />
-   <name-map collection-handle="TREINO/533"    form-name="artigo" />
-   <name-map collection-handle="TREINO/523"    form-name="artigo" />
-   <name-map collection-handle="TREINO/528"    form-name="artigo" />
-   <name-map collection-handle="TREINO/538"    form-name="artigo" />
-   <name-map collection-handle="TREINO/559"    form-name="artigo" />
-   <name-map collection-handle="TREINO/544"    form-name="artigo" />
-   <name-map collection-handle="TREINO/549"    form-name="artigo" />
-   <name-map collection-handle="TREINO/554"    form-name="artigo" />
-   <name-map collection-handle="TREINO/502"    form-name="artigo" />
-   <name-map collection-handle="TREINO/507"    form-name="artigo" />
-   <name-map collection-handle="TREINO/512"    form-name="artigo" />
-   <name-map collection-handle="TREINO/517"    form-name="artigo" />
-   <name-map collection-handle="TREINO/1250"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1265"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1260"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1255"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1275"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1270"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1280"   form-name="artigo" />
-   <name-map collection-handle="TREINO/565"    form-name="artigo" />
-   <name-map collection-handle="TREINO/595"    form-name="artigo" />
-   <name-map collection-handle="TREINO/575"    form-name="artigo" />
-   <name-map collection-handle="TREINO/580"    form-name="artigo" />
-   <name-map collection-handle="TREINO/585"    form-name="artigo" />
-   <name-map collection-handle="TREINO/590"    form-name="artigo" />
-   <name-map collection-handle="TREINO/600"    form-name="artigo" />
-   <name-map collection-handle="TREINO/605"    form-name="artigo" />
-   <name-map collection-handle="TREINO/610"    form-name="artigo" />
-   <name-map collection-handle="TREINO/615"    form-name="artigo" />
-   <name-map collection-handle="TREINO/570"    form-name="artigo" />
-   <name-map collection-handle="TREINO/620"    form-name="artigo" />
-   <name-map collection-handle="TREINO/15045"  form-name="artigo" />
-   <name-map collection-handle="TREINO/631"    form-name="artigo" />
-   <name-map collection-handle="TREINO/636"    form-name="artigo" />
-   <name-map collection-handle="TREINO/626"    form-name="artigo" />
-   <name-map collection-handle="TREINO/716"    form-name="artigo" />
-   <name-map collection-handle="TREINO/641"    form-name="artigo" />
-   <name-map collection-handle="TREINO/646"    form-name="artigo" />
-   <name-map collection-handle="TREINO/651"    form-name="artigo" />
-   <name-map collection-handle="TREINO/666"    form-name="artigo" />
-   <name-map collection-handle="TREINO/656"    form-name="artigo" />
-   <name-map collection-handle="TREINO/671"    form-name="artigo" />
-   <name-map collection-handle="TREINO/691"    form-name="artigo" />
-   <name-map collection-handle="TREINO/686"    form-name="artigo" />
-   <name-map collection-handle="TREINO/681"    form-name="artigo" />
-   <name-map collection-handle="TREINO/676"    form-name="artigo" />
-   <name-map collection-handle="TREINO/696"    form-name="artigo" />
-   <name-map collection-handle="TREINO/706"    form-name="artigo" />
-   <name-map collection-handle="TREINO/661"    form-name="artigo" />
-   <name-map collection-handle="TREINO/711"    form-name="artigo" />
-   <name-map collection-handle="TREINO/701"    form-name="artigo" />
-   <name-map collection-handle="TREINO/721"    form-name="artigo" />
-   <name-map collection-handle="TREINO/797"    form-name="artigo" />
-   <name-map collection-handle="TREINO/727"    form-name="artigo" />
-   <name-map collection-handle="TREINO/732"    form-name="artigo" />
-   <name-map collection-handle="TREINO/737"    form-name="artigo" />
-   <name-map collection-handle="TREINO/742"    form-name="artigo" />
-   <name-map collection-handle="TREINO/747"    form-name="artigo" />
-   <name-map collection-handle="TREINO/752"    form-name="artigo" />
-   <name-map collection-handle="TREINO/757"    form-name="artigo" />
-   <name-map collection-handle="TREINO/762"    form-name="artigo" />
-   <name-map collection-handle="TREINO/767"    form-name="artigo" />
-   <name-map collection-handle="TREINO/772"    form-name="artigo" />
-   <name-map collection-handle="TREINO/777"    form-name="artigo" />
-   <name-map collection-handle="TREINO/782"    form-name="artigo" />
-   <name-map collection-handle="TREINO/787"    form-name="artigo" />
-   <name-map collection-handle="TREINO/792"    form-name="artigo" />
-   <name-map collection-handle="TREINO/833"    form-name="artigo" />
-   <name-map collection-handle="TREINO/803"    form-name="artigo" />
-   <name-map collection-handle="TREINO/808"    form-name="artigo" />
-   <name-map collection-handle="TREINO/813"    form-name="artigo" />
-   <name-map collection-handle="TREINO/818"    form-name="artigo" />
-   <name-map collection-handle="TREINO/823"    form-name="artigo" />
-   <name-map collection-handle="TREINO/828"    form-name="artigo" />
-   <name-map collection-handle="TREINO/880"    form-name="artigo" />
-   <name-map collection-handle="TREINO/885"    form-name="artigo" />
-   <name-map collection-handle="TREINO/890"    form-name="artigo" />
-   <name-map collection-handle="TREINO/895"    form-name="artigo" />
-   <name-map collection-handle="TREINO/900"    form-name="artigo" />
-   <name-map collection-handle="TREINO/905"    form-name="artigo" />
-   <name-map collection-handle="TREINO/910"    form-name="artigo" />
-   <name-map collection-handle="TREINO/839"    form-name="artigo" />
-   <name-map collection-handle="TREINO/844"    form-name="artigo" />
-   <name-map collection-handle="TREINO/849"    form-name="artigo" />
-   <name-map collection-handle="TREINO/854"    form-name="artigo" />
-   <name-map collection-handle="TREINO/864"    form-name="artigo" />
-   <name-map collection-handle="TREINO/869"    form-name="artigo" />
-   <name-map collection-handle="TREINO/859"    form-name="artigo" />
-   <name-map collection-handle="TREINO/874"    form-name="artigo" />
-   <name-map collection-handle="TREINO/1301"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1306"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1296"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1291"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1286"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1311"   form-name="artigo" />
-   <name-map collection-handle="TREINO/916"    form-name="artigo" />
-   <name-map collection-handle="TREINO/921"    form-name="artigo" />
-   <name-map collection-handle="TREINO/931"    form-name="artigo" />
-   <name-map collection-handle="TREINO/936"    form-name="artigo" />
-   <name-map collection-handle="TREINO/926"    form-name="artigo" />
-   <name-map collection-handle="TREINO/941"    form-name="artigo" />
-   <name-map collection-handle="TREINO/962"    form-name="artigo" />
-   <name-map collection-handle="TREINO/947"    form-name="artigo" />
-   <name-map collection-handle="TREINO/952"    form-name="artigo" />
-   <name-map collection-handle="TREINO/957"    form-name="artigo" />
-   <name-map collection-handle="TREINO/1326"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1331"   form-name="artigo" />
-   <name-map collection-handle="TREINO/978"    form-name="artigo" />
-   <name-map collection-handle="TREINO/968"    form-name="artigo" />
-   <name-map collection-handle="TREINO/973"    form-name="artigo" />
-   <name-map collection-handle="TREINO/983"    form-name="artigo" />
-   <name-map collection-handle="TREINO/994"    form-name="artigo" />
-   <name-map collection-handle="TREINO/999"    form-name="artigo" />
-   <name-map collection-handle="TREINO/1004"   form-name="artigo" />
-   <name-map collection-handle="TREINO/989"    form-name="artigo" />
-   <name-map collection-handle="TREINO/1009"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1014"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1020"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1035"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1025"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1030"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1040"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1045"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1050"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1055"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1076"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1071"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1061"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1066"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1351"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1321"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1082"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1087"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1092"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1102"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1107"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1097"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1112"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1123"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1118"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1128"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1134"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1139"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1144"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1150"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1155"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1165"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1160"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1170"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1181"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1176"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1186"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1212"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1192"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1197"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1202"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1207"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1228"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1218"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1223"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1244"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1234"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1239"   form-name="artigo" />
-   <name-map collection-handle="TREINO/16895"  form-name="artigo" />
-   <name-map collection-handle="TREINO/1336"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1356"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1341"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1346"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1372"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1577"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1477"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1482"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1582"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1377"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1382"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1392"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1387"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1397"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1402"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1407"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1412"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1417"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1422"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1427"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1437"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1432"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1442"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1447"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1452"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1457"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1462"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1467"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1472"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1492"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1497"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1502"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1507"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1512"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1522"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1517"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1527"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1532"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1537"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1542"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1557"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1547"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1487"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1552"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1567"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1562"   form-name="artigo" />
-   <name-map collection-handle="TREINO/1572"   form-name="artigo" />
-
+   <name-map collection-handle="123456789/256" form-name="relatorio" />
  </form-map>
 
 
@@ -642,7 +335,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>true</repeatable>
 		 <label>Título traduzido</label>
          <input-type>textarea</input-type>
-         <hint>Título do artigo em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
+         <hint>Título do documento em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
          <required></required>
        </field>
 	   
@@ -833,7 +526,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>true</repeatable>
 		 <label>Resumo</label>
          <input-type>textarea</input-type>
-         <hint>Resumo ou síntese do artigo, nos idiomas descritos no artigo; para cada idioma, clicar no botão "Adicionar"</hint>
+         <hint>Resumo ou síntese do artigo, nos idiomas descritos no artigo. Para cada idioma, clicar no botão "Adicionar"</hint>
          <required></required>
        </field>
    
@@ -1060,7 +753,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>true</repeatable>
          <label>* Autor</label>
          <input-type>name</input-type>
-         <hint>Entre com o nome do autor e coautores, na mesma ordem do artigo, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
+         <hint>Entre com o nome do autor e coautores, na mesma ordem do trabalho, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
          <required>Campo obrigatório, entre com pelo menos um autor.</required>
        </field>	   
 
@@ -1110,7 +803,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>* Nome do evento</label>
          <input-type>onebox</input-type>
-         <hint>Título não abreviado do evento, número do evento.</hint>
+         <hint>Título não abreviado do evento, número do evento. Ex. Encontro Internacional de Neonatologia, III</hint>
          <required>Obrigatório informar o nome do evento</required>
 	   </field>
 
@@ -1133,7 +826,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Realizador do evento</label>
          <input-type>onebox</input-type>
-         <hint>Nome da instituição que realizou o evento</hint>
+         <hint>Nome da instituição que realizou o evento. Ex. Universidade de São Paulo</hint>
          <required></required>
        </field>
  
@@ -1145,7 +838,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Cidade de realização do evento</label>
          <input-type>onebox</input-type>
-         <hint>Cidade em que o evento foi realizado</hint>
+         <hint>Cidade em que o evento foi realizado. Ex. São Paulo</hint>
          <required></required>
        </field>
 	   
@@ -1156,7 +849,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>País</label>
          <input-type>onebox</input-type>
-         <hint>País em que o evento foi realizado</hint>
+         <hint>País em que o evento foi realizado. Ex. Brasil</hint>
          <required></required>
        </field>
 
@@ -1167,7 +860,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Imprenta</label>
          <input-type>textarea</input-type>
-         <hint>Ex.</hint>
+         <hint>Não é uma citação. É uma imprenta. Ex. Encontro Internacional de Neonatologia, III, 2013, São Paulo.</hint>
          <required></required>
 		 <visibility>workflow</visibility>
        </field>
@@ -1179,7 +872,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>URL da comunicação publicada nos anais do evento</label>
          <input-type>onebox</input-type>
-         <hint>Endereço eletrônico que remete ao texto completo do trabalho publicado nos anais do evento. Ex. </hint>
+         <hint>Endereço eletrônico que remete ao texto completo do trabalho publicado nos anais do evento. Ex. http://www.scielo.br/pdf/ea/v6n14/v6n14a07.pdf</hint>
          <required></required>
        </field>
 
@@ -1259,7 +952,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
 		 <label>Notas</label>
          <input-type>textarea</input-type>
-         <hint>Notas descritivas adicionais, tais como prêmios recebidos pelo trabalho, uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
+         <hint>Notas descritivas adicionais, tais como prêmios recebidos pelo trabalho, uso em bibliografia básica ou notas similares.</hint>
          <required></required>
        </field>
 
@@ -1355,7 +1048,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>true</repeatable>
          <label>* Autor</label>
          <input-type>name</input-type>
-         <hint>Entre com o nome do autor e coautores, na mesma ordem do artigo, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
+         <hint>Entre com o nome do autor e coautores, na mesma ordem do livro, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
          <required>Campo obrigatório, entre com pelo menos um autor.</required>
        </field>	   
 
@@ -1389,7 +1082,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Coleção ou série</label>
          <input-type>onebox</input-type>
-         <hint>Título da coleção ou série, número na coleção (opcional)</hint>
+         <hint>Título da coleção ou série, número na coleção (opcional). Ex. Coleção Brasil, 5</hint>
          <required></required>
 	   </field>
 
@@ -1412,7 +1105,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Editora</label>
          <input-type>onebox</input-type>
-         <hint>Nome da editora</hint>
+         <hint>Nome da editora. Ex. EDUSP</hint>
          <required></required>
        </field>
  
@@ -1424,7 +1117,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Cidade</label>
          <input-type>onebox</input-type>
-         <hint>Cidade em que o livro foi editado</hint>
+         <hint>Cidade em que o livro foi editado. Ex. São Paulo</hint>
          <required></required>
        </field>
 	   
@@ -1435,7 +1128,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>País</label>
          <input-type>onebox</input-type>
-         <hint>País em que o livro foi editado</hint>
+         <hint>País em que o livro foi editado. Ex. Brasil</hint>
          <required></required>
        </field>
 
@@ -1446,7 +1139,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>ISBN da obra</label>
          <input-type>onebox</input-type>
-         <hint></hint>
+         <hint>ISBN da obra com 10 ou 13 números. Ex. 9788560323111</hint>
          <required></required>
        </field>	   
 
@@ -1469,7 +1162,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>URL em que o livro está disponível</label>
          <input-type>onebox</input-type>
-         <hint>Endereço eletrônico que remete ao texto completo do livro, caso esteja disponível. Ex.</hint>
+         <hint>Endereço eletrônico que remete ao texto completo do livro, caso esteja disponível. Ex. http://www.pos.eca.usp.br/sites/default/files/file/cienciaInformacao/informacaoContemporaniedade.pdf</hint>
          <required></required>
        </field>
 
@@ -1515,7 +1208,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>true</repeatable>
          <label>Palavras-chave</label>
          <input-type>onebox</input-type>
-         <hint>Palavras-chave contidas no artigo, nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <hint>Palavras-chave contidas no livro, nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
          <required></required>
        </field>
 
@@ -1601,6 +1294,272 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </page>	
    </form>	
 
+       <!-- FORM para Produção Técnica @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+   <!-- ...................................................... -->
+   <!-- ...................................................... -->
+   <!-- 20130408                                               -->
+   <!-- Criado por SIBi USP                                    -->
+   <!-- Entrada de Produção Técnica                            -->
+   <!-- ...................................................... -->
+   <!-- ...................................................... -->
+
+   <form name="relatorio">
+
+     <page number="1">
+	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Instituição</label>
+         <input-type value-pairs-name="contributor">dropdown</input-type>
+         <hint></hint>
+         <required>Preenchimento obrigatório</required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tipo do material</label>
+         <input-type value-pairs-name="tipoItemArticle">dropdown</input-type>
+         <hint></hint>
+         <required>Tipo do material é de preenchimento obrigatório</required>
+       </field>	   
+	   
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier>category</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Detalhamento do Tipo do material</label>
+         <input-type value-pairs-name="detalhaTipoItemRelatorio">dropdown</input-type>
+         <hint></hint>
+         <required>O detalhamento do Tipo do Material é de preenchimento obrigatório</required>
+       </field>
+	   
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>author</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>* Autor</label>
+         <input-type>name</input-type>
+         <hint>Entre com o nome do autor e coautores, na mesma ordem do trabalho, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
+         <required>Campo obrigatório, entre com pelo menos um autor.</required>
+       </field>	   
+
+	   <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>autor</dc-element>
+         <dc-qualifier>externo</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Informações sobre os autores externos à USP</label>
+         <input-type>onebox</input-type>
+         <hint>Dados do autor externo no formato: nome como descrito no metadado autor: instituição/depto (extenso e sigla) :c cidade :u UF :p país. Exemplo: Santos, Milena: Universidade de Campinas, Depto de Computação (UNICAMP/DCC) :c Campinas :u SP :p Brasil</hint>
+         <required></required>
+		 <visibility>workflow</visibility>		 
+       </field>
+	   
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Título</label>
+         <input-type>textarea</input-type>
+         <hint>Título da produção no idioma original. Ex: 1992: a redescoberta da Natureza</hint>
+         <required>Título da produção é um campo obrigatório. Ex: 1992: a redescoberta da Natureza</required>
+       </field>  
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>ispartof</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Série ou Coleção</label>
+         <input-type>onebox</input-type>
+         <hint>Série ou Coleção em que o Relatório foi publicado</hint>
+         <required></required>
+	   </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Data</label>
+         <input-type>date</input-type>
+         <hint></hint>
+         <required>Campo obrigatório - entre com pelo menos o ano. Ex: 1992</required>
+       </field>
+
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Unidade USP</label>
+         <input-type>onebox</input-type>
+         <hint>Unidade ao qual o pesquisador está vinculado. Ex: IME-USP</hint>
+         <required></required>
+ 		 <visibility>workflow</visibility>
+       </field>
+	   	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>local</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Cidade</label>
+         <input-type>onebox</input-type>
+         <hint>Cidade em que o relatório foi produzido. Ex. São Paulo</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>pais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>País</label>
+         <input-type>onebox</input-type>
+         <hint>País em que o relatório foi produzido. Ex. Brasil</hint>
+         <required></required>
+       </field>	   
+ <!-- Verificar a necessidade deste campo - Tiago - 2013-04-22
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>other</dc-qualifier>
+         <repeatable></repeatable>
+         <label>Identificador do relatório</label>
+         <input-type>onebox</input-type>
+         <hint>Use este campo caso o relatório possua um identificador na instituição em que foi produzido</hint>
+         <required></required>
+       </field>	   
+-->
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>URL em que o relatório está disponível</label>
+         <input-type>onebox</input-type>
+         <hint>Endereço eletrônico que remete ao texto completo do relatório, caso esteja disponível. Ex.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Idioma do relatório</label>
+         <input-type value-pairs-name="iso_languages_ptBR">dropdown</input-type>
+         <hint>Atenção: selecionar o idioma referente ao texto completo do relatório.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Resumo</label>
+         <input-type>textarea</input-type>
+         <hint>Resumo ou síntese do relatório, nos idiomas descritos no relatório; para cada idioma, clicar no botão "Adicionar"</hint>
+         <required></required>
+       </field>
+   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>vcusp</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Assunto VCUSP</label>
+         <input-type>onebox</input-type>
+         <hint>Utilizar o Vocabulário Controlado USP (VCUSP) para selecionar os assuntos relacionados a este relatório - um assunto por campo.</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+<!--  Tiago  <vocabulary>vcusp</vocabulary> -->
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Palavras-chave</label>
+         <input-type>onebox</input-type>
+         <hint>Palavras-chave contidas no relatório, nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>other</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Palavras-chave sugeridas</label>
+         <input-type>onebox</input-type>
+         <hint>Palavras-chave sugeridas por um bibliotecário, não descritas no Vocabulário Controlado USP (VCUSP) ou no texto do autor, mas que enriquecem a visibilidade do trabalho; descrever nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+       </field>	   
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+		 <repeatable>true</repeatable>
+         <label>Agência de fomento</label>
+         <input-type>onebox</input-type>
+		 <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tipo de acesso</label>
+         <input-type value-pairs-name="common_right">dropdown</input-type>
+         <hint>Selecione o tipo de acesso permitido ao documento, conforme negociação entre os autores e a editora. ex. Acesso aberto</hint>
+         <required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
+       </field>
+
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>embargo</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Data final de embargo</label>
+         <input-type>onebox</input-type>
+         <hint>Se a produção está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier>holder</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Detentor dos direitos autorais</label>
+         <input-type>onebox</input-type>
+         <hint>Indique a pessoa ou entidade detentora dos direitos autorais.  Ex: Copyright Springer</hint>
+         <required></required>
+       </field>
+
+     </page>	
+   </form>	
    
  </form-definitions>
 
@@ -1815,11 +1774,11 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <stored-value>masterThesis</stored-value>
      </pair>
      <pair>
-       <displayed-value>Documento científico ou técnico preliminar (que não é publicado em uma série instituicional)</displayed-value>
+       <displayed-value>Relatório técnico e/ou científico (que não é publicado em uma série instituicional)</displayed-value>
        <stored-value>report</stored-value>
      </pair>		 
      <pair>
-       <displayed-value>Documento científico ou técnico preliminar que é publicado em uma instituição onde a pesquisa é conduzida</displayed-value>
+       <displayed-value>Relatório técnico e/ou científico que é publicado em uma instituição onde a pesquisa é conduzida</displayed-value>
        <stored-value>workingPaper</stored-value>
      </pair>	 
      <pair>
@@ -1831,7 +1790,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <stored-value>lecture</stored-value>
      </pair>
      <pair>
-       <displayed-value>Patent</displayed-value>
+       <displayed-value>Patente</displayed-value>
        <stored-value>patent</stored-value>
      </pair>		 
      <pair>
@@ -1914,6 +1873,19 @@ it, please enter the types and the actual numbers or codes below.</hint>
 	   <stored-value>abstracts</stored-value>
      </pair>
     </value-pairs>
+	
+	<!-- ........................................................... -->
+   <value-pairs value-pairs-name="detalhaTipoItemRelatorio" dc-term="type">
+     <pair>
+       <displayed-value>- Selecione -</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Relatório Técnico</displayed-value>
+        <stored-value>technical report</stored-value>
+     </pair>
+    </value-pairs>
+	
 
    <!-- Adaptado para o padrão OPENAIRE Guidelines 2.0 por Tiago em 2013-04-17 -->
    <value-pairs value-pairs-name="common_right" dc-term="rights">
