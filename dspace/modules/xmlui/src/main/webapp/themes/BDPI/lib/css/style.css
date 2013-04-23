@@ -163,16 +163,22 @@ andre.assada@usp.br links para conteudo estatico
     margin: 0;
     padding: 3px 0;
 /*130412*/font-size:90%
+    color: #000;
+    text-decoration:bold;
 }
 
 #ds-trail li {
     display: inline;
     color: #1F3F5E;
     margin-right: 5px;
+    font-weight: bold;
 }
 
 #ds-trail a {
     color: #1F3F5E;
+    font-size: 90% !important;
+    text-decoration: none;
+    font-weight: normal;
 }
 
 
@@ -1404,7 +1410,7 @@ table.detailtable th{
 
 table.detailtable td{
     background-color: #FFFFFF;
-    text-align: right;
+    text-align: left;
 }
 
 

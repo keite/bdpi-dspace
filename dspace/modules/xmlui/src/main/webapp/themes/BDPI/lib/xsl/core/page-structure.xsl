@@ -564,6 +564,22 @@
                     <xsl:when test="starts-with($request-uri, 'page/about')">
                          <xsl:text>About This Repository</xsl:text>
                     </xsl:when>
+                    <xsl:when test="starts-with($request-uri, 'page/politicaAcesso')">
+                         <i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text>
+                    </xsl:when>
+                    <xsl:when test="starts-with($request-uri, 'page/direitosAutorais')">
+                         <i18n:text>paginasEstaticas.direitosAutorais.trail</i18n:text>
+                    </xsl:when>
+                    <xsl:when test="starts-with($request-uri, 'page/sobreBDPI')">
+                         <i18n:text>paginasEstaticas.sobreBDPI.trail</i18n:text>
+                    </xsl:when>
+                    <xsl:when test="starts-with($request-uri, 'page/creditosBDPI')">
+                         <i18n:text>paginasEstaticas.creditos.trail</i18n:text>
+                    </xsl:when>
+                    <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPI')">
+                         <i18n:text>paginasEstaticas.privacidade.trail</i18n:text>
+                    </xsl:when>
+
                     <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
                         <li class="ds-trail-link first-link">-</li>
                     </xsl:when>
