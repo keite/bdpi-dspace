@@ -22,6 +22,7 @@
    <name-map collection-handle="123456789/120" form-name="conferenceObject" />
    <name-map collection-handle="123456789/240" form-name="livro" />
    <name-map collection-handle="123456789/256" form-name="relatorio" />
+   <name-map collection-handle="123456789/266" form-name="oea" />
  </form-map>
 
 
@@ -53,7 +54,7 @@
          <label>Authors</label>
          <input-type>name</input-type>
 <!--     <hint>Enter the names of the authors of this item below.</hint> -->
-         <hint>POR FAVOR, NAO CATALOGUE MATERIAIS NESTA COLECAO: AINDA ESTÁ FECHADA ATÉ DEFINIR O CONJUNTO ADEQUADO DE METADADOS; QUER COLABORAR NESTA DEFINIÇÃO? POR FAVOR, ENTRE EM CONTATO COM O DT/SIBi, NO DEPTO DO REPOSITÓRIO DIGITAL DA PRODUÇÃO. OBRIGADO.</hint>
+         <hint>POR FAVOR, NAO CATALOGUE MATERIAIS NESTA COLEÇÃO: AINDA ESTÁ FECHADA ATÉ DEFINIR O CONJUNTO ADEQUADO DE METADADOS. OBRIGADO.</hint>
          <required></required>
        </field>
 
@@ -453,7 +454,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
-         <dc-qualifier>local</dc-qualifier>
+         <dc-qualifier>city</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Cidade de publicação</label>
          <input-type>onebox</input-type>
@@ -471,7 +472,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>País da revista onde o artigo foi publicado. Ex: Brasil</hint>
          <required></required>
        </field>
-
+	   
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -710,13 +711,13 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </page>	
    </form>
 
-    <!-- FORM Para trabalhos em eventos @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- FORM Para trabalhos em eventos @@@@@@@@@@@@@@@@@@@@@@ -->
 
    <!-- ...................................................... -->
    <!-- ...................................................... -->
-   <!-- 20130408                                                -->
-   <!-- Criado por SIBi USP                                   -->
-   <!-- Entrada de material apresentado em eventos            -->
+   <!-- 20130408                                               -->
+   <!-- Criado por SIBi USP                                    -->
+   <!-- Entrada de material apresentado em eventos             -->
    <!-- ...................................................... -->
    <!-- ...................................................... -->
 
@@ -823,7 +824,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Realizador do evento</label>
          <input-type>onebox</input-type>
          <hint>Nome da instituição que realizou o evento. Ex. Universidade de São Paulo</hint>
@@ -834,7 +835,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
-         <dc-qualifier>local</dc-qualifier>
+         <dc-qualifier>city</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Cidade de realização do evento</label>
          <input-type>onebox</input-type>
@@ -862,7 +863,19 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>onebox</input-type>
          <hint>ISBN dos anais em que a obra foi publicada, com 10 ou 13 números. Ex. 9788560323111</hint>
          <required></required>
-       </field>	   	   
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>issn</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>ISSN dos anais</label>
+         <input-type>onebox</input-type>
+         <hint>Caso possua ISSN. Ex. 9788-3111</hint>
+         <required></required>
+       </field>	
+  
 	   
        <field>
          <dc-schema>dc</dc-schema>
@@ -1016,7 +1029,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </page>	
    </form>	   
 
-    <!-- FORM para livros @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- FORM para livros @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
    <!-- ...................................................... -->
    <!-- ...................................................... -->
@@ -1124,7 +1137,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
-         <dc-qualifier>local</dc-qualifier>
+         <dc-qualifier>city</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Cidade</label>
          <input-type>onebox</input-type>
@@ -1305,7 +1318,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </page>	
    </form>	
 
-       <!-- FORM para Produção Técnica @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+       <!-- FORM para Produção Técnica @@@@@@@@@@@@@@@@@@@@@@@ -->
 
    <!-- ...................................................... -->
    <!-- ...................................................... -->
@@ -1424,7 +1437,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
-         <dc-qualifier>local</dc-qualifier>
+         <dc-qualifier>city</dc-qualifier>
          <repeatable>false</repeatable>
          <label>Cidade</label>
          <input-type>onebox</input-type>
@@ -1571,6 +1584,34 @@ it, please enter the types and the actual numbers or codes below.</hint>
 
      </page>	
    </form>	
+
+    <!-- FORM para Objetos Educacionais de Aprendizagem @@@@@@ -->
+
+   <!-- ...................................................... -->
+   <!-- ...................................................... -->
+   <!-- 20130408                                               -->
+   <!-- Criado por SIBi USP                                    -->
+   <!-- Entrada de Objetos Educacionais de Aprendizagem        -->
+   <!-- ...................................................... -->
+   <!-- ...................................................... -->
+
+   <form name="oea">
+
+     <page number="1">
+	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Instituição</label>
+         <input-type value-pairs-name="contributor">dropdown</input-type>
+         <hint></hint>
+         <required>Preenchimento obrigatório</required>
+       </field>
+ 
+	</page>	
+   </form>
    
  </form-definitions>
 
