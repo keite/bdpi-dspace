@@ -82,7 +82,9 @@
         <!-- Base DSpace XMLUI Aspects for Display, Browse, Search, Admin, Login and Submission -->
         <aspect name="Displaying Artifacts" path="resource://aspects/ViewArtifacts/" />
         <aspect name="Browsing Artifacts" path="resource://aspects/BrowseArtifacts/" />
-        <aspect name="Searching Artifacts" path="resource://aspects/SearchArtifacts/" />
+        <!-- [START] comentado para habilitar o DISCOVERY janll 26abr2013
+	<aspect name="Searching Artifacts" path="resource://aspects/SearchArtifacts/" />
+	     [END] -->
         <aspect name="Administration" path="resource://aspects/Administrative/" />
         <aspect name="E-Person" path="resource://aspects/EPerson/" />
         <aspect name="Submission and Workflow" path="resource://aspects/Submission/" />
@@ -122,8 +124,10 @@
             (in the "Basic Features/Aspects" group) as leaving it on together
             with Discovery will cause UI overlap issues
         -->
-        <!-- <aspect name="Discovery" path="resource://aspects/Discovery/" /> -->
-
+	<!-- [START] descomentado para habilitar o DISCOVERY janll 26abr2013 -->
+        <aspect name="Discovery" path="resource://aspects/Discovery/" />
+	<!-- [END] -->
+	
         <!-- ==============
              SWORDv1 Client
              ============== -->
