@@ -573,7 +573,12 @@ Common usage:
     	<copy todir="${dspace.dir}/solr" preservelastmodified="true">
     	     <fileset dir="solr"/>
     	</copy>
-
+	
+	<symlink link="${dspace.dir}/assetstore" resource="${env.ASSETSFOLDER}"/>
+	<symlink link="${dspace.dir}/solr/oai/data" resource="${env.SOLRDATAFOLDER}/oai/data"/>
+	<symlink link="${dspace.dir}/solr/search/data" resource="${env.SOLRDATAFOLDER}/search/data"/>
+	<symlink link="${dspace.dir}/solr/statistics/data" resource="${env.SOLRDATAFOLDER}/statistics/data"/>
+	
         <echo>
 ====================================================================
  ${dspace.dir}/bin was backed up to
