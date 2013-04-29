@@ -574,10 +574,11 @@ Common usage:
     	     <fileset dir="solr"/>
     	</copy>
 	
-	<symlink link="${dspace.dir}/assetstore" resource="${env.ASSETSFOLDER}"/>
-	<symlink link="${dspace.dir}/solr/oai/data" resource="${env.SOLRDATAFOLDER}/oai/data"/>
-	<symlink link="${dspace.dir}/solr/search/data" resource="${env.SOLRDATAFOLDER}/search/data"/>
-	<symlink link="${dspace.dir}/solr/statistics/data" resource="${env.SOLRDATAFOLDER}/statistics/data"/>
+	<symlink failonerror="false" link="${dspace.dir}/assetstore" resource="${env.VARDATABASEFOLDER}/assetstores/dspaceprod"/>
+	<symlink failonerror="false" link="${dspace.dir}/solr/oai/data" resource="${env.VARDATABASEFOLDER}/solr/oai/data"/>
+	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" resource="${env.VARDATABASEFOLDER}/solr/search/data"/>
+	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" resource="${env.VARDATABASEFOLDER}/solr/statistics/data"/>
+	<symlink failonerror="false" link="${dspace.dir}/var" resource="${env.VARDATABASEFOLDER}/oai/var"/>
 	
         <echo>
 ====================================================================
