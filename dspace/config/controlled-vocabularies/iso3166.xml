@@ -144,7 +144,7 @@ Nomes de países conforme ISO 3166 - 2013-04-30
 		<node id="LIE" label="Liechtenstein" />	
 		<node id="LTU" label="Lituânia" />	
 		<node id="LUX" label="Luxemburgo" />	
-		<node id="MAC"label="Macau" />	
+		<node id="MAC" label="Macau" />	
 		<node id="MKD" label="Macedônia" />			
 		<node id="MDG" label="Madagascar" />	
 		<node id="MYS" label="Malásia" />	

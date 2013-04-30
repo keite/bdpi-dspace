@@ -472,6 +472,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>onebox</input-type>
          <hint>País da revista onde o artigo foi publicado. Ex: Brasil</hint>
          <required></required>
+		 <vocabulary>iso3166</vocabulary>
        </field>
 	   
        <field>
