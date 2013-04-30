@@ -248,6 +248,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <label>Instituição</label>
          <input-type value-pairs-name="contributor">dropdown</input-type>
          <hint></hint>
+		 <visibility>workflow</visibility>		 
          <required>Preenchimento obrigatório</required>
        </field>	 
 
@@ -733,6 +734,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <label>Instituição</label>
          <input-type value-pairs-name="contributor">dropdown</input-type>
          <hint></hint>
+		 <visibility>workflow</visibility>		 
          <required>Preenchimento obrigatório</required>
        </field>
 
@@ -1051,6 +1053,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <label>Instituição</label>
          <input-type value-pairs-name="contributor">dropdown</input-type>
          <hint></hint>
+		 <visibility>workflow</visibility>			 
          <required>Preenchimento obrigatório</required>
        </field>
 
@@ -1340,6 +1343,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <label>Instituição</label>
          <input-type value-pairs-name="contributor">dropdown</input-type>
          <hint></hint>
+		 <visibility>workflow</visibility>			 
          <required>Preenchimento obrigatório</required>
        </field>
 
@@ -1607,6 +1611,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <label>Instituição</label>
          <input-type value-pairs-name="contributor">dropdown</input-type>
          <hint></hint>
+		 <visibility>workflow</visibility>		 
          <required>Preenchimento obrigatório</required>
        </field>
  
