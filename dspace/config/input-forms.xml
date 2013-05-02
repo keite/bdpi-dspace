@@ -19,7 +19,7 @@
    <!-- 120709 Josi: inserir as colecoes de Artigos e Materiais de Revistas para form proprio -->
    <name-map collection-handle="123456789/3"   form-name="artigo" />
    <name-map collection-handle="123456789/54"  form-name="artigo" />
-   <name-map collection-handle="123456789/120" form-name="conferenceObject" />
+   <name-map collection-handle="123456789/120" form-name="evento" />
    <name-map collection-handle="123456789/240" form-name="livro" />
    <name-map collection-handle="123456789/256" form-name="relatorio" />
    <name-map collection-handle="123456789/266" form-name="oea" />
@@ -472,7 +472,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>onebox</input-type>
          <hint>País da revista onde o artigo foi publicado. Ex: Brasil</hint>
          <required></required>
-		 <vocabulary>iso3166</vocabulary>
        </field>
 	   
        <field>
@@ -723,7 +722,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
    <!-- ...................................................... -->
    <!-- ...................................................... -->
 
-   <form name="conferenceObject">
+   <form name="evento">
 
      <page number="1">
 	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
@@ -745,7 +744,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-qualifier></dc-qualifier>
          <repeatable>false</repeatable>
          <label>Tipo do material</label>
-         <input-type value-pairs-name="tipoItemArticle">dropdown</input-type>
+         <input-type value-pairs-name="tipoItemEvento">dropdown</input-type>
          <hint></hint>
          <required>Tipo do material é de preenchimento obrigatório</required>
        </field>	   
@@ -1064,7 +1063,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-qualifier></dc-qualifier>
          <repeatable>false</repeatable>
          <label>Tipo do material</label>
-         <input-type value-pairs-name="tipoItemArticle">dropdown</input-type>
+         <input-type value-pairs-name="tipoItemLivro">dropdown</input-type>
          <hint></hint>
          <required>Tipo do material é de preenchimento obrigatório</required>
        </field>	   
@@ -1354,7 +1353,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-qualifier></dc-qualifier>
          <repeatable>false</repeatable>
          <label>Tipo do material</label>
-         <input-type value-pairs-name="tipoItemArticle">dropdown</input-type>
+         <input-type value-pairs-name="tipoItemRelatorio">dropdown</input-type>
          <hint></hint>
          <required>Tipo do material é de preenchimento obrigatório</required>
        </field>	   
@@ -1805,8 +1804,52 @@ it, please enter the types and the actual numbers or codes below.</hint>
    <!-- =============================================================================== -->
 
    
-   <!-- Conforme Diretrizes Driver 2.0 - 2013-04-09 - Tiago -->
+   <!-- Conforme Diretrizes Driver 2.0 - Artigo - 2013-05-02 - Tiago -->
    <value-pairs value-pairs-name="tipoItemArticle" dc-term="type">
+     <pair>
+       <displayed-value>Artigos e outros materiais de revistas científicas</displayed-value>
+       <stored-value>article</stored-value>
+     </pair>
+    </value-pairs>
+	
+   <!-- Conforme Diretrizes Driver 2.0 - Eventos - 2013-05-02 - Tiago -->
+   <value-pairs value-pairs-name="tipoItemEvento" dc-term="type">
+     <pair>
+       <displayed-value>Comunicações em eventos</displayed-value>
+       <stored-value>conferenceObject</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Palestra ou apresentação realizada durante um evento acadêmico</displayed-value>
+       <stored-value>lecture</stored-value>
+     </pair>	 
+    </value-pairs>	
+
+   <!-- Conforme Diretrizes Driver 2.0 - Livro - 2013-05-02 - Tiago -->
+   <value-pairs value-pairs-name="tipoItemLivro" dc-term="type">
+     <pair>
+       <displayed-value>Capítulo de livro</displayed-value>
+       <stored-value>bookPart</stored-value>
+     </pair>	
+     <pair>
+       <displayed-value>Livro</displayed-value>
+       <stored-value>book</stored-value>
+     </pair>	 
+    </value-pairs>
+
+   <!-- Conforme Diretrizes Driver 2.0 - Relatório - 2013-05-02 - Tiago -->
+   <value-pairs value-pairs-name="tipoItemRelatorio" dc-term="type">
+     <pair>
+       <displayed-value>Relatório técnico e/ou científico (que não é publicado em uma série instituicional)</displayed-value>
+       <stored-value>report</stored-value>
+     </pair>		 
+     <pair>
+       <displayed-value>Relatório técnico e/ou científico que é publicado em uma instituição onde a pesquisa é conduzida</displayed-value>
+       <stored-value>workingPaper</stored-value>
+     </pair>
+    </value-pairs>	
+	
+   <!-- Conforme Diretrizes Driver 2.0 - 2013-04-09 - Tiago -->
+   <value-pairs value-pairs-name="Driver" dc-term="type">
      <pair>
        <displayed-value>Anotações e decisões jurisprudenciais</displayed-value>
        <stored-value>annotation</stored-value>
@@ -1863,7 +1906,9 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <displayed-value>Trabalho de conclusão de curso</displayed-value>
        <stored-value>bachelorThesis</stored-value>
      </pair>	 
-    </value-pairs>
+    </value-pairs>	
+	
+	
 
    <!-- ........................................................... -->
    <value-pairs value-pairs-name="detalhaTipoItemArticle" dc-term="type">
@@ -1934,10 +1979,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
 	
 	<!-- ........................................................... -->
    <value-pairs value-pairs-name="detalhaTipoItemRelatorio" dc-term="type">
-     <pair>
-       <displayed-value>- Selecione -</displayed-value>
-       <stored-value></stored-value>
-     </pair>
      <pair>
        <displayed-value>Relatório Técnico</displayed-value>
         <stored-value>technical report</stored-value>
