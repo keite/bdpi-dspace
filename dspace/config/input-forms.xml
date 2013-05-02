@@ -620,7 +620,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
        </field>
 
-
+<!-- Removido por utilizarmos a ferramenta de embargo na versão 3.1
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
@@ -631,7 +631,8 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Se o artigo está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint>
          <required></required>
        </field>
-
+-->
+	   
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
@@ -667,6 +668,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>textarea</input-type>
          <hint>Quem, em que data, em que link e quando se encontrou a definição para direitos autorais sobre a disponibilização do texto completo deste item</hint>
          <required></required>
+ 		 <visibility>workflow</visibility>
        </field>
 
 					<!-- 110810 Incluir tipologia
@@ -993,7 +995,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
        </field>
 
-
+<!--
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
@@ -1004,7 +1006,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Se o artigo está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint>
          <required></required>
        </field>
-
+-->
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
@@ -1025,6 +1027,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>textarea</input-type>
          <hint>Quem, em que data, em que link e quando se encontrou a definição para direitos autorais sobre a disponibilização do texto completo deste item</hint>
          <required></required>
+		 <visibility>workflow</visibility>		 
        </field>
 
 	   
@@ -1284,7 +1287,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
        </field>
 
-
+<!--
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
@@ -1295,7 +1298,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Se o livro está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint>
          <required></required>
        </field>
-
+-->
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
@@ -1316,6 +1319,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>textarea</input-type>
          <hint>Quem, em que data, em que link e quando se encontrou a definição para direitos autorais sobre a disponibilização do texto completo deste item</hint>
          <required></required>
+		 <visibility>workflow</visibility>		 
        </field>							 
 							 
      </page>	
@@ -1563,7 +1567,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
        </field>
 
-
+<!--
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
@@ -1574,7 +1578,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Se a produção está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint>
          <required></required>
        </field>
-
+-->
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
@@ -1585,6 +1589,18 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Indique a pessoa ou entidade detentora dos direitos autorais.  Ex: Copyright Springer</hint>
          <required></required>
        </field>
+
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>comentarios</dc-element>
+         <dc-qualifier>direitosautorais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Comentários sobre Direitos Autorais</label>
+         <input-type>textarea</input-type>
+         <hint>Quem, em que data, em que link e quando se encontrou a definição para direitos autorais sobre a disponibilização do texto completo deste item</hint>
+         <required></required>
+		 <visibility>workflow</visibility>		 
+       </field>		   
 
      </page>	
    </form>	
@@ -2065,21 +2081,21 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <stored-value>ita</stored-value>
      </pair>
      <pair>
+       <displayed-value>Chinês</displayed-value>
+       <stored-value>zho</stored-value>
+     </pair>
+     <pair>	 
        <displayed-value>Russo</displayed-value>
-       <stored-value>ita</stored-value>
+       <stored-value>rus</stored-value>
+     </pair>	
+      <pair>	 
+       <displayed-value>Japonês</displayed-value>
+       <stored-value>jpn</stored-value>
      </pair>
-     <pair>
-       <displayed-value>Português/Inglês</displayed-value>
-       <stored-value>por/eng</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Português/Espanhol</displayed-value>
-       <stored-value>por/spa</stored-value>
-     </pair>
-     <pair>
-       <displayed-value>Inglês/Espanhol</displayed-value>
-       <stored-value>eng/spa</stored-value>
-     </pair>
+      <pair>	 
+       <displayed-value>Hindi</displayed-value>
+       <stored-value>hin</stored-value>
+     </pair>	 
      <pair>
        <displayed-value>Outro</displayed-value>
        <stored-value>other</stored-value>
