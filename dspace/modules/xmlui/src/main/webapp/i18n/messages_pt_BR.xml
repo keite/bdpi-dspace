@@ -2681,7 +2681,7 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.dc.creator">Autor(es) primário(s)</message>
 <message key="metadataTrad.dc.date.accessioned">Data de acesso</message>
 <message key="metadataTrad.dc.date.available">Data de disponibilização</message>
-<message key="metadataTrad.dc.date.copyright">Data dos direitos</message>
+<message key="metadataTrad.dc.date.copyright">Data dos direitos autorais</message>
 <message key="metadataTrad.dc.date.created">Data de criação</message>
 <message key="metadataTrad.dc.date.issued">Data de publicação</message>
 <message key="metadataTrad.dc.date.submitted">Data de submissão</message>
@@ -2694,8 +2694,8 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.dc.description.sponsorship">Patrocínio</message>
 <message key="metadataTrad.dc.description.statementofresponsibility">Termo de responsabilidade</message>
 <message key="metadataTrad.dc.description.tableofcontents">Índice</message>
-<message key="metadataTrad.dc.description.uri">URI de descrição</message>
-<message key="metadataTrad.dc.description.version">Versionamento</message>
+<message key="metadataTrad.dc.description.uri">URI</message>
+<message key="metadataTrad.dc.description.version">Versão</message>
 <message key="metadataTrad.dc.description">Descrição</message>
 <message key="metadataTrad.dc.format.extent">Extensão</message>
 <message key="metadataTrad.dc.format.medium">Mídia</message>
@@ -2704,7 +2704,7 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.dc.identifier.citation">Citação</message>
 <message key="metadataTrad.dc.identifier.doi">DOI</message>
 <message key="metadataTrad.dc.identifier.eissn">e-ISSN</message>
-<message key="metadataTrad.dc.identifier.govdoc">OCLC GovDoc</message>
+<message key="metadataTrad.dc.identifier.govdoc">GovDoc</message>
 <message key="metadataTrad.dc.identifier.isbn">ISBN</message>
 <message key="metadataTrad.dc.identifier.ismn">ISMN</message>
 <message key="metadataTrad.dc.identifier.issn">ISSN</message>
@@ -2717,10 +2717,11 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.dc.language.iso">Idioma (ISO)</message>
 <message key="metadataTrad.dc.language.rfc3066">Idioma (RFC 3066)</message>
 <message key="metadataTrad.dc.language">Idioma</message>
-<message key="metadataTrad.dc.publisher.local">País de imprenta</message>
+<message key="metadataTrad.dc.publisher.local">Cidade de publicação</message>
+<message key="metadataTrad.dc.publisher.city">Cidade de publicação</message>
 <message key="metadataTrad.dc.publisher">Editor</message>
-<message key="metadataTrad.dc.relation.haspart">Este item tem como parte(s)</message>
-<message key="metadataTrad.dc.relation.hasversion">Este item tem como versão</message>
+<message key="metadataTrad.dc.relation.haspart">Este item contém parte</message>
+<message key="metadataTrad.dc.relation.hasversion">Este item tem versão</message>
 <message key="metadataTrad.dc.relation.isbasedon">Este item é baseado em</message>
 <message key="metadataTrad.dc.relation.isformatof">Outro(s) formato(s) deste item</message>
 <message key="metadataTrad.dc.relation.ispartof">Este item é parte de</message>
@@ -2730,7 +2731,7 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.dc.relation.isversionof">Este item é versão de</message>
 <message key="metadataTrad.dc.relation.replaces">Este item substitui</message>
 <message key="metadataTrad.dc.relation.requires">Este item requer</message>
-<message key="metadataTrad.dc.relation.uri">Este item se relaciona com</message>
+<message key="metadataTrad.dc.relation.uri">URI relacionamento</message>
 <message key="metadataTrad.dc.relation">Este item se relaciona com</message>
 <message key="metadataTrad.dc.rights.holder">Detentor dos direitos</message>
 <message key="metadataTrad.dc.rights.uri">URI dos direitos</message>
@@ -2755,7 +2756,7 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.usp.autor.externo">Autor externo</message>
 <message key="metadataTrad.usp.autor">Autor USP</message>
 <message key="metadataTrad.usp.autorprincipal.email">E-mail do autor principal</message>
-<message key="metadataTrad.usp.autorprincipal.nusp">NUSP do autor principal</message>
+<message key="metadataTrad.usp.autorprincipal.nusp">Número USP do autor principal</message>
 <message key="metadataTrad.usp.comentarios.colecao">Coleção</message>
 <message key="metadataTrad.usp.comentarios.direitosautorais">Direitos autorais</message>
 <message key="metadataTrad.usp.comentarios.duvidas">Dúvidas</message>
@@ -2766,7 +2767,7 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.usp.description.volume">Volume</message>
 <message key="metadataTrad.usp.origem.id">ID de origem</message>
 <message key="metadataTrad.usp.origem">Origem</message>
-<message key="metadataTrad.usp.publisher.pais">País de imprenta</message>
+<message key="metadataTrad.usp.publisher.pais">País de publicação</message>
 <message key="metadataTrad.usp.relation.references">Referências desta obra</message>
 <message key="metadataTrad.usp.remissiva.sponsor">Remissiva do patrocinador</message>
 <message key="metadataTrad.usp.sysno">Sysno DEDALUS</message>

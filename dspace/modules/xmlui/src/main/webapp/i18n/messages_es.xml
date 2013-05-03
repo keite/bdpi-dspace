@@ -231,6 +231,7 @@
 <message key="xmlui.ArtifactBrowser.FeedbackForm.email_help">Esta dirección será utilizada para seguimiento de su sugerencia.</message>
 <message key="xmlui.ArtifactBrowser.FeedbackForm.comments">Comentarios</message>
 <message key="xmlui.ArtifactBrowser.FeedbackForm.submit">Sugerencias</message>
+<message key="xmlui.ArtifactBrowser.FeedbackForm.adminEmail">Correo electrónico de los administradores: <a href="mailto:atendimento@sibi.usp.br">atendimento@sibi.usp.br</a></message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.FeedbackSent.java -->
 <message key="xmlui.ArtifactBrowser.FeedbackSent.title">Sugerencias</message>
@@ -2288,5 +2289,129 @@ Para obtener mayores informaciones sobre este repositorio y sobre cómo incluir 
 <!-- ============================================== -->
 <!-- FIM 130327 andre.assada@usp.br pagina news FIM -->
 <!-- ============================================== -->
+
+
+
+
+
+
+
+
+
+<!-- ========================================================== -->
+<!-- 130503 andre.assada@usp.br mascara nos nomes dos metadados -->
+<!-- ========================================================== -->
+<message key="metadataTrad.dc.contributor.advisor">Consejero</message>
+<message key="metadataTrad.dc.contributor.author">Autor(es)</message>
+<message key="metadataTrad.dc.contributor.editor">Editor(es)</message>
+<message key="metadataTrad.dc.contributor.illustrator">Ilustrador(es)</message>
+<message key="metadataTrad.dc.contributor.other">Outos Colaborador(es)</message>
+<message key="metadataTrad.dc.contributor">Colaborador(es)</message>
+<message key="metadataTrad.dc.coverage.spatial">Cobertura espacial</message>
+<message key="metadataTrad.dc.coverage.temporal">Cobertura temporal</message>
+<message key="metadataTrad.dc.creator">Autor(es) primario(s)</message>
+<message key="metadataTrad.dc.date.accessioned">Fecha de acceso</message>
+<message key="metadataTrad.dc.date.available">Fecha de disponibilidad</message>
+<message key="metadataTrad.dc.date.copyright">Fecha de los derechos de autor</message>
+<message key="metadataTrad.dc.date.created">Fecha de creación</message>
+<message key="metadataTrad.dc.date.issued">Fecha de publicación</message>
+<message key="metadataTrad.dc.date.submitted">Fecha de presentación</message>
+<message key="metadataTrad.dc.date.updated">Fecha de actualización</message>
+<message key="metadataTrad.dc.date">Fecha</message>
+<message key="metadataTrad.dc.description.abstract">Resumen</message>
+<message key="metadataTrad.dc.description.embargo">Embargo</message>
+<message key="metadataTrad.dc.description.notes">Notas</message>
+<message key="metadataTrad.dc.description.provenance">Procedencia</message>
+<message key="metadataTrad.dc.description.sponsorship">Patrocinio</message>
+<message key="metadataTrad.dc.description.statementofresponsibility">Declaración de responsabilidad</message>
+<message key="metadataTrad.dc.description.tableofcontents">Índice</message>
+<message key="metadataTrad.dc.description.uri">URI</message>
+<message key="metadataTrad.dc.description.version">Versión</message>
+<message key="metadataTrad.dc.description">Descripción</message>
+<message key="metadataTrad.dc.format.extent">Extensión</message>
+<message key="metadataTrad.dc.format.medium">Medios de comunicación</message>
+<message key="metadataTrad.dc.format.mimetype">Tipo de contenido</message>
+<message key="metadataTrad.dc.format">Formato</message>
+<message key="metadataTrad.dc.identifier.citation">Citación</message>
+<message key="metadataTrad.dc.identifier.doi">DOI</message>
+<message key="metadataTrad.dc.identifier.eissn">e-ISSN</message>
+<message key="metadataTrad.dc.identifier.govdoc">GovDoc</message>
+<message key="metadataTrad.dc.identifier.isbn">ISBN</message>
+<message key="metadataTrad.dc.identifier.ismn">ISMN</message>
+<message key="metadataTrad.dc.identifier.issn">ISSN</message>
+<message key="metadataTrad.dc.identifier.other">Outros identificadores</message>
+<message key="metadataTrad.dc.identifier.sici">SICI</message>
+<message key="metadataTrad.dc.identifier.slug">SLUG</message>
+<message key="metadataTrad.dc.identifier.uri">Acceso URI</message>
+<message key="metadataTrad.dc.identifier.url">Acceso URL</message>
+<message key="metadataTrad.dc.identifier">Identificador</message>
+<message key="metadataTrad.dc.language.iso">Idioma (ISO)</message>
+<message key="metadataTrad.dc.language.rfc3066">Idioma (RFC 3066)</message>
+<message key="metadataTrad.dc.language">Idioma</message>
+<message key="metadataTrad.dc.publisher.local">Ciudad de publicación</message>
+<message key="metadataTrad.dc.publisher.city">Ciudad de publicación</message>
+<message key="metadataTrad.dc.publisher">Editor</message>
+<message key="metadataTrad.dc.relation.haspart">Este ítem contiene  parte</message>
+<message key="metadataTrad.dc.relation.hasversion">Este ítem tiene versión</message>
+<message key="metadataTrad.dc.relation.isbasedon">Este ítem se basa en</message>
+<message key="metadataTrad.dc.relation.isformatof">Otro(s)  formato(s) de este artículo</message>
+<message key="metadataTrad.dc.relation.ispartof">Este ítem forma parte de</message>
+<message key="metadataTrad.dc.relation.ispartofseries">Este ítem forma parte de la serie</message>
+<message key="metadataTrad.dc.relation.isreferencedby">Este ítem hace referencia a</message>
+<message key="metadataTrad.dc.relation.isreplacedby">Este ítem ha sido reemplazado por</message>
+<message key="metadataTrad.dc.relation.isversionof">Este ítem es versión de</message>
+<message key="metadataTrad.dc.relation.replaces">Este ítem sustituye</message>
+<message key="metadataTrad.dc.relation.requires">Este ítem requiere</message>
+<message key="metadataTrad.dc.relation.uri">URI relación</message>
+<message key="metadataTrad.dc.relation">Este ítem está relacionado a</message>
+<message key="metadataTrad.dc.rights.holder">Titular de los derechos</message>
+<message key="metadataTrad.dc.rights.uri">URI de los derechos</message>
+<message key="metadataTrad.dc.rights">Derechos</message>
+<message key="metadataTrad.dc.source.uri">URI de la fuente</message>
+<message key="metadataTrad.dc.source">Fuente</message>
+<message key="metadataTrad.dc.subject.classification">Clasificación del asunto</message>
+<message key="metadataTrad.dc.subject.ddc">Asunto DDC</message>
+<message key="metadataTrad.dc.subject.lcc">Asunto LCC</message>
+<message key="metadataTrad.dc.subject.lcsh">LCSH Asunto</message>
+<message key="metadataTrad.dc.subject.mesh">Asunto MeSH</message>
+<message key="metadataTrad.dc.subject.other">Asunto (otros)</message>
+<message key="metadataTrad.dc.subject.vcusp">Asunto USP Vocabulario Controlado USP</message>
+<message key="metadataTrad.dc.subject.wos">Asunto WoS</message>
+<message key="metadataTrad.dc.subject">Asunto</message>
+<message key="metadataTrad.dc.title.alternative">Título alternativo</message>
+<message key="metadataTrad.dc.title">Título</message>
+<message key="metadataTrad.dc.type.category">Tipo - categoría</message>
+<message key="metadataTrad.dc.type.version">Tipo - versión</message>
+<message key="metadataTrad.dc.type">Tipo</message>
+<message key="metadataTrad.usp.agradece.scielo">Agradecimientos SciELO</message>
+<message key="metadataTrad.usp.autor.externo">Autor externo</message>
+<message key="metadataTrad.usp.autor">Autor USP</message>
+<message key="metadataTrad.usp.autorprincipal.email">E-mail del autor principal</message>
+<message key="metadataTrad.usp.autorprincipal.nusp">Número USP del autor principal</message>
+<message key="metadataTrad.usp.comentarios.colecao">Colección</message>
+<message key="metadataTrad.usp.comentarios.direitosautorais">Derechos de autor</message>
+<message key="metadataTrad.usp.comentarios.duvidas">Dudas</message>
+<message key="metadataTrad.usp.comentarios.mapeamento">Mapeo</message>
+<message key="metadataTrad.usp.description.initialpage">Página inicial</message>
+<message key="metadataTrad.usp.description.issue">Número</message>
+<message key="metadataTrad.usp.description.lastpage">Última página</message>
+<message key="metadataTrad.usp.description.volume">Volumen</message>
+<message key="metadataTrad.usp.origem.id">ID de origen</message>
+<message key="metadataTrad.usp.origem">Origen</message>
+<message key="metadataTrad.usp.publisher.pais">País de publicación</message>
+<message key="metadataTrad.usp.relation.references">Referencias de esta obra</message>
+<message key="metadataTrad.usp.remissiva.sponsor">Remisiva del patrocinador</message>
+<message key="metadataTrad.usp.sysno">Sysno DEDALUS</message>
+<!-- ========================================================== -->
+<!-- FIM 130503 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+<!-- ========================================================== -->
+
+
+
+
+
+
+
+
 
 </catalogue>
