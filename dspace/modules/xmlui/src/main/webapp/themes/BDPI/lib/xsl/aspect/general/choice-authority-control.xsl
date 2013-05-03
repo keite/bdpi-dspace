@@ -48,9 +48,9 @@
       <xsl:param name="confIndicator" select="''"/>
       <input type="button" name="{concat('lookup_',@n)}" class="ds-button-field ds-add-button" >
         <xsl:attribute name="value">
-          <xsl:text>Lookup</xsl:text>
+          <xsl:text>Buscar</xsl:text>
           <xsl:if test="contains(dri:params/@operations,'add')">
-            <xsl:text> &amp; Add</xsl:text>
+            <xsl:text> e adicionar</xsl:text>
           </xsl:if>
         </xsl:attribute>
         <xsl:attribute name="onClick">
