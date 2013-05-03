@@ -200,14 +200,14 @@
         <workflow-editable>true</workflow-editable>
       </step>
 
-       <!--Step 3 will be to Manage Item access.
+       <!--Step 3 will be to Manage Item access.-->
        <step>
            <heading>submit.progressbar.access</heading>
            <processing-class>org.dspace.submit.step.AccessStep</processing-class>
            <xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.AccessStep</xmlui-binding>
            <workflow-editable>true</workflow-editable>
        </step>
-       -->
+       
 
       <!--Step 4 will be to Upload the item-->
       <step>
@@ -226,7 +226,7 @@
            <xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.UploadWithEmbargoStep</xmlui-binding>
            <workflow-editable>true</workflow-editable>
        </step>
-        -->
+ -->       
 
  	  <!--Step 5 will be to Verify/Review everything -->
  	  <step>
@@ -239,7 +239,7 @@
 
       <!--Step 6 will be to select a Creative Commons License-->
       <!-- Uncomment this step to allow the user to select a Creative Commons license -->
-       <!--
+       <!-- -->
       <step>
         <heading>submit.progressbar.CClicense</heading>
         <processing-class>org.dspace.submit.step.CCLicenseStep</processing-class>
@@ -247,7 +247,7 @@
 		<xmlui-binding>org.dspace.app.xmlui.aspect.submission.submit.CCLicenseStep</xmlui-binding>
 		<workflow-editable>false</workflow-editable>
       </step>
-      -->
+      
 
       <!--Step 7 will be to Sign off on the License-->
       <step>

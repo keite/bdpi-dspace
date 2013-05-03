@@ -14,6 +14,12 @@
         <map:readers>
             <map:reader name="ConcatenationReader" src="org.dspace.app.xmlui.cocoon.ConcatenationReader"/>
         </map:readers>
+
+        <!-- 110502 SIBi -->
+        <map:transformers default="xslt">
+             <map:transformer name="encodeURL" src="org.apache.cocoon.transformation.EncodeURLTransformer"/>
+        </map:transformers>
+        <!--FIM 110502 SIBi -->
     </map:components>
 
     <map:pipelines>
