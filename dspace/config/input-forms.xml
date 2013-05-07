@@ -1669,7 +1669,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
    <!-- ...................................................... -->
 
    <form name="periodicosnaoacademicos">
-
+	  <page number="1">
 	   <field>
          <dc-schema>dc</dc-schema>
          <dc-element>contributor</dc-element>
