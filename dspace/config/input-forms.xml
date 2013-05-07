@@ -22,7 +22,7 @@
    <name-map collection-handle="123456789/120" form-name="evento" />
    <name-map collection-handle="123456789/240" form-name="livro" />
    <name-map collection-handle="123456789/256" form-name="relatorio" />
-   <name-map collection-handle="123456789/266" form-name="oea" />
+   <name-map collection-handle="123456789/266" form-name="rea" />
    <name-map collection-handle="123456789/430" form-name="periodicosnaoacademicos" />
  </form-map>
 
@@ -1616,7 +1616,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
    <!-- ...................................................... -->
    <!-- ...................................................... -->
 
-   <form name="oea">
+   <form name="rea">
 
      <page number="1">
 	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
@@ -1631,6 +1631,28 @@ it, please enter the types and the actual numbers or codes below.</hint>
 		 <visibility>workflow</visibility>		 
          <required>Preenchimento obrigatório</required>
        </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tipo do material</label>
+         <input-type value-pairs-name="tipoItemRea">dropdown</input-type>
+         <hint></hint>
+         <required>Tipo do material é de preenchimento obrigatório</required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier>category</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Detalhamento do Tipo do material</label>
+         <input-type value-pairs-name="detalhaTipoItemRea">dropdown</input-type>
+         <hint></hint>
+         <required>O detalhamento do Tipo do Material é de preenchimento obrigatório</required>
+       </field>	   
  
 	</page>	
    </form>
@@ -2105,6 +2127,22 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </pair>
     </value-pairs>	
 	
+<!-- Conforme Diretrizes Driver 2.0 - Artigo não acadêmico - 2013-05-02 - Tiago -->
+   <value-pairs value-pairs-name="tipoItemNaoacademico" dc-term="type">
+     <pair>
+       <displayed-value>Artigo publicado em jornal, revista ou outro tipo de publicação periódica não acadêmica</displayed-value>
+       <stored-value>contributionToPeriodical</stored-value>
+     </pair>	
+    </value-pairs>
+	
+<!-- REA - 2013-05-02 - Tiago -->
+   <value-pairs value-pairs-name="tipoItemRea" dc-term="type">
+     <pair>
+       <displayed-value>Recurso Educacional Aberto</displayed-value>
+       <stored-value>REA</stored-value>
+     </pair>	
+    </value-pairs>	
+	
    <!-- Conforme Diretrizes Driver 2.0 - 2013-04-09 - Tiago -->
    <value-pairs value-pairs-name="Driver" dc-term="type">
      <pair>
@@ -2350,6 +2388,52 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <stored-value>UNIVERSIDADE DE SÃO PAULO</stored-value>
      </pair>
     </value-pairs>
+	
+		<!-- ........................................................... -->
+   <value-pairs value-pairs-name="detalhaTipoItemNaoacademico" dc-term="type">
+     <pair>
+       <displayed-value>Artigo</displayed-value>
+        <stored-value>artigo em publicação não acadêmica</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Entrevista</displayed-value>
+        <stored-value>entrevista em publicação não acadêmica</stored-value>
+     </pair>	 
+    </value-pairs>
+	
+<!-- Recursos Educacionais Abertos - Conforme reunião em 2013-05-03 -->
+
+   <value-pairs value-pairs-name="detalhaTipoItemRea" dc-term="type">
+     <pair>
+       <displayed-value>Vídeo</displayed-value>
+        <stored-value>Vídeo</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Audiovisual</displayed-value>
+        <stored-value>Audiovisual</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Áudio</displayed-value>
+        <stored-value>Áudio</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Imagem</displayed-value>
+        <stored-value>Imagem</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Aplicativo</displayed-value>
+        <stored-value>Aplicativo</stored-value>
+     </pair>	 
+     <pair>
+       <displayed-value>Texto</displayed-value>
+        <stored-value>Texto</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Hipertexto</displayed-value>
+        <stored-value>Hipertexto</stored-value>
+     </pair>	 
+    </value-pairs>
+	
 
     </form-value-pairs>
 
