@@ -58,5 +58,50 @@
 </xsl:template>
 <!-- FIM 130411 andre.assada@usp.br retirar lista de comunidades (community list) da capa / pagina inicial (front page) FIM -->
 
+<!-- 130419 - Dan - Codigo para possibilitar fechar uma aba, abrir uma pagina em outra aba, definir ancoras nas paginas e especificar uma class de um href --> 
+<!-- a partir da palavra chave de seu @rend ou @n --> 
+    <xsl:template match="dri:xref">
+       <a>
+          <xsl:if test="@target">
+             <xsl:choose>
+                <xsl:when test="@rend='aname'">
+                   <xsl:attribute name="name">
+                      <xsl:value-of select="@target"/>
+                   </xsl:attribute>
+                </xsl:when> 
+                <xsl:otherwise>
+                <xsl:attribute name="href">
+                   <xsl:value-of select="@target"/>
+                </xsl:attribute> </xsl:otherwise>
+             </xsl:choose> 
+          </xsl:if>
+         
+          <xsl:if test="@rend">
+             <xsl:choose>
+                <xsl:when test="@n='_blank'">
+                   <xsl:attribute name="target">_blank</xsl:attribute>
+                   <xsl:attribute name="class">
+                      <xsl:value-of select="@rend"/>
+                   </xsl:attribute>
+                </xsl:when>
+                <xsl:when test="@n='window.close()'">
+                   <xsl:attribute name="onclick">window.close()</xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                   <xsl:attribute name="class">
+                      <xsl:value-of select="@rend"/>
+                   </xsl:attribute>
+                </xsl:otherwise>
+             </xsl:choose>
+          </xsl:if>
+
+          <xsl:if test="@n">
+             <xsl:attribute name="name">
+                <xsl:value-of select="@n"/>
+             </xsl:attribute>
+          </xsl:if>
+       <xsl:apply-templates />
+       </a>
+    </xsl:template>
 
 </xsl:stylesheet>
