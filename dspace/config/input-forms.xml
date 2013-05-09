@@ -750,7 +750,19 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type value-pairs-name="tipoItemEvento">dropdown</input-type>
          <hint></hint>
          <required>Tipo do material é de preenchimento obrigatório</required>
-       </field>	   
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier>category</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Detalhamento da participação no evento</label>
+         <input-type value-pairs-name="detalhaTipoItemEvento">dropdown</input-type>
+         <hint></hint>
+         <required>Detalhamento da participação no evento é de preenchimento obrigatório</required>
+       </field>
+	   
 	   
        <field>
          <dc-schema>dc</dc-schema>
@@ -2269,6 +2281,20 @@ it, please enter the types and the actual numbers or codes below.</hint>
 	   <stored-value>abstracts</stored-value>
      </pair>
     </value-pairs>
+	
+	<!-- ........................................................... -->
+   <value-pairs value-pairs-name="detalhaTipoItemEvento" dc-term="type">
+     <pair>
+       <displayed-value>Palestra</displayed-value>
+        <stored-value>Palestra</stored-value>
+     </pair>
+	 
+	 <pair>
+       <displayed-value>Resumo</displayed-value>
+        <stored-value>Resumo</stored-value>
+     </pair>
+    </value-pairs>
+	
 	
 	<!-- ........................................................... -->
    <value-pairs value-pairs-name="detalhaTipoItemRelatorio" dc-term="type">
