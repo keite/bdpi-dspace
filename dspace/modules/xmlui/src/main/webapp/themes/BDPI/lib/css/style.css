@@ -436,10 +436,636 @@ td {
     vertical-align: middle;
 }
 
+/* ============================================================ */
+/* 130419 CSS relacionado com a pagina de coautores USP    */
+/* @author Dan Shinkai (SI/EACH/USP)                            */
+/* ===========================================================  */
+
+/* 130419 - Dan - Define o estilo do body de todas as div */ 
+#aspect_artifactbrowser_CoauthorView_div_id_body_geral { 
+   margin-top: 2%; 
+   width: 100%; 
+   border: 1px solid #D8E8EB; 
+   border-top-left-radius: 10px 10px; 
+   border-top-right-radius: 10px 10px; 
+   border-bottom-right-radius: 10px 10px; 
+   border-bottom-left-radius: 10px 10px; 
+   display: 
+   table; 
+   } 
+   
+/* 130419 - Dan - Define o estilo da div de coautores USP */
+#aspect_artifactbrowser_CoauthorView_div_id_informacoes_coautores { 
+   margin: 3%; 
+} 
+
+/* 130419 - Dan - Define a tabela de links para aname */ 
+#aspect_artifactbrowser_CoauthorView_table_id_tblAName_coautoresUSP { 
+   /*border: 1px solid white;*/ 
+   margin-bottom: 1%;
+   width: 100%; 
+}
+
+/* 130419 - Dan - Define o estilo da linha de links para aname */ 
+#aspect_artifactbrowser_CoauthorView_row_id_row_aname_coautoresUSP { 
+   border: hidden; 
+   background-color: #B6C8D9; 
+} 
+
+/* 130419 - Dan - Define o estilo da coulna de link para coautoriaExterna aname */ 
+#aspect_artifactbrowser_CoauthorView_cell_id_cols_aname_coautoriaExt_field { 
+   width: 22%; 
+} 
+
+/* 130419 - Dan - Define o estilo da coluna de link para o fim aname */ 
+#aspect_artifactbrowser_CoauthorView_cell_id_cols_aname_fim_field { 
+   border: hidden; 
+   width: 10%; 
+   text-align: right; 
+} 
+
+/* 130419 - Dan - Define o estilo da coluna de link para topo aname */ 
+#aspect_artifactbrowser_CoauthorView_cell_id_cols_aname_topo_field { 
+   text-align: right; 
+   width: 10%; 
+} 
+
+/* 130419 - Dan - Define o estilo do head de coautores USP */ 
+#aspect_artifactbrowser_CoauthorView_div_id_informacoes_coautoresUSP_head { 
+   float: left; 
+   background-color: #FCB421; 
+   width: 100%; color: white; 
+   font-weight: 900; 
+   text-align: center; 
+} 
+
+/* 130419 - Dan - Define o alinhamento do head de coautores USP */ 
+#aspect_artifactbrowser_CoauthorView_p_id_paragrafo_coautoresUSP_head { 
+   margin-bottom: 5px; 
+   margin-top: 5px; 
+   margin-left: 5px; 
+} 
+
+/* 130419 - Dan - Define o estilo da tabela de coautores USP */
+#aspect_artifactbrowser_CoauthorView_table_id_tblLista_coautoresUSP { 
+   width: 100%; 
+   float: left; 
+} 
+
+/* 130419 - Dan - Define o estilo das colunas da tabela de coautores USP */ 
+/* ======================================================================== */ 
+a.ds-table-cell odd class_cols_seq_field:hover { 
+   text-decoration: none; 
+} 
+
+/* 130419 - Dan - Define o estilo da coluna sequencias da tabela de coautores USP */ 
+#aspect_artifactbrowser_CoauthorView_cell_id_cols_seq_field { 
+   text-align: center; 
+} 
+
+/* 130419 - Dan - Define o tamanho da coluna sequencias da tabela de coautores USP */ 
+#aspect_artifactbrowser_CoauthorView_cell_id_cols_seq_coautor { 
+   width: 1%; 
+} 
+
+/* 130419 - Dan - Define o estilo da coluna nome da tabela de coautores USP */ 
+#aspect_artifactbrowser_CoauthorView_cell_id_cols_nome_coautor { 
+   width: 70%; 
+} 
+
+/* 130419 - Dan - Define o estilo dos titulos da coluna da tabela de coautores USP */ 
+#aspect_artifactbrowser_CoauthorView_row_id_row_nome_coautor_colunas { 
+   background-color: #1094AB; 
+   color: white; 
+   font-weight: 900; 
+} 
+
+/* 130419 - Dan - Define o alinhamento da coluna de trabalhos */ 
+#aspect_artifactbrowser_CoauthorView_cell_id_cols_trabalhos_field { 
+   text-align: center; 
+} 
+
+/* ==================================================================== */ 
+/* 130419 - Dan - Define o estilo da div de coautores externos */ 
+#aspect_artifactbrowser_CoauthorView_div_id_informacoes_coautores_externos { 
+   margin: 3%;
+} 
+
+#aspect_artifactbrowser_CoauthorView_table_id_tblLista_coautores_externos { 
+   width: 100%; 
+   float: left; 
+   margin-bottom: 1%; 
+} 
+
+/* 130419 - Dan - Define o estilo do titulo de coautores externos */ 
+#aspect_artifactbrowser_CoauthorView_div_id_informacoes_coautores_externos_head { 
+   float: left; 
+   background-color: #FCB421; 
+   width: 100%; 
+   color: white; 
+   font-weight: 900; 
+   text-align: center; 
+   /*margin-top: 4%;*/ 
+} 
+
+/* 130419 - Dan - Define o estilo da tabela de links aname no meio da pagina */
+#aspect_artifactbrowser_CoauthorView_table_id_tblAName_coautoresExt { 
+   float: left; 
+   margin-bottom: 1%; 
+   width: 100%; 
+} 
+
+/* 130419 - Dan - Define o estilo do paragrafo contido no titulo de coautores externos */ 
+#aspect_artifactbrowser_CoauthorView_p_id_paragrafo_coautores_externos_head { 
+   margin-bottom: 5px; 
+   margin-top: 5px; 
+   margin-left: 5px; 
+} 
+
+/* 130419 - Dan - Define o estilo da tabela de coautores externos /* 
+====================================================================================== */ 
+#aspect_artifactbrowser_CoauthorView_table_id_tblLista_coautoresUSP { 
+   width: 100%; 
+} 
+
+/* 130419 - Dan - Define o estilo da coluna de sequencias da tabela de coautores externos */ 
+#aspect_artifactbrowser_CoauthorView_row_id_row_sequencia_colunas_externo { 
+   background-color: #1094AB;
+   color: white; 
+   font-weight: 900; 
+} 
+
+/* 130419 - Dan - Define o alinhamento do conteudo da coluna de sequencias */ 
+#aspect_artifactbrowser_CoauthorView_cell_id_cols_sequencia { 
+   width: 1%; 
+   text-align: center; 
+} 
+
+/* 130419 - Dan - Define o alinhamento do link para retornar a pagina de autores */ 
+#aspect_artifactbrowser_CoauthorView_list_id_retornar_page_autor { 
+   margin-bottom: 5%; 
+   text-align: center; 
+} 
+
+/* 130419 - Dan - Define o estilo da tabela de links aname no final da pagina */ 
+#aspect_artifactbrowser_CoauthorView_table_id_tblAName_coautores_fim { 
+   width: 100%; 
+} 
+
+/* 130419 - Dan - Define o alinhamento dos anames */ 
+#aspect_artifactbrowser_CoauthorView_div_id_aname_coautores_fim { 
+   float: left; 
+   width: 100%; 
+} 
+
+/* 130419 - Dan - Define o alinhamento do link de retorno */ 
+#aspect_artifactbrowser_CoauthorView_p_id_paragrafo_retornar { 
+   float: left; 
+   margin-left: 35%; 
+   margin-bottom: 4%; 
+   margin-top: 5%; 
+} 
+
+/* 130419 - Dan - Define o alinhamento do link de fechar */ 
+#aspect_artifactbrowser_CoauthorView_p_id_paragrafo_fechar { 
+   float: right; 
+   margin-right: 35%; 
+   margin-bottom: 4%; 
+   margin-top: 5%; 
+} 
+/* ============================================================ */ 
+/* 130419 - Dan - CSS relacionado com a pagina do autor USP */
+/* =========================================================== */ 
+
+/* 130419 - Dan - Define a div de todos os componentes da pagina do autor USP */ 
+#aspect_artifactbrowser_AuthorView_div_id_body_geral { 
+   margin-top: 2%; 
+   width:100%; 
+   border:1px solid #D8E8EB; 
+   border-top-left-radius: 10px 10px; 
+   border-top-right-radius: 10px 10px; 
+   border-bottom-right-radius: 10px 10px; 
+   border-bottom-left-radius: 10px 10px; 
+   display: table; 
+} 
+
+/* 130419 - Dan - Define a cor e tipo de letra do head da lista de procucao */ 
+/* 130419 - Dan - Cor de fundo alterado para darkblue */ 
+#aspect_artifactbrowser_AuthorView_div_id_itens_info_head { 
+   float: left; 
+   margin-left: 2%; 
+   margin-right: 2%; 
+   /*margin-top: 2%;*/ 
+   /*background-color: #FCB526;*/ 
+   background-color: #FCB421; 
+   width: 96%; 
+   color: white; 
+   font-weight: 900; 
+   text-align: center; 
+} 
+
+/* 130419 - Dan - Define a div com os link localizados abaixo da foto */ 
+#aspect_artifactbrowser_AuthorView_div_id_link_div { 
+   float: left; 
+   margin-left: 21%; 
+   margin-right: 31%; 
+} 
+  
+/* 130419 - Dan - Define o alinhamento do link para coautoria */ 
+#aspect_artifactbrowser_AuthorView_div_id_coautoria_link_div { 
+   margin-top: 5%; 
+   float: left; 
+   /*margin-left: 19%;*/ 
+   width: 100%; 
+}
+
+/* 130419 - Dan - Define a div que realiza a simulacao de um botao para a pagina coautoria */ 
+#aspect_artifactbrowser_AuthorView_div_id_coautoria_link { 
+   text-align: center; 
+   margin-right: auto; 
+   margin-left: auto; 
+   background-color: #6D859C; 
+   border: 1px solid #1F3F5E; 
+   padding: 3%; 
+   color: white; 
+   font-weight: bold; 
+   width: 99px; 
+   font-size: 100%; 
+   /*width: 66%;*/ 
+} 
+
+/* 130419 - Dan - Define o alinhamento do nome do link para coautoria */ 
+#aspect_artifactbrowser_AuthorView_p_id_coautoria_link_para { 
+   margin-top: 1%; 
+   margin-bottom: 2%; 
+   font-size: 85%; 
+} 
+
+/* 130419 - Dan - Define o alinhamento do link para interunidades */ 
+#aspect_artifactbrowser_AuthorView_div_id_interdis_link_div { 
+   margin-top: 5%; 
+   float: left; 
+   width: 100%; 
+} 
+
+/* 130419 - Dan - Define a div que realiza a simulacao de um botao para a pagina de interunidades */ 
+#aspect_artifactbrowser_AuthorView_div_id_interdis_link { 
+   text-align: center; 
+   margin-right: auto; 
+   margin-left: auto; 
+   background-color: #6D859C; 
+   border: 1px solid #1F3F5E; 
+   padding: 4%; 
+   color: white; 
+   font-weight: bold; 
+   /*width: 66%;*/ 
+   width: 99px; 
+   font-size: 100%; 
+}
+
+/* 130419 - Dan - Define o alinhamento do nome do link para interunidades */ 
+#aspect_artifactbrowser_AuthorView_p_id_interdis_link_para { 
+   margin-top: 1%; 
+   margin-bottom: 2%; 
+   font-size: 80%; 
+} 
+
+/* ===================================================== */ 
+/* 130419 - Dan - Define os efeitos para o link de aname */ 
+a.aname:hover { 
+   text-decoration: none; 
+} 
+
+a.coautoria_link:link { 
+   text-decoration: none; 
+   color: white; 
+} 
+
+a.coautoria_link:visited { 
+   text-decoration: none; 
+   color: white; 
+} 
+
+/* ===================================================== */ 
+/* 130419 - Dan - Define o paragrafo no qual contem o head da lista de producao */ 
+#aspect_artifactbrowser_AuthorView_p_id_paragrafo_item_relacionado { 
+   margin-bottom: 5px; 
+   margin-top: 5px; 
+   margin-left: 5px; 
+} 
+
+/* 130419 - Dan - Define a posicao do link de retorno para o item anterior */ 
+#aspect_artifactbrowser_AuthorView_list_id_retorno { 
+   margin-top: 5%; 
+   margin-bottom: 6%; 
+   text-align: center; 
+} 
+
+/* 130419 - Dan - Define a div no qual contem a foto do autor USP */
+#aspect_artifactbrowser_AuthorView_div_id_autor_imagem { 
+   width: 96px; 
+   /*width: 56%;*/ 
+   /*height: 160px;*/ 
+   height: 140px;
+   /*background-color: white;*/ 
+   background-image:url("/themes/Mirage/images/autorUSP/imagens/2x1.gif"); 
+   background-repeat:repeat-x; 
+   float: left; 
+   border:1px solid #D5D1CA; 
+   margin-top: 6%; 
+   margin-left: 23%; 
+   /*margin-bottom: 15%;*/ 
+   margin-bottom: 6%; 
+} 
+
+/* 130419 - Dan - Define a div no qual contem as informacoes do autor USP */ 
+#aspect_artifactbrowser_AuthorView_div_id_autor_info { 
+   /*width: 72%;*/ 
+   width: 75%; 
+   background-color: white; 
+   float: right; 
+   margin-right: 2%; 
+   margin-bottom: 3%; 
+} 
+
+#aspect_artifactbrowser_AuthorView_div_coautoria { 
+   text-align: center; 
+} 
+
+/* 130419 - Dan - Define a div no qual contem as informacoes dos itens relacionados com o autor USP */ 
+/* 130419 - Dan - Alteracao no espacamento estre a esta div e a div acima */ 
+#aspect_artifactbrowser_AuthorView_div_id_itens_info { 
+   width: 96%; 
+   background-color: white; 
+   float: left; 
+   margin-right: 2%; 
+   margin-left: 2%; 
+   /*margin-top: 2%;*/ 
+   margin-bottom: 2%; 
+} 
+
+/* 130419 - Dan - Define a div contendo a foto e os links localizados abaixo da foto */ 
+#aspect_artifactbrowser_AuthorView_div_id_informacoes_imagem { 
+   float: left; 
+   /*width: 26%;*/ 
+   width: 21%; 
+} 
+
+/* 130419 - Dan - Define a posicao da foto do autor */
+/* 130419 - Dan - Tamanho da foto reduzida */ 
+#aspect_artifactbrowser_AuthorView_list_id_foto_autor { 
+   text-align: center; 
+   width: 96px; 
+   /* height: 160px;*/ 
+   height: 140px; background-image: url('/themes/Mirage/images/autorUSP/imagens/3x1.gif'); 
+   background-repeat: repeat; 
+} 
+
+/* 130419 - Dan - Define a div no qual contem a tabela com as citacoes do autor */ 
+#aspect_artifactbrowser_AuthorView_div_id_citacoes_autor { 
+   width: 100%; 
+   float: left; 
+   margin-bottom: 2%; 
+   margin-top: 4%; 
+} 
+
+/* 130419 - Dan - Define a tabela com as citacoes do autor */ 
+#aspect_artifactbrowser_AuthorView_table_id_tblLista_citacao { 
+   width: 96%; 
+   margin-left: 2%; 
+} 
+
+/* 130419 - Dan - Define a coluna com as citacoes do autor */ 
+#aspect_artifactbrowser_AuthorView_cell_id_cols_titulo_citacao { 
+   /*font-size: 80%;*/ 
+   background-color: #FCB421; 
+   color: white; 
+   text-align: center; 
+   font-weight: 900; 
+} 
+
+/* 130419 - Dan - Define o tamanho da coluna das citacoes */ 
+#aspect_artifactbrowser_AuthorView_cell_id_cols_citacao_field { 
+   font-size: 90%; 
+} 
+
+/* 130419 - Dan - Define a tabela geral das informacoes do autor USP */ 
+#aspect_artifactbrowser_AuthorView_table_id_tblInfo_author { 
+   width: 100%; 
+   margin-top: 2%; 
+} 
+
+/* 130419 - Dan - Define o tipo de fonte do titulo das colunas dos itens relacionados */
+/* 130419 - Dan - Alterado para ficar semelhante a tabela de coautoria */ 
+#aspect_artifactbrowser_AuthorView_row_id_row_titulo_colunas { 
+   background-color: #1094AB; 
+   color: white; 
+   font-weight: 900; 
+   text-align: center; 
+} 
+
+/* 130419 - Dan - Define a parte da coluna label da tabela no qual contem informacoes do autor */ 
+#aspect_artifactbrowser_AuthorView_cell_id_cols_autor_label { 
+   text-align: right; 
+   vertical-align: top; 
+   border: 1px solid white; 
+   color: #1F3F5E; 
+   font-weight: bold; 
+   width: 30%; 
+} 
+
+/* 130419 - Dan - Define o tamanho da coluna correspondente ao titulos dos itens */ 
+#aspect_artifactbrowser_AuthorView_cell_id_cols_obra_titulos { 
+   width: 100%; 
+} 
+
+/* ============================================================================================ */ 
+/* 130419 - Dan - Define a parte da coluna campo da tabela no qual contem informacoes do autor */ 
+#aspect_artifactbrowser_AuthorView_cell_id_cols_autor_field { 
+   vertical-align: top; 
+   border: 1px solid white; 
+} 
+
+#aspect_artifactbrowser_AuthorView_cell_id_cols_numeracao_field { 
+   text-align: center; 
+} 
+
+#aspect_artifactbrowser_AuthorView_cell_id_cols_tipo_field { 
+   text-align: center; 
+} 
+
+#aspect_artifactbrowser_AuthorView_cell_id_cols_titulo_field { 
+   width: 100%; 
+}
+
+/* ============================================================================================ */ 
+/* 130419 - Dan - Define o alinhamento do link para retornar a pagina anterior */ 
+#aspect_artifactbrowser_AuthorView_p_id_paragrafo_retornar { 
+   float: left; 
+   margin-left: 35%; 
+   margin-top: 4%; 
+   margin-bottom: 2%; 
+} 
+
+/* 130419 - Dan - Define o alinhamento do link para fechar a pagina atual */ 
+#aspect_artifactbrowser_AuthorView_p_id_paragrafo_fechar { 
+   float: right; 
+   margin-right: 35%; 
+   margin-top: 4%; 
+   margin-bottom: 2%; 
+} 
+
+/* 130419 - Dan - Define o alinhamento do link para fechar centralizado a pagina atual */ 
+#aspect_artifactbrowser_AuthorView_p_id_paragrafo_fechar_central { 
+   float: right; 
+   margin-right: 50%;
+   margin-top: 4%; 
+   margin-bottom: 2%; 
+} 
+
+/* =========================================================== */ 
+/* =========================Fim=============================== */ 
+
+/* ============================================================ */ 
+/* 130419 - Dan - CSS relacionado com a pagina de Interunidades USP */ 
+/* ============================================================ */ 
+
+/* 130419 - Dan - Define a div que contem todos os elementos desta pagina */ 
+#aspect_artifactbrowser_InterUnitAuthorView_div_id_informacoes_interUnid { 
+   margin-top: 2%; 
+   width: 100%; 
+   border: 1px solid #D8E8EB; 
+   border-top-left-radius: 10px 10px; 
+   border-top-right-radius: 10px 10px; 
+   border-bottom-right-radius: 10px 10px; 
+   border-bottom-left-radius: 10px 10px; 
+   display: table;
+} 
+
+/* 130419 - Dan - Define o titulo da lista de unidades */ 
+#aspect_artifactbrowser_InterUnitAuthorView_div_id_informacoes_interUnid_head { 
+   background-color: #FCB421; 
+   width: 100%; 
+   color: white; 
+   font-weight: 900; 
+   text-align: center; 
+   margin-top: 4%; 
+   margin-bottom: 5%
+   /*margin-left: 20%; */
+   /*margin-right: 30%;*/ 
+   float: left; 
+} 
+
+/* 130426 - Dan - Define a posicao do grafico */
+#aspect_artifactbrowser_InterUnitAuthorView_div_id_grafico_interUnid { 
+   text-align: center; 
+}
+
+/* 130413 - Dan - Define o espacamento na parte inferior ao grafico */ 
+#aspect_artifactbrowser_InterUnitAuthorView_list_id_grafico_interUnidLista { 
+   margin-bottom: 5%; 
+}
+
+/* 130419 - Dan - Define o paragrafo contido dentro do titulo da lista de unidades */ 
+#aspect_artifactbrowser_InterUnitAuthorView_p_id_paragrafo_interUnid_head { 
+   margin-bottom: 5px; 
+   margin-top: 5px; 
+   margin-left: 5px; 
+} 
+
+/* =========================================================== */ 
+/* 130419 - Dan - Define a tabela contendo a lista de unidades */ 
+#aspect_artifactbrowser_InterUnitAuthorView_table_id_tblLista_interUnidUSP { 
+   /*margin-left: 20%; */
+   /*margin-right: 30%;*/ 
+   margin-left: auto; 
+   margin-right: auto; 
+   margin-bottom: 4%; 
+   /*width: 60%; */
+   width: 40%;
+   /*float: left; */
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_row_id_row_titulos_interUnid_colunas { 
+   background-color: #1094AB; 
+   color: white; 
+   font-weight: 900; 
+   text-align: center; 
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_seq_interUnid_field { 
+   text-align: center; 
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_unidSigla_interUnid { 
+   width: 100%;
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_trabalhos_interUnid { 
+   width: 2%;
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_trabalhos_interUnid_field { 
+   text-align: center; 
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_interUnid_total_field { 
+   text-align: center; 
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_interUnid_total_label { 
+   text-align: right; 
+} 
+
+/* =========================================================== */ 
+/* 130419 - Dan - Define o estilo da tabela para links contidos no final da pagina */ 
+#aspect_artifactbrowser_InterUnitAuthorView_table_id_tbl_links { 
+   margin-left: 20%; 
+   margin-right: 20%; 
+   width: 60%; 
+   margin-bottom: 2%; 
+   float: left; 
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_fechar_link { 
+   text-align: right; 
+   border: hidden; 
+   width: 30%; 
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_retornar_link { 
+   width: 40%; 
+   border: hidden; 
+   text-align: center; 
+} 
+
+#aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_coautoria_link { 
+   width: 30%; 
+   border: hidden; 
+   text-align: left; 
+}
+
+/* ================================================================= */ 
+/* 130419 - Dan - Define o alinhamento dos links de retorno e fechar */ 
+#aspect_artifactbrowser_InterUnitAuthorView_p_id_paragrafo_fechar_error { 
+   float: right; 
+   margin-right: 35%; 
+   margin-top: 4%; 
+   margin-bottom: 2%; 
+} #aspect_artifactbrowser_InterUnitAuthorView_p_id_paragrafo_retornar_error { 
+   float: left; 
+   margin-left: 35%; 
+   margin-top: 4%; 
+   margin-bottom: 2%; 
+} 
+
+/* ================================================================= */ 
+/* ============================================================ */ 
+/* =========================Fim=============================== */
 
 /* ============================================================ */
 /* 130328 CSS relacionado com a pagina de item-view completo    */
-/* @author Dan Shinkay (SI/EACH/USP)                            */
+/* @author Dan Shinkai (SI/EACH/USP)                            */
 /* ===========================================================  */
 
 /* 121015 - Dan - Retira o sublinhado para links no icone autor USP */
@@ -1534,4 +2160,9 @@ table.discovery-filters th.new-filter-header
 
 .searchTime{
     color: #999999;
+}
+
+.ds-table-cell
+{
+border: 1px dotted #ccc;
 }
