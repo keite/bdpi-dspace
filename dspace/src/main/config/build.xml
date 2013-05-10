@@ -648,7 +648,7 @@ Common usage:
 	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" resource="${env.DATAVARBASEFOLDER}/solr/search/data"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" resource="${env.DATAVARBASEFOLDER}/solr/statistics/data"/>
 	<symlink failonerror="false" link="${dspace.dir}/var" resource="${env.DATAVARBASEFOLDER}/oai/var"/>
-        <symlink failonerror="false" link="${dspace.dir}/webapps/xmlui/cv" resource="${env.DATAVARBASEFOLDER}/datavars/cv"/>
+        <symlink failonerror="false" link="${dspace.dir}/webapps/xmlui/themes/BDPI/images/cv" resource="${env.DATAVARBASEFOLDER}/cv"/>
 
     </target>
 
