@@ -1,0 +1,1 @@
+#Arquivo para permitir criacao do diretorio tmp no dspace
