@@ -17,13 +17,12 @@
    <name-map collection-handle="default" form-name="traditional" />
 
    <!-- 120709 Josi: inserir as colecoes de Artigos e Materiais de Revistas para form proprio -->
-   <name-map collection-handle="123456789/3"   form-name="artigo" />
-   <name-map collection-handle="123456789/54"  form-name="artigo" />
-   <name-map collection-handle="123456789/120" form-name="evento" />
-   <name-map collection-handle="123456789/240" form-name="livro" />
-   <name-map collection-handle="123456789/256" form-name="relatorio" />
-   <name-map collection-handle="123456789/266" form-name="rea" />
-   <name-map collection-handle="123456789/430" form-name="periodicosnaoacademicos" />
+   <name-map collection-handle="123456789/6"   form-name="artigo" />
+   <name-map collection-handle="123456789/11" form-name="evento" />
+   <name-map collection-handle="123456789/8" form-name="livro" />
+   <name-map collection-handle="123456789/10" form-name="relatorio" />
+   <name-map collection-handle="123456789/9" form-name="rea" />
+   <name-map collection-handle="123456789/7" form-name="periodicosnaoacademicos" />
  </form-map>
 
 
