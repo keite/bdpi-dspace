@@ -323,6 +323,14 @@
     </xsl:template>
 
     <xsl:template match="dim:field" mode="itemDetailView-DIM">
+			
+			<!-- =============================================================================================== -->	
+			<!-- 130418 - Criado variável que armazenará valores para conversao UpperCase e LowerCase --> 
+			<!-- @author Dan Shinkai (SI/EACH/USP) -->
+			<xsl:variable name="lowerCase" select="'abcdefghijklmnopqrstuvwxyzçáéíóúýàèìòùãõñäëïöüÿâêîôûÁÉÍÓÚÝÀÈÌÒÙÄËÏÖÜÃÕÑÂÊÎÔÛ'"/> 
+			<xsl:variable name="upperCase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZÇAEIOUYAEIOUAONAEIOUYAEIOUAEIOUYAEIOUAEIOUAONAEIOU'"/> 
+			<!-- =============================================================================================== -->	
+	
             <!-- =============================================================================================== -->
             <!-- 130328 agrupar metadados dentro de um TD, conforme determinacoes da profa. sueli (outubro 2010) -->
             <!-- @author Dan Shinkai (SI/EACH/USP) -->
@@ -717,6 +725,7 @@
                                 <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
                                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                             </xsl:attribute>
+
                             <td class="label-cell">
 <!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
                                 <i18n:text>
@@ -803,7 +812,12 @@
                 
                 <!-- agrupar os metadados dc.contributor.author em uma celula. -->
 
-<!-- 130328 andre.assada@usp.br desabilitado por enquanto para possibilitar migracao para DSpace3 por etapas controladas
+<!-- 130328 andre.assada@usp.br desabilitado por enquanto para possibilitar migracao para DSpace3 por etapas controladas -->
+
+<!-- ========================================================================================== -->
+<!-- 130418 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado --> 
+<!-- @author Dan Shinkai (SI/EACH/USP) -->
+<!-- ========================================================================================== -->
 
                 <xsl:when test="@element='contributor' and @mdschema='dc' and @qualifier='author'">
                     <xsl:variable name="contContributor" select="count(following-sibling::dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author'])"/>
@@ -834,27 +848,36 @@
                                             <xsl:variable name="uspAutorSemAcento" select="translate($uspAutor,$lowerCase,$upperCase)"/>
                                             <xsl:if test="$nodeSemAcento=$uspAutorSemAcento">
                                                 <xsl:text> </xsl:text>
--->
+
                                                 <!-- recuperar somente o codpes do autor  -->
-<!--
+
                                                 <xsl:variable name="uspAutorInfo" select="substring-after(./node(),':')"/>
                                                 <xsl:variable name="codpes" select="substring-before($uspAutorInfo,':')"/>
--->
+
                                                 <!-- recuperar somente o itemID -->
-<!--
-                                                <xsl:variable name="url" select="../dim:field[@element='identifier'][@qualifier='uri'][@mdschema='dc']"/>
-                                                <xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
-                                                <xsl:variable name="itemID" select="substring-after($urlSub,'/')"/>
--->
-                                                <!-- insere o itemID e o codpes na URL -->
-<!--
-                                                <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">
-                                                    <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
-                                                </a>
+												<!-- 13/04/26 - Dan  - Necessidade de incremetacao do for-each para busca de uma unica url no qual contem 
+												                       a url para a construcao da pagina CV. Deve-se manter o padrao "*net/* para o seu 
+																	   funcionamento na URL"-->												
+												<xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
+													<!--<xsl:variable name="url" select="../dim:field[@element='identifier'][@qualifier='uri'][@mdschema='dc']"/>-->													
+													<xsl:variable name="url" select="current()"/>
+													<xsl:variable name="urlSub" select="substring-after($url,'net/')"/>
+													
+													<xsl:if test="$urlSub!=''">
+														<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/>
+														
+													<!-- insere o itemID e o codpes na URL -->
+
+														<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
+															<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+														</a>
+													</xsl:if>
+												</xsl:for-each>
                                             </xsl:if>
+
                                         </xsl:for-each>
 
-                                        <xsl:variable name="contContributorAtual" select="count(following- sibling::dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author'])"/>
+                                        <xsl:variable name="contContributorAtual" select="count(following-sibling::dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author'])"/>
                                         <xsl:if test="$contContributor != $contContributorAtual">
                                             <br/>
                                         </xsl:if>
@@ -864,7 +887,11 @@
                         </tr>
                     </xsl:if>
                 </xsl:when>
--->
+
+<!-- ====================================================================================================== -->
+<!-- / FIM 130418 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado FIM / --> 
+<!-- ====================================================================================================== -->
+				
 <!-- 130328 andre.assada@usp.br agrupar dc.description.sponsorship sem usputils (temporario) -->
                 <xsl:when test="@element='contributor' and @mdschema='dc' and @qualifier='author'">
                     <xsl:variable name="contAutor" select="count(following-sibling::dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author'])"/>
