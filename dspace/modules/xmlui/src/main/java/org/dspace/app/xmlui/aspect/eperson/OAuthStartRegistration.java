@@ -221,9 +221,9 @@ public class OAuthStartRegistration extends AbstractDSpaceTransformer implements
                contextPath+"/oauthregister",Division.METHOD_POST,"primary");
        
        
-       Head algo = register.setHead();
-       algo.addContent(T_head2);
-       algo.addContent(", " + this.usp_bdpi_oauth_nomeUsuario + "!");
+       Head tmphead = register.setHead();
+       tmphead.addContent(T_head2);
+       tmphead.addContent(", " + this.usp_bdpi_oauth_nomeUsuario + "!");
        
        EPersonUtils.registrationProgressList(register,1);
        
