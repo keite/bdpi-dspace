@@ -1665,6 +1665,249 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>O detalhamento do Tipo do Material é de preenchimento obrigatório</required>
        </field>	   
  
+	   <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>title</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Título</label>
+         <input-type>textarea</input-type>
+         <hint> Indique o título que detalhe o conteúdo do recurso educacional para facilitar a busca do público interessado. Ex. “Anatomia Dental Interna e Cirurgia de Acesso: 1º Capítulo”. Procure evitar títulos pouco descritivos como: “Aula 1”, “Slides de aula”, “Continuação da aula 2”.</hint>
+         <required>Título do recurso educacional é um campo obrigatório.</required>
+       </field>   
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>author</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>* Autor</label>
+         <input-type>name</input-type>
+         <hint>Entre com o nome do autor e coautores, na mesma ordem em que aparecem no recurso educacional, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar".</hint>
+         <required>Campo obrigatório, entre com pelo menos um autor.</required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>contributor</dc-element>
+         <dc-qualifier>other</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Autoria técnica</label>
+         <input-type>name</input-type>
+         <hint> Indicar todos os participantes que contribuíram na elaboração do recurso educacional. Ex. Roteirista, Fotógrafo, Editor, Ilustrador, Tradutor, entre outros. Para cada autor, clique no botão "Adicionar".</hint>
+         <required></required>
+       </field>		   
+ 
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>date</dc-element>
+         <dc-qualifier>issued</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>* Data de criação</label>
+         <input-type>date</input-type>
+         <hint>Informar, pelo menos, o ano em que o recurso foi produzido.</hint>
+         <required>Campo obrigatório</required>
+       </field>
+
+     <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Publisher</label>
+         <input-type>onebox</input-type>
+         <hint>CAMPO EM ESTUDO</hint>
+         <required></required>
+       </field>	   
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>city</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Cidade</label>
+         <input-type>onebox</input-type>
+         <hint>Cidade em que o recurso foi produzido. Ex: São Paulo</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>pais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>País</label>
+         <input-type>onebox</input-type>
+         <hint>País em que o recurso foi produzido. Ex: Brasil</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>identifier</dc-element>
+         <dc-qualifier>uri</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>URL do artigo</label>
+         <input-type>onebox</input-type>
+         <hint>Caso exista, informe o endereço eletrônico em que o recurso foi disponibilizado anteriormente. Ex: http://www.scielo.br/pdf/ea/v6n14/v6n14a07.pdf</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>language</dc-element>
+         <dc-qualifier>iso</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Idioma do artigo</label>
+         <input-type value-pairs-name="iso_languages_ptBR">dropdown</input-type>
+         <hint>Atenção: selecionar o idioma referente ao texto completo do artigo.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>abstract</dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Descrição / Sinopse / Resumo</label>
+         <input-type>textarea</input-type>
+         <hint>Resumo do conteúdo do recurso educacional, com a opção de incluir esta descrição em outros idiomas. Para cada idioma, clicar no botão "Adicionar"</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Palavras-chave</label>
+         <input-type>onebox</input-type>
+         <hint>Informe as palavras-chave que descrevem o conteúdo do recurso educacional. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar uma por campo.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>vcusp</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Assunto VCUSP</label>
+         <input-type>onebox</input-type>
+         <hint>Utilizar o Vocabulário Controlado USP (VCUSP) para selecionar os assuntos relacionados a este artigo - um assunto por campo.</hint>
+         <required></required>
+		 <visibility>workflow</visibility>
+       </field>	   
+ 
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Tipo de acesso</label>
+         <input-type value-pairs-name="common_right">dropdown</input-type>
+         <hint>Selecione o tipo de acesso permitido ao documento, conforme negociação entre os autores e a editora. ex. Acesso aberto</hint>
+         <required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>rights</dc-element>
+         <dc-qualifier>holder</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Detentor dos direitos autorais</label>
+         <input-type>onebox</input-type>
+         <hint>Indique a pessoa ou entidade detentora dos direitos autorais.  Ex: Copyright Springer</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>sponsorship</dc-qualifier>
+		 <repeatable>true</repeatable>
+         <label>Agência de fomento</label>
+         <input-type>onebox</input-type>
+		 <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>audience</dc-element>
+         <dc-qualifier>educationLevel</dc-qualifier>
+		 <repeatable>true</repeatable>
+         <label>Nível educacional</label>
+         <input-type>onebox</input-type>
+		 <hint></hint>
+         <required></required>
+       </field>	   
+
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>format</dc-element>
+         <dc-qualifier>extent</dc-qualifier>
+		 <repeatable>true</repeatable>
+         <label>Extensão</label>
+         <input-type>onebox</input-type>
+		 <hint>Duração ou tamanho do recurso educacional</hint>
+         <required></required>
+       </field>	
+
+       <field>
+         <dc-schema>lom</dc-schema>
+         <dc-element>type</dc-element>
+         <dc-qualifier></dc-qualifier>
+		 <repeatable>false</repeatable>
+         <label>Tecnologia necessária para o uso</label>
+         <input-type>onebox</input-type>
+		 <hint>Tecnologia necessária para o uso deste recurso educacional. Ex. Hardware, software, rede, etc.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>ims</dc-schema>
+         <dc-element>accessForAll</dc-element>
+         <dc-qualifier>signLanguage</dc-qualifier>
+		 <repeatable>false</repeatable>
+         <label>Linguagem de sinais</label>
+         <input-type>onebox</input-type>
+		 <hint>Caso exista, informe se apresenta uma alternativa em linguagem de sinais para o áudio refenciado do recurso educacional.</hint>
+         <required></required>
+       </field>
+	   
+       <field>
+         <dc-schema>ims</dc-schema>
+         <dc-element>accessForAll</dc-element>
+         <dc-qualifier>audioDescription</dc-qualifier>
+		 <repeatable>false</repeatable>
+         <label>Audiodescrição</label>
+         <input-type>onebox</input-type>
+		 <hint>Caso exista, informe se apresenta uma alternativa em audiodescrição do recurso educacional.</hint>
+         <required></required>
+       </field>
+
+       <field>
+         <dc-schema>ims</dc-schema>
+         <dc-element>accessForAll</dc-element>
+         <dc-qualifier>captiontype</dc-qualifier>
+		 <repeatable>false</repeatable>
+         <label>Legenda</label>
+         <input-type>onebox</input-type>
+		 <hint>Caso exista, informe se apresenta legenda tendo referência direta ao conteúdo principal do recurso educacional.</hint>
+         <required></required>
+       </field>	   	   
+
+       <field>
+         <dc-schema>ims</dc-schema>
+         <dc-element>accessForAll</dc-element>
+         <dc-qualifier>acessibility</dc-qualifier>
+		 <repeatable>false</repeatable>
+         <label>Acessibilidade</label>
+         <input-type>onebox</input-type>
+		 <hint>Informar se há recursos de acessibilidade ao recurso educacional.</hint>
+         <required></required>
+       </field>	
+	   
 	</page>	
    </form>
    
