@@ -22,6 +22,7 @@
    <name-map collection-handle="123456789/8" form-name="livro" />
    <name-map collection-handle="123456789/10" form-name="relatorio" />
    <name-map collection-handle="123456789/9" form-name="rea" />
+   <name-map collection-handle="123456789/14" form-name="rea" />
    <name-map collection-handle="123456789/7" form-name="periodicosnaoacademicos" />
  </form-map>
 
@@ -1776,6 +1777,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>
 
        <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>subject</dc-element>
+         <dc-qualifier>code</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Código da Disciplina USP</label>
+         <input-type>series</input-type>
+         <hint>Informar código USP e nome da disciplina.</hint>
+         <required></required>
+       </field>	   
+	   
+       <field>
          <dc-schema>dc</dc-schema>
          <dc-element>subject</dc-element>
          <dc-qualifier></dc-qualifier>
@@ -1854,9 +1866,9 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>	
 
        <field>
-         <dc-schema>lom</dc-schema>
-         <dc-element>type</dc-element>
-         <dc-qualifier></dc-qualifier>
+         <dc-schema>dc</dc-schema>
+         <dc-element>relation</dc-element>
+         <dc-qualifier>requires</dc-qualifier>
 		 <repeatable>false</repeatable>
          <label>Tecnologia necessária para o uso</label>
          <input-type>onebox</input-type>
