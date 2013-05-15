@@ -34,12 +34,25 @@ public class OAuthAuthentication
     implements AuthenticationMethod {	
 	
 	
-	private static Logger log = Logger.getLogger(OAuthAuthentication.class);
+	private static Logger log = Logger.getLogger(OAuthAuthentication.class);	
 
 	private static String PROTECTED_RESOURCE_URL = ConfigurationManager.getProperty("authentication-oauth", "PROTECTED_RESOURCE_URL");     	
 	private static String API_KEY = ConfigurationManager.getProperty("authentication-oauth", "API_KEY");
 	private static String API_SECRET = ConfigurationManager.getProperty("authentication-oauth", "API_SECRET");
 	
+	private int httpRequestHashCode = 0;
+	
+	private void setRequestToken(HttpServletRequest httprequest){
+		httprequest.getSession().setAttribute("requesttoken", getOauthservice(httprequest).getRequestToken());
+	}
+	
+	private Token getRequestToken(HttpServletRequest httprequest){
+		if(httprequest.getSession().getAttribute("requesttoken")==null){
+			setRequestToken(httprequest);
+		}
+		return (Token) httprequest.getSession().getAttribute("requesttoken");
+	}
+		
 	private OAuthService getOauthservice(HttpServletRequest httprequest) {
     	
 		if(httprequest.getSession().getAttribute("oauthservice")==null){			
@@ -118,16 +131,12 @@ public class OAuthAuthentication
     	}
     	else {
 
-        	System.out.println("passaqui A!!!!");
-    		
-	        Token accessToken = getOauthservice(request).getAccessToken(getOauthservice(request).getRequestToken(), new Verifier(oauth_verifier));
+	        Token accessToken = getOauthservice(request).getAccessToken(this.getRequestToken(request), new Verifier(oauth_verifier));
 	        
 	        OAuthRequest orequest = new OAuthRequest(Verb.POST, PROTECTED_RESOURCE_URL);
 	        
 	        getOauthservice(request).signRequest(accessToken, orequest);
 	        Response oresponse = orequest.send();
-
-        	System.out.println("passaqui B!!!!");
 	        
 	        try {
 	        
@@ -136,13 +145,11 @@ public class OAuthAuthentication
 	        	System.out.println("#########retornou######");
 	        	System.out.println(oresponse.getBody());
 	        	System.out.println("#########retornou######");
-
-	        	System.out.println("passaqui C!!!!");
 	        	
 	        	if(jso.getString("loginUsuario").length()>0){
 	        		
 	        		request.getSession().setAttribute("usp_bdpi_oauth_di", jso);
-	        		
+	        			        		
 	        		request.getSession().setAttribute("usp_bdpi_oauth_loginUsuario", jso.getString("loginUsuario"));	        		
 	        		request.getSession().setAttribute("usp_bdpi_oauth_nomeUsuario", jso.getString("nomeUsuario"));
 	        		request.getSession().setAttribute("usp_bdpi_oauth_tipoUsuario", jso.getString("tipoUsuario"));
@@ -182,14 +189,18 @@ public class OAuthAuthentication
                             HttpServletRequest request,
                             HttpServletResponse response)
     {
-    	System.out.println("mostra loginPageURL!! " + getOauthservice(request).getRequestToken().getRawResponse());
     	
-    	return response.encodeRedirectURL(getOauthservice(request).getAuthorizationUrl(getOauthservice(request).getRequestToken()));
+    	if(httpRequestHashCode != request.hashCode()){
+    		httpRequestHashCode = request.hashCode();
+        	System.out.println("pega loginpage url ... ");
+    		this.setRequestToken(request);
+    	}
+    	return response.encodeRedirectURL(getOauthservice(request).getAuthorizationUrl( this.getRequestToken(request) ));
     }
 
     public String loginPageTitle(Context context)
     {
-    	System.out.println("pega loginpage title!!");
+    	System.out.println("pega loginpage title ... ");
         return "org.dspace.eperson.OAuthAuthentication.title";
     }
     

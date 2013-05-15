@@ -93,8 +93,9 @@ Common usage:
     </tstamp>
 
     <!-- Default location of GeoLiteCity.dat.gz to download. This may be overridden, if URL path changes. -->
-    <property name="geolite" value="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" />
-
+    <!--property name="geolite" value="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" /-->
+    <property name="geolite" value="file://${env.DATAVARBASEFOLDER}/auxdata/GeoLiteCity.dat.gz" />
+    
     <!-- ============================================================= -->
     <!-- The DSpace class path for executing installation targets      -->
     <!-- ============================================================= -->

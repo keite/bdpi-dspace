@@ -244,6 +244,16 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 				<map:match pattern="oauthregister/start">
 					<map:transform type="OAuthStartRegistration">
 						<map:parameter name="email" value="{flow-attribute:email}"/>
+						<map:parameter name="numerusp" value="{flow-attribute:numerusp}"/>
+						
+						<map:parameter name="usp_bdpi_oauth_loginUsuario" value="{flow-attribute:usp_bdpi_oauth_loginUsuario}"/>           
+						<map:parameter name="usp_bdpi_oauth_nomeUsuario" value="{flow-attribute:usp_bdpi_oauth_nomeUsuario}"/>            
+						<map:parameter name="usp_bdpi_oauth_tipoUsuario" value="{flow-attribute:usp_bdpi_oauth_tipoUsuario}"/>            
+						<map:parameter name="usp_bdpi_oauth_emailPrincipalUsuario" value="{flow-attribute:usp_bdpi_oauth_emailPrincipalUsuario}"/>  
+						<map:parameter name="usp_bdpi_oauth_emailAlternativoUsuario" value="{flow-attribute:usp_bdpi_oauth_emailAlternativoUsuario}"/>
+						<map:parameter name="usp_bdpi_oauth_emailUspUsuario" value="{flow-attribute:usp_bdpi_oauth_emailUspUsuario}"/>        
+						<map:parameter name="usp_bdpi_oauth_numeroTelefoneFormatado" value="{flow-attribute:usp_bdpi_oauth_numeroTelefoneFormatado}"/>
+												
 						<map:parameter name="errors" value="{flow-attribute:errors}"/>
 						<map:parameter name="accountExists" value="{flow-attribute:accountExists}"/>
 					</map:transform>

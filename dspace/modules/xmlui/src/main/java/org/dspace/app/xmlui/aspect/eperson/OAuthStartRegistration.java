@@ -13,9 +13,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
+import javax.mail.Session;
+
 import org.apache.avalon.framework.parameters.Parameters;
 import org.apache.cocoon.ProcessingException;
 import org.apache.cocoon.caching.CacheableProcessingComponent;
+import org.apache.cocoon.components.flow.WebContinuation;
 import org.apache.cocoon.environment.SourceResolver;
 import org.apache.excalibur.source.SourceValidity;
 import org.apache.excalibur.source.impl.validity.NOPValidity;
@@ -28,6 +31,7 @@ import org.dspace.app.xmlui.wing.element.Hidden;
 import org.dspace.app.xmlui.wing.element.Item;
 import org.dspace.app.xmlui.wing.element.List;
 import org.dspace.app.xmlui.wing.element.PageMeta;
+import org.dspace.app.xmlui.wing.element.Radio;
 import org.dspace.app.xmlui.wing.element.Text;
 import org.xml.sax.SAXException;
 
@@ -52,7 +56,7 @@ public class OAuthStartRegistration extends AbstractDSpaceTransformer implements
 {
     /** language strings */
     private static final Message T_title =
-        message("xmlui.EPerson.StartRegistration.title");
+        message("xmlui.EPerson.OAuthStartRegistration.title");
     
     private static final Message T_dspace_home =
         message("xmlui.general.dspace_home");
@@ -61,40 +65,46 @@ public class OAuthStartRegistration extends AbstractDSpaceTransformer implements
         message("xmlui.EPerson.trail_new_registration");
     
     private static final Message T_head1 =
-        message("xmlui.EPerson.StartRegistration.head1");
+        message("xmlui.EPerson.OAuthStartRegistration.head1");
     
     private static final Message T_para1 = 
-        message("xmlui.EPerson.StartRegistration.para1");
+        message("xmlui.EPerson.OAuthStartRegistration.para1");
     
     private static final Message T_reset_password_for =
-        message("xmlui.EPerson.StartRegistration.reset_password_for");
+        message("xmlui.EPerson.OAuthStartRegistration.reset_password_for");
     
     private static final Message T_submit_reset = 
-        message("xmlui.EPerson.StartRegistration.submit_reset");
+        message("xmlui.EPerson.OAuthStartRegistration.submit_reset");
     
     private static final Message T_head2 = 
-        message("xmlui.EPerson.StartRegistration.head2");
+        message("xmlui.EPerson.OAuthStartRegistration.head2");
     
     private static final Message T_para2 = 
-        message("xmlui.EPerson.StartRegistration.para2");
+        message("xmlui.EPerson.OAuthStartRegistration.para2");
     
     private static final Message T_email_address =
-        message("xmlui.EPerson.StartRegistration.email_address");
+        message("xmlui.EPerson.OAuthStartRegistration.email_address");
 
     private static final Message T_email_address_help =
-        message("xmlui.EPerson.StartRegistration.email_address_help");
+        message("xmlui.EPerson.OAuthStartRegistration.email_address_help");
     
     private static final Message T_error_bad_email =
-        message("xmlui.EPerson.StartRegistration.error_bad_email");
+        message("xmlui.EPerson.OAuthStartRegistration.error_bad_email");
     
     private static final Message T_submit_register = 
-        message("xmlui.EPerson.StartRegistration.submit_register");
+        message("xmlui.EPerson.OAuthStartRegistration.submit_register");
     
 
     /** The email address previously entered */
     private String email;
     
-    private String numerusp;
+    private String usp_bdpi_oauth_loginUsuario;
+    private String usp_bdpi_oauth_nomeUsuario;
+    private String usp_bdpi_oauth_tipoUsuario;
+    private String usp_bdpi_oauth_emailPrincipalUsuario;
+    private String usp_bdpi_oauth_emailAlternativoUsuario;
+    private String usp_bdpi_oauth_emailUspUsuario;
+    private String usp_bdpi_oauth_numeroTelefoneFormatado;
     
     /** Determine if the user failed on their last attempt to enter an email address */
     private java.util.List<String> errors;
@@ -110,9 +120,19 @@ public class OAuthStartRegistration extends AbstractDSpaceTransformer implements
             IOException
     { 
         super.setup(resolver,objectModel,src,parameters);
-        
+                
         this.email = parameters.getParameter("email","");
-        this.numerusp = parameters.getParameter("numerusp","");
+        
+        this.usp_bdpi_oauth_loginUsuario = parameters.getParameter("usp_bdpi_oauth_loginUsuario","");
+        this.usp_bdpi_oauth_nomeUsuario = parameters.getParameter("usp_bdpi_oauth_nomeUsuario","");
+        this.usp_bdpi_oauth_tipoUsuario = parameters.getParameter("usp_bdpi_oauth_tipoUsuario","");
+        this.usp_bdpi_oauth_emailPrincipalUsuario = parameters.getParameter("usp_bdpi_oauth_emailPrincipalUsuario","");
+        this.usp_bdpi_oauth_emailAlternativoUsuario = parameters.getParameter("usp_bdpi_oauth_emailAlternativoUsuario","");
+        this.usp_bdpi_oauth_emailUspUsuario = parameters.getParameter("usp_bdpi_oauth_emailUspUsuario","");
+        this.usp_bdpi_oauth_numeroTelefoneFormatado = parameters.getParameter("usp_bdpi_oauth_numeroTelefoneFormatado","");
+        
+        // this.usp_bdpi_oauth_di = parameters.getParameter("usp_bdpi_oauth_di","");
+        
         this.accountExists = parameters.getParameterAsBoolean("accountExists",false);
         String errors = parameters.getParameter("errors","");
         if (errors.length() > 0)
@@ -175,7 +195,7 @@ public class OAuthStartRegistration extends AbstractDSpaceTransformer implements
    public void addBody(Body body) throws WingException {
         
        if (accountExists) {
-           Division exists = body.addInteractiveDivision("register-account-exists",contextPath+"/register",Division.METHOD_POST,"primary");
+           Division exists = body.addInteractiveDivision("register-account-exists",contextPath+"/oauthregister",Division.METHOD_POST,"primary");
 
            exists.setHead(T_head1);
            
@@ -197,9 +217,9 @@ public class OAuthStartRegistration extends AbstractDSpaceTransformer implements
        
        
        Division register = body.addInteractiveDivision("register",
-               contextPath+"/register",Division.METHOD_POST,"primary");
+               contextPath+"/oauthregister",Division.METHOD_POST,"primary");
        
-       register.setHead(T_head2);
+       register.setHead(T_head2 + ", " + this.usp_bdpi_oauth_nomeUsuario + "!");
        
        EPersonUtils.registrationProgressList(register,1);
        
@@ -207,19 +227,28 @@ public class OAuthStartRegistration extends AbstractDSpaceTransformer implements
        
        List form = register.addList("form",List.TYPE_FORM);
        
+       Radio emails = form.addItem().addRadio("emails");
+       if(this.usp_bdpi_oauth_emailUspUsuario.trim().length()>0)
+    	   emails.addOption(false, this.usp_bdpi_oauth_emailUspUsuario , this.usp_bdpi_oauth_emailUspUsuario);
+       if(this.usp_bdpi_oauth_emailPrincipalUsuario.trim().length()>0)
+    	   emails.addOption(false, this.usp_bdpi_oauth_emailPrincipalUsuario , this.usp_bdpi_oauth_emailPrincipalUsuario);
+       if(this.usp_bdpi_oauth_emailAlternativoUsuario.trim().length()>0)
+    	   emails.addOption(false, this.usp_bdpi_oauth_emailAlternativoUsuario , this.usp_bdpi_oauth_emailAlternativoUsuario);
+       
        Text email = form.addItem().addText("email");
        email.setRequired();
        email.setAutofocus("autofocus");
        email.setLabel(T_email_address);
        email.setHelp(T_email_address_help);
        email.setValue(this.email);
+       
        if (errors.contains("email"))
        {
            email.addError(T_error_bad_email);
        }
        
        Hidden numerusp = form.addItem().addHidden("numerusp");
-       numerusp.setValue(this.numerusp);
+       numerusp.setValue(this.usp_bdpi_oauth_loginUsuario);
        
        Item submit = form.addItem();
        submit.addButton("submit").setValue(T_submit_register);

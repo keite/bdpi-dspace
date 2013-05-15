@@ -119,7 +119,7 @@ public class OAuthAction extends AbstractAction
             	// Authentication successful send a redirect.
                 final HttpServletResponse httpResponse = (HttpServletResponse) objectModel.get(HttpEnvironment.HTTP_RESPONSE_OBJECT);
             	
-            	if(request.getSession().getAttribute("usp_bdpi_numerusp") != null){
+            	if(request.getSession().getAttribute("usp_bdpi_oauth_loginUsuario") != null){
             		httpResponse.sendRedirect( request.getContextPath()+"/oauthregister");
             	}
             	

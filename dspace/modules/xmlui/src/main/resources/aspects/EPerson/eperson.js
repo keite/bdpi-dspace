@@ -22,6 +22,10 @@ importClass(Packages.org.dspace.app.xmlui.utils.ContextUtil);
 
 importClass(Packages.java.lang.String);
 
+//novos imports
+importClass(Packages.java.lang.System);
+
+
 /**
  * This class defines the workflows for three flows within the EPerson aspect.
  * 
@@ -71,9 +75,25 @@ function doOauthRegister()
         var errors = new Array();
         do {
             var email = cocoon.request.getParameter("email");
-            var numerusp = cocoon.session.getAttribute("usp_bdpi_oauth_loginUsuario");
-        			
-            cocoon.sendPageAndWait("oauthregister/start",{"email" : email, "numerusp" : numerusp, "errors" : errors.join(','), "accountExists" : accountExists});
+            
+            var usp_bdpi_oauth_loginUsuario  = cocoon.session.getAttribute("usp_bdpi_oauth_loginUsuario");
+            var usp_bdpi_oauth_nomeUsuario  = cocoon.session.getAttribute("usp_bdpi_oauth_nomeUsuario");
+            var usp_bdpi_oauth_tipoUsuario  = cocoon.session.getAttribute("usp_bdpi_oauth_tipoUsuario");
+            var usp_bdpi_oauth_emailPrincipalUsuario  = cocoon.session.getAttribute("usp_bdpi_oauth_emailPrincipalUsuario");
+            var usp_bdpi_oauth_emailAlternativoUsuario  = cocoon.session.getAttribute("usp_bdpi_oauth_emailAlternativoUsuario");
+            var usp_bdpi_oauth_emailUspUsuario  = cocoon.session.getAttribute("usp_bdpi_oauth_emailUspUsuario");
+            var usp_bdpi_oauth_numeroTelefoneFormatado  = cocoon.session.getAttribute("usp_bdpi_oauth_numeroTelefoneFormatado");
+            
+            cocoon.sendPageAndWait("oauthregister/start",{"email" : email,
+            	"usp_bdpi_oauth_loginUsuario" : usp_bdpi_oauth_loginUsuario,
+            	"usp_bdpi_oauth_nomeUsuario" : usp_bdpi_oauth_nomeUsuario,
+            	"usp_bdpi_oauth_tipoUsuario" : usp_bdpi_oauth_tipoUsuario,
+            	"usp_bdpi_oauth_emailPrincipalUsuario" : usp_bdpi_oauth_emailPrincipalUsuario,
+            	"usp_bdpi_oauth_emailAlternativoUsuario" : usp_bdpi_oauth_emailAlternativoUsuario,
+            	"usp_bdpi_oauth_emailUspUsuario" : usp_bdpi_oauth_emailUspUsuario,
+            	"usp_bdpi_oauth_numeroTelefoneFormatado" : usp_bdpi_oauth_numeroTelefoneFormatado,
+            	"errors" : errors.join(','),
+            	"accountExists" : accountExists});
             var errors = new Array();
             accountExists = false;
             
