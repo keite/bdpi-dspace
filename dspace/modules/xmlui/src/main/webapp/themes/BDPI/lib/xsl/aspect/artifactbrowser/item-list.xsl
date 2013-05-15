@@ -33,6 +33,7 @@
     xmlns:encoder="xalan://java.net.URLEncoder"
     xmlns:util="org.dspace.app.xmlui.utils.XSLUtils"
     xmlns:confman="org.dspace.core.ConfigurationManager"
+	xmlns:utilUSP="org.dspace.app.xmlui.utils.USPXSLUtils"
     exclude-result-prefixes="xalan encoder i18n dri mets dim xlink xsl util confman">
 
     <xsl:output indent="yes"/>
@@ -147,10 +148,14 @@
             </xsl:if>
         </div>
     </xsl:template>
+	
+	<xsl:variable name="urlAtual" select="dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='request'][@qualifier='URI']"/>
 
     <!--handles the rendering of a single item in a list in metadata mode-->
     <xsl:template match="dim:dim" mode="itemSummaryList-DIM-metadata">
-        <xsl:param name="href"/>
+		<xsl:param name="href"/>
+		<xsl:variable name="lowerCase" select="'abcdefghijklmnopqrstuvwxyzçáéíóúýàèìòùãõñäëïöüÿâêîôûÁÉÍÓÚÝÀÈÌÒÙÄËÏÖÜÃÕÑÂÊÎÔÛ'"/> 
+		<xsl:variable name="upperCase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZÇAEIOUYAEIOUAONAEIOUYAEIOUAEIOUYAEIOUAEIOUAONAEIOU'"/>        
         <div class="artifact-description">
             <div class="artifact-title">
                 <xsl:element name="a">
@@ -175,6 +180,8 @@
             </div>
             <div class="artifact-info">
                 <span class="author">
+				    <xsl:variable name="verificaLink" select="utilUSP:contemHandleURL($urlAtual)" />
+					
                     <xsl:choose>
                         <xsl:when test="dim:field[@element='contributor'][@qualifier='author']">
                             <xsl:for-each select="dim:field[@element='contributor'][@qualifier='author']">
@@ -184,6 +191,54 @@
                                   </xsl:if>
                                   <xsl:copy-of select="node()"/>
                                 </span>
+								
+								<xsl:variable name="nodeSemAcento" select="translate(./node(), $lowerCase, $upperCase)"/> 
+								<xsl:for-each select="../dim:field[@mdschema='usp'][@element='autor'][not(@qualifier)]"> 
+								   <xsl:variable name="uspAutor" select="substring-before(./node(),':')"/> 
+								   <xsl:variable name="uspAutorSemAcento" select="translate($uspAutor,$lowerCase,$upperCase)"/> 
+								   <xsl:if test="$nodeSemAcento=$uspAutorSemAcento"> 
+								      <xsl:text> </xsl:text>
+
+<!-- 130419 - Dan - Codigo para recuperar somente o codpes do autor --> 
+                                      <xsl:variable name="uspAutorInfo" select="substring-after(./node(),':')"/> 
+									  <xsl:variable name="codpes" select="substring-before($uspAutorInfo,':')"/> 
+
+<!-- 130419 - Dan - Codigo para recuperar somente o itemID --> 
+                                      <xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
+									     <xsl:variable name="url" select="current()"/>
+									     <xsl:variable name="urlSub" select="substring-after($url,'net/')"/>
+
+										 <xsl:if test="$urlSub!=''">
+									        <xsl:variable name="itemID" select="substring-after($urlSub,'/')"/> 
+<!-- 130419 - Dan - Codigo que insere o itemID e o codpes na URL. E necessario realizar a verificacao da url atual para a construcao do link, pois podera haver duplicacao no link --> 
+                                            <xsl:choose>
+ 
+									           <xsl:when test="$verificaLink = 0"> 
+										          <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+											         <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+											      </a>
+ 
+										       </xsl:when> 
+										
+  										       <xsl:when test="$verificaLink = 2"> 
+											      <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+												      <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+											      </a>
+ 
+										       </xsl:when> 
+										
+										       <xsl:otherwise> 
+											      <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+												      <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
+											      </a>
+ 
+										       </xsl:otherwise> 
+									        </xsl:choose> 
+										 </xsl:if>
+									   </xsl:for-each>
+								</xsl:if> 
+								</xsl:for-each>
+								
                                 <xsl:if test="count(following-sibling::dim:field[@element='contributor'][@qualifier='author']) != 0">
                                     <xsl:text>; </xsl:text>
                                 </xsl:if>
