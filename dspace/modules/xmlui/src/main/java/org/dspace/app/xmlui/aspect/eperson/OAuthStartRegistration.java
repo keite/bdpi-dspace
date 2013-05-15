@@ -27,6 +27,7 @@ import org.dspace.app.xmlui.wing.Message;
 import org.dspace.app.xmlui.wing.WingException;
 import org.dspace.app.xmlui.wing.element.Body;
 import org.dspace.app.xmlui.wing.element.Division;
+import org.dspace.app.xmlui.wing.element.Head;
 import org.dspace.app.xmlui.wing.element.Hidden;
 import org.dspace.app.xmlui.wing.element.Item;
 import org.dspace.app.xmlui.wing.element.List;
@@ -219,7 +220,10 @@ public class OAuthStartRegistration extends AbstractDSpaceTransformer implements
        Division register = body.addInteractiveDivision("register",
                contextPath+"/oauthregister",Division.METHOD_POST,"primary");
        
-       register.setHead(T_head2 + ", " + this.usp_bdpi_oauth_nomeUsuario + "!");
+       
+       Head algo = register.setHead();
+       algo.addContent(T_head2);
+       algo.addContent(", " + this.usp_bdpi_oauth_nomeUsuario + "!");
        
        EPersonUtils.registrationProgressList(register,1);
        
