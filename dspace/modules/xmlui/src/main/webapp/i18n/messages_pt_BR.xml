@@ -484,6 +484,7 @@
 	<message key="org.dspace.eperson.LDAPAuthentication.title">Autenticação LDAP</message>
 	<message key="org.dspace.eperson.PasswordAuthentication.title">Autenticação por senha</message>
 	<message key="org.dspace.eperson.X509Authentication.title">Autenticação pro certificação na Web</message>
+	<message key="org.dspace.eperson.OAuthAuthentication.title">Autenticação USP Digital</message>
 	<!-- org.dspace.app.xmlui.eperson.LoginChooser.java -->
 	<message key="xmlui.EPerson.LoginChooser.title">Escolha um modo de login</message>
 	<message key="xmlui.EPerson.LoginChooser.trail">Escolha um login</message>
