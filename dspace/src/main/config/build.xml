@@ -93,8 +93,9 @@ Common usage:
     </tstamp>
 
     <!-- Default location of GeoLiteCity.dat.gz to download. This may be overridden, if URL path changes. -->
-    <property name="geolite" value="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" />
-
+    <!--property name="geolite" value="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" /-->
+    <property name="geolite" value="file://${env.DATAVARBASEFOLDER}/auxdata/GeoLiteCity.dat.gz" />
+    
     <!-- ============================================================= -->
     <!-- The DSpace class path for executing installation targets      -->
     <!-- ============================================================= -->
@@ -643,6 +644,12 @@ Common usage:
 ====================================================================
         </echo>
 
+	<symlink failonerror="false" link="${dspace.dir}/assetstore" action="delete"/>
+	<symlink failonerror="false" link="${dspace.dir}/solr/oai/data" action="delete"/>
+	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" action="delete"/>
+	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" action="delete"/>
+	<symlink failonerror="false" link="${dspace.dir}/var" action="delete"/>
+        
 	<symlink failonerror="false" link="${dspace.dir}/assetstore" resource="${env.DATAVARBASEFOLDER}/assetstore"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/oai/data" resource="${env.DATAVARBASEFOLDER}/solr/oai/data"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" resource="${env.DATAVARBASEFOLDER}/solr/search/data"/>

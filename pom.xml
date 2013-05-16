@@ -1198,6 +1198,11 @@
             <name>Sonatype Releases Repository</name>
             <url>http://oss.sonatype.org/content/repositories/releases/</url>
         </repository>
+	<repository>
+	    <id>bdpi-repo</id>
+	    <name>BDPI local maven repository</name>
+	    <url>file://${root.basedir}/m2repo</url>
+	</repository>
     </repositories>
     
 </project>

@@ -484,6 +484,7 @@
 	<message key="org.dspace.eperson.LDAPAuthentication.title">Autenticação LDAP</message>
 	<message key="org.dspace.eperson.PasswordAuthentication.title">Autenticação por senha</message>
 	<message key="org.dspace.eperson.X509Authentication.title">Autenticação pro certificação na Web</message>
+	<message key="org.dspace.eperson.OAuthAuthentication.title">Autenticação USP Digital</message>
 	<!-- org.dspace.app.xmlui.eperson.LoginChooser.java -->
 	<message key="xmlui.EPerson.LoginChooser.title">Escolha um modo de login</message>
 	<message key="xmlui.EPerson.LoginChooser.trail">Escolha um login</message>
@@ -556,10 +557,20 @@
 	<message key="xmlui.EPerson.VerifyEmail.title">Verificação de envio de mensagens eletrônicas</message>
 	<message key="xmlui.EPerson.VerifyEmail.head">Verificação de envio de mensagens eletrônicas</message>
 	<message key="xmlui.EPerson.VerifyEmail.para">Uma mensagem eletrônica foi enviada para {0} contendo um link e mais informações.</message>
-
-
-
-
+	
+	<!-- jan.lara@sibi.usp.br - alteracao para incluir autenticacao via di -->
+	<!-- org.dspace.app.xmlui.eperson.OAuthStartRegistration.java -->
+	<message key="xmlui.EPerson.OAuthStartRegistration.title">Cadastro de novo usuário</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.head1">Endereço de e-mail já cadastrado</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.para1">Este endereço de e-mail já esta cadastrado. Caso tenha esquecido a senha, pressione o botão "mudar senha" abaixo.</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.reset_password_for">mudar senha para</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.submit_reset">Mudar senha</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.head2">Bem-vindo</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.para2">Informe ou escolha um e-mail de sua preferência para submissão de materiais.</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.email_address">e-mail</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.email_address_help">Informe algum outro e-mail para ser verificado e utilizado como identificação de login.</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.error_bad_email">Não foi possível enviar mensagens eletrônicas para este e-mail.</message>
+	<message key="xmlui.EPerson.OAuthStartRegistration.submit_register">Cadastrar</message>
 
 
 	<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
