@@ -649,12 +649,15 @@ Common usage:
 	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" action="delete"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" action="delete"/>
 	<symlink failonerror="false" link="${dspace.dir}/var" action="delete"/>
-        
+
+	<chmod file="${dspace.dir}/solr/**" perm="a+rw" type="both"/>
+	        
 	<symlink failonerror="false" link="${dspace.dir}/assetstore" resource="${env.DATAVARBASEFOLDER}/assetstore"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/oai/data" resource="${env.DATAVARBASEFOLDER}/solr/oai/data"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" resource="${env.DATAVARBASEFOLDER}/solr/search/data"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" resource="${env.DATAVARBASEFOLDER}/solr/statistics/data"/>
 	<symlink failonerror="false" link="${dspace.dir}/var" resource="${env.DATAVARBASEFOLDER}/oai/var"/>
+
         <!--<symlink failonerror="false" link="${dspace.dir}/webapps/xmlui/themes/BDPI/images/cv" resource="${env.DATAVARBASEFOLDER}/cv"/>-->
 		
 		<!-- 130514 - Dan Shinkai -->
