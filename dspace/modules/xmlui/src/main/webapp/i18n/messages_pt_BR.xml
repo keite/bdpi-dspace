@@ -2880,7 +2880,12 @@ Para obtener más información acerca de como añadir este repositório y su pro
 
 <message key="xmlui.ChoiceLookupTransformer.field.dc_relation_ispartof.title">Busca de título de revista no SHERPA/ROMEO</message>
 
+<!-- Navegador -->
 
+<message key="xmlui.ArtifactBrowser.Navigation.browse_sponsor">Fomento</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sponsor.column_heading">Agências de Fomento</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.sponsor">Navegar por Agências de Fomento</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.sponsor">Navegar por Agências de Fomento</message>
 
 
 </catalogue>
