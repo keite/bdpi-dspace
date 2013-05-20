@@ -683,7 +683,7 @@
 	<message key="xmlui.Submission.submit.progressbar.complete">Completar</message>
 	
 	<!-- org.dspace.app.xmlui.Submission.submit.ResumeStep -->
-	<message key="xmlui.Submission.submit.ResumeStep.submit_resume">Retornar</message>
+	<message key="xmlui.Submission.submit.ResumeStep.submit_resume">Retormar submissão</message>
 
 	<!-- org.dspace.app.xmlui.Submission.submit.SelectCollection -->
 	<message key="xmlui.Submission.submit.SelectCollection.head">Selecione um Tipo de Produção</message>
@@ -2875,6 +2875,10 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <!-- ============================================== -->
 <!-- FIM 130327 andre.assada@usp.br pagina news FIM -->
 <!-- ============================================== -->
+
+<!-- Input-forms.xml -->
+
+<message key="xmlui.ChoiceLookupTransformer.field.dc_relation_ispartof.title">Busca de título de revista no SHERPA/ROMEO</message>
 
 
 
