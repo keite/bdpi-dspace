@@ -2892,4 +2892,9 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.periodical">Navegar por Revistas ou Eventos</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.periodical">Navegar por Revistas ou Eventos</message>
 
+<message key="xmlui.ArtifactBrowser.Navigation.browse_access">Acesso</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.access.column_heading">Tipo de acesso</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.access">Tipo de acesso</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.access">Tipo de acesso</message>
+
 </catalogue>
