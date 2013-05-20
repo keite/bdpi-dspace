@@ -2887,5 +2887,9 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.sponsor">Navegar por Agências de Fomento</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.sponsor">Navegar por Agências de Fomento</message>
 
+<message key="xmlui.ArtifactBrowser.Navigation.browse_periodical">Revista ou Evento</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.periodical.column_heading">Títulos de revista e eventos</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.periodical">Navegar por Revistas ou Eventos</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.periodical">Navegar por Revistas ou Eventos</message>
 
 </catalogue>
