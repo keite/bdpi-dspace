@@ -1416,10 +1416,10 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-element>title</dc-element>
          <dc-qualifier></dc-qualifier>
          <repeatable>false</repeatable>
-         <label>* Título</label>
+         <label>* Nome do Projeto</label>
          <input-type>textarea</input-type>
-         <hint>Título da produção no idioma original. Ex: 1992: a redescoberta da Natureza</hint>
-         <required>Título da produção é um campo obrigatório. Ex: 1992: a redescoberta da Natureza</required>
+         <hint>Nome do projeto no idioma original</hint>
+         <required>Título da produção é um campo obrigatório.</required>
        </field>  
 
        <field>
@@ -1441,7 +1441,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <label>* Data</label>
          <input-type>date</input-type>
          <hint></hint>
-         <required>Campo obrigatório - entre com pelo menos o ano. Ex: 1992</required>
+         <required>Campo obrigatório - entre com pelo menos o ano. Ex: 2013</required>
        </field>
 
 	   <field>
@@ -1477,6 +1477,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>País em que o relatório foi produzido. Ex. Brasil</hint>
          <required></required>
        </field>	   
+	   
  <!-- Verificar a necessidade deste campo - Tiago - 2013-04-22
        <field>
          <dc-schema>dc</dc-schema>
