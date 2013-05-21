@@ -725,8 +725,8 @@
 	<message key="xmlui.Submission.submit.DescribeStep.year">Ano</message>
 	<message key="xmlui.Submission.submit.DescribeStep.month">Mês</message>
 	<message key="xmlui.Submission.submit.DescribeStep.day">Dia</message>
-	<message key="xmlui.Submission.submit.DescribeStep.series_name">Nome da série</message>
-	<message key="xmlui.Submission.submit.DescribeStep.report_no">Número</message>
+	<message key="xmlui.Submission.submit.DescribeStep.series_name"> </message>
+	<message key="xmlui.Submission.submit.DescribeStep.report_no"> </message>
 <message key="xmlui.Submission.submit.DescribeStep.controlledvocabulary.link">Categorias de assunto</message>
 <message key="xmlui.Submission.submit.DescribeStep.controlledvocabulary.title">Categorias de assunto</message>
 <message key="xmlui.Submission.submit.DescribeStep.controlledvocabulary.filter.label">Filtro de assuntos</message>
@@ -2879,6 +2879,7 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <!-- Input-forms.xml -->
 
 <message key="xmlui.ChoiceLookupTransformer.field.dc_relation_ispartof.title">Busca de título de revista no SHERPA/ROMEO</message>
+<message key="xmlui.ChoiceLookupTransformer.field.dc_relation_ispartof.help">Caso não recupere o nome, digite o nome do periódico sem abreviação e clique em aceitar</message>
 
 <!-- Navegador -->
 

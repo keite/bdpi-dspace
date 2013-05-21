@@ -19,6 +19,7 @@
    <!-- 120709 Josi: inserir as colecoes de Artigos e Materiais de Revistas para form proprio -->
    <name-map collection-handle="123456789/6"   form-name="artigo" />
    <name-map collection-handle="123456789/11" form-name="evento" />
+   <name-map collection-handle="123456789/38" form-name="evento" />   
    <name-map collection-handle="123456789/8" form-name="livro" />
    <name-map collection-handle="123456789/10" form-name="relatorio" />
    <name-map collection-handle="123456789/9" form-name="rea" />
@@ -378,7 +379,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Volume/Número</label>
          <input-type>series</input-type>
-         <hint>Digite o volume e o número do artigo. Utilize o formato v.99 para volume e n.99 para número.</hint>
+         <hint>Informe o volume no primeiro campo e o número no segundo campo do periódico em que o artigo foi publicado. Utilize o formato v.99 para volume e n.99 para número.</hint>
          <required></required>
        </field>
 <!-- Comentado por Tiago 2013-04-01
@@ -434,7 +435,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>* Data de publicação do fascículo</label>
          <input-type>date</input-type>
-         <hint>Informar, pelo menos, o ano de publicação do fascículo onde o artigo foi publicado</hint>
+         <hint>Informar, pelo menos, o ano de publicação do fascículo em que o artigo foi publicado</hint>
          <required>Campo obrigatório - entre com pelo menos o ano de publicação. Ex: 1992</required>
        </field>
 
@@ -447,7 +448,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Editor</label>
          <input-type>onebox</input-type>
-         <hint>Editor da revista onde o artigo foi publicado. Ex: Editora da Universidade de Brasília - UnB </hint>
+         <hint>Editor do periódico. Ex: Editora da Universidade de Brasília - UnB </hint>
          <required></required>
  		 <visibility>workflow</visibility>
        </field>
@@ -460,7 +461,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Cidade de publicação</label>
          <input-type>onebox</input-type>
-         <hint>Cidade da revista onde o artigo foi publicado. Ex: São Paulo</hint>
+         <hint>Cidade em que o periódico foi publicado. Ex: São Paulo</hint>
          <required></required>
        </field>
 	   
@@ -471,7 +472,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>País de publicação</label>
          <input-type>onebox</input-type>
-         <hint>País da revista onde o artigo foi publicado. Ex: Brasil</hint>
+         <hint>País em que o periódico foi publicado. Ex: Brasil</hint>
          <required></required>
        </field>
 	   
@@ -715,13 +716,13 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </page>	
    </form>
 
-    <!-- FORM Para trabalhos em eventos @@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- FORM Para Trabalhos publicados em anais de eventos @@@@@@@@@@@@@@@@@@@@@@ -->
 
    <!-- ...................................................... -->
    <!-- ...................................................... -->
    <!-- 20130408                                               -->
    <!-- Criado por SIBi USP                                    -->
-   <!-- Entrada de material apresentado em eventos             -->
+   <!-- Entrada de Trabalhos publicados em anais de eventos    -->
    <!-- ...................................................... -->
    <!-- ...................................................... -->
 
@@ -2023,7 +2024,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>* Data de publicação do fascículo</label>
          <input-type>date</input-type>
-         <hint>Informar, pelo menos, o ano de publicação do fascículo onde o artigo foi publicado</hint>
+         <hint>Informar, pelo menos, o ano de publicação do fascículo em que o artigo foi publicado</hint>
          <required>Campo obrigatório - entre com pelo menos o ano de publicação. Ex: 1992</required>
        </field>
 
@@ -2036,7 +2037,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Editor</label>
          <input-type>onebox</input-type>
-         <hint>Editor da revista onde o artigo foi publicado. Ex: Editora da Universidade de Brasília - UnB </hint>
+         <hint>Editor do periódico. Ex: Editora da Universidade de Brasília - UnB </hint>
          <required></required>
  		 <visibility>workflow</visibility>
        </field>
@@ -2049,7 +2050,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>Cidade de publicação</label>
          <input-type>onebox</input-type>
-         <hint>Cidade da revista onde o artigo foi publicado. Ex: São Paulo</hint>
+         <hint>Cidade em que o periódico foi publicado. Ex: São Paulo</hint>
          <required></required>
        </field>
 	   
@@ -2060,7 +2061,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
          <label>País de publicação</label>
          <input-type>onebox</input-type>
-         <hint>País da revista onde o artigo foi publicado. Ex: Brasil</hint>
+         <hint>País em que o periódico foi publicado. Ex: Brasil</hint>
          <required></required>
        </field>
 	   
@@ -2358,11 +2359,11 @@ it, please enter the types and the actual numbers or codes below.</hint>
    <!-- Conforme Diretrizes Driver 2.0 - Eventos - 2013-05-02 - Tiago -->
    <value-pairs value-pairs-name="tipoItemEvento" dc-term="type">
      <pair>
-       <displayed-value>Comunicações em eventos</displayed-value>
+       <displayed-value>Trabalhos publicados em anais de eventos</displayed-value>
        <stored-value>conferenceObject</stored-value>
      </pair>
      <pair>
-       <displayed-value>Palestra ou apresentação realizada durante um evento acadêmico</displayed-value>
+       <displayed-value>Palestras ou apresentações realizadas durante eventos acadêmicos</displayed-value>
        <stored-value>lecture</stored-value>
      </pair>	 
     </value-pairs>	
@@ -2538,10 +2539,21 @@ it, please enter the types and the actual numbers or codes below.</hint>
 	
 	<!-- ........................................................... -->
    <value-pairs value-pairs-name="detalhaTipoItemEvento" dc-term="type">
+
+     <pair>
+       <displayed-value>Apresentação Oral</displayed-value>
+        <stored-value>Apresentação Oral</stored-value>
+     </pair>
+
      <pair>
        <displayed-value>Palestra</displayed-value>
         <stored-value>Palestra</stored-value>
      </pair>
+
+     <pair>
+       <displayed-value>Poster / Painel</displayed-value>
+        <stored-value>Poster / Painel</stored-value>
+     </pair>	 
 	 
 	 <pair>
        <displayed-value>Resumo</displayed-value>
