@@ -134,7 +134,7 @@
         <!-- DSpace also comes with an option SWORD Client aspect, which allows
              you to submit content FROM your DSpace TO another SWORD-enabled repository.
              To enable this feature, uncomment the aspect below. -->
-        <!-- <aspect name="SwordClient" path="resource://aspects/SwordClient/" /> -->
+        <aspect name="SwordClient" path="resource://aspects/SwordClient/" />
 
         <!--
             This demo aspect tests the various possible DRI features.
