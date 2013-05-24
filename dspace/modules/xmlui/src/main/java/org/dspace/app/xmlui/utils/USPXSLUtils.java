@@ -124,4 +124,9 @@ public class USPXSLUtils {
       }
       return 0;
    } 
+   
+   /* 130524 - Dan - Funcao que retira todos os espacos contidos em uma determinada String. */
+   public static String retiraEspacos(String string) {
+		return string.replace(" ", "");
+   }
 }
