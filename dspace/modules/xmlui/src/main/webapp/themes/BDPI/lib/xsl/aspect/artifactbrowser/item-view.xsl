@@ -31,6 +31,7 @@
     xmlns:xalan="http://xml.apache.org/xalan"
     xmlns:encoder="xalan://java.net.URLEncoder"
     xmlns:util="org.dspace.app.xmlui.utils.XSLUtils"
+	xmlns:utilUSP="org.dspace.app.xmlui.utils.USPXSLUtils"
     xmlns:jstring="java.lang.String"
     xmlns:rights="http://cosimo.stanford.edu/sdr/metsrights/"
     exclude-result-prefixes="xalan encoder i18n dri mets dim xlink xsl util jstring rights">
@@ -841,11 +842,11 @@
                                 <xsl:if test="$contContributor = 0">
                                     <xsl:for-each select="../dim:field[@element='contributor'][@mdschema='dc'][@qualifier='author']">
                                         <xsl:value-of select="current()"/>
-                                        <xsl:variable name="nodeSemAcento" select="translate(./node(), $lowerCase, $upperCase)"/>
+                                        <xsl:variable name="nodeSemAcento" select="utilUSP:retiraEspacos(translate(./node(), $lowerCase, $upperCase))"/>
 
                                         <xsl:for-each select="../dim:field[@mdschema='usp'][@element='autor'][not(@qualifier)]">
                                             <xsl:variable name="uspAutor" select="substring-before(./node(),':')"/>
-                                            <xsl:variable name="uspAutorSemAcento" select="translate($uspAutor,$lowerCase,$upperCase)"/>
+                                            <xsl:variable name="uspAutorSemAcento" select="utilUSP:retiraEspacos(translate($uspAutor,$lowerCase,$upperCase))"/>
                                             <xsl:if test="$nodeSemAcento=$uspAutorSemAcento">
                                                 <xsl:text> </xsl:text>
 

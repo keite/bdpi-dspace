@@ -192,10 +192,10 @@
                                   <xsl:copy-of select="node()"/>
                                 </span>
 								
-								<xsl:variable name="nodeSemAcento" select="translate(./node(), $lowerCase, $upperCase)"/> 
+								<xsl:variable name="nodeSemAcento" select="utilUSP:retiraEspacos(translate(./node(), $lowerCase, $upperCase))"/> 
 								<xsl:for-each select="../dim:field[@mdschema='usp'][@element='autor'][not(@qualifier)]"> 
 								   <xsl:variable name="uspAutor" select="substring-before(./node(),':')"/> 
-								   <xsl:variable name="uspAutorSemAcento" select="translate($uspAutor,$lowerCase,$upperCase)"/> 
+								   <xsl:variable name="uspAutorSemAcento" select="utilUSP:retiraEspacos(translate($uspAutor,$lowerCase,$upperCase))"/> 
 								   <xsl:if test="$nodeSemAcento=$uspAutorSemAcento"> 
 								      <xsl:text> </xsl:text>
 
