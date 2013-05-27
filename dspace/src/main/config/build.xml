@@ -94,7 +94,7 @@ Common usage:
 
     <!-- Default location of GeoLiteCity.dat.gz to download. This may be overridden, if URL path changes. -->
     <!--property name="geolite" value="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" /-->
-    <property name="geolite" value="file://${env.DATAVARBASEFOLDER}/auxdata/GeoLiteCity.dat.gz" />
+    <property name="geolite" value="file://${dspace.dir}/../src/dat/GeoLiteCity.dat.gz" />
     
     <!-- ============================================================= -->
     <!-- The DSpace class path for executing installation targets      -->
@@ -650,6 +650,9 @@ Common usage:
 	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" action="delete"/>
 	<symlink failonerror="false" link="${dspace.dir}/var" action="delete"/>
 
+	<symlink failonerror="false" link="${dspace.dir}/reports" action="delete"/>
+	<symlink failonerror="false" link="${dspace.dir}/upload" action="delete"/>
+
 	<chmod file="${dspace.dir}/solr/**" perm="a+rw" type="both"/>
 	        
 	<symlink failonerror="false" link="${dspace.dir}/assetstore" resource="${env.DATAVARBASEFOLDER}/assetstore"/>
@@ -657,10 +660,13 @@ Common usage:
 	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" resource="${env.DATAVARBASEFOLDER}/solr/search/data"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" resource="${env.DATAVARBASEFOLDER}/solr/statistics/data"/>
 	<symlink failonerror="false" link="${dspace.dir}/var" resource="${env.DATAVARBASEFOLDER}/oai/var"/>
+
+	<symlink failonerror="false" link="${dspace.dir}/reports" resource="${env.DATAVARBASEFOLDER}/reports"/>
+	<symlink failonerror="false" link="${dspace.dir}/upload" resource="${env.DATAVARBASEFOLDER}/upload"/>
 	
-	<mkdir dir="${dspace.dir}/reports" />
-	<mkdir dir="${dspace.dir}/upload" />
-	
+	<mkdir dir="${dspace.dir}/log" />
+	<chmod file="${dspace.dir}/log/**" perm="a+rw" type="both"/>
+		
         <!--<symlink failonerror="false" link="${dspace.dir}/webapps/xmlui/themes/BDPI/images/cv" resource="${env.DATAVARBASEFOLDER}/cv"/>-->
 		
 		<!-- 130514 - Dan Shinkai -->

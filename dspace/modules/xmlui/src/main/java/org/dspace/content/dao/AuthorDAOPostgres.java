@@ -50,6 +50,7 @@ public class AuthorDAOPostgres extends AuthorDAO
             "JOIN metadatavalue C ON (handle.resource_id = C.item_id AND handle.resource_type_id=2 AND C.metadata_field_id=?) " +
             "JOIN metadatavalue D ON (handle.resource_id = D.item_id AND handle.resource_type_id=2 AND D.metadata_field_id=? " +
             "AND SPLIT_PART(D.text_value,':',2)=?) order by B.text_value, C.text_value DESC, A.text_value";
+			
 
     /** Constante para armazenar o numero de itens relacionados com um determinado numero USP */
     private static final String selectTotalTitulos = "SELECT COUNT(*) AS total FROM " +
@@ -440,7 +441,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 
          while(rs.next()) {
             ItemRelacionado item = new ItemRelacionado();
-            item.setAno(rs.getInt("dtPub"));
+            item.setAno(rs.getString("dtPub"));
             item.setTitulo(rs.getString("title"));
             item.setTipo(rs.getString("tipo"));
             item.setHandle(rs.getString("handle"));
