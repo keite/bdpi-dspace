@@ -596,15 +596,28 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>
 
        <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>premio</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Prêmios</label>
+         <input-type>onebox</input-type>
+         <hint>Informar prêmios recebidos pela produção.</hint>
+         <required></required>
+       </field>	   
+   
+       <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>notes</dc-qualifier>
          <repeatable>false</repeatable>
 		 <label>Notas</label>
          <input-type>textarea</input-type>
-         <hint>Notas descritivas adicionais, tais como prêmios recebidos pelo trabalho, uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
+         <hint>Notas descritivas adicionais, tais como uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
          <required></required>
        </field>
+	   
+	   
 
 	   						 <!-- 120710 Vamos tentar deixar numa pagina unica os metadados de artigo e o pessoal salva mais amiude	   
 							 </page>
@@ -988,13 +1001,24 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>
 
        <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>premio</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Prêmios</label>
+         <input-type>onebox</input-type>
+         <hint>Informar prêmios recebidos pela produção.</hint>
+         <required></required>
+       </field>		   
+	   
+       <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>notes</dc-qualifier>
          <repeatable>false</repeatable>
 		 <label>Notas</label>
          <input-type>textarea</input-type>
-         <hint>Notas descritivas adicionais, tais como prêmios recebidos pelo trabalho, uso em bibliografia básica ou notas similares.</hint>
+         <hint>Notas descritivas adicionais, tais como uso em bibliografia básica ou notas similares.</hint>
          <required></required>
        </field>
 
@@ -1280,13 +1304,24 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>
 
        <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>premio</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Prêmios</label>
+         <input-type>onebox</input-type>
+         <hint>Informar prêmios recebidos pela produção.</hint>
+         <required></required>
+       </field>		   
+	   
+       <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>notes</dc-qualifier>
          <repeatable>false</repeatable>
 		 <label>Notas</label>
          <input-type>textarea</input-type>
-         <hint>Notas descritivas adicionais, tais como prêmios recebidos pelo trabalho, uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
+         <hint>Notas descritivas adicionais, tais como uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
          <required></required>
        </field>
 
@@ -1844,6 +1879,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
 		 <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
          <required></required>
        </field>
+
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>premio</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+		 <label>Prêmios</label>
+         <input-type>onebox</input-type>
+         <hint>Informar prêmios recebidos pela produção.</hint>
+         <required></required>
+       </field>	
 	   
        <field>
          <dc-schema>dc</dc-schema>
