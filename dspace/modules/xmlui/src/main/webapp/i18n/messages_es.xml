@@ -2247,19 +2247,19 @@ Cuando se usa QDC para los elementos de DSpace se recomienda el uso de crosswalk
 <!-- ============================================ -->
 <!-- 130327 andre.assada@usp.br paginas estaticas -->
 <!-- ============================================ -->
-<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEs">Créditos</a></message>
+<message key="paginasEstaticas.creditos"><a href="/page/creditosBDPIEs">Créditos</a></message>
 <message key="paginasEstaticas.creditos.trail">Créditos</message>
 
-<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEs">Política de privacidad</a></message>
+<message key="paginasEstaticas.privacidade"><a href="/page/privacidadeBDPIEs">Política de privacidad</a></message>
 <message key="paginasEstaticas.privacidade.trail">Política de privacidad</message>
 
-<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEs">Política de Acceso Abierto</a></message>
+<message key="paginasEstaticas.politicaAcesso"><a href="/page/politicaAcessoEs">Política de Acceso Abierto</a></message>
 <message key="paginasEstaticas.politicaAcesso.trail">Política de Acesso Abierto</message>
 
-<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEs">Derecho de autor</a></message>
+<message key="paginasEstaticas.direitosAutorais"><a href="/page/direitosAutoraisEs">Derecho de autor</a></message>
 <message key="paginasEstaticas.direitosAutorais.trail">Derechos de autor</message>
 
-<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEs">Sobre</a></message>
+<message key="paginasEstaticas.sobreBDPI"><a href="/page/sobreBDPIEs">Sobre</a></message>
 <message key="paginasEstaticas.sobreBDPI.trail">Sobre</message>
 
 <!-- ==================================================== -->

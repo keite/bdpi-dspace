@@ -2285,15 +2285,15 @@
 <!-- ============================================ -->
 <!-- 130327 andre.assada@usp.br paginas estaticas -->
 <!-- ============================================ -->
-<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEnUS">Credits</a></message>
+<message key="paginasEstaticas.creditos"><a href="/page/creditosBDPIEnUS">Credits</a></message>
 <message key="paginasEstaticas.creditos.trail">Credits</message>
-<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEnUS">Privacy policy</a></message>
+<message key="paginasEstaticas.privacidade"><a href="/page/privacidadeBDPIEnUS">Privacy policy</a></message>
 <message key="paginasEstaticas.privacidade.trail">Privacy policy</message>
-<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEnUS">Open Access Policy</a></message>
+<message key="paginasEstaticas.politicaAcesso"><a href="/page/politicaAcessoEnUS">Open Access Policy</a></message>
 <message key="paginasEstaticas.politicaAcesso.trail">Open Access Policy</message>
-<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEnUS">Copyright</a></message>
+<message key="paginasEstaticas.direitosAutorais"><a href="/page/direitosAutoraisEnUS">Copyright</a></message>
 <message key="paginasEstaticas.direitosAutorais.trail">Copyright</message>
-<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEnUS">About</a></message>
+<message key="paginasEstaticas.sobreBDPI"><a href="/page/sobreBDPIEnUS">About</a></message>
 <message key="paginasEstaticas.sobreBDPI.trail">About</message>
 <!-- ==================================================== -->
 <!-- FIM 130327 andre.assada@usp.br paginas estaticas FIM -->

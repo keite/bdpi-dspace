@@ -2791,34 +2791,34 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <!-- ============================================ -->
 <!-- 130327 andre.assada@usp.br paginas estaticas -->
 <!-- ============================================ -->
-<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIPtBR">Créditos</a></message>
+<message key="paginasEstaticas.creditos"><a href="/page/creditosBDPIPtBR">Créditos</a></message>
 <!--<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEnUS">Credits</a></message>
 <message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEs">Créditos</a></message>
 -->
 <message key="paginasEstaticas.creditos.trail">Créditos</message>
 
-<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIPtBR">Política de privacidade</a></message>
+<message key="paginasEstaticas.privacidade"><a href="/page/privacidadeBDPIPtBR">Política de privacidade</a></message>
 <!--
 <message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEnUS">Privacy policy</a></message>
 <message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEs">Política de privacidad</a></message>
 -->
 <message key="paginasEstaticas.privacidade.trail">Política de privacidade</message>
 
-<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoPtBR">Política de Acesso Aberto</a></message>
+<message key="paginasEstaticas.politicaAcesso"><a href="/page/politicaAcessoPtBR">Política de Acesso Aberto</a></message>
 <!--
 <message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEnUS">Open Access Policy</a></message>
 <message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEs">Política de Acceso Abierto</a></message>
 -->
 <message key="paginasEstaticas.politicaAcesso.trail">Política de Acesso Aberto</message>
 
-<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisPtBR">Direitos Autorais</a></message>
+<message key="paginasEstaticas.direitosAutorais"><a href="/page/direitosAutoraisPtBR">Direitos Autorais</a></message>
 <!--
 <message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEnUS">Copyright</a></message>
 <message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEs">Derecho de autor</a></message>
 -->
 <message key="paginasEstaticas.direitosAutorais.trail">Direitos Autorais</message>
 
-<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIPtBR">Sobre</a></message>
+<message key="paginasEstaticas.sobreBDPI"><a href="/page/sobreBDPIPtBR">Sobre</a></message>
 <!--
 <message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEnUS">About</a></message>
 <message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEs">Sobre</a></message>
