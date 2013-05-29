@@ -137,10 +137,10 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 	private String theme = "BDPI";
 
     private String diretorioFoto = dspaceDir + "/webapps/xmlui/themes/" + theme + "/images/autorUSP/fotos/";
-    private String diretorioFotoPag = "/xmlui/themes/" + theme + "/images/autorUSP/fotos/";
-    private String diretorioFotoPadrao = "/xmlui/themes/" + theme + "/images/autorUSP/imagens/";
+    private String diretorioFotoPag = "/themes/" + theme + "/images/autorUSP/fotos/";
+    private String diretorioFotoPadrao = "/themes/" + theme + "/images/autorUSP/imagens/";
     private String diretorioFotoTemp = dspaceDir + "/webapps/xmlui/themes/" + theme + "/images/autorUSP/tmp/";
-    private String diretorioFotoTempPag = "/xmlui/themes/" + theme + "/images/autorUSP/tmp/";
+    private String diretorioFotoTempPag = "/themes/" + theme + "/images/autorUSP/tmp/";
     private String extensaoFoto = ".gif";	                              
     	                               
     private String itemIDStr;    
@@ -248,20 +248,18 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 		
 	/** ============================= FIM ================================ **/
 
-        if(verificaFotoAutor) {
-
+        if(verificaFotoAutor) {		
+			
           try {
                int width = 96;
                int height = 140;
 
                BufferedImage foto = ImageIO.read(new File(diretorioFoto + codpesStr + extensaoFoto));
+			   
+			   diretorioFigura = diretorioFoto + codpesStr + extensaoFoto;				  
                
-               if(foto.getHeight() <= height && foto.getWidth() <= width) {
-                  diretorioFigura = nome + diretorioFotoPag + codpesStr + extensaoFoto;
-               }
-
-               else {
-
+               if(foto.getHeight() >= height || foto.getWidth() >= width) {                 
+               
                   IMOperation op = new IMOperation();
                   op.addImage(diretorioFoto + codpesStr + extensaoFoto);
     	          op.resize(width,height);
@@ -270,18 +268,22 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 		
 	              ConvertCmd cmd = new ConvertCmd();
 	              cmd.run(op);
-                  diretorioFigura = nome + diretorioFotoTempPag + codpesStr + extensaoFoto;
+                  diretorioFigura = diretorioFotoTempPag + codpesStr + extensaoFoto;				  
               }
 			  
           } catch(InterruptedException ie) {
+			ie.printStackTrace(System.out);
 
           } catch (IM4JavaException iem) {
-
-          } catch (IOException io) {}
+			iem.printStackTrace(System.out);
+	
+          } catch (IOException io) {
+			io.printStackTrace(System.out);
+		  }
         }
 
         else {
-          diretorioFigura = nome + diretorioFotoPadrao + "logoSibiAutor.gif";
+          diretorioFigura = diretorioFotoPadrao + "logoSibiAutor.gif";
 		  
         }
 

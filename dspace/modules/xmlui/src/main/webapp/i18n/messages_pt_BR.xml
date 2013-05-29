@@ -23,7 +23,7 @@
 		--> 
 	
 	<!-- General keys -->
-	<message key="xmlui.general.dspace_home">Página Inicial</message>
+	<message key="xmlui.general.dspace_home">BDPI USP - Biblioteca Digital da Produção Intelectual da Universidade de São Paulo</message>
 	<message key="xmlui.general.search">Buscar</message>
 	<message key="xmlui.general.go">Buscar</message>
 	<message key="xmlui.general.go_home">Voltar à Página Inicial</message>
