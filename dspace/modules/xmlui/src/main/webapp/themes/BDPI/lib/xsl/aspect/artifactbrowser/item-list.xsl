@@ -206,7 +206,7 @@
 <!-- 130419 - Dan - Codigo para recuperar somente o itemID --> 
                                       <xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
 									     <xsl:variable name="url" select="current()"/>
-									     <xsl:variable name="urlSub" select="substring-after($url,'net/')"/>
+									     <xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
 
 										 <xsl:if test="$urlSub!=''">
 									        <xsl:variable name="itemID" select="substring-after($urlSub,'/')"/> 

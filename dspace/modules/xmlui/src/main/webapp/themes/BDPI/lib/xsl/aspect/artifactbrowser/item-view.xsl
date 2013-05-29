@@ -862,7 +862,7 @@
 												<xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
 													<!--<xsl:variable name="url" select="../dim:field[@element='identifier'][@qualifier='uri'][@mdschema='dc']"/>-->													
 													<xsl:variable name="url" select="current()"/>
-													<xsl:variable name="urlSub" select="substring-after($url,'net/')"/>
+													<xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
 													
 													<xsl:if test="$urlSub!=''">
 														<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/>
