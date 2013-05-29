@@ -124,7 +124,7 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
     private AuthorDAOPostgres ap = new AuthorDAOPostgres();
 
     private String diretorioGraficoTemp = dspaceDir + "/webapps/xmlui/themes/" + theme + "/images/autorUSP/tmp/";
-	private String diretorioGrafico = "/xmlui/themes/"+ theme + "/images/autorUSP/tmp/";
+	private String diretorioGrafico = "/themes/"+ theme + "/images/autorUSP/tmp/";
     
     /**
      * 
@@ -304,7 +304,7 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 	    /** ============================= FIM ================================ **/
 
         List listaFigura = grafico.addList("id_grafico_interUnidLista", "gloss", "class_grafico_interUnidLista");
-        Figure figura = listaFigura.addItem().addFigureSemLink(nome + diretorioGrafico + codpesStr + "gfc.gif","nolink");
+        Figure figura = listaFigura.addItem().addFigureSemLink(diretorioGrafico + codpesStr + "gfc.gif","nolink");
 
         /* Row rowTotalTrabField = tabelaInterUnidade.addRow("id_row_interUnid_total", Row.ROLE_DATA, "class_row_interUnid_total");
 
