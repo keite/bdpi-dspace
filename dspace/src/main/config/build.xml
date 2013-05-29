@@ -671,10 +671,13 @@ Common usage:
 		
 		<!-- 130514 - Dan Shinkai -->
 		<!-- Trecho que permite autorizacao de qualquer usuario para escrita no diretorio das fotos de autores USP do CV -->
-		<chmod  perm="go+w" type="dir">
+		<!--chmod  perm="777" type="both">
 			<dirset dir="${dspace.dir}/webapps/xmlui/themes/BDPI/images/autorUSP/**" />
-		</chmod>
+		</chmod-->
 		<!-- ============ FIM ============ -->
+
+	<chmod file="${dspace.dir}/webapps/xmlui/themes/BDPI/images/autorUSP/**" perm="a+rw" type="both"/>
+
 
     </target>
 
