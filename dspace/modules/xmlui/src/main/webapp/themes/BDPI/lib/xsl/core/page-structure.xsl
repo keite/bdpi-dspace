@@ -518,7 +518,7 @@
                                 <xsl:value-of select="$locale"/>
                             </xsl:attribute>
                             <xsl:if test="$locale = 'pt_BR'">
-                                <span id="ds-language-selection-ptBR"></span>
+                                <span id="ds-language-selection-ptBR">&#160;</span>
                             </xsl:if>
                             <xsl:if test="$locale = 'en'">
                                 <span id="ds-language-selection-en">&#160;</span>
