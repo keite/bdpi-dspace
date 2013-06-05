@@ -15,6 +15,12 @@
 
  <form-map>
    <name-map collection-handle="default" form-name="traditional" />
+   
+   <!-- 2013-06-03 Tiago: Mapeamento de comunidade para teste -->   
+   <name-map collection-handle="BDPI/34"   form-name="artigo" />
+   <name-map collection-handle="BDPI/35" form-name="evento" />   
+   <name-map collection-handle="BDPI/36" form-name="livro" />
+   <name-map collection-handle="BDPI/37" form-name="relatorio" />	  
 
    <!-- 120709 Josi: inserir as colecoes de Artigos e Materiais de Revistas para form proprio -->
    <name-map collection-handle="BDPI/1316"   form-name="artigo" />
@@ -25,7 +31,7 @@
    <name-map collection-handle="BDPI/1366"   form-name="artigo" />  
    <name-map collection-handle="BDPI/24"   form-name="artigo" />  
    <name-map collection-handle="BDPI/29"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/34"   form-name="artigo" />  
+
    <name-map collection-handle="BDPI/59"   form-name="artigo" />  
    <name-map collection-handle="BDPI/39"   form-name="artigo" />  
    <name-map collection-handle="BDPI/44"   form-name="artigo" />  
@@ -115,7 +121,7 @@
    <name-map collection-handle="123456789/10" form-name="relatorio" />
    <name-map collection-handle="123456789/9" form-name="rea" />
    <name-map collection-handle="123456789/14" form-name="rea" />
-   <name-map collection-handle="123456789/7" form-name="periodicosnaoacademicos" />
+   <name-map collection-handle="123456789/7" form-name="divulgacao" />
  </form-map>
 
 
@@ -2063,17 +2069,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
    </form>
    
  
-   <!-- FORM para Artigo publicado em jornal, revista ou outro tipo de publicação periódica não acadêmica @@@@@@ -->
+   <!-- FORM para Matérias e entrevistas para mídias informativas ou de divulgação @@@@@@ -->
 
    <!-- ...................................................... -->
    <!-- ...................................................... -->
-   <!-- 201305007                                               -->
+   <!-- 201306005                                               -->
    <!-- Criado por SIBi USP                                    -->
-   <!-- Entrada de participação em jornais não acadêmicos -->
+   <!-- Entrada de Matérias e entrevistas para mídias informativas ou de divulgação -->
    <!-- ...................................................... -->
    <!-- ...................................................... -->
 
-   <form name="periodicosnaoacademicos">
+   <form name="divulgacao">
 	  <page number="1">
 	   <field>
          <dc-schema>dc</dc-schema>
@@ -2093,7 +2099,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-qualifier></dc-qualifier>
          <repeatable>false</repeatable>
          <label>Tipo do material</label>
-         <input-type value-pairs-name="tipoItemNaoacademico">dropdown</input-type>
+         <input-type value-pairs-name="tipoItemDivulgacao">dropdown</input-type>
          <hint></hint>
          <required>Tipo do material é de preenchimento obrigatório</required>
        </field>
@@ -2104,7 +2110,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-qualifier>category</dc-qualifier>
          <repeatable>false</repeatable>
          <label>* Detalhamento do Tipo do material</label>
-         <input-type value-pairs-name="detalhaTipoItemNaoacademico">dropdown</input-type>
+         <input-type value-pairs-name="detalhaTipoItemDivulgacao">dropdown</input-type>
          <hint></hint>
          <required>O detalhamento do Tipo do Material é de preenchimento obrigatório</required>
        </field>
@@ -2120,7 +2126,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>Campo obrigatório, entre com pelo menos um autor.</required>
        </field>
 	   
-	   
+<!-- 2013-06-05 - Tiago: Verificar necessidade	    
 	   <field>
          <dc-schema>usp</dc-schema>
          <dc-element>autor</dc-element>
@@ -2132,7 +2138,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
 		 <visibility>workflow</visibility>		 
        </field>
-	   
+-->	   
 	   <field>
          <dc-schema>dc</dc-schema>
          <dc-element>title</dc-element>
@@ -2531,9 +2537,9 @@ it, please enter the types and the actual numbers or codes below.</hint>
     </value-pairs>	
 	
 <!-- Conforme Diretrizes Driver 2.0 - Artigo não acadêmico - 2013-05-02 - Tiago -->
-   <value-pairs value-pairs-name="tipoItemNaoacademico" dc-term="type">
+   <value-pairs value-pairs-name="tipoItemDivulgacao" dc-term="type">
      <pair>
-       <displayed-value>Artigo publicado em jornal, revista ou outro tipo de publicação periódica não acadêmica</displayed-value>
+       <displayed-value>Matéria ou entrevista para mídias informativas ou de divulgação</displayed-value>
        <stored-value>contributionToPeriodical</stored-value>
      </pair>	
     </value-pairs>
@@ -2818,14 +2824,14 @@ it, please enter the types and the actual numbers or codes below.</hint>
     </value-pairs>
 	
 		<!-- ........................................................... -->
-   <value-pairs value-pairs-name="detalhaTipoItemNaoacademico" dc-term="type">
+   <value-pairs value-pairs-name="detalhaTipoItemDivulgacao" dc-term="type">
      <pair>
-       <displayed-value>Artigo</displayed-value>
-        <stored-value>artigo em publicação não acadêmica</stored-value>
+       <displayed-value>Matéria</displayed-value>
+        <stored-value>Matéria publicada em mídia informativa ou de divulgação</stored-value>
      </pair>
      <pair>
        <displayed-value>Entrevista</displayed-value>
-        <stored-value>entrevista em publicação não acadêmica</stored-value>
+        <stored-value>Entrevista publicada em mídia informativa ou de divulgação</stored-value>
      </pair>	 
     </value-pairs>
 	
