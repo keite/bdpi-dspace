@@ -67,7 +67,7 @@ select.multiple {
 
 #ds-header-logo {
     float:left;
-    width: 375px;
+    width: 100%;
     height: 100px;
 /* 130403 andre.assada@usp.br     background: url('../../images/dspace-logo-only.png'); */
     background: url('../../images/producao.usp.png');
