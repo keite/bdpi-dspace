@@ -2883,7 +2883,7 @@ Para obtener más información acerca de como añadir este repositório y su pro
 
 <!-- Navegador -->
 
-<message key="xmlui.ArtifactBrowser.Navigation.browse_sponsor">Fomento</message>
+<message key="xmlui.ArtifactBrowser.Navigation.browse_sponsor">Agências de Fomento</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sponsor.column_heading">Agências de Fomento</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.sponsor">Navegar por Agências de Fomento</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.sponsor">Navegar por Agências de Fomento</message>
@@ -2893,9 +2893,14 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.periodical">Navegar por Revistas ou Eventos</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.periodical">Navegar por Revistas ou Eventos</message>
 
-<message key="xmlui.ArtifactBrowser.Navigation.browse_access">Acesso</message>
+<message key="xmlui.ArtifactBrowser.Navigation.browse_access">Tipo de acesso</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.access.column_heading">Tipo de acesso</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.access">Tipo de acesso</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.access">Tipo de acesso</message>
+
+<message key="xmlui.ArtifactBrowser.Navigation.browse_country">País de publicação</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.country.column_heading">País</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.country">País</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.country">País</message>
 
 </catalogue>
