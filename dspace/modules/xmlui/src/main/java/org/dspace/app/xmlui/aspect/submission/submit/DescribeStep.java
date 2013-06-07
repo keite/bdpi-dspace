@@ -275,11 +275,7 @@ public class DescribeStep extends AbstractSubmissionStep
                         else if (inputType.equals("onebox"))
                         {
                                 renderOneboxField(form, fieldName, dcInput, dcValues, readonly);
-                        }
-						else if (inputType.equals("multibox"))
-                        {
-                                renderMultiField(form, fieldName, dcInput, dcValues, readonly);
-                        }						
+                        }												
                         else
                         {
                                 form.addItem(T_unknown_field);
@@ -1132,6 +1128,8 @@ public class DescribeStep extends AbstractSubmissionStep
                         }
                 }
         }
+		
+		/** 130607 - Dan Shinkai - Metodo original postado em comentario **/
         
         /**
          * Render a simple text field to the DRI document
@@ -1248,6 +1246,9 @@ public class DescribeStep extends AbstractSubmissionStep
         }/
 		
 		/** =============================Metodo Alterado - Inicio============================= **/
+		/** 130607 - Dan Shinkai - Metodo alterado para realizar a insercao dos campos para o cadastro de um autor externo USP
+		  *                        juntamente com o s seus respcetivos helps.
+		**/
 		
 		private void renderOneboxField(List form, String fieldName, DCInput dcInput, DCValue[] dcValues, boolean readonly) throws WingException
         {
@@ -1257,10 +1258,12 @@ public class DescribeStep extends AbstractSubmissionStep
 			Text textField;
 			Text text;
 			
+			// Recupera os valore inseridos no input-forms.xsl na tag <hint> utilizando o "@@@" como separacao entre os nomes dos campos e os nomes dos helps.
 			String hint = dcInput.getHints();
 			String paramComparacao = "@@@";
 			String hintGlobal = "";
 			
+			//Realiza a criacao de cada campo e seu respectivo help utilizando como separador entre campos o ";".
 			if(hint.contains(paramComparacao)) {
 			
 				StringTokenizer hintSt = new StringTokenizer(hint, paramComparacao);
@@ -1377,128 +1380,7 @@ public class DescribeStep extends AbstractSubmissionStep
 		
 		
 		/** =============================Metodo Alterado - Fim=============================**/
-		
-		private void renderMultiField(List form, String fieldName, DCInput dcInput, DCValue[] dcValues, boolean readonly) throws WingException
-        {                
-            org.dspace.app.xmlui.wing.element.Item item = form.addItem();
-            
-			Text textField;
-			Text text;
-			
-			String hint = dcInput.getHints();
-			
-			if(hint.contains("@@@")) {
-			
-				StringTokenizer hintSt = new StringTokenizer(hint, "@");
-				StringTokenizer hintStAnt = new StringTokenizer(hintSt.nextToken(), ";");
-				StringTokenizer hintStPos = new StringTokenizer(hintSt.nextToken(), ";");
 				
-				while(hintStAnt.hasMoreTokens()) {
-					textField = item.addText("concat-usp-externo", "concat-text");
-					//textField.setLabel(hintStAnt.nextToken() + ":");
-					
-					if(hintStPos.hasMoreTokens()) {
-						textField.setHelp(hintStAnt.nextToken() + " (" + "Ex: " + hintStPos.nextToken() + ")" + ":");
-					}				
-					
-				}
-			}
-			
-			if(dcInput.getVocabulary() != null){
-                String vocabularyUrl = new DSpace().getConfigurationService().getProperty("dspace.url");
-                vocabularyUrl += "/JSON/controlled-vocabulary?vocabularyIdentifier=" + dcInput.getVocabulary();
-                //Also hand down the field name so our summoning script knows the field the selected value is to end up in
-                vocabularyUrl += "&metadataFieldName=" + fieldName;
-                item.addXref("vocabulary:" + vocabularyUrl).addContent(T_vocabulary_link);
-            }
-            
-                // Setup the select field
-				text = item.addText(fieldName, "submit-text");				
-				text.setHelp("  ");
-                text.setLabel(dcInput.getLabel());				
-                //text.setHelp(cleanHints(dcInput.getHints()));
-                String fieldKey = MetadataAuthorityManager.makeFieldKey(dcInput.getSchema(), dcInput.getElement(), dcInput.getQualifier());
-                boolean isAuth = MetadataAuthorityManager.getManager().isAuthorityControlled(fieldKey);
-                if (isAuth)
-                {
-                    text.setAuthorityControlled();
-                    text.setAuthorityRequired(MetadataAuthorityManager.getManager().isAuthorityRequired(fieldKey));
-                }
-                if (ChoiceAuthorityManager.getManager().isChoicesConfigured(fieldKey))
-                {
-                    text.setChoices(fieldKey);
-                    text.setChoicesPresentation(ChoiceAuthorityManager.getManager().getPresentation(fieldKey));
-                    text.setChoicesClosed(ChoiceAuthorityManager.getManager().isClosed(fieldKey));
-                }
-
-                if (dcInput.isRequired())
-                {
-                    text.setRequired();
-                }
-                if (isFieldInError(fieldName))
-                {
-                    if (dcInput.getWarning() != null && dcInput.getWarning().length() > 0)
-                    {
-                        text.addError(dcInput.getWarning());
-                    }
-                    else
-                    {
-                        text.addError(T_required_field);
-                    }
-                }
-                if (dcInput.isRepeatable() && !readonly)
-                {
-                    text.enableAddOperation();
-                }
-                if ((dcInput.isRepeatable() || dcValues.length > 1) && !readonly)
-                {
-                    text.enableDeleteOperation();
-                }
-
-                if (readonly)
-                {
-                    text.setDisabled();
-                }
-                
-                // Setup the field's values
-                if (dcInput.isRepeatable() || dcValues.length > 1)
-                {
-                        for (DCValue dcValue : dcValues)
-                        {
-                                Instance ti = text.addInstance();
-                                ti.setValue(dcValue.value);
-                                if (isAuth)
-                                {
-                                    if (dcValue.authority == null || dcValue.authority.equals(""))
-                                    {
-                                        ti.setAuthorityValue("", "blank");
-                                    }
-                                    else
-                                    {
-                                        ti.setAuthorityValue(dcValue.authority, Choices.getConfidenceText(dcValue.confidence));
-                                    }
-                        }
-                    }
-                }
-                else if (dcValues.length == 1)
-                {
-                        text.setValue(dcValues[0].value);
-                        if (isAuth)
-                        {
-                            if (dcValues[0].authority == null || dcValues[0].authority.equals(""))
-                            {
-                                text.setAuthorityValue("", "blank");
-                            }
-                            else
-                            {
-                                text.setAuthorityValue(dcValues[0].authority, Choices.getConfidenceText(dcValues[0].confidence));
-                            }
-                }
-            }
-        }
-
-
-
         /**
          * Check if the given fieldname is listed as being in error.
          *
