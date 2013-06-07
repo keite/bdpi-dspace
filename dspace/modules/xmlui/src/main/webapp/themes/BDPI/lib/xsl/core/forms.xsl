@@ -198,7 +198,8 @@
             <xsl:apply-templates select="dri:help" mode="help"/>
         </xsl:if>
         <xsl:apply-templates select="." mode="normalField"/>
-        <xsl:if test="contains(dri:params/@operations,'add')">
+		
+		<xsl:if test="contains(dri:params/@operations,'add')">
             <!-- Add buttons should be named "submit_[field]_add" so that we can ignore errors from required fields when simply adding new values-->
             <input type="submit" value="Adicionar" name="{concat('submit_',@n,'_add')}" class="ds-button-field ds-add-button">
                 <!-- Make invisible if we have choice-lookup popup that provides its own Add. -->
@@ -271,19 +272,56 @@
         <xsl:apply-templates select="dri:help" mode="help"/>
         <!-- Create the first field normally -->
         <xsl:apply-templates select="." mode="normalField"/>
+		
+<!-- 130607 - Dan Shinkai - Trecho de codigo alterado para realizar a chamada do javascript no qual realizara a cricao da tupla do autor externo 
+                            no formulario de submissao de um item ao clicar no botao de adicionar  -->
+		<xsl:choose>
+			<xsl:when test="contains(@id,'aspect.submission.StepTransformer.field.usp_autor_externo')">
+				<xsl:choose>
+					<xsl:when test="contains(dri:params/@operations,'add')">
+						<!-- Add buttons should be named "submit_[field]_add" so that we can ignore errors from required fields when simply adding new values-->
+						<br/>
+						<input type="submit" value="Adicionar" name="{concat('submit_',@n,'_add')}" class="ds-button-field ds-add-button" onclick="concatTextField()">
+							<!-- Make invisible if we have choice-lookup popup that provides its own Add. -->
+							<xsl:if test="dri:params/@choicesPresentation = 'lookup'">
+								<xsl:attribute name="style">
+									<xsl:text>display:none;</xsl:text>
+								</xsl:attribute>
+							</xsl:if>
+						</input>
+					</xsl:when>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:when test="contains(dri:params/@operations,'add')">
+				<input type="submit" value="Adicionar" name="{concat('submit_',@n,'_add')}" class="ds-button-field ds-add-button">
+					<!-- Make invisible if we have choice-lookup popup that provides its own Add. -->
+					<xsl:if test="dri:params/@choicesPresentation = 'lookup'">
+						<xsl:attribute name="style">
+							<xsl:text>display:none;</xsl:text>
+						</xsl:attribute>
+					</xsl:if>
+				</input>
+			</xsl:when>
+		</xsl:choose>
+<!-- ================================================ FIM ================================================ -->
+		
+<!-- 130607 - Dan Shinkai - Trecho do codigo original postado em comentario antes da insercao da alteracao para a chamada do javascript no qual realiza a 
+              criacao da tupla para um autor externo -->
+			  
         <!-- Follow it up with an ADD button if the add operation is specified. This allows
             entering more than one value for this field. -->
-        <xsl:if test="contains(dri:params/@operations,'add')">
+        <!--<xsl:if test="contains(dri:params/@operations,'add')">-->
             <!-- Add buttons should be named "submit_[field]_add" so that we can ignore errors from required fields when simply adding new values-->
-            <input type="submit" value="Adicionar" name="{concat('submit_',@n,'_add')}" class="ds-button-field ds-add-button">
+            <!--<input type="submit" value="Adicionar" name="{concat('submit_',@n,'_add')}" class="ds-button-field ds-add-button">-->
               <!-- Make invisible if we have choice-lookup popup that provides its own Add. -->
-              <xsl:if test="dri:params/@choicesPresentation = 'lookup'">
-                <xsl:attribute name="style">
+              <!--<xsl:if test="dri:params/@choicesPresentation = 'lookup'">-->
+                <!--<xsl:attribute name="style">
                   <xsl:text>display:none;</xsl:text>
                 </xsl:attribute>
         </xsl:if>
            </input>
-        </xsl:if>
+        </xsl:if>-->
+		
         <br/>
         <xsl:apply-templates select="dri:error" mode="error"/>
         <xsl:if test="dri:instance">
