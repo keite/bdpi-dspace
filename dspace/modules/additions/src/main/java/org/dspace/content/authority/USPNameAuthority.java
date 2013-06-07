@@ -62,12 +62,12 @@ public class USPNameAuthority implements ChoiceAuthority {
 
 			nomes = query.split("\\,");
 			if (nomes.length > 0)
-				sobrenome = new String(nomes[0].trim().getBytes("ISO-8859-1"),
-						"UTF8");
+				//sobrenome = new String(nomes[0].trim().getBytes("ISO-8859-1"),"UTF8");
+				sobrenome = nomes[0].trim();
 			if (nomes.length > 1)
-				nome = new String(nomes[1].trim().getBytes("ISO-8859-1"),
-						"UTF8");
-
+				//nome = new String(nomes[1].trim().getBytes("ISO-8859-1"),"UTF8");
+				nome = nomes[1].trim();
+				
 			String consulta = "SELECT codpes,nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla,funcao from "
 					+ DATABASE_TABLE + " ";
 
