@@ -245,6 +245,11 @@
 
             <!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
             <!-- There is also javascript to disable submitting a form when the 'enter' key is pressed. -->
+			
+			<!-- 130607 - Dan Shinkai - Adicionado funcao concatTextField no qual realizara a criacao da tupla do autor externo USP. Esta funcao sera visivel
+			                            somente na pagina de submissao de um item no qual havera os campos para o autor externo USP. Esta sendo assumido
+										que os campos sao pre-definidos, ou seja, a ordem no qual sera apresentado os campos sao sempre as mesmas. -->
+										
                         <script type="text/javascript">
                                 //Clear default text of empty text areas on focus
                                 function tFocus(element)
@@ -298,6 +303,20 @@
                                 };
 
                                 var runAfterJSImports = new FnArray();
+								
+						<xsl:if test="/dri:document/dri:body/dri:div/dri:list/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.usp_autor_externo']">
+							<xsl:text>
+								function concatTextField()								
+								{						
+									var text = document.getElementsByName("concat-usp-externo");
+									var textSubmit = document.getElementsByName("usp_autor_externo");
+									
+									var nome = text[0].value.replace(":"," ").trim();
+									var tupla = nome.concat(":", text[1].value.replace(":"," ").trim(), " :c ", text[2].value.replace(":"," ").trim(), " :u ", text[3].value.replace(":"," ").trim(), " :p ", textSubmit[0].value.replace(":"," ").trim());
+									textSubmit[0].value = tupla;									
+								}
+							</xsl:text>
+						</xsl:if>
             </script>
 
             <!-- Modernizr enables HTML5 elements & feature detects -->
