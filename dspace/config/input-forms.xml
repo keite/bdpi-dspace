@@ -406,17 +406,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>
 ================ -->
 	   
-	   <field>
-         <dc-schema>usp</dc-schema>
-         <dc-element>autor</dc-element>
-         <dc-qualifier>externo</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Informações sobre os autores externos à USP</label>
-         <input-type>onebox</input-type>
-         <hint>Dados do autor externo no formato: nome como descrito no metadado autor: instituição/depto (extenso e sigla) :c cidade :u UF :p país. Exemplo: Santos, Milena: Universidade de Campinas, Depto de Computação (UNICAMP/DCC) :c Campinas :u SP :p Brasil</hint>
-         <required></required>
-		 <visibility>workflow</visibility>		 
-       </field>
+		<field>
+		   <dc-schema>usp</dc-schema>
+		   <dc-element>autor</dc-element>
+		   <dc-qualifier>externo</dc-qualifier>
+		   <repeatable>true</repeatable>
+		   <label>Informações sobre os autores externos à USP</label>
+		   <input-type>onebox</input-type>
+		   <hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+		   <required></required>
+		   <visibility>workflow</visibility>		
+		</field>
 	   
 	   <field>
          <dc-schema>dc</dc-schema>
@@ -886,17 +886,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>Campo obrigatório, entre com pelo menos um autor.</required>
        </field>	   
 
-	   <field>
-         <dc-schema>usp</dc-schema>
-         <dc-element>autor</dc-element>
-         <dc-qualifier>externo</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Informações sobre os autores externos à USP</label>
-         <input-type>onebox</input-type>
-         <hint>Dados do autor externo no formato: nome como descrito no metadado autor: instituição/depto (extenso e sigla) :c cidade :u UF :p país. Exemplo: Santos, Milena: Universidade de Campinas, Depto de Computação (UNICAMP/DCC) :c Campinas :u SP :p Brasil</hint>
-         <required></required>
-		 <visibility>workflow</visibility>		 
-       </field>
+		<field>
+		   <dc-schema>usp</dc-schema>
+		   <dc-element>autor</dc-element>
+		   <dc-qualifier>externo</dc-qualifier>
+		   <repeatable>true</repeatable>
+		   <label>Informações sobre os autores externos à USP</label>
+		   <input-type>onebox</input-type>
+		   <hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+		   <required></required>
+		   <visibility>workflow</visibility>		
+		</field>
 	   
 	   <field>
          <dc-schema>dc</dc-schema>
@@ -1217,17 +1217,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>Campo obrigatório, entre com pelo menos um autor.</required>
        </field>	   
 
-	   <field>
-         <dc-schema>usp</dc-schema>
-         <dc-element>autor</dc-element>
-         <dc-qualifier>externo</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Informações sobre os autores externos à USP</label>
-         <input-type>onebox</input-type>
-         <hint>Dados do autor externo no formato: nome como descrito no metadado autor: instituição/depto (extenso e sigla) :c cidade :u UF :p país. Exemplo: Santos, Milena: Universidade de Campinas, Depto de Computação (UNICAMP/DCC) :c Campinas :u SP :p Brasil</hint>
-         <required></required>
-		 <visibility>workflow</visibility>		 
-       </field>
+		<field>
+		   <dc-schema>usp</dc-schema>
+		   <dc-element>autor</dc-element>
+		   <dc-qualifier>externo</dc-qualifier>
+		   <repeatable>true</repeatable>
+		   <label>Informações sobre os autores externos à USP</label>
+		   <input-type>onebox</input-type>
+		   <hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+		   <required></required>
+		   <visibility>workflow</visibility>		
+		</field>
 	   
 	   <field>
          <dc-schema>dc</dc-schema>
@@ -1531,17 +1531,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required>Campo obrigatório, entre com pelo menos um autor.</required>
        </field>	   
 
-	   <field>
-         <dc-schema>usp</dc-schema>
-         <dc-element>autor</dc-element>
-         <dc-qualifier>externo</dc-qualifier>
-         <repeatable>true</repeatable>
-         <label>Informações sobre os autores externos à USP</label>
-         <input-type>onebox</input-type>
-         <hint>Dados do autor externo no formato: nome como descrito no metadado autor: instituição/depto (extenso e sigla) :c cidade :u UF :p país. Exemplo: Santos, Milena: Universidade de Campinas, Depto de Computação (UNICAMP/DCC) :c Campinas :u SP :p Brasil</hint>
-         <required></required>
-		 <visibility>workflow</visibility>		 
-       </field>
+		<field>
+		   <dc-schema>usp</dc-schema>
+		   <dc-element>autor</dc-element>
+		   <dc-qualifier>externo</dc-qualifier>
+		   <repeatable>true</repeatable>
+		   <label>Informações sobre os autores externos à USP</label>
+		   <input-type>onebox</input-type>
+		   <hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+		   <required></required>
+		   <visibility>workflow</visibility>		
+		</field>
 	   
 	   <field>
          <dc-schema>dc</dc-schema>
