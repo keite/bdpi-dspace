@@ -249,7 +249,7 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
        contadorLista = 1;
 //       int totalTrabalhos = 0;
      
-       PieChart pieChart = new PieChart(new Dimension(450,300));
+       //PieChart pieChart = new PieChart(new Dimension(450,300));
 
        for(InterUnit unidade : listaInterUnidades) {
 
@@ -262,22 +262,22 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 
              Row rowUnidadeField = tabelaInterUnidade.addRow("id_row_interUnid", Row.ROLE_DATA, "class_row_interUnid");
                      
-             Cell cellSeqField = rowUnidadeField.addCell("id_cols_seq_interUnid_field", Cell.ROLE_DATA, "class_cols_seq_interUnid_field");
+             Cell cellSeqField = rowUnidadeField.addCell("id_cols_seq_interUnid_field" + contadorLista, Cell.ROLE_DATA, "class_cols_seq_interUnid_field");
              cellSeqField.addContent(contadorLista);
 
-             Cell cellUnidadeField = rowUnidadeField.addCell("id_cols_unid_interUnid_field", Cell.ROLE_DATA, "class_cols_unid_interUnid_field");
+             Cell cellUnidadeField = rowUnidadeField.addCell("id_cols_unid_interUnid_field" + contadorLista, Cell.ROLE_DATA, "class_cols_unid_interUnid_field");
              cellUnidadeField.addContent(unidadeSigla);
              
- 	     Cell cellTrabalhosField = rowUnidadeField.addCell("id_cols_trabalhos_interUnid_field", Cell.ROLE_DATA, "class_cols_trabalhos_interUnid_field");
+ 	     Cell cellTrabalhosField = rowUnidadeField.addCell("id_cols_trabalhos_interUnid_field" + contadorLista, Cell.ROLE_DATA, "class_cols_trabalhos_interUnid_field");
              cellTrabalhosField.addContent(trabalhos);
 
              contadorLista++;
 
-             pieChart.addPieChartSlice(new PieChartSlice.PieChartSliceBuilder(trabalhos).label(unidadeSigla).build());
+            // pieChart.addPieChartSlice(new PieChartSlice.PieChartSliceBuilder(trabalhos).label(unidadeSigla).build());
              }
 	}
 
-        URL url;
+       /** URL url;
  	   try {
 	      url = new URL(pieChart.getUrl());
 	      InputStream is = url.openStream();
@@ -299,19 +299,19 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 	      } catch (IOException e) {
 		e.printStackTrace();
 	    }
-
+		**/
 		/** 130507 - Dan - Trecho que extrai o nome do usuario para arrumar no caminho da foto. 
          *     SOMENTE PARA A VERSAO TESTE. Caso o nome seja desnecessario, entao apagar a variavel "nome" contida nos caminhos do diretorioFigura. 
 	    **/
-		StringTokenizer st = new StringTokenizer(dspaceDir, "/");
+		/**StringTokenizer st = new StringTokenizer(dspaceDir, "/");
 		st.nextToken();
 		st.nextToken();
-		String nome = "/" + st.nextToken();
+		String nome = "/" + st.nextToken();**/
 
 	    /** ============================= FIM ================================ **/
 
         List listaFigura = grafico.addList("id_grafico_interUnidLista", "gloss", "class_grafico_interUnidLista");
-        Figure figura = listaFigura.addItem().addFigureSemLink(diretorioGrafico + codpesStr + "gfc.gif","nolink");
+        //Figure figura = listaFigura.addItem().addFigureSemLink(diretorioGrafico + codpesStr + "gfc.gif","nolink");
 
         /* Row rowTotalTrabField = tabelaInterUnidade.addRow("id_row_interUnid_total", Row.ROLE_DATA, "class_row_interUnid_total");
 
