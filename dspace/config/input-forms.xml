@@ -677,7 +677,7 @@
     <!-- Departamento de Filosofia e Teoria Geral do Direito - FD/DFD  --> 
    <name-map collection-handle="BDPI/470"   form-name="artigo" />
    <name-map collection-handle="BDPI/471"   form-name="evento" />
-   <name-map collection-handle="BDPI/472   form-name="livro" />
+   <name-map collection-handle="BDPI/472"   form-name="livro" />
    <name-map collection-handle="BDPI/473"   form-name="relatorio" />
    
     <!-- Outros departamentos - FD/Outros  --> 
@@ -1330,7 +1330,7 @@
    <name-map collection-handle="BDPI/936"   form-name="artigo" />
    <name-map collection-handle="BDPI/937"   form-name="evento" />
    <name-map collection-handle="BDPI/938"   form-name="livro" />
-   <name-map collection-handle="BDPI/939   form-name="relatorio" />
+   <name-map collection-handle="BDPI/939"   form-name="relatorio" />
    
    	<!-- Interunidades: Comissão de Pós-Graduação do Programa Interunidades - FSP/CPGI   --> 
    <name-map collection-handle="BDPI/32484"   form-name="artigo" />
