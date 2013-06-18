@@ -118,7 +118,7 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
     private String dspaceUrl = ConfigurationManager.getProperty("handle.canonical.prefix");
     private String handlePrefix = ConfigurationManager.getProperty("handle.prefix");
 	private String dspaceDir = ConfigurationManager.getProperty("dspace.dir");
-	
+
 	private String theme = "BDPI";
 
     private AuthorDAOPostgres ap = new AuthorDAOPostgres();
@@ -148,14 +148,10 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
             AuthorizeException
     {
         DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
-        if (!(dso instanceof Item))
-        {
-            return;
-        }
-
-        Item item = (Item) dso;
-
-        String itemIDStr = parameters.getParameter("itemID","");
+		
+		Item item = null;
+		
+		String itemIDStr = parameters.getParameter("itemID","");
         String codpesStr = parameters.getParameter("codpes","");
 
    /** Converte para inteiro a String passada */
@@ -163,12 +159,23 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 
    /** Recupera o objeto do autor a partir de seu codpes */
         Author author = this.ap.getAuthorByCodpes(this.codpes);
-
-        if(author != null) {
-
-          pageMeta.addMetadata("title").addContent(T_title);
-
+		
+        if (!(dso instanceof Item))
+        {
+            item = Item.find(context, Integer.parseInt(itemIDStr));
         }
+		
+		else  {
+			item = (Item) dso;
+		}
+		
+        if(author != null) {
+          pageMeta.addMetadata("title").addContent(T_title);
+        }
+		
+		else {
+			pageMeta.addMetadata("title").addContent(T_interunit_not_found);
+		}
  
    /** Codigo que cria a parte dos links do Trail */
        pageMeta.addTrailLink(contextPath + "/",T_dspace_home);
@@ -194,7 +201,7 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 
    /** Armazena o nome do DSpace para ser utilizado no caminho do diretorio */
       String name = ConfigurationManager.getProperty("dspace.name");
-		
+
    /** Recupera a lista de coautores */
       ArrayList<InterUnit> listaInterUnidades = this.ap.getInterUnitUSP(codpesStr);
 
@@ -205,7 +212,7 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 
    /** Recupera o objeto Autor */
         Author autor = this.ap.getAuthorByCodpes(Integer.parseInt(codpesStr));
-	  
+
    /** Define o titulo localizado na parte superior da pagina */
         Head headGeral = geral.setHead();
         headGeral.addContent(T_title_initial);
@@ -242,10 +249,10 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
        contadorLista = 1;
 //       int totalTrabalhos = 0;
      
-       PieChart pieChart = new PieChart(new Dimension(450,300));
-			  
+       //PieChart pieChart = new PieChart(new Dimension(450,300));
+
        for(InterUnit unidade : listaInterUnidades) {
-	   
+
 	      if(unidade != null) {
              
 	     String unidadeSigla = unidade.getUnidadeSigla();
@@ -255,22 +262,22 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 
              Row rowUnidadeField = tabelaInterUnidade.addRow("id_row_interUnid", Row.ROLE_DATA, "class_row_interUnid");
                      
-             Cell cellSeqField = rowUnidadeField.addCell("id_cols_seq_interUnid_field", Cell.ROLE_DATA, "class_cols_seq_interUnid_field");
+             Cell cellSeqField = rowUnidadeField.addCell("id_cols_seq_interUnid_field" + contadorLista, Cell.ROLE_DATA, "class_cols_seq_interUnid_field");
              cellSeqField.addContent(contadorLista);
 
-             Cell cellUnidadeField = rowUnidadeField.addCell("id_cols_unid_interUnid_field", Cell.ROLE_DATA, "class_cols_unid_interUnid_field");
+             Cell cellUnidadeField = rowUnidadeField.addCell("id_cols_unid_interUnid_field" + contadorLista, Cell.ROLE_DATA, "class_cols_unid_interUnid_field");
              cellUnidadeField.addContent(unidadeSigla);
              
- 	     Cell cellTrabalhosField = rowUnidadeField.addCell("id_cols_trabalhos_interUnid_field", Cell.ROLE_DATA, "class_cols_trabalhos_interUnid_field");
+ 	     Cell cellTrabalhosField = rowUnidadeField.addCell("id_cols_trabalhos_interUnid_field" + contadorLista, Cell.ROLE_DATA, "class_cols_trabalhos_interUnid_field");
              cellTrabalhosField.addContent(trabalhos);
 
              contadorLista++;
 
-             pieChart.addPieChartSlice(new PieChartSlice.PieChartSliceBuilder(trabalhos).label(unidadeSigla).build());
+            // pieChart.addPieChartSlice(new PieChartSlice.PieChartSliceBuilder(trabalhos).label(unidadeSigla).build());
              }
 	}
 
-        URL url;
+       /** URL url;
  	   try {
 	      url = new URL(pieChart.getUrl());
 	      InputStream is = url.openStream();
@@ -292,19 +299,19 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 	      } catch (IOException e) {
 		e.printStackTrace();
 	    }
-		
+		**/
 		/** 130507 - Dan - Trecho que extrai o nome do usuario para arrumar no caminho da foto. 
          *     SOMENTE PARA A VERSAO TESTE. Caso o nome seja desnecessario, entao apagar a variavel "nome" contida nos caminhos do diretorioFigura. 
 	    **/
-		StringTokenizer st = new StringTokenizer(dspaceDir, "/");
+		/**StringTokenizer st = new StringTokenizer(dspaceDir, "/");
 		st.nextToken();
 		st.nextToken();
-		String nome = "/" + st.nextToken();
-		
+		String nome = "/" + st.nextToken();**/
+
 	    /** ============================= FIM ================================ **/
 
         List listaFigura = grafico.addList("id_grafico_interUnidLista", "gloss", "class_grafico_interUnidLista");
-        Figure figura = listaFigura.addItem().addFigureSemLink(diretorioGrafico + codpesStr + "gfc.gif","nolink");
+        //Figure figura = listaFigura.addItem().addFigureSemLink(diretorioGrafico + codpesStr + "gfc.gif","nolink");
 
         /* Row rowTotalTrabField = tabelaInterUnidade.addRow("id_row_interUnid_total", Row.ROLE_DATA, "class_row_interUnid_total");
 
@@ -313,7 +320,7 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 
          Cell cellTotalTrabField = rowTotalTrabField.addCell("id_cols_interUnid_total_field", Cell.ROLE_DATA, "class_cols_interUnid_total_field");
          cellTotalTrabField.addContent(totalTrabalhos);*/
-	
+
          /*Para coautoria = informacoesInterUnidadeUSP.addPara("id_paragrafo_coautoria", "class_paragrafo_coautoria");
          Para retornar = informacoesInterUnidadeUSP.addPara("id_paragrafo_retornar", "class_paragrafo_retornar");
          Para fechar = informacoesInterUnidadeUSP.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");*/

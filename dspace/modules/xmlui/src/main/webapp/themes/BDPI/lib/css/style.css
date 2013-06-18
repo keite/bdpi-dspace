@@ -956,9 +956,12 @@ a.coautoria_link:visited {
    float: left; 
 } 
 
-/* 130426 - Dan - Define a posicao do grafico */
+/* 130615 - Dan - Define a posicao do grafico. Alterado para adaptacao do nosso grafico do google chart */
 #aspect_artifactbrowser_InterUnitAuthorView_div_id_grafico_interUnid { 
-   text-align: center; 
+   /*text-align: center;*/
+   margin-left: 30%;
+   margin-right: 30%;
+   display: block; 
 }
 
 /* 130413 - Dan - Define o espacamento na parte inferior ao grafico */ 

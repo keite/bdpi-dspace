@@ -15,113 +15,2052 @@
 
  <form-map>
    <name-map collection-handle="default" form-name="traditional" />
-   
-   <!-- 2013-06-03 Tiago: Mapeamento de comunidade para teste -->   
-   <name-map collection-handle="BDPI/34"   form-name="artigo" />
-   <name-map collection-handle="BDPI/35" form-name="evento" />   
-   <name-map collection-handle="BDPI/36" form-name="livro" />
-   <name-map collection-handle="BDPI/37" form-name="relatorio" />	  
 
    <!-- 120709 Josi: inserir as colecoes de Artigos e Materiais de Revistas para form proprio -->
+ 
+   <!-- Centro de Biologia Marinha - CEBIMar --> 
    <name-map collection-handle="BDPI/1316"   form-name="artigo" />
-   <name-map collection-handle="BDPI/3"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/8"   form-name="artigo" />     
-   <name-map collection-handle="BDPI/13"   form-name="artigo" />   
-   <name-map collection-handle="BDPI/18"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/1366"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/24"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/29"   form-name="artigo" />  
-
-   <name-map collection-handle="BDPI/59"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/39"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/44"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/49"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/54"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/64"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/1361"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/101"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/96"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/106"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/111"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/127"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/122"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/117"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/132"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/80"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/85"   form-name="artigo" />    
-   <name-map collection-handle="BDPI/70"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/75"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/90"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/138"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/143"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/148"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/153"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/158"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/164"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/169"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/174"   form-name="artigo" />    
-   <name-map collection-handle="BDPI/189"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/179"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/184"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/194"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/199"   form-name="artigo" />    
-   <name-map collection-handle="BDPI/204"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/209"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/220"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/215"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/225"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/230"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/235"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/240"   form-name="artigo" />    
-   <name-map collection-handle="BDPI/250"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/255"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/245"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/260"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/265"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/270"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/275"   form-name="artigo" /> <!-- EP/PSI -->
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />    
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />     
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />    
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />    
-   <name-map collection-handle="BDPI/"   form-name="artigo" /> 
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />  
-   <name-map collection-handle="BDPI/"   form-name="artigo" />       
+   <name-map collection-handle="BDPI/1317"   form-name="evento" />
+   <name-map collection-handle="BDPI/1318"   form-name="livro" />
+   <name-map collection-handle="BDPI/1319"   form-name="relatorio" />
    
-   <name-map collection-handle="123456789/11" form-name="evento" />
-   <name-map collection-handle="123456789/38" form-name="evento" />   
-   <name-map collection-handle="123456789/8" form-name="livro" />
-   <name-map collection-handle="123456789/10" form-name="relatorio" />
-   <name-map collection-handle="123456789/9" form-name="rea" />
-   <name-map collection-handle="123456789/14" form-name="rea" />
-   <name-map collection-handle="123456789/7" form-name="divulgacao" />
+ 
+   <!-- Divisão de Desenvolvimento de Métodos e Técnicas Analíticas Nucleares - CENA/DVTEC --> 
+   <name-map collection-handle="BDPI/3"   form-name="artigo" />
+   <name-map collection-handle="BDPI/4"   form-name="evento" />
+   <name-map collection-handle="BDPI/5"   form-name="livro" />
+   <name-map collection-handle="BDPI/6"   form-name="relatorio" />
+   
+   
+   
+    <!-- Divisão de Funcionamento de Ecossistemas Tropicais - CENA/DVECO  --> 
+   <name-map collection-handle="BDPI/8"   form-name="artigo" />
+   <name-map collection-handle="BDPI/9"   form-name="evento" />
+   <name-map collection-handle="BDPI/10"   form-name="livro" />
+   <name-map collection-handle="BDPI/11"   form-name="relatorio" />
+   
+    <!-- Divisão de Produtividade Agroindustrial e Alimentos - CENA/DVPROD  --> 
+   <name-map collection-handle="BDPI/13"   form-name="artigo" />
+   <name-map collection-handle="BDPI/14"   form-name="evento" />
+   <name-map collection-handle="BDPI/15"   form-name="livro" />
+   <name-map collection-handle="BDPI/16"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - CENA/Outros  --> 
+   <name-map collection-handle="BDPI/18"   form-name="artigo" />
+   <name-map collection-handle="BDPI/19"   form-name="evento" />
+   <name-map collection-handle="BDPI/20"   form-name="livro" />
+   <name-map collection-handle="BDPI/21"   form-name="relatorio" />
+   
+    <!-- Escola de Artes, Ciências e Humanidades - EACH   --> 
+   <name-map collection-handle="BDPI/1366"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1367"   form-name="evento" />
+   <name-map collection-handle="BDPI/1368"   form-name="livro" />
+   <name-map collection-handle="BDPI/1369"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Artes Cênicas - ECA/CAC  --> 
+   <name-map collection-handle="BDPI/24"   form-name="artigo" />
+   <name-map collection-handle="BDPI/25"   form-name="evento" />
+   <name-map collection-handle="BDPI/26"   form-name="livro" />
+   <name-map collection-handle="BDPI/27"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Artes Plásticas - ECA/CAP  --> 
+   <name-map collection-handle="BDPI/29"   form-name="artigo" />
+   <name-map collection-handle="BDPI/30"   form-name="evento" />
+   <name-map collection-handle="BDPI/31"   form-name="livro" />
+   <name-map collection-handle="BDPI/32"   form-name="relatorio" />
+   
+   
+	<!-- Departamento de Biblioteconomia e Documentação - ECA/CBD  --> 
+   <name-map collection-handle="BDPI/34"   form-name="artigo" />
+   <name-map collection-handle="BDPI/35"   form-name="evento" />
+   <name-map collection-handle="BDPI/36"   form-name="livro" />
+   <name-map collection-handle="BDPI/37"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Cinema, Rádio e Televisão - ECA/CTR  --> 
+   <name-map collection-handle="BDPI/59"   form-name="artigo" />
+   <name-map collection-handle="BDPI/60"   form-name="evento" />
+   <name-map collection-handle="BDPI/61"   form-name="livro" />
+   <name-map collection-handle="BDPI/62"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Comunicações e Artes - ECA/CCA  --> 
+   <name-map collection-handle="BDPI/39"   form-name="artigo" />
+   <name-map collection-handle="BDPI/40"   form-name="evento" />
+   <name-map collection-handle="BDPI/41"   form-name="livro" />
+   <name-map collection-handle="BDPI/42"   form-name="relatorio" />
+   
+
+    <!-- Departamento de Jornalismo e Editoração - ECA/CJE  --> 
+   <name-map collection-handle="BDPI/44"   form-name="artigo" />
+   <name-map collection-handle="BDPI/45"   form-name="evento" />
+   <name-map collection-handle="BDPI/46"   form-name="livro" />
+   <name-map collection-handle="BDPI/47"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Música - ECA/CMU  --> 
+   <name-map collection-handle="BDPI/49"   form-name="artigo" />
+   <name-map collection-handle="BDPI/50"   form-name="evento" />
+   <name-map collection-handle="BDPI/51"   form-name="livro" />
+   <name-map collection-handle="BDPI/52"   form-name="relatorio" />
+   
+    <!-- Departamento de Relações Públicas, Propaganda e Turismo - ECA/CRP  --> 
+   <name-map collection-handle="BDPI/54"   form-name="artigo" />
+   <name-map collection-handle="BDPI/55"   form-name="evento" />
+   <name-map collection-handle="BDPI/56"   form-name="livro" />
+   <name-map collection-handle="BDPI/57"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - ECA/Outros  --> 
+   <name-map collection-handle="BDPI/64"   form-name="artigo" />
+   <name-map collection-handle="BDPI/65"   form-name="evento" />
+   <name-map collection-handle="BDPI/66"   form-name="livro" />
+   <name-map collection-handle="BDPI/67"   form-name="relatorio" />
+   
+   
+
+   <!-- Escola de Educação Física e Esporte de Ribeirão Preto - EEFERP  --> 
+   <name-map collection-handle="BDPI/1361"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1362"   form-name="evento" />
+   <name-map collection-handle="BDPI/1363"   form-name="livro" />
+   <name-map collection-handle="BDPI/1364"   form-name="relatorio" />
+   
+   
+   <!-- Departamento Biodinâmica do Movimento do Corpo Humano - EEFE/EFB  --> 
+   <name-map collection-handle="BDPI/101"   form-name="artigo" />
+   <name-map collection-handle="BDPI/102"   form-name="evento" />
+   <name-map collection-handle="BDPI/103"   form-name="livro" />
+   <name-map collection-handle="BDPI/104"   form-name="relatorio" />
+   
+   <!-- Departamento Esporte - EEFE/EFE  --> 
+   <name-map collection-handle="BDPI/96"   form-name="artigo" />
+   <name-map collection-handle="BDPI/97"   form-name="evento" />
+   <name-map collection-handle="BDPI/98"   form-name="livro" />
+   <name-map collection-handle="BDPI/99"   form-name="relatorio" />
+      
+   <!-- Departamento Pedagogia do Movimento do Corpo Humano - EEFE/EFP  --> 
+   <name-map collection-handle="BDPI/106"   form-name="artigo" />
+   <name-map collection-handle="BDPI/107"   form-name="evento" />
+   <name-map collection-handle="BDPI/108"   form-name="livro" />
+   <name-map collection-handle="BDPI/109"   form-name="relatorio" />
+   
+    <!-- Outros departamentos - EEFE/Outros  --> 
+   <name-map collection-handle="BDPI/111"   form-name="artigo" />
+   <name-map collection-handle="BDPI/112"   form-name="evento" />
+   <name-map collection-handle="BDPI/113"   form-name="livro" />
+   <name-map collection-handle="BDPI/114"   form-name="relatorio" />
+   
+    <!-- Departamento de Enfermagem Materno-Infantil e Saúde Pública - EERP/ERM  --> 
+   <name-map collection-handle="BDPI/127"   form-name="artigo" />
+   <name-map collection-handle="BDPI/128"   form-name="evento" />
+   <name-map collection-handle="BDPI/129"   form-name="livro" />
+   <name-map collection-handle="BDPI/130"   form-name="relatorio" />
+   
+   <!-- Departamento de Enfermagem Psiquiátrica e Ciências Humanas - EERP/ERP  --> 
+   <name-map collection-handle="BDPI/122"   form-name="artigo" />
+   <name-map collection-handle="BDPI/123"   form-name="evento" />
+   <name-map collection-handle="BDPI/124"   form-name="livro" />
+   <name-map collection-handle="BDPI/125"   form-name="relatorio" />
+   
+   <!-- Departamento Enfermagem Geral e Especializada - EERP/ERG  --> 
+   <name-map collection-handle="BDPI/117"   form-name="artigo" />
+   <name-map collection-handle="BDPI/118"   form-name="evento" />
+   <name-map collection-handle="BDPI/119"   form-name="livro" />
+   <name-map collection-handle="BDPI/120"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - EERP/Outros --> 
+   <name-map collection-handle="BDPI/132"   form-name="artigo" />
+   <name-map collection-handle="BDPI/133"   form-name="evento" />
+   <name-map collection-handle="BDPI/134"   form-name="livro" />
+   <name-map collection-handle="BDPI/135"   form-name="relatorio" />
+   
+   <!-- Departamento de Enfermagem em Saúde Coletiva - EE/ENS  --> 
+   <name-map collection-handle="BDPI/80"   form-name="artigo" />
+   <name-map collection-handle="BDPI/81"   form-name="evento" />
+   <name-map collection-handle="BDPI/82"   form-name="livro" />
+   <name-map collection-handle="BDPI/83"   form-name="relatorio" />
+   
+   <!-- Departamento de Enfermagem Materno-Infantil e Psiquiátrica - EE/ENP  --> 
+   <name-map collection-handle="BDPI/85"   form-name="artigo" />
+   <name-map collection-handle="BDPI/86"   form-name="evento" />
+   <name-map collection-handle="BDPI/87"   form-name="livro" />
+   <name-map collection-handle="BDPI/88"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Enfermagem Medico-Cirúrgica - EE/ENC  --> 
+   <name-map collection-handle="BDPI/70"   form-name="artigo" />
+   <name-map collection-handle="BDPI/71"   form-name="evento" />
+   <name-map collection-handle="BDPI/72"   form-name="livro" />
+   <name-map collection-handle="BDPI/73"   form-name="relatorio" />
+   
+   <!-- Departamento de Orientação Profissional - EE/ENO  --> 
+   <name-map collection-handle="BDPI/75"   form-name="artigo" />
+   <name-map collection-handle="BDPI/76"   form-name="evento" />
+   <name-map collection-handle="BDPI/77"   form-name="livro" />
+   <name-map collection-handle="BDPI/78"   form-name="relatorio" />
+   
+   <!-- Outros departamentos - EE/Outros   --> 
+   <name-map collection-handle="BDPI/90"   form-name="artigo" />
+   <name-map collection-handle="BDPI/91"   form-name="evento" />
+   <name-map collection-handle="BDPI/92"   form-name="livro" />
+   <name-map collection-handle="BDPI/93"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Biotecnologia - EEL/LOT  --> 
+   <name-map collection-handle="BDPI/138"   form-name="artigo" />
+   <name-map collection-handle="BDPI/139"   form-name="evento" />
+   <name-map collection-handle="BDPI/140"   form-name="livro" />
+   <name-map collection-handle="BDPI/141"   form-name="relatorio" />
+   
+   <!-- Departamento de Ciências Básicas e Ambientais - EEL/LOB  --> 
+   <name-map collection-handle="BDPI/143"   form-name="artigo" />
+   <name-map collection-handle="BDPI/144"   form-name="evento" />
+   <name-map collection-handle="BDPI/145"   form-name="livro" />
+   <name-map collection-handle="BDPI/146"   form-name="relatorio" />
+   
+   <!-- Departamento de Engenharia de Materiais - EEL/LOM  --> 
+   <name-map collection-handle="BDPI/148"   form-name="artigo" />
+   <name-map collection-handle="BDPI/149"   form-name="evento" />
+   <name-map collection-handle="BDPI/150"   form-name="livro" />
+   <name-map collection-handle="BDPI/151"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Engenharia Química - EEL/LOQ  --> 
+   <name-map collection-handle="BDPI/153"   form-name="artigo" />
+   <name-map collection-handle="BDPI/154"   form-name="evento" />
+   <name-map collection-handle="BDPI/155"   form-name="livro" />
+   <name-map collection-handle="BDPI/156"   form-name="relatorio" />
+   
+   <!-- Outros departamentos - EEL/Outros  --> 
+   <name-map collection-handle="BDPI/158"   form-name="artigo" />
+   <name-map collection-handle="BDPI/159"   form-name="evento" />
+   <name-map collection-handle="BDPI/160"   form-name="livro" />
+   <name-map collection-handle="BDPI/161"   form-name="relatorio" />
+   
+   <!-- Departamento de Arquitetura e Urbanismo - EESC/AU  --> 
+   <name-map collection-handle="BDPI/164"   form-name="artigo" />
+   <name-map collection-handle="BDPI/165"   form-name="evento" />
+   <name-map collection-handle="BDPI/166"   form-name="livro" />
+   <name-map collection-handle="BDPI/167"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Engenharia de Estrutura - EESC/SET  --> 
+   <name-map collection-handle="BDPI/169"   form-name="artigo" />
+   <name-map collection-handle="BDPI/170"   form-name="evento" />
+   <name-map collection-handle="BDPI/171"   form-name="livro" />
+   <name-map collection-handle="BDPI/172"   form-name="relatorio" />
+      
+   
+   <!-- Departamento de Engenharia de Materiais, Aeronáutica e Automobilística - EESC/SMM  --> 
+   <name-map collection-handle="BDPI/174"   form-name="artigo" />
+   <name-map collection-handle="BDPI/175"   form-name="evento" />
+   <name-map collection-handle="BDPI/176"   form-name="livro" />
+   <name-map collection-handle="BDPI/177"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Engenharia de Produção - EESC/SEP  --> 
+   <name-map collection-handle="BDPI/189"   form-name="artigo" />
+   <name-map collection-handle="BDPI/190"   form-name="evento" />
+   <name-map collection-handle="BDPI/191"   form-name="livro" />
+   <name-map collection-handle="BDPI/192"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Engenharia Elétrica - EESC/SEL  --> 
+   <name-map collection-handle="BDPI/179"   form-name="artigo" />
+   <name-map collection-handle="BDPI/180"   form-name="evento" />
+   <name-map collection-handle="BDPI/181"   form-name="livro" />
+   <name-map collection-handle="BDPI/182"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Engenharia Mecânica - EESC/SEM  --> 
+   <name-map collection-handle="BDPI/184"   form-name="artigo" />
+   <name-map collection-handle="BDPI/185"   form-name="evento" />
+   <name-map collection-handle="BDPI/186"   form-name="livro" />
+   <name-map collection-handle="BDPI/187"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Geotécnica - EESC/ SGS  --> 
+   <name-map collection-handle="BDPI/194"   form-name="artigo" />
+   <name-map collection-handle="BDPI/195"   form-name="evento" />
+   <name-map collection-handle="BDPI/196"   form-name="livro" />
+   <name-map collection-handle="BDPI/197"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Hidráulica e Saneamento - EESC/SHS  --> 
+   <name-map collection-handle="BDPI/199"   form-name="artigo" />
+   <name-map collection-handle="BDPI/200"   form-name="evento" />
+   <name-map collection-handle="BDPI/201"   form-name="livro" />
+   <name-map collection-handle="BDPI/202"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Transportes - EESC/STT  --> 
+   <name-map collection-handle="BDPI/204"   form-name="artigo" />
+   <name-map collection-handle="BDPI/205"   form-name="evento" />
+   <name-map collection-handle="BDPI/206"   form-name="livro" />
+   <name-map collection-handle="BDPI/207"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - EESC/Outros  --> 
+   <name-map collection-handle="BDPI/209"   form-name="artigo" />
+   <name-map collection-handle="BDPI/210"   form-name="evento" />
+   <name-map collection-handle="BDPI/211"   form-name="livro" />
+   <name-map collection-handle="BDPI/212"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Computação e Sistemas Digitais - EP/PCS  --> 
+   <name-map collection-handle="BDPI/220"   form-name="artigo" />
+   <name-map collection-handle="BDPI/221"   form-name="evento" />
+   <name-map collection-handle="BDPI/222"   form-name="livro" />
+   <name-map collection-handle="BDPI/223"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Construção Civil - EP/PCC  --> 
+   <name-map collection-handle="BDPI/215"   form-name="artigo" />
+   <name-map collection-handle="BDPI/216"   form-name="evento" />
+   <name-map collection-handle="BDPI/217"   form-name="livro" />
+   <name-map collection-handle="BDPI/218"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Energia e Automação Elétricas - EP/PEA  --> 
+   <name-map collection-handle="BDPI/225"   form-name="artigo" />
+   <name-map collection-handle="BDPI/226"   form-name="evento" />
+   <name-map collection-handle="BDPI/227"   form-name="livro" />
+   <name-map collection-handle="BDPI/228"   form-name="relatorio" />
+   
+   <!-- Departamento de Estruturas e Fundações - EP/PEF  --> 
+   <name-map collection-handle="BDPI/230"   form-name="artigo" />
+   <name-map collection-handle="BDPI/231"   form-name="evento" />
+   <name-map collection-handle="BDPI/232"   form-name="livro" />
+   <name-map collection-handle="BDPI/233"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Hidráulica e Sanitária - EP/PHD  --> 
+   <name-map collection-handle="BDPI/235"   form-name="artigo" />
+   <name-map collection-handle="BDPI/236"   form-name="evento" />
+   <name-map collection-handle="BDPI/237"   form-name="livro" />
+   <name-map collection-handle="BDPI/238"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Mecânica - EP/PME  --> 
+   <name-map collection-handle="BDPI/240"   form-name="artigo" />
+   <name-map collection-handle="BDPI/241"   form-name="evento" />
+   <name-map collection-handle="BDPI/242"   form-name="livro" />
+   <name-map collection-handle="BDPI/243"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Mecatrônica e Sistemas Mecânicos - EP/PMR  --> 
+   <name-map collection-handle="BDPI/250"   form-name="artigo" />
+   <name-map collection-handle="BDPI/251"   form-name="evento" />
+   <name-map collection-handle="BDPI/252"   form-name="livro" />
+   <name-map collection-handle="BDPI/253"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Mecatrônica e Sistemas Mecânicos - EP/PMT  --> 
+   <name-map collection-handle="BDPI/255"   form-name="artigo" />
+   <name-map collection-handle="BDPI/256"   form-name="evento" />
+   <name-map collection-handle="BDPI/257"   form-name="livro" />
+   <name-map collection-handle="BDPI/258"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Minas de Petróleo - EP/PMI  --> 
+   <name-map collection-handle="BDPI/245"   form-name="artigo" />
+   <name-map collection-handle="BDPI/246"   form-name="evento" />
+   <name-map collection-handle="BDPI/247"   form-name="livro" />
+   <name-map collection-handle="BDPI/248"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Naval e Oceânica - EP/PNV  --> 
+   <name-map collection-handle="BDPI/260"   form-name="artigo" />
+   <name-map collection-handle="BDPI/261"   form-name="evento" />
+   <name-map collection-handle="BDPI/262"   form-name="livro" />
+   <name-map collection-handle="BDPI/263"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Produção - EP/PRO  --> 
+   <name-map collection-handle="BDPI/270"   form-name="artigo" />
+   <name-map collection-handle="BDPI/271"   form-name="evento" />
+   <name-map collection-handle="BDPI/272"   form-name="livro" />
+   <name-map collection-handle="BDPI/273"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Química - EP/PQI  --> 
+   <name-map collection-handle="BDPI/265"   form-name="artigo" />
+   <name-map collection-handle="BDPI/266"   form-name="evento" />
+   <name-map collection-handle="BDPI/267"   form-name="livro" />
+   <name-map collection-handle="BDPI/268"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Sistemas Eletrônicos - EP/PSI  --> 
+   <name-map collection-handle="BDPI/275"   form-name="artigo" />
+   <name-map collection-handle="BDPI/276"   form-name="evento" />
+   <name-map collection-handle="BDPI/277"   form-name="livro" />
+   <name-map collection-handle="BDPI/278"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Telecomunicações e Controle - EP/PTC  --> 
+   <name-map collection-handle="BDPI/280"   form-name="artigo" />
+   <name-map collection-handle="BDPI/281"   form-name="evento" />
+   <name-map collection-handle="BDPI/282"   form-name="livro" />
+   <name-map collection-handle="BDPI/283"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Transportes - EP/PTR  --> 
+   <name-map collection-handle="BDPI/285"   form-name="artigo" />
+   <name-map collection-handle="BDPI/286"   form-name="evento" />
+   <name-map collection-handle="BDPI/287"   form-name="livro" />
+   <name-map collection-handle="BDPI/288"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - EP/Outros  --> 
+   <name-map collection-handle="BDPI/290"   form-name="artigo" />
+   <name-map collection-handle="BDPI/291"   form-name="evento" />
+   <name-map collection-handle="BDPI/292"   form-name="livro" />
+   <name-map collection-handle="BDPI/293"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Agroindústria, Alimentos e Nutrição - ESALQ/LAN  --> 
+   <name-map collection-handle="BDPI/296"   form-name="artigo" />
+   <name-map collection-handle="BDPI/297"   form-name="evento" />
+   <name-map collection-handle="BDPI/298"   form-name="livro" />
+   <name-map collection-handle="BDPI/299"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Ciência do Solo - ESALQ/LSO  --> 
+   <name-map collection-handle="BDPI/301"   form-name="artigo" />
+   <name-map collection-handle="BDPI/302"   form-name="evento" />
+   <name-map collection-handle="BDPI/303"   form-name="livro" />
+   <name-map collection-handle="BDPI/304"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Ciências Biológicas - ESALQ/LCB  --> 
+   <name-map collection-handle="BDPI/306"   form-name="artigo" />
+   <name-map collection-handle="BDPI/307"   form-name="evento" />
+   <name-map collection-handle="BDPI/308"   form-name="livro" />
+   <name-map collection-handle="BDPI/309"   form-name="relatorio" />
+   
+    <!-- Departamento de Ciências Exatas - ESALQ/LCE  --> 
+   <name-map collection-handle="BDPI/311"   form-name="artigo" />
+   <name-map collection-handle="BDPI/312"   form-name="evento" />
+   <name-map collection-handle="BDPI/313"   form-name="livro" />
+   <name-map collection-handle="BDPI/314"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Ciências Florestais - ESALQ/LCF  --> 
+   <name-map collection-handle="BDPI/316"   form-name="artigo" />
+   <name-map collection-handle="BDPI/317"   form-name="evento" />
+   <name-map collection-handle="BDPI/318"   form-name="livro" />
+   <name-map collection-handle="BDPI/319"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Economia, Administração e Sociologia - ESALQ/LES  --> 
+   <name-map collection-handle="BDPI/321"   form-name="artigo" />
+   <name-map collection-handle="BDPI/322"   form-name="evento" />
+   <name-map collection-handle="BDPI/323"   form-name="livro" />
+   <name-map collection-handle="BDPI/324"   form-name="relatorio" />
+   
+    <!-- Departamento de Engenharia de Biossistemas - ESALQ/LEB  --> 
+   <name-map collection-handle="BDPI/326"   form-name="artigo" />
+   <name-map collection-handle="BDPI/327"   form-name="evento" />
+   <name-map collection-handle="BDPI/328"   form-name="livro" />
+   <name-map collection-handle="BDPI/329"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Entomologia e Acarologia - ESALQ/LEA  --> 
+   <name-map collection-handle="BDPI/331"   form-name="artigo" />
+   <name-map collection-handle="BDPI/332"   form-name="evento" />
+   <name-map collection-handle="BDPI/333"   form-name="livro" />
+   <name-map collection-handle="BDPI/334"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Fitopatologia e Nematologia - ESALQ/LFN  --> 
+   <name-map collection-handle="BDPI/336"   form-name="artigo" />
+   <name-map collection-handle="BDPI/337"   form-name="evento" />
+   <name-map collection-handle="BDPI/338"   form-name="livro" />
+   <name-map collection-handle="BDPI/339"   form-name="relatorio" />
+   
+    <!-- Departamento de Genética - ESALQ/LGN  --> 
+   <name-map collection-handle="BDPI/341"   form-name="artigo" />
+   <name-map collection-handle="BDPI/342"   form-name="evento" />
+   <name-map collection-handle="BDPI/343"   form-name="livro" />
+   <name-map collection-handle="BDPI/344"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Produção Vegetal - ESALQ/LPV  --> 
+   <name-map collection-handle="BDPI/346"   form-name="artigo" />
+   <name-map collection-handle="BDPI/347"   form-name="evento" />
+   <name-map collection-handle="BDPI/348"   form-name="livro" />
+   <name-map collection-handle="BDPI/349"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Zootecnia - ESALQ/LZT  --> 
+   <name-map collection-handle="BDPI/351"   form-name="artigo" />
+   <name-map collection-handle="BDPI/352"   form-name="evento" />
+   <name-map collection-handle="BDPI/353"   form-name="livro" />
+   <name-map collection-handle="BDPI/354"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - ESALQ/Outros  --> 
+   <name-map collection-handle="BDPI/356"   form-name="artigo" />
+   <name-map collection-handle="BDPI/357"   form-name="evento" />
+   <name-map collection-handle="BDPI/358"   form-name="livro" />
+   <name-map collection-handle="BDPI/359"   form-name="relatorio" />
+   
+   
+
+   <!-- Departamento de História da Arquitetura e Estética do Projeto - FAU/AUH  --> 
+   <name-map collection-handle="BDPI/362"   form-name="artigo" />
+   <name-map collection-handle="BDPI/363"   form-name="evento" />
+   <name-map collection-handle="BDPI/364"   form-name="livro" />
+   <name-map collection-handle="BDPI/365"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Projetos - FAU/AUP  --> 
+   <name-map collection-handle="BDPI/367"   form-name="artigo" />
+   <name-map collection-handle="BDPI/368"   form-name="evento" />
+   <name-map collection-handle="BDPI/369"   form-name="livro" />
+   <name-map collection-handle="BDPI/370"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Tecnologia da Arquitetura - FAU/AUT  --> 
+   <name-map collection-handle="BDPI/372"   form-name="artigo" />
+   <name-map collection-handle="BDPI/373"   form-name="evento" />
+   <name-map collection-handle="BDPI/374"   form-name="livro" />
+   <name-map collection-handle="BDPI/375"   form-name="relatorio" />
+   
+   <!-- Outros departamentos - FAU/Outros  --> 
+   <name-map collection-handle="BDPI/377"   form-name="artigo" />
+   <name-map collection-handle="BDPI/378"   form-name="evento" />
+   <name-map collection-handle="BDPI/379"   form-name="livro" />
+   <name-map collection-handle="BDPI/380"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Análises Clínicas, Toxicológicas e Bromatológicas - FCFRP/DACTB  --> 
+   <name-map collection-handle="BDPI/409"   form-name="artigo" />
+   <name-map collection-handle="BDPI/410"   form-name="evento" />
+   <name-map collection-handle="BDPI/411"   form-name="livro" />
+   <name-map collection-handle="BDPI/412"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Ciências Farmacêuticas - FCFRP/DCF  --> 
+   <name-map collection-handle="BDPI/414"   form-name="artigo" />
+   <name-map collection-handle="BDPI/415"   form-name="evento" />
+   <name-map collection-handle="BDPI/416"   form-name="livro" />
+   <name-map collection-handle="BDPI/417"   form-name="relatorio" />
+   
+   <!-- Departamento de Física e Química - FCFRP/DFQ  --> 
+   <name-map collection-handle="BDPI/419"   form-name="artigo" />
+   <name-map collection-handle="BDPI/420"   form-name="evento" />
+   <name-map collection-handle="BDPI/421"   form-name="livro" />
+   <name-map collection-handle="BDPI/422"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - FCFRP/Outros  --> 
+   <name-map collection-handle="BDPI/424"   form-name="artigo" />
+   <name-map collection-handle="BDPI/425"   form-name="evento" />
+   <name-map collection-handle="BDPI/426"   form-name="livro" />
+   <name-map collection-handle="BDPI/427"   form-name="relatorio" />
+   
+   <!-- Departamento Análises Clínicas e Toxicológicas - FCF/FBC  --> 
+   <name-map collection-handle="BDPI/388"   form-name="artigo" />
+   <name-map collection-handle="BDPI/389"   form-name="evento" />
+   <name-map collection-handle="BDPI/390"   form-name="livro" />
+   <name-map collection-handle="BDPI/391"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Alimentos e Nutrição Experimental - FCF/FBA  --> 
+   <name-map collection-handle="BDPI/383"   form-name="artigo" />
+   <name-map collection-handle="BDPI/384"   form-name="evento" />
+   <name-map collection-handle="BDPI/385"   form-name="livro" />
+   <name-map collection-handle="BDPI/386"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Farmácia - FCF/FBF  --> 
+   <name-map collection-handle="BDPI/393"   form-name="artigo" />
+   <name-map collection-handle="BDPI/394"   form-name="evento" />
+   <name-map collection-handle="BDPI/395"   form-name="livro" />
+   <name-map collection-handle="BDPI/396"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Tecnologia Bioquímico-Farmacêutica - FCF/FBT  --> 
+   <name-map collection-handle="BDPI/398"   form-name="artigo" />
+   <name-map collection-handle="BDPI/399"   form-name="evento" />
+   <name-map collection-handle="BDPI/400"   form-name="livro" />
+   <name-map collection-handle="BDPI/401"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - FCF/Outros  --> 
+   <name-map collection-handle="BDPI/403"   form-name="artigo" />
+   <name-map collection-handle="BDPI/404"   form-name="evento" />
+   <name-map collection-handle="BDPI/405"   form-name="livro" />
+   <name-map collection-handle="BDPI/406"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Direito Privado e de Processo Civil - FDRP/DPP  --> 
+   <name-map collection-handle="BDPI/481"   form-name="artigo" />
+   <name-map collection-handle="BDPI/482"   form-name="evento" />
+   <name-map collection-handle="BDPI/483"   form-name="livro" />
+   <name-map collection-handle="BDPI/484"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Direito Público - FDRP/DDP  --> 
+   <name-map collection-handle="BDPI/486"   form-name="artigo" />
+   <name-map collection-handle="BDPI/487"   form-name="evento" />
+   <name-map collection-handle="BDPI/488"   form-name="livro" />
+   <name-map collection-handle="BDPI/489"   form-name="relatorio" />
+   
+   <!-- Departamento de Filosofia do Direito e Disciplinas Básicas - FDRP/DFB  --> 
+   <name-map collection-handle="BDPI/491"   form-name="artigo" />
+   <name-map collection-handle="BDPI/492"   form-name="evento" />
+   <name-map collection-handle="BDPI/493"   form-name="livro" />
+   <name-map collection-handle="BDPI/494"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - FDRP/Outros  --> 
+   <name-map collection-handle="BDPI/496"   form-name="artigo" />
+   <name-map collection-handle="BDPI/497"   form-name="evento" />
+   <name-map collection-handle="BDPI/498"   form-name="livro" />
+   <name-map collection-handle="BDPI/499"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Direito Civil - FD/DCV   --> 
+   <name-map collection-handle="BDPI/430"   form-name="artigo" />
+   <name-map collection-handle="BDPI/431"   form-name="evento" />
+   <name-map collection-handle="BDPI/432"   form-name="livro" />
+   <name-map collection-handle="BDPI/433"   form-name="relatorio" />
+   
+    <!-- Departamento de Direito Comercial - FD/DCO  --> 
+   <name-map collection-handle="BDPI/435"   form-name="artigo" />
+   <name-map collection-handle="BDPI/436"   form-name="evento" />
+   <name-map collection-handle="BDPI/437"   form-name="livro" />
+   <name-map collection-handle="BDPI/438"   form-name="relatorio" />
+   
+    <!-- Departamento de Direito do Estado - FD/DES  --> 
+   <name-map collection-handle="BDPI/445"   form-name="artigo" />
+   <name-map collection-handle="BDPI/446"   form-name="evento" />
+   <name-map collection-handle="BDPI/447"   form-name="livro" />
+   <name-map collection-handle="BDPI/448"   form-name="relatorio" />
+   
+    <!-- Departamento de Direito do Trabalho e da Seguridade Social - FD/DTB  --> 
+   <name-map collection-handle="BDPI/440"   form-name="artigo" />
+   <name-map collection-handle="BDPI/441"   form-name="evento" />
+   <name-map collection-handle="BDPI/442"   form-name="livro" />
+   <name-map collection-handle="BDPI/443"   form-name="relatorio" />
+   
+    <!-- Departamento de Direito Econômico, Financeiro e Tributário - FD/DEF  --> 
+   <name-map collection-handle="BDPI/460"   form-name="artigo" />
+   <name-map collection-handle="BDPI/461"   form-name="evento" />
+   <name-map collection-handle="BDPI/462"   form-name="livro" />
+   <name-map collection-handle="BDPI/463"   form-name="relatorio" />
+   
+    <!-- Departamento de Direito Internacional e Comparado - FD/DIN  --> 
+   <name-map collection-handle="BDPI/465"   form-name="artigo" />
+   <name-map collection-handle="BDPI/466"   form-name="evento" />
+   <name-map collection-handle="BDPI/467"   form-name="livro" />
+   <name-map collection-handle="BDPI/468"   form-name="relatorio" />
+   
+    <!-- Departamento de Direito Penal, Medicina Forense e Criminologia - FD/DPM  --> 
+   <name-map collection-handle="BDPI/450"   form-name="artigo" />
+   <name-map collection-handle="BDPI/451"   form-name="evento" />
+   <name-map collection-handle="BDPI/452"   form-name="livro" />
+   <name-map collection-handle="BDPI/453"   form-name="relatorio" />
+   
+    <!-- Departamento de Direito Processual - FD/DPC  --> 
+   <name-map collection-handle="BDPI/455"   form-name="artigo" />
+   <name-map collection-handle="BDPI/456"   form-name="evento" />
+   <name-map collection-handle="BDPI/457"   form-name="livro" />
+   <name-map collection-handle="BDPI/458"   form-name="relatorio" />
+   
+    <!-- Departamento de Filosofia e Teoria Geral do Direito - FD/DFD  --> 
+   <name-map collection-handle="BDPI/470"   form-name="artigo" />
+   <name-map collection-handle="BDPI/471"   form-name="evento" />
+   <name-map collection-handle="BDPI/472"   form-name="livro" />
+   <name-map collection-handle="BDPI/473"   form-name="relatorio" />
+   
+    <!-- Outros departamentos - FD/Outros  --> 
+   <name-map collection-handle="BDPI/475"   form-name="artigo" />
+   <name-map collection-handle="BDPI/476"   form-name="evento" />
+   <name-map collection-handle="BDPI/477"   form-name="livro" />
+   <name-map collection-handle="BDPI/478"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Administração - FEARP/RAD  --> 
+   <name-map collection-handle="BDPI/544"   form-name="artigo" />
+   <name-map collection-handle="BDPI/545"   form-name="evento" />
+   <name-map collection-handle="BDPI/546"   form-name="livro" />
+   <name-map collection-handle="BDPI/547"   form-name="relatorio" />
+   
+    <!-- Departamento de Contabilidade - FEARP/RCC  --> 
+   <name-map collection-handle="BDPI/549"   form-name="artigo" />
+   <name-map collection-handle="BDPI/550"   form-name="evento" />
+   <name-map collection-handle="BDPI/551"   form-name="livro" />
+   <name-map collection-handle="BDPI/552"   form-name="relatorio" />
+   
+    <!-- Departamento de Economia - FEARP/REC  --> 
+   <name-map collection-handle="BDPI/554"   form-name="artigo" />
+   <name-map collection-handle="BDPI/555"   form-name="evento" />
+   <name-map collection-handle="BDPI/556"   form-name="livro" />
+   <name-map collection-handle="BDPI/557"   form-name="relatorio" />
+   
+    <!-- Outros departamentos - FEARP/Outros  --> 
+   <name-map collection-handle="BDPI/559"   form-name="artigo" />
+   <name-map collection-handle="BDPI/560"   form-name="evento" />
+   <name-map collection-handle="BDPI/561"   form-name="livro" />
+   <name-map collection-handle="BDPI/562"   form-name="relatorio" />
+   
+    <!-- Departamento de Administração - FEA/EAD --> 
+   <name-map collection-handle="BDPI/523"   form-name="artigo" />
+   <name-map collection-handle="BDPI/524"   form-name="evento" />
+   <name-map collection-handle="BDPI/525"   form-name="livro" />
+   <name-map collection-handle="BDPI/526"   form-name="relatorio" />
+   
+    <!-- Departamento de Contabilidade e Atuária - FEA/EAC --> 
+   <name-map collection-handle="BDPI/533"   form-name="artigo" />
+   <name-map collection-handle="BDPI/534"   form-name="evento" />
+   <name-map collection-handle="BDPI/535"   form-name="livro" />
+   <name-map collection-handle="BDPI/536"   form-name="relatorio" />
+   
+    <!-- Departamento de Economia - FEA/EAE  --> 
+   <name-map collection-handle="BDPI/528"   form-name="artigo" />
+   <name-map collection-handle="BDPI/529"   form-name="evento" />
+   <name-map collection-handle="BDPI/530"   form-name="livro" />
+   <name-map collection-handle="BDPI/531"   form-name="relatorio" />
+   
+    <!-- Outros departamentos - FEA/Outros  --> 
+   <name-map collection-handle="BDPI/538"   form-name="artigo" />
+   <name-map collection-handle="BDPI/539"   form-name="evento" />
+   <name-map collection-handle="BDPI/540"   form-name="livro" />
+   <name-map collection-handle="BDPI/541"   form-name="relatorio" />
+   
+    <!-- Departamento de Administração Escolar e Economia da Educação - FE/EDA  --> 
+   <name-map collection-handle="BDPI/502"   form-name="artigo" />
+   <name-map collection-handle="BDPI/503"   form-name="evento" />
+   <name-map collection-handle="BDPI/504"   form-name="livro" />
+   <name-map collection-handle="BDPI/505"   form-name="relatorio" />
+   
+    <!-- Departamento de Filosofia da Educação e Ciências da Educação - FE/EDF  --> 
+   <name-map collection-handle="BDPI/507"   form-name="artigo" />
+   <name-map collection-handle="BDPI/508"   form-name="evento" />
+   <name-map collection-handle="BDPI/509"   form-name="livro" />
+   <name-map collection-handle="BDPI/510"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Metodologia do Ensino e Educação Comparada - FE/EDM  --> 
+   <name-map collection-handle="BDPI/512"   form-name="artigo" />
+   <name-map collection-handle="BDPI/513"   form-name="evento" />
+   <name-map collection-handle="BDPI/514"   form-name="livro" />
+   <name-map collection-handle="BDPI/515"   form-name="relatorio" />
+   
+    <!-- Outros departamentos - FE/Outros  --> 
+   <name-map collection-handle="BDPI/517"   form-name="artigo" />
+   <name-map collection-handle="BDPI/518"   form-name="evento" />
+   <name-map collection-handle="BDPI/519"   form-name="livro" />
+   <name-map collection-handle="BDPI/520"   form-name="relatorio" />
+   
+    <!-- Departamento de Biologia - FFCLRP/592  --> 
+   <name-map collection-handle="BDPI/1250"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1251"   form-name="evento" />
+   <name-map collection-handle="BDPI/1252"   form-name="livro" />
+   <name-map collection-handle="BDPI/1253"   form-name="relatorio" />
+   
+    <!-- Departamento de Computação e Matemática - FFCLRP/595  --> 
+   <name-map collection-handle="BDPI/1255"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1256"   form-name="evento" />
+   <name-map collection-handle="BDPI/1257"   form-name="livro" />
+   <name-map collection-handle="BDPI/1258"   form-name="relatorio" />
+   
+    <!-- Departamento de Educação, Informação e Comunicação - FFCLRP/596  --> 
+   <name-map collection-handle="BDPI/1275"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1276"   form-name="evento" />
+   <name-map collection-handle="BDPI/1277"   form-name="livro" />
+   <name-map collection-handle="BDPI/1278"   form-name="relatorio" />
+   
+      
+    <!-- Departamento de Educação, Informação e Comunicação - FFCLRP/591  --> 
+  
+   
+    <!-- Departamento de Música - FFCLRP/597  --> 
+   <name-map collection-handle="BDPI/1270"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1271"   form-name="evento" />
+   <name-map collection-handle="BDPI/1272"   form-name="livro" />
+   <name-map collection-handle="BDPI/1273"   form-name="relatorio" />
+   
+    <!-- Departamento de Psicologia - FFCLRP/594   --> 
+   <name-map collection-handle="BDPI/1260"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1261"   form-name="evento" />
+   <name-map collection-handle="BDPI/1262"   form-name="livro" />
+   <name-map collection-handle="BDPI/1263"   form-name="relatorio" />
+   
+    <!-- Departamento de Química - FFCLRP/593  --> 
+   <name-map collection-handle="BDPI/1265"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1266"   form-name="evento" />
+   <name-map collection-handle="BDPI/1267"   form-name="livro" />
+   <name-map collection-handle="BDPI/1268"   form-name="relatorio" />
+   
+    <!-- Outros departamentos - FFCLRP/Outros  --> 
+   <name-map collection-handle="BDPI/1280"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1281"   form-name="evento" />
+   <name-map collection-handle="BDPI/1282"   form-name="livro" />
+   <name-map collection-handle="BDPI/1283"   form-name="relatorio" />
+   
+    <!-- Departamento Antropologia - FFLCH/FLA  --> 
+   <name-map collection-handle="BDPI/565"   form-name="artigo" />
+   <name-map collection-handle="BDPI/566"   form-name="evento" />
+   <name-map collection-handle="BDPI/567"   form-name="livro" />
+   <name-map collection-handle="BDPI/568"   form-name="relatorio" />
+   
+   
+   <!-- Departamento Ciência Política - FFLCH/FPL  --> 
+   <name-map collection-handle="BDPI/570"   form-name="artigo" />
+   <name-map collection-handle="BDPI/571"   form-name="evento" />
+   <name-map collection-handle="BDPI/572"   form-name="livro" />
+   <name-map collection-handle="BDPI/573"   form-name="relatorio" />
+   
+   <!-- Departamento Filosofia - FFLCH/FLF  --> 
+   <name-map collection-handle="BDPI/575"   form-name="artigo" />
+   <name-map collection-handle="BDPI/576"   form-name="evento" />
+   <name-map collection-handle="BDPI/577"   form-name="livro" />
+   <name-map collection-handle="BDPI/578"   form-name="relatorio" />
+   
+    <!-- Departamento Geografia - FFLCH/FLG  --> 
+   <name-map collection-handle="BDPI/580"   form-name="artigo" />
+   <name-map collection-handle="BDPI/581"   form-name="evento" />
+   <name-map collection-handle="BDPI/582"   form-name="livro" />
+   <name-map collection-handle="BDPI/583"   form-name="relatorio" />
+   
+    <!-- Departamento História - FFLCH/FLH  --> 
+   <name-map collection-handle="BDPI/585"   form-name="artigo" />
+   <name-map collection-handle="BDPI/586"   form-name="evento" />
+   <name-map collection-handle="BDPI/587"   form-name="livro" />
+   <name-map collection-handle="BDPI/588"   form-name="relatorio" />
+   
+    <!-- Departamento Letras Clássicas - FFLCH/FLC  --> 
+   <name-map collection-handle="BDPI/595"   form-name="artigo" />
+   <name-map collection-handle="BDPI/596"   form-name="evento" />
+   <name-map collection-handle="BDPI/597"   form-name="livro" />
+   <name-map collection-handle="BDPI/598"   form-name="relatorio" />
+   
+    <!-- Departamento Letras Modernas - FFLCH/FLM  --> 
+   <name-map collection-handle="BDPI/600"   form-name="artigo" />
+   <name-map collection-handle="BDPI/601"   form-name="evento" />
+   <name-map collection-handle="BDPI/602"   form-name="livro" />
+   <name-map collection-handle="BDPI/603"   form-name="relatorio" />
+   
+    <!-- Departamento Letras Orientais - FFLCH/FLO  --> 
+   <name-map collection-handle="BDPI/605"   form-name="artigo" />
+   <name-map collection-handle="BDPI/606"   form-name="evento" />
+   <name-map collection-handle="BDPI/607"   form-name="livro" />
+   <name-map collection-handle="BDPI/608"   form-name="relatorio" />
+   
+    <!--  Departamento Linguística - FFLCH/FLL  --> 
+   <name-map collection-handle="BDPI/590"   form-name="artigo" />
+   <name-map collection-handle="BDPI/591"   form-name="evento" />
+   <name-map collection-handle="BDPI/592"   form-name="livro" />
+   <name-map collection-handle="BDPI/593"   form-name="relatorio" />
+   
+    <!-- Departamento Sociologia - FFLCH/FLS  --> 
+   <name-map collection-handle="BDPI/610"   form-name="artigo" />
+   <name-map collection-handle="BDPI/611"   form-name="evento" />
+   <name-map collection-handle="BDPI/612"   form-name="livro" />
+   <name-map collection-handle="BDPI/613"   form-name="relatorio" />
+   
+    <!-- Departamento Teoria Literária - FFLCH/FLT  --> 
+   <name-map collection-handle="BDPI/615"   form-name="artigo" />
+   <name-map collection-handle="BDPI/616"   form-name="evento" />
+   <name-map collection-handle="BDPI/617"   form-name="livro" />
+   <name-map collection-handle="BDPI/618"   form-name="relatorio" />
+   
+    <!-- Outros departamentos - FFLCH/Outros   --> 
+   <name-map collection-handle="BDPI/620"   form-name="artigo" />
+   <name-map collection-handle="BDPI/621"   form-name="evento" />
+   <name-map collection-handle="BDPI/622"   form-name="livro" />
+   <name-map collection-handle="BDPI/623"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Biologia Celular e Molecular e Bioagentes Patogênicos - FMRP/RBP   --> 
+   <name-map collection-handle="BDPI/737"   form-name="artigo" />
+   <name-map collection-handle="BDPI/738"   form-name="evento" />
+   <name-map collection-handle="BDPI/739"   form-name="livro" />
+   <name-map collection-handle="BDPI/740"   form-name="relatorio" />
+   
+    <!-- Departamento de Biomecânica, Medicina e Reabilitação do Aparelho Locomotor - FMRP/RAL   --> 
+   <name-map collection-handle="BDPI/727"   form-name="artigo" />
+   <name-map collection-handle="BDPI/728"   form-name="evento" />
+   <name-map collection-handle="BDPI/729"   form-name="livro" />
+   <name-map collection-handle="BDPI/730"   form-name="relatorio" />
+   
+    <!-- Departamento de Bioquímica e Imunologia - FMRP/RBI   --> 
+   <name-map collection-handle="BDPI/732"   form-name="artigo" />
+   <name-map collection-handle="BDPI/733"   form-name="evento" />
+   <name-map collection-handle="BDPI/734"   form-name="livro" />
+   <name-map collection-handle="BDPI/735"   form-name="relatorio" />
+   
+    <!-- Departamento de Cirurgia e Anatomia - FMRP/RCA   --> 
+   <name-map collection-handle="BDPI/742"   form-name="artigo" />
+   <name-map collection-handle="BDPI/743"   form-name="evento" />
+   <name-map collection-handle="BDPI/744"   form-name="livro" />
+   <name-map collection-handle="BDPI/745"   form-name="relatorio" />
+   
+    <!--  Departamento de Clínica Médica - FMRP/RCM  --> 
+   <name-map collection-handle="BDPI/747"   form-name="artigo" />
+   <name-map collection-handle="BDPI/748"   form-name="evento" />
+   <name-map collection-handle="BDPI/749"   form-name="livro" />
+   <name-map collection-handle="BDPI/750"   form-name="relatorio" />
+   
+    <!--  Departamento de Farmacologia - FMRP/RFA  --> 
+   <name-map collection-handle="BDPI/752"   form-name="artigo" />
+   <name-map collection-handle="BDPI/753"   form-name="evento" />
+   <name-map collection-handle="BDPI/754"   form-name="livro" />
+   <name-map collection-handle="BDPI/755"   form-name="relatorio" />
+   
+    <!-- Departamento de Fisiologia - FMRP/RFI   --> 
+   <name-map collection-handle="BDPI/757"   form-name="artigo" />
+   <name-map collection-handle="BDPI/758"   form-name="evento" />
+   <name-map collection-handle="BDPI/759"   form-name="livro" />
+   <name-map collection-handle="BDPI/760"   form-name="relatorio" />
+   
+   <!--  Departamento de Genética - FMRP/RGE  --> 
+   <name-map collection-handle="BDPI/762"   form-name="artigo" />
+   <name-map collection-handle="BDPI/763"   form-name="evento" />
+   <name-map collection-handle="BDPI/764"   form-name="livro" />
+   <name-map collection-handle="BDPI/765"   form-name="relatorio" />
+   
+    <!-- Departamento de Ginecologia e Obstetrícia - FMRP/RGO   --> 
+   <name-map collection-handle="BDPI/767"   form-name="artigo" />
+   <name-map collection-handle="BDPI/768"   form-name="evento" />
+   <name-map collection-handle="BDPI/769"   form-name="livro" />
+   <name-map collection-handle="BDPI/770"   form-name="relatorio" />
+   
+   
+   <!--   Departamento de Medicina Social - FMRP/RMS   --> 
+   <name-map collection-handle="BDPI/772"   form-name="artigo" />
+   <name-map collection-handle="BDPI/773"   form-name="evento" />
+   <name-map collection-handle="BDPI/774"   form-name="livro" />
+   <name-map collection-handle="BDPI/775"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Neurociências e Ciências do Comportamento - FMRP/RNC   --> 
+   <name-map collection-handle="BDPI/777"   form-name="artigo" />
+   <name-map collection-handle="BDPI/778"   form-name="evento" />
+   <name-map collection-handle="BDPI/779"   form-name="livro" />
+   <name-map collection-handle="BDPI/780"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Oftalmologia, Otorrinolaringologia e Cirurgia da Cabeça e Pescoço - FMRP/ROO   --> 
+   <name-map collection-handle="BDPI/782"   form-name="artigo" />
+   <name-map collection-handle="BDPI/783"   form-name="evento" />
+   <name-map collection-handle="BDPI/784"   form-name="livro" />
+   <name-map collection-handle="BDPI/785"   form-name="relatorio" />
+   
+   
+   <!--   Departamento de Patologia e Medicina Legal - FMRP/RPM   --> 
+   <name-map collection-handle="BDPI/787"   form-name="artigo" />
+   <name-map collection-handle="BDPI/788"   form-name="evento" />
+   <name-map collection-handle="BDPI/789"   form-name="livro" />
+   <name-map collection-handle="BDPI/790"   form-name="relatorio" />
+   
+   
+   <!--    Departamento de Puericultura e Pediatria - FMRP/RPP  --> 
+   <name-map collection-handle="BDPI/792"   form-name="artigo" />
+   <name-map collection-handle="BDPI/793"   form-name="evento" />
+   <name-map collection-handle="BDPI/794"   form-name="livro" />
+   <name-map collection-handle="BDPI/795"   form-name="relatorio" />
+   
+   
+   <!--   Outros departamentos - FMRP/Outros    --> 
+   <name-map collection-handle="BDPI/797"   form-name="artigo" />
+   <name-map collection-handle="BDPI/798"   form-name="evento" />
+   <name-map collection-handle="BDPI/799"   form-name="livro" />
+   <name-map collection-handle="BDPI/800"   form-name="relatorio" />
+   
+    <!-- Departamento de Cardio-Pneumologia - FM/MCP   --> 
+   <name-map collection-handle="BDPI/626"   form-name="artigo" />
+   <name-map collection-handle="BDPI/627"   form-name="evento" />
+   <name-map collection-handle="BDPI/628"   form-name="livro" />
+   <name-map collection-handle="BDPI/629"   form-name="relatorio" />
+   
+   
+   <!--  Departamento de Cirurgia - FM/MCG   --> 
+   <name-map collection-handle="BDPI/631"   form-name="artigo" />
+   <name-map collection-handle="BDPI/632"   form-name="evento" />
+   <name-map collection-handle="BDPI/633"   form-name="livro" />
+   <name-map collection-handle="BDPI/634"   form-name="relatorio" />
+   
+   
+   <!--  Departamento de Clínica Médica - FM/MCM  --> 
+   <name-map collection-handle="BDPI/636"   form-name="artigo" />
+   <name-map collection-handle="BDPI/637"   form-name="evento" />
+   <name-map collection-handle="BDPI/638"   form-name="livro" />
+   <name-map collection-handle="BDPI/639"   form-name="relatorio" />
+   
+   
+   <!--  Departamento de Dermatologia - FM/MDT   --> 
+   <name-map collection-handle="BDPI/641"   form-name="artigo" />
+   <name-map collection-handle="BDPI/642"   form-name="evento" />
+   <name-map collection-handle="BDPI/643"   form-name="livro" />
+   <name-map collection-handle="BDPI/644"   form-name="relatorio" />
+   
+   
+   <!--   Departamento de Fisioterapia, Fonoaudiologia e Terapia Ocupacional - FM/MFT  --> 
+   <name-map collection-handle="BDPI/646"   form-name="artigo" />
+   <name-map collection-handle="BDPI/647"   form-name="evento" />
+   <name-map collection-handle="BDPI/647"   form-name="livro" />
+   <name-map collection-handle="BDPI/648"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Gastroenterologia - FM/MGT   --> 
+   <name-map collection-handle="BDPI/651"   form-name="artigo" />
+   <name-map collection-handle="BDPI/652"   form-name="evento" />
+   <name-map collection-handle="BDPI/653"   form-name="livro" />
+   <name-map collection-handle="BDPI/654"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Ginecologia - FM/MOG   --> 
+   <name-map collection-handle="BDPI/681"   form-name="artigo" />
+   <name-map collection-handle="BDPI/682"   form-name="evento" />
+   <name-map collection-handle="BDPI/683"   form-name="livro" />
+   <name-map collection-handle="BDPI/684"   form-name="relatorio" />
+   
+   
+   <!--  Departamento de Medicina Legal, Ética Médica e Medicina Social e do Trabalho - FM/MLS   --> 
+   <name-map collection-handle="BDPI/656"   form-name="artigo" />
+   <name-map collection-handle="BDPI/657"   form-name="evento" />
+   <name-map collection-handle="BDPI/658"   form-name="livro" />
+   <name-map collection-handle="BDPI/659"   form-name="relatorio" />
+   
+    
+   <!--  Departamento de Medicina Preventiva - FM/MPR   --> 
+   <name-map collection-handle="BDPI/661"   form-name="artigo" />
+   <name-map collection-handle="BDPI/662"   form-name="evento" />
+   <name-map collection-handle="BDPI/663"   form-name="livro" />
+   <name-map collection-handle="BDPI/664"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Moléstias Infecciosas e Parasitárias - FM/MIP   --> 
+   <name-map collection-handle="BDPI/666"   form-name="artigo" />
+   <name-map collection-handle="BDPI/667"   form-name="evento" />
+   <name-map collection-handle="BDPI/668"   form-name="livro" />
+   <name-map collection-handle="BDPI/669"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Neurologia - FM/MNE  --> 
+   <name-map collection-handle="BDPI/671"   form-name="artigo" />
+   <name-map collection-handle="BDPI/672"   form-name="evento" />
+   <name-map collection-handle="BDPI/673"   form-name="livro" />
+   <name-map collection-handle="BDPI/674"   form-name="relatorio" />
+   
+     
+   <!-- Departamento de Obstetrícia - FM/MOG   --> 
+   <name-map collection-handle="BDPI/676"   form-name="artigo" />
+   <name-map collection-handle="BDPI/677"   form-name="evento" />
+   <name-map collection-handle="BDPI/678"   form-name="livro" />
+   <name-map collection-handle="BDPI/679"   form-name="relatorio" />
+   
+   <!-- Departamento de Oftalmologia - FM/MOF   --> 
+   <name-map collection-handle="BDPI/686"   form-name="artigo" />
+   <name-map collection-handle="BDPI/687"   form-name="evento" />
+   <name-map collection-handle="BDPI/688"   form-name="livro" />
+   <name-map collection-handle="BDPI/689"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Ortopedia e Traumatologia - FM/MOT   --> 
+   <name-map collection-handle="BDPI/696"   form-name="artigo" />
+   <name-map collection-handle="BDPI/697"   form-name="evento" />
+   <name-map collection-handle="BDPI/698"   form-name="livro" />
+   <name-map collection-handle="BDPI/699"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Otorrinolaringologia - FM/MOF   --> 
+   <name-map collection-handle="BDPI/691"   form-name="artigo" />
+   <name-map collection-handle="BDPI/692"   form-name="evento" />
+   <name-map collection-handle="BDPI/693"   form-name="livro" />
+   <name-map collection-handle="BDPI/694"   form-name="relatorio" />
+   
+	<!-- Departamento de Patologia - FM/MPT   --> 
+   <name-map collection-handle="BDPI/701"   form-name="artigo" />
+   <name-map collection-handle="BDPI/702"   form-name="evento" />
+   <name-map collection-handle="BDPI/703"   form-name="livro" />
+   <name-map collection-handle="BDPI/704"   form-name="relatorio" /> 
+   
+   <!-- Departamento de Pediatria - FM/MPE   --> 
+   <name-map collection-handle="BDPI/706"   form-name="artigo" />
+   <name-map collection-handle="BDPI/707"   form-name="evento" />
+   <name-map collection-handle="BDPI/708"   form-name="livro" />
+   <name-map collection-handle="BDPI/709"   form-name="relatorio" />
+   
+   <!-- Departamento de Psiquiatria - FM/MPS   --> 
+   <name-map collection-handle="BDPI/711"   form-name="artigo" />
+   <name-map collection-handle="BDPI/712"   form-name="evento" />
+   <name-map collection-handle="BDPI/713"   form-name="livro" />
+   <name-map collection-handle="BDPI/714"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Radiologia - FM/MDR   --> 
+   <name-map collection-handle="BDPI/716"   form-name="artigo" />
+   <name-map collection-handle="BDPI/717"   form-name="evento" />
+   <name-map collection-handle="BDPI/718"   form-name="livro" />
+   <name-map collection-handle="BDPI/719"   form-name="relatorio" />
+   
+    <!-- Hospital das Clínicas - FM/HC   --> 
+   <name-map collection-handle="BDPI/15045"   form-name="artigo" />
+ 
+   
+    <!-- Outros departamentos - FM/Outros   --> 
+   <name-map collection-handle="BDPI/721"   form-name="artigo" />
+   <name-map collection-handle="BDPI/722"   form-name="evento" />
+   <name-map collection-handle="BDPI/723"   form-name="livro" />
+   <name-map collection-handle="BDPI/724"   form-name="relatorio" />
+   
+    
+	<!-- Departamento de Cirurgia - FMVZ/VCI   --> 
+   <name-map collection-handle="BDPI/803"   form-name="artigo" />
+   <name-map collection-handle="BDPI/804"   form-name="evento" />
+   <name-map collection-handle="BDPI/805"   form-name="livro" />
+   <name-map collection-handle="BDPI/806"   form-name="relatorio" />
+   
+   	<!-- Departamento de Clínica Médica - FMVZ/VCM   --> 
+   <name-map collection-handle="BDPI/808"   form-name="artigo" />
+   <name-map collection-handle="BDPI/809"   form-name="evento" />
+   <name-map collection-handle="BDPI/810"   form-name="livro" />
+   <name-map collection-handle="BDPI/811"   form-name="relatorio" />
+   
+   	<!-- Departamento de Medicina Veterinária Prevenção e Saúde Animal - FMVZ/VPS   --> 
+   <name-map collection-handle="BDPI/818"   form-name="artigo" />
+   <name-map collection-handle="BDPI/819"   form-name="evento" />
+   <name-map collection-handle="BDPI/820"   form-name="livro" />
+   <name-map collection-handle="BDPI/821"   form-name="relatorio" />
+   
+   	<!--  Departamento de Nutrição e Produção Animal - FMVZ/VNP  --> 
+   <name-map collection-handle="BDPI/813"   form-name="artigo" />
+   <name-map collection-handle="BDPI/814"   form-name="evento" />
+   <name-map collection-handle="BDPI/815"   form-name="livro" />
+   <name-map collection-handle="BDPI/816"   form-name="relatorio" />
+   
+   	<!-- Departamento de Patologia - FMVZ/VPT   --> 
+   <name-map collection-handle="BDPI/823"   form-name="artigo" />
+   <name-map collection-handle="BDPI/824"   form-name="evento" />
+   <name-map collection-handle="BDPI/825"   form-name="livro" />
+   <name-map collection-handle="BDPI/826"   form-name="relatorio" />
+   
+   
+   	<!-- Departamento de Reprodução Animal - FMVZ/VRA   --> 
+   <name-map collection-handle="BDPI/828"   form-name="artigo" />
+   <name-map collection-handle="BDPI/829"   form-name="evento" />
+   <name-map collection-handle="BDPI/830"   form-name="livro" />
+   <name-map collection-handle="BDPI/831"   form-name="relatorio" />
+   
+   
+   	<!-- Outros departamentos - FMVZ/Outros   --> 
+   <name-map collection-handle="BDPI/833"   form-name="artigo" />
+   <name-map collection-handle="BDPI/834"   form-name="evento" />
+   <name-map collection-handle="BDPI/835"   form-name="livro" />
+   <name-map collection-handle="BDPI/836"   form-name="relatorio" />
+   
+   
+   	<!-- Departamento de Ciências Biológicas - FOB/BAB   --> 
+   <name-map collection-handle="BDPI/880"   form-name="artigo" />
+   <name-map collection-handle="BDPI/881"   form-name="evento" />
+   <name-map collection-handle="BDPI/882"   form-name="livro" />
+   <name-map collection-handle="BDPI/883"   form-name="relatorio" />
+   
+   
+  
+   	<!-- Departamento de Dentística, Endodontia e Materiais Odontológicos - FOB/BAD   --> 
+   <name-map collection-handle="BDPI/885"   form-name="artigo" />
+   <name-map collection-handle="BDPI/886"   form-name="evento" />
+   <name-map collection-handle="BDPI/887"   form-name="livro" />
+   <name-map collection-handle="BDPI/888"   form-name="relatorio" />
+   
+   
+   	<!-- Departamento de Estomatologia - FOB/BAE   --> 
+   <name-map collection-handle="BDPI/890"   form-name="artigo" />
+   <name-map collection-handle="BDPI/891"   form-name="evento" />
+   <name-map collection-handle="BDPI/892"   form-name="livro" />
+   <name-map collection-handle="BDPI/893"   form-name="relatorio" />
+   
+   
+   	<!-- Departamento de Fonoaudiologia - FOB/BAF   --> 
+   <name-map collection-handle="BDPI/895"   form-name="artigo" />
+   <name-map collection-handle="BDPI/896"   form-name="evento" />
+   <name-map collection-handle="BDPI/897"   form-name="livro" />
+   <name-map collection-handle="BDPI/898"   form-name="relatorio" />
+   
+   
+   	<!--  Departamento de Odontopediatria , Ortodontia e Saúde Coletiva - FOB/BAO  --> 
+   <name-map collection-handle="BDPI/900"   form-name="artigo" />
+   <name-map collection-handle="BDPI/901"   form-name="evento" />
+   <name-map collection-handle="BDPI/902"   form-name="livro" />
+   <name-map collection-handle="BDPI/903"   form-name="relatorio" />
+   
+   
+   	<!--  Departamento de Prótese - FOB/BAP  --> 
+   <name-map collection-handle="BDPI/905"   form-name="artigo" />
+   <name-map collection-handle="BDPI/906"   form-name="evento" />
+   <name-map collection-handle="BDPI/907"   form-name="livro" />
+   <name-map collection-handle="BDPI/908"   form-name="relatorio" />
+   
+   
+   	<!--  Outros departamentos - FOB/Outros  --> 
+   <name-map collection-handle="BDPI/910"   form-name="artigo" />
+   <name-map collection-handle="BDPI/911"   form-name="evento" />
+   <name-map collection-handle="BDPI/912"   form-name="livro" />
+   <name-map collection-handle="BDPI/913"   form-name="relatorio" />
+   
+   
+   	<!--  Departamento de Cirurgia, Traumatologia Buco-Maxilo-Facial e Periodontia - FORP/806  --> 
+   <name-map collection-handle="BDPI/1291"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1292"   form-name="evento" />
+   <name-map collection-handle="BDPI/1293"   form-name="livro" />
+   <name-map collection-handle="BDPI/1294"   form-name="relatorio" />
+   
+   
+   	<!--  Departamento de Clínica Infantil, Odontologia Preventiva e Social - FORP/807   --> 
+   <name-map collection-handle="BDPI/1286"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1287"   form-name="evento" />
+   <name-map collection-handle="BDPI/1288"   form-name="livro" />
+   <name-map collection-handle="BDPI/1289"   form-name="relatorio" />
+   
+   
+   	<!-- Departamento de Materiais Dentários e Prótese - FORP/805   --> 
+   <name-map collection-handle="BDPI/1296"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1297"   form-name="evento" />
+   <name-map collection-handle="BDPI/1298"   form-name="livro" />
+   <name-map collection-handle="BDPI/1299"   form-name="relatorio" />
+   
+   
+   
+   	<!--  Departamento de Morfologia, Estomatologia e Fisiologia - FORP/803  --> 
+   <name-map collection-handle="BDPI/1301"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1302"   form-name="evento" />
+   <name-map collection-handle="BDPI/1303"   form-name="livro" />
+   <name-map collection-handle="BDPI/1304"   form-name="relatorio" />
+   
+   	<!--  Departamento de Odontologia Restauradora - FORP/804  --> 
+   <name-map collection-handle="BDPI/1306"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1307"   form-name="evento" />
+   <name-map collection-handle="BDPI/1308"   form-name="livro" />
+   <name-map collection-handle="BDPI/1309"   form-name="relatorio" />
+   
+   
+   	<!-- Outros departamentos - FORP/Outros   --> 
+   <name-map collection-handle="BDPI/1311"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1312"   form-name="evento" />
+   <name-map collection-handle="BDPI/1313"   form-name="livro" />
+   <name-map collection-handle="BDPI/1314"   form-name="relatorio" />
+   
+   	<!-- Departamento de Cirurgia - FO/ODC   --> 
+   <name-map collection-handle="BDPI/839"   form-name="artigo" />
+   <name-map collection-handle="BDPI/840"   form-name="evento" />
+   <name-map collection-handle="BDPI/841"   form-name="livro" />
+   <name-map collection-handle="BDPI/842"   form-name="relatorio" />
+   
+   	<!-- Departamento de Dentística - FO/ODD   --> 
+   <name-map collection-handle="BDPI/844"   form-name="artigo" />
+   <name-map collection-handle="BDPI/845"   form-name="evento" />
+   <name-map collection-handle="BDPI/846"   form-name="livro" />
+   <name-map collection-handle="BDPI/847"   form-name="relatorio" />
+   
+   <!-- Departamento de Estomatologia - FO/ODE   --> 
+   <name-map collection-handle="BDPI/849"   form-name="artigo" />
+   <name-map collection-handle="BDPI/850"   form-name="evento" />
+   <name-map collection-handle="BDPI/851"   form-name="livro" />
+   <name-map collection-handle="BDPI/852"   form-name="relatorio" />
+   
+   	<!--  Departamento de Materiais Dentários - FO/ODM  --> 
+   <name-map collection-handle="BDPI/854"   form-name="artigo" />
+   <name-map collection-handle="BDPI/855"   form-name="evento" />
+   <name-map collection-handle="BDPI/856"   form-name="livro" />
+   <name-map collection-handle="BDPI/857"   form-name="relatorio" />
+   
+   <!-- Departamento de Odontologia Social - FO/ODS   --> 
+   <name-map collection-handle="BDPI/859"   form-name="artigo" />
+   <name-map collection-handle="BDPI/860"   form-name="evento" />
+   <name-map collection-handle="BDPI/861"   form-name="livro" />
+   <name-map collection-handle="BDPI/862"   form-name="relatorio" />
+   
+   	<!--  Departamento de Ortodontia e Odontopediatria - FO/ODO  --> 
+   <name-map collection-handle="BDPI/864"   form-name="artigo" />
+   <name-map collection-handle="BDPI/865"   form-name="evento" />
+   <name-map collection-handle="BDPI/866"   form-name="livro" />
+   <name-map collection-handle="BDPI/867"   form-name="relatorio" />
+   
+   <!-- Departamento de Prótese - FO/ODP   --> 
+   <name-map collection-handle="BDPI/869"   form-name="artigo" />
+   <name-map collection-handle="BDPI/870"   form-name="evento" />
+   <name-map collection-handle="BDPI/871"   form-name="livro" />
+   <name-map collection-handle="BDPI/872"   form-name="relatorio" />
+   
+   	<!-- Outros departamentos - FO/Outros   --> 
+   <name-map collection-handle="BDPI/874"   form-name="artigo" />
+   <name-map collection-handle="BDPI/875"   form-name="evento" />
+   <name-map collection-handle="BDPI/876"   form-name="livro" />
+   <name-map collection-handle="BDPI/877"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Epidemiologia - FSP/HEP   --> 
+   <name-map collection-handle="BDPI/916"   form-name="artigo" />
+   <name-map collection-handle="BDPI/917"   form-name="evento" />
+   <name-map collection-handle="BDPI/918"   form-name="livro" />
+   <name-map collection-handle="BDPI/919"   form-name="relatorio" />
+   
+   	<!-- Departamento de Nutrição - FSP/HNT   --> 
+   <name-map collection-handle="BDPI/921"   form-name="artigo" />
+   <name-map collection-handle="BDPI/922"   form-name="evento" />
+   <name-map collection-handle="BDPI/923"   form-name="livro" />
+   <name-map collection-handle="BDPI/924"   form-name="relatorio" />
+   
+   
+    <!--  Departamento de Prática de Saúde Pública - FSP/HSP  --> 
+   <name-map collection-handle="BDPI/926"   form-name="artigo" />
+   <name-map collection-handle="BDPI/927"   form-name="evento" />
+   <name-map collection-handle="BDPI/928"   form-name="livro" />
+   <name-map collection-handle="BDPI/929"   form-name="relatorio" />
+   
+   	<!-- Departamento de Saúde Ambiental - FSP/HSA   --> 
+   <name-map collection-handle="BDPI/931"   form-name="artigo" />
+   <name-map collection-handle="BDPI/932"   form-name="evento" />
+   <name-map collection-handle="BDPI/933"   form-name="livro" />
+   <name-map collection-handle="BDPI/934"   form-name="relatorio" />
+   
+   
+  <!-- Departamento de Saúde Materno Infantil - FSP/HSM   --> 
+   <name-map collection-handle="BDPI/936"   form-name="artigo" />
+   <name-map collection-handle="BDPI/937"   form-name="evento" />
+   <name-map collection-handle="BDPI/938"   form-name="livro" />
+   <name-map collection-handle="BDPI/939"   form-name="relatorio" />
+   
+   	<!-- Interunidades: Comissão de Pós-Graduação do Programa Interunidades - FSP/CPGI   --> 
+   <name-map collection-handle="BDPI/32484"   form-name="artigo" />
+
+     <!-- Outros departamentos - FSP/Outros   --> 
+   <name-map collection-handle="BDPI/941"   form-name="artigo" />
+   <name-map collection-handle="BDPI/942"   form-name="evento" />
+   <name-map collection-handle="BDPI/943"   form-name="livro" />
+   <name-map collection-handle="BDPI/944"   form-name="relatorio" />
+   
+   	<!-- Departamento de Ciências Básicas - FZEA/ZAB   --> 
+   <name-map collection-handle="BDPI/947"   form-name="artigo" />
+   <name-map collection-handle="BDPI/948"   form-name="evento" />
+   <name-map collection-handle="BDPI/949"   form-name="livro" />
+   <name-map collection-handle="BDPI/950"   form-name="relatorio" />
+   
+   <!--  Departamento de Engenharia de Alimentos - FZEA/ZEA  --> 
+   <name-map collection-handle="BDPI/957"   form-name="artigo" />
+   <name-map collection-handle="BDPI/958"   form-name="evento" />
+   <name-map collection-handle="BDPI/959"   form-name="livro" />
+   <name-map collection-handle="BDPI/960"   form-name="relatorio" />
+   
+   
+   <!-- Departamento de Zootecnia - FZEA/ZAZ   --> 
+   <name-map collection-handle="BDPI/952"   form-name="artigo" />
+   <name-map collection-handle="BDPI/953"   form-name="evento" />
+   <name-map collection-handle="BDPI/954"   form-name="livro" />
+   <name-map collection-handle="BDPI/955"   form-name="relatorio" />
+   
+   <!-- Outros departamentos - FZEA/Outros    --> 
+   <name-map collection-handle="BDPI/962"   form-name="artigo" />
+   <name-map collection-handle="BDPI/963"   form-name="evento" />
+   <name-map collection-handle="BDPI/964"   form-name="livro" />
+   <name-map collection-handle="BDPI/965"   form-name="relatorio" />
+   
+    <!-- Artigos e Materiais de Revistas Científicas - HRAC   --> 
+   <name-map collection-handle="BDPI/1326"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1327"   form-name="evento" />
+   <name-map collection-handle="BDPI/1328"   form-name="livro" />
+   <name-map collection-handle="BDPI/1329"   form-name="relatorio" />
+   
+   
+   <!-- Hospital Universitário - HU   --> 
+   <name-map collection-handle="BDPI/1331"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1332"   form-name="evento" />
+   <name-map collection-handle="BDPI/1333"   form-name="livro" />
+   <name-map collection-handle="BDPI/1334"   form-name="relatorio" />
+   
+   <!-- Instituto de Arquitetura e Urbanismo de São Carlos - IAU   --> 
+   <name-map collection-handle="BDPI/32493"   form-name="artigo" />
+   
+   
+   <!-- epartamento de Astronomia - IAG/AGA   --> 
+   <name-map collection-handle="BDPI/968"   form-name="artigo" />
+   <name-map collection-handle="BDPI/969"   form-name="evento" />
+   <name-map collection-handle="BDPI/970"   form-name="livro" />
+   <name-map collection-handle="BDPI/971"   form-name="relatorio" />
+   
+   <!-- Departamento de Ciências Atmosféricas - IAG/ACA   --> 
+   <name-map collection-handle="BDPI/978"   form-name="artigo" />
+   <name-map collection-handle="BDPI/979"   form-name="evento" />
+   <name-map collection-handle="BDPI/980"   form-name="livro" />
+   <name-map collection-handle="BDPI/981"   form-name="relatorio" />
+   
+   <!-- Departamento de Geofísica - IAG/AGG   --> 
+   <name-map collection-handle="BDPI/973"   form-name="artigo" />
+   <name-map collection-handle="BDPI/974"   form-name="evento" />
+   <name-map collection-handle="BDPI/975"   form-name="livro" />
+   <name-map collection-handle="BDPI/976"   form-name="relatorio" />
+   
+   <!--  Outros departamentos - IAG/Outros  --> 
+   <name-map collection-handle="BDPI/983"   form-name="artigo" />
+   <name-map collection-handle="BDPI/984"   form-name="evento" />
+   <name-map collection-handle="BDPI/985"   form-name="livro" />
+   <name-map collection-handle="BDPI/986"   form-name="relatorio" />
+   
+   <!--   Departamento de Botânica - IB/BIB  --> 
+   <name-map collection-handle="BDPI/994"   form-name="artigo" />
+   <name-map collection-handle="BDPI/995"   form-name="evento" />
+   <name-map collection-handle="BDPI/996"   form-name="livro" />
+   <name-map collection-handle="BDPI/997"   form-name="relatorio" />
+   
+    <!-- Departamento de Ecologia - IB/BIE   --> 
+   <name-map collection-handle="BDPI/999"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1000"   form-name="evento" />
+   <name-map collection-handle="BDPI/1001"   form-name="livro" />
+   <name-map collection-handle="BDPI/1002"   form-name="relatorio" />
+   
+   <!-- Departamento de Fisiologia - IB/BIF   --> 
+   <name-map collection-handle="BDPI/1004"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1005"   form-name="evento" />
+   <name-map collection-handle="BDPI/1006"   form-name="livro" />
+   <name-map collection-handle="BDPI/1007"   form-name="relatorio" />
+   
+   <!--  Departamento de Genética e Biologia Evolutiva - IB/BIO  --> 
+   <name-map collection-handle="BDPI/989"   form-name="artigo" />
+   <name-map collection-handle="BDPI/990"   form-name="evento" />
+   <name-map collection-handle="BDPI/991"   form-name="livro" />
+   <name-map collection-handle="BDPI/992"   form-name="relatorio" />
+   
+    <!-- Departamento de Zoologia - IB/BIZ   --> 
+   <name-map collection-handle="BDPI/1009"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1010"   form-name="evento" />
+   <name-map collection-handle="BDPI/1011"   form-name="livro" />
+   <name-map collection-handle="BDPI/1012"   form-name="relatorio" />
+   
+    <!-- Outros departamentos - IB/Outros   --> 
+   <name-map collection-handle="BDPI/1014"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1015"   form-name="evento" />
+   <name-map collection-handle="BDPI/1016"   form-name="livro" />
+   <name-map collection-handle="BDPI/1017"   form-name="relatorio" />
+   
+   <!-- Departamento de Anatomia - ICB/BMA   --> 
+   <name-map collection-handle="BDPI/1020"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1021"   form-name="evento" />
+   <name-map collection-handle="BDPI/1022"   form-name="livro" />
+   <name-map collection-handle="BDPI/1023"   form-name="relatorio" />
+   
+   <!-- Departamento de Biologia Celular e do Desenvolvimento - ICB/BMC   --> 
+   <name-map collection-handle="BDPI/1025"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1026"   form-name="evento" />
+   <name-map collection-handle="BDPI/1027"   form-name="livro" />
+   <name-map collection-handle="BDPI/1028"   form-name="relatorio" />
+   
+   
+    <!-- Departamento de Farmacologia - ICB/BMF   --> 
+   <name-map collection-handle="BDPI/1030"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1031"   form-name="evento" />
+   <name-map collection-handle="BDPI/1032"   form-name="livro" />
+   <name-map collection-handle="BDPI/1033"   form-name="relatorio" />
+   
+   <!--   Departamento de Fisiologia Biofísica - ICB/BMB  --> 
+   <name-map collection-handle="BDPI/1035"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1036"   form-name="evento" />
+   <name-map collection-handle="BDPI/1037"   form-name="livro" />
+   <name-map collection-handle="BDPI/1038"   form-name="relatorio" />
+   
+   <!-- Departamento de Imunologia - ICB/BMI   --> 
+   <name-map collection-handle="BDPI/1040"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1041"   form-name="evento" />
+   <name-map collection-handle="BDPI/1042"   form-name="livro" />
+   <name-map collection-handle="BDPI/1043"   form-name="relatorio" />
+   
+    <!-- 
+    Departamento de Microbiologia - ICB/BMM   --> 
+   <name-map collection-handle="BDPI/1045"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1046"   form-name="evento" />
+   <name-map collection-handle="BDPI/1047"   form-name="livro" />
+   <name-map collection-handle="BDPI/1048"   form-name="relatorio" />
+   
+   <!-- Departamento de Parasitologia - ICB/BMP   --> 
+   <name-map collection-handle="BDPI/1050"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1051"   form-name="evento" />
+   <name-map collection-handle="BDPI/1052"   form-name="livro" />
+   <name-map collection-handle="BDPI/1053"   form-name="relatorio" />
+   
+   
+    <!--  Interunidades: Comissão de Pós-Graduação do Programa Interunidades - ICB/CPGI  --> 
+   <name-map collection-handle="BDPI/32486"   form-name="artigo" />
+
+   
+   <!--  Outros departamentos - ICB/Outros  --> 
+   <name-map collection-handle="BDPI/1055"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1056"   form-name="evento" />
+   <name-map collection-handle="BDPI/1057"   form-name="livro" />
+   <name-map collection-handle="BDPI/1058"   form-name="relatorio" />
+   
+   <!-- Departamento de Ciências de Computação - ICMC/SCC   --> 
+   <name-map collection-handle="BDPI/1071"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1072"   form-name="evento" />
+   <name-map collection-handle="BDPI/1073"   form-name="livro" />
+   <name-map collection-handle="BDPI/1074"   form-name="relatorio" />
+   
+    <!-- Departamento de Matemática Aplicada e Estatística - ICMC/SME   --> 
+   <name-map collection-handle="BDPI/1066"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1067"   form-name="evento" />
+   <name-map collection-handle="BDPI/1068"   form-name="livro" />
+   <name-map collection-handle="BDPI/1069"   form-name="relatorio" />
+   
+   <!-- Departamento de Matemática - ICMC/SMA   --> 
+   <name-map collection-handle="BDPI/1061"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1062"   form-name="evento" />
+   <name-map collection-handle="BDPI/1063"   form-name="livro" />
+   <name-map collection-handle="BDPI/1064"   form-name="relatorio" />
+   
+   
+    <!--  Departamento de Sistemas de Computação - ICMC/SSC  --> 
+   <name-map collection-handle="BDPI/16902"   form-name="artigo" />
+   
+   
+   <!-- Outros departamentos - ICMC/Outros   --> 
+   <name-map collection-handle="BDPI/1076"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1077"   form-name="evento" />
+   <name-map collection-handle="BDPI/1078"   form-name="livro" />
+   <name-map collection-handle="BDPI/1079"   form-name="relatorio" />
+   
+   <!-- Instituto de Eletrotécnica e Energia - IEE   --> 
+   <name-map collection-handle="BDPI/1321"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1322"   form-name="evento" />
+   <name-map collection-handle="BDPI/1323"   form-name="livro" />
+   <name-map collection-handle="BDPI/1324"   form-name="relatorio" />
+
+   <!-- Instituto de Estudos Brasileiros - IEB   --> 
+   <name-map collection-handle="BDPI/1351"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1352"   form-name="evento" />
+   <name-map collection-handle="BDPI/1353"   form-name="livro" />
+   <name-map collection-handle="BDPI/1354"   form-name="relatorio" />
+   
+   <!--  Departamento de Física e Ciências Materiais - IFSC/FCM   --> 
+   <name-map collection-handle="BDPI/1123"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1124"   form-name="evento" />
+   <name-map collection-handle="BDPI/1125"   form-name="livro" />
+   <name-map collection-handle="BDPI/1126"   form-name="relatorio" />
+   
+   <!--  Departamento de Física e Informática - IFSC/FFI   --> 
+   <name-map collection-handle="BDPI/1118"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1119"   form-name="evento" />
+   <name-map collection-handle="BDPI/1120"   form-name="livro" />
+   <name-map collection-handle="BDPI/1121"   form-name="relatorio" />
+   
+   <!--  DOutros departamentos - IFSC/Outros   --> 
+   <name-map collection-handle="BDPI/1128"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1129"   form-name="evento" />
+   <name-map collection-handle="BDPI/1130"   form-name="livro" />
+   <name-map collection-handle="BDPI/1131"   form-name="relatorio" />
+   
+   <!-- Departamento de Física Aplicada - IF/FAP   --> 
+   <name-map collection-handle="BDPI/1082"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1083"   form-name="evento" />
+   <name-map collection-handle="BDPI/1084"   form-name="livro" />
+   <name-map collection-handle="BDPI/1085"   form-name="relatorio" />
+   
+    <!-- Departamento de Física Experimental - IF/FEP    --> 
+   <name-map collection-handle="BDPI/1087"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1088"   form-name="evento" />
+   <name-map collection-handle="BDPI/1089"   form-name="livro" />
+   <name-map collection-handle="BDPI/1090"   form-name="relatorio" />
+   
+   <!--  Departamento de Física Geral - IF/FGE    --> 
+   <name-map collection-handle="BDPI/1092"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1093"   form-name="evento" />
+   <name-map collection-handle="BDPI/1094"   form-name="livro" />
+   <name-map collection-handle="BDPI/1095"   form-name="relatorio" />
+   
+   <!--  Departamento de Física Nuclear - IF/FNC   --> 
+   <name-map collection-handle="BDPI/1097"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1098"   form-name="evento" />
+   <name-map collection-handle="BDPI/1099"   form-name="livro" />
+   <name-map collection-handle="BDPI/1100"   form-name="relatorio" />
+   
+   <!--  Departamento de Matemática - IF/FMA   --> 
+   <name-map collection-handle="BDPI/1102"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1103"   form-name="evento" />
+   <name-map collection-handle="BDPI/1104"   form-name="livro" />
+   <name-map collection-handle="BDPI/1105"   form-name="relatorio" />
+   
+   <!-- Departamento de Materiais e Mecânica - IF/FMT    --> 
+   <name-map collection-handle="BDPI/1107"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1108"   form-name="evento" />
+   <name-map collection-handle="BDPI/1109"   form-name="livro" />
+   <name-map collection-handle="BDPI/1110"   form-name="relatorio" />
+   
+    <!--  Outros departamentos - IF/Outros   --> 
+   <name-map collection-handle="BDPI/1112"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1113"   form-name="evento" />
+   <name-map collection-handle="BDPI/1114"   form-name="livro" />
+   <name-map collection-handle="BDPI/1115"   form-name="relatorio" />
+   
+   <!-- Departamento de Geologia Sedimentar e Ambiental - IGc/GSA    --> 
+   <name-map collection-handle="BDPI/1139"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1140"   form-name="evento" />
+   <name-map collection-handle="BDPI/1141"   form-name="livro" />
+   <name-map collection-handle="BDPI/1142"   form-name="relatorio" />
+   
+   <!-- Departamento de Mineralogia e Geotectônica - IGc/GMG    --> 
+   <name-map collection-handle="BDPI/1134"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1135"   form-name="evento" />
+   <name-map collection-handle="BDPI/1136"   form-name="livro" />
+   <name-map collection-handle="BDPI/1137"   form-name="relatorio" />
+   
+      <!--  Outros departamentos - IGc/Outros   --> 
+   <name-map collection-handle="BDPI/1144"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1145"   form-name="evento" />
+   <name-map collection-handle="BDPI/1146"   form-name="livro" />
+   <name-map collection-handle="BDPI/1147"   form-name="relatorio" />
+   
+       <!--  Departamento de Ciência da Computação - IME/MAC   --> 
+   <name-map collection-handle="BDPI/1150"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1151"   form-name="evento" />
+   <name-map collection-handle="BDPI/1152"   form-name="livro" />
+   <name-map collection-handle="BDPI/1153"   form-name="relatorio" />
+   
+    <!-- Departamento de Estatística - IME/MAE    --> 
+   <name-map collection-handle="BDPI/1155"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1156"   form-name="evento" />
+   <name-map collection-handle="BDPI/1157"   form-name="livro" />
+   <name-map collection-handle="BDPI/1158"   form-name="relatorio" />
+   
+   <!-- Departamento de Matemática Aplicada - IME/MAP    --> 
+   <name-map collection-handle="BDPI/1165"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1166"   form-name="evento" />
+   <name-map collection-handle="BDPI/1167"   form-name="livro" />
+   <name-map collection-handle="BDPI/1168"   form-name="relatorio" />
+   
+   <!-- Departamento de Matemática - IME/MAT    --> 
+   <name-map collection-handle="BDPI/1160"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1161"   form-name="evento" />
+   <name-map collection-handle="BDPI/1162"   form-name="livro" />
+   <name-map collection-handle="BDPI/1163"   form-name="relatorio" />
+   
+   
+   <!-- Outros departamentos - IME/Outros    --> 
+   <name-map collection-handle="BDPI/1170"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1171"   form-name="evento" />
+   <name-map collection-handle="BDPI/1172"   form-name="livro" />
+   <name-map collection-handle="BDPI/1173"   form-name="relatorio" />
+   
+   <!-- Instituto de Medicina Tropical de São Paulo - IMTSP    --> 
+   <name-map collection-handle="BDPI/32491"   form-name="artigo" />
+   <name-map collection-handle="BDPI/32497"   form-name="evento" />
+   <name-map collection-handle="BDPI/32498"   form-name="livro" />
+   <name-map collection-handle="BDPI/32499"   form-name="relatorio" /> 
+ 
+    <!-- Departamento de Psicologia Clínica - IP/PSC    --> 
+   <name-map collection-handle="BDPI/1197"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1198"   form-name="evento" />
+   <name-map collection-handle="BDPI/1199"   form-name="livro" />
+   <name-map collection-handle="BDPI/1200"   form-name="relatorio" />
+   
+   <!--  Departamento de Psicologia da Aprendizagem, do Desenvolvimento e da Personalidade - IP/PSA    --> 
+   <name-map collection-handle="BDPI/1192"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1193"   form-name="evento" />
+   <name-map collection-handle="BDPI/1194"   form-name="livro" />
+   <name-map collection-handle="BDPI/1195"   form-name="relatorio" />
+   
+   <!--  Departamento de Psicologia Experimental - IP/PSE    --> 
+   <name-map collection-handle="BDPI/1202"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1203"   form-name="evento" />
+   <name-map collection-handle="BDPI/1204"   form-name="livro" />
+   <name-map collection-handle="BDPI/1205"   form-name="relatorio" />
+   
+   <!-- Departamento de Psicologia Social e do Trabalho - IP/PST    --> 
+   <name-map collection-handle="BDPI/1207"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1208"   form-name="evento" />
+   <name-map collection-handle="BDPI/1209"   form-name="livro" />
+   <name-map collection-handle="BDPI/1210"   form-name="relatorio" />
+   
+   <!-- Outros departamentos - IP/Outros    --> 
+   <name-map collection-handle="BDPI/1212"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1213"   form-name="evento" />
+   <name-map collection-handle="BDPI/1214"   form-name="livro" />
+   <name-map collection-handle="BDPI/1215"   form-name="relatorio" />
+   
+   <!-- Departamento de Físico-Química - IQSC/SQF    --> 
+   <name-map collection-handle="BDPI/1234"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1235"   form-name="evento" />
+   <name-map collection-handle="BDPI/1236"   form-name="livro" />
+   <name-map collection-handle="BDPI/1237"   form-name="relatorio" />
+ 
+	<!-- Departamento de Química e Física Molecular - IQSC/SQM   --> 
+   <name-map collection-handle="BDPI/1239"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1240"   form-name="evento" />
+   <name-map collection-handle="BDPI/1241"   form-name="livro" />
+   <name-map collection-handle="BDPI/1242"   form-name="relatorio" />
+   
+   <!--  Outros departamentos - IQSC/Outros   --> 
+   <name-map collection-handle="BDPI/1244"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1245"   form-name="evento" />
+   <name-map collection-handle="BDPI/1246"   form-name="livro" />
+   <name-map collection-handle="BDPI/1247"   form-name="relatorio" />
+ 
+	<!-- Departamento de Bioquímica - IQ/QBQ   --> 
+   <name-map collection-handle="BDPI/1218"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1219"   form-name="evento" />
+   <name-map collection-handle="BDPI/1220"   form-name="livro" />
+   <name-map collection-handle="BDPI/1221"   form-name="relatorio" />
+   
+   <!-- Departamento de Química Fundamental - IQ/QFL    --> 
+   <name-map collection-handle="BDPI/1223"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1224"   form-name="evento" />
+   <name-map collection-handle="BDPI/1225"   form-name="livro" />
+   <name-map collection-handle="BDPI/1226"   form-name="relatorio" />
+   
+   <!--  Outros departamentos - IQ/Outros   --> 
+   <name-map collection-handle="BDPI/1228"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1229"   form-name="evento" />
+   <name-map collection-handle="BDPI/1230"   form-name="livro" />
+   <name-map collection-handle="BDPI/1231"   form-name="relatorio" />
+ 
+	<!-- Instituto de Relações Internacionais - IRI   --> 
+   <name-map collection-handle="BDPI/16895"   form-name="artigo" />
+ 
+ 
+	<!-- Departamento de Oceanografia Biológica - IO/IOB   --> 
+   <name-map collection-handle="BDPI/1181"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1182"   form-name="evento" />
+   <name-map collection-handle="BDPI/1183"   form-name="livro" />
+   <name-map collection-handle="BDPI/1184"   form-name="relatorio" />
+   
+   	<!--  Departamento de Oceanografia Física, Química e Geológica - IO/IOF  --> 
+   <name-map collection-handle="BDPI/1176"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1177"   form-name="evento" />
+   <name-map collection-handle="BDPI/1178"   form-name="livro" />
+   <name-map collection-handle="BDPI/1179"   form-name="relatorio" />
+   
+   <!--   Outros departamentos - IO/Outros   --> 
+   <name-map collection-handle="BDPI/1186"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1187"   form-name="evento" />
+   <name-map collection-handle="BDPI/1188"   form-name="livro" />
+   <name-map collection-handle="BDPI/1189"   form-name="relatorio" />
+   
+   <!-- Museu de Arqueologia e Etnologia - MAE    --> 
+   <name-map collection-handle="BDPI/1356"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1357"   form-name="evento" />
+   <name-map collection-handle="BDPI/1358"   form-name="livro" />
+   <name-map collection-handle="BDPI/1359"   form-name="relatorio" />
+ 
+	<!--  Museu de Arte Contemporânea - MAC  --> 
+   <name-map collection-handle="BDPI/1336"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1337"   form-name="evento" />
+   <name-map collection-handle="BDPI/1338"   form-name="livro" />
+   <name-map collection-handle="BDPI/1339"   form-name="relatorio" />
+ 
+	<!--  Museu de Zoologia - MZ  --> 
+   <name-map collection-handle="BDPI/1346"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1347"   form-name="evento" />
+   <name-map collection-handle="BDPI/1348"   form-name="livro" />
+   <name-map collection-handle="BDPI/1349"   form-name="relatorio" />
+   
+    <!-- Museu Paulista - MP   --> 
+   <name-map collection-handle="BDPI/1341"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1342"   form-name="evento" />
+   <name-map collection-handle="BDPI/1343"   form-name="livro" />
+   <name-map collection-handle="BDPI/1344"   form-name="relatorio" />
+   
+   	<!-- Biblioteca Brasiliana Guita e José Mindlin - SIBi/BIBMINDLIN   --> 
+   <name-map collection-handle="BDPI/32500"   form-name="artigo" />
+   <name-map collection-handle="BDPI/32501"   form-name="evento" />
+   <name-map collection-handle="BDPI/32502"   form-name="livro" />
+   <name-map collection-handle="BDPI/32503"   form-name="relatorio" />
+   
+   	<!-- Biblioteca Central do Campus de Ribeirão Preto - SIBi/BCRP   --> 
+   <name-map collection-handle="BDPI/1372"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1373"   form-name="evento" />
+   <name-map collection-handle="BDPI/1374"   form-name="livro" />
+   <name-map collection-handle="BDPI/1375"   form-name="relatorio" />
+   
+
+   	<!-- Biblioteca da Escola de Artes, Ciências e Humanidades - SIBi/EACH   --> 
+   <name-map collection-handle="BDPI/1377"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1378"   form-name="evento" />
+   <name-map collection-handle="BDPI/1379"   form-name="livro" />
+   <name-map collection-handle="BDPI/1380"   form-name="relatorio" />
+
+    <!-- Biblioteca da Escola de Comunicações e Artes - SIBi/ECA   --> 
+   <name-map collection-handle="BDPI/1382"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1383"   form-name="evento" />
+   <name-map collection-handle="BDPI/1384"   form-name="livro" />
+   <name-map collection-handle="BDPI/1385"   form-name="relatorio" />
+
+    <!-- Biblioteca da Escola de Educação Física e Esporte - SIBi/EEFE   --> 
+   <name-map collection-handle="BDPI/1387"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1388"   form-name="evento" />
+   <name-map collection-handle="BDPI/1389"   form-name="livro" />
+   <name-map collection-handle="BDPI/1390"   form-name="relatorio" />
+
+   
+    <!-- Biblioteca da Escola de Enfermagem - SIBi/EE   --> 
+   <name-map collection-handle="BDPI/1392"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1393"   form-name="evento" />
+   <name-map collection-handle="BDPI/1394"   form-name="livro" />
+   <name-map collection-handle="BDPI/1395"   form-name="relatorio" />
+
+ 
+    <!-- Biblioteca da Escola de Engenharia de São Carlos - SIBi/EESC   --> 
+   <name-map collection-handle="BDPI/1397"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1398"   form-name="evento" />
+   <name-map collection-handle="BDPI/1399"   form-name="livro" />
+   <name-map collection-handle="BDPI/1400"   form-name="relatorio" />
+   
+    
+    <!-- Biblioteca da Escola Politécnica - SIBi/EP   --> 
+   <name-map collection-handle="BDPI/1402"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1403"   form-name="evento" />
+   <name-map collection-handle="BDPI/1404"   form-name="livro" />
+   <name-map collection-handle="BDPI/1405"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca da Escola Superior de Agricultura ""Luiz de Queiroz"" - SIBi/ESALQ   --> 
+   <name-map collection-handle="BDPI/1407"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1408"   form-name="evento" />
+   <name-map collection-handle="BDPI/1409"   form-name="livro" />
+   <name-map collection-handle="BDPI/1410"   form-name="relatorio" />
+      
+   
+   <!-- Biblioteca da Faculdade de Arquitetura e Urbanismo - SIBi/FAU   --> 
+   <name-map collection-handle="BDPI/1412"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1413"   form-name="evento" />
+   <name-map collection-handle="BDPI/1414"   form-name="livro" />
+   <name-map collection-handle="BDPI/1415"   form-name="relatorio" />
+   
+  
+   <!-- BBiblioteca da Faculdade de Ciências Farmacêuticas - SIBi/FCF   --> 
+   <name-map collection-handle="BDPI/1417"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1418"   form-name="evento" />
+   <name-map collection-handle="BDPI/1419"   form-name="livro" />
+   <name-map collection-handle="BDPI/1420"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca da Faculdade de Direito de Ribeirão Preto - SIBi/FDRP   --> 
+   <name-map collection-handle="BDPI/1427"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1428"   form-name="evento" />
+   <name-map collection-handle="BDPI/1429"   form-name="livro" />
+   <name-map collection-handle="BDPI/1430"   form-name="relatorio" />
+   
+   
+	<!-- Biblioteca da Faculdade de Direito - SIBi/FD   --> 
+   <name-map collection-handle="BDPI/1422"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1423"   form-name="evento" />
+   <name-map collection-handle="BDPI/1424"   form-name="livro" />
+   <name-map collection-handle="BDPI/1425"   form-name="relatorio" />
+   
+    <!-- Biblioteca da Faculdade de Economia, Administração e Contabilidade - SIBi/FEA   --> 
+   <name-map collection-handle="BDPI/1432"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1433"   form-name="evento" />
+   <name-map collection-handle="BDPI/1434"   form-name="livro" />
+   <name-map collection-handle="BDPI/1435"   form-name="relatorio" />
+	
+   
+    <!-- Biblioteca da Faculdade de Educação - SIBi/FE   --> 
+   <name-map collection-handle="BDPI/1437"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1438"   form-name="evento" />
+   <name-map collection-handle="BDPI/1439"   form-name="livro" />
+   <name-map collection-handle="BDPI/1440"   form-name="relatorio" />
+   
+   
+    <!--  Biblioteca da Faculdade de Filosofia, Letras e Ciências Humanas - SIBi/FFLCH  --> 
+   <name-map collection-handle="BDPI/1442"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1443"   form-name="evento" />
+   <name-map collection-handle="BDPI/1444"   form-name="livro" />
+   <name-map collection-handle="BDPI/1445"   form-name="relatorio" />
+   
+    <!-- Biblioteca da Faculdade de Medicina - SIBi/FM   --> 
+   <name-map collection-handle="BDPI/1447"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1448"   form-name="evento" />
+   <name-map collection-handle="BDPI/1449"   form-name="livro" />
+   <name-map collection-handle="BDPI/1450"   form-name="relatorio" />
+   
+   
+    <!-- Biblioteca da Faculdade de Medicina Veterinária e Zootecnia - SIBi/FMVZ   --> 
+   <name-map collection-handle="BDPI/1452"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1453"   form-name="evento" />
+   <name-map collection-handle="BDPI/1454"   form-name="livro" />
+   <name-map collection-handle="BDPI/1455"   form-name="relatorio" />
+   
+   
+    <!--  Biblioteca da Faculdade de Odontologia de Bauru - SIBi/FOB  --> 
+   <name-map collection-handle="BDPI/1462"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1463"   form-name="evento" />
+   <name-map collection-handle="BDPI/1464"   form-name="livro" />
+   <name-map collection-handle="BDPI/1465"   form-name="relatorio" />
+   
+   
+    <!-- Biblioteca da Faculdade de Odontologia - SIBi/FO   --> 
+   <name-map collection-handle="BDPI/1457"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1458"   form-name="evento" />
+   <name-map collection-handle="BDPI/1459"   form-name="livro" />
+   <name-map collection-handle="BDPI/1460"   form-name="relatorio" />
+   
+   
+    <!-- Biblioteca da Faculdade de Saúde Pública - SIBi/FSP   --> 
+   <name-map collection-handle="BDPI/1467"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1468"   form-name="evento" />
+   <name-map collection-handle="BDPI/1469"   form-name="livro" />
+   <name-map collection-handle="BDPI/1470"   form-name="relatorio" />
+   
+   
+    <!-- Biblioteca da Faculdade de Zootecnia e Engenharia de Alimentos - SIBi/FZEA   --> 
+   <name-map collection-handle="BDPI/1472"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1473"   form-name="evento" />
+   <name-map collection-handle="BDPI/1474"   form-name="livro" />
+   <name-map collection-handle="BDPI/1475"   form-name="relatorio" />
+   
+   
+    <!--  Biblioteca do Centro de Biologia Marinha - SIBi/CEBIMar  --> 
+   <name-map collection-handle="BDPI/1477"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1478"   form-name="evento" />
+   <name-map collection-handle="BDPI/1479"   form-name="livro" />
+   <name-map collection-handle="BDPI/1480"   form-name="relatorio" />
+   
+   
+    <!--  Biblioteca do Centro de Energia Nuclear na Agricultura - SIBi/CENA  --> 
+   <name-map collection-handle="BDPI/1482"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1483"   form-name="evento" />
+   <name-map collection-handle="BDPI/1484"   form-name="livro" />
+   <name-map collection-handle="BDPI/1485"   form-name="relatorio" />
+   
+   
+    <!-- Biblioteca do Conjunto das Químicas - SIBi/IQ   --> 
+   <name-map collection-handle="BDPI/1487"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1488"   form-name="evento" />
+   <name-map collection-handle="BDPI/1489"   form-name="livro" />
+   <name-map collection-handle="BDPI/1490"   form-name="relatorio" />
+   
+   <!-- Biblioteca do Hospital Universitário - SIBi/HU   --> 
+   <name-map collection-handle="BDPI/1492"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1493"   form-name="evento" />
+   <name-map collection-handle="BDPI/1494"   form-name="livro" />
+   <name-map collection-handle="BDPI/1495"   form-name="relatorio" />
+   
+   <!-- Biblioteca do Instituto de Astronomia, Geofísica e Ciências Atmosféricas - SIBi/IAG   --> 
+   <name-map collection-handle="BDPI/1497"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1498"   form-name="evento" />
+   <name-map collection-handle="BDPI/1499"   form-name="livro" />
+   <name-map collection-handle="BDPI/1500"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca do Instituto de Biociências - SIBi/IB   --> 
+   <name-map collection-handle="BDPI/1502"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1503"   form-name="evento" />
+   <name-map collection-handle="BDPI/1504"   form-name="livro" />
+   <name-map collection-handle="BDPI/1505"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca do Instituto de Ciências Biomédicas - SIBi/ICB   --> 
+   <name-map collection-handle="BDPI/1507"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1508"   form-name="evento" />
+   <name-map collection-handle="BDPI/1509"   form-name="livro" />
+   <name-map collection-handle="BDPI/1510"   form-name="relatorio" />
+   
+   <!-- Biblioteca do Instituto de Ciências Matemáticas e de Computação - SIBi/ICMC   --> 
+   <name-map collection-handle="BDPI/1512"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1513"   form-name="evento" />
+   <name-map collection-handle="BDPI/1514"   form-name="livro" />
+   <name-map collection-handle="BDPI/1515"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca do Instituto de Eletrotécnica e Energia - SIBi/IEE   --> 
+   <name-map collection-handle="BDPI/1517"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1518"   form-name="evento" />
+   <name-map collection-handle="BDPI/1519"   form-name="livro" />
+   <name-map collection-handle="BDPI/1520"   form-name="relatorio" />
+   
+   
+    <!-- Biblioteca do Instituto de Estudos Brasileiros - SIBi/IEB   --> 
+   <name-map collection-handle="BDPI/1522"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1523"   form-name="evento" />
+   <name-map collection-handle="BDPI/1524"   form-name="livro" />
+   <name-map collection-handle="BDPI/1525"   form-name="relatorio" />
+   
+   <!-- Biblioteca do Instituto de Física de São Carlos - SIBi/IFSC   --> 
+   <name-map collection-handle="BDPI/1532"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1533"   form-name="evento" />
+   <name-map collection-handle="BDPI/1534"   form-name="livro" />
+   <name-map collection-handle="BDPI/1535"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca do Instituto de Física - SIBi/IF   --> 
+   <name-map collection-handle="BDPI/1527"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1528"   form-name="evento" />
+   <name-map collection-handle="BDPI/1529"   form-name="livro" />
+   <name-map collection-handle="BDPI/1530"   form-name="relatorio" />
+   
+   <!-- Biblioteca do Instituto de Geociências - SIBi/IGc   --> 
+   <name-map collection-handle="BDPI/1537"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1538"   form-name="evento" />
+   <name-map collection-handle="BDPI/1539"   form-name="livro" />
+   <name-map collection-handle="BDPI/1540"   form-name="relatorio" />
+   
+   <!--  Biblioteca do Instituto de Matemática e Estatística - SIBi/IME  --> 
+   <name-map collection-handle="BDPI/1542"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1543"   form-name="evento" />
+   <name-map collection-handle="BDPI/1544"   form-name="livro" />
+   <name-map collection-handle="BDPI/1545"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca do Instituto de Psicologia - SIBi/IP   --> 
+   <name-map collection-handle="BDPI/1547"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1548"   form-name="evento" />
+   <name-map collection-handle="BDPI/1549"   form-name="livro" />
+   <name-map collection-handle="BDPI/1550"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca do Instituto de Química de São Carlos - SIBi/IQSC   --> 
+   <name-map collection-handle="BDPI/1552"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1553"   form-name="evento" />
+   <name-map collection-handle="BDPI/1554"   form-name="livro" />
+   <name-map collection-handle="BDPI/1555"   form-name="relatorio" />
+   
+   <!--  Biblioteca do Instituto Oceanográfico - SIBi/IO  --> 
+   <name-map collection-handle="BDPI/1557"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1558"   form-name="evento" />
+   <name-map collection-handle="BDPI/1559"   form-name="livro" />
+   <name-map collection-handle="BDPI/1560"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca do Museu de Arqueologia e Etnologia - SIBi/MAE   --> 
+   <name-map collection-handle="BDPI/1562"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1563"   form-name="evento" />
+   <name-map collection-handle="BDPI/1564"   form-name="livro" />
+   <name-map collection-handle="BDPI/1565"   form-name="relatorio" />
+   
+      <!-- Biblioteca do Museu de Arqueologia e Etnologia - SIBi/MAC   --> 
+   <name-map collection-handle="BDPI/1567"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1568"   form-name="evento" />
+   <name-map collection-handle="BDPI/1569"   form-name="livro" />
+   <name-map collection-handle="BDPI/1570"   form-name="relatorio" />
+   
+   
+   <!-- Biblioteca do Museu de Zoologia - SIBi/MZ   --> 
+   <name-map collection-handle="BDPI/1572"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1573"   form-name="evento" />
+   <name-map collection-handle="BDPI/1574"   form-name="livro" />
+   <name-map collection-handle="BDPI/1575"   form-name="relatorio" />
+   
+   
+    <!-- Centro de Divulgação Científica e Cultural - SIBi/CDCC   --> 
+   <name-map collection-handle="BDPI/1577"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1578"   form-name="evento" />
+   <name-map collection-handle="BDPI/1579"   form-name="livro" />
+   <name-map collection-handle="BDPI/1580"   form-name="relatorio" />
+   
+   
+   <!-- Departamento Técnico - SIBi/DT    --> 
+   <name-map collection-handle="BDPI/1582"   form-name="artigo" />
+   <name-map collection-handle="BDPI/1583"   form-name="evento" />
+   <name-map collection-handle="BDPI/1584"   form-name="livro" />
+   <name-map collection-handle="BDPI/1585"   form-name="relatorio" />
+  
+ 
  </form-map>
 
 

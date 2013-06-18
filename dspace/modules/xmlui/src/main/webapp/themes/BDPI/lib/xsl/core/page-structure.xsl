@@ -242,83 +242,136 @@
                     </xsl:attribute>
                 </link>
             </xsl:if>
-
-            <!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
+			
+			<!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
             <!-- There is also javascript to disable submitting a form when the 'enter' key is pressed. -->
+			
+			<script type="text/javascript">
+                <xsl:attribute name="src">
+                    <xsl:text>https://www.google.com/jsapi</xsl:text>                    
+                </xsl:attribute>&#160;
+			</script>
 			
 			<!-- 130607 - Dan Shinkai - Adicionado funcao concatTextField no qual realizara a criacao da tupla do autor externo USP. Esta funcao sera visivel
 			                            somente na pagina de submissao de um item no qual havera os campos para o autor externo USP. Esta sendo assumido
 										que os campos sao pre-definidos, ou seja, a ordem no qual sera apresentado os campos sao sempre as mesmas. -->
-										
-                        <script type="text/javascript">
-                                //Clear default text of empty text areas on focus
-                                function tFocus(element)
-                                {
-                                        if (element.value == '<i18n:text>xmlui.dri2xhtml.default.textarea.value</i18n:text>'){element.value='';}
-                                }
-                                //Clear default text of empty text areas on submit
-                                function tSubmit(form)
-                                {
-                                        var defaultedElements = document.getElementsByTagName("textarea");
-                                        for (var i=0; i != defaultedElements.length; i++){
-                                                if (defaultedElements[i].value == '<i18n:text>xmlui.dri2xhtml.default.textarea.value</i18n:text>'){
-                                                        defaultedElements[i].value='';}}
-                                }
-                                //Disable pressing 'enter' key to submit a form (otherwise pressing 'enter' causes a submission to start over)
-                                function disableEnterKey(e)
-                                {
-                                     var key;
+			<script type="text/javascript">
+				//Clear default text of empty text areas on focus
+				function tFocus(element)
+				{
+						if (element.value == '<i18n:text>xmlui.dri2xhtml.default.textarea.value</i18n:text>'){element.value='';}
+				}
+				//Clear default text of empty text areas on submit
+				function tSubmit(form)
+				{
+						var defaultedElements = document.getElementsByTagName("textarea");
+						for (var i=0; i != defaultedElements.length; i++){
+								if (defaultedElements[i].value == '<i18n:text>xmlui.dri2xhtml.default.textarea.value</i18n:text>'){
+										defaultedElements[i].value='';}}
+				}
+				//Disable pressing 'enter' key to submit a form (otherwise pressing 'enter' causes a submission to start over)
+				function disableEnterKey(e)
+				{
+					 var key;
 
-                                     if(window.event)
-                                          key = window.event.keyCode;     //Internet Explorer
-                                     else
-                                          key = e.which;     //Firefox and Netscape
+					 if(window.event)
+						  key = window.event.keyCode;     //Internet Explorer
+					 else
+						  key = e.which;     //Firefox and Netscape
 
-                                     if(key == 13)  //if "Enter" pressed, then disable!
-                                          return false;
-                                     else
-                                          return true;
-                                }
+					 if(key == 13)  //if "Enter" pressed, then disable!
+						  return false;
+					 else
+						  return true;
+				}
 
-                                function FnArray()
-                                {
-                                    this.funcs = new Array;
-                                }
+				function FnArray()
+				{
+					this.funcs = new Array;
+				}
 
-                                FnArray.prototype.add = function(f)
-                                {
-                                    if( typeof f!= "function" )
-                                    {
-                                        f = new Function(f);
-                                    }
-                                    this.funcs[this.funcs.length] = f;
-                                };
+				FnArray.prototype.add = function(f)
+				{
+					if( typeof f!= "function" )
+					{
+						f = new Function(f);
+					}
+					this.funcs[this.funcs.length] = f;
+				};
 
-                                FnArray.prototype.execute = function()
-                                {
-                                    for( var i=0; i <xsl:text disable-output-escaping="yes">&lt;</xsl:text> this.funcs.length; i++ )
-                                    {
-                                        this.funcs[i]();
-                                    }
-                                };
+				FnArray.prototype.execute = function()
+				{
+					for( var i=0; i <xsl:text disable-output-escaping="yes">&lt;</xsl:text> this.funcs.length; i++ )
+					{
+						this.funcs[i]();
+					}
+				};
 
-                                var runAfterJSImports = new FnArray();
-								
-						<xsl:if test="/dri:document/dri:body/dri:div/dri:list/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.usp_autor_externo']">
-							<xsl:text>
-								function concatTextField()								
-								{						
-									var text = document.getElementsByName("concat-usp-externo");
-									var textSubmit = document.getElementsByName("usp_autor_externo");
-									
-									var nome = text[0].value.replace(":"," ").trim();
-									var tupla = nome.concat(":", text[1].value.replace(":"," ").trim(), " :c ", text[2].value.replace(":"," ").trim(), " :u ", text[3].value.replace(":"," ").trim(), " :p ", textSubmit[0].value.replace(":"," ").trim());
-									textSubmit[0].value = tupla;									
-								}
-							</xsl:text>
-						</xsl:if>
+				var runAfterJSImports = new FnArray();
+				
+				// 130615 - Dan Shinkai - Funcao que realiza a concatenacao dos campos para a criacao da tupla do autor externo USP.
+				<xsl:if test="/dri:document/dri:body/dri:div/dri:list/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.usp_autor_externo']">
+					<xsl:text>
+						function concatTextField()								
+						{						
+							var text = document.getElementsByName("concat-usp-externo");
+							var textSubmit = document.getElementsByName("usp_autor_externo");
+							
+							var nome = text[0].value.replace(":"," ").trim();
+							var tupla = nome.concat(":", text[1].value.replace(":"," ").trim(), " :c ", text[2].value.replace(":"," ").trim(), " :u ", text[3].value.replace(":"," ").trim(), " :p ", textSubmit[0].value.replace(":"," ").trim());
+							textSubmit[0].value = tupla;									
+						}
+					</xsl:text>
+				</xsl:if>
+				
+				//130615 - Funcao que gera o grafico pela API do google chart
+				<xsl:if test="/dri:document/dri:body/dri:div/dri:div/dri:div/dri:list[@id='aspect.artifactbrowser.InterUnitAuthorView.list.id_grafico_interUnidLista']">
+					<xsl:text>
+					  // Load the Visualization API and the piechart package.
+					  google.load('visualization', '1.0', {'packages':['corechart']});
+
+					  // Set a callback to run when the Google Visualization API is loaded.
+					  google.setOnLoadCallback(drawChart);
+
+					  // Callback that creates and populates a data table,
+					  // instantiates the pie chart, passes in the data and
+					  // draws it.
+					  function drawChart() {
+
+						// Create the data table.
+						var data = new google.visualization.DataTable();
+						
+						var count = 1;
+						var idUnidade = "aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_unid_interUnid_field";
+						var idTrabalho = "aspect_artifactbrowser_InterUnitAuthorView_cell_id_cols_trabalhos_interUnid_field";
+						var unidade = document.getElementById(idUnidade.concat("1")).innerHTML;
+						var qtdTrabalho = document.getElementById(idTrabalho.concat("1")).innerHTML;
+						
+						data.addColumn('string', 'Topping');
+						data.addColumn('number', 'Slices');						
+						for(var cont=1;;cont++) {
+							data.addRow([unidade,parseInt(qtdTrabalho)]);
+							count++;
+							if(document.getElementById(idUnidade.concat(count.toString()))){
+								unidade = document.getElementById(idUnidade.concat(count.toString())).innerHTML;
+								qtdTrabalho = document.getElementById(idTrabalho.concat(count.toString())).innerHTML;	
+							}
+							else{break;}
+						}
+						// Set chart options
+						var options = {'width':500,
+									   'height': 500,
+									   'chartArea':{left:"0",top:"10%",width:"100%",height:"100%"}};
+
+						// Instantiate and draw our chart, passing in some options.
+						var chart = new google.visualization.PieChart(document.getElementById('aspect_artifactbrowser_InterUnitAuthorView_div_id_grafico_interUnid'));
+						chart.draw(data, options);
+					  }							
+					</xsl:text>
+				</xsl:if>
             </script>
-
+			
+			
             <!-- Modernizr enables HTML5 elements & feature detects -->
             <script type="text/javascript">
                 <xsl:attribute name="src">

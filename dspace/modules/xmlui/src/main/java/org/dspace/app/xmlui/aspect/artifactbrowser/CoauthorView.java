@@ -156,14 +156,9 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
             AuthorizeException
     {
         DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
-        if (!(dso instanceof Item))
-        {
-            return;
-        }
-
-        Item item = (Item) dso;
-
-        String itemIDStr = parameters.getParameter("itemID","");
+		
+		Item item = null;
+		String itemIDStr = parameters.getParameter("itemID","");
         String codpesStr = parameters.getParameter("codpes","");
 
    /** Converte para inteiro a String passada */
@@ -171,12 +166,23 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
 
    /** Recupera o objeto do autor a partir de seu codpes */
         Author author = this.ap.getAuthorByCodpes(this.codpes);
+		
+        if (!(dso instanceof Item))
+        {
+            item = Item.find(context, Integer.parseInt(itemIDStr));
+        }
+		
+		else {
+			item = (Item) dso;
+		}
 
         if(author != null) {
-
           pageMeta.addMetadata("title").addContent(T_title);
-
         }
+		
+		else {
+			pageMeta.addMetadata("title").addContent(T_coautor_nao_encontrado);
+		}
  
    /** Codigo que cria a parte dos links do Trail */
        pageMeta.addTrailLink(contextPath + "/",T_dspace_home);
@@ -339,7 +345,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
               }
 
               int qntCoautores = listaCoautoresTemp.size();
-			  
+
 	      if(qntCoautores == 0) { qntCoautores = 2; }
 
               Collections.sort(listaCoautoresTemp, new Author());
@@ -361,7 +367,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
               cellTrabalhosCoautorUSP.addContent(T_titulo_trabalhos);
 
               contadorLista = 1;
-			  
+
     	      if(listaCoautores.size() > 0) {
 
                 for(Author coautor : listaCoautoresTemp) {
@@ -394,14 +400,14 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
                    }
 				 }
 			   }
-			   
+
 			   else {
 			     Row rowCoautor = tabelaCoautoresUSP.addRow("id_row_NaoCoautoriaUSP", Row.ROLE_DATA, "class_row_NaoCoautoriaUSP");
                      
                    Cell cellNaoHaCoautor = rowCoautor.addCell("id_cols_NaoCoautoriaUSP_field", Cell.ROLE_DATA, 1, 4, "class_cols_NaoCoautoriaUSP_field");
                    cellNaoHaCoautor.addContent(T_nao_coautorUSP);
 			   }
-			   
+
 /** O codigo que resolve o problema com o aname. Por alguma razao, sem uma forma de manter um espaco entra a div de cima e a div que contem
     o aname, o mesmo nao funciona.
 **/
@@ -411,7 +417,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
                
 //              ArrayList<String> listaCoautoresExternos = ap.getCoautoresExternos(codpesStr);
               int totalCoautoresExternos = listaCoautoresExternos.size();
-			  
+
 			  if(totalCoautoresExternos == 0) { totalCoautoresExternos = 2; }
               
                 Table tabelaAnameCoautoresExt = aNameCoautoreExternos.addTable("id_tblAName_coautoresExt", 1, 3, "class_tblAName_coautoresExt");
@@ -471,7 +477,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
                       contadorLista++;
                    }
                }
-			   
+
 	       else {
 	           Row rowCoautorExterno = tabelaCoautoresExternos.addRow("id_row_coautores_externos_colunas", Row.ROLE_DATA, "class_row_coautores_externos_colunas");
                      
@@ -511,7 +517,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
 //             List retorno = informacoesCoautoresExternos.addList("id_retornar_page_autor", "gloss", "classListaInfo");
 //             retorno.addItem().addXref(this.dspaceUrl + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "author", T_return, "text-align: right");
            }
-		   
+
 		   else {
            geral.setHead(T_coautor_nao_encontrado);
 
@@ -521,7 +527,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
            retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "?show=full", T_return, "");		                   
            fechar.addXref("#", T_close,"window.close()","window.close()");
         }
-		
+
         }
         else {
            geral.setHead(T_coautor_nao_encontrado);

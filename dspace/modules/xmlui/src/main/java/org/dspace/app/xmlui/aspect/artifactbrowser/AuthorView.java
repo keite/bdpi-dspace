@@ -96,10 +96,10 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 
     private static final Message T_author_not_found =
        message("xmlui.ArtifactBrowser.AuthorView.author_not_found");
-	   
+
 	private static final Message T_author_not_citation =
        message("xmlui.ArtifactBrowser.AuthorView.author_not_citation");
-	   
+
 	private static final Message T_author_not_item =
        message("xmlui.ArtifactBrowser.AuthorView.author_not_item");
 
@@ -133,7 +133,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
     private String dspaceUrl = ConfigurationManager.getProperty("handle.canonical.prefix");
     private String handlePrefix = ConfigurationManager.getProperty("handle.prefix");
 	private String dspaceDir = ConfigurationManager.getProperty("dspace.dir");
-	
+
 	private String theme = "BDPI";
 
     private String diretorioFoto = dspaceDir + "/webapps/xmlui/themes/" + theme + "/images/autorUSP/fotos/";
@@ -172,27 +172,35 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
             AuthorizeException
     {
         DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
-        if (!(dso instanceof Item))
-        {
-            return;
-        }
-
-        Item item = (Item) dso;
-
-        this.itemIDStr = parameters.getParameter("itemID","");
+		
+		this.itemIDStr = parameters.getParameter("itemID","");
         this.codpesStr = parameters.getParameter("codpes","");
 
         /**converte para inteiro a String passada */
         setCodpesFromPage(this.codpesStr);
+		
+		Item item = null;
 
         /**recupera o objeto do autor a partir de seu codpes */
         this.author = this.ap.getAuthorByCodpes(this.codpes);
+		
+        if (!(dso instanceof Item))
+        {
+            item = Item.find(context, Integer.parseInt(this.itemIDStr));
+        }
+		
+		else {
+			item = (Item) dso;
+		}
 
         if(this.author != null) {
-
           pageMeta.addMetadata("title").addContent(this.author.getSobrenome().toUpperCase());
-
         }
+		
+		else {
+			pageMeta.addMetadata("title").addContent(T_author_not_found);
+		}
+		
     /** Trecho do codigo que monta o Trail da pagina */
         pageMeta.addTrailLink(contextPath + "/",T_dspace_home);
         HandleUtil.buildHandleTrail(item,pageMeta,contextPath);
@@ -237,7 +245,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
         Caso negativo, realiza um resize na foto.       
     */
         boolean verificaFotoAutor = (new File(diretorioFoto + codpesStr + extensaoFoto)).exists();
-		
+
 	/** 130507 - Dan - Trecho que extrai o nome do usuario para arrumar no caminho da foto. 
      *     SOMENTE PARA A VERSAO TESTE. Caso o nome seja desnecessario, entao apagar a variavel "nome" contida nos caminhos do diretorioFigura. 
 	**/
@@ -245,17 +253,17 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 		st.nextToken();
 		st.nextToken();
 		String nome = "/" + st.nextToken();
-		
+
 	/** ============================= FIM ================================ **/
 
         if(verificaFotoAutor) {		
-			
+
           try {
                int width = 96;
                int height = 140;
 
                BufferedImage foto = ImageIO.read(new File(diretorioFoto + codpesStr + extensaoFoto));
-			   
+
 			   diretorioFigura = diretorioFoto + codpesStr + extensaoFoto;				  
                
                if(foto.getHeight() >= height || foto.getWidth() >= width) {                 
@@ -265,18 +273,18 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
     	          op.resize(width,height);
                   op.gravity("center");
 				  op.addImage(diretorioFotoTemp + codpesStr + extensaoFoto);
-		
+
 	              ConvertCmd cmd = new ConvertCmd();
 	              cmd.run(op);
                   diretorioFigura = diretorioFotoTempPag + codpesStr + extensaoFoto;				  
               }
-			  
+
           } catch(InterruptedException ie) {
 			ie.printStackTrace(System.out);
 
           } catch (IM4JavaException iem) {
 			iem.printStackTrace(System.out);
-	
+
           } catch (IOException io) {
 			io.printStackTrace(System.out);
 		  }
@@ -284,7 +292,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 
         else {
           diretorioFigura = diretorioFotoPadrao + "logoSibiAutor.gif";
-		  
+
         }
 
         if(author != null) {
@@ -339,7 +347,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
     /**
      * Condicao que verifica se a unidade e a sigla nao e null 
     */
-		   
+
 	   if(author.getUnidade().length() > 0) { 
              unidadeDepto.append(System.getProperty("line.separator"));
              unidadeDepto.append(author.getUnidade()); 
@@ -409,15 +417,15 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 
            ArrayList<String> listaCitacoesAutor = ap.getCitacoesAutor(codpesStr);
            int totalCitacoes = listaCitacoesAutor.size();
-		   
+
           if(totalCitacoes == 0) { totalCitacoes = 2; }
-		   
+
 	   Table tabelaCitacoes = citacoesAutor.addTable("id_tblLista_citacao", totalCitacoes, 1, "class_tblLista_citacao");
 
            Row rowTituloCitacaoColunas = tabelaCitacoes.addRow("id_row_titulo_citacao_colunas", Row.ROLE_DATA, "class_row_titulo_citacao_colunas");
            Cell cellTituloCitacao = rowTituloCitacaoColunas.addCell("id_cols_titulo_citacao", Cell.ROLE_DATA, "class_cols_titulo_citacao");
            cellTituloCitacao.addContent(T_titulo_citacao);
-	   
+
 	   if(listaCitacoesAutor.size() > 0) {
             
              String compara = listaCitacoesAutor.get(0);
@@ -438,7 +446,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
                 }
              }
            }
-		   
+
 	   else {
 	      Row rowCitacaoInicial = tabelaCitacoes.addRow("id_row_citacao", Row.ROLE_DATA, "class_row_citacao");
               Cell cellCitacaoInicial = rowCitacaoInicial.addCell("id_cols_citacao_field", Cell.ROLE_DATA, "class_cols_citacao_field");
@@ -543,7 +551,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
                  numeracao++;
              }
            }
-		   
+
 	   else {
 	      Row rowSemItem = tabelaItens.addRow("id_row_sem_item", Row.ROLE_DATA, "class_row_sem__item");
               Cell cellSemItem = rowSemItem.addCell("id_cols_sem_item", Cell.ROLE_DATA,1, 4, "class_cols_sem_item");
