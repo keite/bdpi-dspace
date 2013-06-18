@@ -1650,7 +1650,10 @@
    
    <!-- Instituto de Medicina Tropical de São Paulo - IMTSP    --> 
    <name-map collection-handle="BDPI/32491"   form-name="artigo" />
-   
+   <name-map collection-handle="BDPI/32497"   form-name="evento" />
+   <name-map collection-handle="BDPI/32498"   form-name="livro" />
+   <name-map collection-handle="BDPI/32499"   form-name="relatorio" /> 
+ 
     <!-- Departamento de Psicologia Clínica - IP/PSC    --> 
    <name-map collection-handle="BDPI/1197"   form-name="artigo" />
    <name-map collection-handle="BDPI/1198"   form-name="evento" />
@@ -1764,7 +1767,10 @@
    <name-map collection-handle="BDPI/1344"   form-name="relatorio" />
    
    	<!-- Biblioteca Brasiliana Guita e José Mindlin - SIBi/BIBMINDLIN   --> 
-
+   <name-map collection-handle="BDPI/32500"   form-name="artigo" />
+   <name-map collection-handle="BDPI/32501"   form-name="evento" />
+   <name-map collection-handle="BDPI/32502"   form-name="livro" />
+   <name-map collection-handle="BDPI/32503"   form-name="relatorio" />
    
    	<!-- Biblioteca Central do Campus de Ribeirão Preto - SIBi/BCRP   --> 
    <name-map collection-handle="BDPI/1372"   form-name="artigo" />
