@@ -448,6 +448,11 @@
                                 <xsl:value-of select="$doc/html/head/title"/>
                         </xsl:when>
 <!-- FIM 130405 andre.assada@usp.br paginas estaticas FIM -->
+
+						<xsl:when test="starts-with($request-uri, 'page/ajuda')">
+                                <xsl:text>Ajuda</xsl:text>
+                        </xsl:when>
+						
                         <xsl:when test="not($page_title)">
                                 <xsl:text>  </xsl:text>
                         </xsl:when>
@@ -685,6 +690,10 @@
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEs')">
                          <i18n:text>paginasEstaticas.privacidade.trail</i18n:text>
+                    </xsl:when>
+					
+					<xsl:when test="starts-with($request-uri, 'page/ajuda')">
+                         <li class="ds-trail-link first-link">Ajuda</li>
                     </xsl:when>
 
                     <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
@@ -1036,6 +1045,13 @@
                    </div>
                 </xsl:when>
 <!-- FIM 130405 andre.assada@usp.br paginas estaticas FIM -->
+
+				<xsl:when test="starts-with($request-uri, 'page/ajuda')">
+                    <div>
+                        <xsl:variable name="doc" select="document(concat($paginas,'ajuda.xhtml'))"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
 
                 <!-- Otherwise use default handling of body -->
                 <xsl:otherwise>
