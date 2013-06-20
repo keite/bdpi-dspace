@@ -183,7 +183,7 @@
    <message key="xmlui.ArtifactBrowser.CoauthorView.not_coauthorExt">Não há coautoria externa</message>
    
 	<!-- org.dspace.app.xmlui.artifactbrowser.ConfigureableBrowse.java -->
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.starts_with">Ou entre com as primeiras letras:</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.starts_with">Ou digite as primeiras letras do sobrenome:</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.starts_with_help">Visualizar os itens que começam com essa letra</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.jump_select">Ir para um ponto do índice:</message>	
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.general.choose_month">(Escolha o mês)</message>	
@@ -857,14 +857,14 @@
 	<!-- org.dspace.app.xmlui.Submission.submit.CCLicenseStep -->
 	<message key="xmlui.Submission.submit.CCLicenseStep.ccws_error">Ocorreu um erro ... {0}</message>
 	<message key="xmlui.Submission.submit.CCLicenseStep.head">Licença Creative Commons</message>
-	<message key="xmlui.Submission.submit.CCLicenseStep.info1">Caso deseje, pode-se adicionar uma<a href="http://creativecommons.org/"> licença Creative Commons</a> para o Item.<strong>A Licença Creative Commons orienta sobre as permissões de direitos autorais sobre o seu trabalho.</strong> Para selecionar uma Licença Creative Commons clique no botão abaixo. Você será levado à página do Creative Commons, que indicará as opções de licenciamento. Depois de escolher a licença adequada, o sistema retornará a esta página</message>
+	<message key="xmlui.Submission.submit.CCLicenseStep.info1">Caso deseje, pode-se adicionar uma<a href="http://creativecommons.org/"> licença Creative Commons</a> para o Item.<strong>A Licença Creative Commons orienta sobre as permissões de direitos autorais sobre o seu trabalho.</strong> Para selecionar uma Licença Creative Commons, escolha na lista abaixo. Você será levado à página do Creative Commons, que indicará as opções de licenciamento. Depois de escolher a licença adequada, o sistema retornará a esta página</message>
 	<message key="xmlui.Submission.submit.CCLicenseStep.submit_choose_creative_commons">Escolha uma licença</message>
 	<message key="xmlui.Submission.submit.CCLicenseStep.submit_to_creative_commons">Ir à página do Creative Commons para selecionar a licença</message>
 	<message key="xmlui.Submission.submit.CCLicenseStep.license">Licença</message>
 	<message key="xmlui.Submission.submit.CCLicenseStep.select_change">Escolha ou altere sua licença...</message>
 	<message key="xmlui.Submission.submit.CCLicenseStep.submit_remove">Remover esta licença Creative Commons</message>
 	<message key="xmlui.Submission.submit.CCLicenseStep.no_license">Nenhuma licença Creative Commons selecionada</message>
-	<message key="xmlui.Submission.submit.CCLicenseStep.save_changes">Você deve clicar em Avançar para salvar as alterações.</message>
+	<message key="xmlui.Submission.submit.CCLicenseStep.save_changes">Você deve clicar em Próximo para salvar as alterações.</message>
 
 	<!-- org.dspace.app.xmlui.Submission.submit.LicenseStep -->
 	<message key="xmlui.Submission.submit.LicenseStep.head">Licença de distribuição</message>

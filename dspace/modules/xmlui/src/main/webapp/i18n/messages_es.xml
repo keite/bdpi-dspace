@@ -24,7 +24,7 @@
     <!--  V3.0 messages  by Emilio Lorenzo (elorenzo@arvo.es) at Arvo Consultores (http://www.arvo.es/dspace) -->
 
 	<!-- General keys -->
-	<message key="xmlui.general.dspace_home">Inicio</message>
+	<message key="xmlui.general.dspace_home">Biblioteca Digital de la Producción Intelectual de la Universidad de São Paulo</message>
 	<message key="xmlui.general.search">Búsqueda</message>
 	<message key="xmlui.general.go">Ir</message>
 	<message key="xmlui.general.go_home">Inicio</message>
@@ -1937,9 +1937,9 @@
 	<message key="xmlui.statistics.visits.cities">Ciudades con más visualizaciones</message>
 	<message key="xmlui.statistics.visits.bitstreams">Visitas al fichero</message>
 	<message key="xmlui.statistics.Navigation.title">Estadísticas</message>
-	<message key="xmlui.statistics.Navigation.usage.view">Ver Estadísticas de uso</message>
-	<message key="xmlui.statistics.Navigation.search.view">Ver Estadísticas de Búsquedas</message>
-	<message key="xmlui.statistics.Navigation.workflow.view">Ver Estadísticas del flujo de trabajo</message>
+	<message key="xmlui.statistics.Navigation.usage.view">Ver estadísticas de uso</message>
+	<message key="xmlui.statistics.Navigation.search.view">Ver estadísticas de búsquedas</message>
+	<message key="xmlui.statistics.Navigation.workflow.view">Ver estadísticas del flujo de trabajo</message>
 	<message key="xmlui.statistics.trail">Estadísticas</message>
 	<message key="xmlui.statistics.trail-search">Estadísticas de Búsquedas</message>
 	<message key="xmlui.statistics.trail-workflow">Estadísticas del flujo de trabajo</message>
