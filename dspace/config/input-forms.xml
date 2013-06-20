@@ -1381,7 +1381,9 @@
    
    <!-- Instituto de Arquitetura e Urbanismo de São Carlos - IAU   --> 
    <name-map collection-handle="BDPI/32493"   form-name="artigo" />
-   
+   <name-map collection-handle="BDPI/32504"   form-name="evento" />
+   <name-map collection-handle="BDPI/32505"   form-name="livro" />
+   <name-map collection-handle="BDPI/32506"   form-name="relatorio" />   
    
    <!-- epartamento de Astronomia - IAG/AGA   --> 
    <name-map collection-handle="BDPI/968"   form-name="artigo" />
@@ -1722,7 +1724,9 @@
  
 	<!-- Instituto de Relações Internacionais - IRI   --> 
    <name-map collection-handle="BDPI/16895"   form-name="artigo" />
- 
+   <name-map collection-handle="BDPI/32507"   form-name="evento" />
+   <name-map collection-handle="BDPI/32508"   form-name="livro" />
+   <name-map collection-handle="BDPI/32509"   form-name="relatorio" /> 
  
 	<!-- Departamento de Oceanografia Biológica - IO/IOB   --> 
    <name-map collection-handle="BDPI/1181"   form-name="artigo" />
