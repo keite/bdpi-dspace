@@ -2492,7 +2492,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
  		 <visibility>workflow</visibility>
        </field>
- 
+
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>pais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>País de publicação</label>
+         <input-type>onebox</input-type>
+         <hint>País em que o periódico foi publicado. Ex: Brasil</hint>
+         <required></required>
+       </field>	   
 	   
        <field>
          <dc-schema>dc</dc-schema>
@@ -2504,18 +2514,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Cidade em que o periódico foi publicado. Ex: São Paulo</hint>
          <required></required>
        </field>
-	   
-       <field>
-         <dc-schema>usp</dc-schema>
-         <dc-element>publisher</dc-element>
-         <dc-qualifier>pais</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>País de publicação</label>
-         <input-type>onebox</input-type>
-         <hint>País em que o periódico foi publicado. Ex: Brasil</hint>
-         <required></required>
-       </field>
-	   
+  
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -2902,7 +2901,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
  
-	   
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>pais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>País</label>
+         <input-type>onebox</input-type>
+         <hint>País em que o evento foi realizado. Ex. Brasil</hint>
+         <required></required>
+       </field>
+ 
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
@@ -2914,17 +2923,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
 	   
-       <field>
-         <dc-schema>usp</dc-schema>
-         <dc-element>publisher</dc-element>
-         <dc-qualifier>pais</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>País</label>
-         <input-type>onebox</input-type>
-         <hint>País em que o evento foi realizado. Ex. Brasil</hint>
-         <required></required>
-       </field>
-
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -3217,18 +3215,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
  
-	   
-       <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>publisher</dc-element>
-         <dc-qualifier>city</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Cidade</label>
-         <input-type>onebox</input-type>
-         <hint>Cidade em que o livro foi editado. Ex. São Paulo</hint>
-         <required></required>
-       </field>
-	   
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>publisher</dc-element>
@@ -3239,7 +3225,18 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>País em que o livro foi editado. Ex. Brasil</hint>
          <required></required>
        </field>
-
+ 
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>city</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Cidade</label>
+         <input-type>onebox</input-type>
+         <hint>Cidade em que o livro foi editado. Ex. São Paulo</hint>
+         <required></required>
+       </field>
+  
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -3530,17 +3527,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
  		 <visibility>workflow</visibility>
        </field>
-	   	   
-       <field>
-         <dc-schema>dc</dc-schema>
-         <dc-element>publisher</dc-element>
-         <dc-qualifier>city</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>Cidade</label>
-         <input-type>onebox</input-type>
-         <hint>Cidade em que o relatório foi produzido. Ex. São Paulo</hint>
-         <required></required>
-       </field>
 
        <field>
          <dc-schema>usp</dc-schema>
@@ -3551,7 +3537,18 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <input-type>onebox</input-type>
          <hint>País em que o relatório foi produzido. Ex. Brasil</hint>
          <required></required>
-       </field>	   
+       </field>	 	   
+	   
+       <field>
+         <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>city</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Cidade</label>
+         <input-type>onebox</input-type>
+         <hint>Cidade em que o relatório foi produzido. Ex. São Paulo</hint>
+         <required></required>
+       </field>
 	   
  <!-- Verificar a necessidade deste campo - Tiago - 2013-04-22
        <field>
@@ -3797,6 +3794,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>CAMPO EM ESTUDO</hint>
          <required></required>
        </field>	   
+
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>pais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>País</label>
+         <input-type>onebox</input-type>
+         <hint>País em que o recurso foi produzido. Ex: Brasil</hint>
+         <required></required>
+       </field>
 	   
        <field>
          <dc-schema>dc</dc-schema>
@@ -3809,17 +3817,6 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
        </field>
 	   
-       <field>
-         <dc-schema>usp</dc-schema>
-         <dc-element>publisher</dc-element>
-         <dc-qualifier>pais</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>País</label>
-         <input-type>onebox</input-type>
-         <hint>País em que o recurso foi produzido. Ex: Brasil</hint>
-         <required></required>
-       </field>
-
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -4128,7 +4125,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <required></required>
  		 <visibility>workflow</visibility>
        </field>
- 
+
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>pais</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>País de publicação</label>
+         <input-type>onebox</input-type>
+         <hint>País em que o periódico foi publicado. Ex: Brasil</hint>
+         <required></required>
+       </field>	   
 	   
        <field>
          <dc-schema>dc</dc-schema>
@@ -4140,18 +4147,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Cidade em que o periódico foi publicado. Ex: São Paulo</hint>
          <required></required>
        </field>
-	   
-       <field>
-         <dc-schema>usp</dc-schema>
-         <dc-element>publisher</dc-element>
-         <dc-qualifier>pais</dc-qualifier>
-         <repeatable>false</repeatable>
-         <label>País de publicação</label>
-         <input-type>onebox</input-type>
-         <hint>País em que o periódico foi publicado. Ex: Brasil</hint>
-         <required></required>
-       </field>
-	   
+   
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
