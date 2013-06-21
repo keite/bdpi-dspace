@@ -255,6 +255,8 @@
 			<!-- 130607 - Dan Shinkai - Adicionado funcao concatTextField no qual realizara a criacao da tupla do autor externo USP. Esta funcao sera visivel
 			                            somente na pagina de submissao de um item no qual havera os campos para o autor externo USP. Esta sendo assumido
 										que os campos sao pre-definidos, ou seja, a ordem no qual sera apresentado os campos sao sempre as mesmas. -->
+			<!-- 130615 - Dan Shinkai - Funcao concatTextField() que realiza a concatenacao dos campos para a criacao da tupla do autor externo USP. -->
+			<!-- 130615 - Funcao drawChart() que gera o grafico pela API do google chart -->
 			<script type="text/javascript">
 				//Clear default text of empty text areas on focus
 				function tFocus(element)
@@ -309,7 +311,6 @@
 
 				var runAfterJSImports = new FnArray();
 				
-				// 130615 - Dan Shinkai - Funcao que realiza a concatenacao dos campos para a criacao da tupla do autor externo USP.
 				<xsl:if test="/dri:document/dri:body/dri:div/dri:list/dri:item/dri:field[@id='aspect.submission.StepTransformer.field.usp_autor_externo']">
 					<xsl:text>
 						function concatTextField()								
@@ -324,7 +325,7 @@
 					</xsl:text>
 				</xsl:if>
 				
-				//130615 - Funcao que gera o grafico pela API do google chart
+				
 				<xsl:if test="/dri:document/dri:body/dri:div/dri:div/dri:div/dri:list[@id='aspect.artifactbrowser.InterUnitAuthorView.list.id_grafico_interUnidLista']">
 					<xsl:text>
 					  // Load the Visualization API and the piechart package.
