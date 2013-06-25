@@ -114,7 +114,14 @@
                             </fieldset>
                         </form>
                         <!--Only add if the advanced search url is different from the simple search-->
-                        <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL'] != /dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']">
+						
+						<!-- -130625 - Dan Shinkai - Condicao padrao adicionada a partir do DSpace 3.1 postado em comentario para disponibilizar o link do busca avancada.
+							Como o "xmlui" foi retirado do link, entao a condicao nunca sera verdadeira.
+							
+							<xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL'] != /dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='simpleURL']">
+						-->
+					
+							<xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='search'][@qualifier='advancedURL']">					
                             <!-- The "Advanced search" link, to be perched underneath the search box -->
                             <a>
                                 <xsl:attribute name="href">
