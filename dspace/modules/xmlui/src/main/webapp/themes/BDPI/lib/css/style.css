@@ -312,9 +312,11 @@ andre.assada@usp.br links para conteudo estatico
 /* 130401 andre.assada@usp.br    padding-top: 10px;*/ padding-top:5px;
 }
 
+/* 130625 - Dan Shinkai - Alterado o tamanho do width para alinhar o campo de busca com o botão de busca */
 #ds-options-wrapper {
     float: right;
-/* 130401 andre.assada@usp.br    width: 249px;*/width: 13%;
+/* 130401 andre.assada@usp.br    width: 249px;*/
+	width: 17%;
     padding-top:10px;
 }
 
@@ -389,8 +391,11 @@ div#ds-feed-option a
     padding: 10px;
 }
 
+/* 130625 - Dan Shinkai - Alterado o margin-bottom para aumento da distancia do link do Busca Avancada com o botao Busca*/
 #ds-search-form {
-/*    margin-bottom: 10px;*/    margin-bottom: -3px;
+/*    margin-bottom: 10px;*/    
+	/*margin-bottom: -3px;*/
+	margin-bottom: 6px;
 }
 
 #ds-search-form input.ds-text-field{
