@@ -693,7 +693,8 @@
                 <!-- codigo utiliza uma classe java para criar um link nos numeros da Fapesp (em qualquer case) em um campo. 
                 A classe java retorna o campo com as tags HTML necessarias para criar um link. -->
 
-<!-- 130328 andre.assada@usp.br desabilitado por enquanto, para conseguir fazer a migracao por etapas para o dspace 3
+<!-- 130328 andre.assada@usp.br desabilitado por enquanto, para conseguir fazer a migracao por etapas para o dspace 3 -->
+<!-- 130625 Dan Shinkai - Reativado funcao FAPESP -->
                 <xsl:when test="@element='description' and @mdschema='dc' and @qualifier='sponsorship'">
                 <xsl:variable name="contSponsor" select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship'])"/>
                 <xsl:if test="$contSponsor = 0">
@@ -719,16 +720,16 @@
                 <xsl:choose>
                 <xsl:when test="contains($copiaNode, 'FAPESP')">
                 <xsl:variable name="fapesp" select="utilUSP:constroiLinkFapesp(current())"/>
--->
+
                 <!-- parametro "disable-output-escaping="yes"" permite utilizar tags HTML quando passadas pelo programa JAVA. -->
-<!--
+
                 <xsl:value-of select="$fapesp" disable-output-escaping="yes" />
                 </xsl:when>
                 <xsl:otherwise>
                 <xsl:value-of select="current()"/>
                 </xsl:otherwise>
                 </xsl:choose>
-                <xsl:variable name="contSponsorAtual"select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship'])"/>
+                <xsl:variable name="contSponsorAtual" select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship'])"/>
                 <xsl:if test="$contSponsor != $contSponsorAtual">
                 <br/>
                 </xsl:if>
@@ -738,7 +739,7 @@
                 </tr>
                 </xsl:if>
                 </xsl:when> 
--->
+
 <!-- 130328 andre.assada@usp.br agrupar dc.description.sponsorship sem usputils (temporario) -->
                 <xsl:when test="@element='description' and @mdschema='dc' and @qualifier='sponsorship'">
                     <xsl:variable name="contSponsor" select="count(following-sibling::dim:field[@element='description'][@mdschema='dc'][@qualifier='sponsorship'])"/>
