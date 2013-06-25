@@ -2432,6 +2432,11 @@ To know more about this repository and how to include your production, please re
 <!-- ========================================================== -->
 
 
+<!-- Input-forms.xml -->
+
+<message key="xmlui.ChoiceLookupTransformer.field.dc_relation_ispartof.title">Busca de título de revista no SHERPA/ROMEO</message>
+<message key="xmlui.ChoiceLookupTransformer.field.dc_relation_ispartof.help">Caso não recupere o nome, digite o nome do periódico sem abreviação e clique em aceitar</message>
+
 <!-- Navegador -->
 
 <message key="xmlui.ArtifactBrowser.Navigation.browse_sponsor">Sponsor</message>
