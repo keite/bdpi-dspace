@@ -1,6 +1,7 @@
 package org.dspace.disseminate;
 
 import com.itextpdf.text.*;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.*;
 import com.itextpdf.text.pdf.draw.LineSeparator;
 import org.apache.commons.lang.StringUtils;
@@ -14,8 +15,10 @@ import org.dspace.core.Context;
 import org.dspace.handle.HandleManager;
 
 import java.io.*;
+import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.MalformedURLException;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -79,7 +82,13 @@ public class CitationDocument {
 	 * 130618 - Dan Shinkai - Variavel que recupera o nome da BDPI
 	 */
 	private static String dspaceName = null;
-
+	
+	private String theme = "BDPI";
+	
+	private String diretorioLogo = "/themes/" + theme + "/images/";
+    private String dspaceDir = ConfigurationManager.getProperty("dspace.dir");
+	private String diretorioFoto = dspaceDir + "/webapps/xmlui/themes/" + theme + "/images/" ;
+	
     static {
         // Add valid format MIME types to set. This could be put in the Schema
         // instead.
@@ -361,7 +370,7 @@ public class CitationDocument {
      * @throws IOException
      * @throws DocumentException
      */
-    private void generateCoverPage(Document cDoc, PdfWriter writer, CitationMeta cMeta) throws DocumentException {
+    private void generateCoverPage(Document cDoc, PdfWriter writer, CitationMeta cMeta) throws DocumentException, MalformedURLException, IOException{
         cDoc.open();
         writer.setCompressionLevel(0);
 
@@ -374,17 +383,52 @@ public class CitationDocument {
         Font helv12_italic =    FontFactory.getFont(FontFactory.HELVETICA_OBLIQUE,  12f,    BaseColor.BLACK);
         Font helv11_bold =      FontFactory.getFont(FontFactory.HELVETICA_BOLD,     11f,    BaseColor.BLACK);
         Font helv9 =            FontFactory.getFont(FontFactory.HELVETICA,          9f,     BaseColor.BLACK);
+		
+		
+		/* 130626 - Dan Shinkai - Trecho de codigo adicionado para inserir figuras na capa de citacao. */
+		
+		Image logoSibiImg = Image.getInstance(diretorioFoto + "logotipoSIBiUSP.png");
+		Image logoBrasaoImg = Image.getInstance(diretorioFoto + "brasaoUSP.png");
+		
+		logoBrasaoImg.setAlignment(logoBrasaoImg.ALIGN_LEFT);
+		logoBrasaoImg.scalePercent(35);
+		
+		logoSibiImg.scalePercent(50);
+		logoSibiImg.setAlignment(logoSibiImg.ALIGN_RIGHT);
+		
+		
+		PdfPTable tableImagem = new PdfPTable(2);
+		tableImagem.setWidthPercentage(100);
+		
+		PdfPCell logoBrasaoCell = new PdfPCell();
+		
+		logoBrasaoCell.addElement(logoBrasaoImg);
+		logoBrasaoCell.setBorder(0);
+		
+		PdfPCell logoSibiCell = new PdfPCell();
+		
+		logoSibiCell.addElement(logoSibiImg);
+		logoSibiCell.setPaddingTop(25);
+		logoSibiCell.setBorder(0);
+		
+		tableImagem.addCell(logoBrasaoCell);
+		tableImagem.addCell(logoSibiCell);
+		
+		cDoc.add(tableImagem);
+		
+		Paragraph espace = new Paragraph(" ", helv11_bold);
+		cDoc.add(espace);	
 
         // 1 - Header:
         //  University Name
         //  Repository Name                                                        repository.url
-        Paragraph university = new Paragraph("Universidade de São Paulo", helv11_bold);
-        cDoc.add(university);
+        Paragraph university = new Paragraph(" Universidade de São Paulo", helv11_bold);
+        cDoc.add(university);	
 
         PdfPTable repositoryTable = new PdfPTable(2);
         repositoryTable.setWidthPercentage(100);
 		
-		dspaceName = "Biblioteca Digital da Produção Intelectual";
+		dspaceName = "Biblioteca Digital da Produção Intelectual - BDPI";
 
         Chunk repositoryName =  new Chunk(dspaceName, helv11_bold);
         PdfPCell nameCell = new PdfPCell();
@@ -393,7 +437,7 @@ public class CitationDocument {
 		
 		dspaceURL = ConfigurationManager.getProperty("dspace.baseUrl");
 		
-		Chunk repositoryURL =   new Chunk("BDPI-USP", helv11_bold);
+		Chunk repositoryURL =   new Chunk(" ", helv11_bold);
         repositoryURL.setAnchor(dspaceURL);
 
         PdfPCell urlCell = new PdfPCell();
