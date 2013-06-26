@@ -386,6 +386,7 @@ public class CitationDocument {
 		
 		
 		/* 130626 - Dan Shinkai - Trecho de codigo adicionado para inserir figuras na capa de citacao. */
+		/**/
 		
 		Image logoSibiImg = Image.getInstance(diretorioFoto + "logotipoSIBiUSP.png");
 		Image logoBrasaoImg = Image.getInstance(diretorioFoto + "brasaoUSP.png");
