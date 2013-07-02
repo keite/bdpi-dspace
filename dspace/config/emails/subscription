@@ -4,9 +4,10 @@
 # Parameters: {0} is the details of the new collections and items
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace Subscription
-New items are available in the collections you have subscribed to:
+Subject: [BDPI-USP] Biblioteca Digital da Produção Intelectual da Universidade de São Paulo: Assinatura
+Novos itens estão disponíveis nas coleções que você está acompanhando:
 
 {0}
 
-DSpace
+Equipe da Biblioteca Digital da Produção Intelectual da Universidade de São Paulo (BDPI-USP)
+Sistema Integrado de Bibliotecas USP (SIBi-USP)

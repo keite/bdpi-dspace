@@ -10,17 +10,17 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: Feedback Form Information
+Subject: [BDPI-USP] Biblioteca Digital da Produção Intelectual da Universidade de São Paulo: Entre em contato
 
-Comments:
+Comentários:
 
 {6}
 
 
-Date: {0}
-Email: {1}
-Logged In As: {2}
-Referring Page: {3}
+Data: {0}
+E-mail: {1}
+Logado como: {2}
+Página: {3}
 User Agent: {4}
-Session: {5}
+Sessão: {5}
 

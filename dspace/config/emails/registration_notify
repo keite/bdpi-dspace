@@ -8,10 +8,14 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace: Registration Notification
+Subject: [BDPI-USP] Biblioteca Digital da Produção Intelectual da Universidade de São Paulo: Notificação de registro
 
-A new user has registered on {0} at {1}:
+Um novo usuário foi registrado em {0} por {1}:
 
-Name:                   {2}
-Email:                  {3}
-Date:                   {4}
+Nome:                   {2}
+E-mail:                  {3}
+Data:                   {4}
+
+
+Equipe da Biblioteca Digital da Produção Intelectual da Universidade de São Paulo (BDPI-USP)
+Sistema Integrado de Bibliotecas USP (SIBi-USP)

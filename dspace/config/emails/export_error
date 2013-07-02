@@ -6,14 +6,16 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace - The item export you requested was not completed.
-The item export you requested was not completed, due to the following reason:
+Subject: [BDPI-USP] Biblioteca Digital da Produção Intelectual da Universidade de São Paulo: A exportação do item não foi concluída.
+A exportação solicitada do item não foi concluída, devido a seguinte razão:
  {0}
 
-For more information you may contact your system administrator:
+Para maiores informações, entre em contato com o administrador do sistema:
  {1}
 
 
 
-The DSpace Team
+Equipe da Biblioteca Digital da Produção Intelectual da Universidade de São Paulo (BDPI-USP)
+Sistema Integrado de Bibliotecas USP (SIBi-USP)
+suporte_bdpi@sibi.usp.br
 

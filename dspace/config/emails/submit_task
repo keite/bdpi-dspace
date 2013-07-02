@@ -6,19 +6,20 @@
 # {3}  Description of task
 # {4}  link to 'my DSpace' page 
 #
-Subject: DSpace: You have a new task
+Subject: [BDPI-USP] Biblioteca Digital da Produção Intelectual da Universidade de São Paulo: Você tem uma nova tarefa
 
-A new item has been submitted:
+Um novo item foi submetido:
 
-Title:        {0}
-Collection:   {1}
-Submitted by: {2}
+Título:        {0}
+Coleção:   {1}
+Submetido por: {2}
 
 {3}
 
-To claim this task, please visit your "My DSpace"
-page:  {4}
+Para assumir esta tarefa, favor faça o login na sua página na 
+BDPI:  {4}
 
-Many thanks!
+Obrigado!
 
-DSpace
+Equipe da Biblioteca Digital da Produção Intelectual da Universidade de São Paulo (BDPI-USP)
+Sistema Integrado de Bibliotecas USP (SIBi-USP)
