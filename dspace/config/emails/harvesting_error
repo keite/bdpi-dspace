@@ -1,4 +1,4 @@
-# E-mail sent to designated address when a harvest process fails
+﻿# E-mail sent to designated address when a harvest process fails
 #
 # Parameters: {0} Collection id
 #             {1} Date & time

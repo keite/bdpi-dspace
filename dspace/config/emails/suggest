@@ -1,4 +1,4 @@
-# E-mail sent with the information filled out in a suggest form.
+Ôªø# E-mail sent with the information filled out in a suggest form.
 #
 # Parameters: {0} recipient name
 #             {1} sender name
@@ -10,17 +10,17 @@
 #             {7} sender message 
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: [BDPI-USP] Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo: Um item de seu interesse na BDPI-USP
+Subject: [BDPI-USP] Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo: Um item de seu interesse na BDPI-USP
 
-Ol· {0}:
+Ol√° {0}:
 
-{1} solicitou que nÛs enviassemos um e-mail te indicando um item disponÌvel na {2}.
+{1} solicitou que n√≥s enviassemos um e-mail te indicando um item dispon√≠vel na {2}.
 
-TÌtulo: {3}
+T√≠tulo: {3}
 Local: {5}
-Na coleÁ„o: {6}
+Na cole√ß√£o: {6}
 Mensagem pessoal: {7}
 
-Equipe da Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo (BDPI-USP)
+Equipe da Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo (BDPI-USP)
 Sistema Integrado de Bibliotecas USP (SIBi-USP)
 

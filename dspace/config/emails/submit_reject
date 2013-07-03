@@ -1,4 +1,4 @@
-# Rejection email message
+Ôªø# Rejection email message
 #
 # {0}  Title of submission
 # {1}  Name of collection
@@ -6,19 +6,19 @@
 # {3}  Reason for the rejection
 # {4}  Link to 'My DSpace' page
 #
-Subject: [BDPI-USP] Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo: Submiss„o rejeitada
+Subject: [BDPI-USP] Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo: Submiss√£o rejeitada
 
-VocÍ submeteu: {0}
+Voc√™ submeteu: {0}
 
-Para a coleÁ„o: {1}
+Para a cole√ß√£o: {1}
 
-Sua submiss„o foi rejeitada por {2}
+Sua submiss√£o foi rejeitada por {2}
 com o seguinte argumento:
 
 {3}
 
-Sua submiss„o n„o foi excluida. VocÍ pode acess·-la na
-sua p·gina: {4}
+Sua submiss√£o n√£o foi excluida. Voc√™ pode acess√°-la na
+sua p√°gina: {4}
 
-Equipe da Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo (BDPI-USP)
+Equipe da Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo (BDPI-USP)
 Sistema Integrado de Bibliotecas USP (SIBi-USP)

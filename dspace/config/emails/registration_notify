@@ -1,4 +1,4 @@
-# Registration notification email
+Ôªø# Registration notification email
 #
 # Parameters: {0} The name of the DSpace instance
 #             {1} The URL of the DSpace instance 
@@ -8,14 +8,14 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: [BDPI-USP] Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo: NotificaÁ„o de registro
+Subject: [BDPI-USP] Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo: Notifica√ß√£o de registro
 
-Um novo usu·rio foi registrado em {0} por {1}:
+Um novo usu√°rio foi registrado em {0} por {1}:
 
 Nome:                   {2}
 E-mail:                  {3}
 Data:                   {4}
 
 
-Equipe da Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo (BDPI-USP)
+Equipe da Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo (BDPI-USP)
 Sistema Integrado de Bibliotecas USP (SIBi-USP)

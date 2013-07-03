@@ -1,19 +1,19 @@
-# Email sent to DSpace users when they successfully export an item or collection.
+ï»¿# Email sent to DSpace users when they successfully export an item or collection.
 #
 # Parameters: {0} is expanded to a special URL
 #             {1} configurable time (hours) an export file will be kept
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: [BDPI-USP] Biblioteca Digital da Produção Intelectual da Universidade de São Paulo: A solicitação de exportação está pronta para download
-O item que você solicitou a exportação está pronto para download.
+Subject: [BDPI-USP] Biblioteca Digital da ProduÃ§Ã£o Intelectual da Universidade de SÃ£o Paulo: A solicitaÃ§Ã£o de exportaÃ§Ã£o estÃ¡ pronta para download
+O item que vocÃª solicitou a exportaÃ§Ã£o estÃ¡ pronto para download.
 
-Você pode fazer o download do arquivo zipado no link abaixo:
+VocÃª pode fazer o download do arquivo zipado no link abaixo:
 {0}
 
-Este arquivo ficará disponível pelas últimas {1} horas.  
+Este arquivo ficarÃ¡ disponÃ­vel pelas Ãºltimas {1} horas.  
 
 
-Equipe da Biblioteca Digital da Produção Intelectual da Universidade de São Paulo (BDPI-USP)
+Equipe da Biblioteca Digital da ProduÃ§Ã£o Intelectual da Universidade de SÃ£o Paulo (BDPI-USP)
 Sistema Integrado de Bibliotecas USP (SIBi-USP)
 

@@ -1,4 +1,4 @@
-# Workflow curation task notification email message
+Ôªø# Workflow curation task notification email message
 #
 # {0}  Title of submission
 # {1}  Name of collection
@@ -7,10 +7,10 @@
 # {4}  Task result
 # {5}  Workflow action taken
 #
-Subject: [BDPI-USP] Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo: RelatÛrio de tarefas de curadoria
+Subject: [BDPI-USP] Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo: Relat√≥rio de tarefas de curadoria
 
-TÌtulo:         {0}
-ColeÁ„o:    {1}
+T√≠tulo:         {0}
+Cole√ß√£o:    {1}
 Submetido por:  {2}
 
 A tarefa de curadoria {3} foi realizada
@@ -18,7 +18,7 @@ com o seguinte resultado:
 
 {4}
 
-AÁ„o realizada na submiss„o: {5}
+A√ß√£o realizada na submiss√£o: {5}
 
-Equipe da Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo (BDPI-USP)
+Equipe da Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo (BDPI-USP)
 Sistema Integrado de Bibliotecas USP (SIBi-USP)

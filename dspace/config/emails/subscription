@@ -1,13 +1,13 @@
-# E-mail sent to DSpace users when new items appear in collections they are
+ï»¿# E-mail sent to DSpace users when new items appear in collections they are
 # subscribed to
 #
 # Parameters: {0} is the details of the new collections and items
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: [BDPI-USP] Biblioteca Digital da Produção Intelectual da Universidade de São Paulo: Assinatura
-Novos itens estão disponíveis nas coleções que você está acompanhando:
+Subject: [BDPI-USP] Biblioteca Digital da ProduÃ§Ã£o Intelectual da Universidade de SÃ£o Paulo: Assinatura
+Novos itens estÃ£o disponÃ­veis nas coleÃ§Ãµes que vocÃª estÃ¡ acompanhando:
 
 {0}
 
-Equipe da Biblioteca Digital da Produção Intelectual da Universidade de São Paulo (BDPI-USP)
+Equipe da Biblioteca Digital da ProduÃ§Ã£o Intelectual da Universidade de SÃ£o Paulo (BDPI-USP)
 Sistema Integrado de Bibliotecas USP (SIBi-USP)

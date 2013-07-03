@@ -1,4 +1,4 @@
-# Workflow task email message
+ï»¿# Workflow task email message
 #
 # {0}  Title of submission
 # {1}  Name of collection
@@ -6,20 +6,20 @@
 # {3}  Description of task
 # {4}  link to 'my DSpace' page 
 #
-Subject: [BDPI-USP] Biblioteca Digital da Produção Intelectual da Universidade de São Paulo: Você tem uma nova tarefa
+Subject: [BDPI-USP] Biblioteca Digital da ProduÃ§Ã£o Intelectual da Universidade de SÃ£o Paulo: VocÃª tem uma nova tarefa
 
 Um novo item foi submetido:
 
-Título:        {0}
-Coleção:   {1}
+TÃ­tulo:        {0}
+ColeÃ§Ã£o:   {1}
 Submetido por: {2}
 
 {3}
 
-Para assumir esta tarefa, favor faça o login na sua página na 
+Para assumir esta tarefa, favor faÃ§a o login na sua pÃ¡gina na 
 BDPI:  {4}
 
 Obrigado!
 
-Equipe da Biblioteca Digital da Produção Intelectual da Universidade de São Paulo (BDPI-USP)
+Equipe da Biblioteca Digital da ProduÃ§Ã£o Intelectual da Universidade de SÃ£o Paulo (BDPI-USP)
 Sistema Integrado de Bibliotecas USP (SIBi-USP)

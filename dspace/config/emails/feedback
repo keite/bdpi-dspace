@@ -1,4 +1,4 @@
-# E-mail sent with the information filled out in a feedback form.
+Ôªø# E-mail sent with the information filled out in a feedback form.
 #
 # Parameters: {0} current date
 #             {1} email address that the user provided
@@ -10,9 +10,9 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: [BDPI-USP] Biblioteca Digital da ProduÁ„o Intelectual da Universidade de S„o Paulo: Entre em contato
+Subject: [BDPI-USP] Biblioteca Digital da Produ√ß√£o Intelectual da Universidade de S√£o Paulo: Entre em contato
 
-Coment·rios:
+Coment√°rios:
 
 {6}
 
@@ -20,7 +20,7 @@ Coment·rios:
 Data: {0}
 E-mail: {1}
 Logado como: {2}
-P·gina: {3}
+P√°gina: {3}
 User Agent: {4}
-Sess„o: {5}
+Sess√£o: {5}
 
