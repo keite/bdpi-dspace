@@ -123,6 +123,7 @@
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_series">Séries</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_sponsor">Agência de fomento</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_ispartof">Revista</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_access">Acesso</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_identifier">Identificador</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_language">Idioma/Língua (ISO)</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_keyword">Palavra-chave</message>
