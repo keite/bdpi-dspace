@@ -119,6 +119,7 @@
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_subject">Assunto</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_abstract">Resumo</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_date">Data de Publicação</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_dateIssued">Data de Publicação</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_series">Séries</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_sponsor">Patrocinador</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_identifier">Identificador</message>
