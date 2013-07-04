@@ -97,16 +97,20 @@
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
-            </list>
+				<ref bean="searchFilterSponsor" />
+				<ref bean="searchFilterIsPartOf" />
+				</list>
         </property>
         <!--The search filters which can be used on the discovery search page-->
         <property name="searchFilters">
             <list>
-                <ref bean="searchFilterTitle" />
-                <ref bean="searchFilterAuthor" />
-                <ref bean="searchFilterSubject" />
-                <ref bean="searchFilterIssued" />
-            </list>
+				<ref bean="searchFilterTitle" />
+				<ref bean="searchFilterAuthor" />
+				<ref bean="searchFilterSubject" />
+				<ref bean="searchFilterIssued" />
+				<ref bean="searchFilterSponsor" />
+				<ref bean="searchFilterIsPartOf" />
+				</list>
         </property>
         <!--The sort filters for the discovery search-->
         <property name="searchSortConfiguration">
@@ -149,6 +153,10 @@
                         </bean>
                         <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
                             <property name="field" value="dc.contributor.author"/>
+                            <property name="snippets" value="5"/>
+                        </bean>
+                        <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
+                            <property name="field" value="dc.description.sponsorship"/>
                             <property name="snippets" value="5"/>
                         </bean>
                         <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
@@ -222,7 +230,26 @@
         <property name="sortOrder" value="COUNT"/>
         <property name="splitter" value="::"/>
     </bean>
-
+    <bean id="searchFilterSponsor" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="sponsor"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.description.sponsorship</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="10"/>
+        <property name="sortOrder" value="COUNT"/>
+    </bean>
+    <bean id="searchFilterIsPartOf" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+        <property name="indexFieldName" value="ispartof"/>
+        <property name="metadataFields">
+            <list>
+                <value>dc.relation.ispartof</value>
+            </list>
+        </property>
+        <property name="facetLimit" value="10"/>
+        <property name="sortOrder" value="COUNT"/>
+    </bean>	
     <bean id="searchFilterIssued" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
         <property name="indexFieldName" value="dateIssued"/>
         <property name="metadataFields">
