@@ -236,7 +236,7 @@
         <property name="indexFieldName" value="sponsor"/>
         <property name="metadataFields">
             <list>
-                <value>dc.description.sponsorship</value>
+                <value>usp.remissiva.sponsor</value>
             </list>
         </property>
         <property name="facetLimit" value="10"/>
