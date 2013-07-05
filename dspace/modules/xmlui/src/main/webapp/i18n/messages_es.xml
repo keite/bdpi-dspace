@@ -2798,15 +2798,11 @@
 <!-- 130327 andre.assada@usp.br pagina news -->
 <!-- ====================================== -->
 <!--<message key="paginaNews.texto">texto da pagina inicial</message>-->
-	<message key="paginaNews.texto">La Biblioteca Digital de la Producción Intelectual de la Universidad de São Paulo (BDPI) es un Sistema de Gestionamento y Difusión de la Producción Científica,
-	Académica, Técnica y Artística, estructurada para hacer accesible públicamente el conocimiento generado por la investigación llevada a cabo internamente.
-	Este repositorio institucional contribuye así a aumentar la visibilidad y el impacto de la producción de la USP, la generación de indicadores importantes,
-	y velar por la preservación de su memoria intelectual.<br/>
-	<br/>
-	En el lanzamiento oficial en 22 de octubre de 2012, contenía más de 20 000 documentos elaborados por profesores, estudiantes, servidores y postdoctorados de la
-	USP, publicado exclusivamente en revistas científicas indexadas en SciELO, por la Web of Science, en el período 2008-2011.<br/>
-	<br/>
-	Para obtener más información sobre este Repositorio y cómo añadir su Producción, vaya a una de las bibliotecas de la USP o envíe un correo electrónico a<a href="mailto:atendimento@sibi.usp.br">atendimento@sibi.usp.br</a><br/>
+	<message key="paginaNews.texto">La Biblioteca Digital de Producción Intelectual de la Universidad de São Paulo (BDPI) es un sistema de gestión y difusión de  la producción científica, académica, técnica y artística que engloba la investigación realizada en la USP.<br/>
+La <a href="http://www.producao.usp.br/page/politicaAcessoEs">Resolución 6444 del 22 de octubre de 2012</a>, establece y determina la BDPI como el instrumento oficial de la Universidad de São Paulo para conocimiento de la producción intelectual.<br/>
+La BDPI utiliza la plataforma DSpace con servicios e implementaciones integrados a la versión 3.1 de la aplicación y adopción de normas internacionales DRIVER 2.0 y  protocolos OAI / PMH, de  recopilación y difusión lo que permite la interoperabilidad con otras bases de datos.<br/>
+El depósito garantiza la preservación de la memoria institucional y proporciona a los autores y equipos de las bibliotecas estructura de auto-archivo de los distintos tipos de producción de las diferentes unidades para contribuir  a la generación de indicadores.<br/>
+Consulte ese repositorio y conozca las instrucciones que le permitirán incluir su producción, informándose en las Bibliotecas de la USP o póngase en contacto con nosotros por e-mail <a href="mailto:atendimento@sibi.usp.br">atendimento@sibi.usp.br</a><br/>
 	</message>
 <!--
 <message key="paginaNews.texto">The Biblioteca Digital da Produção Intelectual da Universidade de São Paulo (BDPI) manages and distributes the scholarly output of the university,
