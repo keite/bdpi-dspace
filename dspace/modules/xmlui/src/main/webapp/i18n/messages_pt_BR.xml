@@ -2907,4 +2907,11 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.cruesp">Colaboração CRUESP</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.cruesp">Colaboração entre USP e demais instituições do CRUESP</message>
 
+<!-- Adicionado tradução na busca avançada - Tiago - 2013-07-15  -->
+
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.title">Título</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.ispartof">Revista</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.sponsor">Agência de fomento</message>
+    <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.access">Acesso</message>
+	
 </catalogue>
