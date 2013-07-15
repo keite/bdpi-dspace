@@ -119,7 +119,9 @@
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_identifier">Identifier</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_language">Language (ISO)</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_keyword">Keyword</message>
-
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_ispartof">Journals</message>	
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_access">Access</message>	
+	
    <!--  some common other possibilities for Advanced Search Fields -->
    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_contributor">Contributor</message>
    <message key="xmlui.ArtifactBrowser.AdvancedSearch.type_creator">Author</message>
@@ -2800,23 +2802,23 @@ See this repository and learn how to include the production, requesting informat
 <!-- 130327 andre.assada@usp.br paginas estaticas -->
 <!-- ============================================ -->
 <!--<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIPtBR">Créditos</a></message>-->
-<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEnUS">Credits</a></message>
+<message key="paginasEstaticas.creditos"><a href="/page/creditosBDPIEnUS">Credits</a></message>
 <!--<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEs">Créditos</a></message>-->
 
 <!--<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIPtBR">Política de privacidade</a></message>-->
-<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEnUS">Privacy policy</a></message>
+<message key="paginasEstaticas.privacidade"><a href="/page/privacidadeBDPIEnUS">Privacy policy</a></message>
 <!--<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEs">Política de privacidad</a></message>-->
 
 <!--<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoPtBR">Política de Acesso Aberto</a></message>-->
-<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEnUS">Open Access Policy</a></message>
+<message key="paginasEstaticas.politicaAcesso"><a href="/page/politicaAcessoEnUS">Open Access Policy</a></message>
 <!--<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEs">Política de Acceso Abierto</a></message>-->
 
 <!--<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisPtBR">Direitos Autorais</a></message>-->
-<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEnUS">Copyright</a></message>
+<message key="paginasEstaticas.direitosAutorais"><a href="/page/direitosAutoraisEnUS">Copyright</a></message>
 <!--<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEs">Derecho de autor</a></message>-->
 
 <!--<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIPtBR">Sobre</a></message>-->
-<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEnUS">About</a></message>
+<message key="paginasEstaticas.sobreBDPI"><a href="/page/sobreBDPIEnUS">About</a></message>
 <!--<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEs">Sobre</a></message>-->
 
 <!-- ==================================================== -->

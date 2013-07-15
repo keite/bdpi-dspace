@@ -112,7 +112,10 @@
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_identifier">Identificador</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_language">Idioma (ISO)</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_keyword">Palabra clave</message>
-
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_ispartof">Periódico</message>
+	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_access">Aceso</message>
+	
+	
    <!--  some common other possibilities for Advanced Search Fields -->
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_contributor">Contribuidor/a</message>
 	<message key="xmlui.ArtifactBrowser.AdvancedSearch.type_creator">Creador/a</message>
@@ -2372,7 +2375,7 @@
     <message key="xmlui.ArtifactBrowser.AbstractSearch.group_by">Agrupar resultado por</message>
     <message key="xmlui.ArtifactBrowser.AbstractSearch.group_by.none">Nada</message>
 
-<!-- ====================================== -->
+<!-- ====================================== 
 	<message key="paginaNews.texto">
 	La Biblioteca Digital de la Producción Intelectual de la Universidad de São Paulo (BDPI) es un sistema de gestión y difusión de la producción científica, 
 	académica, técnica y artística, estructurada para tornar público y accesible el conocimiento generado por las investigaciones desarrolladas internamente. 
@@ -2388,6 +2391,8 @@
 	Para obtener mayores informaciones sobre este repositorio y sobre cómo incluir su producción, diríjase a una de las bibliotecas USP o envíe un correo electrónico a 
 	<a href="mailto:atendimento@sibi.usp.br">atendimento@sibi.usp.br</a><br/>
 	</message>
+	
+-->	
 <!-- ============================================== -->
 <!-- FIM 130327 andre.assada@usp.br pagina news FIM -->
 <!-- ============================================== -->
@@ -2762,31 +2767,26 @@
 <!-- ============================================ -->
 <!-- 130327 andre.assada@usp.br paginas estaticas -->
 <!-- ============================================ -->
-	<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIPtBR">Créditos</a></message>
-<!--<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEnUS">Credits</a></message>
-<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEs">Créditos</a></message>
--->
-	<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIPtBR">Política de privacidad</a></message>
-<!--
-<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEnUS">Privacy policy</a></message>
-<message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEs">Política de privacidad</a></message>
--->
-	<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoPtBR">Política de Acceso Abierto</a></message>
-<!--
-<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEnUS">Open Access Policy</a></message>
-<message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEs">Política de Acceso Abierto</a></message>
--->
-	<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisPtBR">Derechos Autorales</a></message>
-<!--
-<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEnUS">Copyright</a></message>
-<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEs">Derecho de autor</a></message>
--->
-	<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIPtBR">Sobre</a></message>
+<!--	<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIPtBR">Créditos</a></message> -->
+<!--<message key="paginasEstaticas.creditos"><a href="/andre/xmlui/page/creditosBDPIEnUS">Credits</a></message> -->
+<message key="paginasEstaticas.creditos"><a href="/page/creditosBDPIEs">Créditos</a></message>
 
-<!--
-<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEnUS">About</a></message>
-<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEs">Sobre</a></message>
--->
+<!-- <message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIPtBR">Política de privacidad</a></message> -->
+<!-- <message key="paginasEstaticas.privacidade"><a href="/andre/xmlui/page/privacidadeBDPIEnUS">Privacy policy</a></message> -->
+<message key="paginasEstaticas.privacidade"><a href="/page/privacidadeBDPIEs">Política de privacidad</a></message>
+
+<!-- <message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoPtBR">Política de Acceso Abierto</a></message> -->
+<!-- <message key="paginasEstaticas.politicaAcesso"><a href="/andre/xmlui/page/politicaAcessoEnUS">Open Access Policy</a></message> -->
+<message key="paginasEstaticas.politicaAcesso"><a href="/page/politicaAcessoEs">Política de Acceso Abierto</a></message>
+
+<!--	<message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisPtBR">Derechos Autorales</a></message>-->
+<!--    <message key="paginasEstaticas.direitosAutorais"><a href="/andre/xmlui/page/direitosAutoraisEnUS">Copyright</a></message> -->
+<message key="paginasEstaticas.direitosAutorais"><a href="/page/direitosAutoraisEs">Derecho de autor</a></message>
+
+<!--	<message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIPtBR">Sobre</a></message> -->
+<!-- <message key="paginasEstaticas.sobreBDPI"><a href="/andre/xmlui/page/sobreBDPIEnUS">About</a></message> -->
+<message key="paginasEstaticas.sobreBDPI"><a href="/page/sobreBDPIEs">Sobre</a></message>
+
 <!-- ==================================================== -->
 <!-- FIM 130327 andre.assada@usp.br paginas estaticas FIM -->
 <!-- ==================================================== -->
@@ -2798,10 +2798,10 @@
 <!-- 130327 andre.assada@usp.br pagina news -->
 <!-- ====================================== -->
 <!--<message key="paginaNews.texto">texto da pagina inicial</message>-->
-	<message key="paginaNews.texto">La Biblioteca Digital de Producción Intelectual de la Universidad de São Paulo (BDPI) es un sistema de gestión y difusión de  la producción científica, académica, técnica y artística que engloba la investigación realizada en la USP.<br/>
-La <a href="http://www.producao.usp.br/page/politicaAcessoEs">Resolución 6444 del 22 de octubre de 2012</a>, establece y determina la BDPI como el instrumento oficial de la Universidad de São Paulo para conocimiento de la producción intelectual.<br/>
-La BDPI utiliza la plataforma DSpace con servicios e implementaciones integrados a la versión 3.1 de la aplicación y adopción de normas internacionales DRIVER 2.0 y  protocolos OAI / PMH, de  recopilación y difusión lo que permite la interoperabilidad con otras bases de datos.<br/>
-El depósito garantiza la preservación de la memoria institucional y proporciona a los autores y equipos de las bibliotecas estructura de auto-archivo de los distintos tipos de producción de las diferentes unidades para contribuir  a la generación de indicadores.<br/>
+	<message key="paginaNews.texto">La Biblioteca Digital de Producción Intelectual de la Universidad de São Paulo (BDPI) es un sistema de gestión y difusión de  la producción científica, académica, técnica y artística que engloba la investigación realizada en la USP.<br/><br/>
+La <a href="http://www.producao.usp.br/page/politicaAcessoEs">Resolución 6444 del 22 de octubre de 2012</a>, establece y determina la BDPI como el instrumento oficial de la Universidad de São Paulo para conocimiento de la producción intelectual.<br/><br/>
+La BDPI utiliza la plataforma DSpace con servicios e implementaciones integrados a la versión 3.1 de la aplicación y adopción de normas internacionales DRIVER 2.0 y  protocolos OAI / PMH, de  recopilación y difusión lo que permite la interoperabilidad con otras bases de datos.<br/><br/>
+El depósito garantiza la preservación de la memoria institucional y proporciona a los autores y equipos de las bibliotecas estructura de auto-archivo de los distintos tipos de producción de las diferentes unidades para contribuir  a la generación de indicadores.<br/><br/>
 Consulte ese repositorio y conozca las instrucciones que le permitirán incluir su producción, informándose en las Bibliotecas de la USP o póngase en contacto con nosotros por e-mail <a href="mailto:atendimento@sibi.usp.br">atendimento@sibi.usp.br</a><br/>
 	</message>
 <!--
@@ -2845,10 +2845,10 @@ Para obtener más información acerca de como añadir este repositório y su pro
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.sponsor">Agencia de Desarrollo</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.sponsor">Agencia de Desarrollo</message>
 
-	<message key="xmlui.ArtifactBrowser.Navigation.browse_periodical">Revista ou Evento</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.periodical.column_heading">Revista ou Evento</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.periodical">Revista ou Evento</message>
-	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.periodical">Revista ou Evento</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_periodical">Periódico</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.periodical.column_heading">Periódico</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.periodical">Periódico</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.periodical">Periódico</message>
 
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_access">Aceso</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.access.column_heading">Aceso</message>
