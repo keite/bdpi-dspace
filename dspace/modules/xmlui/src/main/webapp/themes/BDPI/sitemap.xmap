@@ -138,6 +138,7 @@
                     <map:parameter name="stylesheet.screen#6" value="lib/css/authority-control.css"/>
 <!-- 130410 andre.assada@usp.br lista de comunidades expansiveis -->
                     <map:parameter name="stylesheet.screen#7" value="lib/css/collapsibleTree.css"/>
+					<map:parameter name="stylesheet.screen#8" value="lib/css/discovery.css"/>
 <!-- FIM 130410 andre.assada@usp.br lista de comunidades expansiveis FIM -->
 
                 </map:transform>

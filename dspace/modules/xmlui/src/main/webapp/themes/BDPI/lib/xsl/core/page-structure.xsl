@@ -242,6 +242,28 @@
                     </xsl:attribute>
                 </link>
             </xsl:if>
+
+			<!--  Script de acordeon para o Discovery - Tiago - 15-07-2013 -->
+			<script type="text/javascript">
+			<xsl:attribute name="src">
+			<xsl:text>http://code.jquery.com/jquery-1.9.1.js</xsl:text>
+			</xsl:attribute>&#160;</script>
+			<script type="text/javascript">
+			<xsl:attribute name="src">
+			<xsl:text>http://code.jquery.com/ui/1.10.3/jquery-ui.js</xsl:text>
+			</xsl:attribute>&#160;</script>
+			<script type="text/javascript">
+				$(function(){
+				$('#aspect_discovery_Navigation_list_discovery ul li h2').click(function(event){ var elem = $(this).next();
+				if(elem.is('ul')){ event.preventDefault();
+				$('#menu ul:visible').not(elem).slideUp();
+				elem.slideToggle();
+				}
+				});
+				});
+			</script>
+			<!--  END - Script de acordeon para o Discovery - Tiago - 15-07-2013 -->
+
 			
 			<!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
             <!-- There is also javascript to disable submitting a form when the 'enter' key is pressed. -->
