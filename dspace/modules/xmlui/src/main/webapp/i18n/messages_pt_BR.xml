@@ -2902,10 +2902,10 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.country">País</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.country">País</message>
 
-<message key="xmlui.ArtifactBrowser.Navigation.browse_cruesp">Colaboração CRUESP</message>
-<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.cruesp.column_heading">Colaboração CRUESP</message>
-<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.cruesp">Colaboração CRUESP</message>
-<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.cruesp">Colaboração entre USP e demais instituições do CRUESP</message>
+<message key="xmlui.ArtifactBrowser.Navigation.browse_cruesp">Colaboração</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.cruesp.column_heading">Colaboração</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.cruesp">Colaboração</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.cruesp">Colaboração entre USP e instituições nacionais e internacionais</message>
 
 <!-- Adicionado tradução na busca avançada - Tiago - 2013-07-15  -->
 
