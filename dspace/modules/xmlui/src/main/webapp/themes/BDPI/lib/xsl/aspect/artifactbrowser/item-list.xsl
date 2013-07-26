@@ -180,69 +180,127 @@
             </div>
             <div class="artifact-info">
                 <span class="author">
-				    <xsl:variable name="verificaLink" select="utilUSP:contemHandleURL($urlAtual)" />
-					
+				
+<!-- ========================================================================================== -->
+<!-- 130726 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado --> 
+<!-- @author Dan Shinkai (SI/EACH/USP) -->
+<!-- ========================================================================================== -->
+
+				    <xsl:variable name="verificaLink" select="utilUSP:contemHandleURL($urlAtual)" />					
                     <xsl:choose>
                         <xsl:when test="dim:field[@element='contributor'][@qualifier='author']">
-                            <xsl:for-each select="dim:field[@element='contributor'][@qualifier='author']">
-                                <span>
-                                  <xsl:if test="@authority">
-                                    <xsl:attribute name="class"><xsl:text>ds-dc_contributor_author-authority</xsl:text></xsl:attribute>
-                                  </xsl:if>
-                                  <xsl:copy-of select="node()"/>
-                                </span>
 								
-								<xsl:variable name="nodeSemAcento" select="utilUSP:retiraEspacos(translate(./node(), $lowerCase, $upperCase))"/> 
-								<xsl:for-each select="../dim:field[@mdschema='usp'][@element='autor'][not(@qualifier)]"> 
-								   <xsl:variable name="uspAutor" select="substring-before(./node(),':')"/> 
-								   <xsl:variable name="uspAutorSemAcento" select="utilUSP:retiraEspacos(translate($uspAutor,$lowerCase,$upperCase))"/> 
-								   <xsl:if test="$nodeSemAcento=$uspAutorSemAcento"> 
-								      <xsl:text> </xsl:text>
+							<xsl:for-each select="dim:field[@element='contributor'][@qualifier='author']">
+								<span>
+								  <xsl:if test="@authority">
+									<xsl:attribute name="class"><xsl:text>ds-dc_contributor_author-authority</xsl:text></xsl:attribute>
+								  </xsl:if>
+								  <xsl:copy-of select="node()"/>
+								</span>
+								
+								<xsl:choose>
+								
+<!-- 130725 - Dan - Condicao que verifica se o no atual possui o metadado authority. O link e criado a partir do valor do authority. -->
+									<xsl:when test="@authority">									
+										<xsl:text> </xsl:text>
 
-<!-- 130419 - Dan - Codigo para recuperar somente o codpes do autor --> 
-                                      <xsl:variable name="uspAutorInfo" select="substring-after(./node(),':')"/> 
-									  <xsl:variable name="codpes" select="substring-before($uspAutorInfo,':')"/> 
+<!-- 130725 - Dan - Codigo para recuperar somente o codpes do autor --> 
+										<xsl:variable name="codpes">
+											<xsl:value-of select="./@authority"/>
+										</xsl:variable>
 
 <!-- 130419 - Dan - Codigo para recuperar somente o itemID --> 
-                                      <xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
-									     <xsl:variable name="url" select="current()"/>
-									     <xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
+										<xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
+											 <xsl:variable name="url" select="current()"/>
+											 <xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
 
-										 <xsl:if test="$urlSub!=''">
-									        <xsl:variable name="itemID" select="substring-after($urlSub,'/')"/> 
+											 <xsl:if test="$urlSub!=''">
+												<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/> 
 <!-- 130419 - Dan - Codigo que insere o itemID e o codpes na URL. E necessario realizar a verificacao da url atual para a construcao do link, pois podera haver duplicacao no link --> 
-                                            <xsl:choose>
- 
-									           <xsl:when test="$verificaLink = 0"> 
-										          <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-											         <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
-											      </a>
- 
-										       </xsl:when> 
+												<xsl:choose>
+	 
+												   <xsl:when test="$verificaLink = 0"> 
+													  <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+														 <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+													  </a>
+	 
+												   </xsl:when> 
+											
+												   <xsl:when test="$verificaLink = 2"> 
+													  <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+														  <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+													  </a>
+	 
+												   </xsl:when> 
+											
+												   <xsl:otherwise> 
+													  <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+														  <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
+													  </a>
+	 
+												   </xsl:otherwise> 
+												</xsl:choose> 
+											 </xsl:if>
+									    </xsl:for-each>
+									</xsl:when>
+									
+<!-- 130725 - Dan - Condicao que verifica se o no atual possui o metadado authority. O link e criado a partir do metadado do autor USP. -->
+									
+									<xsl:otherwise>
+										<xsl:variable name="nodeSemAcento" select="utilUSP:retiraEspacos(translate(./node(), $lowerCase, $upperCase))"/> 
+										<xsl:for-each select="../dim:field[@mdschema='usp'][@element='autor'][not(@qualifier)]"> 
+										   <xsl:variable name="uspAutor" select="substring-before(./node(),':')"/> 
+										   <xsl:variable name="uspAutorSemAcento" select="utilUSP:retiraEspacos(translate($uspAutor,$lowerCase,$upperCase))"/> 
+										    <xsl:if test="$nodeSemAcento=$uspAutorSemAcento"> 
+											  <xsl:text> </xsl:text>
+
+<!-- 130419 - Dan - Codigo para recuperar somente o codpes do autor --> 
+											  <xsl:variable name="uspAutorInfo" select="substring-after(./node(),':')"/> 
+											  <xsl:variable name="codpes" select="substring-before($uspAutorInfo,':')"/> 
+
+<!-- 130419 - Dan - Codigo para recuperar somente o itemID --> 
+											  <xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
+												 <xsl:variable name="url" select="current()"/>
+												 <xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
+
+												 <xsl:if test="$urlSub!=''">
+													<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/> 
+<!-- 130419 - Dan - Codigo que insere o itemID e o codpes na URL. E necessario realizar a verificacao da url atual para a construcao do link, pois podera haver duplicacao no link --> 
+													<xsl:choose>
+		 
+													   <xsl:when test="$verificaLink = 0"> 
+														  <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															 <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+														  </a>
+		 
+													   </xsl:when> 
+												
+													   <xsl:when test="$verificaLink = 2"> 
+														  <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															  <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+														  </a>
+		 
+													   </xsl:when> 
+												
+													   <xsl:otherwise> 
+														  <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															  <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
+														  </a>
+		 
+													   </xsl:otherwise> 
+													</xsl:choose> 
+												 </xsl:if>
+											   </xsl:for-each>
+											</xsl:if> 
+										</xsl:for-each>
+									</xsl:otherwise>
+								</xsl:choose>
 										
-  										       <xsl:when test="$verificaLink = 2"> 
-											      <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-												      <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
-											      </a>
- 
-										       </xsl:when> 
-										
-										       <xsl:otherwise> 
-											      <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-												      <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
-											      </a>
- 
-										       </xsl:otherwise> 
-									        </xsl:choose> 
-										 </xsl:if>
-									   </xsl:for-each>
-								</xsl:if> 
-								</xsl:for-each>
-								
-                                <xsl:if test="count(following-sibling::dim:field[@element='contributor'][@qualifier='author']) != 0">
-                                    <xsl:text>; </xsl:text>
-                                </xsl:if>
-                            </xsl:for-each>
+								<xsl:if test="count(following-sibling::dim:field[@element='contributor'][@qualifier='author']) != 0">
+									<xsl:text>; </xsl:text>
+								</xsl:if>
+
+							</xsl:for-each>
                         </xsl:when>
                         <xsl:when test="dim:field[@element='creator']">
                             <xsl:for-each select="dim:field[@element='creator']">
@@ -264,6 +322,10 @@
                             <i18n:text>xmlui.dri2xhtml.METS-1.0.no-author</i18n:text>
                         </xsl:otherwise>
                     </xsl:choose>
+					
+<!-- ====================================================================================================== -->
+<!-- / FIM 130726 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado FIM / --> 
+<!-- ====================================================================================================== -->
                 </span>
                 <xsl:text> </xsl:text>
                 <xsl:if test="dim:field[@element='date' and @qualifier='issued'] or dim:field[@element='publisher']">
