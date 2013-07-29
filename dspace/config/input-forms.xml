@@ -2411,7 +2411,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
 		 <visibility>workflow</visibility>		 
        </field>
  --> 
-	   <!-- Inserido por Tiago 20130327 -->	   
+	   <!-- Comentado por Tiago 20130729 	   
 	   <field>
 		 <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -2422,7 +2422,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Informe o volume no primeiro campo e o número no segundo campo do periódico em que o artigo foi publicado. Utilize o formato v.99 para volume e n.99 para número.</hint>
          <required></required>
        </field>
-<!-- Comentado por Tiago 2013-04-01
+	   -->
 	   
        <field>
          <dc-schema>usp</dc-schema>
@@ -2445,7 +2445,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint>Número da edição da revista onde o artigo foi publicado, com eventual periodicidade ou suplemento. Exemplos: 14, 5 (jan/jun), suppl 1</hint>
          <required></required>
        </field>
--->
+
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>description</dc-element>
@@ -2543,7 +2543,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
-         <dc-qualifier>uri</dc-qualifier>
+         <dc-qualifier>url</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL do artigo</label>
          <input-type>onebox</input-type>
@@ -2961,7 +2961,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
-         <dc-qualifier>uri</dc-qualifier>
+         <dc-qualifier>url</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL da comunicação publicada nos anais do evento</label>
          <input-type>onebox</input-type>
@@ -3263,7 +3263,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
-         <dc-qualifier>uri</dc-qualifier>
+         <dc-qualifier>url</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL em que o livro está disponível</label>
          <input-type>onebox</input-type>
@@ -3566,7 +3566,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
-         <dc-qualifier>uri</dc-qualifier>
+         <dc-qualifier>url</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL em que o relatório está disponível</label>
          <input-type>onebox</input-type>
@@ -3820,7 +3820,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
-         <dc-qualifier>uri</dc-qualifier>
+         <dc-qualifier>url</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL do artigo</label>
          <input-type>onebox</input-type>
@@ -4163,7 +4163,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
-         <dc-qualifier>uri</dc-qualifier>
+         <dc-qualifier>url</dc-qualifier>
          <repeatable>false</repeatable>
          <label>URL do artigo</label>
          <input-type>onebox</input-type>
