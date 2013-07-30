@@ -2544,7 +2544,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>url</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>URL do artigo</label>
          <input-type>onebox</input-type>
          <hint>Endereço eletrônico que remete ao texto completo do artigo publicado, na fonte original. Ex. http://www.scielo.br/pdf/ea/v6n14/v6n14a07.pdf</hint>
