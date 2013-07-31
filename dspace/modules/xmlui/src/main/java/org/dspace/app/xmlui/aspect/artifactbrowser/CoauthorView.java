@@ -186,9 +186,20 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
  
    /** Codigo que cria a parte dos links do Trail */
        pageMeta.addTrailLink(contextPath + "/",T_dspace_home);
-       HandleUtil.buildHandleTrail(item,pageMeta,contextPath);
-       pageMeta.addTrailLink(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "?show=full",T_trail_item);
-       pageMeta.addTrailLink(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author",T_trail);
+	   
+	   if (item != null) {
+			HandleUtil.buildHandleTrail(item,pageMeta,contextPath);
+			pageMeta.addTrailLink(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "?show=full",T_trail_item);
+       //HandleUtil.buildHandleTrail(item,pageMeta,contextPath);
+	   }
+	   
+	   /**
+		 * 310713 - Dan Shinkai - Condicao implementada para verificar se o link oriundo e um item ou a lista de autores.
+		 */
+	   //if (!this.itemIDStr.equals("0"))
+		//	pageMeta.addTrailLink(contextPath + "/handle/" + this.handlePrefix  + "/" + this.itemIDStr + "?show=full",T_trail_item);
+       
+	   pageMeta.addTrailLink(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author",T_trail);
        pageMeta.addTrail().addContent(T_trail_coauthor);
     }
 
@@ -523,8 +534,8 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
 
            Para retornar = geral.addPara("id_paragrafo_retornar", "class_paragrafo_retornar");
            Para fechar = geral.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");
-
-           retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "?show=full", T_return, "");		                   
+		   
+		   retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return, "");			
            fechar.addXref("#", T_close,"window.close()","window.close()");
         }
 
@@ -535,7 +546,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
            Para retornar = geral.addPara("id_paragrafo_retornar", "class_paragrafo_retornar");
            Para fechar = geral.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");
 
-           retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "?show=full", T_return, "");
+           retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return, "");
            fechar.addXref("#", T_close,"window.close()","window.close()");
         }
     }

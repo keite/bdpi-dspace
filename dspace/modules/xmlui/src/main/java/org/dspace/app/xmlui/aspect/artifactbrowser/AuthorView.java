@@ -34,6 +34,7 @@ import org.dspace.app.xmlui.wing.element.Table;
 import org.dspace.app.xmlui.wing.element.Row;
 import org.dspace.app.xmlui.wing.element.Cell;
 import org.dspace.app.xmlui.wing.element.Para;
+import org.dspace.browse.BrowseInfo;
 import org.dspace.content.Author;
 import org.dspace.content.ItemRelacionado;
 import org.dspace.content.dao.AuthorDAOPostgres;
@@ -126,6 +127,9 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
    
      private static final Message T_interdisplinar =
       message("xmlui.ArtifactBrowser.AuthorView.interdisciplinar_link");
+	  
+	 private static final Message T_visualiza_autor = 
+	  message("xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.author");
     
     /** Parametro que armazenara o codpes da pessoa diretamente da pagina como um int */
     private int codpes;
@@ -148,6 +152,8 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 
     private Author author = new Author();
     private AuthorDAOPostgres ap = new AuthorDAOPostgres();
+	
+	private BrowseInfo browseInfo;
     
     /**
      * 
@@ -171,7 +177,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
             WingException, UIException, SQLException, IOException,
             AuthorizeException
     {
-        DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
+		DSpaceObject dso = HandleUtil.obtainHandle(objectModel);
 		
 		this.itemIDStr = parameters.getParameter("itemID","");
         this.codpesStr = parameters.getParameter("codpes","");
@@ -203,9 +209,22 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 		
     /** Trecho do codigo que monta o Trail da pagina */
         pageMeta.addTrailLink(contextPath + "/",T_dspace_home);
-        HandleUtil.buildHandleTrail(item,pageMeta,contextPath);
-   //     pageMeta.addTrailLink(this.dspaceUrl + this.handlePrefix  + "/" + this.itemIDStr + "?show=full",T_trail_item);
-        pageMeta.addTrailLink(contextPath + "/handle/" + this.handlePrefix  + "/" + this.itemIDStr + "?show=full",T_trail_item);
+		
+		/**
+		 * 310713 - Dan Shinkai - Condicao implementada para verificar se o link oriundo e um item ou a lista de autores.
+		 */
+		if (item != null) {
+			HandleUtil.buildHandleTrail(item,pageMeta,contextPath);
+			pageMeta.addTrailLink(contextPath + "/handle/" + this.handlePrefix  + "/" + this.itemIDStr + "?show=full",T_trail_item);   
+		}
+		
+		/**
+		 * 310713 - Dan Shinkai - Condicao nao implementada, pois nao e possivel recuperar a URL anterior de uma busca.
+		 *
+		else {
+			pageMeta.addTrailLink(urlAnterior,T_visualiza_autor);
+		}*/
+		
         pageMeta.addTrail().addContent(T_trail);
     }
 
