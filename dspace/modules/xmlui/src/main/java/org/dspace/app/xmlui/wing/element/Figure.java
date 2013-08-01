@@ -40,6 +40,9 @@ public class Figure extends TextContainer implements StructuralElement
 
     /** The name of the class attribute */
     public static final String A_RENDER = "rend";
+	
+	/** The name of the class attribute */
+    public static final String A_NAME = "n";
 
 
     /** The figure's source */
@@ -54,6 +57,9 @@ public class Figure extends TextContainer implements StructuralElement
 
     /** Special rendering hints */
     private String rend;
+	
+	/** Special rendering hints */
+    private String name;
 
     /**
      * Construct a new figure.
@@ -80,6 +86,9 @@ public class Figure extends TextContainer implements StructuralElement
         this.rend = rend;
     }
 
+	/** 130801 - Dan - Construtor criado para abrir links em outra aba. Passar _blank como parametro na variavel title.
+	  * Este metodo nao funciona se a pagina nao gerar o DRI dos dados como, por exemplo, na busca de autores.
+	 */
     protected Figure(WingContext context, String source, String target,
             String title, String rend) throws WingException
     {
@@ -87,8 +96,13 @@ public class Figure extends TextContainer implements StructuralElement
         require(source, "The 'source' parameter is required for all figures.");
         this.source = source;
         this.target = target;
-        this.title 	  = title;
-        this.rend 	  = rend;
+		
+		if(title.equals("_blank"))
+			this.name = title;
+		else
+			this.title = title;
+			
+        this.rend = rend;
     }
 	
 	/** 130425 - Dan - Construtor criado para retirar links em fotos e graficos */
@@ -100,7 +114,7 @@ public class Figure extends TextContainer implements StructuralElement
         this.source = source;
         this.rend = rend;
     }
-
+	
     /**
      * Translate this element and all contained elements into SAX events. The
      * events should be routed to the contentHandler found in the WingContext.
@@ -126,6 +140,9 @@ public class Figure extends TextContainer implements StructuralElement
             attributes.put(A_TITLE, this.title);
         if (this.rend != null)
             attributes.put(A_RENDER, this.rend);
+			
+		if (this.name != null)
+			attributes.put(A_NAME, this.name);
 
         startElement(contentHandler, namespaces, E_FIGURE, attributes);
         super.toSAX(contentHandler, lexicalHandler, namespaces);
