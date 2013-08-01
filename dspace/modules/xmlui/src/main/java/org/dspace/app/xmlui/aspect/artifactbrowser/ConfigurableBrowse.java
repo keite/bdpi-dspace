@@ -136,7 +136,7 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
 	private String theme = "BDPI";
 	private String dspaceDir = ConfigurationManager.getProperty("dspace.dir");
 	private String diretorioImg = "/themes/" + theme + "/images/";
-	private String link = "handle/" + theme + "/0/";
+	//private String link = "handle/" + theme + "/0/";
 
     @Override
     public void setup(SourceResolver resolver, Map objectModel, String src, Parameters parameters) throws ProcessingException, SAXException, IOException {
@@ -358,6 +358,7 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
 						if(queryParams.containsKey("authority")) {
                     		
                     		String numUSP = queryParams.get("authority");
+							String link = "handle/" + theme + "/0/";
                     		link += numUSP + "/author";
                     		cell.addFigure(diretorioImg + "ehUSP.png", link, "_blank");
                     	}
