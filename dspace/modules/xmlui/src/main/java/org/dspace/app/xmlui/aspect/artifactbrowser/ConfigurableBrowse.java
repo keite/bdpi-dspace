@@ -360,7 +360,7 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
                     		String numUSP = queryParams.get("authority");
 							String link = "handle/" + theme + "/0/";
                     		link += numUSP + "/author";
-                    		cell.addFigure(diretorioImg + "ehUSP.png", link, "_blank");
+                    		cell.addFigure(diretorioImg + "ehUSP.png", link, "_blank", "removeLinkUSP");							
                     	}
 					/** FIM **/
 					
