@@ -81,9 +81,9 @@ public class MoveItemForm extends AbstractDSpaceTransformer {
         for (Collection collection : collections)
         {
             String name = collection.getMetadata("name");
-            if (name.length() > 70)
+            if (name.length() > 50)
             {
-                name = name.substring(0, 67) + "...";
+                name = name.substring(0, 47) + "...";
             }
 
             // Only add the item if it isn't already the owner
