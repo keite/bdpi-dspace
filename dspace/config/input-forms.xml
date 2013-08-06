@@ -2139,7 +2139,7 @@
 		 <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Publisher</label>
          <input-type>onebox</input-type>
          <hint>Enter the name of the publisher of the previously issued instance of this item.</hint>
@@ -2485,7 +2485,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Editor</label>
          <input-type>onebox</input-type>
          <hint>Editor do periódico. Ex: Editora da Universidade de Brasília - UnB </hint>
@@ -3208,7 +3208,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Editora</label>
          <input-type>onebox</input-type>
          <hint>Nome da editora. Ex. EDUSP</hint>
@@ -3520,7 +3520,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Unidade USP</label>
          <input-type>onebox</input-type>
          <hint>Unidade ao qual o pesquisador está vinculado. Ex: IME-USP</hint>
@@ -3788,7 +3788,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Publisher</label>
          <input-type>onebox</input-type>
          <hint>CAMPO EM ESTUDO</hint>
@@ -4118,7 +4118,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
          <dc-qualifier></dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Editor</label>
          <input-type>onebox</input-type>
          <hint>Editor do periódico. Ex: Editora da Universidade de Brasília - UnB </hint>
