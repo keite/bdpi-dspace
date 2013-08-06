@@ -2428,7 +2428,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>usp</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>volume</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>Volume</label>
          <input-type>onebox</input-type>
          <hint>Volume da edição da revista onde o artigo foi publicado, se existir. Ex: 7</hint>
@@ -2962,7 +2962,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>url</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>URL da comunicação publicada nos anais do evento</label>
          <input-type>onebox</input-type>
          <hint>Endereço eletrônico que remete ao texto completo do trabalho publicado nos anais do evento. Ex. http://www.scielo.br/pdf/ea/v6n14/v6n14a07.pdf</hint>
@@ -3186,9 +3186,9 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-element>relation</dc-element>
          <dc-qualifier>ispartof</dc-qualifier>
          <repeatable>false</repeatable>
-         <label>Coleção ou série</label>
+         <label>Coleção ou Título da obra completa</label>
          <input-type>onebox</input-type>
-         <hint>Título da coleção ou série, número na coleção (opcional). Ex. Coleção Brasil, 5</hint>
+         <hint>Título da coleção ou série, número na coleção (opcional). No caso de capítulo de livro, indicar o título da obra em que o capítulo foi publicado. Ex. Coleção Brasil, 5</hint>
          <required></required>
 	   </field>
 
@@ -3241,7 +3241,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>isbn</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>ISBN da obra</label>
          <input-type>onebox</input-type>
          <hint>ISBN da obra com 10 ou 13 números. Ex. 9788560323111</hint>
@@ -3264,7 +3264,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>url</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>URL em que o livro está disponível</label>
          <input-type>onebox</input-type>
          <hint>Endereço eletrônico que remete ao texto completo do livro, caso esteja disponível. Ex. http://www.pos.eca.usp.br/sites/default/files/file/cienciaInformacao/informacaoContemporaniedade.pdf</hint>
@@ -3358,7 +3358,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <repeatable>false</repeatable>
 		 <label>Notas</label>
          <input-type>textarea</input-type>
-         <hint>Notas descritivas adicionais, tais como uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
+         <hint>Notas descritivas adicionais, tais como uso em bibliografia básica ou notas similares.</hint>
          <required></required>
        </field>
 
@@ -3567,7 +3567,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>url</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>URL em que o relatório está disponível</label>
          <input-type>onebox</input-type>
          <hint>Endereço eletrônico que remete ao texto completo do relatório, caso esteja disponível. Ex.</hint>
@@ -3821,7 +3821,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>url</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>URL do artigo</label>
          <input-type>onebox</input-type>
          <hint>Caso exista, informe o endereço eletrônico em que o recurso foi disponibilizado anteriormente. Ex: http://www.scielo.br/pdf/ea/v6n14/v6n14a07.pdf</hint>
@@ -4164,7 +4164,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
          <dc-qualifier>url</dc-qualifier>
-         <repeatable>false</repeatable>
+         <repeatable>true</repeatable>
          <label>URL do artigo</label>
          <input-type>onebox</input-type>
          <hint>Endereço eletrônico que remete ao texto completo do artigo publicado, na fonte original. Ex. http://www.scielo.br/pdf/ea/v6n14/v6n14a07.pdf</hint>
