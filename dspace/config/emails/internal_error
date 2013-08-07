@@ -1,5 +1,4 @@
-﻿# E-mail sent to designated address when an internal server error occurs
-#
+﻿#
 # Parameters: {0} DSpace server URL
 #             {1} Date & time
 #             {2} Session ID

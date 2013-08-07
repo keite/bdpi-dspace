@@ -1,5 +1,4 @@
-﻿# E-mail sent with the information filled out in a feedback form.
-#
+﻿#
 # Parameters: {0} current date
 #             {1} email address that the user provided
 #             {2} logged in as

@@ -1,5 +1,4 @@
-﻿# Email sent to DSpace users when they successfully export an item or collection.
-#
+﻿#
 # Parameters: {0} is expanded to a special URL
 #             {1} configurable time (hours) an export file will be kept
 #

@@ -1,5 +1,4 @@
-﻿# E-mail sent with the information filled out in a suggest form.
-#
+﻿#
 # Parameters: {0} recipient name
 #             {1} sender name
 #             {2} repository name

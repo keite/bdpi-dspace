@@ -1,5 +1,4 @@
-﻿# Registration notification email
-#
+﻿#
 # Parameters: {0} The name of the DSpace instance
 #             {1} The URL of the DSpace instance 
 #             {2} Name:
