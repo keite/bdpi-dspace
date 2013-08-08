@@ -218,7 +218,9 @@
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateaccessioned">Listar {0} por fecha de envío {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateaccessioned">Listar {0} por fecha de envío</message>
-
+	
+	<!-- 130808 - Dan Shinkai - Adicionado parametro utilizado no JQuery para esconder autores -->
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.item.viewAuthor">Ver autores</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CollectionViewer.java -->
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.search_scope">Ámbito de búsqueda</message>
@@ -2365,6 +2367,18 @@
 
 	<message key="paginasEstaticas.sobreBDPI"><a href="/page/sobreBDPIEs">Sobre</a></message>
 	<message key="paginasEstaticas.sobreBDPI.trail">Sobre</message>
+	
+	<message key="paginasEstaticas.sobreBDPI.trail">Sobre</message>
+
+	<message key="paginasEstaticas.faq"><a href="/page/faqEs">FAQ</a></message>
+	
+	<message key="paginasEstaticas.faq.trail">FAQ</message>
+
+	<message key="paginasEstaticas.politicaUso.trail">Política de Uso</message>
+
+	<message key="paginasEstaticas.politicaUso"><a href="/page/politicaUsoEs">Política de Uso</a></message>
+	
+	<message key="paginasEstaticas.acesso">/a/acessoEs.php</message>
 
 <!-- ==================================================== -->
 <!-- FIM 130327 andre.assada@usp.br paginas estaticas FIM -->

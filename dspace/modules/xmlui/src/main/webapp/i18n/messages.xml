@@ -224,7 +224,9 @@
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateaccessioned">Browsing {0} by Submit Date {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateaccessioned">Browsing {0} by Submit Date</message>
-
+	
+	<!-- 130808 - Dan Shinkai - Adicionado parametro utilizado no JQuery para esconder autores -->
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.item.viewAuthor">See Authors</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CollectionViewer.java -->
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.search_scope">Browse search</message>
@@ -2390,6 +2392,12 @@ This is an important resource of spreading knowledge, preserving the material pr
 <message key="paginasEstaticas.direitosAutorais.trail">Copyright</message>
 <message key="paginasEstaticas.sobreBDPI"><a href="/page/sobreBDPIEnUS">About</a></message>
 <message key="paginasEstaticas.sobreBDPI.trail">About</message>
+<message key="paginasEstaticas.sobreBDPI.trail">Sobre</message>
+<message key="paginasEstaticas.faq"><a href="/page/faqEnUS">FAQ</a></message>
+<message key="paginasEstaticas.faq.trail">FAQ</message>
+<message key="paginasEstaticas.politicaUso.trail">Use Policy</message>
+<message key="paginasEstaticas.politicaUso"><a href="/page/politicaUsoEnUS">Use Policy</a></message>
+<message key="paginasEstaticas.acesso">/a/acessoEnUS.php</message>
 <!-- ==================================================== -->
 <!-- FIM 130327 andre.assada@usp.br paginas estaticas FIM -->
 <!-- ==================================================== -->

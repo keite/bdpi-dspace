@@ -230,7 +230,9 @@
 
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.item.dateaccessioned">Visualizar {0} pela Data de Submissão {1}</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.item.dateaccessioned">Visualizar {0} pela Data de Submissão</message>
-
+	
+	<!-- 130808 - Dan Shinkai - Adicionado parametro utilizado no JQuery para esconder autores -->
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.item.viewAuthor">Ver autores</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.CollectionViewer.java -->
 	<message key="xmlui.ArtifactBrowser.CollectionViewer.search_scope">Abrangência da Busca</message>
