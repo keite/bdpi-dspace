@@ -263,7 +263,39 @@
 				});
 			</script>
 			<!--  END - Script de acordeon para o Discovery - Tiago - 15-07-2013 -->
-
+		
+<!-- 130808 - Dan Shinkai - Codigo que esconde itens com mais de dez autores na lista de itens -->		
+<!-- Dicas: Sinais de '>' ou '<' nao sao reconhecidos diretamente no XSL. Portanto, adicionar dentro de uma tag <xsl:text disable-output-escaping="yes"> 
+			no formato '&gt;' para que seja reconhecido pelo HTML. -->
+			
+			<script type="text/javascript">
+				jQuery(document).ready(function() {
+				
+					$(".author").each(function() {
+						count = $(this).find("span").length;					
+						if(count <xsl:text disable-output-escaping="yes">&gt;</xsl:text> 10) {							
+							$(this).addClass("removeAuthor");
+							var autores = $("<xsl:text disable-output-escaping="yes">&lt;font class='authorLink'&gt;</xsl:text><i18n:text>xmlui.ArtifactBrowser.ConfigurableBrowse.item.viewAuthor</i18n:text><xsl:text disable-output-escaping="yes">&lt;/font&gt;</xsl:text>");
+							$(this).after(autores);									
+						}
+					});
+										
+					$(".artifact-info").click(function() {    
+						var author = $(this).find(".author");
+						
+						if($(author).css("display") == "none") {
+							$(this).find("font").css({"display" : "none"});																					
+							$(author).fadeIn("slow");
+							
+						} else {
+							$(author).css({"display" : "none"});
+							var autores = $("<xsl:text disable-output-escaping="yes">&lt;font class='authorLink'&gt;</xsl:text><i18n:text>xmlui.ArtifactBrowser.ConfigurableBrowse.item.viewAuthor</i18n:text><xsl:text disable-output-escaping="yes">&lt;/font&gt;</xsl:text>");
+							$(author).after(autores);
+						}
+					});
+				});					
+			</script>
+			<!-- FIM -->
 			
 			<!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
             <!-- There is also javascript to disable submitting a form when the 'enter' key is pressed. -->
@@ -392,6 +424,16 @@
 					  }							
 					</xsl:text>
 				</xsl:if>
+				
+				<xsl:if test="/dri:document/dri:body/dri:div/dri:div[@id='aspect.statistics.StatisticsTransformer.div.stats']">
+					<xsl:text>
+						var div = document.getElementById('aspect_statistics_StatisticsTransformer_div_stats');
+
+						var newText = document.createElement('textarea'); // create new textarea
+
+						div.appendChild(newText);						
+					</xsl:text>
+				</xsl:if>
             </script>
 			
 			
@@ -472,10 +514,42 @@
                         </xsl:when>
 <!-- FIM 130405 andre.assada@usp.br paginas estaticas FIM -->
 
+<!-- 130731 - Dan Shinkai - Paginas estaticas -->
 						<xsl:when test="starts-with($request-uri, 'page/ajuda')">
                                 <xsl:text>Ajuda</xsl:text>
                         </xsl:when>
 						
+						<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoPtBR')">
+                                <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoPtBR.xhtml'))"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+						
+						<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
+                                <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoEs.xhtml'))"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+						
+						<xsl:when test="starts-with($request-uri, 'page/politicaUsoEnUS')">
+                                <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoEnUS.xhtml'))"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+						
+						<xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
+                                <xsl:variable name="doc" select="document(concat($paginas,'faqPtBR.xhtml'))"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+						
+						<xsl:when test="starts-with($request-uri, 'page/faqEs')">
+                                <xsl:variable name="doc" select="document(concat($paginas,'faqEs.xhtml'))"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
+						
+						<xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
+                                <xsl:variable name="doc" select="document(concat($paginas,'faqEnUS.xhtml'))"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>-->
+<!-- FIM 130731 - Dan Shinkai - Paginas estaticas FIM -->						
+
                         <xsl:when test="not($page_title)">
                                 <xsl:text>  </xsl:text>
                         </xsl:when>
@@ -519,8 +593,6 @@
     &#160;
 </script>
 <!-- FIM 130327 andre.assada@usp.br nova barra usp by Marcio Eichler, agora com codigo centralizado em server unico FIM -->
-
-
 
         <div id="ds-header-wrapper">
             <div id="ds-header" class="clearfix">
@@ -645,7 +717,15 @@
     <xsl:template name="buildTrail">
 
 <!-- 130404 andre.assada@usp.br links informativos da bdpi ; o link eh criado no messages_xx.xml para adequar locales -->
+<!-- 130731 Dan Shinkai - Adicionado link para politica de uso -->
             <div id="ds-trail-informacoes">
+				<!--<i18n:text>paginasEstaticas.politicaUso</i18n:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>-->
                 <i18n:text>paginasEstaticas.politicaAcesso</i18n:text>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
@@ -668,58 +748,82 @@
             <ul id="ds-trail">
                 <xsl:choose>
                     <xsl:when test="starts-with($request-uri, 'page/politicaAcessoPtBR')">
-                         <i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisPtBR')">
-                         <i18n:text>paginasEstaticas.direitosAutorais.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.direitosAutorais.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/sobreBDPIPtBR')">
-                         <i18n:text>paginasEstaticas.sobreBDPI.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.sobreBDPI.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/creditosBDPIPtBR')">
-                         <i18n:text>paginasEstaticas.creditos.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.creditos.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIPtBR')">
-                         <i18n:text>paginasEstaticas.privacidade.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.privacidade.trail</i18n:text></li>
                     </xsl:when>
-
+					
+					<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoPtBR')">
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
+                    </xsl:when>
+					
+					<xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
+                    </xsl:when>-->
+					
                     <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEnUS')">
-                         <i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisEnUS')">
-                         <i18n:text>paginasEstaticas.direitosAutorais.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.direitosAutorais.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/sobreBDPIEnUS')">
-                         <i18n:text>paginasEstaticas.sobreBDPI.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.sobreBDPI.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/creditosBDPIEnUS')">
-                         <i18n:text>paginasEstaticas.creditos.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.creditos.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEnUS')">
-                         <i18n:text>paginasEstaticas.privacidade.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.privacidade.trail</i18n:text></li>
                     </xsl:when>
-
+					
+					<!--<xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
+                    </xsl:when>
+					
+					<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
+                    </xsl:when>-->
+					
                     <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEs')">
-                         <i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/direitosAutoraisEs')">
-                         <i18n:text>paginasEstaticas.direitosAutorais.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.direitosAutorais.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/sobreBDPIEs')">
-                         <i18n:text>paginasEstaticas.sobreBDPI.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.sobreBDPI.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/creditosBDPIEs')">
-                         <i18n:text>paginasEstaticas.creditos.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.creditos.trail</i18n:text></li>
                     </xsl:when>
                     <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEs')">
-                         <i18n:text>paginasEstaticas.privacidade.trail</i18n:text>
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.privacidade.trail</i18n:text></li>
                     </xsl:when>
+					
+					<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
+                    </xsl:when>
+					
+					<xsl:when test="starts-with($request-uri, 'page/faqEs')">
+                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
+                    </xsl:when>-->
 					
 					<xsl:when test="starts-with($request-uri, 'page/ajuda')">
                          <li class="ds-trail-link first-link">Ajuda</li>
                     </xsl:when>
-
-                    <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
+					
+					<xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
                         <li class="ds-trail-link first-link">-</li>
                     </xsl:when>
                     <xsl:otherwise>
@@ -871,6 +975,10 @@
                         </a>
                         <xsl:text>&#160;&#160;</xsl:text>
                     </div>
+					<!--<div id="ds-footer-right-privacy">
+                        <b><i18n:text>paginasEstaticas.faq</i18n:text></b>
+                        <xsl:text>&#160;&#160;</xsl:text>
+                    </div>-->
 
                     <br/>
                     @2012 - SIBiUSP<br/>
@@ -1075,7 +1183,45 @@
                         <xsl:copy-of select="$doc"/>
                    </div>
                 </xsl:when>
-
+				
+				<xsl:when test="starts-with($request-uri, 'page/politicaUsoPtBR')">
+                    <div>
+                        <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoPtBR.xhtml'))"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/politicaUsoEnUS')">
+                    <div>
+                        <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoEnUS.xhtml'))"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
+                    <div>
+                        <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoEs.xhtml'))"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+				
+				<xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
+                    <div>
+                        <xsl:variable name="doc" select="document(concat($paginas,'faqPtBR.xhtml'))"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
+                    <div>
+                        <xsl:variable name="doc" select="document(concat($paginas,'faqEnUS.xhtml'))"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+                <xsl:when test="starts-with($request-uri, 'page/faqEs')">
+                    <div>
+                        <xsl:variable name="doc" select="document(concat($paginas,'faqEs.xhtml'))"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
+				
                 <!-- Otherwise use default handling of body -->
                 <xsl:otherwise>
                     <xsl:apply-templates />
@@ -1083,6 +1229,22 @@
             </xsl:choose>
 
         </div>
+<!-- 130805 - Dan Shinkai - Implementacao do javascript para permitir a insercao do iframe na pagina de estatisticas. -->
+		<xsl:text disable-output-escaping="yes">&lt;script type="text/javascript"&gt;</xsl:text>		
+			<xsl:if test="/dri:document/dri:body/dri:div/dri:div[@id='aspect.statistics.StatisticsTransformer.div.stats']">
+				<xsl:text>										
+					ifrm = document.createElement("IFRAME"); 
+ 				    ifrm.setAttribute("src", "</xsl:text><xsl:value-of select="confman:getProperty('dspace.baseUrl')"/><xsl:text>/a/acesso.php"); 
+				    ifrm.setAttribute("frameborder", "0"); 
+				    ifrm.setAttribute("scrolling", "no"); 
+				    ifrm.style.width = 100+"%"; 
+				    ifrm.style.height = 700+"px";    
+				    var div = document.getElementById('aspect_statistics_StatisticsTransformer_div_stats');
+				    div.appendChild(ifrm); 	
+				</xsl:text>
+			</xsl:if>
+		<xsl:text disable-output-escaping="yes">&lt;/script&gt;</xsl:text>
+		
     </xsl:template>
 
 
