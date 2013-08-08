@@ -2506,10 +2506,10 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
     <message key="xmlui.Discovery.AbstractSearch.type_dc.subject_filter">Filtrar por: Assunto</message>
     <message key="xmlui.Discovery.AbstractSearch.type_dc.date.issued.year_filter">Filtrar por: Data de publicação</message>
     <message key="xmlui.Discovery.AbstractSearch.type_dc.relation.ispartof_filter">Filtrar por: Revista</message>
-	<message key="xmlui.Discovery.AbstractSearch.type_sponsor">Filtrar por: Revista</message>
+	<message key="xmlui.Discovery.AbstractSearch.type_sponsor">Filtrar por: Agência de Fomento</message>
 	<message key="xmlui.Discovery.AbstractSearch.type_subject">Filtrador por: Assunto</message>
     <message key="xmlui.Discovery.AbstractSearch.type_usp.remissiva.sponsor_filter">Filtrar por: Agência de Fomento</message>
-	<message key="xmlui.Discovery.AbstractSearch.type_ispartof">Filtrar por: Agência de Fomento</message>
+	<message key="xmlui.Discovery.AbstractSearch.type_ispartof">Filtrar por: Revista</message>
     <message key="xmlui.Discovery.AbstractSearch.startswith">Inicia com</message>
     <message key="xmlui.Discovery.AbstractSearch.startswith.help">Ou informe as primeiras letras:</message>
 	<message key="xmlui.Discovery.AbstractSearch.sort_by.head">Opção de ordenação:</message>
