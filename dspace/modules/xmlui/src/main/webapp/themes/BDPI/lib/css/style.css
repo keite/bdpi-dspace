@@ -11,6 +11,7 @@
  * Primary Styles
  */
 
+ 
 /*Font size percentages based on the tables at developer.yahoo.com/yui/fonts/ */
 h1 {
     font-size: 182%;
@@ -2175,3 +2176,18 @@ table.discovery-filters th.new-filter-header
 {
 border: 1px dotted #ccc;
 }
+
+/* =================================================================================== */
+/* 130808 CSS relacionado com o efeito JQuery de esconder autores na lista de itens    */
+/* @author Dan Shinkai (SI/EACH/USP)                                                   */
+/* ==================================================================================  */
+
+.removeAuthor {
+	display: none;
+ }
+ 
+ .authorLink {
+	text-decoration: underline;
+ }
+ 
+/* =====================================FIM========================================== */

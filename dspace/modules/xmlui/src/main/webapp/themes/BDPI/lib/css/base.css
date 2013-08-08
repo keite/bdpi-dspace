@@ -25,9 +25,15 @@ html { -webkit-font-smoothing: antialiased; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-a, a:active, a:visited { color:#607890; }
-a:hover { color:#036; }
+/* ============================================================================== */
+/* 130808 CSS alterado para o efeito JQuery de esconder autores na lista de item  */
+/* @author Dan Shinkai (SI/EACH/USP)                                              */
+/* ============================================================================== */
 
+a, a:active, a:visited, .authorLink { color:#607890; }
+a:hover, .authorLink { color:#036; }
+
+/* =====================================FIM====================================== */
 
 ul { margin-left:30px; }
 ol { margin-left:30px; list-style-type: decimal; }
