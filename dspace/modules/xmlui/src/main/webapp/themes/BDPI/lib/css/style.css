@@ -1573,10 +1573,15 @@ span.field-help {
     font-size: 123.1%;
 }
 
+/* 130808 - Dan Shinkai - Adicionado espacamento para melhor efeito do JQuery para esconder autores */
+
 .result-query,
 .artifact-info {
     color: gray;
+	margin-top: 2px;
 }
+
+/* FIM  */
 
 .artifact-abstract {
     text-align: justify;
