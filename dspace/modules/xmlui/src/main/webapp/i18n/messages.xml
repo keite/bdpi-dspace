@@ -2545,6 +2545,7 @@ This is an important resource of spreading knowledge, preserving the material pr
 	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restrictedAccess">Restricted Access</message>
 	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted_IP_USP">Restricted (IP USP)</message>
 	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted_embargo">Restricted (embargo)</message>
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted">Restricted</message>
 	
 	<!-- FIM -->
 

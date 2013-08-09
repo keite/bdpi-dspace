@@ -2550,6 +2550,7 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restrictedAccess">Acesso Restrito</message>
 	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted_IP_USP">Restrito (IP USP)</message>
 	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted_embargo">Restrito (embargo)</message>
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted">Restrito</message>
 	
 	<!-- FIM -->
 
