@@ -848,7 +848,7 @@
 	<message key="xmlui.Submission.submit.ReviewStep.head">Revisar submissão</message>
 	<message key="xmlui.Submission.submit.ReviewStep.yes">Sim</message>
 	<message key="xmlui.Submission.submit.ReviewStep.no">Não</message>
-	<message key="xmlui.Submission.submit.ReviewStep.submit_jump">Corrigir um desses</message>
+	<message key="xmlui.Submission.submit.ReviewStep.submit_jump">Corrigir informações</message>
 	<message key="xmlui.Submission.submit.ReviewStep.submit_jump_files">Adicionar ou remover arquivos</message>
 	<message key="xmlui.Submission.submit.ReviewStep.head1">Questões iniciais</message>
 	<message key="xmlui.Submission.submit.ReviewStep.head2">Descrever página {0}</message>
