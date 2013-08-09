@@ -187,6 +187,15 @@ public abstract class RichTextContainer extends TextContainer
         xref.addContent(key);
     	contents.add(xref);
     }
+	
+	/** 130809 - Dan Shinkai - Funcao criado para concatenar um Message com uma String. **/
+	public void addXrefConcatMessage(String target, Message key, String characters) throws WingException
+    {
+        Xref xref = new Xref(context, target);
+        xref.addContent(key);
+		xref.addContent(characters);
+    	contents.add(xref);
+    }
 
     /**
      * Add a figure element to the character container.
