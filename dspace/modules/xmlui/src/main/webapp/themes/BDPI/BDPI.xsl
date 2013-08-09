@@ -47,6 +47,11 @@
 </xsl:template>
 <!-- FIM 130411 andre.assada@usp.br retirar busca da capa / pagina inicial (front page) FIM -->
 
+<!-- 130808 - Dan Shinkai - Retirar busca da capa / pagina inicial (front page) gerado pelo Discovery  -->
+<xsl:template name="disable_front-page-search_discovery" match="dri:document/dri:body/dri:div[@id='aspect.discovery.SiteViewer.div.front-page-search']">
+</xsl:template>
+<!-- FIM -->
+
 <!-- 130411 andre.assada@usp.br retirar lista de comunidades (community list) da capa / pagina inicial (front page) -->
 <!-- tive que inserir o div literalmente aqui; por que nao esta pegando do template? esse div eh necessario pra lista expansivel funcionar @TODO: fixme-->
 <xsl:template name="disable_front-page-browse" match="dri:div[@id='aspect.artifactbrowser.CommunityBrowser.div.comunity-browser']">
