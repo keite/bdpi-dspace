@@ -2525,7 +2525,14 @@
 
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.head">Refinar</message>
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">... Ver más</message>
-
+	
+	<!-- 130808 - Dan Shinkai - Messages para traducao do sidebar -->
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.open_access">Acceso Abierto</message>
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restrictedAccess">Acceso Restrictivo</message>
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted_IP_USP">Restrictivo (IP USP)</message>
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted_embargo">Restrictivo (embargo)</message>
+	
+	<!-- FIM -->
 
 	    <!-- SwordClient -->
 

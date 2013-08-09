@@ -2539,7 +2539,14 @@ This is an important resource of spreading knowledge, preserving the material pr
 
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.head">Refine</message>
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">... view more</message>
-
+	
+	<!-- 130808 - Dan Shinkai - Messages para traducao do sidebar -->
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.open_access">Open Access</message>
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restrictedAccess">Restricted Access</message>
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted_IP_USP">Restricted (IP USP)</message>
+	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted_embargo">Restricted (embargo)</message>
+	
+	<!-- FIM -->
 
 	    <!-- SwordClient -->
 
