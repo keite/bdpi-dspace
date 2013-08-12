@@ -2544,7 +2544,6 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.head">Refinar</message>
     <message key="xmlui.discovery.AbstractFiltersTransformer.filters.view-more">... Ver mais</message>
 	
-	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restricted">Restrito</message>
 	<!-- 130808 - Dan Shinkai - Messages para traducao do sidebar -->
 	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.open_access">Acesso Aberto</message>
 	<message key="xmlui.discovery.SidebarFacetsTransformer.metadata.restrictedAccess">Acesso Restrito</message>
