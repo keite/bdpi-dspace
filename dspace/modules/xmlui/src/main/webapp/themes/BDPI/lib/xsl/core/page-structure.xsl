@@ -948,9 +948,9 @@
                         </td>
                         <td>
                         <div id="ds-footer-info-sibi">
-                        Rua da Praça do Rel&#243;gio, 109 - Bloco K - 4&#186; andar<br/>
+                        Rua da Biblioteca, S&#47;N - Complexo Brasiliana<br/>
                         05508-050 - Cidade Universit&#225;ria, S&#227;o Paulo, SP - Brasil<br/>
-                        Tel: (0xx11) 3091-4195 e 3091-1547 Fax: (0xx11) 3091-1567<br/>
+                        Tel: (0xx11) 3091-4195 e 3091-1541 Fax: (0xx11) 3091-1567<br/>
                         E-mail: <a href="mailto:atendimento@sibi.usp.br">atendimento@sibi.usp.br</a><br/>
                         </div>
                         </td>
