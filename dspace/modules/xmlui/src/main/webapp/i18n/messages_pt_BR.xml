@@ -2930,5 +2930,8 @@ Para obtener más información acerca de como añadir este repositório y su pro
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.ispartof">Revista</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.sponsor">Agência de fomento</message>
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.access">Acesso</message>
-	
+
+<!-- org.dspace.app.xmlui.eperson.OAuthEditProfile.java janleduc@usp.br 13.ago.2013 -->
+<message key="xmlui.EPerson.OAuthEditProfile.textlinktoprovider">Acessar USP Digital</message>
+
 </catalogue>

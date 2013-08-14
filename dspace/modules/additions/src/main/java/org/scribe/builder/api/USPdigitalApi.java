@@ -2,11 +2,13 @@ package org.scribe.builder.api;
 
 import org.scribe.model.*;
 import java.util.*;
+import org.dspace.core.ConfigurationManager;
 
 public class USPdigitalApi extends DefaultApi10a
 {
-  private static final String AUTHORIZE_URL = "https://labs.uspdigital.usp.br/wsusuario/oauth/authorize?oauth_token=%s";
-  private static final String REQUEST_TOKEN_URL = "https://labs.uspdigital.usp.br/wsusuario/oauth/request_token";
+  private static final String AUTHORIZE_URL = ConfigurationManager.getProperty("authentication-oauth", "AUTHORIZE_URL");
+  private static final String REQUEST_TOKEN_URL = ConfigurationManager.getProperty("authentication-oauth", "REQUEST_TOKEN_URL");
+  private static final String ACCESS_TOKEN_ENDPOINT = ConfigurationManager.getProperty("authentication-oauth", "ACCESS_TOKEN_ENDPOINT");
 
   private final Set<String> scopes;
 
@@ -23,7 +25,7 @@ public class USPdigitalApi extends DefaultApi10a
   @Override
   public String getAccessTokenEndpoint()
   {
-    return "https://labs.uspdigital.usp.br/wsusuario/oauth/access_token";
+    return ACCESS_TOKEN_ENDPOINT;
   }
 
   @Override

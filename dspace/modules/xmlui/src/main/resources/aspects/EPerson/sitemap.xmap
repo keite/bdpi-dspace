@@ -21,18 +21,12 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 		<map:transformers>
 			<map:transformer name="Navigation" src="org.dspace.app.xmlui.aspect.eperson.Navigation"/>
 			
-			<!-- [START] OAuth authentication - 03.mai.2013 - janleduc@usp.br -->
-			<map:transformer name="OAuthStartRegistration" src="org.dspace.app.xmlui.aspect.eperson.OAuthStartRegistration"/>
-			<map:transformer name="OAuthVerifyEmail" src="org.dspace.app.xmlui.aspect.eperson.OAuthVerifyEmail"/>
-			<map:transformer name="OAuthEditProfile" src="org.dspace.app.xmlui.aspect.eperson.OAuthEditProfile"/>
-			<map:transformer name="OAuthRegistrationFinished" src="org.dspace.app.xmlui.aspect.eperson.OAuthRegistrationFinished"/>
-			<map:transformer name="OAuthCannotRegister" src="org.dspace.app.xmlui.aspect.eperson.OAuthCannotRegister"/>
-			<map:transformer name="OAuthInvalidToken" src="org.dspace.app.xmlui.aspect.eperson.OAuthInvalidToken"/>
-			<!-- OAuth authentication - 03.mai.2013 - janleduc@usp.br [END] -->
-			
-			<map:transformer name="StartRegistration" src="org.dspace.app.xmlui.aspect.eperson.StartRegistration"/>
+                        <map:transformer name="StartRegistration" src="org.dspace.app.xmlui.aspect.eperson.StartRegistration"/>
 			<map:transformer name="VerifyEmail" src="org.dspace.app.xmlui.aspect.eperson.VerifyEmail"/>
-			<map:transformer name="EditProfile" src="org.dspace.app.xmlui.aspect.eperson.EditProfile"/>
+                        <!-- [START] substituindo EditProfile -->
+			<!-- <map:transformer name="EditProfile" src="org.dspace.app.xmlui.aspect.eperson.EditProfile"/> -->
+			<map:transformer name="EditProfile" src="org.dspace.app.xmlui.aspect.eperson.OAuthEditProfile"/>
+                        <!-- [END] -->
 			<map:transformer name="RegistrationFinished" src="org.dspace.app.xmlui.aspect.eperson.RegistrationFinished"/>
 			<map:transformer name="CannotRegister" src="org.dspace.app.xmlui.aspect.eperson.CannotRegister"/>
 			<map:transformer name="InvalidToken" src="org.dspace.app.xmlui.aspect.eperson.InvalidToken"/>
@@ -45,7 +39,7 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 			<map:transformer name="LoginChooser" src="org.dspace.app.xmlui.aspect.eperson.LoginChooser"/>
 			<map:transformer name="FailedAuthentication" src="org.dspace.app.xmlui.aspect.eperson.FailedAuthentication" />
 			
-			</map:transformers>
+		</map:transformers>
 		
 		<map:actions>
 			<map:action name="AuthenticateAction" src="org.dspace.app.xmlui.aspect.eperson.AuthenticateAction"/>
@@ -71,17 +65,9 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 	</map:flow>
 	
 	<map:pipelines>
-		<map:pipeline>
-			
-			
-			<!-- Start a new user registration flow -->
-			<map:match pattern="oauthregister">
-				<map:match type="request" pattern="eperson-continue">
-					<map:call continuation="{1}"/>
-				</map:match>
-				<map:call function="doOauthRegister"/>
-			</map:match>
-
+		<map:pipeline type="noncaching">
+                        <map:parameter name="expires" value="now"/>
+                        
 			<!-- Start a new user registration flow -->
 			<map:match pattern="register">
 			
@@ -119,29 +105,29 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 			
 			
 			<!-- 
-					Add the basic navigation content to every page. This includes:
-					
-					1) Metadata about the authenticated user.
-					   - This includes language information, whether the user is authenticated or not.
-					2) Navigation links for logging in and logging out.
-					3) User contextual navigation items such as editing your profile, registering etc.
-					-->
+                        Add the basic navigation content to every page. This includes:
+
+                        1) Metadata about the authenticated user.
+                           - This includes language information, whether the user is authenticated or not.
+                        2) Navigation links for logging in and logging out.
+                        3) User contextual navigation items such as editing your profile, registering etc.
+                        -->
 			<map:transform type="Navigation"/>
 			
 			
 			<!--
-					Perform a DSpace login. If the user's credentials are valid then the 
-					AuthenticateAction will succeed and a HTTP redirect will be sent to 
-					another page. If the credentials are not valid then a form will be 
-					displayed requesting new credentials.
-					
-					There are typically two methods by which the user arrives at this url, 
-					one the user type in or followed a link straight to /login. The other 
-					is that they were trying to access a part of the system that required 
-					authentication. When this happens they will receive a redirect to the 
-					/login form, as such they will not be presenting any credentials and 
-					will display the login form.  
-				 	-->
+                        Perform a DSpace login. If the user's credentials are valid then the 
+                        AuthenticateAction will succeed and a HTTP redirect will be sent to 
+                        another page. If the credentials are not valid then a form will be 
+                        displayed requesting new credentials.
+
+                        There are typically two methods by which the user arrives at this url, 
+                        one the user type in or followed a link straight to /login. The other 
+                        is that they were trying to access a part of the system that required 
+                        authentication. When this happens they will receive a redirect to the 
+                        /login form, as such they will not be presenting any credentials and 
+                        will display the login form.  
+                        -->
 			<map:match pattern="login">
 			    <map:select type="AuthenticationCountSelector">
 			      <map:when test="0">
@@ -160,44 +146,44 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 			</map:match>
 			
 			<!-- 
-				The following are matches to the URL returned by the stackable authentication
-				methods defined in the dspace.cnf file
+                        The following are matches to the URL returned by the stackable authentication
+                        methods defined in the dspace.cnf file
 			-->
 
 			<!-- [START] OAuth authentication - 03.mai.2013 - janleduc@usp.br -->
-	        <map:match pattern="oauth-login">
-	            <map:act type="OAuthAction">
-	               <!-- Loggin succeeded, request will be forwarded. -->
-	               <map:serialize type="xml"/>
-	            </map:act>
-	            
-	            <!-- Login failed, try again. Show them static content from xml file --> 
-	            <map:transform type="FailedAuthentication" />  
-	            <map:serialize type="xml"/>
-	        </map:match>
+                        <map:match pattern="oauth-login">
+                            <map:act type="OAuthAction">
+                               <!-- Loggin succeeded, request will be forwarded. -->
+                               <map:serialize type="xml"/>
+                            </map:act>
+
+                            <!-- Login failed, try again. Show them static content from xml file --> 
+                            <map:transform type="FailedAuthentication" />  
+                            <map:serialize type="xml"/>
+                        </map:match>
 			<!-- OAuth authentication - 03.mai.2013 - janleduc@usp.br [END] -->
 		
-			<map:match pattern="password-login">
-				<map:act type="AuthenticateAction">
-					<!-- Login succeeded, request will be forwarded. -->
-					<map:serialize type="xml"/>
-				</map:act>
-				
-				<!-- Login failed, try again. --> 
-				<map:transform type="PasswordLogin"/>
-				<map:serialize type="xml"/>
-			</map:match>
+                        <map:match pattern="password-login">
+                                <map:act type="AuthenticateAction">
+                                        <!-- Login succeeded, request will be forwarded. -->
+                                        <map:serialize type="xml"/>
+                                </map:act>
+
+                                <!-- Login failed, try again. --> 
+                                <map:transform type="PasswordLogin"/>
+                                <map:serialize type="xml"/>
+                        </map:match>
 			
-         <map:match pattern="certificate-login">
-            <map:act type="AuthenticateAction">
-               <!-- Loggin succeeded, request will be forwarded. -->
-               <map:serialize type="xml"/>
-            </map:act>
-            
-            <!-- Login failed, try again. Show them static content from xml file --> 
-            <map:transform type="FailedAuthentication" />  
-            <map:serialize type="xml"/>
-         </map:match>
+                        <map:match pattern="certificate-login">
+                           <map:act type="AuthenticateAction">
+                              <!-- Loggin succeeded, request will be forwarded. -->
+                              <map:serialize type="xml"/>
+                           </map:act>
+
+                           <!-- Login failed, try again. Show them static content from xml file --> 
+                           <map:transform type="FailedAuthentication" />  
+                           <map:serialize type="xml"/>
+                        </map:match>
          
 			<map:match pattern="shibboleth-login">
 				<map:act type="ShibbolethAction">
@@ -222,9 +208,9 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 			</map:match>
 			
 			<!--
-					Log the user out. The UnAuthenticateAction can not fail and will 
-					always redirect the user to the DSpace homepage.
-					-->
+                        Log the user out. The UnAuthenticateAction can not fail and will 
+                        always redirect the user to the DSpace homepage.
+                        -->
 			<map:match pattern="logout">
 				<map:act type="UnAuthenticateAction">
 					<!-- logout succeeded, request will be forwarded to the homepage. -->
@@ -232,69 +218,11 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 				</map:act>
 				<map:serialize type="xml"/>
 			</map:match>
-			
-						
-			<!-- [START] OAuth authentication - 03.mai.2013 - janleduc@usp.br -->
+                        
 			<!--
-					Registration multi-part form. The controller for this form is the 
-					register flow script defined above.
-					-->
-			<map:match pattern="oauthregister/**">
-								
-				<map:match pattern="oauthregister/start">
-					<map:transform type="OAuthStartRegistration">
-						<map:parameter name="email" value="{flow-attribute:email}"/>
-						<map:parameter name="numerusp" value="{flow-attribute:numerusp}"/>
-						
-						<map:parameter name="usp_bdpi_oauth_loginUsuario" value="{flow-attribute:usp_bdpi_oauth_loginUsuario}"/>           
-						<map:parameter name="usp_bdpi_oauth_nomeUsuario" value="{flow-attribute:usp_bdpi_oauth_nomeUsuario}"/>            
-						<map:parameter name="usp_bdpi_oauth_tipoUsuario" value="{flow-attribute:usp_bdpi_oauth_tipoUsuario}"/>            
-						<map:parameter name="usp_bdpi_oauth_emailPrincipalUsuario" value="{flow-attribute:usp_bdpi_oauth_emailPrincipalUsuario}"/>  
-						<map:parameter name="usp_bdpi_oauth_emailAlternativoUsuario" value="{flow-attribute:usp_bdpi_oauth_emailAlternativoUsuario}"/>
-						<map:parameter name="usp_bdpi_oauth_emailUspUsuario" value="{flow-attribute:usp_bdpi_oauth_emailUspUsuario}"/>        
-						<map:parameter name="usp_bdpi_oauth_numeroTelefoneFormatado" value="{flow-attribute:usp_bdpi_oauth_numeroTelefoneFormatado}"/>
-												
-						<map:parameter name="errors" value="{flow-attribute:errors}"/>
-						<map:parameter name="accountExists" value="{flow-attribute:accountExists}"/>
-					</map:transform>
-				</map:match>
-				
-				<map:match pattern="oauthregister/verify">
-					<map:transform type="OAuthVerifyEmail">
-						<map:parameter name="email" value="{flow-attribute:email}"/>
-						<map:parameter name="forgot" value="false"/>
-					</map:transform>
-				</map:match>
-		  	
-			  	<map:match pattern="oauthregister/profile">
-			  		<map:transform type="OAuthEditProfile">
-			  			<map:parameter name="registering" value="true"/>
-			  			<map:parameter name="email" value="{flow-attribute:email}"/>
-			  			<map:parameter name="allowSetPassword" value="{flow-attribute:allowSetPassword}"/>
-			  			<map:parameter name="errors" value="{flow-attribute:errors}"/>
-			  		</map:transform>
-			  	</map:match>
-		  	
-				<map:match pattern="oauthregister/finished">
-					<map:transform type="OAuthRegistrationFinished"/>
-				</map:match>
-		  	
-		  		<!-- Exception states -->
-				<map:match pattern="oauthregister/cannot">
-					<map:transform type="OAuthCannotRegister"/>
-				</map:match>
-				
-				<map:match pattern="oauthregister/invalid-token">
-					<map:transform type="OAuthInvalidToken"/>
-				</map:match>
-  			</map:match>
-			<!-- OAuth authentication - 03.mai.2013 - janleduc@usp.br [END] -->
-			
-			
-			<!--
-					Registration multi-part form. The controller for this form is the 
-					register flow script defined above.
-					-->
+                        Registration multi-part form. The controller for this form is the 
+                        register flow script defined above.
+                        -->
 			<map:match pattern="register/**">
 								
 				<map:match pattern="register/start">
@@ -337,9 +265,9 @@ registration, forgotten passwords, editing profiles, and changing passwords.
 			
 			
 			<!--
-					Registration multi-part form. The controller for this form is the 
-					register flow script defined above.
-					-->
+                        Registration multi-part form. The controller for this form is the 
+                        register flow script defined above.
+                        -->
 			<map:match pattern="forgot/**">
 				
 				<map:match pattern="forgot/start">
