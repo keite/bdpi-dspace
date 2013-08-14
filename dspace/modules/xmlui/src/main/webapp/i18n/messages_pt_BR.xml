@@ -2088,7 +2088,12 @@
 
 	<message key="xmlui.dri2xhtml.structural.link_cc">Creative Commons</message>
 	<message key="xmlui.dri2xhtml.structural.link_original_license">Licença Original</message>
-		
+	
+	<!-- 130814 - Dan Shinkai - Traducao para javascript referente ao fontresizer.js -->
+	<message key="xmlui.dri2xhtml.structural.font_increase">Aumentar fonte</message>
+	<message key="xmlui.dri2xhtml.structural.font_decrease">Reduzir fonte</message>
+	<message key="xmlui.dri2xhtml.structural.font_default">Padrão</message>
+	<!-- FIM -->
 		
 	<!-- DS-METS-1.0-MODS.xsl -->
 	<!-- DS-METS-1.0-DIM.xsl -->
