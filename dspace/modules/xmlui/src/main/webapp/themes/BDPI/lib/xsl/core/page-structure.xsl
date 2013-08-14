@@ -725,29 +725,30 @@
 			<!-- 120612 Josi fontResizer botoes para o user clicar e alterar -->
 			<!-- 130813 - Dan Shinkai - Alterado FontResizer -->
 			<div id="ds-font-resize">
-				<a id="fnt_small" href="javascript:void(0);" onclick="changeFont('small')" title="Reduzir tamanho da fonte"><img>
-				<xsl:attribute name="src">
+				
+				<xsl:text disable-output-escaping="yes">&lt;a id="fnt_small" href="javascript:void(0);" onclick="changeFont('small')" title='</xsl:text>
+				<i18n:text>xmlui.dri2xhtml.structural.font_decrease</i18n:text>
+				<xsl:text disable-output-escaping="yes">'&gt;&lt;img src="</xsl:text>
 				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-				<xsl:text>/themes/</xsl:text>
+				<xsl:text disable-output-escaping="yes">/themes/</xsl:text>
 				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
-				<xsl:text>/images/fnt_small.gif</xsl:text>
-				</xsl:attribute></img></a>
-
-				<a id="fnt_reset" href="javascript:void(0);" onclick="changeFont('reset');" title="default"><img>
-				<xsl:attribute name="src">
+				<xsl:text disable-output-escaping="yes">/images/fnt_small.gif"&gt;&lt;/img&gt;&lt;/a&gt;</xsl:text>
+				
+				<xsl:text disable-output-escaping="yes">&lt;a id="fnt_reset" href="javascript:void(0);" onclick="changeFont('reset')" title='</xsl:text>
+				<i18n:text>xmlui.dri2xhtml.structural.font_default</i18n:text>
+				<xsl:text disable-output-escaping="yes">'&gt;&lt;img src="</xsl:text>
 				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-				<xsl:text>/themes/</xsl:text>
+				<xsl:text disable-output-escaping="yes">/themes/</xsl:text>
 				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
-				<xsl:text>/images/fnt_reset.gif</xsl:text>
-				</xsl:attribute></img></a>
-
-						<a id="fnt_big" href="javascript:void(0);" onclick="changeFont('big');" title="Aumentar tamanho da fonte"><img>
-				<xsl:attribute name="src">
+				<xsl:text disable-output-escaping="yes">/images/fnt_reset.gif"&gt;&lt;/img&gt;&lt;/a&gt;</xsl:text>
+				
+				<xsl:text disable-output-escaping="yes">&lt;a id="fnt_big" href="javascript:void(0);" onclick="changeFont('big')" title='</xsl:text>
+				<i18n:text>xmlui.dri2xhtml.structural.font_increase</i18n:text>
+				<xsl:text disable-output-escaping="yes">'&gt;&lt;img src="</xsl:text>
 				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-				<xsl:text>/themes/</xsl:text>
+				<xsl:text disable-output-escaping="yes">/themes/</xsl:text>
 				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
-				<xsl:text>/images/fnt_big.gif</xsl:text>
-				</xsl:attribute></img></a>
+				<xsl:text disable-output-escaping="yes">/images/fnt_big.gif"&gt;&lt;/img&gt;&lt;/a&gt;</xsl:text>
 
 				<script type="text/javascript">
 				<xsl:text>
