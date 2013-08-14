@@ -252,6 +252,16 @@
 			<xsl:attribute name="src">
 			<xsl:text>http://code.jquery.com/ui/1.10.3/jquery-ui.js</xsl:text>
 			</xsl:attribute>&#160;</script>
+			<!-- 120611 FontResizer chamada do js -->
+			<script type="text/javascript">
+			<xsl:attribute name="src">
+			<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+			<xsl:text>/themes/</xsl:text>
+			<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+			<xsl:text>/lib/js/fontresizer.js</xsl:text>
+			</xsl:attribute>&#160;</script>
+			<!-- ========== -->
+			
 			<script type="text/javascript">
 				$(function(){
 				$('#aspect_discovery_Navigation_list_discovery ul li h2').click(function(event){ var elem = $(this).next();
@@ -712,6 +722,40 @@
 <!-- FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM -->
 
         </div>
+			<!-- 120612 Josi fontResizer botoes para o user clicar e alterar -->
+			<!-- 130813 - Dan Shinkai - Alterado FontResizer -->
+			<div id="ds-font-resize">
+				<a id="fnt_small" href="javascript:void(0);" onclick="changeFont('small')" title="Reduzir tamanho da fonte"><img>
+				<xsl:attribute name="src">
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+				<xsl:text>/themes/</xsl:text>
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+				<xsl:text>/images/fnt_small.gif</xsl:text>
+				</xsl:attribute></img></a>
+
+				<a id="fnt_reset" href="javascript:void(0);" onclick="changeFont('reset');" title="default"><img>
+				<xsl:attribute name="src">
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+				<xsl:text>/themes/</xsl:text>
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+				<xsl:text>/images/fnt_reset.gif</xsl:text>
+				</xsl:attribute></img></a>
+
+						<a id="fnt_big" href="javascript:void(0);" onclick="changeFont('big');" title="Aumentar tamanho da fonte"><img>
+				<xsl:attribute name="src">
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+				<xsl:text>/themes/</xsl:text>
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+				<xsl:text>/images/fnt_big.gif</xsl:text>
+				</xsl:attribute></img></a>
+
+				<script type="text/javascript">
+				<xsl:text>
+						var cursize = GetCookie('font-size');
+						if (cursize == null) cursize='reset';
+						changeFont(cursize);</xsl:text>
+				</script>
+			</div>
     </xsl:template>
 
 
