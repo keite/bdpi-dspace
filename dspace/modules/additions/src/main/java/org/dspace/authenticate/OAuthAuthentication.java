@@ -8,10 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
 import static org.dspace.authenticate.AuthenticationMethod.NO_SUCH_USER;
 import org.dspace.authorize.AuthorizeException;
-import org.dspace.authorize.AuthorizeManager;
 import org.dspace.core.ConfigurationManager;
 import org.dspace.core.Context;
-import org.dspace.core.LogManager;
 import org.dspace.eperson.EPerson;
 import org.dspace.eperson.Group;
 
@@ -48,13 +46,13 @@ public class OAuthAuthentication
     }
     
     private void setRequestToken(HttpServletRequest httprequest) {
-        System.out.println("chamou setRequestToken");
+        // System.out.println("chamou setRequestToken");
         httprequest.getSession().setAttribute("requesttoken", getOauthservice(httprequest).getRequestToken());
-        System.out.println("olha o token agora: ".concat(((Token) httprequest.getSession().getAttribute("requesttoken")).getToken()));
+        // System.out.println("olha o token agora: ".concat(((Token) httprequest.getSession().getAttribute("requesttoken")).getToken()));
     }
 
     private Token getRequestToken(HttpServletRequest httprequest) {
-        System.out.println("chamou getRequestToken");
+        // System.out.println("chamou getRequestToken");
         if (httprequest.getSession().getAttribute("requesttoken") == null) {
             setRequestToken(httprequest);
         }
@@ -77,13 +75,13 @@ public class OAuthAuthentication
     }
 
     private void setOauthService(HttpServletRequest httprequest) {
-        System.out.println("iniciou setoauthservice");
+        // System.out.println("iniciou setoauthservice");
         httprequest.getSession().setAttribute("oauthservice", new ServiceBuilder()
                 .apiKey(API_KEY)
                 .apiSecret(API_SECRET)
                 .provider(USPdigitalApi.class)
                 .build());
-        System.out.println("terminou setoauthservice");
+        // System.out.println("terminou setoauthservice");
     }
 
     public boolean canSelfRegister(Context context,
@@ -97,7 +95,7 @@ public class OAuthAuthentication
             EPerson eperson)
             throws SQLException {
         
-        System.out.println("faz init eperson");
+        // System.out.println("faz init eperson");
     
         /*
             request.getSession().setAttribute("usp_bdpi_oauth_di", jso);
@@ -177,10 +175,11 @@ public class OAuthAuthentication
 
             JSONObject jso = new JSONObject(oresponse.getBody());
 
-            
+            /*
             System.out.println("#########retornou######");
             System.out.println(oresponse.getBody());
             System.out.println("#########retornou######");
+            */
 
             if (jso.getString("loginUsuario").length() > 0) {
 
@@ -235,7 +234,7 @@ public class OAuthAuthentication
             HttpServletRequest request,
             HttpServletResponse response) {
 
-        System.out.println("pega loginPageURL");
+        // System.out.println("pega loginPageURL");
 
         if (httpRequestHashCode != request.hashCode()) {
             
@@ -258,7 +257,7 @@ public class OAuthAuthentication
 
     public String loginPageTitle(Context context) {
         
-        System.out.println("pega loginPageTitle");
+        // System.out.println("pega loginPageTitle");
         
         return "org.dspace.eperson.OAuthAuthentication.title";
     }

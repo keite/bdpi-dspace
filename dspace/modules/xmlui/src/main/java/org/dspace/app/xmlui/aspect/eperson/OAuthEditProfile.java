@@ -80,6 +80,9 @@ public class OAuthEditProfile extends EditProfile
     private static final Message T_email_address =
         message("xmlui.EPerson.EditProfile.email_address");
     
+    private static final Message T_name =
+        message("xmlui.administrative.eperson.ManageEPeopleMain.search_column3");
+    
     private static final Message T_first_name =
         message("xmlui.EPerson.EditProfile.first_name");
     
@@ -199,8 +202,8 @@ public class OAuthEditProfile extends EditProfile
             }
             
             if(defaultFirstName.length() > 0){
-                identity.addLabel(T_first_name);
-                identity.addItem(defaultFirstName);
+                identity.addLabel(T_name);
+                identity.addItem(defaultFirstName.concat(" ").concat(defaultLastName));
             }
             // First name
             /*
@@ -214,10 +217,12 @@ public class OAuthEditProfile extends EditProfile
             
             // Last name
             
+            /*
             if(defaultLastName.length() > 0){
                 identity.addLabel(T_last_name);
                 identity.addItem(defaultLastName);
             }
+            */
 
             /*
             Text lastName = identity.addItem().addText("last_name");
@@ -273,9 +278,13 @@ public class OAuthEditProfile extends EditProfile
             {
                 subscriptions.addInstance().setOptionSelected(collection.getID());
             }
+            
+            subscribe.addItem();
 
             Button submit = form.addItem().addButton("submit");
             submit.setValue(T_submit_create);
+            
+            form.addItem();
 
             profile.addHidden("eperson-continue").setValue(knot.getId());
 
