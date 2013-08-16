@@ -267,9 +267,9 @@ public class OAuthEditProfile extends EditProfile
             for (Collection possible : possibleList)
             {
                 String name = possible.getMetadata("name");
-                if (name.length() > 50)
+                if (name.length() > 70)
                 {
-                    name = name.substring(0, 47) + "...";
+                    name = name.substring(0, 67) + "...";
                 }
                 subscriptions.addOption(possible.getID(), name);
             }
