@@ -1277,7 +1277,7 @@
             </xsl:choose>
 
         </div>
-<!-- 130805 - Dan Shinkai - Implementacao do javascript para permitir a insercao do iframe na pagina de estatisticas. -->
+<!-- 130805 - Dan Shinkai - Implementacao do javascript para permitir a insercao do iframe na pagina de estatisticas. 
 		<xsl:text disable-output-escaping="yes">&lt;script type="text/javascript"&gt;</xsl:text>		
 			<xsl:if test="/dri:document/dri:body/dri:div/dri:div[@id='aspect.statistics.StatisticsTransformer.div.stats']">
 				<xsl:text>										
@@ -1291,7 +1291,7 @@
 				    div.appendChild(ifrm); 	
 				</xsl:text>
 			</xsl:if>
-		<xsl:text disable-output-escaping="yes">&lt;/script&gt;</xsl:text>
+		<xsl:text disable-output-escaping="yes">&lt;/script&gt;</xsl:text>-->
 		
     </xsl:template>
 
