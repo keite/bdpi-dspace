@@ -320,14 +320,14 @@
 	<message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">Toda a Biblioteca Digital</message>
     <message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">Unidades USP</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_title">Título</message>
-	<message key="xmlui.ArtifactBrowser.Navigation.browse_author">Autor</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_author">Todos os autores</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_subject">Assunto</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateissued">Data</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.browse_dateaccessioned">Pela data de submissão</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_this_collection">Este Tipo de Produção</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_this_community">Nesta Unidade USP</message>
-<message key="xmlui.ArtifactBrowser.Navigation.head_this_unidadeUSP">Nesta Unidade USP</message>
-<message key="xmlui.ArtifactBrowser.Navigation.head_this_departamentoUSP">Neste Departamento</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_this_unidadeUSP">Nesta Unidade USP</message>
+	<message key="xmlui.ArtifactBrowser.Navigation.head_this_departamentoUSP">Neste Departamento</message>
 	
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.SimpleSearch.java -->
@@ -2924,6 +2924,22 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.cruesp">Colaboração</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.cruesp">Colaboração entre USP e instituições nacionais e internacionais</message>
 
+<message key="xmlui.ArtifactBrowser.Navigation.browse_authorUSP">Autores USP</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.authorUSP.column_heading">Autores USP</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.authorUSP">Autores USP</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.authorUSP">Autores USP</message>
+
+<message key="xmlui.ArtifactBrowser.Navigation.browse_type">Tipo de produção</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.type.column_heading">Tipo de produção</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.type">Tipo de produção</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.type">Tipo de produção</message>
+
+<message key="xmlui.ArtifactBrowser.Navigation.browse_sponsorship">Agências de Fomento</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.sponsorship.column_heading">Agências de Fomento</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.sponsorship">Navegar por Agências de Fomento</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.sponsorship">Navegar por Agências de Fomento</message>
+
+
 <!-- Adicionado tradução na busca avançada - Tiago - 2013-07-15  -->
 
     <message key="xmlui.ArtifactBrowser.SimpleSearch.filter.title">Título</message>
@@ -2933,5 +2949,8 @@ Para obtener más información acerca de como añadir este repositório y su pro
 
 <!-- org.dspace.app.xmlui.eperson.OAuthEditProfile.java janleduc@usp.br 13.ago.2013 -->
 <message key="xmlui.EPerson.OAuthEditProfile.textlinktoprovider">Acessar USP Digital</message>
+
+
+
 
 </catalogue>
