@@ -2912,6 +2912,16 @@ Consulte ese repositorio y conozca las instrucciones que le permitirán incluir 
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.cruesp">CRUESP</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.cruesp">CRUESP</message>
 
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_authorUSP">USP Authors</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.authorUSP.column_heading">USP Authors</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.authorUSP">USP Authors</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.authorUSP">USP Authors</message>
+
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_type">Type</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.type.column_heading">Type</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.type">Type</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.type">Type</message>
+
 
 <!-- org.dspace.app.xmlui.eperson.OAuthEditProfile.java janleduc@usp.br 13.ago.2013 -->
 <message key="xmlui.EPerson.OAuthEditProfile.textlinktoprovider">Go to USP Digital</message>

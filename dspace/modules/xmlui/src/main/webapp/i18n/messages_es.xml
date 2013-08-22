@@ -2886,6 +2886,20 @@ Para obtener más información acerca de como añadir este repositório y su pro
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.country.column_heading">País de impresión</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.country">País de impresión</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.country">País de impresión</message>
+
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_authorUSP">Autores USP</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.authorUSP.column_heading">Autores USP</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.authorUSP">Autores USP</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.authorUSP">Autores USP</message>
+
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_type">Tipo</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.type.column_heading">Tipo</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.type">Tipo</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.type">Tipo</message>
+
+
+
+
     <!-- org.dspace.app.xmlui.eperson.OAuthEditProfile.java janleduc@usp.br 13.ago.2013 -->
     <message key="xmlui.EPerson.OAuthEditProfile.textlinktoprovider">Aceder USP Digital</message>
 
