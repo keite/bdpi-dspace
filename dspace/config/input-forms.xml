@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <!DOCTYPE input-forms SYSTEM "input-forms.dtd">
 
 
@@ -1355,10 +1355,17 @@
    
    
    <!-- Departamento de Zootecnia - FZEA/ZAZ   --> 
+   <name-map collection-handle="BDPI/32672"   form-name="artigo" />
+   <name-map collection-handle="BDPI/32673"   form-name="evento" />
+   <name-map collection-handle="BDPI/32674"   form-name="livro" />
+   <name-map collection-handle="BDPI/32675"   form-name="relatorio" />
+
+   <!-- Departamento de Zootecnia - FZEA/ZMV   --> 
    <name-map collection-handle="BDPI/952"   form-name="artigo" />
    <name-map collection-handle="BDPI/953"   form-name="evento" />
    <name-map collection-handle="BDPI/954"   form-name="livro" />
    <name-map collection-handle="BDPI/955"   form-name="relatorio" />
+
    
    <!-- Outros departamentos - FZEA/Outros    --> 
    <name-map collection-handle="BDPI/962"   form-name="artigo" />
@@ -2087,8 +2094,8 @@
  <form-definitions>
    <form name="traditional">
      <page number="1">
-	 <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
-	   <field>
+    <!-- Identificação da Instituição - Tiago - 2013-04-01 -->
+      <field>
          <dc-schema>dc</dc-schema>
          <dc-element>contributor</dc-element>
          <dc-qualifier></dc-qualifier>
@@ -2096,9 +2103,9 @@
          <label>Instituição</label>
          <input-type value-pairs-name="contributor">dropdown</input-type>
          <hint></hint>
-		 <visibility>workflow</visibility>		 
+       <visibility>workflow</visibility>      
          <required>Preenchimento obrigatório</required>
-       </field>	 
+       </field>    
 
        <field>
          <dc-schema>dc</dc-schema>
@@ -2132,8 +2139,8 @@
          <hint>Entre com o nome do autor e coautores, na mesma ordem do artigo, indicando o sobrenome e o nome nos respectivos campos. Para cada autor, clique no botão "Adicionar" e escolha nas lista. No caso de autores externos, adicione o nome conforme aparece no artigo.</hint>
          <required>Campo obrigatório, entre com pelo menos um autor.</required>
        </field>
-	   
-	   
+      
+      
 <!-- 120730 ============ ao inserir rotina de Autoridade de Controle, estes dados nao sao necessarios
        <field>
         <dc-schema>usp</dc-schema>
@@ -2154,20 +2161,20 @@
          <hint>Email do primeiro autor USP listado na sequência de autores do artigo. Ex. milton.santos@usp.br</hint>
        </field>
 ================ -->
-	   
-		<field>
-		   <dc-schema>usp</dc-schema>
-		   <dc-element>autor</dc-element>
-		   <dc-qualifier>externo</dc-qualifier>
-		   <repeatable>true</repeatable>
-		   <label>Informações sobre os autores externos à USP</label>
-		   <input-type>onebox</input-type>
-		   <hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
-		   <required></required>
-		   <visibility>workflow</visibility>		
-		</field>
-	   
-	   <field>
+      
+      <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>autor</dc-element>
+         <dc-qualifier>externo</dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Informações sobre os autores externos à USP</label>
+         <input-type>onebox</input-type>
+         <hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+         <required></required>
+         <visibility>workflow</visibility>      
+      </field>
+      
+      <field>
          <dc-schema>dc</dc-schema>
          <dc-element>title</dc-element>
          <dc-qualifier></dc-qualifier>
@@ -2183,17 +2190,18 @@
          <dc-element>title</dc-element>
          <dc-qualifier>alternative</dc-qualifier>
          <repeatable>true</repeatable>
-		 <label>Título traduzido</label>
+       <label>Título traduzido</label>
          <input-type>textarea</input-type>
          <hint>Título do documento em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
          <required></required>
        </field>
-	   
-<!-- Tiago 20130326 - Pode ser suprimido   -->
-							 </page>
-							 <page number="2">	   
-	   
-	   
+      
+<!-- Tiago 20130326 - Pode ser suprimido   
+                      </page>
+                      <page number="2">      
+-->     
+      
+      
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
@@ -2203,7 +2211,7 @@
          <input-type>onebox</input-type>
          <hint>Digite parte do título do periódico em que foi publicado o artigo e clique em buscar. Caso o título do periódico não apareça, digite o título, dando preferência ao título NÃO abreviado do periódico</hint>
          <required>Título do periódico é um campo obrigatório.</required>
-	   </field>
+      </field>
 <!-- Comentado em 2013-04-05 por Tiago
        <field>
          <dc-schema>dc</dc-schema>
@@ -2214,12 +2222,12 @@
          <input-type>onebox</input-type>
          <hint>Entre com o ISSN do periódico em que foi publicado o artigo. Ex: 0103-4014</hint>
          <required></required>
-		 <visibility>workflow</visibility>		 
+       <visibility>workflow</visibility>      
        </field>
  --> 
-	   <!-- Comentado por Tiago 20130729 	   
-	   <field>
-		 <dc-schema>dc</dc-schema>
+      <!-- Comentado por Tiago 20130729      
+      <field>
+       <dc-schema>dc</dc-schema>
          <dc-element>relation</dc-element>
          <dc-qualifier>ispartofseries</dc-qualifier>
          <repeatable>false</repeatable>
@@ -2228,8 +2236,8 @@
          <hint>Informe o volume no primeiro campo e o número no segundo campo do periódico em que o artigo foi publicado. Utilize o formato v.99 para volume e n.99 para número.</hint>
          <required></required>
        </field>
-	   -->
-	   
+      -->
+      
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>description</dc-element>
@@ -2273,7 +2281,7 @@
          <hint>Número da página final do artigo na revista onde foi publicado. Ex: 106</hint>
          <required></required>
        </field>
-	   
+      
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>date</dc-element>
@@ -2285,7 +2293,7 @@
          <required>Campo obrigatório - entre com pelo menos o ano de publicação. Ex: 1992</required>
        </field>
 
-	   
+      
        <!-- 110810 para artigos nao se precisa editor (nao se cadastra no Aleph); pode ser uma Authority Control posterior, ms hoje eh um pedido para ser open -->
        <field>
          <dc-schema>dc</dc-schema>
@@ -2296,7 +2304,7 @@
          <input-type>onebox</input-type>
          <hint>Editor do periódico. Ex: Editora da Universidade de Brasília - UnB </hint>
          <required></required>
- 		 <visibility>workflow</visibility>
+       <visibility>workflow</visibility>
        </field>
 
        <field>
@@ -2308,8 +2316,8 @@
          <input-type>onebox</input-type>
          <hint>País em que o periódico foi publicado. Ex: Brasil</hint>
          <required></required>
-       </field>	   
-	   
+       </field>      
+      
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>publisher</dc-element>
@@ -2332,8 +2340,8 @@
          <required></required>
        </field>
 
-	   
-	   <!-- isto pode virar uma trigger logo apos user informar local; falta saber separar por entrada para nao sobrepor importacao -->
+      
+      <!-- isto pode virar uma trigger logo apos user informar local; falta saber separar por entrada para nao sobrepor importacao -->
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>identifier</dc-element>
@@ -2343,7 +2351,7 @@
          <input-type>textarea</input-type>
          <hint>Não é uma citação, é uma imprenta: revista, cidade, volume, número, páginas inicial e final, ano. Ex: "Revista do Hospital das Clínicas, São Paulo, v.6, n.14, p.95-106, 1992"</hint>
          <required></required>
-		 <visibility>workflow</visibility>
+       <visibility>workflow</visibility>
        </field>
 
        <field>
@@ -2373,7 +2381,7 @@
          <dc-element>description</dc-element>
          <dc-qualifier>abstract</dc-qualifier>
          <repeatable>true</repeatable>
-		 <label>Resumo</label>
+       <label>Resumo</label>
          <input-type>textarea</input-type>
          <hint>Resumo ou síntese do artigo, nos idiomas descritos no artigo. Para cada idioma, clicar no botão "Adicionar"</hint>
          <required></required>
@@ -2388,7 +2396,7 @@
          <input-type>onebox</input-type>
          <hint>Digite parte do assunto do Vocabulário Controlado USP (VCUSP) e clique em buscar.</hint>
          <required></required>
-		 <visibility>workflow</visibility>
+       <visibility>workflow</visibility>
 <!--  Tiago  <vocabulary>vcusp</vocabulary> -->
        </field>
 
@@ -2412,10 +2420,10 @@
          <input-type>onebox</input-type>
          <hint>Palavras-chave sugeridas por um bibliotecário, não descritas no Vocabulário Controlado USP (VCUSP) ou no texto do autor, mas que enriquecem a visibilidade do trabalho; descrever nos idiomas possíveis. Usar o botão 'Adicionar' para informar mais palavras-chaves; indicar um assunto por campo.</hint>
          <required></required>
-		 <visibility>workflow</visibility>
+       <visibility>workflow</visibility>
        </field>
 
-	   <!-- DRIVER 2.0 http://wiki.surf.nl/display/DRIVERguidelines/Type -->
+      <!-- DRIVER 2.0 http://wiki.surf.nl/display/DRIVERguidelines/Type -->
 <!-- 120731 a Profa Sueli quer este campo removido - eh uma pena, poderia mostrar que os docentes podem depositar trabalhos no forno -->
        <field>
          <dc-schema>dc</dc-schema>
@@ -2433,41 +2441,70 @@
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>sponsorship</dc-qualifier>
-		 <repeatable>true</repeatable>
+         <repeatable>true</repeatable>
          <label>Agência de fomento</label>
          <input-type>onebox</input-type>
-		 <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+         <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
          <required></required>
        </field>
+
+      <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>grupopesquisa</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Grupo de pesquisa</label>
+         <input-type>onebox</input-type>
+         <hint>Informar os grupos de pesquisa</hint>
+         <required></required>
+         <visibility>workflow</visibility>         
+      </field>
+
+      <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>indexacao</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Indexação em bases de dados</label>
+         <input-type>onebox</input-type>
+         <hint>Informa em quais bases esta produção está indexada</hint>
+         <required></required>
+         <visibility>workflow</visibility> 
+      </field>
+
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>internacionalizacao</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable></repeatable>
+         <label>Definir se a produção é nacional ou internacional</label>
+         <input-type value-pairs-name="detalhainternacionalizacao">dropdown</input-type>
+         <hint>Identificar se a produção é nacional ou internacional</hint>
+         <required></required>
+       </field>          
 
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>premio</dc-element>
          <dc-qualifier></dc-qualifier>
          <repeatable>true</repeatable>
-		 <label>Prêmios</label>
+         <label>Prêmios</label>
          <input-type>onebox</input-type>
          <hint>Informar prêmios recebidos pela produção.</hint>
          <required></required>
-       </field>	   
+         <visibility>workflow</visibility>
+       </field>      
    
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>notes</dc-qualifier>
          <repeatable>false</repeatable>
-		 <label>Notas</label>
+       <label>Notas</label>
          <input-type>textarea</input-type>
          <hint>Notas descritivas adicionais, tais como uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
          <required></required>
        </field>
-	   
-	   
-
-	   						 <!-- 120710 Vamos tentar deixar numa pagina unica os metadados de artigo e o pessoal salva mais amiude	   
-							 </page>
-							 <page number="3">
-							 -->
 
        <field>
          <dc-schema>dc</dc-schema>
@@ -2492,7 +2529,7 @@
          <required></required>
        </field>
 -->
-	   
+      
        <field>
          <dc-schema>dc</dc-schema>
          <dc-element>rights</dc-element>
@@ -2514,10 +2551,10 @@
          <input-type>textarea</input-type>
          <hint>Uma referência por campo; se houver muitas, "copiar" a partir do artigo, "colar" num editor de texto, separar as referências com "@@@" (sem as aspas) e passar para este campo.</hint>
          <required></required>
-		 <visibility>workflow</visibility>		 
+       <visibility>workflow</visibility>      
        </field>
-	   -->
-	   
+      -->
+      
        <!-- 110728 Incluir campo para protecao contra alteracoes ROMEO -->
        <field>
          <dc-schema>usp</dc-schema>
@@ -2528,35 +2565,35 @@
          <input-type>textarea</input-type>
          <hint>Quem, em que data, em que link e quando se encontrou a definição para direitos autorais sobre a disponibilização do texto completo deste item</hint>
          <required></required>
- 		 <visibility>workflow</visibility>
+       <visibility>workflow</visibility>
        </field>
 
-					<!-- 110810 Incluir tipologia
-						   <field>
-							 <dc-schema>usp</dc-schema>
-							 <dc-element>comentarios</dc-element>
-							 <dc-qualifier>colecao</dc-qualifier>
-							 <repeatable>false</repeatable>
-							 <label>Comentários sobre tipologia mais adequada ao item</label>
-							 <input-type>textarea</input-type>
-							 <hint>Indicar em qual tipologia este item melhor se enquadra (artigo de divulgação, capítulo de livro, livro, objetos educacionais, projeto)</hint>
-							 <required></required>
-						   </field>
-					       -->
+               <!-- 110810 Incluir tipologia
+                     <field>
+                      <dc-schema>usp</dc-schema>
+                      <dc-element>comentarios</dc-element>
+                      <dc-qualifier>colecao</dc-qualifier>
+                      <repeatable>false</repeatable>
+                      <label>Comentários sobre tipologia mais adequada ao item</label>
+                      <input-type>textarea</input-type>
+                      <hint>Indicar em qual tipologia este item melhor se enquadra (artigo de divulgação, capítulo de livro, livro, objetos educacionais, projeto)</hint>
+                      <required></required>
+                     </field>
+                      -->
 
-					<!-- 110810 Incluir mapeamento 
-						   <field>
-							 <dc-schema>usp</dc-schema>
-							 <dc-element>comentarios</dc-element>
-							 <dc-qualifier>mapeamento</dc-qualifier>
-							 <repeatable>false</repeatable>
-							 <label>Sugestão de mapeamento para o item</label>
-							 <input-type>textarea</input-type>
-							 <hint>Copiar, por linha, o nome das coleções onde este item deve ser mapeado, sem necessidade de duplicar conteúdo. Exemplo: Artigos científicos - EACH/PRODCI/ART</hint>
-							 <required></required>
-						   </field>
-						   -->
-	   
+               <!-- 110810 Incluir mapeamento 
+                     <field>
+                      <dc-schema>usp</dc-schema>
+                      <dc-element>comentarios</dc-element>
+                      <dc-qualifier>mapeamento</dc-qualifier>
+                      <repeatable>false</repeatable>
+                      <label>Sugestão de mapeamento para o item</label>
+                      <input-type>textarea</input-type>
+                      <hint>Copiar, por linha, o nome das coleções onde este item deve ser mapeado, sem necessidade de duplicar conteúdo. Exemplo: Artigos científicos - EACH/PRODCI/ART</hint>
+                      <required></required>
+                     </field>
+                     -->
+      
        <!-- 110810 Incluir Dúvidas 
        <field>
          <dc-schema>usp</dc-schema>
@@ -2568,10 +2605,10 @@
          <hint>Dúvidas, casos fora do padrão, dicas ou comentários que possam apoiar o desenvolvimento do Manual de Edição de Itens</hint>
          <required></required>
        </field> 
-	   -->
+      -->
 
 
-     </page>	
+     </page>
    </form>
 
    <form name="one">
@@ -2704,9 +2741,10 @@
          <required></required>
        </field>
 	   
-<!-- Tiago 20130326 - Pode ser suprimido   -->
+<!-- Tiago 20130326 - Pode ser suprimido   
 							 </page>
 							 <page number="2">	   
+-->     
 	   
 	   
        <field>
@@ -2948,22 +2986,58 @@
          <dc-schema>dc</dc-schema>
          <dc-element>description</dc-element>
          <dc-qualifier>sponsorship</dc-qualifier>
-		 <repeatable>true</repeatable>
+         <repeatable>true</repeatable>
          <label>Agência de fomento</label>
          <input-type>onebox</input-type>
-		 <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+         <hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
          <required></required>
        </field>
+
+      <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>grupopesquisa</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Grupo de pesquisa</label>
+         <input-type>onebox</input-type>
+         <hint>Informar os grupos de pesquisa</hint>
+         <required></required>
+         <visibility>workflow</visibility>         
+      </field>
+
+      <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>indexacao</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable>true</repeatable>
+         <label>Indexação em bases de dados</label>
+         <input-type>onebox</input-type>
+         <hint>Informa em quais bases esta produção está indexada</hint>
+         <required></required>
+         <visibility>workflow</visibility> 
+      </field>
+
+       <field>
+         <dc-schema>usp</dc-schema>
+         <dc-element>internacionalizacao</dc-element>
+         <dc-qualifier></dc-qualifier>
+         <repeatable></repeatable>
+         <label>Definir se a produção é nacional ou internacional</label>
+         <input-type value-pairs-name="detalhainternacionalizacao">dropdown</input-type>
+         <hint>Identificar se a produção é nacional ou internacional</hint>
+         <required></required>
+       </field>          
 
        <field>
          <dc-schema>usp</dc-schema>
          <dc-element>premio</dc-element>
          <dc-qualifier></dc-qualifier>
          <repeatable>true</repeatable>
-		 <label>Prêmios</label>
+         <label>Prêmios</label>
          <input-type>onebox</input-type>
          <hint>Informar prêmios recebidos pela produção.</hint>
          <required></required>
+         <visibility>workflow</visibility>
        </field>	   
    
        <field>
@@ -2976,13 +3050,6 @@
          <hint>Notas descritivas adicionais, tais como uso em bibliografia básica, apresentação em evento antes de ser publicado em revista, ou notas similares.</hint>
          <required></required>
        </field>
-	   
-	   
-
-	   						 <!-- 120710 Vamos tentar deixar numa pagina unica os metadados de artigo e o pessoal salva mais amiude	   
-							 </page>
-							 <page number="3">
-							 -->
 
        <field>
          <dc-schema>dc</dc-schema>
@@ -5127,6 +5194,19 @@
         <stored-value>Hipertexto</stored-value>
      </pair>	 
     </value-pairs>
+
+<!-- Internacionalização -->
+
+    <value-pairs value-pairs-name="detalhainternacionalizacao" dc-term="internacionalizacao">
+     <pair>
+       <displayed-value>Nacional</displayed-value>
+       <stored-value>Nacional</stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Internacional</displayed-value>
+       <stored-value>Internacional</stored-value>
+     </pair>
+   </value-pairs>
 	
 
     </form-value-pairs>
