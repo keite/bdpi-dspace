@@ -303,6 +303,9 @@
 	<message key="xmlui.ArtifactBrowser.ItemViewer.show_full">Mostrar el registro completo del ítem</message>
 	<message key="xmlui.ArtifactBrowser.ItemViewer.withdrawn">Este ítem ha sido retirado y no está disponible</message>
 
+	<!-- 130812 - Dan Shinkai - Adicionado parametro utilizado no JQuery para mostrar metricas alternativas -->
+	<message key="xmlui.ArtifactBrowser.ItemViewer.item.ds_list_head">Métricas Alternativas</message>
+	
 	<!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
 	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">Listar</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">Todo el repositorio</message>

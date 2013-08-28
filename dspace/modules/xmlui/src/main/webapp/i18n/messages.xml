@@ -308,7 +308,10 @@
 	<message key="xmlui.ArtifactBrowser.ItemViewer.show_simple">Show simple item record</message>
 	<message key="xmlui.ArtifactBrowser.ItemViewer.show_full">Show full item record</message>
 
-        <message key="xmlui.ArtifactBrowser.ItemViewer.withdrawn">This item has been withdrawn and is no longer available.</message>
+	<!-- 130812 - Dan Shinkai - Adicionado parametro utilizado no JQuery para mostrar metricas alternativas -->
+	<message key="xmlui.ArtifactBrowser.ItemViewer.item.ds_list_head">Alternatives Metrics</message>
+	
+    <message key="xmlui.ArtifactBrowser.ItemViewer.withdrawn">This item has been withdrawn and is no longer available.</message>
 
 	<!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
 	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">Browse</message>
