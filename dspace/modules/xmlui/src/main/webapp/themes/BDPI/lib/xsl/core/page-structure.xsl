@@ -262,6 +262,20 @@
 			</xsl:attribute>&#160;</script>
 			<!-- ========== -->
 			
+			<!-- 130828 - Dan Shinkai  - Javascript para permitir a utilizacao do AltMetrics -->
+			
+			<script type="text/javascript">
+			<xsl:attribute name="src">
+			<xsl:text>https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js</xsl:text>
+			</xsl:attribute>&#160;</script>		
+
+			<script type="text/javascript">
+			<xsl:attribute name="src">
+			<xsl:text>http://impactstory.org/embed/v1/impactstory.js</xsl:text>
+			</xsl:attribute>&#160;</script>		
+			
+			<!-- FIM -->
+			
 			<script type="text/javascript">
 				$(function(){
 				$('#aspect_discovery_Navigation_list_discovery ul li h2').click(function(event){ var elem = $(this).next();
@@ -461,7 +475,28 @@
 
             <!-- Add the title in -->
             <xsl:variable name="page_title" select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='title']" />
+			
+			<xsl:variable name="doi">
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='citation_doi']"/>
+			</xsl:variable>		
 
+<!-- 130813 - Dan Shinkai - Codigo que implementa metricas alternativas na visualizacao do registro de um item simples e completo. Somente para itens nos quais contenham o DOI. -->		
+<!-- Dicas: Sinais de '>' ou '<' nao sao reconhecidos diretamente no XSL. Portanto, adicionar dentro de uma tag <xsl:text disable-output-escaping="yes"> 
+			no formato '&gt;' para que seja reconhecido pelo HTML. -->
+<!-- Trecho comentado ate a liberacao			
+			<xsl:if test="$doi!=''"> 				
+				<script type="text/javascript">
+					jQuery(document).ready(function() {	
+						
+						$(".ds-referenceSet-list").after("<xsl:text disable-output-escaping="yes">&lt;div class='impactstory-embed' data-id='</xsl:text><xsl:copy-of select="$doi"></xsl:copy-of><xsl:text disable-output-escaping="yes">' data-id-type='doi' data-api-key='API-DOCS' data-badge-palette='grayscale' data-badge-type='icon'&gt;&lt;/div&gt;</xsl:text>");
+						$(".ds-referenceSet-list").after("<xsl:text disable-output-escaping="yes">&lt;div class='altmetric-embed' data-badge-details='right' data-doi='</xsl:text><xsl:copy-of select="$doi"></xsl:copy-of><xsl:text disable-output-escaping="yes">' data-badge-popover='right'&gt;&lt;/div&gt;</xsl:text>");
+						$(".ds-referenceSet-list").after("<xsl:text disable-output-escaping="yes">&lt;h2 class='ds-list-head'&gt;</xsl:text><i18n:text>xmlui.ArtifactBrowser.ItemViewer.item.ds_list_head</i18n:text><xsl:text disable-output-escaping="yes">&lt;/h2&gt;</xsl:text>");					
+						
+					});					
+				</script>
+			</xsl:if> -->
+<!-- FIM -->
+			
             <title>
                 <xsl:choose>
 <!-- 130405 andre.assada@usp.br paginas estaticas
