@@ -2197,6 +2197,35 @@ border: 1px dotted #ccc;
  
 /* =====================================FIM========================================== */
 
+/* =================================================================================== */
+/* 130812 CSS relacionado com o efeito JQuery para mostrar metricas alternativas    */
+/* @author Dan Shinkai (SI/EACH/USP)                                                   */
+/* ==================================================================================  */
+
+.altmetric-embed {
+	/*float: right;
+	margin-right: 15%;*/
+}
+
+.impactstory-embed {
+	/*float: left;*/
+	margin-top: 2%;
+}
+
+.impactstory-embed a img {
+	height: 15px !important;
+}
+
+.item-view-toggle-bottom {
+	/*position: absolute;*/
+	margin-top: 5%;
+}
+
+.ds-paragraph.item-view-toggle.item-view-toggle-top {
+	margin-top: 2%;
+}
+/* =====================================FIM========================================== */
+
 /********************************************************************************************************/
 /* ***************************** 120611 SIBi fontResizer  ********************************************* */
 #ds-font-resize {
