@@ -2205,11 +2205,13 @@ border: 1px dotted #ccc;
 .altmetric-embed {
 	/*float: right;
 	margin-right: 15%;*/
+	margin-left: 7%;
 }
 
 .impactstory-embed {
 	/*float: left;*/
 	margin-top: 2%;
+	margin-left: 7%;
 }
 
 .impactstory-embed a img {
