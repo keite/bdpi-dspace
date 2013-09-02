@@ -483,7 +483,7 @@
 <!-- 130813 - Dan Shinkai - Codigo que implementa metricas alternativas na visualizacao do registro de um item simples e completo. Somente para itens nos quais contenham o DOI. -->		
 <!-- Dicas: Sinais de '>' ou '<' nao sao reconhecidos diretamente no XSL. Portanto, adicionar dentro de uma tag <xsl:text disable-output-escaping="yes"> 
 			no formato '&gt;' para que seja reconhecido pelo HTML. -->
-<!-- Trecho comentado ate a liberacao			
+
 			<xsl:if test="$doi!=''"> 				
 				<script type="text/javascript">
 					jQuery(document).ready(function() {	
@@ -494,7 +494,7 @@
 						
 					});					
 				</script>
-			</xsl:if> -->
+			</xsl:if>
 <!-- FIM -->
 			
             <title>
