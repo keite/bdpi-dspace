@@ -713,14 +713,14 @@
                     <xsl:otherwise>
                         <div id="ds-user-box">
                             <p>
-                                <!-- 18jun2013 jan.lara@sibi.usp.br - comentado para esconder login enquanto bdpi está fechada
-			         a>
+                                <!-- 18jun2013 jan.lara@sibi.usp.br - comentado para esconder login enquanto bdpi está fechada -->
+			         <a>
                                     <xsl:attribute name="href">
                                         <xsl:value-of select="/dri:document/dri:meta/dri:userMeta/
                                         dri:metadata[@element='identifier' and @qualifier='loginURL']"/>
                                     </xsl:attribute>
                                     <i18n:text>xmlui.dri2xhtml.structural.login</i18n:text>
-                                </a-->
+                                </a>
                             </p>
                         </div>
                     </xsl:otherwise>
