@@ -309,27 +309,18 @@ public class BitstreamReader extends AbstractReader implements Recyclable
                 }
             }
                 
-            // Success, bitstream found and the user has access to read it.
-            // Store these for later retreval:
-
-            //Due to the OSU Knowledge Bank policy of intercepting views to the original bitstream to instead show a
-            // citation altered version of the object, we need to check if this resource falls under the
-            // "show watermarked alternative" umbrella. At which time we will not return the "bitstream", but will
-            // instead on-the-fly generate the citation rendition.
-
-            // What will trigger a redirect/intercept?
-            // 1) Intercepting Enabled
-            // 2) This User is not an admin
-            // 3) This object is citation-able
+            /*
+			* 130902 - Dan Shinkai - Trecho de codigo inserido para criacao da capa de citacao.
+			*/
 			if (CitationDocument.isCitationEnabledForBitstream(bitstream, context)) {
-                // on-the-fly citation generator
+                
                 log.info(item.getHandle() + " - " + bitstream.getName() + " is citable.");
 
                 FileInputStream fileInputStream = null;
                 CitationDocument citationDocument = new CitationDocument();
                 
                 try {
-                    //Create the cited document
+                    
                     tempFile = citationDocument.makeCitedDocument(bitstream);
                     if(tempFile == null) {
                         log.error("CitedDocument was null");
@@ -348,13 +339,14 @@ public class BitstreamReader extends AbstractReader implements Recyclable
                     
                 } catch (Exception e) {
                     log.error("Caught an error with intercepting the citation document:" + e.getMessage());
-                }
+                }                
                 
-                //End of CitationDocument
             } else {
                 this.bitstreamInputStream = bitstream.retrieve();
                 this.bitstreamSize = bitstream.getSize();
             }
+			
+			// Fim do codigo da Capa de Citacao
 
             this.bitstreamMimeType = bitstream.getFormat().getMIMEType();
             this.bitstreamName = bitstream.getName();
