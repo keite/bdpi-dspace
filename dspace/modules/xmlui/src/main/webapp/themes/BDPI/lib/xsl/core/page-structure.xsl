@@ -1317,7 +1317,7 @@
 			<xsl:if test="/dri:document/dri:body/dri:div/dri:div[@id='aspect.statistics.StatisticsTransformer.div.stats']">
 				<xsl:text>										
 					ifrm = document.createElement("IFRAME"); 
- 				    ifrm.setAttribute("src", "</xsl:text><xsl:value-of select="confman:getProperty('dspace.baseUrl')"/><xsl:text>/a/<xsl:text>/a/</xsl:text><i18n:text>paginasEstaticas.acesso</i18n:text><xsl:text>"); 
+ 				    ifrm.setAttribute("src", "</xsl:text><xsl:value-of select="confman:getProperty('dspace.baseUrl')"/><xsl:text>/a/</xsl:text><i18n:text>paginasEstaticas.acesso</i18n:text><xsl:text>"); 
 				    ifrm.setAttribute("frameborder", "0"); 
 				    ifrm.setAttribute("scrolling", "no"); 
 				    ifrm.style.width = 100+"%"; 
