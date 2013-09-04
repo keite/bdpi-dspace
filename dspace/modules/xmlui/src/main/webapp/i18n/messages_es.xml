@@ -2386,7 +2386,7 @@
 
 	<message key="paginasEstaticas.politicaUso"><a href="/page/politicaUsoEs">Política de Uso</a></message>
 	
-	<message key="paginasEstaticas.acesso">/a/acessoEs.php</message>
+	<message key="paginasEstaticas.acesso">acessoEs.php</message>
 
 <!-- ==================================================== -->
 <!-- FIM 130327 andre.assada@usp.br paginas estaticas FIM -->
