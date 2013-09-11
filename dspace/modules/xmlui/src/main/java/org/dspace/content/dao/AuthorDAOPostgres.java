@@ -116,9 +116,13 @@ public class AuthorDAOPostgres extends AuthorDAO
          statement.setInt(4,this.VETOR_ID[5]);
          statement.setString(5,codpes);
          ResultSet rs = statement.executeQuery();
-         rs.next();
+         
+		 int totalItens = -1;
+		 
+		 if(rs.next()) {
 
-         int totalItens = rs.getInt("total");        
+            totalItens = rs.getInt("total");        
+		 }
 
          rs.close();
          statement.close();
@@ -145,9 +149,13 @@ public class AuthorDAOPostgres extends AuthorDAO
      try {
           PreparedStatement statement = context.getDBConnection().prepareStatement(selectDCSchemaId);
           ResultSet rs = statement.executeQuery();
-          rs.next();
+          
+		  int id = -1;
+		  
+		  if(rs.next()) {
 
-          int id = rs.getInt("metadata_schema_id");
+            id = rs.getInt("metadata_schema_id");
+		   }
 
           rs.close();
           statement.close();
@@ -173,9 +181,13 @@ public class AuthorDAOPostgres extends AuthorDAO
      try {
           PreparedStatement statement = context.getDBConnection().prepareStatement(selectUSPSchemaId);
           ResultSet rs = statement.executeQuery();
-          rs.next();
+          
+		  int id = -1;
+		  
+		  if(rs.next()) {
 
-          int id = rs.getInt("metadata_schema_id");
+			id = rs.getInt("metadata_schema_id");
+		   }
 
           rs.close();
           statement.close();
@@ -203,9 +215,13 @@ public class AuthorDAOPostgres extends AuthorDAO
           PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdDCTitle);
           statement.setInt(1,schemaDcId);
           ResultSet rs = statement.executeQuery();
-          rs.next();
           
-          int id = rs.getInt("metadata_field_id");
+		  int id = -1;
+		  
+		  if(rs.next()) {
+          
+             id = rs.getInt("metadata_field_id");
+		 }
 
           rs.close();
           statement.close();
@@ -233,9 +249,13 @@ public class AuthorDAOPostgres extends AuthorDAO
            PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdDCType);
            statement.setInt(1,schemaDcId);
            ResultSet rs = statement.executeQuery();
-           rs.next();
+           
+		   int id = -1;
+		   
+		   if(rs.next()) {
 
-           int id = rs.getInt("metadata_field_id");
+			id = rs.getInt("metadata_field_id");
+		   }
 
            rs.close();
            statement.close();
@@ -262,15 +282,19 @@ public class AuthorDAOPostgres extends AuthorDAO
            PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdUSPAutor);
            statement.setInt(1,schemaUspId);
            ResultSet rs = statement.executeQuery();
-           rs.next();
+           
+		   int id = -1;
+		   
+		   if(rs.next()) {
 
-           int id = rs.getInt("metadata_field_id");
+			id = rs.getInt("metadata_field_id");
+			}
 
            rs.close();
            statement.close();
            context.complete();
 
-          return id;
+           return id;
 
       } catch(SQLException sql) {
 
@@ -292,13 +316,17 @@ public class AuthorDAOPostgres extends AuthorDAO
            PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdUSPAutorExterno);
            statement.setInt(1,schemaUspId);
            ResultSet rs = statement.executeQuery();
-           rs.next();
+           
+		   int id = -1;
+		   
+		   if(rs.next()) {
 
-           int id = rs.getInt("metadata_field_id");
+              id = rs.getInt("metadata_field_id");
+		  }
 
-           rs.close();
-           statement.close();
-           context.complete();
+          rs.close();
+          statement.close();
+          context.complete();
 
           return id;
 
@@ -322,15 +350,22 @@ public class AuthorDAOPostgres extends AuthorDAO
            PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdDataPublicacao);
            statement.setInt(1,schemaDcId);
            ResultSet rs = statement.executeQuery();
-           rs.next();
+           
+		   int id = -1;
+		   
+		   if(rs.next()) {
 
-           int id = rs.getInt("metadata_field_id");
-
-           rs.close();
-           statement.close();
-           context.complete();
-
-           return id;
+			   id = rs.getInt("metadata_field_id");				
+		   }
+		   
+		   rs.close();
+		   statement.close();
+		   context.complete();
+			   
+		   rs = null;
+		   statement = null;
+		   
+		   return id;
 
       } catch(SQLException sql) {
 
@@ -654,35 +689,42 @@ public class AuthorDAOPostgres extends AuthorDAO
            PreparedStatement statement = context.getDBConnection().prepareStatement(selectAuthor);
            statement.setInt(1,codpes);
            ResultSet rs = statement.executeQuery();
-           rs.next();
+		   
+		   Author author = null;
+           
+		   if(rs.next()) {
+		   
+			   author = new Author();
 
-           Author author = new Author();
-
-           author.setCodpes(rs.getInt("codpes"));
-           author.setNome(rs.getString("nome"));
-           author.setEmail_1(rs.getString("email_1"));
-           author.setSobrenome(rs.getString("sobrenome"));
-           author.setNomeInicial(rs.getString("nomeinicial"));
-           author.setUnidade(rs.getString("unidade"));
-           author.setUnidadeSigla(rs.getString("unidade_sigla"));
-           author.setDepto(rs.getString("depto"));
-           author.setDeptoSigla(rs.getString("depto_sigla"));
-           author.setVinculo(rs.getString("vinculo"));
-           author.setFuncao(rs.getString("funcao"));
-           author.setLattes(rs.getString("lattes"));
-          
-           rs.close();
-           statement.close();
-           context.complete();
-
-           return author;
+			   author.setCodpes(rs.getInt("codpes"));
+			   author.setNome(rs.getString("nome"));
+			   author.setEmail_1(rs.getString("email_1"));
+			   author.setSobrenome(rs.getString("sobrenome"));
+			   author.setNomeInicial(rs.getString("nomeinicial"));
+			   author.setUnidade(rs.getString("unidade"));
+			   author.setUnidadeSigla(rs.getString("unidade_sigla"));
+			   author.setDepto(rs.getString("depto"));
+			   author.setDeptoSigla(rs.getString("depto_sigla"));
+			   author.setVinculo(rs.getString("vinculo"));
+			   author.setFuncao(rs.getString("funcao"));
+			   author.setLattes(rs.getString("lattes"));
+			   
+		   }
+		   
+		   rs.close();
+		   statement.close();
+		   context.complete();			   
+		   rs = null;
+		   statement = null;
+			   
+		   return author;
 
          } catch(SQLException sql) {
 
            System.out.println("Erro: no SQL ----" + sql.getMessage() );
            sql.printStackTrace();
 
-         } 
+         } 		 
              
          return null;
     }
