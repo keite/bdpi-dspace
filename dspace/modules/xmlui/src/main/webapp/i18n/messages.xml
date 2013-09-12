@@ -2402,8 +2402,8 @@ This is an important resource of spreading knowledge, preserving the material pr
 <message key="paginasEstaticas.sobreBDPI"><a href="/page/sobreBDPIEnUS">About</a></message>
 <message key="paginasEstaticas.sobreBDPI.trail">About</message>
 <message key="paginasEstaticas.sobreBDPI.trail">Sobre</message>
-<message key="paginasEstaticas.faq"><a href="/page/faqEnUS">FAQ</a></message>
-<message key="paginasEstaticas.faq.trail">FAQ</message>
+<message key="paginasEstaticas.faq"><a href="/page/faqEnUS">Help</a></message>
+<message key="paginasEstaticas.faq.trail">Help</message>
 <message key="paginasEstaticas.politicaUso.trail">Use Policy</message>
 <message key="paginasEstaticas.politicaUso"><a href="/page/politicaUsoEnUS">Use Policy</a></message>
 <message key="paginasEstaticas.acesso">acessoEnUS.php</message>

@@ -2851,6 +2851,9 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 
 <message key="paginasEstaticas.acesso">acessoPtBR.php</message>
 
+<message key="paginasEstaticas.faq"><a href="/page/faqPtBR">Ajuda</a></message>
+<message key="paginasEstaticas.faq.trail">Ajuda</message>
+
 <!-- ==================================================== -->
 <!-- FIM 130327 andre.assada@usp.br paginas estaticas FIM -->
 <!-- ==================================================== -->
