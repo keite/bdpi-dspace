@@ -580,7 +580,7 @@
 						<xsl:when test="starts-with($request-uri, 'page/politicaUsoEnUS')">
                                 <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoEnUS.xhtml'))"/>
                                 <xsl:value-of select="$doc/html/head/title"/>
-                        </xsl:when>
+                        </xsl:when>-->
 						
 						<xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
                                 <xsl:variable name="doc" select="document(concat($paginas,'faqPtBR.xhtml'))"/>
@@ -595,7 +595,7 @@
 						<xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
                                 <xsl:variable name="doc" select="document(concat($paginas,'faqEnUS.xhtml'))"/>
                                 <xsl:value-of select="$doc/html/head/title"/>
-                        </xsl:when>-->
+                        </xsl:when>
 <!-- FIM 130731 - Dan Shinkai - Paginas estaticas FIM -->						
 
                         <xsl:when test="not($page_title)">
@@ -824,6 +824,13 @@
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <i18n:text>paginasEstaticas.sobreBDPI</i18n:text>
+				<xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <i18n:text>paginasEstaticas.faq</i18n:text>
             </div>
 <!-- FIM 130404 andre.assada@usp.br FIM -->
 
@@ -848,11 +855,11 @@
 					
 					<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoPtBR')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
-                    </xsl:when>
+                    </xsl:when>-->
 					
 					<xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
-                    </xsl:when>-->
+                    </xsl:when>
 					
                     <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEnUS')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text></li>
@@ -870,11 +877,11 @@
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.privacidade.trail</i18n:text></li>
                     </xsl:when>
 					
-					<!--<xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
+					<xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
                     </xsl:when>
 					
-					<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
+					<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
                     </xsl:when>-->
 					
@@ -896,11 +903,11 @@
 					
 					<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
-                    </xsl:when>
+                    </xsl:when>-->
 					
 					<xsl:when test="starts-with($request-uri, 'page/faqEs')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
-                    </xsl:when>-->
+                    </xsl:when>
 					
 					<xsl:when test="starts-with($request-uri, 'page/ajuda')">
                          <li class="ds-trail-link first-link">Ajuda</li>
