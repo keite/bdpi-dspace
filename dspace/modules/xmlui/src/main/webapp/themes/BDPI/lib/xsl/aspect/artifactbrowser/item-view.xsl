@@ -141,78 +141,90 @@
           </xsl:when>
 
           <!-- Author(s) row -->
-          <xsl:when test="$clause = 2 and (dim:field[@element='contributor'][@qualifier='author'] or dim:field[@element='creator'] or dim:field[@element='contributor'])">
-                    <div class="simple-item-view-authors">
-	                    <xsl:choose>
-	                        <xsl:when test="dim:field[@element='contributor'][@qualifier='author']">
-	                            <xsl:for-each select="dim:field[@element='contributor'][@qualifier='author']">
-                                        <span>
-                                          <xsl:if test="@authority">
-                                            <xsl:attribute name="class"><xsl:text>ds-dc_contributor_author-authority</xsl:text></xsl:attribute>
-                                          </xsl:if>
-											<xsl:copy-of select="node()"/>
+		  <xsl:when test="$clause = 2 and (dim:field[@element='contributor'][@qualifier='author'] or dim:field[@element='creator'] or dim:field[@element='contributor'])">
+			<div class="simple-item-view-authors">
+				<xsl:choose>
+					<xsl:when test="dim:field[@element='contributor'][@qualifier='author']">
+						<xsl:for-each select="dim:field[@element='contributor'][@qualifier='author']">
+							<span>
+								<xsl:if test="@authority">
+									<xsl:attribute name="class"><xsl:text>ds-dc_contributor_author-authority</xsl:text></xsl:attribute>
+							    </xsl:if>
+								<xsl:copy-of select="node()"/>
 											
 <!-- ========================================================================================== -->
-<!-- 130726 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado --> 
+<!-- 130726 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado. Trecho referente a pagina no qual contem a apresentacao do resumo. --> 
 <!-- @author Dan Shinkai (SI/EACH/USP) -->
 <!-- ========================================================================================== -->
-											<xsl:if test="@authority">														
-												<xsl:text> </xsl:text>
+								<xsl:if test="@authority">														
+									<xsl:text> </xsl:text>
 												
-												<xsl:variable name="codpes">
-													<xsl:value-of select="./@authority"/>
-												</xsl:variable>
+									<xsl:variable name="codpes">
+										<xsl:value-of select="./@authority"/>
+									</xsl:variable>
 												
-												<xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
+									<xsl:variable name="verificaAuthor" select="utilUSP:verificaAuthorUSP($codpes)"/>
 												
-													<xsl:variable name="url" select="current()"/>
-													<xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
-													
-													<xsl:if test="$urlSub!=''">
-														<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/>
+									<xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
+												
+										<xsl:variable name="url" select="current()"/>
+										<xsl:variable name="urlSub" select="substring-after($url,'handle/')"/>
+														
+										<xsl:if test="$urlSub!=''">
+											<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/>
 
-														<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
-															<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
-														</a>
-													</xsl:if>
-												</xsl:for-each>														
-											</xsl:if>
+											<xsl:choose> 
+												<xsl:when test="$verificaAuthor!=''">
+													<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+														<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+													</a>
+												</xsl:when>
+																
+												<xsl:otherwise>														
+													<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
+														<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+													</a>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:if>
+									</xsl:for-each>														
+								</xsl:if>
 <!-- ====================================================================================================== -->
 <!-- / FIM 130726 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado FIM / --> 
 <!-- ====================================================================================================== -->
 
-                                        </span>
-	                                <xsl:if test="count(following-sibling::dim:field[@element='contributor'][@qualifier='author']) != 0">
-	                                    <xsl:text>; </xsl:text>
-	                                </xsl:if>
-	                            </xsl:for-each>
-	                        </xsl:when>
-	                        <xsl:when test="dim:field[@element='creator']">
-	                            <xsl:for-each select="dim:field[@element='creator']">
-	                                <xsl:copy-of select="node()"/>
-	                                <xsl:if test="count(following-sibling::dim:field[@element='creator']) != 0">
-	                                    <xsl:text>; </xsl:text>
-	                                </xsl:if>
-	                            </xsl:for-each>
-	                        </xsl:when>
-	                        <xsl:when test="dim:field[@element='contributor']">
-	                            <xsl:for-each select="dim:field[@element='contributor']">
-	                                <xsl:copy-of select="node()"/>
-	                                <xsl:if test="count(following-sibling::dim:field[@element='contributor']) != 0">
-	                                    <xsl:text>; </xsl:text>
-	                                </xsl:if>
-	                            </xsl:for-each>
-	                        </xsl:when>
-	                        <xsl:otherwise>
-	                            <i18n:text>xmlui.dri2xhtml.METS-1.0.no-author</i18n:text>
-	                        </xsl:otherwise>
-	                    </xsl:choose>
-	            </div>
-              <xsl:call-template name="itemSummaryView-DIM-fields">
-                <xsl:with-param name="clause" select="($clause + 1)"/>
-                <xsl:with-param name="phase" select="$otherPhase"/>
-              </xsl:call-template>
-          </xsl:when>
+							</span>
+							<xsl:if test="count(following-sibling::dim:field[@element='contributor'][@qualifier='author']) != 0">
+								<xsl:text>; </xsl:text>
+							</xsl:if>
+						</xsl:for-each>
+					</xsl:when>
+					<xsl:when test="dim:field[@element='creator']">
+						<xsl:for-each select="dim:field[@element='creator']">
+							<xsl:copy-of select="node()"/>
+								<xsl:if test="count(following-sibling::dim:field[@element='creator']) != 0">
+									<xsl:text>; </xsl:text>
+								</xsl:if>
+							</xsl:for-each>
+						</xsl:when>
+						<xsl:when test="dim:field[@element='contributor']">
+							<xsl:for-each select="dim:field[@element='contributor']">
+								<xsl:copy-of select="node()"/>
+								<xsl:if test="count(following-sibling::dim:field[@element='contributor']) != 0">
+									<xsl:text>; </xsl:text>
+								</xsl:if>
+							</xsl:for-each>
+						</xsl:when>
+						<xsl:otherwise>
+							<i18n:text>xmlui.dri2xhtml.METS-1.0.no-author</i18n:text>
+						</xsl:otherwise>
+					</xsl:choose>
+			</div>
+		  <xsl:call-template name="itemSummaryView-DIM-fields">
+			<xsl:with-param name="clause" select="($clause + 1)"/>
+			<xsl:with-param name="phase" select="$otherPhase"/>
+		  </xsl:call-template>
+	  </xsl:when>
 
           <!-- identifier.uri row -->
           <xsl:when test="$clause = 3 and (dim:field[@element='identifier' and @qualifier='uri'])">
@@ -384,7 +396,7 @@
 			<xsl:variable name="lowerCase" select="'abcdefghijklmnopqrstuvwxyzçáéíóúýàèìòùãõñäëïöüÿâêîôûÁÉÍÓÚÝÀÈÌÒÙÄËÏÖÜÃÕÑÂÊÎÔÛ'"/> 
 			<xsl:variable name="upperCase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZÇAEIOUYAEIOUAONAEIOUYAEIOUAEIOUYAEIOUAEIOUAONAEIOU'"/> 
 			<!-- =============================================================================================== -->	
-	
+		
             <!-- =============================================================================================== -->
             <!-- 130328 agrupar metadados dentro de um TD, conforme determinacoes da profa. sueli (outubro 2010) -->
             <!-- @author Dan Shinkai (SI/EACH/USP) -->
@@ -870,7 +882,7 @@
 <!-- 130328 andre.assada@usp.br desabilitado por enquanto para possibilitar migracao para DSpace3 por etapas controladas -->
 
 <!-- ========================================================================================== -->
-<!-- 130726 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado --> 
+<!-- 130726 - Implementar link no icone USP para a pagina CV referente ao Autor USP selecionado. Trecho referente a apresentacao do registro completo. --> 
 <!-- @author Dan Shinkai (SI/EACH/USP) -->
 <!-- ========================================================================================== -->
 
@@ -905,6 +917,8 @@
 													<xsl:value-of select="./@authority"/>
 												</xsl:variable>
 												
+												<xsl:variable name="verificaAuthor" select="utilUSP:verificaAuthorUSP($codpes)"/>
+												
 												<xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
 												
 													<xsl:variable name="url" select="current()"/>
@@ -912,10 +926,20 @@
 													
 													<xsl:if test="$urlSub!=''">
 														<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/>
-
-														<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
-															<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
-														</a>
+														
+														<xsl:choose> 
+															<xsl:when test="$verificaAuthor!=''">
+																<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+																	<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+																</a>
+															</xsl:when>
+															
+															<xsl:otherwise>														
+																<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
+																	<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+																</a>
+															</xsl:otherwise>
+														</xsl:choose>
 													</xsl:if>
 												</xsl:for-each>														
 											</xsl:when>
@@ -932,6 +956,7 @@
 
 														<xsl:variable name="uspAutorInfo" select="substring-after(./node(),':')"/>
 														<xsl:variable name="codpes" select="substring-before($uspAutorInfo,':')"/>
+														<xsl:variable name="verificaAuthor" select="utilUSP:verificaAuthorUSP($codpes)"/>
 
 <!-- recuperar somente o itemID -->
 <!-- 13/04/26 - Dan  - Necessidade de incremetacao do for-each para busca de uma unica url no qual contem a url para a construcao da pagina CV. 
@@ -945,9 +970,19 @@
 																<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/>																
 															
 															<!-- insere o itemID e o codpes na URL -->
-																<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
-																	<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
-																</a>
+																<xsl:choose> 
+																	<xsl:when test="$verificaAuthor!=''">
+																		<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+																			<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+																		</a>
+																	</xsl:when>
+																	
+																	<xsl:otherwise>														
+																		<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
+																			<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+																		</a>
+																	</xsl:otherwise>
+																</xsl:choose>
 															</xsl:if>
 														</xsl:for-each>
 													</xsl:if>

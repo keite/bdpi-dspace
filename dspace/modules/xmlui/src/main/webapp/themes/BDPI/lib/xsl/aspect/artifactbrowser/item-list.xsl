@@ -208,6 +208,8 @@
 										<xsl:variable name="codpes">
 											<xsl:value-of select="./@authority"/>
 										</xsl:variable>
+										
+										<xsl:variable name="verificaAuthor" select="utilUSP:verificaAuthorUSP($codpes)"/>
 
 <!-- 130419 - Dan - Codigo para recuperar somente o itemID --> 
 										<xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
@@ -218,28 +220,37 @@
 												<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/> 
 <!-- 130419 - Dan - Codigo que insere o itemID e o codpes na URL. E necessario realizar a verificacao da url atual para a construcao do link, pois podera haver duplicacao no link --> 
 												<xsl:choose>
-	 
-												   <xsl:when test="$verificaLink = 0"> 
-													  <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-														 <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
-													  </a>
-	 
-												   </xsl:when> 
-											
-												   <xsl:when test="$verificaLink = 2"> 
-													  <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-														  <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
-													  </a>
-	 
-												   </xsl:when> 
-											
-												   <xsl:otherwise> 
-													  <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-														  <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
-													  </a>
-	 
-												   </xsl:otherwise> 
-												</xsl:choose> 
+													<xsl:when test="$verificaAuthor!=''">
+														<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+															<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+														</a>
+													</xsl:when>
+													<xsl:otherwise>
+														<xsl:choose>
+			 
+														   <xsl:when test="$verificaLink = 0"> 
+															  <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+																 <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+															  </a>
+			 
+														   </xsl:when> 
+													
+														   <xsl:when test="$verificaLink = 2"> 
+															  <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+																  <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+															  </a>
+			 
+														   </xsl:when> 
+													
+														   <xsl:otherwise> 
+															  <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+																  <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
+															  </a>
+			 
+														   </xsl:otherwise> 
+														</xsl:choose>
+													</xsl:otherwise>
+												</xsl:choose>
 											 </xsl:if>
 									    </xsl:for-each>
 									</xsl:when>
@@ -257,6 +268,7 @@
 <!-- 130419 - Dan - Codigo para recuperar somente o codpes do autor --> 
 											  <xsl:variable name="uspAutorInfo" select="substring-after(./node(),':')"/> 
 											  <xsl:variable name="codpes" select="substring-before($uspAutorInfo,':')"/> 
+											  <xsl:variable name="verificaAuthor" select="utilUSP:verificaAuthorUSP($codpes)"/>
 
 <!-- 130419 - Dan - Codigo para recuperar somente o itemID --> 
 											  <xsl:for-each select="../dim:field[@element='identifier'][@mdschema='dc'][@qualifier='uri']">
@@ -267,28 +279,37 @@
 													<xsl:variable name="itemID" select="substring-after($urlSub,'/')"/> 
 <!-- 130419 - Dan - Codigo que insere o itemID e o codpes na URL. E necessario realizar a verificacao da url atual para a construcao do link, pois podera haver duplicacao no link --> 
 													<xsl:choose>
-		 
-													   <xsl:when test="$verificaLink = 0"> 
-														  <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-															 <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
-														  </a>
-		 
-													   </xsl:when> 
-												
-													   <xsl:when test="$verificaLink = 2"> 
-														  <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-															  <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
-														  </a>
-		 
-													   </xsl:when> 
-												
-													   <xsl:otherwise> 
-														  <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
-															  <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
-														  </a>
-		 
-													   </xsl:otherwise> 
-													</xsl:choose> 
+													<xsl:when test="$verificaAuthor!=''">
+														<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+															<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
+														</a>
+													</xsl:when>
+													<xsl:otherwise>
+														<xsl:choose>
+			 
+														   <xsl:when test="$verificaLink = 0"> 
+															  <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+																 <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+															  </a>
+			 
+														   </xsl:when> 
+													
+														   <xsl:when test="$verificaLink = 2"> 
+															  <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+																  <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
+															  </a>
+			 
+														   </xsl:when> 
+													
+														   <xsl:otherwise> 
+															  <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+																  <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
+															  </a>
+			 
+														   </xsl:otherwise> 
+														</xsl:choose>
+													</xsl:otherwise>
+												</xsl:choose>
 												 </xsl:if>
 											   </xsl:for-each>
 											</xsl:if> 
