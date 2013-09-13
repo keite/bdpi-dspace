@@ -1,5 +1,6 @@
 package org.dspace.app.xmlui.utils;
 
+import java.sql.SQLException;
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,6 +10,7 @@ import java.util.regex.Pattern;
 import java.util.StringTokenizer;
 
 import org.apache.commons.lang.StringEscapeUtils;
+import org.dspace.content.dao.AuthorDAOPostgres;
 
 
 /**
@@ -129,5 +131,28 @@ public class USPXSLUtils {
    /* 130524 - Dan - Funcao que retira todos os espacos contidos em uma determinada String. */
    public static String retiraEspacos(String string) {
 		return string.replace(" ", "");
+   }
+   
+   /* 130912 - Dan Shinkai = Funcao criada para evitar mostrar a pagina do CV caso nao haja dados na base. */
+   public static String verificaAuthorUSP(String codpes) {
+	   AuthorDAOPostgres dao = new AuthorDAOPostgres();
+	   try {
+		if(dao.getAuthorByCodpes(Integer.parseInt(codpes)) == null) {
+			   StringBuilder builder = new StringBuilder();
+			   builder.append("/browse?authority=");
+			   builder.append(codpes);
+			   builder.append("&type=authorUSP");
+			   
+			   return builder.toString();
+		   }
+	} catch (NumberFormatException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	   
+	   return "";
    }
 }
