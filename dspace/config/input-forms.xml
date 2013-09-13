@@ -1556,6 +1556,11 @@
 		<name-map collection-handle="BDPI/1543"   form-name="evento" />
 		<name-map collection-handle="BDPI/1544"   form-name="livro" />
 		<name-map collection-handle="BDPI/1545"   form-name="relatorio" />
+		<!--  Biblioteca do Instituto de Medicina Tropical de São Paulo - SIBi/IMTSP  -->
+		<name-map collection-handle="BDPI/33320"   form-name="artigo" />
+		<name-map collection-handle="BDPI/33321"   form-name="evento" />
+		<name-map collection-handle="BDPI/33322"   form-name="livro" />
+		<name-map collection-handle="BDPI/33323"   form-name="relatorio" />
 		<!-- Biblioteca do Instituto de Psicologia - SIBi/IP   -->
 		<name-map collection-handle="BDPI/1547"   form-name="artigo" />
 		<name-map collection-handle="BDPI/1548"   form-name="evento" />
