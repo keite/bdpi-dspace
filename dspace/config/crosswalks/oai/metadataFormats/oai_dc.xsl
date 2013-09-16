@@ -29,7 +29,7 @@
 			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='contributor']/doc:element[@name='author']/doc:element/doc:field[@name='value']">
 				<dc:creator><xsl:value-of select="." /></dc:creator>
 			</xsl:for-each>
-			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='contributor']/doc:element[@name!='author']/doc:element/doc:field[@name='value']">
+			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='contributor']/doc:element/doc:field[@name='value']">
 				<dc:contributor><xsl:value-of select="." /></dc:contributor>
 			</xsl:for-each>
 			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='subject']/doc:element/doc:field[@name='value']">
@@ -39,10 +39,10 @@
 				<dc:description><xsl:value-of select="." /></dc:description>
 			</xsl:for-each>
 			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='description']/doc:element[@name='abstract']/doc:element/doc:field[@name='value']">
-				<dc:description>abstract:<xsl:value-of select="." /></dc:description>
+				<dc:description><xsl:value-of select="." /></dc:description>
 			</xsl:for-each>
-			<xsl:for-each select="doc:metadata/doc:element[@name='usp']/doc:element[@name='remissiva']/doc:element[@name='sponsor']/doc:element/doc:field[@name='value']">
-				<dc:description>sponsor:<xsl:value-of select="." /></dc:description>
+			<xsl:for-each select="doc:metadata/doc:element[@name='usp']/doc:element[@name='fomento']/doc:element/doc:element/doc:field[@name='value']">
+				<dc:description><xsl:value-of select="." /></dc:description>
 			</xsl:for-each>
 			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='date']/doc:element/doc:element/doc:field[@name='value']">
 				<dc:date><xsl:value-of select="." /></dc:date>
