@@ -2959,6 +2959,9 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <message key="xmlui.EPerson.OAuthEditProfile.textlinktoprovider">Acessar USP Digital</message>
 
 
+<!-- Adicionado tradução na busca por agência de fomento no lookup - Tiago - 2013-09-19  -->
+<message key="xmlui.ChoiceLookupTransformer.field.usp_remissiva_sponsor.title">Buscar Agência de fomento</message>
+<message key="xmlui.ChoiceLookupTransformer.field.usp_remissiva_sponsor.help">Escolha em um dos termos da lista, caso a agência de fomento que está cadastrando não esteja na lista, favor entrar em contato com o CCA-DT-SIBI-USP</message>
 
 
 </catalogue>

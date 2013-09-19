@@ -1889,7 +1889,17 @@
 					<repeatable>true</repeatable>
 					<label>Agência de fomento</label>
 					<input-type>onebox</input-type>
-					<hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<hint>Copiar na forma em que aparece no artigo as istituições financiadoras do projeto e o número do processo. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<required/>
+				</field>
+				<field>
+					<dc-schema>usp</dc-schema>
+					<dc-element>remissiva</dc-element>
+					<dc-qualifier>sponsor</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Agência de fomento normalizada</label>
+					<input-type>onebox</input-type>
+					<hint>Cadastrar a forma normalizada das Agências de fomento de acordo com a escolha no vocabulário controlado.</hint>
 					<required/>
 				</field>
 				<field>
@@ -2272,7 +2282,17 @@
 					<repeatable>true</repeatable>
 					<label>Agência de fomento</label>
 					<input-type>onebox</input-type>
-					<hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<hint>Copiar na forma em que aparece no artigo as istituições financiadoras do projeto e o número do processo. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<required/>
+				</field>
+				<field>
+					<dc-schema>usp</dc-schema>
+					<dc-element>remissiva</dc-element>
+					<dc-qualifier>sponsor</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Agência de fomento normalizada</label>
+					<input-type>onebox</input-type>
+					<hint>Cadastrar a forma normalizada das Agências de fomento de acordo com a escolha no vocabulário controlado.</hint>
 					<required/>
 				</field>
 				<field>
@@ -2598,7 +2618,17 @@
 					<repeatable>true</repeatable>
 					<label>Agência de fomento</label>
 					<input-type>onebox</input-type>
-					<hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<hint>Copiar na forma em que aparece no artigo as istituições financiadoras do projeto e o número do processo. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<required/>
+				</field>
+				<field>
+					<dc-schema>usp</dc-schema>
+					<dc-element>remissiva</dc-element>
+					<dc-qualifier>sponsor</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Agência de fomento normalizada</label>
+					<input-type>onebox</input-type>
+					<hint>Cadastrar a forma normalizada das Agências de fomento de acordo com a escolha no vocabulário controlado.</hint>
 					<required/>
 				</field>
 				<field>
@@ -2857,7 +2887,17 @@
 					<repeatable>true</repeatable>
 					<label>Agência de fomento</label>
 					<input-type>onebox</input-type>
-					<hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<hint>Copiar na forma em que aparece no artigo as istituições financiadoras do projeto e o número do processo. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<required/>
+				</field>
+				<field>
+					<dc-schema>usp</dc-schema>
+					<dc-element>remissiva</dc-element>
+					<dc-qualifier>sponsor</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Agência de fomento normalizada</label>
+					<input-type>onebox</input-type>
+					<hint>Cadastrar a forma normalizada das Agências de fomento de acordo com a escolha no vocabulário controlado.</hint>
 					<required/>
 				</field>
 				<field>
@@ -2890,7 +2930,8 @@
 					<hint>Selecione o tipo de acesso permitido ao documento, conforme negociação entre os autores e a editora. ex. Acesso aberto</hint>
 					<required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
 				</field>
-				<!--<field><dc-schema>dc</dc-schema><dc-element>description</dc-element><dc-qualifier>embargo</dc-qualifier><repeatable>false</repeatable><label>Data final de embargo</label><input-type>onebox</input-type><hint>Se o livro está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint><required></required></field>--><field>
+				<!--<field><dc-schema>dc</dc-schema><dc-element>description</dc-element><dc-qualifier>embargo</dc-qualifier><repeatable>false</repeatable><label>Data final de embargo</label><input-type>onebox</input-type><hint>Se o livro está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint><required></required></field>-->
+				<field>
 					<dc-schema>dc</dc-schema>
 					<dc-element>rights</dc-element>
 					<dc-qualifier>holder</dc-qualifier>
@@ -3037,7 +3078,8 @@
 					<hint>Cidade em que o relatório foi produzido. Ex. São Paulo</hint>
 					<required/>
 				</field>
-				<!-- Verificar a necessidade deste campo - Tiago - 2013-04-22<field><dc-schema>dc</dc-schema><dc-element>identifier</dc-element><dc-qualifier>other</dc-qualifier><repeatable></repeatable><label>Identificador do relatório</label><input-type>onebox</input-type><hint>Use este campo caso o relatório possua um identificador na instituição em que foi produzido</hint><required></required></field>	    --><field>
+				<!-- Verificar a necessidade deste campo - Tiago - 2013-04-22<field><dc-schema>dc</dc-schema><dc-element>identifier</dc-element><dc-qualifier>other</dc-qualifier><repeatable></repeatable><label>Identificador do relatório</label><input-type>onebox</input-type><hint>Use este campo caso o relatório possua um identificador na instituição em que foi produzido</hint><required></required></field>	    -->
+				<field>
 					<dc-schema>dc</dc-schema>
 					<dc-element>identifier</dc-element>
 					<dc-qualifier>url</dc-qualifier>
@@ -3106,7 +3148,17 @@
 					<repeatable>true</repeatable>
 					<label>Agência de fomento</label>
 					<input-type>onebox</input-type>
-					<hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<hint>Copiar na forma em que aparece no artigo as istituições financiadoras do projeto e o número do processo. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<required/>
+				</field>
+				<field>
+					<dc-schema>usp</dc-schema>
+					<dc-element>remissiva</dc-element>
+					<dc-qualifier>sponsor</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Agência de fomento normalizada</label>
+					<input-type>onebox</input-type>
+					<hint>Cadastrar a forma normalizada das Agências de fomento de acordo com a escolha no vocabulário controlado.</hint>
 					<required/>
 				</field>
 				<field>
@@ -3119,7 +3171,8 @@
 					<hint>Selecione o tipo de acesso permitido ao documento, conforme negociação entre os autores e a editora. ex. Acesso aberto</hint>
 					<required>Tipo de acesso permitido ao documento de texto completo é um campo obrigatório.</required>
 				</field>
-				<!--<field><dc-schema>dc</dc-schema><dc-element>description</dc-element><dc-qualifier>embargo</dc-qualifier><repeatable>false</repeatable><label>Data final de embargo</label><input-type>onebox</input-type><hint>Se a produção está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint><required></required></field>--><field>
+				<!--<field><dc-schema>dc</dc-schema><dc-element>description</dc-element><dc-qualifier>embargo</dc-qualifier><repeatable>false</repeatable><label>Data final de embargo</label><input-type>onebox</input-type><hint>Se a produção está sob uma política de embargo, entre com a data de liberação pública do texto completo, no formato AAAA-MM-DD</hint><required></required></field>-->
+				<field>
 					<dc-schema>dc</dc-schema>
 					<dc-element>rights</dc-element>
 					<dc-qualifier>holder</dc-qualifier>
@@ -3342,7 +3395,17 @@
 					<repeatable>true</repeatable>
 					<label>Agência de fomento</label>
 					<input-type>onebox</input-type>
-					<hint>Instituição financiadora do projeto e o número do processo. Ex: FAPESP 2009/08801-1. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<hint>Copiar na forma em que aparece no artigo as istituições financiadoras do projeto e o número do processo. Esta informação pode ser encontrada no rodapé da primeira página, no final do documento ou nos "Agradecimentos". Se não encontrar o número do projeto, mas for agência FAPESP, procurar no LATTES ou na Biblioteca Virtual da FAPESP.</hint>
+					<required/>
+				</field>
+				<field>
+					<dc-schema>usp</dc-schema>
+					<dc-element>remissiva</dc-element>
+					<dc-qualifier>sponsor</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Agência de fomento normalizada</label>
+					<input-type>onebox</input-type>
+					<hint>Cadastrar a forma normalizada das Agências de fomento de acordo com a escolha no vocabulário controlado.</hint>
 					<required/>
 				</field>
 				<field>
