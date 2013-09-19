@@ -246,11 +246,11 @@
 			<!--  Script de acordeon para o Discovery - Tiago - 15-07-2013 -->
 			<script type="text/javascript">
 			<xsl:attribute name="src">
-			<xsl:text>http://code.jquery.com/jquery-1.9.1.js</xsl:text>
+			<xsl:text>/static/js/jquery-1.9.1.js</xsl:text>
 			</xsl:attribute>&#160;</script>
 			<script type="text/javascript">
 			<xsl:attribute name="src">
-			<xsl:text>http://code.jquery.com/ui/1.10.3/jquery-ui.js</xsl:text>
+			<xsl:text>/static/js/jquery-ui.js</xsl:text>
 			</xsl:attribute>&#160;</script>
 			<!-- 120611 FontResizer chamada do js -->
 			<script type="text/javascript">
@@ -266,12 +266,12 @@
 			
 			<script type="text/javascript">
 			<xsl:attribute name="src">
-			<xsl:text>https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js</xsl:text>
+			<xsl:text>/static/js/embed.js</xsl:text><!-- https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js -->
 			</xsl:attribute>&#160;</script>		
 
 			<script type="text/javascript">
 			<xsl:attribute name="src">
-			<xsl:text>http://impactstory.org/embed/v1/impactstory.js</xsl:text>
+			<xsl:text>/static/js/impactstory.js</xsl:text><!-- http://impactstory.org/embed/v1/impactstory.js -->
 			</xsl:attribute>&#160;</script>		
 			
 			<!-- FIM -->
@@ -1098,7 +1098,8 @@
                         <a class="addthis_button_email"></a>
                         <a class="addthis_button_compact"></a>
                     </div>
-                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207"></script>
+                    <script type="text/javascript" src="/static/js/addthis_widget.js"></script>
+                    <!-- http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207 -->
                     <!-- AddThis Button END -->
                 </div>
 
@@ -1352,36 +1353,8 @@
     -->
 
     <xsl:template name="addJavascript">
-        <xsl:variable name="jqueryVersion">
-            <xsl:text>1.6.2</xsl:text>
-        </xsl:variable>
-
-        <xsl:variable name="protocol">
-            <xsl:choose>
-                <xsl:when test="starts-with(confman:getProperty('dspace.baseUrl'), 'https://')">
-                    <xsl:text>https://</xsl:text>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:text>http://</xsl:text>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <script type="text/javascript" src="{concat($protocol, 'ajax.googleapis.com/ajax/libs/jquery/', $jqueryVersion ,'/jquery.min.js')}">&#160;</script>
-
-        <xsl:variable name="localJQuerySrc">
-                <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
-            <xsl:text>/static/js/jquery-</xsl:text>
-            <xsl:value-of select="$jqueryVersion"/>
-            <xsl:text>.min.js</xsl:text>
-        </xsl:variable>
-
-        <script type="text/javascript">
-            <xsl:text disable-output-escaping="yes">!window.jQuery &amp;&amp; document.write('&lt;script type="text/javascript" src="</xsl:text><xsl:value-of
-                select="$localJQuerySrc"/><xsl:text disable-output-escaping="yes">"&gt;&#160;&lt;\/script&gt;')</xsl:text>
-        </script>
-
-
-
+        <script type="text/javascript" src="/static/js/jquery.min.js">&#160;</script>
+	
         <!-- Add theme javascipt  -->
         <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='javascript'][@qualifier='url']">
             <script type="text/javascript">
