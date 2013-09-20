@@ -210,6 +210,22 @@
                     </xsl:attribute>
                 </link>
             </xsl:for-each>
+			
+			<!-- 130920 - Dan Shinkai - Inserido CSS para JPlayer manualmente -->
+			<link rel="stylesheet" type="text/css">
+                    <xsl:attribute name="media">
+                        <xsl:value-of select="@qualifier"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="href">
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+                        <xsl:text>/themes/</xsl:text>
+                        <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+                        <xsl:text>/</xsl:text>
+                        <xsl:text>lib/css/jplayer.blue.monday.css</xsl:text>
+                    </xsl:attribute>
+			</link>
+			
+			<!-- JPlayer CSS FIM -->
 
             <!-- Add syndication feeds -->
             <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='feed']">
@@ -287,6 +303,45 @@
 				});
 			</script>
 			<!--  END - Script de acordeon para o Discovery - Tiago - 15-07-2013 -->
+			
+			<!-- 130920 - Dan Shinkai - Prototipo JQuery para visualizacao de video. -->
+			<script type="text/javascript">
+				<xsl:attribute name="src">
+					<xsl:text>http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js</xsl:text>
+				</xsl:attribute>&#160;</script>
+			
+			<script type="text/javascript">
+			<xsl:attribute name="src">
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
+				<xsl:text>/themes/</xsl:text>
+				<xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='theme'][@qualifier='path']"/>
+				<xsl:text>/lib/js/jquery.jplayer.min.js</xsl:text>
+			</xsl:attribute>&#160;</script>
+			
+			<script type="text/javascript">
+				var $jplayer = jQuery.noConflict()
+				$jplayer(document).ready(function(){
+				  $jplayer("#jquery_jplayer_1").jPlayer({
+					ready: function () {
+					  $jplayer(this).jPlayer("setMedia", {
+						m4v: "http://bdpife4.sibi.usp.br/a/GitReal.mp4",
+						poster: ""
+					  });
+					},
+					swfPath: "js/",
+					supplied: "m4v",
+					size: {
+						width: "640px",
+						height: "360px",
+						cssClass: "jp-video-360p"
+					},
+					smoothPlayBar: true,
+					keyEnabled: true
+				  });
+				});
+			</script>
+			
+			<!-- Prototipo JQuery FIM -->
 		
 <!-- 130808 - Dan Shinkai - Codigo que esconde itens com mais de dez autores na lista de itens -->		
 <!-- Dicas: Sinais de '>' ou '<' nao sao reconhecidos diretamente no XSL. Portanto, adicionar dentro de uma tag <xsl:text disable-output-escaping="yes"> 
@@ -1312,6 +1367,55 @@
                         <xsl:copy-of select="$doc"/>
                    </div>
                 </xsl:when>
+				
+<!-- 200913 - Dan Shinkai - Criacao da pagina para apresentar video -->
+				<!--<xsl:when test="starts-with($request-uri, 'page/testando')">
+                    <div id="jp_container_1" class="jp-video ">
+						<div class="jp-type-single">
+							<div id="jquery_jplayer_1" class="jp-jplayer"><xsl:text disable-output-escaping="yes"> </xsl:text></div>
+							<div class="jp-gui">
+								<div class="jp-video-play">
+									<a href="javascript:;" class="jp-video-play-icon" tabindex="1">play</a>
+								</div>
+							
+								<div class="jp-interface">
+								  <div class="jp-progress">
+									<div class="jp-seek-bar">
+									  <div class="jp-play-bar"><xsl:text disable-output-escaping="yes"> </xsl:text></div>
+									</div>
+								  </div>
+								  <div class="jp-current-time"><xsl:text disable-output-escaping="yes"> </xsl:text></div>
+								  <div class="jp-duration"><xsl:text disable-output-escaping="yes"> </xsl:text></div>
+								  <div class="jp-controls-holder">
+									<ul class="jp-controls">
+									  <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+									  <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+									  <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+									  <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+									  <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+									  <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+									</ul>
+									<div class="jp-volume-bar">
+									  <div class="jp-volume-bar-value"><xsl:text disable-output-escaping="yes"> </xsl:text></div>
+									</div>
+									<ul class="jp-toggles">
+									  <li><a href="javascript:;" class="jp-full-screen" tabindex="1" title="full screen">full screen</a></li>
+									  <li><a href="javascript:;" class="jp-restore-screen" tabindex="1" title="restore screen">restore screen</a></li>
+									  <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+									  <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+									</ul>
+								  </div>
+								  <div class="jp-title">
+									<ul>
+									  <li>BDPI</li>
+									</ul>
+								  </div>
+								</div>
+						  </div>
+						</div>
+					</div>
+                </xsl:when>-->
+<!-- Pagina de Video - FIM -->
 				
                 <!-- Otherwise use default handling of body -->
                 <xsl:otherwise>
