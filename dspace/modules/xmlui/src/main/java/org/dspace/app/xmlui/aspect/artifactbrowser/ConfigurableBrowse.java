@@ -355,7 +355,7 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
 					/** 130731 - Dan Shinkai - Implementacao da condicao para gerar o link para a pagina CV a partir do parametro do authority
 					  *
 					  */
-						if(queryParams.containsKey("authority")) {
+						if(queryParams.containsKey("authority") && queryParams.get("type").equals("authorUSP")) {
 						
                     		String numUSP = queryParams.get("authority");
 							String link = "handle/" + theme + "/0/";
