@@ -1669,7 +1669,7 @@
 					<repeatable>true</repeatable>
 					<label>Informações sobre os autores externos à USP</label>
 					<input-type>onebox</input-type>
-					<hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+					<hint>Autor;Instituição/depto;Cidade;UF;País@@@Preencher informações relativas ao Autor externo, de acordo com o formulário. Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação; Campinas; SP; Brasil</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>
@@ -1920,7 +1920,7 @@
 					<repeatable>true</repeatable>
 					<label>Indexação em bases de dados</label>
 					<input-type>onebox</input-type>
-					<hint>Informa em quais bases esta produção está indexada</hint>
+					<hint>Informar em quais bases esta produção está indexada</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>
@@ -2062,7 +2062,7 @@
 					<repeatable>true</repeatable>
 					<label>Informações sobre os autores externos à USP</label>
 					<input-type>onebox</input-type>
-					<hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+					<hint>Autor;Instituição/depto;Cidade;UF;País@@@Preencher informações relativas ao Autor externo, de acordo com o formulário. Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação; Campinas; SP; Brasil</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>
@@ -2441,7 +2441,7 @@
 					<repeatable>true</repeatable>
 					<label>Informações sobre os autores externos à USP</label>
 					<input-type>onebox</input-type>
-					<hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+					<hint>Autor;Instituição/depto;Cidade;UF;País@@@Preencher informações relativas ao Autor externo, de acordo com o formulário. Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação; Campinas; SP; Brasil</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>
@@ -2733,7 +2733,7 @@
 					<repeatable>true</repeatable>
 					<label>Informações sobre os autores externos à USP</label>
 					<input-type>onebox</input-type>
-					<hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+					<hint>Autor;Instituição/depto;Cidade;UF;País@@@Preencher informações relativas ao Autor externo, de acordo com o formulário. Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação; Campinas; SP; Brasil</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>
@@ -3013,7 +3013,7 @@
 					<repeatable>true</repeatable>
 					<label>Informações sobre os autores externos à USP</label>
 					<input-type>onebox</input-type>
-					<hint>Autor;Instituição/depto (extenso e sigla);Cidade;UF;País@@@Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação (UNICAMP/DCC);Campinas;SP;Brasil</hint>
+					<hint>Autor;Instituição/depto;Cidade;UF;País@@@Preencher informações relativas ao Autor externo, de acordo com o formulário. Exemplo: Santos, Milena; Universidade de Campinas, Depto de Computação; Campinas; SP; Brasil</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>

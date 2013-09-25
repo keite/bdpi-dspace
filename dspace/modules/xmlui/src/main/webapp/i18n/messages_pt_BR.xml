@@ -751,8 +751,8 @@
     <message key="xmlui.Submission.submit.AccessStep.embargo">Acesso embargado até uma data específica</message>
     <message key="xmlui.Submission.submit.AccessStep.embargo_visible">Visível/Embargado</message>
     <message key="xmlui.Submission.submit.AccessStep.name">Nome</message>
-    <message key="xmlui.Submission.submit.AccessStep.description">Descriçãon</message>
-    <message key="xmlui.Submission.submit.AccessStep.reason">Razão</message>
+    <message key="xmlui.Submission.submit.AccessStep.description">Descrição</message>
+    <message key="xmlui.Submission.submit.AccessStep.reason">Justificativa</message>
     <message key="xmlui.Submission.submit.AccessStep.submit_add_policy">Confirmar política &amp; adicionar outra</message>
     <message key="xmlui.Submission.submit.AccessStep.list_assigned_groups">Grupos</message>
     <message key="xmlui.Submission.submit.AccessStep.error_format_date">Erro no formato da data</message>
@@ -913,9 +913,9 @@
 	<message key="xmlui.Submission.workflow.PerformTaskStep.return_submit">Devolver a tarefa</message>
 
 	<!-- org.dspace.app.xmlui.Submission.workflow.RejectTaskStep -->
-	<message key="xmlui.Submission.workflow.RejectTaskStep.info1">Por favor, entre com a razão da recusa da submissão no campo abaixo; indique, também, as possíveis alterações para uma re-submissão</message>
-	<message key="xmlui.Submission.workflow.RejectTaskStep.reason">Razão</message>
-	<message key="xmlui.Submission.workflow.RejectTaskStep.reason_required">O campo razão é necessária</message>
+	<message key="xmlui.Submission.workflow.RejectTaskStep.info1">Por favor, entre com a justificativa da rejeição da submissão no campo abaixo; indique, também, as possíveis alterações para uma re-submissão</message>
+	<message key="xmlui.Submission.workflow.RejectTaskStep.reason">Justificativa da rejeição</message>
+	<message key="xmlui.Submission.workflow.RejectTaskStep.reason_required">O campo justificativa da recusa é obrigatório</message>
 	<message key="xmlui.Submission.workflow.RejectTaskStep.submit_reject">Rejeitar Item</message>
 
 	
@@ -2962,6 +2962,7 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <!-- Adicionado tradução na busca por agência de fomento no lookup - Tiago - 2013-09-19  -->
 <message key="xmlui.ChoiceLookupTransformer.field.usp_remissiva_sponsor.title">Buscar Agência de fomento</message>
 <message key="xmlui.ChoiceLookupTransformer.field.usp_remissiva_sponsor.help">Escolha em um dos termos da lista, caso a agência de fomento que está cadastrando não esteja na lista, favor entrar em contato com o CCA-DT-SIBI-USP</message>
-
+<message key="xmlui.ChoiceLookupTransformer.field.dc_subject_vcusp.title">Buscar no Vocabulário Controlado USP</message>
+<message key="xmlui.ChoiceLookupTransformer.field.dc_subject_vcusp.help">Somente são apresentados nesta lista as duas primeiras hierarquias superiores do Vocabulário Controlado USP. Caso o termo que procure não esteja na lista, favor incluir manualmente</message>
 
 </catalogue>
