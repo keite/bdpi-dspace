@@ -163,9 +163,9 @@ andre.assada@usp.br links para conteudo estatico
     line-height: 138.5%;
     margin: 0;
     padding: 3px 0;
-/*130412*/font-size:90%
+/*130412*/font-size:90%;
     color: #000;
-    text-decoration:bold;
+    /*text-decoration:bold;*/
 }
 
 #ds-trail li {
@@ -234,7 +234,7 @@ andre.assada@usp.br links para conteudo estatico
 #ds-footer-right {
     float:right;
 /* 130401 andre.assada@usp.br*/ text-align: right;
-/* 130401 andre.assada@usp.br*/ padding:5px 30px; 0 0;
+/* 130401 andre.assada@usp.br*/ padding:5px 30px;
 }
 
 #ds-footer-right span.theme-by{
@@ -244,7 +244,7 @@ andre.assada@usp.br links para conteudo estatico
 
 /* 130401 andre.assada@usp.br*/ #ds-footer-right-rss {
     background-repeat: no-repeat;
-    background: url('../../images/rss_symbol.png') no-repeat;
+    /*background: url('../../images/feed.png') no-repeat;*/
     float:left;
     width:32px;
     height:32px;
@@ -1180,8 +1180,8 @@ ul.ds-progress-list li.disabled input.ds-button-field
 .ie7 li.button.disabled input,
 .ie8 .ds-button-field.disabled,
 .ie8 li.button.disabled input {
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 50);
-    zoom: 1;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity = 50);
+    zoom:1;
     cursor: auto;
 }
 
