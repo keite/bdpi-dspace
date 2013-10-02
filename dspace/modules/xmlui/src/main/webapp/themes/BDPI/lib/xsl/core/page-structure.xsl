@@ -382,11 +382,11 @@
 			<!-- The following javascript removes the default text of empty text areas when they are focused on or submitted -->
             <!-- There is also javascript to disable submitting a form when the 'enter' key is pressed. -->
 			
-			<!--script type="text/javascript">
-                < xsl : attribute name="src">
-                    <xsl : text>https://www.google.com/jsapi</ xsl : text>                    
-                < / xsl : attribute>&#160;
-			</script-->
+			<script type="text/javascript">
+                <xsl:attribute name="src">
+                    <xsl:text>https://www.google.com/jsapi</xsl:text>                    
+                </xsl:attribute>&#160;
+			</script>
 			
 			<!-- 130607 - Dan Shinkai - Adicionado funcao concatTextField no qual realizara a criacao da tupla do autor externo USP. Esta funcao sera visivel
 			                            somente na pagina de submissao de um item no qual havera os campos para o autor externo USP. Esta sendo assumido
