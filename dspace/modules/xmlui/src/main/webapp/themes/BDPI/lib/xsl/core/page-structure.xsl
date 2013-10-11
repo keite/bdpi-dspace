@@ -282,13 +282,19 @@
 			
 			<script type="text/javascript">
 			<xsl:attribute name="src">
-			<xsl:text>/static/js/embed.js</xsl:text><!-- https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js -->
-			</xsl:attribute>&#160;</script>		
+			<xsl:text>https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js</xsl:text><!-- /static/js/embed.js -->
+			</xsl:attribute>
+			<xsl:attribute name="async">
+			<xsl:text>async</xsl:text>
+			</xsl:attribute>&#160;</script>
 
 			<script type="text/javascript">
 			<xsl:attribute name="src">
-			<xsl:text>/static/js/impactstory.js</xsl:text><!-- http://impactstory.org/embed/v1/impactstory.js -->
-			</xsl:attribute>&#160;</script>		
+			<xsl:text>http://impactstory.org/embed/v1/impactstory.js</xsl:text><!-- /static/js/impactstory.js -->
+			</xsl:attribute>
+			<xsl:attribute name="async">
+			<xsl:text>async</xsl:text>
+			</xsl:attribute>&#160;</script>
 			
 			<!-- FIM -->
 			
@@ -683,18 +689,17 @@
 
 <!-- 130327 andre.assada@usp.br nova barra usp by Marcio Eichler, agora com codigo centralizado em server unico -->
 <div id="uspLogo">
-    <img src="http://www.sibi.usp.br/barraUSP/images/left_Logo_usp.jpg" style="cursor:pointer;" alt="USP" onclick="javascript:window.open('http://www.usp.br');" />
-    <img src="http://www.sibi.usp.br/barraUSP/images/middle_Logo_usp.gif" style="cursor:pointer;" alt="USP" onclick="javascript:window.open('http://www.usp.br');" />
+    <img src="http://www.producao.usp.br/a/barrausp/images/left_Logo_usp.jpg" style="cursor:pointer;" alt="USP" onclick="javascript:window.open('http://www.usp.br');" />
+    <img src="http://www.producao.usp.br/a/barrausp/images/middle_Logo_usp.gif" style="cursor:pointer;" alt="USP" onclick="javascript:window.open('http://www.usp.br');" />
 </div>
 <script type="text/javascript">
     <xsl:attribute name="src">
-        <xsl:text>http://www.sibi.usp.br/barraUSP/js/barra2.js</xsl:text>
+        <xsl:text>http://www.producao.usp.br/a/barrausp/js/barra2.js</xsl:text>
     </xsl:attribute>
     <xsl:attribute name="charset">
         <xsl:text>utf-8</xsl:text>
     </xsl:attribute>
-    &#160;
-</script>
+    &#160;</script>
 <!-- FIM 130327 andre.assada@usp.br nova barra usp by Marcio Eichler, agora com codigo centralizado em server unico FIM -->
 
         <div id="ds-header-wrapper">
@@ -1140,6 +1145,8 @@
                             <span id="ds-footer-right-rss">&#160;</span>
                         </a>
                     </div>
+		    
+				    
 
                     <!-- 120427 ADDThis Button BEGIN -->
                     <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
@@ -1153,7 +1160,7 @@
                         <a class="addthis_button_email"></a>
                         <a class="addthis_button_compact"></a>
                     </div>
-                    <script type="text/javascript" src="/static/js/addthis_widget.js"></script>
+                    <script type="text/javascript" src="/static/js/addthis_widget.js#pubid=ra-4f9b00617c1df207" async="async"></script>
                     <!-- http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207 -->
                     <!-- AddThis Button END -->
                 </div>
