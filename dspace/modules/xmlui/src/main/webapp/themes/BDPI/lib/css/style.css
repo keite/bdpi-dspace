@@ -163,7 +163,7 @@ andre.assada@usp.br links para conteudo estatico
     line-height: 138.5%;
     margin: 0;
     padding: 3px 0;
-/*130412*/font-size:90%;
+/*130412 font-size:90%; */
     color: #000;
     /*text-decoration:bold;*/
 }
@@ -177,7 +177,7 @@ andre.assada@usp.br links para conteudo estatico
 
 #ds-trail a {
     color: #1F3F5E;
-    font-size: 90% !important;
+/*131004    font-size: 90% !important; */
     text-decoration: none;
     font-weight: normal;
 }
