@@ -2810,6 +2810,16 @@
 				<field>
 					<dc-schema>dc</dc-schema>
 					<dc-element>identifier</dc-element>
+					<dc-qualifier>issn</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>ISSN da coleção que a obra seja parte</label>
+					<input-type>onebox</input-type>
+					<hint>ISSN da obra com 8 número. Ex.9788-3111</hint>
+					<required/>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>identifier</dc-element>
 					<dc-qualifier>citation</dc-qualifier>
 					<repeatable>false</repeatable>
 					<label>Citação do livro</label>
