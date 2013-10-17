@@ -849,7 +849,7 @@
          <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
-            <version>11.2.0.2.0</version>
+            <version>11.2.0.4</version>
          </dependency>
          <dependency>
             <groupId>com.sun.media</groupId>
@@ -1193,16 +1193,16 @@
     </distributionManagement>
 
     <repositories>
-        <repository>
-            <id>sonatype-releases</id>
-            <name>Sonatype Releases Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/releases/</url>
-        </repository>
 	<repository>
 	    <id>bdpi-repo</id>
 	    <name>BDPI local maven repository</name>
 	    <url>file://${root.basedir}/m2repo</url>
 	</repository>
+        <repository>
+            <id>sonatype-releases</id>
+            <name>Sonatype Releases Repository</name>
+            <url>http://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
     </repositories>
     
 </project>

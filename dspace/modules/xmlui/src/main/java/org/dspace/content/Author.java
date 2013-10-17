@@ -8,47 +8,66 @@ import java.util.Comparator;
    120817 - Dan Shinkai
 
    120911 - Dan - implementado a interface Comparable para ordenar por nomeCompleto
+   04out2013 - Jan - contornando oracle, que considera string vazia igual a null
 */
 
 public class Author implements Comparator<Author>, Comparable<Author> {
 
-	private int codpes;
-        private int qntTrabalhos;
-        private String nome;
-        private String email_1;
-        private String sobrenome;
-        private String nomeCompleto;
-        private String nomeInicial;
-        private String unidade;
-        private String unidadeSigla;
-        private String depto;
-        private String deptoSigla;
-        private String vinculo;
-        private String funcao;
-        private String lattes;
+	private int codpes = 0;
+        private int qntTrabalhos = 0;
+        private String nome = "";
+        private String email_1 = "";
+        private String sobrenome = "";
+        private String nomeCompleto = "";
+        private String nomeInicial = "";
+        private String unidade = "";
+        private String unidadeSigla = "";
+        private String depto = "";
+        private String deptoSigla = "";
+        private String vinculo = "";
+        private String funcao = "";
+        private String lattes = "";
 
         public Author(){}
     
-	public Author(int codpes, int qntTrabalhos, String nome, String email_1, String sobrenome,
+	/**
+     *
+     * @param codpes
+     * @param qntTrabalhos
+     * @param nome
+     * @param email_1
+     * @param sobrenome
+     * @param nomeCompleto
+     * @param nomeInicial
+     * @param unidade
+     * @param unidadeSigla
+     * @param depto
+     * @param deptoSigla
+     * @param vinculo
+     * @param funcao
+     * @param lattes
+     */
+    public Author(int codpes, int qntTrabalhos, String nome, String email_1, String sobrenome,
 			String nomeCompleto, String nomeInicial, String unidade, String unidadeSigla,
 			String depto, String deptoSigla, String vinculo, String funcao,
 			String lattes) {
 		super();
-		this.codpes = codpes;
+                this.codpes = codpes;
                 this.qntTrabalhos = qntTrabalhos;
-		this.nome = nome;
-		this.email_1 = email_1;
-		this.sobrenome = sobrenome;
-                this.nomeCompleto = nomeCompleto;
-		this.nomeInicial = nomeInicial;
-		this.unidade = unidade;
-		this.unidadeSigla = unidadeSigla;
-		this.depto = depto;
-		this.deptoSigla = deptoSigla;
-		this.vinculo = vinculo;
-		this.funcao = funcao;
-		this.lattes = lattes;
-	}
+		this.nome = nome==null?"":nome;
+		this.email_1 = email_1==null?"":email_1;
+		this.sobrenome = sobrenome==null?"":sobrenome;
+                this.nomeCompleto = nomeCompleto==null?"":nomeCompleto;
+		this.nomeInicial = nomeInicial==null?"":nomeInicial;
+		this.unidade = unidade==null?"":unidade;
+		this.unidadeSigla = unidadeSigla==null?"":unidadeSigla;
+		this.depto = depto==null?"":depto;
+		this.deptoSigla = deptoSigla==null?"":deptoSigla;
+		this.vinculo = vinculo==null?"":vinculo;
+		this.funcao = funcao==null?"":funcao;
+		this.lattes = lattes==null?"https://uspdigital.usp.br/tycho/curriculoLattesMostrar?codpub=".concat(String.valueOf(codpes)):lattes;
+                
+    }
 	
 	public int getCodpes() {
 		return codpes;
@@ -60,74 +79,80 @@ public class Author implements Comparator<Author>, Comparable<Author> {
 		return nome;
 	}
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.nome = nome==null?"":nome;
 	}
 	public String getEmail_1() {
 		return email_1;
 	}
 	public void setEmail_1(String email_1) {
-		this.email_1 = email_1;
+		this.email_1 = email_1==null?"":email_1;
 	}
 	public String getSobrenome() {
 		return sobrenome;
 	}
 	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+		this.sobrenome = sobrenome==null?"":sobrenome;
 	}
         public String getNomeCompleto() {
                 return nomeCompleto;
         }
         public void setNomeCompleto(String nomeCompleto) {
-                this.nomeCompleto = nomeCompleto;
+                this.nomeCompleto = nomeCompleto==null?"":nomeCompleto;
         }
 	public String getNomeInicial() {
 		return nomeInicial;
 	}
 	public void setNomeInicial(String nomeInicial) {
-		this.nomeInicial = nomeInicial;
+		this.nomeInicial = nomeInicial==null?"":nomeInicial;
 	}
 	public String getUnidade() {
 		return unidade;
 	}
 	public void setUnidade(String unidade) {
-		this.unidade = unidade;
+		this.unidade = unidade==null?"":unidade;
 	}
 	public String getUnidadeSigla() {
 		return unidadeSigla;
 	}
 	public void setUnidadeSigla(String unidadeSigla) {
-		this.unidadeSigla = unidadeSigla;
+		this.unidadeSigla = unidadeSigla==null?"":unidadeSigla;
 	}
 	public String getDepto() {
 		return depto;
 	}
 	public void setDepto(String depto) {
-		this.depto = depto;
+		this.depto = depto==null?"":depto;
 	}
 	public String getDeptoSigla() {
 		return deptoSigla;
 	}
 	public void setDeptoSigla(String deptoSigla) {
-		this.deptoSigla = deptoSigla;
+		this.deptoSigla = deptoSigla==null?"":deptoSigla;
 	}
 	public String getVinculo() {
 		return vinculo;
 	}
 	public void setVinculo(String vinculo) {
-		this.vinculo = vinculo;
+		this.vinculo = vinculo==null?"":vinculo;
 	}
 	public String getFuncao() {
 		return funcao;
 	}
 	public void setFuncao(String funcao) {
-		this.funcao = funcao;
+		this.funcao = funcao==null?"":funcao;
 	}
 	public String getLattes() {
 		return lattes;
 	}
-	public void setLattes(String lattes) {
+        public void setLattes(){
+                this.lattes = "https://uspdigital.usp.br/tycho/curriculoLattesMostrar?codpes=".concat(String.valueOf(codpes));
+        }
+        public void setLattes(String lattes) {
                 if(lattes != null) {
-		  this.lattes = "http:/"+"/lattes.cnpq.br/" + lattes;
+		  this.lattes = "http://lattes.cnpq.br/" + lattes;
+                }
+                else {
+                  setLattes();
                 }
 	}
         public int getQntTrabalhos() {
@@ -138,7 +163,6 @@ public class Author implements Comparator<Author>, Comparable<Author> {
 		this.qntTrabalhos = qntTrabalhos;
 	}
        	public int compareTo(Author o) {
-		
     	   return nomeCompleto.compareTo(o.getNomeCompleto());
 	}
 

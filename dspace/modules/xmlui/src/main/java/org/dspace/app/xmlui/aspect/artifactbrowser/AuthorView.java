@@ -367,34 +367,33 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
      * Condicao que verifica se a unidade e a sigla nao e null 
     */
 
-	   if(author.getUnidade().length() > 0) { 
+	   if(author.getUnidade().length() > 0) {
              unidadeDepto.append(System.getProperty("line.separator"));
              unidadeDepto.append(author.getUnidade()); 
              if(author.getUnidadeSigla().length() > 0) { 
                unidadeDepto.append(" (");
-               unidadeDepto.append(author.getUnidadeSigla());
-               unidadeDepto.append(") / ");
-             }
-             else {
-               unidadeDepto.append(" / ");
+               unidadeDepto.append(author.getUnidadeSigla().trim());
+               unidadeDepto.append(")");
              }
            }
            else { 
-              unidadeDepto.append(" - / ");
+              unidadeDepto.append(" - ");
            }
 
     /**
       * Condicao que verifica se o departamento e a sigla nao e null
     */
            if(author.getDepto().length() > 0) { 
+             unidadeDepto.append(" / ");
              unidadeDepto.append(author.getDepto());
              if(author.getDeptoSigla().length() > 0) {
                unidadeDepto.append(" (");
-               unidadeDepto.append(author.getDeptoSigla());
+               unidadeDepto.append(author.getDeptoSigla().trim());
                unidadeDepto.append(")");
-             }             
-           } 
-           else { unidadeDepto.append(" - "); }
+             }
+           }
+           else { unidadeDepto.append(" / - ");
+           }
 
            Cell cellDeptField = rowDept.addCell("id_cols_autor_field", Cell.ROLE_DATA, "class_cols_autor_field");
            cellDeptField.addContent(T_univesity); 

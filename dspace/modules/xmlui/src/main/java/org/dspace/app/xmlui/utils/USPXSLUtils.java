@@ -135,6 +135,8 @@ public class USPXSLUtils {
    
    /* 130912 - Dan Shinkai = Funcao criada para evitar mostrar a pagina do CV caso nao haja dados na base. */
    public static String verificaAuthorUSP(String codpes) {
+           return "";
+           /*
 	   AuthorDAOPostgres dao = new AuthorDAOPostgres();
 	   try {
 		if(dao.getAuthorByCodpes(Integer.parseInt(codpes)) == null) {
@@ -154,5 +156,6 @@ public class USPXSLUtils {
 	}
 	   
 	   return "";
+        */
    }
 }

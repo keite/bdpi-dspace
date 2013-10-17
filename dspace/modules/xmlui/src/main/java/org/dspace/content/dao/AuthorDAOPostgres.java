@@ -1,5 +1,8 @@
 package org.dspace.content.dao;
 
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
 import java.util.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,15 +10,32 @@ import org.dspace.content.Author;
 import org.dspace.content.InterUnit;
 import org.dspace.content.ItemRelacionado;
 import org.dspace.core.Context;
-import org.dspace.storage.rdbms.DatabaseManager;
+
+// import org.dspace.storage.rdbms.DatabaseManager;
 
 import java.sql.SQLException;
+import org.dspace.core.ConfigurationManager;
 
 public class AuthorDAOPostgres extends AuthorDAO
 {
     /** Constante para a busca de todos os parametros do autor USP a partir de seu codpes */
-    private static final String selectAuthor = "SELECT * FROM usp.viewauthoritycontrol " +
-            "WHERE codpes=?";
+    private static final String selectAuthor = "SELECT vinculopessoausp.codpes, vinculopessoausp.nompes nome, \n" +
+        "nvl(regexp_substr(vinculopessoausp.nompes,'.*\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
+        "regexp_substr(vinculopessoausp.nompes,'(.*)\\s.*',1,1,'i',1) nomeinicial,\n" +
+        "emailpessoa.codema email_1,\n" +
+        "unidade.nomund unidade, unidade.sglund unidade_sigla,\n" +
+        "setor.nomset depto, setor.nomabvset depto_sigla,\n" +
+        "vinculopessoausp.tipvin vinculo, vinculopessoausp.tipfnc funcao, null lattes\n" +
+        "FROM vinculopessoausp\n" +
+        "left join unidade on (vinculopessoausp.codund = unidade.codund OR vinculopessoausp.codfusclgund = unidade.codund)\n" +
+        "left join setor on (vinculopessoausp.codset = setor.codset)\n" +
+        "left join colegiado\n" +
+        "on ((vinculopessoausp.codclg = colegiado.codclg) AND (vinculopessoausp.sglclg = colegiado.sglclg))\n" +
+        "left join emailpessoa on emailpessoa.codpes = vinculopessoausp.codpes\n" +
+        "left join (select codpes, max(nvl(dtafimvin,sysdate)) dtat from vinculopessoausp group by codpes) tmpv\n" +
+        "on (tmpv.codpes = vinculopessoausp.codpes and tmpv.dtat = nvl(vinculopessoausp.dtafimvin,sysdate))\n" +
+        "where emailpessoa.stamtr = 'S' and tmpv.dtat is not null and vinculopessoausp.codpes = ?\n" +
+        "order by decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,'D')";
 
     /** Constante para a busca do ID do schema dc referente ao 'dc' */
     private static final String selectDCSchemaId = "SELECT metadata_schema_id FROM metadataschemaregistry WHERE short_id='dc'";
@@ -679,14 +699,48 @@ public class AuthorDAOPostgres extends AuthorDAO
 
       }
     }*/
+    
+    private static Connection ocn = null;
+    public static Connection getReplicaUspDBconnection() {
+        try {
+            if(ocn==null || ocn.isClosed()){
+                    DriverManager.registerDriver((Driver) Class.forName(ConfigurationManager.getProperty("usp-authorities", "db.driver")).newInstance());
+
+                    ocn = DriverManager.getConnection(ConfigurationManager.getProperty("usp-authorities", "db.url"),
+                                                      ConfigurationManager.getProperty("usp-authorities", "db.username"),
+                                                      ConfigurationManager.getProperty("usp-authorities", "db.password"));
+            }
+        }
+        catch(ClassNotFoundException e){
+            System.out.println("[inicio - ClassNotFound] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+            e.printStackTrace(System.out);
+            System.out.println("[fim - ClassNotFound] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+        }
+        catch(InstantiationException e){
+            System.out.println("[inicio - Instantiation] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+            e.printStackTrace(System.out);
+            System.out.println("[fim - Instantiation] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+        }
+        catch(IllegalAccessException e){
+            System.out.println("[inicio - IllegalAccess] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+            e.printStackTrace(System.out);
+            System.out.println("[fim - IllegalAccess] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+        }
+        catch(SQLException e){
+            System.out.println("[inicio - SQL] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+            e.printStackTrace(System.out);
+            System.out.println("[fim - SQL] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+        }
+        return ocn;
+    }
 
     /** Metodo que retorna um objeto do tipo Autor a partir de seu numero USP */
     public Author getAuthorByCodpes(int codpes) throws SQLException
     {
-      Context context = new Context();
+        
+      // Context context = new Context();
       try {
-           //Context context = new Context();
-           PreparedStatement statement = context.getDBConnection().prepareStatement(selectAuthor);
+           PreparedStatement statement = getReplicaUspDBconnection().prepareStatement(selectAuthor);
            statement.setInt(1,codpes);
            ResultSet rs = statement.executeQuery();
 		   
@@ -713,7 +767,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 		   
 		   rs.close();
 		   statement.close();
-		   context.complete();			   
+                   // context.complete();
 		   rs = null;
 		   statement = null;
 			   
