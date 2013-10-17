@@ -3,13 +3,12 @@
  */
 package org.dspace.content.authority;
 
+import com.sun.rowset.CachedRowSetImpl;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import javax.sql.rowset.CachedRowSet;
-import javax.sql.rowset.RowSetProvider;
 import org.apache.log4j.Logger;
 import org.dspace.core.ConfigurationManager;
 
@@ -82,7 +81,7 @@ public class USPNameAuthority implements ChoiceAuthority {
 		
 		Choice v[] = null;
 		PreparedStatement statement = null;
-                CachedRowSet rs = null;
+                CachedRowSetImpl rs = null;
                 int MAX_AUTORES = ConfigurationManager.getIntProperty("xmlui.lookup.select.size", 10);
 		
                 
@@ -131,7 +130,8 @@ public class USPNameAuthority implements ChoiceAuthority {
 			if (notEmpty(nome)) statement.setString(++pindex,"%" + nome + "%");
 			if (notEmpty(sobrenome)) statement.setString(++pindex,"%" + sobrenome + "%");
                         
-                        rs = RowSetProvider.newFactory().createCachedRowSet();
+                        // rs = RowSetProvider.newFactory().createCachedRowSet();
+                        rs = new CachedRowSetImpl();
                         rs.populate(statement.executeQuery());
                         rs.setReadOnly(true);
 			
