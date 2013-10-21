@@ -140,7 +140,7 @@
    <message key="xmlui.ArtifactBrowser.AuthorView.unit">Unidad:</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.function">Función:</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.entail">Enlace:</message>
-   <message key="xmlui.ArtifactBrowser.AuthorView.lattes">Curriculo Lattes:</message>
+   <message key="xmlui.ArtifactBrowser.AuthorView.lattes">Curriculo Lattes</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.email">Dirección de Correo Electrónico:</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.author_not_found">Autor que no se encuentra</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.author_not_citation">No hay citas en BDPI</message>

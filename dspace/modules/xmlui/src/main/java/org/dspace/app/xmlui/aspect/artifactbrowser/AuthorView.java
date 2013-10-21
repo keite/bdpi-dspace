@@ -424,10 +424,11 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 
              Row rowLattes = tabela.addRow("id_row_autor", Row.ROLE_DATA, "class_row_autor");
              Cell cellLattesLabel = rowLattes.addCell("id_cols_autor_label", Cell.ROLE_DATA, "class_cols_autor_label");
-             cellLattesLabel.addContent(T_lattes);
+             //cellLattesLabel.addContent(T_lattes);
              Cell cellLattesField = rowLattes.addCell("id_cols_autor_field", Cell.ROLE_DATA, "class_cols_autor_field");
 //             cellLattesField.addXref("javascript: window.open('"+ author.getLattes() + "')",author.getLattes().substring(23),"_blank");
-             cellLattesField.addXref(author.getLattes(),author.getLattes().substring(23),"_blank", "_blank");
+//             cellLattesField.addXref(author.getLattes(),author.getLattes().substring(23),"_blank", "_blank");
+             cellLattesField.addXref(author.getLattes(),T_lattes,"_blank", "_blank");
 
            }
    /** Recupera todos as formas de citacoes de um mesmo autor */

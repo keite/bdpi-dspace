@@ -147,7 +147,7 @@
    <message key="xmlui.ArtifactBrowser.AuthorView.unit">USP Unit:</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.function">Function:</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.entail">Entail:</message>
-   <message key="xmlui.ArtifactBrowser.AuthorView.lattes">Lattes Curriculum:</message>
+   <message key="xmlui.ArtifactBrowser.AuthorView.lattes">Lattes Curriculum</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.email">Email:</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.author_not_found">Author not found</message>
    <message key="xmlui.ArtifactBrowser.AuthorView.author_not_citation">There are no citations at BDPI
