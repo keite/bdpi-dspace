@@ -1032,6 +1032,11 @@
 		<name-map collection-handle="BDPI/958"   form-name="evento" />
 		<name-map collection-handle="BDPI/959"   form-name="livro" />
 		<name-map collection-handle="BDPI/960"   form-name="relatorio" />
+		<!--  Departamento de Engenharia de Biossistemas - FZEA/ZEB  -->
+		<name-map collection-handle="BDPI/35343"   form-name="artigo" />
+		<name-map collection-handle="BDPI/35344"   form-name="evento" />
+		<name-map collection-handle="BDPI/35345"   form-name="livro" />
+		<name-map collection-handle="BDPI/35346"   form-name="relatorio" />
 		<!-- Departamento de Zootecnia - FZEA/ZAZ   -->
 		<name-map collection-handle="BDPI/32672"   form-name="artigo" />
 		<name-map collection-handle="BDPI/32673"   form-name="evento" />
