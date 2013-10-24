@@ -360,8 +360,10 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
 	      if(qntCoautores == 0) { qntCoautores = 2; }
 
               Collections.sort(listaCoautoresTemp, new Author());
-    
-              Table tabelaCoautoresUSP = informacoesTabelaCoautoresUSP.addTable("id_tblLista_coautoresUSP", qntCoautores, 4, "class_tblLista_coautoresUSP");
+              
+              //NUMERO DE COLUNAS DIMINUIDO DE 4 PARA 3 [INICIO][RETIRACOLUNAUNIDADE]
+              Table tabelaCoautoresUSP = informacoesTabelaCoautoresUSP.addTable("id_tblLista_coautoresUSP", qntCoautores, 3, "class_tblLista_coautoresUSP");
+              //NUMERO DE COLUNAS DIMINUIDO DE 4 PARA 3 [FIM][RETIRACOLUNAUNIDADE]
 
               Row rowTituloCoautorUSPColuna = tabelaCoautoresUSP.addRow("id_row_nome_coautor_colunas", Row.ROLE_DATA, "class_row_nome_coautor_colunas");
 
@@ -371,8 +373,10 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
               Cell cellNomeCoautorUSP = rowTituloCoautorUSPColuna.addCell("id_cols_nome_coautor", Cell.ROLE_DATA, "class_cols_nome_coautor");
               cellNomeCoautorUSP.addContent(T_titulo_nome);
 
-              Cell cellUnidadeCoautorUSP = rowTituloCoautorUSPColuna.addCell("id_cols_unidade_coautor", Cell.ROLE_DATA, "class_cols_unidade_coautor");
-              cellUnidadeCoautorUSP.addContent(T_titulo_unidade);
+              // RETIRA TITULO DE COLUNA [INICIO][RETIRACOLUNAUNIDADE]
+              // Cell cellUnidadeCoautorUSP = rowTituloCoautorUSPColuna.addCell("id_cols_unidade_coautor", Cell.ROLE_DATA, "class_cols_unidade_coautor");
+              // cellUnidadeCoautorUSP.addContent(T_titulo_unidade);
+              // RETIRA TITULO DE COLUNA [FIM][RETIRACOLUNAUNIDADE]
 
               Cell cellTrabalhosCoautorUSP = rowTituloCoautorUSPColuna.addCell("id_cols_trabalhos_coautor", Cell.ROLE_DATA, "class_cols_trabalhos_coautor");
               cellTrabalhosCoautorUSP.addContent(T_titulo_trabalhos);
@@ -386,7 +390,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
                    if(coautor!= null) {
 
                       String nome = coautor.getNomeCompleto();
-                      String unidade = coautor.getUnidadeSigla();
+                      // String unidade = coautor.getUnidadeSigla(); [RETIRACOLUNAUNIDADE]
                       int trabalhos = coautor.getQntTrabalhos();
                       int codpes = coautor.getCodpes();
 
@@ -400,10 +404,10 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
                       cellNomeCoautor.addXref
                               (contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + String.valueOf(codpes) + "/" + 
                                "author", nome, "_blank", "_blank");
-
-                      Cell cellUnidadeCoautor = rowCoautor.addCell("id_cols_unidade_field", Cell.ROLE_DATA, "class_cols_unidade_field");
-                      cellUnidadeCoautor.addContent(unidade);
-
+// [inicio] DEIXA DE MOSTRAR UNIDADE ATE ACERTAR A QUESTAO DAS UNIDADES SEM USAR TUPLA DE AUTOR USP [RETIRACOLUNAUNIDADE]
+                      // Cell cellUnidadeCoautor = rowCoautor.addCell("id_cols_unidade_field", Cell.ROLE_DATA, "class_cols_unidade_field");
+                      // cellUnidadeCoautor.addContent(unidade);
+// [fim][RETIRACOLUNAUNIDADE]
                       Cell cellTrabalhosCoautor = rowCoautor.addCell("id_cols_trabalhos_field", Cell.ROLE_DATA, "class_cols_trabalhos_field");
                       cellTrabalhosCoautor.addContent(trabalhos);
 

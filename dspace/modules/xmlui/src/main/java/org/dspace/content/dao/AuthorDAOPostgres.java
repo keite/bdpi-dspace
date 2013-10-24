@@ -11,8 +11,6 @@ import org.dspace.content.InterUnit;
 import org.dspace.content.ItemRelacionado;
 import org.dspace.core.Context;
 
-// import org.dspace.storage.rdbms.DatabaseManager;
-
 import java.sql.SQLException;
 import org.dspace.core.ConfigurationManager;
 
@@ -32,89 +30,94 @@ public class AuthorDAOPostgres extends AuthorDAO
         "left join colegiado\n" +
         "on ((vinculopessoausp.codclg = colegiado.codclg) AND (vinculopessoausp.sglclg = colegiado.sglclg))\n" +
         "left join emailpessoa on emailpessoa.codpes = vinculopessoausp.codpes\n" +
-        "left join (select codpes, max(nvl(dtafimvin,sysdate)) dtat from vinculopessoausp group by codpes) tmpv\n" +
-        "on (tmpv.codpes = vinculopessoausp.codpes and tmpv.dtat = nvl(vinculopessoausp.dtafimvin,sysdate))\n" +
-        "where emailpessoa.stamtr = 'S' and tmpv.dtat is not null and vinculopessoausp.codpes = ?\n" +
-        "order by decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,'D')";
+        "where emailpessoa.stamtr = 'S' and vinculopessoausp.codpes = ?\n" +
+        "order by decode(lower(sitctousp),'ativado',0,'não ativado',1,'expirado',2,'suspenso',3,4), decode(substr(lower(tipvin),0,3),'ser',0,'alu',1,'pro',2,'bol',3,'est',4,'ext',5,6), decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,'D')";
+    
+    /** Constante para a busca do ID do autor a partir do id referente ao 'usp' -> alterado para uso do campo authority contendo o numero USP */
+    private static final String selectMetadataIdUSPAutor = "SELECT metadata_field_id FROM metadatafieldregistry INNER JOIN metadataschemaregistry ON (metadatafieldregistry.metadata_schema_id=metadataschemaregistry.metadata_schema_id AND metadataschemaregistry.short_id='dc')  WHERE metadatafieldregistry.element='contributor' AND metadatafieldregistry.qualifier='author'";
 
-    /** Constante para a busca do ID do schema dc referente ao 'dc' */
-    private static final String selectDCSchemaId = "SELECT metadata_schema_id FROM metadataschemaregistry WHERE short_id='dc'";
+    /** Constante para a busca de todos os itens a partir dos seguintes parametros: tipo, data e titulo relacionados com o numero USP -> alterado para uso de authority contendo numero usp */
+     private static final String selectHandleTitulos = "SELECT handle, TITLES.text_value AS title, TIPOS.text_value AS tipo, DTPUBS.text_value AS dtpub\n" +
+"FROM handle \n" +
+"INNER JOIN metadatavalue AUTHORS on (handle.resource_id = AUTHORS.item_id AND handle.resource_type_id=2)\n" +
+"INNER JOIN metadatavalue TITLES on (handle.resource_id = TITLES.item_id AND handle.resource_type_id=2)\n" +
+"INNER JOIN metadatavalue TIPOS on (handle.resource_id = TIPOS.item_id AND handle.resource_type_id=2)\n" +
+"INNER JOIN metadatavalue DTPUBS on (handle.resource_id = DTPUBS.item_id AND handle.resource_type_id=2)\n" +
+"INNER JOIN metadatafieldregistry MAUTHORS on (AUTHORS.metadata_field_id = MAUTHORS.metadata_field_id AND MAUTHORS.element='contributor' AND MAUTHORS.qualifier='author' AND AUTHORS.authority=?)\n" +
+"INNER JOIN metadatafieldregistry MTITLES on (TITLES.metadata_field_id = MTITLES.metadata_field_id AND MTITLES.element='title' AND MTITLES.qualifier is null)\n" +
+"INNER JOIN metadatafieldregistry MTIPOS on (TIPOS.metadata_field_id = MTIPOS.metadata_field_id AND MTIPOS.element='type' AND MTIPOS.qualifier is null)\n" +
+"INNER JOIN metadatafieldregistry MDTPUBS on (DTPUBS.metadata_field_id = MDTPUBS.metadata_field_id AND MDTPUBS.element='date' AND MDTPUBS.qualifier = 'issued')\n" +
+"INNER JOIN metadataschemaregistry on (MAUTHORS.metadata_schema_id = metadataschemaregistry.metadata_schema_id\n" +
+"AND MTITLES.metadata_schema_id = metadataschemaregistry.metadata_schema_id\n" +
+"AND MTIPOS.metadata_schema_id = metadataschemaregistry.metadata_schema_id\n" +
+"AND MDTPUBS.metadata_schema_id = metadataschemaregistry.metadata_schema_id\n" +
+"AND metadataschemaregistry.short_id='dc')";
+    //      "AND SPLIT_PART(D.text_value,':',2)=?) order by B.text_value, C.text_value DESC, A.text_value";
+    
+    /** Constante para armazenar o numero de itens relacionados com um determinado numero USP -> alterado para uso de authority contendo numero usp */
+    private static final String selectTotalTitulos = "SELECT COUNT(*) AS total FROM (" + selectHandleTitulos + ")";
 
-    /** Constante para a busca do ID do schema usp referente ao 'usp' */
-    private static final String selectUSPSchemaId = "SELECT metadata_schema_id FROM metadataschemaregistry WHERE short_id='usp'";  
+    /** Constante para armazenar as diferentes formas de citacao de um mesmo autor a partir de seu numero USP e seu metadata_field_id  -> alterado para uso de authority contendo numero usp*/
+    private static final String selectCitacaoAutor = "SELECT DISTINCT text_value AS citacao\n" +
+"FROM metadatavalue\n" +
+"INNER JOIN metadatafieldregistry on (metadatavalue.metadata_field_id=metadatafieldregistry.metadata_field_id\n" +
+"AND metadatafieldregistry.element = 'contributor'\n" +
+"AND metadatafieldregistry.qualifier = 'author')\n" +
+"INNER JOIN metadataschemaregistry on (metadatafieldregistry.metadata_schema_id=metadataschemaregistry.metadata_schema_id\n" +
+"AND metadataschemaregistry.short_id = 'dc')\n" +
+"WHERE metadatavalue.authority=?\n" +
+"order by citacao";
 
-    /** Constante para a busca do ID do titulo a partir do id referente ao 'dc' */
-    private static final String selectMetadataIdDCTitle = "SELECT metadata_field_id FROM metadatafieldregistry " + 
-            "WHERE metadata_schema_id=? AND element='title' AND qualifier is null";
-
-    /** Constante para a busca do ID do tipo a partir do id referente ao 'dc' */
-    private static final String selectMetadataIdDCType = "SELECT metadata_field_id FROM metadatafieldregistry " + 
-            "WHERE metadata_schema_id=? AND element='type' AND qualifier is null";
-
-    /** Constante para a busca do ID do autor a partir do id referente ao 'usp' */
-    private static final String selectMetadataIdUSPAutor = "SELECT metadata_field_id FROM metadatafieldregistry " + 
-            "WHERE metadata_schema_id=? AND element='autor' AND qualifier is null";
-
-    /** Constante para a busca do ID do autor externo a partir do id referente ao 'usp' */
-    private static final String selectMetadataIdUSPAutorExterno = "SELECT metadata_field_id FROM metadatafieldregistry " +
-            "WHERE metadata_schema_id=? AND element='autor' AND qualifier='externo'";
-
-    /** Constante para a busca do ID da data de publicacao a partir do id referente ao 'dc' */
-    private static final String selectMetadataIdDataPublicacao = "SELECT metadata_field_id FROM metadatafieldregistry " +
-            "WHERE metadata_schema_id=? AND element='date' AND qualifier='issued'";
-
-    /** Constante para a busca de todos os itens a partir dos seguintes parametros: tipo, data e titulo relacionados com o numero USP */
-    private static final String selectHandleTitulos = "SELECT handle, A.text_value AS title, B.text_value AS tipo, C.text_value AS dtPub FROM handle " +
-            "JOIN metadatavalue A ON (handle.resource_id = A.item_id AND handle.resource_type_id=2 AND A.metadata_field_id=?) " + 
-            "JOIN metadatavalue B ON (handle.resource_id = B.item_id AND handle.resource_type_id=2 AND B.metadata_field_id=?) " +
-            "JOIN metadatavalue C ON (handle.resource_id = C.item_id AND handle.resource_type_id=2 AND C.metadata_field_id=?) " +
-            "JOIN metadatavalue D ON (handle.resource_id = D.item_id AND handle.resource_type_id=2 AND D.metadata_field_id=? " +
-            "AND SPLIT_PART(D.text_value,':',2)=?) order by B.text_value, C.text_value DESC, A.text_value";
-			
-
-    /** Constante para armazenar o numero de itens relacionados com um determinado numero USP */
-    private static final String selectTotalTitulos = "SELECT COUNT(*) AS total FROM " +
-            "(SELECT handle, A.text_value AS title, B.text_value AS tipo, C.text_value AS dtPub FROM handle " +
-            "JOIN metadatavalue A ON (handle.resource_id = A.item_id AND handle.resource_type_id=2 AND A.metadata_field_id=?) " +
-            "JOIN metadatavalue B ON (handle.resource_id = B.item_id AND handle.resource_type_id=2 AND B.metadata_field_id=?) " +
-            "JOIN metadatavalue C ON (handle.resource_id = C.item_id AND handle.resource_type_id=2 AND C.metadata_field_id=?) " +
-            "JOIN metadatavalue D ON (handle.resource_id = D.item_id AND handle.resource_type_id=2 AND D.metadata_field_id=? " +
-            "AND SPLIT_PART(D.text_value,':',2)=?)) AS contador";
-
-    /** Constante para armazenar as diferentes formas de citacao de um mesmo autor a partir de seu numero USP e seu metadata_field_id */
-    private static final String selectCitacaoAutor = "SELECT DISTINCT TRIM(SPLIT_PART(text_value,':',1)) AS citacao FROM metadatavalue " + 
-            "WHERE metadata_field_id=? AND  SPLIT_PART(text_value,':',2)=? order by citacao";
-
-    /** Constante para armazenar as diferentes formas de citacao em maiusculas de um mesmo autor a partir de seu numero USP e seu metadata_field_id */
-    private static final String selectCitacaoAutorUpper = "SELECT DISTINCT TRIM(UPPER(SPLIT_PART(text_value,':',1))) AS citacao FROM metadatavalue " +
-            "WHERE metadata_field_id=? AND  SPLIT_PART(text_value,':',2)=?";
+    /** Constante para armazenar as diferentes formas de citacao em maiusculas de um mesmo autor a partir de seu numero USP e seu metadata_field_id  -> alterado para uso de authority contendo numero usp*/
+    private static final String selectCitacaoAutorUpper = "SELECT DISTINCT upper(text_value) AS citacao\n" +
+"FROM metadatavalue\n" +
+"INNER JOIN metadatafieldregistry on (metadatavalue.metadata_field_id=metadatafieldregistry.metadata_field_id\n" +
+"AND metadatafieldregistry.element = 'contributor'\n" +
+"AND metadatafieldregistry.qualifier = 'author')\n" +
+"INNER JOIN metadataschemaregistry on (metadatafieldregistry.metadata_schema_id=metadataschemaregistry.metadata_schema_id\n" +
+"AND metadataschemaregistry.short_id = 'dc')\n" +
+"WHERE metadatavalue.authority=?\n" +
+"order by citacao";
 
     /** Constante para criar a tabela com os coautores USP relacionados com um determinado autor USP CREATE TEMP TABLE cvcoautorusp AS*/
-    private static final String selectCoautoresUSP = "SELECT SPLIT_PART(text_value,':',2) AS nusp, " +
-            "SPLIT_PART(text_value,':',1) AS nomeusp, SPLIT_PART(text_value,':',3) AS unidade, COUNT(*) AS ocorr from metadatavalue " +
-            "WHERE metadata_field_id=? AND item_id IN (SELECT item_id FROM metadatavalue WHERE metadata_field_id=? " +
-            "AND SPLIT_PART(text_value,':',2)=?) AND SPLIT_PART(text_value,':',2)!=? GROUP BY nusp, nomeusp, unidade ORDER BY nusp";
+    private static final String selectCoautoresUSP = "SELECT COAUTORES.authority AS nusp, COAUTORES.text_value AS nomeusp, 'indisponível' AS unidade, count(*) AS ocorr\n" +
+"FROM metadatavalue COAUTORES\n" +
+"INNER JOIN metadatavalue AUTORES on (COAUTORES.item_id = AUTORES.item_id "
+            + "AND COAUTORES.authority IS NOT NULL AND AUTORES.authority = ? "
+            + "AND COAUTORES.authority != AUTORES.authority) " +
+"INNER JOIN metadatafieldregistry on (AUTORES.metadata_field_id=metadatafieldregistry.metadata_field_id "
+            + "AND COAUTORES.metadata_field_id=metadatafieldregistry.metadata_field_id "
+            + "AND metadatafieldregistry.element = 'contributor' "
+            + "AND metadatafieldregistry.qualifier = 'author') " +
+"INNER JOIN metadataschemaregistry on (metadatafieldregistry.metadata_schema_id=metadataschemaregistry.metadata_schema_id " +
+"AND metadataschemaregistry.short_id = 'dc') " +
+"GROUP BY COAUTORES.authority, COAUTORES.text_value " +
+"ORDER BY ocorr DESC, nomeusp";
 
     /** Constante sql para recuperar os diversos coautores externos usp a partir de um numero USP */
-    private static final String selectCoautoresUSPExterno = "SELECT text_value FROM metadatavalue WHERE metadata_field_id=? and item_id in " +
-           "(SELECT item_id FROM metadatavalue WHERE metadata_field_id=? and SPLIT_PART(text_value,':',2)=?) order by text_value;";
+    private static final String selectCoautoresUSPExterno = "SELECT DISTINCT TUPLAE.text_value tuplax "
+            + "FROM metadatavalue TUPLAE " +
+"INNER JOIN metadatafieldregistry MFTE on (TUPLAE.metadata_field_id=MFTE.metadata_field_id " +
+"            AND MFTE.element = 'autor' " +
+"            AND MFTE.qualifier = 'externo') " +
+"INNER JOIN metadataschemaregistry MSTE on (MFTE.metadata_schema_id=MSTE.metadata_schema_id " +
+"                                       AND MSTE.short_id = 'usp') " +
+"INNER JOIN metadatavalue COAUTORES on (TUPLAE.item_id = COAUTORES.item_id) " +
+"INNER JOIN metadatafieldregistry MFAX on (COAUTORES.metadata_field_id=MFAX.metadata_field_id " +
+"            AND MFAX.element = 'contributor' " +
+"            AND MFAX.qualifier = 'author') " +
+"INNER JOIN metadataschemaregistry MSAX on (MFAX.metadata_schema_id=MSAX.metadata_schema_id " +
+"                                       AND MSAX.short_id = 'dc') " +
+"WHERE COAUTORES.authority = ? " +
+"ORDER BY tuplax";
 
     /** Constante sql para recuperar a interdisciplinariedade que um determinado autor possui com outras unidades USP */
     private static final String selectInterdisciplinarUSP = "SELECT SPLIT_PART(text_value,':',3) as unidade, count(*) as ocorr " +
            "FROM metadatavalue WHERE metadata_field_id=? AND item_id IN (SELECT item_id FROM metadatavalue WHERE metadata_field_id=? " +
-           "AND SPLIT_PART(text_value,':',2)=?) AND split_part(text_value,':',2)!=? GROUP BY unidade ORDER BY ocorr DESC, unidade;";
+           "AND SPLIT_PART(text_value,':',2)=?) AND split_part(text_value,':',2)!=? GROUP BY unidade ORDER BY ocorr DESC, unidade";
 
-    /** Constante para armazenar os coautores USP relacionados com um determinado autor USP 
-    private static final String selectCoautoresUSP = "SELECT * FROM cvcoautorusp";
-
-    /** Constante que apara a tabela de coautores USP criado temporariamente 
-    private static final String dropTabelaCvcoautorUSP = "DROP TABLE cvcoautorusp";*/
-
-    private static final int[] VETOR_ID = new int[6]; 
-
-    private Context context;
-
-    public AuthorDAOPostgres(){}
+    public AuthorDAOPostgres() {
+    }
 
     public AuthorDAOPostgres(Context ctx)
     {
@@ -124,183 +127,30 @@ public class AuthorDAOPostgres extends AuthorDAO
 
     /** Metodo que retorna o id do schema dc da tabela metadata_schema_registry */
     public int getTotalItensRelacionados(String codpes) throws SQLException {
-
-     Context context = new Context();
-
-     try {
-         setVetorId();
-         PreparedStatement statement = context.getDBConnection().prepareStatement(selectTotalTitulos);
-         statement.setInt(1,this.VETOR_ID[4]);
-         statement.setInt(2,this.VETOR_ID[3]);
-         statement.setInt(3,this.VETOR_ID[2]);
-         statement.setInt(4,this.VETOR_ID[5]);
-         statement.setString(5,codpes);
-         ResultSet rs = statement.executeQuery();
-         
-		 int totalItens = -1;
-		 
-		 if(rs.next()) {
-
-            totalItens = rs.getInt("total");        
-		 }
-
-         rs.close();
-         statement.close();
-         context.complete();
-
-         return totalItens;
-
-      } catch(SQLException sql) {
-
-          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-          sql.printStackTrace();
-
-       return -1;
-
-       } 
+        try {
+            context = new Context();
+            PreparedStatement statement = context.getDBConnection().prepareStatement(selectTotalTitulos);
+            statement.setString(1,codpes);
+            ResultSet rs = statement.executeQuery();
+            int totalItens = -1;		 
+            if(rs.next()) totalItens = rs.getInt("total");
+            rs.close();
+            statement.close();
+            context.complete();
+            return totalItens;
+         } catch(SQLException sql) {
+            System.out.println("Erro: no SQL ----" + sql.getMessage() );
+            sql.printStackTrace(System.out);
+            return -1;
+          } 
      }
 
-
-    /** Metodo que retorna o id do schema dc da tabela metadata_schema_registry */
-    public int getSchemaDcId() throws SQLException {
-
-      Context context = new Context();
-
-     try {
-          PreparedStatement statement = context.getDBConnection().prepareStatement(selectDCSchemaId);
-          ResultSet rs = statement.executeQuery();
-          
-		  int id = -1;
-		  
-		  if(rs.next()) {
-
-            id = rs.getInt("metadata_schema_id");
-		   }
-
-          rs.close();
-          statement.close();
-          context.complete();
-           
-          return id;
-
-      } catch(SQLException sql) {
-
-          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-          sql.printStackTrace();
-       
-       return -1;
-
-      }
-    }
-
-    /** Metodo que retorna o id do schema usp da tabela metadata_schema_registry*/
-    public int getSchemaUspId() throws SQLException {
-
-     Context context = new Context();
-
-     try {
-          PreparedStatement statement = context.getDBConnection().prepareStatement(selectUSPSchemaId);
-          ResultSet rs = statement.executeQuery();
-          
-		  int id = -1;
-		  
-		  if(rs.next()) {
-
-			id = rs.getInt("metadata_schema_id");
-		   }
-
-          rs.close();
-          statement.close();
-          context.complete();
-
-          return id;
-
-      } catch(SQLException sql) {
-
-          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-          sql.printStackTrace();
-
-       return -1;
-
-      } 
-    }
-
-    /** Metodo que retorna o id do titulo da tabela metadata_field_registry */
-    public int getTituloId() throws SQLException {
-  
-     Context context = new Context();
-
-     try {
-          int schemaDcId = getSchemaDcId(); 
-          PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdDCTitle);
-          statement.setInt(1,schemaDcId);
-          ResultSet rs = statement.executeQuery();
-          
-		  int id = -1;
-		  
-		  if(rs.next()) {
-          
-             id = rs.getInt("metadata_field_id");
-		 }
-
-          rs.close();
-          statement.close();
-          context.complete();
-
-          return id;
-
-      } catch(SQLException sql) {
-
-           System.out.println("Erro: no SQL ----" + sql.getMessage() );
-           sql.printStackTrace();
-
-       return -1;
-
-      } 
-    }
-
-    /** Metodo que retorna o id do tipo da tabela metadata_field_registry */
-    public int getTipoId() throws SQLException {
-     
-      Context context = new Context();
-
-      try {
-           int schemaDcId = getSchemaDcId();
-           PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdDCType);
-           statement.setInt(1,schemaDcId);
-           ResultSet rs = statement.executeQuery();
-           
-		   int id = -1;
-		   
-		   if(rs.next()) {
-
-			id = rs.getInt("metadata_field_id");
-		   }
-
-           rs.close();
-           statement.close();
-           context.complete();
-
-           return id;
-
-      } catch(SQLException sql) {
-
-           System.out.println("Erro: no SQL ----" + sql.getMessage() );
-           sql.printStackTrace();
-
-           return -1;
-      } 
-    }
-
     /** Metodo que retorna o id do autor da tabela metadata_field_registry */
-    public int getAutorId() throws SQLException  {
-
-      Context context = new Context();
-
+    private int getAutorId() throws SQLException  {
       try {
-           int schemaUspId = getSchemaUspId();
-           PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdUSPAutor);
-           statement.setInt(1,schemaUspId);
+            context = new Context();
+            PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdUSPAutor);
+           
            ResultSet rs = statement.executeQuery();
            
 		   int id = -1;
@@ -319,108 +169,20 @@ public class AuthorDAOPostgres extends AuthorDAO
       } catch(SQLException sql) {
 
            System.out.println("Erro: no SQL ----" + sql.getMessage() );
-           sql.printStackTrace();
+           sql.printStackTrace(System.out);
 
            return -1;
 
       } 
-    }
-   
-    /** Metodo que retorna o id do autor externo da tabela metadata_field_registry */
-    public int getAutorExternoId() throws SQLException  {
-
-      Context context = new Context();
-
-      try {
-           int schemaUspId = getSchemaUspId();
-           PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdUSPAutorExterno);
-           statement.setInt(1,schemaUspId);
-           ResultSet rs = statement.executeQuery();
-           
-		   int id = -1;
-		   
-		   if(rs.next()) {
-
-              id = rs.getInt("metadata_field_id");
-		  }
-
-          rs.close();
-          statement.close();
-          context.complete();
-
-          return id;
-
-      } catch(SQLException sql) {
-
-           System.out.println("Erro: no SQL ----" + sql.getMessage() );
-           sql.printStackTrace();
-
-           return -1;
-
-      }
-    }
- 
-    /** Metodo que retorna o id da data da tabela metadata_field_registry */
-    public int getDataId() throws SQLException {
-
-      Context context = new Context();
-
-      try {
-           int schemaDcId = getSchemaDcId();
-           PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdDataPublicacao);
-           statement.setInt(1,schemaDcId);
-           ResultSet rs = statement.executeQuery();
-           
-		   int id = -1;
-		   
-		   if(rs.next()) {
-
-			   id = rs.getInt("metadata_field_id");				
-		   }
-		   
-		   rs.close();
-		   statement.close();
-		   context.complete();
-			   
-		   rs = null;
-		   statement = null;
-		   
-		   return id;
-
-      } catch(SQLException sql) {
-
-           System.out.println("Erro: no SQL ----" + sql.getMessage() );
-           sql.printStackTrace();
-
-           return -1;
-
-      } 
-    }
-
-    /** Metodo que armazena ids na seguinte ordem: schema dc, schema usp, data, tipo, titulo e autor */
-    public int[] setVetorId() throws SQLException {
-
-      this.VETOR_ID[0] = getSchemaDcId();
-      this.VETOR_ID[1] = getSchemaUspId();
-      this.VETOR_ID[2] = getDataId();
-      this.VETOR_ID[3] = getTipoId();
-      this.VETOR_ID[4] = getTituloId();
-      this.VETOR_ID[5] = getAutorId();
-
-      return this.VETOR_ID;      
     }
 
     /** Metodo que retorna todos as formas de citacao de um mesmo autor a partir de seu numero USP  */
     public ArrayList<String> getCitacoesAutor(String codpes) throws SQLException {
-
-      Context context = new Context();
       ArrayList<String> listaCitacoes = new ArrayList<String>();
-
       try {
-         int metadataAutorId = getAutorId();
+        context = new Context();
          PreparedStatement statement = context.getDBConnection().prepareStatement(selectCitacaoAutor);
-         statement.setInt(1,metadataAutorId);
-         statement.setString(2,codpes);
+         statement.setString(1,codpes);
          ResultSet rs = statement.executeQuery();
 
          while(rs.next()) {
@@ -437,7 +199,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 
       } catch(SQLException sql) {
          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-         sql.printStackTrace();
+         sql.printStackTrace(System.out);
 
          return null;
 
@@ -446,15 +208,11 @@ public class AuthorDAOPostgres extends AuthorDAO
 
     /** Metodo que retorna todos as formas de citacao em MAIUSCULAS de um mesmo autor a partir de seu numero USP  */
     public ArrayList<String> getCitacoesAutorUpper(String codpes) throws SQLException {
-
-      Context context = new Context();
       ArrayList<String> listaCitacoes = new ArrayList<String>();
-
       try {
-         int metadataAutorId = getAutorId();
+        context = new Context();
          PreparedStatement statement = context.getDBConnection().prepareStatement(selectCitacaoAutorUpper);
-         statement.setInt(1,metadataAutorId);
-         statement.setString(2,codpes);
+         statement.setString(1,codpes);
          ResultSet rs = statement.executeQuery();
 
          while(rs.next()) {
@@ -471,7 +229,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 
      } catch(SQLException sql) {
          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-         sql.printStackTrace();
+         sql.printStackTrace(System.out);
 
          return null;
 
@@ -480,18 +238,11 @@ public class AuthorDAOPostgres extends AuthorDAO
    
     /** Metodo que retorna todos os registros dos itens relacionados com um determinado numero USP  */
     public ArrayList<ItemRelacionado> getItensRelacionados(String codpes) throws SQLException {
- 
-      Context context = new Context();
       ArrayList<ItemRelacionado> listaItens = new ArrayList<ItemRelacionado>();
-
       try {
-         setVetorId();
+        context = new Context();
          PreparedStatement statement = context.getDBConnection().prepareStatement(selectHandleTitulos);
-         statement.setInt(1,this.VETOR_ID[4]);
-         statement.setInt(2,this.VETOR_ID[3]);
-         statement.setInt(3,this.VETOR_ID[2]);
-         statement.setInt(4,this.VETOR_ID[5]);
-         statement.setString(5,codpes);
+         statement.setString(1,codpes);
          ResultSet rs = statement.executeQuery();
 
          while(rs.next()) {
@@ -512,7 +263,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 
       } catch(SQLException sql) {
          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-         sql.printStackTrace();
+         sql.printStackTrace(System.out);
 
          return null;
 
@@ -522,27 +273,22 @@ public class AuthorDAOPostgres extends AuthorDAO
     /** Metodo que retorna todos os coautores externos USP a partir do numero USP de um autor */
     public ArrayList<String> getCoautoresExternos(String codpes) throws SQLException {
 
-      Context context = new Context();
       ArrayList<String> listaCoautores = new ArrayList<String>();
 
       try {
-
-         int metadataFieldUspAutorId = getAutorId();
-         int metadataFieldUspAutorExternoId = getAutorExternoId();
+          context = new Context();
          PreparedStatement statement = context.getDBConnection().prepareStatement(selectCoautoresUSPExterno);
-         statement.setInt(1,metadataFieldUspAutorExternoId);
-         statement.setInt(2,metadataFieldUspAutorId);
-         statement.setString(3,codpes);
+         statement.setString(1,codpes);
          ResultSet rs = statement.executeQuery();
      
          String ocorenciaAnterior = "";
 
          if(rs.next()) {
-            ocorenciaAnterior = rs.getString("text_value");
+            ocorenciaAnterior = rs.getString("tuplax");
             listaCoautores.add(ocorenciaAnterior);
          }
          while(rs.next()) {
-            String coautor = rs.getString("text_value");
+            String coautor = rs.getString("tuplax");
 
             if(!coautor.equals(ocorenciaAnterior)) {
                listaCoautores.add(coautor);
@@ -558,7 +304,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 
       } catch(SQLException sql) {
          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-         sql.printStackTrace();
+         sql.printStackTrace(System.out);
 
          return null;
 
@@ -568,17 +314,13 @@ public class AuthorDAOPostgres extends AuthorDAO
     /** Metodo que retorna todos os coautores USP a partir do numero USP de um autor */
     public ArrayList<Author> getCoautoresUSP(String codpes) throws SQLException {
 
-      Context context = new Context();
+      
       ArrayList<Author> listaCoautores = new ArrayList<Author>();
 
       try {
-
-         int metadataAutorId = getAutorId();
+          context = new Context();
          PreparedStatement statement = context.getDBConnection().prepareStatement(selectCoautoresUSP);
-         statement.setInt(1,metadataAutorId);
-         statement.setInt(2,metadataAutorId);
-         statement.setString(3,codpes);
-         statement.setString(4,codpes);
+         statement.setString(1,codpes);
          ResultSet rs = statement.executeQuery();
 
          while(rs.next()) {
@@ -601,111 +343,51 @@ public class AuthorDAOPostgres extends AuthorDAO
 
       } catch(SQLException sql) {
          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-         sql.printStackTrace();
+         sql.printStackTrace(System.out);
 
          return null;
 
       }
     }
 	
-	/** Metodo que retorna todos as unidades interligadas com um determinado autores USP a partir do numero USP */
+    /** Metodo que retorna todos as unidades interligadas com um determinado autores USP a partir do numero USP
+     * @param codpes
+     * @return  */
     public ArrayList<InterUnit> getInterUnitUSP(String codpes) throws SQLException {
-
-      Context context = new Context();
       ArrayList<InterUnit> listaInterUnidades = new ArrayList<InterUnit>();
-
       try {
-
-         int metadataAutorId = getAutorId();
+         // int metadataAutorId = getAutorId();
+         int metadataAutorId = 81;
+         context = new Context();
          PreparedStatement statement = context.getDBConnection().prepareStatement(selectInterdisciplinarUSP);
-         statement.setInt(1,metadataAutorId);
-         statement.setInt(2,metadataAutorId);
+         statement.setInt(1,metadataAutorId);//SELECT metadata_field_id FROM metadatafieldregistry WHERE metadata_schema_id=(SELECT metadata_schema_id FROM metadataschemaregistry WHERE short_id='dc') AND element='contributor' AND qualifier='author'
+         statement.setInt(2,metadataAutorId);//SELECT metadata_field_id FROM metadatafieldregistry WHERE metadata_schema_id=(SELECT metadata_schema_id FROM metadataschemaregistry WHERE short_id='dc') AND element='contributor' AND qualifier='author'
          statement.setString(3,codpes);
          statement.setString(4,codpes);
          ResultSet rs = statement.executeQuery();
-
          while(rs.next()) {
-
             InterUnit unidade = new InterUnit();
-
             //unidade.setCodpes(Integer.parseInt(codpes));
             unidade.setUnidadeSigla(rs.getString("unidade"));
             unidade.setQntTrabalhos(rs.getInt("ocorr"));
-            
             listaInterUnidades.add(unidade);
          }
-
          rs.close();
          statement.close();
          context.complete();
-
          return listaInterUnidades;
-
       } catch(SQLException sql) {
          System.out.println("Erro: no SQL ----" + sql.getMessage() );
-         sql.printStackTrace();
-
+         sql.printStackTrace(System.out);
          return null;
-
       }
     }
-
-    /** Metodo que retorna todos os coautores USP a partir do numero USP de um autor 
-    public Map<Integer, Author> getCoautoresUSP(String codpes) throws SQLException {
-
-      Context context = new Context();
-      Map<Integer, Author> mapCoautores = new HashMap<Integer, Author>();
-
-      int contador = 1;
-
-      try {
-         int metadataAutorId = getAutorId();
-         PreparedStatement statement = context.getDBConnection().prepareStatement(selectCoautoresUSP);
-         statement.setInt(1,metadataAutorId);
-         statement.setInt(2,metadataAutorId);
-         statement.setString(3,codpes);
-         statement.setString(4,codpes);
-         ResultSet rs = statement.executeQuery();
-
-         while(rs.next()) {
-
-            Author coautor = new Author();
-  
-            coautor.setCodpes(Integer.parseInt(rs.getString("nusp")));
-            coautor.setNome(rs.getString("nomeusp"));
-            coautor.setUnidadeSigla(rs.getString("unidade"));
-            coautor.setQntTrabalhos(rs.getInt("ocorr"));
-
-            mapCoautores.put(contador, coautor);
-            contador++;
-         }
-
-//          PreparedStatement statementDrop = context.getDBConnection().prepareStatement(dropTabelaCvcoautorUSP);
-//          statementDrop.executeQuery();
-
-          rs.close();
-          statement.close();
-//          statementSelect.close();
-  //        statementDrop.close();
-          context.complete();
-
-          return mapCoautores;
-
-      } catch(SQLException sql) {
-         System.out.println("Erro: no SQL ----" + sql.getMessage() );
-         sql.printStackTrace();
-
-         return new HashMap<Integer, Author>();
-
-      }
-    }*/
     
     private static Connection ocn = null;
     public static Connection getReplicaUspDBconnection() {
         try {
             if(ocn==null || ocn.isClosed()){
                     DriverManager.registerDriver((Driver) Class.forName(ConfigurationManager.getProperty("usp-authorities", "db.driver")).newInstance());
-
                     ocn = DriverManager.getConnection(ConfigurationManager.getProperty("usp-authorities", "db.url"),
                                                       ConfigurationManager.getProperty("usp-authorities", "db.username"),
                                                       ConfigurationManager.getProperty("usp-authorities", "db.password"));
@@ -737,19 +419,13 @@ public class AuthorDAOPostgres extends AuthorDAO
     /** Metodo que retorna um objeto do tipo Autor a partir de seu numero USP */
     public Author getAuthorByCodpes(int codpes) throws SQLException
     {
-        
-      // Context context = new Context();
       try {
            PreparedStatement statement = getReplicaUspDBconnection().prepareStatement(selectAuthor);
            statement.setInt(1,codpes);
            ResultSet rs = statement.executeQuery();
-		   
 		   Author author = null;
-           
 		   if(rs.next()) {
-		   
 			   author = new Author();
-
 			   author.setCodpes(rs.getInt("codpes"));
 			   author.setNome(rs.getString("nome"));
 			   author.setEmail_1(rs.getString("email_1"));
@@ -768,18 +444,12 @@ public class AuthorDAOPostgres extends AuthorDAO
 		   rs.close();
 		   statement.close();
                    // context.complete();
-		   rs = null;
-		   statement = null;
-			   
 		   return author;
 
          } catch(SQLException sql) {
-
            System.out.println("Erro: no SQL ----" + sql.getMessage() );
-           sql.printStackTrace();
-
-         } 		 
-             
+           sql.printStackTrace(System.out);
+         }
          return null;
     }
     //Metodo criado para efeitos de testes na conexao com o database
