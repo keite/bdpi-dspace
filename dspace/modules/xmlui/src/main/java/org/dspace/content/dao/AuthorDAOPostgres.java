@@ -383,15 +383,13 @@ public class AuthorDAOPostgres extends AuthorDAO
       }
     }
     
-    private static Connection ocn = null;
-    public static Connection getReplicaUspDBconnection() {
+    public Connection getReplicaUspDBconnection() {
+        Connection ocn = null;
         try {
-            if(ocn==null || ocn.isClosed()){
-                    DriverManager.registerDriver((Driver) Class.forName(ConfigurationManager.getProperty("usp-authorities", "db.driver")).newInstance());
-                    ocn = DriverManager.getConnection(ConfigurationManager.getProperty("usp-authorities", "db.url"),
-                                                      ConfigurationManager.getProperty("usp-authorities", "db.username"),
-                                                      ConfigurationManager.getProperty("usp-authorities", "db.password"));
-            }
+            DriverManager.registerDriver((Driver) Class.forName(ConfigurationManager.getProperty("usp-authorities", "db.driver")).newInstance());
+            ocn = DriverManager.getConnection(ConfigurationManager.getProperty("usp-authorities", "db.url"),
+                                              ConfigurationManager.getProperty("usp-authorities", "db.username"),
+                                              ConfigurationManager.getProperty("usp-authorities", "db.password"));
         }
         catch(ClassNotFoundException e){
             System.out.println("[inicio - ClassNotFound] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
@@ -416,36 +414,37 @@ public class AuthorDAOPostgres extends AuthorDAO
         return ocn;
     }
 
-    /** Metodo que retorna um objeto do tipo Autor a partir de seu numero USP */
+    /** Metodo que retorna um objeto do tipo Autor a partir de seu numero USP
+     * @param codpes
+     * @return  */
     public Author getAuthorByCodpes(int codpes) throws SQLException
     {
       try {
-           PreparedStatement statement = getReplicaUspDBconnection().prepareStatement(selectAuthor);
-           statement.setInt(1,codpes);
-           ResultSet rs = statement.executeQuery();
-		   Author author = null;
-		   if(rs.next()) {
-			   author = new Author();
-			   author.setCodpes(rs.getInt("codpes"));
-			   author.setNome(rs.getString("nome"));
-			   author.setEmail_1(rs.getString("email_1"));
-			   author.setSobrenome(rs.getString("sobrenome"));
-			   author.setNomeInicial(rs.getString("nomeinicial"));
-			   author.setUnidade(rs.getString("unidade"));
-			   author.setUnidadeSigla(rs.getString("unidade_sigla"));
-			   author.setDepto(rs.getString("depto"));
-			   author.setDeptoSigla(rs.getString("depto_sigla"));
-			   author.setVinculo(rs.getString("vinculo"));
-			   author.setFuncao(rs.getString("funcao"));
-			   author.setLattes(rs.getString("lattes"));
-			   
-		   }
-		   
-		   rs.close();
-		   statement.close();
-                   // context.complete();
-		   return author;
-
+            Connection cabc = getReplicaUspDBconnection();
+            PreparedStatement statement = cabc.prepareStatement(selectAuthor);
+            statement.setInt(1,codpes);
+            ResultSet rs = statement.executeQuery();
+            Author author = null;
+            if(rs.next()) {
+                    author = new Author();
+                    author.setCodpes(rs.getInt("codpes"));
+                    author.setNome(rs.getString("nome"));
+                    author.setEmail_1(rs.getString("email_1"));
+                    author.setSobrenome(rs.getString("sobrenome"));
+                    author.setNomeInicial(rs.getString("nomeinicial"));
+                    author.setUnidade(rs.getString("unidade"));
+                    author.setUnidadeSigla(rs.getString("unidade_sigla"));
+                    author.setDepto(rs.getString("depto"));
+                    author.setDeptoSigla(rs.getString("depto_sigla"));
+                    author.setVinculo(rs.getString("vinculo"));
+                    author.setFuncao(rs.getString("funcao"));
+                    author.setLattes(rs.getString("lattes"));
+            }
+            rs.close();
+            statement.close();
+            cabc.commit();
+            cabc.close();
+            return author;
          } catch(SQLException sql) {
            System.out.println("Erro: no SQL ----" + sql.getMessage() );
            sql.printStackTrace(System.out);
