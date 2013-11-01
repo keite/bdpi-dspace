@@ -9,6 +9,8 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.apache.log4j.Logger;
 import org.dspace.core.ConfigurationManager;
 
@@ -33,16 +35,14 @@ public class USPNameAuthority implements ChoiceAuthority {
         "left join unidade on (vinculopessoausp.codund = unidade.codund OR vinculopessoausp.codfusclgund = unidade.codund)\n" +
         "left join setor on (vinculopessoausp.codset = setor.codset))";
                 
-        private static Connection ocn = null;
-        public static Connection getReplicaUspDBconnection() {
+        public Connection getReplicaUspDBconnection() {
+            Connection ocn = null;
             try {
-                if(ocn==null || ocn.isClosed()){
-                        DriverManager.registerDriver((Driver) Class.forName(ConfigurationManager.getProperty("usp-authorities", "db.driver")).newInstance());
+                DriverManager.registerDriver((Driver) Class.forName(ConfigurationManager.getProperty("usp-authorities", "db.driver")).newInstance());
 
-                        ocn = DriverManager.getConnection(ConfigurationManager.getProperty("usp-authorities", "db.url"),
-                                                          ConfigurationManager.getProperty("usp-authorities", "db.username"),
-                                                          ConfigurationManager.getProperty("usp-authorities", "db.password"));
-                }
+                ocn = DriverManager.getConnection(ConfigurationManager.getProperty("usp-authorities", "db.url"),
+                                                  ConfigurationManager.getProperty("usp-authorities", "db.username"),
+                                                  ConfigurationManager.getProperty("usp-authorities", "db.password"));
             }
             catch(ClassNotFoundException e){
                 log.debug("[inicio - ClassNotFound] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
@@ -86,7 +86,7 @@ public class USPNameAuthority implements ChoiceAuthority {
 		
                 
 		try {
-			log.debug(" ==1 Par‰metros == ");				
+			log.debug(" ==1 Parametros == ");				
 			log.debug(" == field == " + field);
 			log.debug(" == query == " + query);			
 			log.debug(" == collection == " + collection);
@@ -97,38 +97,54 @@ public class USPNameAuthority implements ChoiceAuthority {
                         
 			String nomes[];
 			
-			String sobrenome = "";
-			String nome = "";
-			String filtro = " where rownum <= ".concat(String.valueOf(MAX_AUTORES));
-
-			nomes = query.split("\\,");
-			if (nomes.length > 0)
-				//sobrenome = new String(nomes[0].trim().getBytes("ISO-8859-1"),"UTF8");
-				sobrenome = nomes[0].trim();
-			if (nomes.length > 1)
-				//nome = new String(nomes[1].trim().getBytes("ISO-8859-1"),"UTF8");
-				nome = nomes[1].trim();
-				
-			String consulta = "SELECT DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao from "
-					+ DATABASE_TABLE;
-
-			if (notEmpty(nome))
-				filtro += " and translate(lower(nomeinicial),'áéíóúâêîôûàèìòùäëïöüãẽĩõũç','aeiouaeiouaeiouaeiouaeiouc') like translate(lower(?),'áéíóúâêîôûàèìòùäëïöüãẽĩõũç','aeiouaeiouaeiouaeiouaeiouc')";
-
-			if (notEmpty(sobrenome))
-                                filtro += " and translate(lower(sobrenome),'áéíóúâêîôûàèìòùäëïöüãẽĩõũç','aeiouaeiouaeiouaeiouaeiouc') like translate(lower(?),'áéíóúâêîôûàèìòùäëïöüãẽĩõũç','aeiouaeiouaeiouaeiouaeiouc')";
-
-			consulta += filtro;
-
-			consulta += " order by nome";
-
-			log.debug(" consulta == " + consulta);
+			// String sobrenome = "";
+			// String nome = "";
                         
-                        statement = getReplicaUspDBconnection().prepareStatement(consulta);
+			// String filtro = " where rownum <= ".concat(String.valueOf(MAX_AUTORES));
                         
-                        int pindex = 0;
-			if (notEmpty(nome)) statement.setString(++pindex,"%" + nome + "%");
-			if (notEmpty(sobrenome)) statement.setString(++pindex,"%" + sobrenome + "%");
+                        // ArrayList<String> filtro = new ArrayList<String>();
+                        HashMap<Integer,String[]> filtro = new HashMap<Integer,String[]>();
+                        
+                        // filtro.add(" where rownum <= ".concat(String.valueOf(MAX_AUTORES)));
+
+			nomes = query.split("[^0-9A-zÁÉÍÓÚÂÊÎÔÛÀÈÌÒÙÄËÏÖÜÃẼĨÕŨÇáéíóúâêîôûàèìòùäëïöüãẽĩõũç]+");
+                        
+                        int pindex = 1;
+                        for (String nome : nomes) {
+                            try {
+                                if (Integer.parseInt(nome) > 0) {
+                                    filtro.put(pindex++, new String[]{"codpes = ?", nome, "int"});
+                                }
+                            } catch (NumberFormatException e) {
+                                filtro.put(pindex++, new String[]{"translate(lower(nome),'áéíóúâêîôûàèìòùäëïöüãẽĩõũç','aeiouaeiouaeiouaeiouaeiouc') like translate(lower(?),'áéíóúâêîôûàèìòùäëïöüãẽĩõũç','aeiouaeiouaeiouaeiouaeiouc')", "%".concat(nome).concat("%"), "string"});
+                            }
+                        }
+
+                        StringBuilder consulta = new StringBuilder();
+                        
+                        consulta.append("SELECT DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao from ");
+                        consulta.append(DATABASE_TABLE);
+                        
+                        consulta.append(" WHERE ");
+                        if(filtro.isEmpty()) consulta.append("rownum < 0");
+                        else {
+                            for(int i = 1; i < pindex; i++){
+                                if(i > 1) consulta.append(" AND ");
+                                consulta.append(filtro.get(i)[0]);
+                            }
+                            consulta.append(" order by nome");
+                        }
+                        log.debug(" consulta == " + consulta.toString());
+                        Connection caut = getReplicaUspDBconnection();
+                        statement = caut.prepareStatement(consulta.toString());
+                        for(int i = 1; i < pindex; i++){
+                            if(filtro.get(i)[2].equals("int")){
+                                statement.setInt(i, Integer.valueOf(filtro.get(i)[1]));
+                            }
+                            else if(filtro.get(i)[2].equals("string")){
+                                statement.setString(i, filtro.get(i)[1]);
+                            }
+                        }
                         
                         // rs = RowSetProvider.newFactory().createCachedRowSet();
                         rs = new CachedRowSetImpl();
@@ -146,14 +162,17 @@ public class USPNameAuthority implements ChoiceAuthority {
                                     log.debug(String.valueOf(rs.getInt("codpes"))
                                     + rs.getString("sobrenome") + " , "
                                     + rs.getString("nomeinicial") + ","
-                                    + rs.getString("nome") + " ("
+                                    + rs.getString("nome") + " - "
+                                    + rs.getString("codpes") + " ("
                                     + rs.getString("unidade_sigla") + "/" 
                                     + rs.getString("depto_sigla") + ")"
                                     + " [" + rs.getString("funcao") + "]");
 
                                     v[i] = new Choice(String.valueOf(rs.getInt("codpes")),
-                                            rs.getString("sobrenome") + ", " + rs.getString("nomeinicial"),
-                                            rs.getString("nome") + " ("
+                                            rs.getString("sobrenome") + ", "
+                                          + rs.getString("nomeinicial"),
+                                            rs.getString("nome") + " - "
+                                          + rs.getString("codpes") + " ("
                                           + nvl(rs.getString("unidade_sigla"), rs.getString("unidade_sigla"), "- ")
                                           + nvl(rs.getString("depto_sigla"), "/ " + rs.getString("depto_sigla"),"/ -")
                                           + ")"
@@ -164,6 +183,8 @@ public class USPNameAuthority implements ChoiceAuthority {
                                 }
 			}
                         statement.close();
+                        caut.commit();
+                        caut.close();
                         log.debug(" FIM ");
                         return new Choices(v, 0, v.length , Choices.CF_ACCEPTED, true, 0);
 

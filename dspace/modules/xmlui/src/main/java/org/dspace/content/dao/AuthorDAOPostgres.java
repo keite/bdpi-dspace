@@ -424,9 +424,8 @@ public class AuthorDAOPostgres extends AuthorDAO
             PreparedStatement statement = cabc.prepareStatement(selectAuthor);
             statement.setInt(1,codpes);
             ResultSet rs = statement.executeQuery();
-            Author author = null;
+            Author author = new Author();
             if(rs.next()) {
-                    author = new Author();
                     author.setCodpes(rs.getInt("codpes"));
                     author.setNome(rs.getString("nome"));
                     author.setEmail_1(rs.getString("email_1"));

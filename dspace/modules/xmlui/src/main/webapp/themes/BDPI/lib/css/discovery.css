@@ -12,7 +12,8 @@
  */
 
 #aspect_discovery_Navigation_list_discovery ul li ul{
-display: none;
+    display: none;
 }
 #aspect_discovery_Navigation_list_discovery ul li h2{
-cursor:pointer; cursor: hand;
+    cursor: pointer;
+}
