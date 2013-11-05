@@ -17,24 +17,28 @@ import org.dspace.core.ConfigurationManager;
 public class AuthorDAOPostgres extends AuthorDAO
 {
     /** Constante para a busca de todos os parametros do autor USP a partir de seu codpes */
-    private static final String selectAuthor = "SELECT vinculopessoausp.codpes, vinculopessoausp.nompes nome, \n" +
-        "nvl(regexp_substr(vinculopessoausp.nompes,'.*\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
-        "regexp_substr(vinculopessoausp.nompes,'(.*)\\s.*',1,1,'i',1) nomeinicial,\n" +
-        "emailpessoa.codema email_1,\n" +
-        "unidade.nomund unidade, unidade.sglund unidade_sigla,\n" +
-        "setor.nomset depto, setor.nomabvset depto_sigla,\n" +
-        "vinculopessoausp.tipvin vinculo, vinculopessoausp.tipfnc funcao, null lattes\n" +
-        "FROM vinculopessoausp\n" +
-        "left join unidade on (vinculopessoausp.codund = unidade.codund OR vinculopessoausp.codfusclgund = unidade.codund)\n" +
-        "left join setor on (vinculopessoausp.codset = setor.codset)\n" +
-        "left join colegiado\n" +
-        "on ((vinculopessoausp.codclg = colegiado.codclg) AND (vinculopessoausp.sglclg = colegiado.sglclg))\n" +
-        "left join emailpessoa on emailpessoa.codpes = vinculopessoausp.codpes\n" +
-        "where emailpessoa.stamtr = 'S' and vinculopessoausp.codpes = ?\n" +
-        "order by sitctousp, decode(lower(sitctousp),'ativado',0,'não ativado',1,'expirado',1,'suspenso',1,2),\n" +
-        "tipvin, decode(substr(lower(tipvin),0,3),'ser',0,'alu',0,'pro',0,'bol',0,'est',0,'ext',0,1),\n" +
-        "sitatl, decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,4),\n" +
-        "vinculopessoausp.dtaultalt desc, vinculopessoausp.dtainivin desc";
+    private static final String selectAuthor = "SELECT vinculopessoausp.codpes, vinculopessoausp.nompes nome,\n" +
+"nvl(regexp_substr(vinculopessoausp.nompes,'.*\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
+"regexp_substr(vinculopessoausp.nompes,'(.*)\\s.*',1,1,'i',1) nomeinicial,\n" +
+"emailpessoa.codema email_1,\n" +
+"unidade.nomund unidade, unidade.sglund unidade_sigla,\n" +
+"setor.nomset depto, setor.nomabvset depto_sigla,\n" +
+"vinculopessoausp.tipvin vinculo,\n" +
+"vinculopessoausp.tipfnc funcao,\n" +
+"null lattes\n" +
+"FROM vinculopessoausp\n" +
+"left join unidade on (vinculopessoausp.codund = unidade.codund OR vinculopessoausp.codfusclgund = unidade.codund)\n" +
+"left join setor on (vinculopessoausp.codset = setor.codset)\n" +
+"left join colegiado\n" +
+"on ((vinculopessoausp.codclg = colegiado.codclg) AND (vinculopessoausp.sglclg = colegiado.sglclg))\n" +
+"left join emailpessoa on emailpessoa.codpes = vinculopessoausp.codpes\n" +
+"left join resuservhistfuncional on (resuservhistfuncional.codpes = vinculopessoausp.codpes AND vinculopessoausp.tipvin = 'SERVIDOR')\n" +
+"WHERE emailpessoa.stamtr = 'S' and vinculopessoausp.codpes = ?\n" +
+"ORDER BY decode(lower(sitctousp),'ativado',0,'não ativado',1,'expirado',1,'suspenso',1,2),\n" +
+"decode(substr(lower(tipvin),0,3),'ser',0,'alu',0,'pro',0,'bol',0,'est',0,'ext',0,1),\n" +
+"decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,4),\n" +
+"nvl2(nvl(resuservhistfuncional.dtafimsitfun,vinculopessoausp.dtafimvin),1,0),\n" +
+"vinculopessoausp.dtaultalt desc, nvl(resuservhistfuncional.dtainisitfun,vinculopessoausp.dtainivin) desc";
 
     /** Constante para a busca de todos os itens a partir dos seguintes parametros: tipo, data e titulo relacionados com o numero USP -> alterado para uso de authority contendo numero usp */
      private static final String selectHandleTitulos = "SELECT handle, TITLES.text_value AS title, TIPOS.text_value AS tipo, DTPUBS.text_value AS dtpub\n" +
