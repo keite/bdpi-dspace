@@ -31,10 +31,10 @@ public class AuthorDAOPostgres extends AuthorDAO
         "on ((vinculopessoausp.codclg = colegiado.codclg) AND (vinculopessoausp.sglclg = colegiado.sglclg))\n" +
         "left join emailpessoa on emailpessoa.codpes = vinculopessoausp.codpes\n" +
         "where emailpessoa.stamtr = 'S' and vinculopessoausp.codpes = ?\n" +
-        "order by decode(lower(sitctousp),'ativado',0,'não ativado',1,'expirado',2,'suspenso',3,4), decode(substr(lower(tipvin),0,3),'ser',0,'alu',1,'pro',2,'bol',3,'est',4,'ext',5,6), decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,'D')";
-    
-    /** Constante para a busca do ID do autor a partir do id referente ao 'usp' -> alterado para uso do campo authority contendo o numero USP */
-    private static final String selectMetadataIdUSPAutor = "SELECT metadata_field_id FROM metadatafieldregistry INNER JOIN metadataschemaregistry ON (metadatafieldregistry.metadata_schema_id=metadataschemaregistry.metadata_schema_id AND metadataschemaregistry.short_id='dc')  WHERE metadatafieldregistry.element='contributor' AND metadatafieldregistry.qualifier='author'";
+        "order by sitctousp, decode(lower(sitctousp),'ativado',0,'não ativado',1,'expirado',1,'suspenso',1,2),\n" +
+        "tipvin, decode(substr(lower(tipvin),0,3),'ser',0,'alu',0,'pro',0,'bol',0,'est',0,'ext',0,1),\n" +
+        "sitatl, decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,4),\n" +
+        "vinculopessoausp.dtaultalt desc, vinculopessoausp.dtainivin desc";
 
     /** Constante para a busca de todos os itens a partir dos seguintes parametros: tipo, data e titulo relacionados com o numero USP -> alterado para uso de authority contendo numero usp */
      private static final String selectHandleTitulos = "SELECT handle, TITLES.text_value AS title, TIPOS.text_value AS tipo, DTPUBS.text_value AS dtpub\n" +
@@ -125,7 +125,10 @@ public class AuthorDAOPostgres extends AuthorDAO
         this.context = ctx;
     }
 
-    /** Metodo que retorna o id do schema dc da tabela metadata_schema_registry */
+    /** Metodo que retorna o id do schema dc da tabela metadata_schema_registry
+     * @param codpes
+     * @return
+     * @throws java.sql.SQLException  */
     public int getTotalItensRelacionados(String codpes) throws SQLException {
         try {
             context = new Context();
@@ -145,38 +148,10 @@ public class AuthorDAOPostgres extends AuthorDAO
           } 
      }
 
-    /** Metodo que retorna o id do autor da tabela metadata_field_registry */
-    private int getAutorId() throws SQLException  {
-      try {
-            context = new Context();
-            PreparedStatement statement = context.getDBConnection().prepareStatement(selectMetadataIdUSPAutor);
-           
-           ResultSet rs = statement.executeQuery();
-           
-		   int id = -1;
-		   
-		   if(rs.next()) {
-
-			id = rs.getInt("metadata_field_id");
-			}
-
-           rs.close();
-           statement.close();
-           context.complete();
-
-           return id;
-
-      } catch(SQLException sql) {
-
-           System.out.println("Erro: no SQL ----" + sql.getMessage() );
-           sql.printStackTrace(System.out);
-
-           return -1;
-
-      } 
-    }
-
-    /** Metodo que retorna todos as formas de citacao de um mesmo autor a partir de seu numero USP  */
+    /** Metodo que retorna todos as formas de citacao de um mesmo autor a partir de seu numero USP
+     * @param codpes
+     * @return
+     * @throws java.sql.SQLException  */
     public ArrayList<String> getCitacoesAutor(String codpes) throws SQLException {
       ArrayList<String> listaCitacoes = new ArrayList<String>();
       try {
@@ -206,7 +181,10 @@ public class AuthorDAOPostgres extends AuthorDAO
       }
     }
 
-    /** Metodo que retorna todos as formas de citacao em MAIUSCULAS de um mesmo autor a partir de seu numero USP  */
+    /** Metodo que retorna todos as formas de citacao em MAIUSCULAS de um mesmo autor a partir de seu numero USP
+     * @param codpes
+     * @return 
+     * @throws java.sql.SQLException */
     public ArrayList<String> getCitacoesAutorUpper(String codpes) throws SQLException {
       ArrayList<String> listaCitacoes = new ArrayList<String>();
       try {
@@ -236,7 +214,10 @@ public class AuthorDAOPostgres extends AuthorDAO
       }
     }
    
-    /** Metodo que retorna todos os registros dos itens relacionados com um determinado numero USP  */
+    /** Metodo que retorna todos os registros dos itens relacionados com um determinado numero USP
+     * @param codpes
+     * @return 
+     * @throws java.sql.SQLException */
     public ArrayList<ItemRelacionado> getItensRelacionados(String codpes) throws SQLException {
       ArrayList<ItemRelacionado> listaItens = new ArrayList<ItemRelacionado>();
       try {
@@ -270,7 +251,10 @@ public class AuthorDAOPostgres extends AuthorDAO
       } 
     }
     
-    /** Metodo que retorna todos os coautores externos USP a partir do numero USP de um autor */
+    /** Metodo que retorna todos os coautores externos USP a partir do numero USP de um autor
+     * @param codpes
+     * @return
+     * @throws java.sql.SQLException  */
     public ArrayList<String> getCoautoresExternos(String codpes) throws SQLException {
 
       ArrayList<String> listaCoautores = new ArrayList<String>();
@@ -311,7 +295,10 @@ public class AuthorDAOPostgres extends AuthorDAO
       }
     }
 
-    /** Metodo que retorna todos os coautores USP a partir do numero USP de um autor */
+    /** Metodo que retorna todos os coautores USP a partir do numero USP de um autor
+     * @param codpes
+     * @return 
+     * @throws java.sql.SQLException */
     public ArrayList<Author> getCoautoresUSP(String codpes) throws SQLException {
 
       
@@ -352,7 +339,8 @@ public class AuthorDAOPostgres extends AuthorDAO
 	
     /** Metodo que retorna todos as unidades interligadas com um determinado autores USP a partir do numero USP
      * @param codpes
-     * @return  */
+     * @return
+     * @throws java.sql.SQLException  */
     public ArrayList<InterUnit> getInterUnitUSP(String codpes) throws SQLException {
       ArrayList<InterUnit> listaInterUnidades = new ArrayList<InterUnit>();
       try {
@@ -416,7 +404,8 @@ public class AuthorDAOPostgres extends AuthorDAO
 
     /** Metodo que retorna um objeto do tipo Autor a partir de seu numero USP
      * @param codpes
-     * @return  */
+     * @return
+     * @throws java.sql.SQLException  */
     public Author getAuthorByCodpes(int codpes) throws SQLException
     {
       try {
@@ -450,27 +439,4 @@ public class AuthorDAOPostgres extends AuthorDAO
          }
          return null;
     }
-    //Metodo criado para efeitos de testes na conexao com o database
-    /**public static void main (String args[]) throws SQLException {
-
-       Scanner input = new Scanner(System.in);
-
-       System.out.print("Informe o numero USP: ");
-       int codpes = input.nextInt();
-
-       Author author = new Author();
-   
-       AuthorDAOPostgres ap = new AuthorDAOPostgres();
-
-       author =  ap.getAuthorByCodpes(codpes);
-
-       System.out.println("Nome: " + author.getNome());
-       System.out.println("Sobrenome: " + author.getSobrenome());
-       System.out.println("Departamento: " + author.getDepto());
-       System.out.println("Funcao: " + author.getFuncao());
-       System.out.println("Vinculo: " + author.getVinculo());
-       System.out.println("Lattes: " + author.getLattes());
-
-    }*/
 }
-

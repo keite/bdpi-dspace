@@ -3,7 +3,6 @@
  */
 package org.dspace.content.authority;
 
-// import com.sun.rowset.CachedRowSetImpl;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -70,9 +69,7 @@ public class USPNameAuthority implements ChoiceAuthority {
                 log.debug("[fim - SQL] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
             }
             return ocn;
-        }        
-        
-	// Context context;
+        }
 	
 	// Construtor
 	public USPNameAuthority() {
@@ -84,9 +81,7 @@ public class USPNameAuthority implements ChoiceAuthority {
 	public Choices getMatches(String field, String query, int collection,
 			int start, int limit, String locale) {
 		
-		// Choice v[] = null;
 		PreparedStatement statement = null;
-                // CachedRowSetImpl rs = null;
                 ResultSet rs = null;
                 int MAX_AUTORES = ConfigurationManager.getIntProperty("xmlui.lookup.select.size", 10);
                 
@@ -101,17 +96,8 @@ public class USPNameAuthority implements ChoiceAuthority {
 			log.debug(" ================== ");
                         
 			String nomes[];
-			
-			// String sobrenome = "";
-			// String nome = "";
-                        
-			// String filtro = " where rownum <= ".concat(String.valueOf(MAX_AUTORES));
-                        
                         HashMap<Integer,String[]> filtro = new HashMap<Integer,String[]>();
-                        
-                        // filtro.add(" where rownum <= ".concat(String.valueOf(MAX_AUTORES)));
-
-			nomes = query.toLowerCase().split("[^0-9a-záéíóúâêîôûàèìòùäëïöüãõç]+");
+			nomes = query.toLowerCase().split("[^0-9a-z]+");
                         
                         int pindex = 1;
                         for (String nome : nomes) {
@@ -130,9 +116,8 @@ public class USPNameAuthority implements ChoiceAuthority {
 
                         StringBuilder consulta = new StringBuilder();
                         
-                        consulta.append("SELECT DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao, dtaini, dtafim from ");
+                        consulta.append("SELECT DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao, dtaini, dtafim FROM ");
                         consulta.append(DATABASE_TABLE);
-                        
                         consulta.append(" WHERE ");
                         if(filtro.isEmpty()) consulta.append("rownum < 0");
                         else {
@@ -154,17 +139,9 @@ public class USPNameAuthority implements ChoiceAuthority {
                                 statement.setString(i, filtro.get(i)[1]);
                             }
                         }
-                        
-                        // rs = new CachedRowSetImpl();
-                        // rs.populate(statement.executeQuery());
-                        // rs.setReadOnly(true);
-			
                         rs = statement.executeQuery();
-                        
-                        // int MAX_SIZE = (rs.size() > MAX_AUTORES ? MAX_AUTORES: rs.size());
-                        // v = new Choice[MAX_SIZE];
                         ArrayList<Choice> v = new ArrayList<Choice>();
-                        while(rs.next()){                            
+                        while(rs.next()){
                             v.add(new Choice(String.valueOf(rs.getInt("codpes")),
                                     rs.getString("sobrenome") + ", "
                                   + rs.getString("nomeinicial"),
@@ -183,19 +160,16 @@ public class USPNameAuthority implements ChoiceAuthority {
                         caut.close();
                         log.debug(" FIM ");
                         return new Choices(v.toArray(new Choice[v.size()]), 0, v.size() , Choices.CF_ACCEPTED, true, 0);
-
                     } catch (NumberFormatException e) {
                         e.printStackTrace(System.out);
                     } catch (SQLException e) {
                         e.printStackTrace(System.out);
-                    } 
+                    }
                     return null;
 	}
 
         @Override
-	public Choices getBestMatch(String field, String text, int collection,
-			String locale) {
-
+	public Choices getBestMatch(String field, String text, int collection, String locale) {
 		Choice v[] = new Choice[1];
 		v[0] = new Choice("1", "Nao definido", "Nao definido");
 		return new Choices(v, 0, v.length, Choices.CF_UNCERTAIN, false, 0);
@@ -236,5 +210,4 @@ public class USPNameAuthority implements ChoiceAuthority {
                 return x.trim();
             }
         }
-
 }
