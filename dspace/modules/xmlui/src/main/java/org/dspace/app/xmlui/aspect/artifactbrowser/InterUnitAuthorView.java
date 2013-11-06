@@ -331,8 +331,8 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
 
          Cell coautoriaLink = rowLinksColuna.addCell("id_cols_coautoria_link", Cell.ROLE_DATA, "class_cols_coautoria_link");
          coautoriaLink.addXref
-                    (contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/coauthor", T_coauthor, "", "_blank");
-
+                    (contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/coauthor", T_coauthor, "", "_self");
+/*
          Cell retornarLink = rowLinksColuna.addCell("id_cols_retornar_link", Cell.ROLE_DATA, "class_cols_retornar_link");
          retornarLink.addXref
                     (contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return);
@@ -340,20 +340,21 @@ public class InterUnitAuthorView extends AbstractDSpaceTransformer implements Ca
          Cell fecharLink = rowLinksColuna.addCell("id_cols_fechar_link", Cell.ROLE_DATA, "class_cols_fechar_link");
          fecharLink.addXref
                     ("#", T_close,"window.close()","window.close()");
-
-         /**coautoria.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/coauthor", T_coauthor, "", "_blank");
+*/
+         /**coautoria.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/coauthor", T_coauthor, "", "_self");
          retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return);
          fechar.addXref("#", T_close,"window.close()","window.close()"); */
 
         }
         else {
            geral.setHead(T_interunit_not_found);
-
+/*
            Para retornar = informacoesInterUnidadeUSP.addPara("id_paragrafo_retornar_error", "class_paragrafo_retornar_error");
            Para fechar = informacoesInterUnidadeUSP.addPara("id_paragrafo_fechar_error", "class_paragrafo_fechar_error");
 
            retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return, "");
            fechar.addXref("#", T_close,"window.close()","window.close()");
+*/
         }
     }
 

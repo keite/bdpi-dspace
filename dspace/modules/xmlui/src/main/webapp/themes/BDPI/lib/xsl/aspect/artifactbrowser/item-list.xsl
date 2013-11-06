@@ -221,7 +221,7 @@
 <!-- 130419 - Dan - Codigo que insere o itemID e o codpes na URL. E necessario realizar a verificacao da url atual para a construcao do link, pois podera haver duplicacao no link --> 
 												<xsl:choose>
 													<xsl:when test="$verificaAuthor!=''">
-														<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+														<a href="{$verificaAuthor}" target="_self" class="removeLinkUSP">												
 															<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
 														</a>
 													</xsl:when>
@@ -229,21 +229,21 @@
 														<xsl:choose>
 			 
 														   <xsl:when test="$verificaLink = 0"> 
-															  <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															  <a href="handle/{$urlSub}/{$codpes}/author" target="_self" class="removeLinkUSP"> 
 																 <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
 															  </a>
 			 
 														   </xsl:when> 
 													
 														   <xsl:when test="$verificaLink = 2"> 
-															  <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															  <a href="{$codpes}/author" target="_self" class="removeLinkUSP"> 
 																  <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
 															  </a>
 			 
 														   </xsl:when> 
 													
 														   <xsl:otherwise> 
-															  <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															  <a href="{$itemID}/{$codpes}/author" target="_self" class="removeLinkUSP"> 
 																  <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
 															  </a>
 			 
@@ -280,7 +280,7 @@
 <!-- 130419 - Dan - Codigo que insere o itemID e o codpes na URL. E necessario realizar a verificacao da url atual para a construcao do link, pois podera haver duplicacao no link --> 
 													<xsl:choose>
 													<xsl:when test="$verificaAuthor!=''">
-														<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+														<a href="{$verificaAuthor}" target="_self" class="removeLinkUSP">												
 															<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
 														</a>
 													</xsl:when>
@@ -288,21 +288,21 @@
 														<xsl:choose>
 			 
 														   <xsl:when test="$verificaLink = 0"> 
-															  <a href="handle/{$urlSub}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															  <a href="handle/{$urlSub}/{$codpes}/author" target="_self" class="removeLinkUSP"> 
 																 <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
 															  </a>
 			 
 														   </xsl:when> 
 													
 														   <xsl:when test="$verificaLink = 2"> 
-															  <a href="{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															  <a href="{$codpes}/author" target="_self" class="removeLinkUSP"> 
 																  <img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/> 
 															  </a>
 			 
 														   </xsl:when> 
 													
 														   <xsl:otherwise> 
-															  <a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP"> 
+															  <a href="{$itemID}/{$codpes}/author" target="_self" class="removeLinkUSP"> 
 																  <img alt="Icon" src=" {concat($theme-path, '/images/ehUSP.png')}"/> 
 															  </a>
 			 

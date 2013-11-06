@@ -367,7 +367,7 @@ public class ConfigurableBrowse extends AbstractDSpaceTransformer implements
                     			link = test;
                     		}                    		
                     		
-                    		cell.addFigure(diretorioImg + "ehUSP.png", link, "_blank", "removeLinkUSP");
+                    		cell.addFigure(diretorioImg + "ehUSP.png", link, "_self", "removeLinkUSP");
                     	}
 					/** FIM **/
 					

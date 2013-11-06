@@ -1088,7 +1088,7 @@
                      <table border="0" cellpadding="0" cellspacing="0">
                      <tr><td>
                         <div id="ds-footer-logo-sibi">
-                            <a title="Universidade de São Paulo" target="_blank" href="http://www.usp.br/sibi/" id="ds-footer-logo-link">
+                            <a title="Universidade de São Paulo" target="_self" href="http://www.usp.br/sibi/" id="ds-footer-logo-link">
                                 <span id="ds-footer-logo">&#160;</span>
                             </a>
                         </div>

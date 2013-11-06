@@ -175,13 +175,13 @@
 
 											<xsl:choose> 
 												<xsl:when test="$verificaAuthor!=''">
-													<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+													<a href="{$verificaAuthor}" target="_self" class="removeLinkUSP">												
 														<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
 													</a>
 												</xsl:when>
 																
 												<xsl:otherwise>														
-													<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
+													<a href="{$itemID}/{$codpes}/author" target="_self" class="removeLinkUSP">												
 														<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
 													</a>
 												</xsl:otherwise>
@@ -860,7 +860,7 @@
                                             <xsl:attribute name="href">
                                                 <xsl:value-of select="current()"/>
                                             </xsl:attribute>
-                                            <xsl:attribute name="target">_blank</xsl:attribute>
+                                            <xsl:attribute name="target">_self</xsl:attribute>
                                             <!-- Usa-se o current() para recuperar o nivel atual, pois o copy-of copia todos os niveis e -->
                                             <!-- realiza a postagem dos mesmos evitando uma etapa de verificacao -->
                                             <xsl:value-of select="current()"/>
@@ -929,13 +929,13 @@
 														
 														<xsl:choose> 
 															<xsl:when test="$verificaAuthor!=''">
-																<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+																<a href="{$verificaAuthor}" target="_self" class="removeLinkUSP">												
 																	<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
 																</a>
 															</xsl:when>
 															
 															<xsl:otherwise>														
-																<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
+																<a href="{$itemID}/{$codpes}/author" target="_self" class="removeLinkUSP">												
 																	<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
 																</a>
 															</xsl:otherwise>
@@ -972,13 +972,13 @@
 															<!-- insere o itemID e o codpes na URL -->
 																<xsl:choose> 
 																	<xsl:when test="$verificaAuthor!=''">
-																		<a href="{$verificaAuthor}" target="_blank" class="removeLinkUSP">												
+																		<a href="{$verificaAuthor}" target="_self" class="removeLinkUSP">												
 																			<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
 																		</a>
 																	</xsl:when>
 																	
 																	<xsl:otherwise>														
-																		<a href="{$itemID}/{$codpes}/author" target="_blank" class="removeLinkUSP">												
+																		<a href="{$itemID}/{$codpes}/author" target="_self" class="removeLinkUSP">												
 																			<img alt="Icon" src="{concat($theme-path, '/images/ehUSP.png')}"/>
 																		</a>
 																	</xsl:otherwise>
@@ -1087,7 +1087,7 @@
                          <xsl:attribute name="href">
                             <xsl:value-of select="current()"/>
                          </xsl:attribute>
-                         <xsl:attribute name="target">_blank</xsl:attribute>
+                         <xsl:attribute name="target">_self</xsl:attribute>
                          <xsl:value-of select="current()"/>
                       </a>
                    </xsl:when>
@@ -1097,7 +1097,7 @@
                          <xsl:attribute name="href">
                             <xsl:value-of select="current()"/>
                          </xsl:attribute>
-                         <xsl:attribute name="target">_blank</xsl:attribute>
+                         <xsl:attribute name="target">_self</xsl:attribute>
                          <xsl:value-of select="current()"/>
                       </a>
                    </xsl:when>
@@ -1112,7 +1112,7 @@
                                 <xsl:attribute name="href">
                                    <xsl:value-of select="concat('http://dx.doi.org/',current())"/>
                                 </xsl:attribute>
-                                <xsl:attribute name="target">_blank</xsl:attribute>
+                                <xsl:attribute name="target">_self</xsl:attribute>
                                 <xsl:value-of select="current()"/>
                              </a>
                            </xsl:when>

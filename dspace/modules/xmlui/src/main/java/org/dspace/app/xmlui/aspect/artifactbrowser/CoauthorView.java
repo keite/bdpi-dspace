@@ -403,7 +403,7 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
 //                    cellNomeCoautor.addContent(nome);
                       cellNomeCoautor.addXref
                               (contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + String.valueOf(codpes) + "/" + 
-                               "author", nome, "_blank", "_blank");
+                               "author", nome, "_self", "_self");
 // [inicio] DEIXA DE MOSTRAR UNIDADE ATE ACERTAR A QUESTAO DAS UNIDADES SEM USAR TUPLA DE AUTOR USP [RETIRACOLUNAUNIDADE]
                       // Cell cellUnidadeCoautor = rowCoautor.addCell("id_cols_unidade_field", Cell.ROLE_DATA, "class_cols_unidade_field");
                       // cellUnidadeCoautor.addContent(unidade);
@@ -522,12 +522,12 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
              fimAname.addXref(fim,"",aName);
 
    /** Define os links para voltar ou fechar a pagina */
-             Para retornar = geral.addPara("id_paragrafo_retornar", "class_paragrafo_retornar");
-             Para fechar = geral.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");
+//             Para retornar = geral.addPara("id_paragrafo_retornar", "class_paragrafo_retornar");
+//             Para fechar = geral.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");
  
              //retornar.addXref(this.dspaceUrl + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "author", T_return, "");
-			 retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return);
-             fechar.addXref("#", T_close,"window.close()","window.close()");
+//			 retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return);
+//             fechar.addXref("#", T_close,"window.close()","window.close()");
 
 //             List retorno = informacoesCoautoresExternos.addList("id_retornar_page_autor", "gloss", "classListaInfo");
 //             retorno.addItem().addXref(this.dspaceUrl + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "author", T_return, "text-align: right");
@@ -535,23 +535,25 @@ public class CoauthorView extends AbstractDSpaceTransformer implements Cacheable
 
 		   else {
            geral.setHead(T_coautor_nao_encontrado);
-
+/*
            Para retornar = geral.addPara("id_paragrafo_retornar", "class_paragrafo_retornar");
            Para fechar = geral.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");
 		   
 		   retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return, "");			
            fechar.addXref("#", T_close,"window.close()","window.close()");
+*/
         }
 
         }
         else {
            geral.setHead(T_coautor_nao_encontrado);
-
+/*
            Para retornar = geral.addPara("id_paragrafo_retornar", "class_paragrafo_retornar");
            Para fechar = geral.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");
 
            retornar.addXref(contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/author", T_return, "");
            fechar.addXref("#", T_close,"window.close()","window.close()");
+*/
         }
     }
 

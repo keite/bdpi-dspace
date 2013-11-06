@@ -21,7 +21,7 @@ import org.dspace.content.dao.AuthorDAOPostgres;
 public class USPXSLUtils {
 
     private static final String FAPESP_URL_ABRE_TAG = "<a href=\"http://www.bv.fapesp.br/pt/pesquisa/?q=";
-    private static final String FAPESP_URL_FECHA_TAG = "\" target=\"_blank\">";
+    private static final String FAPESP_URL_FECHA_TAG = "\" target=\"_self\">";
     private static final String FECHA_URL_TAG = "</a>";
 
    /*

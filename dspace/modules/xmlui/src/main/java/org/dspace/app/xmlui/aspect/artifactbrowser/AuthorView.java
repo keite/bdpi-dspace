@@ -426,8 +426,8 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
              Cell cellLattesLabel = rowLattes.addCell("id_cols_autor_label", Cell.ROLE_DATA, "class_cols_autor_label");
              //cellLattesLabel.addContent(T_lattes);
              Cell cellLattesField = rowLattes.addCell("id_cols_autor_field", Cell.ROLE_DATA, "class_cols_autor_field");
-//             cellLattesField.addXref("javascript: window.open('"+ author.getLattes() + "')",author.getLattes().substring(23),"_blank");
-//             cellLattesField.addXref(author.getLattes(),author.getLattes().substring(23),"_blank", "_blank");
+//             cellLattesField.addXref("javascript: window.open('"+ author.getLattes() + "')",author.getLattes().substring(23),"_self");
+//             cellLattesField.addXref(author.getLattes(),author.getLattes().substring(23),"_self", "_self");
              cellLattesField.addXref(author.getLattes(),T_lattes,"_blank", "_blank");
 
            }
@@ -476,7 +476,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
            Cell cellCoautoriaLabel = rowCoautoria.addCell("id_cols_autor_label", Cell.ROLE_DATA, "class_cols_autor_label");
            cellCoautoriaLabel.addContent(" ");
            Cell cellCoautoriaField = rowCoautoria.addCell("id_cols_autor_field", Cell.ROLE_DATA, "class_cols_autor_field");
-           cellCoautoriaField.addXref(this.dspaceUrl + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "coauthor",T_coauthor,"_blank", "_blank");*/
+           cellCoautoriaField.addXref(this.dspaceUrl + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "coauthor",T_coauthor,"_self", "_self");*/
 
 //           Division coautoriaLinkDivGeral = informacao.addDivision("id_coautoria_link_div","class_coautoria_link_div");
 
@@ -488,15 +488,15 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
            Division coautoriaLink = coautoriaLinkDivGeral.addDivision("id_coautoria_link","class_coautoria_link");
            Para coautoriaLinkPara = coautoriaLink.addPara("id_coautoria_link_para","class_coautoria_link_para");
            coautoriaLinkPara.addXref
-              (contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "coauthor",T_coauthor,"coautoria_link", "_blank");
-              //(this.dspaceUrl + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "coauthor",T_coauthor,"coautoria_link", "_blank");
+              (contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "coauthor",T_coauthor,"coautoria_link", "_self");
+              //(this.dspaceUrl + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "coauthor",T_coauthor,"coautoria_link", "_self");
 
            Division interdiscipLinkDivGeral = linkDivGeral.addDivision("id_interdis_link_div","class_interdis_link_div");
            Division interdiscipLink = interdiscipLinkDivGeral.addDivision("id_interdis_link","class_interdis_link");
            Para interdispLinkPara = interdiscipLink.addPara("id_interdis_link_para","class_interdis_link_para");
            interdispLinkPara.addXref
            (contextPath + "/handle/" + this.handlePrefix  + "/" + itemIDStr + "/" + codpesStr + "/" + "interunit",
-                                                                              T_interdisplinar,"coautoria_link", "_blank");
+                                                                              T_interdisplinar,"coautoria_link", "_self");
            /**interdispLinkPara.addContent(T_interdisplinar); */
 
 /**           Division coautoriaLinkForm = coautoriaLinkDivGeral.addInteractiveDivision
@@ -565,7 +565,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 
                  Cell cellTituloPublicacao = rowItem.addCell("id_cols_titulo_field", Cell.ROLE_DATA, "class_cols_titulo_field");
                  //cellTituloPublicacao.addXref("javascript: window.open('"+ dspaceUrl + item.getHandle() + "')", item.getTitulo(), "text-align: right");
-                 cellTituloPublicacao.addXref(contextPath + "/handle/" + item.getHandle(), item.getTitulo(), "_blank", "_blank");
+                 cellTituloPublicacao.addXref(contextPath + "/handle/" + item.getHandle(), item.getTitulo(), "_self", "_self");
 
                  numeracao++;
              }
@@ -585,7 +585,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 
 
    /** Codigo que cria o link de voltar e fechar a pagina. Dependendo da URL anterior, o link voltar sera visualizado ou nao */
-           Para fechar = null;
+           /* Para fechar = null;
    
            if(urlItem.equals(urlAnterior)) {
               fechar = itensRelacionados.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");
@@ -597,14 +597,14 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
               fechar = itensRelacionados.addPara("id_paragrafo_fechar_central", "class_paragrafo_fechar_central");
            }
 
-           fechar.addXref("#", T_close,"window.close()","window.close()");
+           fechar.addXref("#", T_close,"window.close()","window.close()"); */
 
         }
         else {
            
            geral.setHead(T_author_not_found);
 
-           Para fechar = null;
+           /* Para fechar = null;
 
            if(urlItem.equals(urlAnterior)) {
               fechar = geral.addPara("id_paragrafo_fechar", "class_paragrafo_fechar");
@@ -616,7 +616,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
               fechar = geral.addPara("id_paragrafo_fechar_central", "class_paragrafo_fechar_central");
            }
 
-           fechar.addXref("#", T_close,"window.close()","window.close()");
+           fechar.addXref("#", T_close,"window.close()","window.close()"); */
 
 //           List retornar = geral.addList("id_retorno", "gloss", "classListaInfo");
 //           retorno.addItem().addXref(this.dspaceUrl + this.handlePrefix  + "/" + itemIDStr + "?show=full", T_return, "text-align: right");

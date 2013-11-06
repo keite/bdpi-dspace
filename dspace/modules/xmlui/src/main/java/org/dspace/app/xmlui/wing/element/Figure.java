@@ -86,7 +86,7 @@ public class Figure extends TextContainer implements StructuralElement
         this.rend = rend;
     }
 
-	/** 130801 - Dan - Construtor criado para abrir links em outra aba. Passar _blank como parametro na variavel title.
+	/** 130801 - Dan - Construtor criado para abrir links em outra aba. Passar _self como parametro na variavel title.
 	  * Este metodo nao funciona se a pagina nao gerar o DRI dos dados como, por exemplo, na busca de autores.
 	 */
     protected Figure(WingContext context, String source, String target,
@@ -97,7 +97,7 @@ public class Figure extends TextContainer implements StructuralElement
         this.source = source;
         this.target = target;
 		
-		if(title.equals("_blank"))
+		if(title.equals("_self"))
 			this.name = title;
 		else
 			this.title = title;
