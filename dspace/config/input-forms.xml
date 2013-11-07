@@ -1591,6 +1591,11 @@
 		<name-map collection-handle="BDPI/1568"   form-name="evento" />
 		<name-map collection-handle="BDPI/1569"   form-name="livro" />
 		<name-map collection-handle="BDPI/1570"   form-name="relatorio" />
+		<!-- Biblioteca do Museu de Paulista - SIBi/MP   -->
+		<name-map collection-handle="BDPI/43336"   form-name="artigo" />
+		<name-map collection-handle="BDPI/43337"   form-name="evento" />
+		<name-map collection-handle="BDPI/43338"   form-name="livro" />
+		<name-map collection-handle="BDPI/43339"   form-name="relatorio" />
 		<!-- Biblioteca do Museu de Zoologia - SIBi/MZ   -->
 		<name-map collection-handle="BDPI/1572"   form-name="artigo" />
 		<name-map collection-handle="BDPI/1573"   form-name="evento" />
