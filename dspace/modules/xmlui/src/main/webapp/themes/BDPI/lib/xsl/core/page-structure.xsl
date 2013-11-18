@@ -307,7 +307,7 @@
 				}
 				});
 				});
-			</script>
+			&#160;</script>
 			<!--  END - Script de acordeon para o Discovery - Tiago - 15-07-2013 -->
 			
 			<!-- 130920 - Dan Shinkai - Prototipo JQuery para visualizacao de video. -->
@@ -345,7 +345,7 @@
 					keyEnabled: true
 				  });
 				});
-			</script>
+			&#160;</script>
 			
 			<!-- Prototipo JQuery FIM -->
 		
@@ -522,7 +522,7 @@
 						div.appendChild(newText);						
 					</xsl:text>
 				</xsl:if>
-            </script>
+            &#160;</script>
 			
 			
             <!-- Modernizr enables HTML5 elements & feature detects -->
@@ -554,7 +554,7 @@
 						$(".ds-referenceSet-list").after("<xsl:text disable-output-escaping="yes">&lt;h2 class='ds-list-head'&gt;</xsl:text><i18n:text>xmlui.ArtifactBrowser.ItemViewer.item.ds_list_head</i18n:text><xsl:text disable-output-escaping="yes">&lt;/h2&gt;</xsl:text>");					
 						
 					});					
-				</script>
+				&#160;</script>
 			</xsl:if>
 <!-- FIM -->
 			
@@ -850,7 +850,7 @@
 						var cursize = GetCookie('font-size');
 						if (cursize == null) cursize='reset';
 						changeFont(cursize);</xsl:text>
-				</script>
+				&#160;</script>
 			</div>
     </xsl:template>
 
@@ -1160,7 +1160,7 @@
                         <a class="addthis_button_email"></a>
                         <a class="addthis_button_compact"></a>
                     </div>
-                    <script type="text/javascript" src="/static/js/addthis_widget.js#pubid=ra-4f9b00617c1df207" async="async"></script>
+                    <script type="text/javascript" src="/static/js/addthis_widget.js#pubid=ra-4f9b00617c1df207" async="async">&#160;</script>
                     <!-- http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207 -->
                     <!-- AddThis Button END -->
                 </div>
@@ -1529,13 +1529,13 @@
             </xsl:attribute>&#160;</script>
         <script type="text/javascript">
             <xsl:text>DD_belatedPNG.fix('#ds-header-logo');DD_belatedPNG.fix('#ds-footer-logo');$.each($('img[src$=png]'), function() {DD_belatedPNG.fixPng(this);});</xsl:text>
-        </script>
+        &#160;</script>
         <xsl:text disable-output-escaping="yes" >&lt;![endif]--&gt;</xsl:text>
 
 
         <script type="text/javascript">
             runAfterJSImports.execute();
-        </script>
+        &#160;</script>
 
         <!-- Add a google analytics script if the key is present -->
         <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='google'][@qualifier='analytics']">
@@ -1549,7 +1549,7 @@
                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                    })();
-           </xsl:text></script>
+           </xsl:text>&#160;</script>
         </xsl:if>
     </xsl:template>
 
