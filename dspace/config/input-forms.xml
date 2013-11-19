@@ -3781,6 +3781,190 @@
 				</field>
 				</page>
 		</form>
+		<!-- FORM para Animação/Simulação @@@@@@                    -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<!-- 20130828                                               -->
+		<!-- Criado por SIBi USP                                    -->
+		<!-- Entrada de Animação/Simulação                          -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<form name="animacao">
+			<page number="1">
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Instituição</label>
+					<input-type value-pairs-name="contributor">dropdown</input-type>
+					<hint/>
+					<visibility>workflow</visibility>
+					<required>Preenchimento obrigatório</required>
+				</field>
+				</page>
+		</form>
+		<!-- FORM para Audio @@@@@@                    -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<!-- 20130828                                               -->
+		<!-- Criado por SIBi USP                                    -->
+		<!-- Entrada de Audio                          -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<form name="audio">
+			<page number="1">
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Instituição</label>
+					<input-type value-pairs-name="contributor">dropdown</input-type>
+					<hint/>
+					<visibility>workflow</visibility>
+					<required>Preenchimento obrigatório</required>
+				</field>
+				</page>
+		</form>
+		<!-- FORM para Experimento prático @@@@@@                    -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<!-- 20130828                                               -->
+		<!-- Criado por SIBi USP                                    -->
+		<!-- Entrada de Experimento prático                          -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<form name="experimento">
+			<page number="1">
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Instituição</label>
+					<input-type value-pairs-name="contributor">dropdown</input-type>
+					<hint/>
+					<visibility>workflow</visibility>
+					<required>Preenchimento obrigatório</required>
+				</field>
+				</page>
+		</form>
+		<!-- FORM para Hipertexto @@@@@@                            -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<!-- 20130828                                               -->
+		<!-- Criado por SIBi USP                                    -->
+		<!-- Entrada de Hipertexto                                  -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<form name="hipertexto">
+			<page number="1">
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Instituição</label>
+					<input-type value-pairs-name="contributor">dropdown</input-type>
+					<hint/>
+					<visibility>workflow</visibility>
+					<required>Preenchimento obrigatório</required>
+				</field>
+				</page>
+		</form>
+		<!-- FORM para Imagem @@@@@@                                -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<!-- 20130828                                               -->
+		<!-- Criado por SIBi USP                                    -->
+		<!-- Entrada de Imagem                                      -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<form name="imagem">
+			<page number="1">
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Instituição</label>
+					<input-type value-pairs-name="contributor">dropdown</input-type>
+					<hint/>
+					<visibility>workflow</visibility>
+					<required>Preenchimento obrigatório</required>
+				</field>
+				</page>
+		</form>
+		<!-- FORM para Mapa @@@@@@                                  -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<!-- 20130828                                               -->
+		<!-- Criado por SIBi USP                                    -->
+		<!-- Entrada de Mapa                                        -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<form name="mapa">
+			<page number="1">
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Instituição</label>
+					<input-type value-pairs-name="contributor">dropdown</input-type>
+					<hint/>
+					<visibility>workflow</visibility>
+					<required>Preenchimento obrigatório</required>
+				</field>
+				</page>
+		</form>
+		<!-- FORM para Software Educacional @@@@@@                  -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<!-- 20130828                                               -->
+		<!-- Criado por SIBi USP                                    -->
+		<!-- Entrada de Software Educacional                        -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<form name="softwareeducacional">
+			<page number="1">
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Instituição</label>
+					<input-type value-pairs-name="contributor">dropdown</input-type>
+					<hint/>
+					<visibility>workflow</visibility>
+					<required>Preenchimento obrigatório</required>
+				</field>
+				</page>
+		</form>
+		<!-- FORM para Vídeo @@@@@@                                 -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<!-- 20130828                                               -->
+		<!-- Criado por SIBi USP                                    -->
+		<!-- Entrada de Vídeo                                       -->
+		<!-- ...................................................... -->
+		<!-- ...................................................... -->
+		<form name="video">
+			<page number="1">
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>contributor</dc-element>
+					<dc-qualifier/>
+					<repeatable>false</repeatable>
+					<label>Instituição</label>
+					<input-type value-pairs-name="contributor">dropdown</input-type>
+					<hint/>
+					<visibility>workflow</visibility>
+					<required>Preenchimento obrigatório</required>
+				</field>
+				</page>
+		</form>
 	</form-definitions>
 	<!-- form-value-pairs populate dropdown and qualdrop-value lists.          -->
 	<!-- The form-value-pairs element holds child elements named 'value-pairs' -->
