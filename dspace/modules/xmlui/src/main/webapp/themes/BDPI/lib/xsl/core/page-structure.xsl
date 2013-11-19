@@ -1133,7 +1133,7 @@
                     <br/>
                     @2012 - SIBiUSP<br/>
 
-                    <div id="ds-footer-right-rss">
+                    <!--div id="ds-footer-right-rss">
                         <a>
                             <xsl:attribute name="href">
                                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
@@ -1144,25 +1144,19 @@
                             </xsl:attribute>
                             <span id="ds-footer-right-rss">&#160;</span>
                         </a>
-                    </div>
+                    </div-->
 		    
-				    
-
-                    <!-- 120427 ADDThis Button BEGIN -->
+                    <!-- 120427 ADDThis Button BEGIN 
                     <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
                         <a class="addthis_button_facebook"></a>
                         <a class="addthis_button_twitter"></a>
-                        <a class="addthis_button_google"></a>
-                        <a class="addthis_button_blogger"></a>
-                        <a class="addthis_button_wordpress"></a>
-                        <a class="addthis_button_favorites"></a>
-                        <a class="addthis_button_readitlater"></a>
-                        <a class="addthis_button_email"></a>
+                        <a class="addthis_button_google_plusone_share"></a>
                         <a class="addthis_button_compact"></a>
                     </div>
-                    <script type="text/javascript" src="/static/js/addthis_widget.js#pubid=ra-4f9b00617c1df207" async="async">&#160;</script>
+                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207" async="async">&#160;</script>
+                     AddThis Button END -->
+                    <!-- script type="text/javascript" src="/static/js/addthis_widget.js#pubid=ra-4f9b00617c1df207" async="async">&#160;</script -->
                     <!-- http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207 -->
-                    <!-- AddThis Button END -->
                 </div>
 
 
