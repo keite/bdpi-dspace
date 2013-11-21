@@ -2947,6 +2947,10 @@ Para obtener más información acerca de como añadir este repositório y su pro
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.sponsorship">Navegar por Agências de Fomento</message>
 <message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.sponsorship">Navegar por Agências de Fomento</message>
 
+<message key="xmlui.ArtifactBrowser.Navigation.browse_language">Idioma</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.language.column_heading">Idioma</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.language">Navegar por idioma</message>
+<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.language">Navegar por idioma</message>
 
 <!-- Adicionado tradução na busca avançada - Tiago - 2013-07-15  -->
 
