@@ -313,7 +313,8 @@ function DSpaceChoicesLoad(form) {
         // if this is a repeating input, clear the source value so that e.g.
         // clicking "Next" on a submit-describe page will not *add* the proposed
         // lookup text as a metadata value:
-        if (isRepeating) {
+        /* passo desnecessario
+	if (isRepeating) {
             if (isName) {
                 of.find('*[name = ' + dspace_makeFieldInput(valueInput, '_last') + ']').val('');
                 of.find('*[name = ' + dspace_makeFieldInput(valueInput, '_first') + ']').val('');
@@ -321,6 +322,7 @@ function DSpaceChoicesLoad(form) {
             else
                 of.find('*[name = ' + valueInput + ']').val(null);
         }
+	*/
 
         // Save passed-in value to hidden 'paramValue' field in the popup window
         // (This will allow the user to get "more results" for the same query,
@@ -351,6 +353,7 @@ function DSpaceChoicesLoad(form) {
             if (indicator != null) indicator.style.display = "none";
         },
         success: function(data) {
+            // console.log('olha isso:['+ this.url + ']');
             var Choices = $(data).find('Choices');
             var err = Choices.attr('error');
             if (err != null && err == 'true')
@@ -372,8 +375,9 @@ function DSpaceChoicesLoad(form) {
 
             // clear select first
             var select = $('select[name = chooser]:first');
-            select.find('option:not(:last)').remove();
-            var lastOption = select.find('option:last');
+            // select.find('option:not(:last)').remove();
+            // var lastOption = select.find('option:last');
+            select.find('option').remove();
 
             var selectedByValue = -1; // select by value match
             var selectedByChoices = -1;  // Choice says its selected
@@ -388,10 +392,11 @@ function DSpaceChoicesLoad(form) {
                 var newOption = $('<option value="' + current.attr('value') + '">' + current.text() + '</option>');
                 newOption.data('authority', current.attr('authority'));
 
-                if (lastOption.length > 0)
-                    lastOption.insertBefore(newOption);
-                else
-                    select.append(newOption);
+                /* if (lastOption.length > 0)
+                 * newOption.insertBefore(lastOption);
+                 * else
+                 */
+                select.append(newOption);
             });
 
 
@@ -516,7 +521,10 @@ function DSpaceChoicesAcceptOnClick() {
 // handler for lookup popup's more button
 function DSpaceChoicesMoreOnClick() {
     //reload the window -- this should return the next results set
-    location.reload();
+    //location.reload();
+    var formID = $('*[name = paramFormID]').val();
+    var of = $(window.opener.document).find('#' + formID);
+    DSpaceChoicesLoad(of);
 }
 
 // handler for lookup popup's cancel button
@@ -661,3 +669,4 @@ function DSpaceToggleAuthorityLock(button, authInputID) {
     authInput.readOnly = newLocked;
     return false;
 }
+

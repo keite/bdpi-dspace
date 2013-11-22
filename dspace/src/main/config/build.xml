@@ -653,7 +653,7 @@ Common usage:
 	<symlink failonerror="false" link="${dspace.dir}/reports" action="delete"/>
 	<symlink failonerror="false" link="${dspace.dir}/upload" action="delete"/>
 
-	<chmod file="${dspace.dir}/solr/**" perm="a+rw" type="both"/>
+	<!--chmod file="${dspace.dir}/solr/**" perm="a+rw" type="both"/-->
 	        
 	<symlink failonerror="false" link="${dspace.dir}/assetstore" resource="${env.DATAVARBASEFOLDER}/assetstore"/>
 	<symlink failonerror="false" link="${dspace.dir}/solr/oai/data" resource="${env.DATAVARBASEFOLDER}/solr/oai/data"/>
@@ -665,7 +665,7 @@ Common usage:
 	<symlink failonerror="false" link="${dspace.dir}/upload" resource="${env.DATAVARBASEFOLDER}/upload"/>
 	
 	<mkdir dir="${dspace.dir}/log" />
-	<chmod file="${dspace.dir}/log/**" perm="a+rw" type="both"/>
+	<!--chmod file="${dspace.dir}/log/**" perm="a+rw" type="both"/-->
 		
         <!--<symlink failonerror="false" link="${dspace.dir}/webapps/xmlui/themes/BDPI/images/cv" resource="${env.DATAVARBASEFOLDER}/cv"/>-->
 		
@@ -676,7 +676,7 @@ Common usage:
 		</chmod-->
 		<!-- ============ FIM ============ -->
 
-	<chmod file="${dspace.dir}/webapps/xmlui/themes/BDPI/images/autorUSP/**" perm="a+rw" type="both"/>
+	<!--chmod file="${dspace.dir}/webapps/xmlui/themes/BDPI/images/autorUSP/**" perm="a+rw" type="both"/-->
 
 
     </target>

@@ -34,11 +34,12 @@ public class AuthorDAOPostgres extends AuthorDAO
 "left join emailpessoa on emailpessoa.codpes = vinculopessoausp.codpes\n" +
 "left join resuservhistfuncional on (resuservhistfuncional.codpes = vinculopessoausp.codpes AND vinculopessoausp.tipvin = 'SERVIDOR')\n" +
 "WHERE emailpessoa.stamtr = 'S' and vinculopessoausp.codpes = ?\n" +
-"ORDER BY decode(lower(sitctousp),'ativado',0,'não ativado',1,'expirado',1,'suspenso',1,2),\n" +
-"decode(substr(lower(tipvin),0,3),'ser',0,'alu',0,'pro',0,'bol',0,'est',0,'ext',0,1),\n" +
-"decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,4),\n" +
+"ORDER BY decode(substr(lower(vinculopessoausp.tipvin),0,4),'insc',1,'cand',1,'depe',1,0),\n" +
 "nvl2(nvl(resuservhistfuncional.dtafimsitfun,vinculopessoausp.dtafimvin),1,0),\n" +
-"vinculopessoausp.dtaultalt desc, nvl(resuservhistfuncional.dtainisitfun,vinculopessoausp.dtainivin) desc";
+"decode(lower(vinculopessoausp.sitctousp),'ativado',0,1),\n" +
+"decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,4),\n" +
+"nvl(resuservhistfuncional.dtainisitfun,vinculopessoausp.dtainivin) desc,\n" +
+"vinculopessoausp.dtaultalt desc";
 
     /** Constante para a busca de todos os itens a partir dos seguintes parametros: tipo, data e titulo relacionados com o numero USP -> alterado para uso de authority contendo numero usp */
      private static final String selectHandleTitulos = "SELECT handle, TITLES.text_value AS title, TIPOS.text_value AS tipo, DTPUBS.text_value AS dtpub\n" +

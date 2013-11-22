@@ -26,7 +26,7 @@ public class USPNameAuthority implements ChoiceAuthority {
 
 	// Esquema e tabela onde os dados dos autores estao armazenados
         // codpes,nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla,funcao
-        private static final String DATABASE_TABLE = "(SELECT vinculopessoausp.codpes, vinculopessoausp.nompes nome, \n" +
+        private static final String DATABASE_TABLE = "(SELECT rownum idrowx, vinculopessoausp.codpes, vinculopessoausp.nompes nome, \n" +
         "regexp_substr(vinculopessoausp.nompes,'(.*)\\s.*',1,1,'i',1) nomeinicial,\n" +
         "nvl(regexp_substr(vinculopessoausp.nompes,'.*\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
         "unidade.sglund unidade_sigla,\n" +
@@ -37,7 +37,8 @@ public class USPNameAuthority implements ChoiceAuthority {
         "FROM vinculopessoausp\n" +
         "left join resuservhistfuncional on (resuservhistfuncional.codpes = vinculopessoausp.codpes AND vinculopessoausp.tipvin = 'SERVIDOR')\n" +
         "left join unidade on (vinculopessoausp.codund = unidade.codund OR vinculopessoausp.codfusclgund = unidade.codund)\n" +
-        "left join setor on (vinculopessoausp.codset = setor.codset))";
+        "left join setor on (vinculopessoausp.codset = setor.codset)\n" +
+        " WHERE_EXPRESSION )";
                 
         public Connection getReplicaUspDBconnection() {
             Connection ocn = null;
@@ -49,24 +50,24 @@ public class USPNameAuthority implements ChoiceAuthority {
                                                   ConfigurationManager.getProperty("usp-authorities", "db.password"));
             }
             catch(ClassNotFoundException e){
-                log.debug("[inicio - ClassNotFound] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+                System.out.println("[inicio - ClassNotFound] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
                 e.printStackTrace(System.out);
-                log.debug("[fim - ClassNotFound] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+                System.out.println("[fim - ClassNotFound] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
             }
             catch(InstantiationException e){
-                log.debug("[inicio - Instantiation] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+                System.out.println("[inicio - Instantiation] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
                 e.printStackTrace(System.out);
-                log.debug("[fim - Instantiation] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+                System.out.println("[fim - Instantiation] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
             }
             catch(IllegalAccessException e){
-                log.debug("[inicio - IllegalAccess] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+                System.out.println("[inicio - IllegalAccess] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
                 e.printStackTrace(System.out);
-                log.debug("[fim - IllegalAccess] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+                System.out.println("[fim - IllegalAccess] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
             }
             catch(SQLException e){
-                log.debug("[inicio - SQL] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+                System.out.println("[inicio - SQL] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
                 e.printStackTrace(System.out);
-                log.debug("[fim - SQL] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
+                System.out.println("[fim - SQL] erro em AuthorDAOPostgres.getReplicaUspDBconnection");
             }
             return ocn;
         }
@@ -81,19 +82,20 @@ public class USPNameAuthority implements ChoiceAuthority {
 	public Choices getMatches(String field, String query, int collection,
 			int start, int limit, String locale) {
 		
-		PreparedStatement statement = null;
-                ResultSet rs = null;
-                int MAX_AUTORES = ConfigurationManager.getIntProperty("xmlui.lookup.select.size", 10);
+		PreparedStatement statement;
+                ResultSet rs;
+                int MAX_AUTORES = ConfigurationManager.getIntProperty("xmlui.lookup.select.size", 50);
+                MAX_AUTORES = limit > MAX_AUTORES ? MAX_AUTORES : limit;
                 
 		try {
-			log.debug(" ==1 Parametros == ");				
-			log.debug(" == field == " + field);
-			log.debug(" == query == " + query);			
-			log.debug(" == collection == " + collection);
-			log.debug(" == start == " + start);
-			log.debug(" == limit == " + limit);
-			log.debug(" == locale == " + locale);
-			log.debug(" ================== ");
+			System.out.println(" ==1 Parametros == ");				
+			System.out.println(" == field == " + field);
+			System.out.println(" == query == " + query);			
+			System.out.println(" == collection == " + collection);
+			System.out.println(" == start == " + start);
+			System.out.println(" == limit == " + limit);
+			System.out.println(" == locale == " + locale);
+			System.out.println(" ================== ");
                         
 			String nomes[];
                         HashMap<Integer,String[]> filtro = new HashMap<Integer,String[]>();
@@ -103,33 +105,68 @@ public class USPNameAuthority implements ChoiceAuthority {
                         for (String nome : nomes) {
                             try {
                                 if (Integer.parseInt(nome) > 0) {
-                                    filtro.put(pindex++, new String[]{"codpes = ?",
+                                    filtro.put(pindex++, new String[]{"vinculopessoausp.codpes = ?",
                                                                       nome,
                                                                       "int"});
                                 }
                             } catch (NumberFormatException e) {
-                                filtro.put(pindex++, new String[]{"translate(lower(nome),'áéíóúâêîôûàèìòùäëïöüãõç','aeiouaeiouaeiouaeiouaoc') like lower(?)",
+                                filtro.put(pindex++, new String[]{"translate(lower(vinculopessoausp.nompes),'áéíóúâêîôûàèìòùäëïöüãõç','aeiouaeiouaeiouaeiouaoc') like lower(?)",
                                                                   "%".concat(nome).concat("%"),
                                                                   "string"});
                             }
                         }
 
-                        StringBuilder consulta = new StringBuilder();
+                        int total = 0;
                         
-                        consulta.append("SELECT DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao, dtaini, dtafim FROM ");
-                        consulta.append(DATABASE_TABLE);
-                        consulta.append(" WHERE ");
-                        if(filtro.isEmpty()) consulta.append("rownum < 0");
+                        StringBuilder consulta_total = new StringBuilder();
+                        StringBuilder where_expression_total = new StringBuilder();
+                        
+                        where_expression_total.append(" WHERE ");
+                        if(filtro.isEmpty()) where_expression_total.append("rownum < 0");
                         else {
-                            consulta.append("rownum <= ".concat(String.valueOf(MAX_AUTORES)));
                             for(int i = 1; i < pindex; i++){
-                                consulta.append(" AND ");
-                                consulta.append(filtro.get(i)[0]);
+                                if(i > 1) where_expression_total.append(" AND ");
+                                where_expression_total.append(filtro.get(i)[0]);
                             }
-                            consulta.append(" order by nome");
                         }
-                        log.debug(" consulta == " + consulta.toString());
+                        consulta_total.append("SELECT COUNT(*) Q FROM ");
+                        consulta_total.append(DATABASE_TABLE.replace("WHERE_EXPRESSION",where_expression_total.toString()));
+                        
+                        StringBuilder consulta = new StringBuilder();
+                        StringBuilder where_expression = new StringBuilder();
+                        
+                        where_expression.append(" WHERE ");
+                        if(filtro.isEmpty()) where_expression.append("rownum < 0");
+                        else {
+                            where_expression.append("rownum < ").append(String.valueOf(start + MAX_AUTORES + 1));
+                            for(int i = 1; i < pindex; i++){
+                                where_expression.append(" AND ").append(filtro.get(i)[0]);
+                            }
+                        }
+                        consulta.append("SELECT DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao, dtaini, dtafim FROM ");
+                        consulta.append(DATABASE_TABLE.replace("WHERE_EXPRESSION",where_expression.toString()));
+                        consulta.append(" WHERE idrowx > ").append(String.valueOf(start));
+                        consulta.append(" order by nome");
+                                                
                         Connection caut = getReplicaUspDBconnection();
+                        
+                        System.out.println(" consulta_total == " + consulta_total.toString());
+                        statement = caut.prepareStatement(consulta_total.toString());
+                        for(int i = 1; i < pindex; i++){
+                            if(filtro.get(i)[2].equals("int")){
+                                statement.setInt(i, Integer.valueOf(filtro.get(i)[1]));
+                            }
+                            else if(filtro.get(i)[2].equals("string")){
+                                statement.setString(i, filtro.get(i)[1]);
+                            }
+                        }
+                        rs = statement.executeQuery();
+                        while(rs.next()){
+                            total = rs.getInt("Q");
+                        }                        
+                        statement.close();
+                        
+                        System.out.println(" consulta == " + consulta.toString());
                         statement = caut.prepareStatement(consulta.toString());
                         for(int i = 1; i < pindex; i++){
                             if(filtro.get(i)[2].equals("int")){
@@ -158,8 +195,8 @@ public class USPNameAuthority implements ChoiceAuthority {
                         statement.close();
                         caut.commit();
                         caut.close();
-                        log.debug(" FIM ");
-                        return new Choices(v.toArray(new Choice[v.size()]), 0, v.size() , Choices.CF_ACCEPTED, true, 0);
+                        System.out.println(" FIM ");
+                        return new Choices(v.toArray(new Choice[v.size()]), start, total , Choices.CF_ACCEPTED, v.size()>=limit, 0);
                     } catch (NumberFormatException e) {
                         e.printStackTrace(System.out);
                     } catch (SQLException e) {

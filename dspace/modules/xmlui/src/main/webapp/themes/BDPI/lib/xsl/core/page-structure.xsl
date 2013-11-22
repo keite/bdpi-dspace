@@ -68,7 +68,7 @@
             <!-- First of all, build the HTML head element -->
             <xsl:call-template name="buildHead"/>
             <!-- Then proceed to the body -->
-
+            
             <!--paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/-->
             <xsl:text disable-output-escaping="yes">&lt;!--[if lt IE 7 ]&gt; &lt;body class="ie6"&gt; &lt;![endif]--&gt;
                 &lt;!--[if IE 7 ]&gt;    &lt;body class="ie7"&gt; &lt;![endif]--&gt;
@@ -884,7 +884,14 @@
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <i18n:text>paginasEstaticas.sobreBDPI</i18n:text>
-				<xsl:text>&#160;</xsl:text>
+		<xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <xsl:text>&#160;</xsl:text>
+                <a href="/page/ajuda"><i18n:text>paginasEstaticas.faq.trail</i18n:text></a>
+		<xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
@@ -1131,7 +1138,7 @@
                     </div>-->
 
                     <br/>
-                    @2012 - SIBiUSP<br/>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[&copy; 2013 - SIBiUSP]]></xsl:text><br/>
 
                     <!--div id="ds-footer-right-rss">
                         <a>
@@ -1146,17 +1153,20 @@
                         </a>
                     </div-->
 		    
-                    <!-- 120427 ADDThis Button BEGIN 
-                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-                        <a class="addthis_button_facebook"></a>
-                        <a class="addthis_button_twitter"></a>
-                        <a class="addthis_button_google_plusone_share"></a>
-                        <a class="addthis_button_compact"></a>
+                    <!-- AddThis Button BEGIN -->
+                    <xsl:text disable-output-escaping="yes"><![CDATA[
+                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="width:150px">
+                                    <a class="addthis_button_facebook"></a>
+                                    <a class="addthis_button_twitter"></a>
+                                    <a class="addthis_button_google_plusone_share"></a>
+                                    <a class="addthis_button_compact"></a>
                     </div>
-                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207" async="async">&#160;</script>
-                     AddThis Button END -->
-                    <!-- script type="text/javascript" src="/static/js/addthis_widget.js#pubid=ra-4f9b00617c1df207" async="async">&#160;</script -->
-                    <!-- http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9b00617c1df207 -->
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f9b00617c1df207">
+                        &#160;
+                    </script>
+                    ]]></xsl:text>
+                    <!-- AddThis Button END old new code:xa-528f81785cf02a6c -->
+                    
                 </div>
 
 
@@ -1530,6 +1540,7 @@
         <script type="text/javascript">
             runAfterJSImports.execute();
         &#160;</script>
+
 
         <!-- Add a google analytics script if the key is present -->
         <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='google'][@qualifier='analytics']">
