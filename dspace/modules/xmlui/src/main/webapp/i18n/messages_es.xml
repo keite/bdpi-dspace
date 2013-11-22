@@ -2900,7 +2900,10 @@ Para obtener más información acerca de como añadir este repositório y su pro
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.type">Tipo</message>
 	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.type">Tipo</message>
 
-
+	<message key="xmlui.ArtifactBrowser.Navigation.browse_language">Idioma</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.language.column_heading">Idioma</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.trail.metadata.language">Idioma</message>
+	<message key="xmlui.ArtifactBrowser.ConfigurableBrowse.title.metadata.language">Idioma</message>
 
 
     <!-- org.dspace.app.xmlui.eperson.OAuthEditProfile.java janleduc@usp.br 13.ago.2013 -->
