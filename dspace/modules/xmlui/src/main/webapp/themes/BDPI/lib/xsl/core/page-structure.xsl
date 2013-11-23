@@ -898,6 +898,7 @@
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <i18n:text>paginasEstaticas.faq</i18n:text>
+                <xsl:text>&#160;</xsl:text>
             </div>
 <!-- FIM 130404 andre.assada@usp.br FIM -->
 
@@ -1161,7 +1162,7 @@
                                     <a class="addthis_button_google_plusone_share"></a>
                                     <a class="addthis_button_compact"></a>
                     </div>
-                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f9b00617c1df207">
+                    <script async="async" defer="true" type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f9b00617c1df207" >
                         &#160;
                     </script>
                     ]]></xsl:text>
