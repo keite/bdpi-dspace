@@ -33,7 +33,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 "on ((vinculopessoausp.codclg = colegiado.codclg) AND (vinculopessoausp.sglclg = colegiado.sglclg))\n" +
 "left join emailpessoa on emailpessoa.codpes = vinculopessoausp.codpes\n" +
 "left join resuservhistfuncional on (resuservhistfuncional.codpes = vinculopessoausp.codpes AND vinculopessoausp.tipvin = 'SERVIDOR')\n" +
-"WHERE emailpessoa.stamtr = 'S' and vinculopessoausp.codpes = ?\n" +
+"WHERE vinculopessoausp.codpes = ?\n" +
 "ORDER BY decode(substr(lower(vinculopessoausp.tipvin),0,4),'insc',1,'cand',1,'depe',1,0),\n" +
 "nvl2(nvl(resuservhistfuncional.dtafimsitfun,vinculopessoausp.dtafimvin),1,0),\n" +
 "decode(lower(vinculopessoausp.sitctousp),'ativado',0,1),\n" +
@@ -424,6 +424,7 @@ public class AuthorDAOPostgres extends AuthorDAO
                     author.setNome(rs.getString("nome"));
                     author.setEmail_1(rs.getString("email_1"));
                     author.setSobrenome(rs.getString("sobrenome"));
+                    author.setNomeCompleto(rs.getString("nome"));
                     author.setNomeInicial(rs.getString("nomeinicial"));
                     author.setUnidade(rs.getString("unidade"));
                     author.setUnidadeSigla(rs.getString("unidade_sigla"));

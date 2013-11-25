@@ -26,7 +26,9 @@ public class USPNameAuthority implements ChoiceAuthority {
 
 	// Esquema e tabela onde os dados dos autores estao armazenados
         // codpes,nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla,funcao
-        private static final String DATABASE_TABLE = "(SELECT rownum idrowx, vinculopessoausp.codpes, vinculopessoausp.nompes nome, \n" +
+        // DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao,
+        // dtaini, dtafim
+        private static final String DATABASE_TABLE = "(SELECT DISTINCT rownum idrowx, vinculopessoausp.codpes, vinculopessoausp.nompes nome, \n" +
         "regexp_substr(vinculopessoausp.nompes,'(.*)\\s.*',1,1,'i',1) nomeinicial,\n" +
         "nvl(regexp_substr(vinculopessoausp.nompes,'.*\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
         "unidade.sglund unidade_sigla,\n" +
@@ -88,14 +90,14 @@ public class USPNameAuthority implements ChoiceAuthority {
                 MAX_AUTORES = limit > MAX_AUTORES ? MAX_AUTORES : limit;
                 
 		try {
-			System.out.println(" ==1 Parametros == ");				
-			System.out.println(" == field == " + field);
-			System.out.println(" == query == " + query);			
-			System.out.println(" == collection == " + collection);
-			System.out.println(" == start == " + start);
-			System.out.println(" == limit == " + limit);
-			System.out.println(" == locale == " + locale);
-			System.out.println(" ================== ");
+			log.debug(" ==1 Parametros == ");				
+			log.debug(" == field == " + field);
+			log.debug(" == query == " + query);			
+			log.debug(" == collection == " + collection);
+			log.debug(" == start == " + start);
+			log.debug(" == limit == " + limit);
+			log.debug(" == locale == " + locale);
+			log.debug(" ================== ");
                         
 			String nomes[];
                         HashMap<Integer,String[]> filtro = new HashMap<Integer,String[]>();
@@ -118,39 +120,31 @@ public class USPNameAuthority implements ChoiceAuthority {
 
                         int total = 0;
                         
-                        StringBuilder consulta_total = new StringBuilder();
-                        StringBuilder where_expression_total = new StringBuilder();
-                        
-                        where_expression_total.append(" WHERE ");
-                        if(filtro.isEmpty()) where_expression_total.append("rownum < 0");
-                        else {
-                            for(int i = 1; i < pindex; i++){
-                                if(i > 1) where_expression_total.append(" AND ");
-                                where_expression_total.append(filtro.get(i)[0]);
-                            }
-                        }
-                        consulta_total.append("SELECT COUNT(*) Q FROM ");
-                        consulta_total.append(DATABASE_TABLE.replace("WHERE_EXPRESSION",where_expression_total.toString()));
-                        
-                        StringBuilder consulta = new StringBuilder();
                         StringBuilder where_expression = new StringBuilder();
                         
                         where_expression.append(" WHERE ");
                         if(filtro.isEmpty()) where_expression.append("rownum < 0");
                         else {
-                            where_expression.append("rownum < ").append(String.valueOf(start + MAX_AUTORES + 1));
                             for(int i = 1; i < pindex; i++){
-                                where_expression.append(" AND ").append(filtro.get(i)[0]);
+                                if(i > 1) where_expression.append(" AND ");
+                                where_expression.append(filtro.get(i)[0]);
                             }
                         }
-                        consulta.append("SELECT DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao, dtaini, dtafim FROM ");
+                        
+                        StringBuilder consulta_total = new StringBuilder();
+                        consulta_total.append("SELECT COUNT(*) Q FROM ");
+                        consulta_total.append(DATABASE_TABLE.replace("WHERE_EXPRESSION",where_expression.toString()));
+                        
+                        StringBuilder consulta = new StringBuilder();
+                        consulta.append("SELECT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao, dtaini, dtafim FROM ");
                         consulta.append(DATABASE_TABLE.replace("WHERE_EXPRESSION",where_expression.toString()));
-                        consulta.append(" WHERE idrowx > ").append(String.valueOf(start));
+                        consulta.append(" WHERE rownum < ").append(String.valueOf(start + MAX_AUTORES + 1));
+                        consulta.append(" AND idrowx > ").append(String.valueOf(start));
                         consulta.append(" order by nome");
                                                 
                         Connection caut = getReplicaUspDBconnection();
                         
-                        System.out.println(" consulta_total == " + consulta_total.toString());
+                        log.debug(" consulta_total == " + consulta_total.toString());
                         statement = caut.prepareStatement(consulta_total.toString());
                         for(int i = 1; i < pindex; i++){
                             if(filtro.get(i)[2].equals("int")){
@@ -166,7 +160,7 @@ public class USPNameAuthority implements ChoiceAuthority {
                         }                        
                         statement.close();
                         
-                        System.out.println(" consulta == " + consulta.toString());
+                        log.debug(" consulta == " + consulta.toString());
                         statement = caut.prepareStatement(consulta.toString());
                         for(int i = 1; i < pindex; i++){
                             if(filtro.get(i)[2].equals("int")){
@@ -195,7 +189,7 @@ public class USPNameAuthority implements ChoiceAuthority {
                         statement.close();
                         caut.commit();
                         caut.close();
-                        System.out.println(" FIM ");
+                        log.debug(" FIM ");
                         return new Choices(v.toArray(new Choice[v.size()]), start, total , Choices.CF_ACCEPTED, v.size()>=limit, 0);
                     } catch (NumberFormatException e) {
                         e.printStackTrace(System.out);

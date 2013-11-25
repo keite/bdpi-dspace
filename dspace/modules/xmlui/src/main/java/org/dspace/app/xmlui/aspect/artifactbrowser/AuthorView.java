@@ -200,7 +200,7 @@ public class AuthorView extends AbstractDSpaceTransformer implements CacheablePr
 		}
 
         if(this.author != null) {
-          pageMeta.addMetadata("title").addContent(this.author.getSobrenome().toUpperCase());
+          pageMeta.addMetadata("title").addContent(this.author.getNome().toUpperCase());
         }
 		
 		else {

@@ -234,7 +234,7 @@ andre.assada@usp.br links para conteudo estatico
 #ds-footer-right {
     float:right;
 /* 130401 andre.assada@usp.br*/ text-align: right;
-/* 130401 andre.assada@usp.br*/ padding:5px 30px;
+/* 130401 andre.assada@usp.br*/ padding:5px 5px;
 }
 
 #ds-footer-right span.theme-by{
@@ -264,15 +264,10 @@ andre.assada@usp.br links para conteudo estatico
 
 /* 130401 andre.assada@usp.br*/
 .addthis_toolbox{float:right;}
-.addthis_button_compact{}
-.addthis_button_twitter{}
-.addthis_button_facebook{}
-.addthis_button_google{}
-.addthis_button_blogger,
-.addthis_button_wordpress,
-.addthis_button_favorites,
-.addthis_button_email,
-.addthis_button_readitlater{display:none;}
+.addthis_button_facebook_like{vertical-align:bottom;}
+.addthis_button_google_plusone{vertical-align:bottom;}
+.addthis_button_tweet{vertical-align:bottom;}
+.addthis_button_compact{vertical-align:bottom;}
 /* FIM  130401 andre.assada@usp.br FIM */
 
 

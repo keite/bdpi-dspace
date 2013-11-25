@@ -64,7 +64,7 @@
         overriding the dri:document template.
     -->
     <xsl:template match="dri:document">
-        <html class="no-js">
+        <html class="no-js" xmlns:fb="http://ogp.me/ns/fb#">
             <!-- First of all, build the HTML head element -->
             <xsl:call-template name="buildHead"/>
             <!-- Then proceed to the body -->
@@ -884,13 +884,13 @@
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <i18n:text>paginasEstaticas.sobreBDPI</i18n:text>
-		<xsl:text>&#160;</xsl:text>
+		<!--xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
-                <a href="/page/ajuda"><i18n:text>paginasEstaticas.faq.trail</i18n:text></a>
+                <a href="/page/ajuda"><i18n:text>paginasEstaticas.faq.trail</i18n:text></a-->
 		<xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:text>&#160;</xsl:text>
@@ -1156,17 +1156,18 @@
 		    
                     <!-- AddThis Button BEGIN -->
                     <xsl:text disable-output-escaping="yes"><![CDATA[
-                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="width:150px">
-                                    <a class="addthis_button_facebook"></a>
-                                    <a class="addthis_button_twitter"></a>
-                                    <a class="addthis_button_google_plusone_share"></a>
+                    <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="width:350px;height:70px">
+                                    <a class="addthis_button_facebook_like" fb:like:layout="box_count" fb:like:action="recommend"></a>
+                                    <a class="addthis_button_tweet" tw:count="vertical"></a>
+                                    <a class="addthis_button_google_plusone" g:plusone:size="tall"></a>
+                                    <a class="addthis_button_linkedin_counter" li:counter="top"></a>
                                     <a class="addthis_button_compact"></a>
                     </div>
                     <script async="async" defer="true" type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f9b00617c1df207" >
                         &#160;
                     </script>
                     ]]></xsl:text>
-                    <!-- AddThis Button END old new code:xa-528f81785cf02a6c -->
+                    <!-- AddThis Button END old new code:xa-528f81785cf02a6c addthis_32x32_style -->
                     
                 </div>
 
@@ -1183,14 +1184,14 @@
                     </a>
                     <xsl:text> | </xsl:text>
 -->
-                    <a>
+                    <!--a>
                         <xsl:attribute name="href">
                             <xsl:value-of
                                     select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='contextPath'][not(@qualifier)]"/>
                             <xsl:text>/feedback</xsl:text>
                         </xsl:attribute>
                         <i18n:text>xmlui.dri2xhtml.structural.feedback-link</i18n:text>
-                    </a>
+                    </a-->
 
                 </div>
                 <!--Invisible link to HTML sitemap (for search engines) -->

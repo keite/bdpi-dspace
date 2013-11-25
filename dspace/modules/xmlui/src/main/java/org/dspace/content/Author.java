@@ -11,7 +11,7 @@ import java.util.Comparator;
    04out2013 - Jan - contornando oracle, que considera string vazia igual a null
 */
 
-public class Author implements Comparator<Author>, Comparable<Author> {
+public final class Author implements Comparator<Author>, Comparable<Author> {
 
 	private int codpes = 0;
         private int qntTrabalhos = 0;
@@ -52,20 +52,20 @@ public class Author implements Comparator<Author>, Comparable<Author> {
 			String depto, String deptoSigla, String vinculo, String funcao,
 			String lattes) {
 		super();
-                this.codpes = codpes;
-                this.qntTrabalhos = qntTrabalhos;
-		this.nome = nome==null?"":nome;
-		this.email_1 = email_1==null?"":email_1;
-		this.sobrenome = sobrenome==null?"":sobrenome;
-                this.nomeCompleto = nomeCompleto==null?"":nomeCompleto;
-		this.nomeInicial = nomeInicial==null?"":nomeInicial;
-		this.unidade = unidade==null?"":unidade;
-		this.unidadeSigla = unidadeSigla==null?"":unidadeSigla;
-		this.depto = depto==null?"":depto;
-		this.deptoSigla = deptoSigla==null?"":deptoSigla;
-		this.vinculo = vinculo==null?"":vinculo;
-		this.funcao = funcao==null?"":funcao;
-		this.lattes = lattes==null?"https://uspdigital.usp.br/tycho/curriculoLattesMostrar?codpub=".concat(String.valueOf(codpes)):lattes;
+                this.setCodpes(codpes);
+                this.setQntTrabalhos(qntTrabalhos);
+		this.setNome(nome);
+		this.setEmail_1(email_1);
+		this.setSobrenome(sobrenome);
+                this.setNomeCompleto(nomeCompleto);
+		this.setNomeInicial(nomeInicial);
+		this.setUnidade(unidade);
+		this.setUnidadeSigla(unidadeSigla);
+		this.setDepto(depto);
+		this.setDeptoSigla(deptoSigla);
+		this.setVinculo(vinculo);
+		this.setFuncao(funcao);
+		this.setLattes(lattes);
                 
     }
 	
@@ -162,13 +162,16 @@ public class Author implements Comparator<Author>, Comparable<Author> {
 	public void setQntTrabalhos(int qntTrabalhos) {
 		this.qntTrabalhos = qntTrabalhos;
 	}
+        @Override
        	public int compareTo(Author o) {
     	   return nomeCompleto.compareTo(o.getNomeCompleto());
 	}
 
         /** 1 = o1 is greater than o2
             0 = o1 equals to o2
-           -1 = o1 is less than o2*/
+           -1 = o1 is less than o
+     * @param author
+     * @param authorComp */
 	@Override
         public int compare(Author author, Author authorComp) {
 	   
