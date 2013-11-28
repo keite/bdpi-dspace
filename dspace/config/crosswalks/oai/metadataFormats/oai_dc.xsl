@@ -41,8 +41,18 @@
 			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='description']/doc:element[@name='abstract']/doc:element/doc:field[@name='value']">
 				<dc:description><xsl:value-of select="." /></dc:description>
 			</xsl:for-each>
-			<xsl:for-each select="doc:metadata/doc:element[@name='usp']/doc:element[@name='fomento']/doc:element/doc:field[@name='value']">
-				<dc:description><xsl:value-of select="." /></dc:description>
+			<xsl:for-each select="doc:metadata/doc:element[@name='usp']/doc:element[@name='remissiva']/doc:element[@name='sponsorship']/doc:element/doc:field[@name='value']">
+				<xsl:choose>
+					<xsl:when test="contains(.,'FAPESP')">
+						<dc:description><xsl:value-of select="." /></dc:description>
+					</xsl:when>
+					<xsl:when test="contains(.,'CAPES')">
+						<dc:description><xsl:value-of select="." /></dc:description>
+					</xsl:when>
+					<xsl:when test="contains(.,'CNPq')">
+						<dc:description><xsl:value-of select="." /></dc:description>
+					</xsl:when>
+				</xsl:choose>
 			</xsl:for-each>
 			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element[@name='date']/doc:element/doc:element/doc:field[@name='value']">
 				<dc:date><xsl:value-of select="." /></dc:date>
