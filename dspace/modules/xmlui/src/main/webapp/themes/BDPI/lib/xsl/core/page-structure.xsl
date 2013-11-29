@@ -358,7 +358,7 @@
 				
 					$(".author").each(function() {
 						var count = $(this).find("span").length;
-						if(count <xsl:text disable-output-escaping="yes">&gt;</xsl:text> 10) {
+						if(count <xsl:text disable-output-escaping="yes">&gt;</xsl:text> 20) {
 							$(this).addClass("removeAuthor");
 							var autores = $("<xsl:text disable-output-escaping="yes">&lt;font class='authorLink'&gt;</xsl:text><i18n:text>xmlui.ArtifactBrowser.ConfigurableBrowse.item.viewAuthor</i18n:text><xsl:text disable-output-escaping="yes">&lt;/font&gt;</xsl:text>");
 							$(this).after(autores);									
@@ -369,7 +369,7 @@
 						var author = $(this).find(".author");
 						var count = $(author).find("span").length;
 						
-						if(count <xsl:text disable-output-escaping="yes">&gt;</xsl:text> 10) {
+						if(count <xsl:text disable-output-escaping="yes">&gt;</xsl:text> 20) {
 							if($(author).css("display") == "none") {
 								$(this).find("font").css({"display" : "none"});																					
 								$(author).fadeIn("slow");
