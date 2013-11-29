@@ -28,7 +28,7 @@ public class USPNameAuthority implements ChoiceAuthority {
         // codpes,nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla,funcao
         // DISTINCT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao,
         // dtaini, dtafim
-        private static final String DATABASE_TABLE = "(SELECT DISTINCT rownum idrowx, vinculopessoausp.codpes, vinculopessoausp.nompes nome, \n" +
+        private static final String DATABASE_TABLE = "(SELECT rownum idrowx, vinculopessoausp.codpes, vinculopessoausp.nompes nome, \n" +
         "regexp_substr(vinculopessoausp.nompes,'(.*)\\s.*',1,1,'i',1) nomeinicial,\n" +
         "nvl(regexp_substr(vinculopessoausp.nompes,'.*\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
         "unidade.sglund unidade_sigla,\n" +
@@ -138,13 +138,13 @@ public class USPNameAuthority implements ChoiceAuthority {
                         StringBuilder consulta = new StringBuilder();
                         consulta.append("SELECT codpes, nome, nomeinicial, sobrenome, unidade_sigla, depto_sigla, funcao, dtaini, dtafim FROM ");
                         consulta.append(DATABASE_TABLE.replace("WHERE_EXPRESSION",where_expression.toString()));
-                        consulta.append(" WHERE rownum < ").append(String.valueOf(start + MAX_AUTORES + 1));
+                        consulta.append(" WHERE rownum < ").append(String.valueOf(MAX_AUTORES + 1));
                         consulta.append(" AND idrowx > ").append(String.valueOf(start));
                         consulta.append(" order by nome");
                                                 
                         Connection caut = getReplicaUspDBconnection();
                         
-                        log.debug(" consulta_total == " + consulta_total.toString());
+                        System.out.println(" consulta_total == " + consulta_total.toString());
                         statement = caut.prepareStatement(consulta_total.toString());
                         for(int i = 1; i < pindex; i++){
                             if(filtro.get(i)[2].equals("int")){
@@ -160,7 +160,7 @@ public class USPNameAuthority implements ChoiceAuthority {
                         }                        
                         statement.close();
                         
-                        log.debug(" consulta == " + consulta.toString());
+                        System.out.println(" consulta == " + consulta.toString());
                         statement = caut.prepareStatement(consulta.toString());
                         for(int i = 1; i < pindex; i++){
                             if(filtro.get(i)[2].equals("int")){
