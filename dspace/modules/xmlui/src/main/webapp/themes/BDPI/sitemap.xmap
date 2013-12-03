@@ -42,7 +42,7 @@
 
 		<map:pipeline>
 			<!-- Allow the browser to cache static content for an hour -->
-			<map:parameter name="expires" value="access plus 1 hours"/>
+			<map:parameter name="expires" value="now"/>
 
 
             <!-- handle static js and css -->
