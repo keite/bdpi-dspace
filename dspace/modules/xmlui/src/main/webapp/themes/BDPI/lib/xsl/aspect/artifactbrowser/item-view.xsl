@@ -349,7 +349,34 @@
               </xsl:call-template>
           </xsl:when>
 
-          <xsl:when test="$clause = 8 and $ds_item_view_toggle_url != ''">
+          <!-- thumbnail row - jan.lara@sibi.usp.br 04dec2013 -->
+          <xsl:when test="$clause = 8 and (dim:field[@element='thumbnail' and @mdschema='usp'])">
+		<div style="height:260px;text-align:center">
+		<div class="simple-item-view-other" style="display:inline-block;text-align:left">
+			<a>
+				<xsl:attribute name="href">
+					<xsl:value-of select="dim:field[@element='identifier' and @qualifier='url' and @mdschema='dc']"/>
+				</xsl:attribute>
+				<i18n:text>xmlui.ArtifactBrowser.ItemViewer.clicktowatch</i18n:text>
+				<br/>
+				<img>
+					<xsl:attribute name="src">
+						<xsl:value-of select="dim:field[@element='thumbnail' and @mdschema='usp']"/>
+					</xsl:attribute>
+					<xsl:attribute name="style">
+						<xsl:text disable-output-escaping="yes"><![CDATA[border:1px;height:250px]]></xsl:text>
+					</xsl:attribute>
+				</img>
+			</a>
+		</div>
+		</div>
+              <xsl:call-template name="itemSummaryView-DIM-fields">
+                <xsl:with-param name="clause" select="($clause + 1)"/>
+                <xsl:with-param name="phase" select="$otherPhase"/>
+              </xsl:call-template>
+          </xsl:when>
+          
+          <xsl:when test="$clause = 9 and $ds_item_view_toggle_url != ''">
               <p class="ds-paragraph item-view-toggle item-view-toggle-bottom">
                   <a>
                       <xsl:attribute name="href"><xsl:value-of select="$ds_item_view_toggle_url"/></xsl:attribute>
@@ -361,7 +388,7 @@
           <!-- recurse without changing phase if we didn't output anything -->
           <xsl:otherwise>
             <!-- IMPORTANT: This test should be updated if clauses are added! -->
-            <xsl:if test="$clause &lt; 9">
+            <xsl:if test="$clause &lt; 10">
               <xsl:call-template name="itemSummaryView-DIM-fields">
                 <xsl:with-param name="clause" select="($clause + 1)"/>
                 <xsl:with-param name="phase" select="$phase"/>

@@ -318,7 +318,10 @@
 	<!-- 130812 - Dan Shinkai - Adicionado parametro utilizado no JQuery para mostrar metricas alternativas -->
 	<message key="xmlui.ArtifactBrowser.ItemViewer.item.ds_list_head">Métricas Alternativas</message>
 	
-	<!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
+	<!-- 04dez2013 - Jan LL - Aviso clicar na imagem para mostrar video -->
+	<message key="xmlui.ArtifactBrowser.ItemViewer.clicktowatch">Clique abaixo para assistir o vídeo:</message>
+
+        <!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
 	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">Visualizar</message>
 	<message key="xmlui.ArtifactBrowser.Navigation.head_all_of_dspace">Toda a Biblioteca Digital</message>
     <message key="xmlui.ArtifactBrowser.Navigation.communities_and_collections">Unidades USP</message>
