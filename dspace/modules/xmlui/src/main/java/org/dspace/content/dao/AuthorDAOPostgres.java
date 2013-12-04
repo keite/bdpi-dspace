@@ -42,7 +42,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 "vinculopessoausp.dtaultalt desc";
 
     /** Constante para a busca de todos os itens a partir dos seguintes parametros: tipo, data e titulo relacionados com o numero USP -> alterado para uso de authority contendo numero usp */
-     private static final String selectHandleTitulos = "SELECT handle, TITLES.text_value AS title, TIPOS.text_value AS tipo, DTPUBS.text_value AS dtpub\n" +
+     private static final String selectHandleTitulos = "SELECT handle, TITLES.text_value AS title, TIPOS.text_value AS tipo, substring(DTPUBS.text_value from '(\\d{4})(\\-\\d{2}\\-\\d{2}\\s+\\d{2}\\:\\d{2}){0,1}') AS dtpub\n" +
 "FROM handle \n" +
 "INNER JOIN metadatavalue AUTHORS on (handle.resource_id = AUTHORS.item_id AND handle.resource_type_id=2)\n" +
 "INNER JOIN metadatavalue TITLES on (handle.resource_id = TITLES.item_id AND handle.resource_type_id=2)\n" +
@@ -59,6 +59,8 @@ public class AuthorDAOPostgres extends AuthorDAO
 "AND metadataschemaregistry.short_id='dc')";
     //      "AND SPLIT_PART(D.text_value,':',2)=?) order by B.text_value, C.text_value DESC, A.text_value";
     
+    private static final String orderbyHandleTitulos = "ORDER BY reverse(lpad(reverse(substring(DTPUBS.text_value from '((\\d{4})(\\-\\d{2}\\-\\d{2}\\s+\\d{2}\\:\\d{2}){0,1})')),length('1970-01-01 00:00:00'),reverse('1970-01-01 00:00:00')))::timestamp DESC";
+     
     /** Constante para armazenar o numero de itens relacionados com um determinado numero USP -> alterado para uso de authority contendo numero usp */
     private static final String selectTotalTitulos = "SELECT COUNT(*) AS total FROM (" + selectHandleTitulos + ")";
 
@@ -227,7 +229,7 @@ public class AuthorDAOPostgres extends AuthorDAO
       ArrayList<ItemRelacionado> listaItens = new ArrayList<ItemRelacionado>();
       try {
         context = new Context();
-         PreparedStatement statement = context.getDBConnection().prepareStatement(selectHandleTitulos);
+         PreparedStatement statement = context.getDBConnection().prepareStatement(selectHandleTitulos + " " + orderbyHandleTitulos);
          statement.setString(1,codpes);
          ResultSet rs = statement.executeQuery();
 
