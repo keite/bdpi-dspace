@@ -2791,6 +2791,9 @@
 	<message key="metadataTrad.usp.relation.references">Referencias para esta obra</message>
 	<message key="metadataTrad.usp.remissiva.sponsor">Remisión del patrocinador</message>
 	<message key="metadataTrad.usp.sysno">Sysno DEDALUS</message>
+	<message key="metadataTrad.usp.subject.code">Código del curso</message>
+	<message key="metadataTrad.usp.caption">Tienen subtítulos?</message>
+	<message key="metadataTrad.usp.signlanguage">Lengua de señas?</message>
 <!-- ========================================================== -->
 <!-- FIM 130503 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
 <!-- ========================================================== -->

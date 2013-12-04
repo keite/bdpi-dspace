@@ -2809,6 +2809,12 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.usp.relation.references">Referências desta obra</message>
 <message key="metadataTrad.usp.remissiva.sponsor">Remissiva do patrocinador</message>
 <message key="metadataTrad.usp.sysno">Sysno DEDALUS</message>
+<message key="metadataTrad.usp.internacionalizacao">Internacionalização</message>
+<message key="metadataTrad.usp.subject.code">Código da disciplina</message>
+<message key="metadataTrad.dc.date.modified">Data da última alteração</message>
+<message key="metadataTrad.usp.caption">Possui legenda?</message>
+<message key="metadataTrad.usp.signlanguage">Linguagem de sinais?</message>
+<message key="metadataTrad.usp.thumbnail">Miniatura</message>
 <!-- ========================================================== -->
 <!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
 <!-- ========================================================== -->

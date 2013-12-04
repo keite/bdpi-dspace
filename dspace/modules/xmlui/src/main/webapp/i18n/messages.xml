@@ -2820,6 +2820,9 @@ See this repository and learn how to include the production, requesting informat
 <message key="metadataTrad.usp.relation.references">References for this work</message>
 <message key="metadataTrad.usp.remissiva.sponsor">Sponsor Remissive</message>
 <message key="metadataTrad.usp.sysno">DEDALUS Sysno</message>
+<message key="metadataTrad.usp.subject.code">Course Code</message>
+<message key="metadataTrad.usp.caption">Has caption?</message>
+<message key="metadataTrad.usp.signlanguage">Sign language?</message>
 <!-- ========================================================== -->
 <!-- FIM 130503 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
 <!-- ========================================================== -->
