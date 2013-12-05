@@ -319,7 +319,7 @@
 	<message key="xmlui.ArtifactBrowser.ItemViewer.item.ds_list_head">Métricas Alternativas</message>
 	
 	<!-- 04dez2013 - Jan LL - Aviso clicar na imagem para mostrar video -->
-	<message key="xmlui.ArtifactBrowser.ItemViewer.clicktowatch">Clique abaixo para assistir o vídeo:</message>
+	<message key="xmlui.ArtifactBrowser.ItemViewer.clicktowatch">Clique abaixo para assistir ao vídeo:</message>
 
         <!-- org.dspace.app.xmlui.artifactbrowser.Navigation.java -->
 	<message key="xmlui.ArtifactBrowser.Navigation.head_browse">Visualizar</message>
