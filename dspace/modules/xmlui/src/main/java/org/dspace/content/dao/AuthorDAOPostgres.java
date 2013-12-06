@@ -18,8 +18,8 @@ public class AuthorDAOPostgres extends AuthorDAO
 {
     /** Constante para a busca de todos os parametros do autor USP a partir de seu codpes */
     private static final String selectAuthor = "SELECT vinculopessoausp.codpes, vinculopessoausp.nompes nome,\n" +
-"nvl(regexp_substr(vinculopessoausp.nompes,'.*\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
-"regexp_substr(vinculopessoausp.nompes,'(.*)\\s.*',1,1,'i',1) nomeinicial,\n" +
+"nvl(regexp_substr(vinculopessoausp.nompes,'.*\\\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
+"regexp_substr(vinculopessoausp.nompes,'(.*)\\\\s.*',1,1,'i',1) nomeinicial,\n" +
 "emailpessoa.codema email_1,\n" +
 "unidade.nomund unidade, unidade.sglund unidade_sigla,\n" +
 "setor.nomset depto, setor.nomabvset depto_sigla,\n" +
@@ -34,12 +34,13 @@ public class AuthorDAOPostgres extends AuthorDAO
 "left join emailpessoa on emailpessoa.codpes = vinculopessoausp.codpes\n" +
 "left join resuservhistfuncional on (resuservhistfuncional.codpes = vinculopessoausp.codpes AND vinculopessoausp.tipvin = 'SERVIDOR')\n" +
 "WHERE vinculopessoausp.codpes = ?\n" +
-"ORDER BY decode(substr(lower(vinculopessoausp.tipvin),0,4),'insc',1,'cand',1,'depe',1,0),\n" +
-"nvl2(nvl(resuservhistfuncional.dtafimsitfun,vinculopessoausp.dtafimvin),1,0),\n" +
-"decode(lower(vinculopessoausp.sitctousp),'ativado',0,1),\n" +
-"decode(vinculopessoausp.sitatl,'A',1,'P',2,'D',3,4),\n" +
-"nvl(resuservhistfuncional.dtainisitfun,vinculopessoausp.dtainivin) desc,\n" +
-"vinculopessoausp.dtaultalt desc";
+"ORDER BY\n" +
+"decode(substr(lower(vinculopessoausp.tipvin),0,4),'exte',1,'insc',2,'cand',3,'depe',3,0),\n" +
+"nvl(nvl(resuservhistfuncional.dtafimsitfun,vinculopessoausp.dtafimvin),to_date('2199','YYYY')) desc,\n" +
+"nvl2(vinculopessoausp.sitctousp,decode(lower(vinculopessoausp.sitctousp),'ativado',0,1),0),\n" +
+"decode(vinculopessoausp.sitatl,'A',0,'P',1,'D',2,3),\n" +
+"decode(substr(decode(lower(vinculopessoausp.tipfnc),'docente','docente',lower(vinculopessoausp.tipvin)),0,5),'docen',0,'aluno',1,'servi',2,3),\n" +
+"decode(lower(vinculopessoausp.tipmer),'ms-6',0,'ms-5',1,'ms-4',2,'ms-3',3,'ms-2',4,'ms-1',5,'pc 1',6,'pc 2',7,'pc 3',8)";
 
     /** Constante para a busca de todos os itens a partir dos seguintes parametros: tipo, data e titulo relacionados com o numero USP -> alterado para uso de authority contendo numero usp */
      private static final String selectHandleTitulos = "SELECT handle, TITLES.text_value AS title, TIPOS.text_value AS tipo, substring(DTPUBS.text_value from '(\\d{4})(\\-\\d{2}\\-\\d{2}\\s+\\d{2}\\:\\d{2}){0,1}') AS dtpub\n" +
