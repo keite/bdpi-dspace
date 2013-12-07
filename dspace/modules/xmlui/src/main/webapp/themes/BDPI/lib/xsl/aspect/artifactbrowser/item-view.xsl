@@ -774,6 +774,8 @@
                 <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
                 </xsl:attribute>
                 <td class="label-cell">
+		<i18n:text>
+		<xsl:text disable-output-escaping="yes">metadataTrad.</xsl:text>
                 <xsl:value-of select="./@mdschema"/>
                 <xsl:text>.</xsl:text>
                 <xsl:value-of select="./@element"/>
@@ -781,6 +783,7 @@
                 <xsl:text>.</xsl:text>
                 <xsl:value-of select="./@qualifier"/>
                 </xsl:if>
+		</i18n:text>
                 </td>
                 <td>
                 <xsl:if test="$contSponsor = 0">
