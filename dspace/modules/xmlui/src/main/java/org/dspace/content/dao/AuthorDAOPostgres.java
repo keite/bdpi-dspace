@@ -35,7 +35,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 "left join resuservhistfuncional on (resuservhistfuncional.codpes = vinculopessoausp.codpes AND vinculopessoausp.tipvin = 'SERVIDOR')\n" +
 "WHERE vinculopessoausp.codpes = ?\n" +
 "ORDER BY\n" +
-"decode(substr(lower(vinculopessoausp.tipvin),0,4),'exte',1,'insc',2,'cand',3,'depe',3,0),\n" +
+"decode(substr(lower(vinculopessoausp.tipvin),0,4),'exte',1,'auto',1,'insc',2,'cand',2,'depe',3,0),\n" +
 "nvl(nvl(resuservhistfuncional.dtafimsitfun,vinculopessoausp.dtafimvin),to_date('2199','YYYY')) desc,\n" +
 "nvl2(vinculopessoausp.sitctousp,decode(lower(vinculopessoausp.sitctousp),'ativado',0,1),0),\n" +
 "decode(vinculopessoausp.sitatl,'A',0,'P',1,'D',2,3),\n" +
