@@ -18,8 +18,8 @@ public class AuthorDAOPostgres extends AuthorDAO
 {
     /** Constante para a busca de todos os parametros do autor USP a partir de seu codpes */
     private static final String selectAuthor = "SELECT vinculopessoausp.codpes, vinculopessoausp.nompes nome,\n" +
-"nvl(regexp_substr(vinculopessoausp.nompes,'.*\\\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
-"regexp_substr(vinculopessoausp.nompes,'(.*)\\\\s.*',1,1,'i',1) nomeinicial,\n" +
+"nvl(regexp_substr(vinculopessoausp.nompes,'.*\\s(.*)',1,1,'i',1),vinculopessoausp.nompes) sobrenome,\n" +
+"regexp_substr(vinculopessoausp.nompes,'(.*)\\s.*',1,1,'i',1) nomeinicial,\n" +
 "emailpessoa.codema email_1,\n" +
 "unidade.nomund unidade, unidade.sglund unidade_sigla,\n" +
 "setor.nomset depto, setor.nomabvset depto_sigla,\n" +
@@ -43,7 +43,7 @@ public class AuthorDAOPostgres extends AuthorDAO
 "decode(lower(vinculopessoausp.tipmer),'ms-6',0,'ms-5',1,'ms-4',2,'ms-3',3,'ms-2',4,'ms-1',5,'pc 1',6,'pc 2',7,'pc 3',8)";
 
     /** Constante para a busca de todos os itens a partir dos seguintes parametros: tipo, data e titulo relacionados com o numero USP -> alterado para uso de authority contendo numero usp */
-     private static final String selectHandleTitulos = "SELECT handle, TITLES.text_value AS title, TIPOS.text_value AS tipo, substring(DTPUBS.text_value from '(\\d{4})(\\-\\d{2}\\-\\d{2}\\s+\\d{2}\\:\\d{2}){0,1}') AS dtpub\n" +
+     private static final String selectHandleTitulos = "SELECT handle.handle, max(TITLES.text_value) AS title, TIPOS.text_value AS tipo, substring(DTPUBS.text_value from '(\\d{4})(\\-\\d{2}\\-\\d{2}\\s+\\d{2}\\:\\d{2}){0,1}') AS dtpub\n" +
 "FROM handle \n" +
 "INNER JOIN metadatavalue AUTHORS on (handle.resource_id = AUTHORS.item_id AND handle.resource_type_id=2)\n" +
 "INNER JOIN metadatavalue TITLES on (handle.resource_id = TITLES.item_id AND handle.resource_type_id=2)\n" +
@@ -57,7 +57,9 @@ public class AuthorDAOPostgres extends AuthorDAO
 "AND MTITLES.metadata_schema_id = metadataschemaregistry.metadata_schema_id\n" +
 "AND MTIPOS.metadata_schema_id = metadataschemaregistry.metadata_schema_id\n" +
 "AND MDTPUBS.metadata_schema_id = metadataschemaregistry.metadata_schema_id\n" +
-"AND metadataschemaregistry.short_id='dc')";
+"AND metadataschemaregistry.short_id='dc')\n" +
+"INNER JOIN item on (AUTHORS.item_id=item.item_id AND item.in_archive = TRUE)\n" +
+"group by handle.handle, TIPOS.text_value, DTPUBS.text_value";
     //      "AND SPLIT_PART(D.text_value,':',2)=?) order by B.text_value, C.text_value DESC, A.text_value";
     
     private static final String orderbyHandleTitulos = "ORDER BY reverse(lpad(reverse(substring(DTPUBS.text_value from '((\\d{4})(\\-\\d{2}\\-\\d{2}\\s+\\d{2}\\:\\d{2}){0,1})')),length('1970-01-01 00:00:00'),reverse('1970-01-01 00:00:00')))::timestamp DESC";
@@ -120,9 +122,26 @@ public class AuthorDAOPostgres extends AuthorDAO
 "ORDER BY tuplax";
 
     /** Constante sql para recuperar a interdisciplinariedade que um determinado autor possui com outras unidades USP */
-    private static final String selectInterdisciplinarUSP = "SELECT SPLIT_PART(text_value,':',3) as unidade, count(*) as ocorr " +
-           "FROM metadatavalue WHERE metadata_field_id=? AND item_id IN (SELECT item_id FROM metadatavalue WHERE metadata_field_id=? " +
-           "AND SPLIT_PART(text_value,':',2)=?) AND split_part(text_value,':',2)!=? GROUP BY unidade ORDER BY ocorr DESC, unidade";
+    private static final String selectInterdisciplinarUSP = "select B.unidade, count(*) ocorr from (\n" +
+"select string_agg(A.name,' + ') unidade, A.item_id\n" +
+"from\n" +
+"(select community.name, metadatavalue.item_id\n" +
+"from metadatavalue\n" +
+"inner join item on (metadatavalue.item_id=item.item_id AND item.in_archive = TRUE)\n" +
+"inner join communities2item on metadatavalue.item_id = communities2item.item_id and metadatavalue.authority=?\n" +
+"inner join metadatafieldregistry on (metadatavalue.metadata_field_id=metadatafieldregistry.metadata_field_id\n" +
+" and metadatafieldregistry.element = 'contributor'\n" +
+" and metadatafieldregistry.qualifier = 'author')\n" +
+"inner join metadataschemaregistry on (metadatafieldregistry.metadata_schema_id=metadataschemaregistry.metadata_schema_id\n" +
+" and metadataschemaregistry.short_id = 'dc')\n" +
+"inner join community on communities2item.community_id = community.community_id\n" +
+"left join community2community on communities2item.community_id = community2community.child_comm_id\n" +
+"where community2community.child_comm_id is null\n" +
+"order by community.name) A\n" +
+"group by A.item_id\n" +
+") B\n" +
+"group by B.unidade\n" +
+"order by ocorr desc, unidade";
 
     public AuthorDAOPostgres() {
     }
@@ -352,18 +371,12 @@ public class AuthorDAOPostgres extends AuthorDAO
     public ArrayList<InterUnit> getInterUnitUSP(String codpes) throws SQLException {
       ArrayList<InterUnit> listaInterUnidades = new ArrayList<InterUnit>();
       try {
-         // int metadataAutorId = getAutorId();
-         int metadataAutorId = 81;
          context = new Context();
          PreparedStatement statement = context.getDBConnection().prepareStatement(selectInterdisciplinarUSP);
-         statement.setInt(1,metadataAutorId);//SELECT metadata_field_id FROM metadatafieldregistry WHERE metadata_schema_id=(SELECT metadata_schema_id FROM metadataschemaregistry WHERE short_id='dc') AND element='contributor' AND qualifier='author'
-         statement.setInt(2,metadataAutorId);//SELECT metadata_field_id FROM metadatafieldregistry WHERE metadata_schema_id=(SELECT metadata_schema_id FROM metadataschemaregistry WHERE short_id='dc') AND element='contributor' AND qualifier='author'
-         statement.setString(3,codpes);
-         statement.setString(4,codpes);
+         statement.setString(1,codpes.trim());
          ResultSet rs = statement.executeQuery();
          while(rs.next()) {
             InterUnit unidade = new InterUnit();
-            //unidade.setCodpes(Integer.parseInt(codpes));
             unidade.setUnidadeSigla(rs.getString("unidade"));
             unidade.setQntTrabalhos(rs.getInt("ocorr"));
             listaInterUnidades.add(unidade);
