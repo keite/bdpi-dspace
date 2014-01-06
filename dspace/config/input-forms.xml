@@ -2759,6 +2759,16 @@
 				</field>
 				<field>
 					<dc-schema>dc</dc-schema>
+					<dc-element>title</dc-element>
+					<dc-qualifier>alternative</dc-qualifier>
+					<repeatable>true</repeatable>
+					<label>Título traduzido</label>
+					<input-type>textarea</input-type>
+					<hint>Título do livro em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
+					<required/>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
 					<dc-element>relation</dc-element>
 					<dc-qualifier>ispartof</dc-qualifier>
 					<repeatable>false</repeatable>
