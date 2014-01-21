@@ -58,6 +58,15 @@ collections / items / and bitstreams.
                     <map:serialize type="xml"/>
             </map:match>
 
+            <!-- janll 21.jan.2013 List all communities & collections in DSpace -->
+            <map:match pattern="i5ekjc8">
+                    <map:transform type="CommunityBrowser">
+                            <map:parameter name="depth" value="10"/>
+                    </map:transform>
+                    <map:serialize type="xml"/>
+            </map:match>
+            <!-- janll 21.jan.2013  -->
+
             <map:match pattern="page/*">
                 <map:transform type="StaticPage"/>
                 <map:serialize type="xml"/>
