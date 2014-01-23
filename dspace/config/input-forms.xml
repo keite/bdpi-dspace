@@ -4406,40 +4406,36 @@
 				<stored-value>por</stored-value>
 			</pair>
 			<pair>
-				<displayed-value>Inglês</displayed-value>
-				<stored-value>eng</stored-value>
-			</pair>
-			<pair>
-				<displayed-value>Espanhol</displayed-value>
-				<stored-value>spa</stored-value>
-			</pair>
-			<pair>
 				<displayed-value>Alemão</displayed-value>
 				<stored-value>deu</stored-value>
-			</pair>
-			<pair>
-				<displayed-value>Francês</displayed-value>
-				<stored-value>fra</stored-value>
-			</pair>
-			<pair>
-				<displayed-value>Italiano</displayed-value>
-				<stored-value>ita</stored-value>
 			</pair>
 			<pair>
 				<displayed-value>Chinês</displayed-value>
 				<stored-value>zho</stored-value>
 			</pair>
 			<pair>
-				<displayed-value>Russo</displayed-value>
-				<stored-value>rus</stored-value>
+				<displayed-value>Espanhol</displayed-value>
+				<stored-value>spa</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Francês</displayed-value>
+				<stored-value>fra</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Inglês</displayed-value>
+				<stored-value>eng</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Italiano</displayed-value>
+				<stored-value>ita</stored-value>
 			</pair>
 			<pair>
 				<displayed-value>Japonês</displayed-value>
 				<stored-value>jpn</stored-value>
 			</pair>
 			<pair>
-				<displayed-value>Hindi</displayed-value>
-				<stored-value>hin</stored-value>
+				<displayed-value>Russo</displayed-value>
+				<stored-value>rus</stored-value>
 			</pair>
 			<pair>
 				<displayed-value>Outro</displayed-value>
