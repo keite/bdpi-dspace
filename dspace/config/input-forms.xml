@@ -2754,8 +2754,8 @@
 					<repeatable>false</repeatable>
 					<label>* Título</label>
 					<input-type>textarea</input-type>
-					<hint>Título do livro no idioma original. Ex: 1992: a redescoberta da Natureza</hint>
-					<required>Título do livro é um campo obrigatório. Ex: 1992: a redescoberta da Natureza</required>
+					<hint>Título do livro ou capítulo do livro no idioma original. Ex: 1992: a redescoberta da Natureza</hint>
+					<required>Título do livro ou do capítulo do livro é um campo obrigatório. Ex: 1992: a redescoberta da Natureza</required>
 				</field>
 				<field>
 					<dc-schema>dc</dc-schema>
@@ -2764,7 +2764,7 @@
 					<repeatable>true</repeatable>
 					<label>Título traduzido</label>
 					<input-type>textarea</input-type>
-					<hint>Título do livro em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
+					<hint>Título do livro ou capítulo do livro em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
 					<required/>
 				</field>
 				<field>
@@ -2782,9 +2782,9 @@
 					<dc-element>date</dc-element>
 					<dc-qualifier>issued</dc-qualifier>
 					<repeatable>false</repeatable>
-					<label>* Data de copyright</label>
+					<label>* Data de publicação</label>
 					<input-type>date</input-type>
-					<hint>Informar o ano do copyright do livro</hint>
+					<hint>Informar o ano de publicação do livro</hint>
 					<required>Campo obrigatório - entre com pelo menos o ano. Ex: 1992</required>
 				</field>
 				<field>
