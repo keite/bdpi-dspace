@@ -2789,6 +2789,16 @@
 				</field>
 				<field>
 					<dc-schema>dc</dc-schema>
+					<dc-element>date</dc-element>
+					<dc-qualifier>copyright</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Data de copyright</label>
+					<input-type>date</input-type>
+					<hint>Informar o ano de copyright do livro</hint>
+					<required></required>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
 					<dc-element>publisher</dc-element>
 					<dc-qualifier/>
 					<repeatable>true</repeatable>
