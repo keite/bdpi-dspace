@@ -2815,6 +2815,9 @@ Este é um recurso importante por disseminar o conhecimento, preservar o materia
 <message key="metadataTrad.usp.caption">Possui legenda?</message>
 <message key="metadataTrad.usp.signlanguage">Linguagem de sinais?</message>
 <message key="metadataTrad.usp.thumbnail">Miniatura</message>
+<message key="metadataTrad.usp.indexacao">Indexação em bases de dados externas</message>
+
+
 <!-- ========================================================== -->
 <!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
 <!-- ========================================================== -->
