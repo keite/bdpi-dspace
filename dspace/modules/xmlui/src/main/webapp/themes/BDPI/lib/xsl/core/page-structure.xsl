@@ -624,41 +624,26 @@
 <!-- FIM 130405 andre.assada@usp.br paginas estaticas FIM -->
 
 <!-- 130731 - Dan Shinkai - Paginas estaticas -->
-						<xsl:when test="starts-with($request-uri, 'page/ajuda')">
+			<xsl:when test="starts-with($request-uri, 'page/ajuda')">
                                 <xsl:text>Ajuda</xsl:text>
                         </xsl:when>
-						
-						<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoPtBR')">
-                                <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoPtBR.xhtml'))"/>
-                                <xsl:value-of select="$doc/html/head/title"/>
-                        </xsl:when>
-						
-						<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
-                                <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoEs.xhtml'))"/>
-                                <xsl:value-of select="$doc/html/head/title"/>
-                        </xsl:when>
-						
-						<xsl:when test="starts-with($request-uri, 'page/politicaUsoEnUS')">
-                                <xsl:variable name="doc" select="document(concat($paginas,'politicaUsoEnUS.xhtml'))"/>
-                                <xsl:value-of select="$doc/html/head/title"/>
-                        </xsl:when>-->
-						
-						<xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
+                        <xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
                                 <xsl:variable name="doc" select="document(concat($paginas,'faqPtBR.xhtml'))"/>
                                 <xsl:value-of select="$doc/html/head/title"/>
                         </xsl:when>
-						
-						<xsl:when test="starts-with($request-uri, 'page/faqEs')">
+			<xsl:when test="starts-with($request-uri, 'page/faqEs')">
                                 <xsl:variable name="doc" select="document(concat($paginas,'faqEs.xhtml'))"/>
                                 <xsl:value-of select="$doc/html/head/title"/>
                         </xsl:when>
-						
-						<xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
+			<xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
                                 <xsl:variable name="doc" select="document(concat($paginas,'faqEnUS.xhtml'))"/>
                                 <xsl:value-of select="$doc/html/head/title"/>
                         </xsl:when>
-<!-- FIM 130731 - Dan Shinkai - Paginas estaticas FIM -->						
-
+<!-- FIM 130731 - Dan Shinkai - Paginas estaticas FIM -->
+			<xsl:when test="starts-with($request-uri, 'page/community-list')">
+                                <xsl:variable name="doc" select="document(concat($paginas,'community-list.xhtml'))"/>
+                                <xsl:value-of select="$doc/html/head/title"/>
+                        </xsl:when>
                         <xsl:when test="not($page_title)">
                                 <xsl:text>  </xsl:text>
                         </xsl:when>
@@ -667,7 +652,7 @@
                         </xsl:otherwise>
                 </xsl:choose>
             </title>
-
+            
             <!-- Head metadata in item pages -->
             <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']">
                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']"
@@ -920,15 +905,9 @@
                     <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIPtBR')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.privacidade.trail</i18n:text></li>
                     </xsl:when>
-					
-					<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoPtBR')">
-                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
-                    </xsl:when>-->
-					
-					<xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
+                    <xsl:when test="starts-with($request-uri, 'page/faqPtBR')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
                     </xsl:when>
-					
                     <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEnUS')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text></li>
                     </xsl:when>
@@ -944,15 +923,9 @@
                     <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEnUS')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.privacidade.trail</i18n:text></li>
                     </xsl:when>
-					
-					<xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
+                    <xsl:when test="starts-with($request-uri, 'page/faqEnUS')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
                     </xsl:when>
-					
-					<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
-                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
-                    </xsl:when>-->
-					
                     <xsl:when test="starts-with($request-uri, 'page/politicaAcessoEs')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaAcesso.trail</i18n:text></li>
                     </xsl:when>
@@ -968,20 +941,16 @@
                     <xsl:when test="starts-with($request-uri, 'page/privacidadeBDPIEs')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.privacidade.trail</i18n:text></li>
                     </xsl:when>
-					
-					<!--<xsl:when test="starts-with($request-uri, 'page/politicaUsoEs')">
-                         <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.politicaUso.trail</i18n:text></li>
-                    </xsl:when>-->
-					
-					<xsl:when test="starts-with($request-uri, 'page/faqEs')">
+                    <xsl:when test="starts-with($request-uri, 'page/faqEs')">
                          <li class="ds-trail-link first-link"><i18n:text>paginasEstaticas.faq.trail</i18n:text></li>
                     </xsl:when>
-					
-					<xsl:when test="starts-with($request-uri, 'page/ajuda')">
+                    <xsl:when test="starts-with($request-uri, 'page/community-list')">
+                         <li class="ds-trail-link first-link"><i18n:text>xmlui.ArtifactBrowser.CommunityBrowser.trail</i18n:text></li>
+                    </xsl:when>
+                    <xsl:when test="starts-with($request-uri, 'page/ajuda')">
                          <li class="ds-trail-link first-link">Ajuda</li>
                     </xsl:when>
-					
-					<xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
+                    <xsl:when test="count(/dri:document/dri:meta/dri:pageMeta/dri:trail) = 0">
                         <li class="ds-trail-link first-link">-</li>
                     </xsl:when>
                     <xsl:otherwise>
@@ -1431,6 +1400,12 @@
 <!-- Pagina de Video - FIM -->
 				
                 <!-- Otherwise use default handling of body -->
+                <xsl:when test="starts-with($request-uri, 'page/community-list')">
+                    <div>
+                        <xsl:variable name="doc" select="document(concat($paginas,'community-list.xhtml'))"/>
+                        <xsl:copy-of select="$doc"/>
+                   </div>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:apply-templates />
                 </xsl:otherwise>
