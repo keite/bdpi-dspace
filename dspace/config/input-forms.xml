@@ -2754,8 +2754,8 @@
 					<repeatable>false</repeatable>
 					<label>* Título</label>
 					<input-type>textarea</input-type>
-					<hint>Título do livro no idioma original. Ex: 1992: a redescoberta da Natureza</hint>
-					<required>Título do livro é um campo obrigatório. Ex: 1992: a redescoberta da Natureza</required>
+					<hint>Título do livro ou capítulo do livro no idioma original. Ex: 1992: a redescoberta da Natureza</hint>
+					<required>Título do livro ou do capítulo do livro é um campo obrigatório. Ex: 1992: a redescoberta da Natureza</required>
 				</field>
 				<field>
 					<dc-schema>dc</dc-schema>
@@ -2764,7 +2764,7 @@
 					<repeatable>true</repeatable>
 					<label>Título traduzido</label>
 					<input-type>textarea</input-type>
-					<hint>Título do livro em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
+					<hint>Título do livro ou capítulo do livro em outros idiomas. Ex: 1992: the rediscovery of Nature. Para vários idiomas, clicar no botão "Adicionar".</hint>
 					<required/>
 				</field>
 				<field>
@@ -2782,10 +2782,20 @@
 					<dc-element>date</dc-element>
 					<dc-qualifier>issued</dc-qualifier>
 					<repeatable>false</repeatable>
-					<label>* Data de copyright</label>
+					<label>* Data de publicação</label>
 					<input-type>date</input-type>
-					<hint>Informar o ano do copyright do livro</hint>
+					<hint>Informar o ano de publicação do livro</hint>
 					<required>Campo obrigatório - entre com pelo menos o ano. Ex: 1992</required>
+				</field>
+				<field>
+					<dc-schema>dc</dc-schema>
+					<dc-element>date</dc-element>
+					<dc-qualifier>copyright</dc-qualifier>
+					<repeatable>false</repeatable>
+					<label>Data de copyright</label>
+					<input-type>date</input-type>
+					<hint>Informar o ano de copyright do livro</hint>
+					<required></required>
 				</field>
 				<field>
 					<dc-schema>dc</dc-schema>
@@ -4406,40 +4416,36 @@
 				<stored-value>por</stored-value>
 			</pair>
 			<pair>
-				<displayed-value>Inglês</displayed-value>
-				<stored-value>eng</stored-value>
-			</pair>
-			<pair>
-				<displayed-value>Espanhol</displayed-value>
-				<stored-value>spa</stored-value>
-			</pair>
-			<pair>
 				<displayed-value>Alemão</displayed-value>
 				<stored-value>deu</stored-value>
-			</pair>
-			<pair>
-				<displayed-value>Francês</displayed-value>
-				<stored-value>fra</stored-value>
-			</pair>
-			<pair>
-				<displayed-value>Italiano</displayed-value>
-				<stored-value>ita</stored-value>
 			</pair>
 			<pair>
 				<displayed-value>Chinês</displayed-value>
 				<stored-value>zho</stored-value>
 			</pair>
 			<pair>
-				<displayed-value>Russo</displayed-value>
-				<stored-value>rus</stored-value>
+				<displayed-value>Espanhol</displayed-value>
+				<stored-value>spa</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Francês</displayed-value>
+				<stored-value>fra</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Inglês</displayed-value>
+				<stored-value>eng</stored-value>
+			</pair>
+			<pair>
+				<displayed-value>Italiano</displayed-value>
+				<stored-value>ita</stored-value>
 			</pair>
 			<pair>
 				<displayed-value>Japonês</displayed-value>
 				<stored-value>jpn</stored-value>
 			</pair>
 			<pair>
-				<displayed-value>Hindi</displayed-value>
-				<stored-value>hin</stored-value>
+				<displayed-value>Russo</displayed-value>
+				<stored-value>rus</stored-value>
 			</pair>
 			<pair>
 				<displayed-value>Outro</displayed-value>
