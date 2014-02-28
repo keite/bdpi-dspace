@@ -757,7 +757,55 @@
                     </xsl:if>
                 </xsl:when>
                 
-                
+                <!-- agrupar os metadados usp.sysno em uma celula. -->
+		<!-- jan.lara 28.fev.2014 -->
+                <xsl:when test="@element='sysno' and @mdschema='usp' and not(@qualifier)">
+                    <xsl:variable name="contReferences" select="count(following-sibling::dim:field[@element='sysno'][@mdschema='usp'][not(@qualifier)])"/>
+                    <xsl:if test="$contReferences = 0">
+                        <tr>
+                            <xsl:attribute name="class">
+                                <xsl:text>ds-table-row </xsl:text>
+                                <xsl:if test="(position() div 2 mod 2 = 0)">even </xsl:if>
+                                <xsl:if test="(position() div 2 mod 2 = 1)">odd </xsl:if>
+                            </xsl:attribute>
+                            <td class="label-cell">
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                <i18n:text>
+                                    <xsl:text>metadataTrad.</xsl:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                                    <xsl:value-of select="./@mdschema"/>
+                                    <xsl:text>.</xsl:text>
+                                    <xsl:value-of select="./@element"/>
+                                    <xsl:if test="./@qualifier">
+                                        <xsl:text>.</xsl:text>
+                                        <xsl:value-of select="./@qualifier"/>
+                                    </xsl:if>
+<!-- 130327 andre.assada@usp.br mascara nos nomes dos metadados -->
+                                </i18n:text>
+<!-- FIM 130327 andre.assada@usp.br mascara nos nomes dos metadados FIM -->
+                            </td>
+                            <td>
+				<xsl:if test="$contReferences = 0">
+				    <xsl:for-each select="../dim:field[@element='sysno'][@mdschema='usp'][not(@qualifier)]">
+					<a>
+						<xsl:attribute name="href">
+							<xsl:text disable-output-escaping="yes"><![CDATA[http://200.144.190.234/F?func=direct&doc_number=]]></xsl:text>
+							<xsl:value-of select="current()"/>
+						</xsl:attribute>
+						<xsl:value-of select="current()"/>
+					</a>
+					<xsl:variable name="contReferencesAtual" select="count(following-sibling::dim:field[@element='sysno'][@mdschema='usp'][not(@qualifier)])"/>
+					<xsl:if test="$contReferences != $contReferencesAtual">
+					    <br/>
+					    <hr/>
+					</xsl:if>
+				    </xsl:for-each>
+				</xsl:if>
+                            </td>
+                        </tr>
+                    </xsl:if>
+                </xsl:when>
+     
                 <!-- agrupar os metadados dc.description.sponsorship em uma celula. -->
                 <!-- codigo utiliza uma classe java para criar um link nos numeros da Fapesp (em qualquer case) em um campo. 
                 A classe java retorna o campo com as tags HTML necessarias para criar um link. -->
