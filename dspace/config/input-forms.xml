@@ -2873,9 +2873,9 @@
 					<dc-element>language</dc-element>
 					<dc-qualifier>iso</dc-qualifier>
 					<repeatable>false</repeatable>
-					<label>Idioma do livro</label>
+					<label>Idioma do livro ou capítulo</label>
 					<input-type value-pairs-name="iso_languages_ptBR">dropdown</input-type>
-					<hint>Atenção: selecionar o idioma referente ao texto completo do livro.</hint>
+					<hint>Atenção: selecionar o idioma referente ao texto completo do livro ou do capítulo específico.</hint>
 					<required/>
 				</field>
 				<field>
