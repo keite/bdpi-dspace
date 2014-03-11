@@ -1811,9 +1811,9 @@
 					<dc-element>identifier</dc-element>
 					<dc-qualifier>citation</dc-qualifier>
 					<repeatable>false</repeatable>
-					<label>Imprenta</label>
+					<label>Fonte</label>
 					<input-type>textarea</input-type>
-					<hint>Não é uma citação, é uma imprenta: revista, cidade, volume, número, páginas inicial e final, ano. Ex: "Revista do Hospital das Clínicas, São Paulo, v.6, n.14, p.95-106, 1992"</hint>
+					<hint>Dados de: revista, cidade, volume, número, páginas inicial e final, ano. Ex: "Revista do Hospital das Clínicas, São Paulo, v.6, n.14, p.95-106, 1992"</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>
@@ -2204,9 +2204,9 @@
 					<dc-element>identifier</dc-element>
 					<dc-qualifier>citation</dc-qualifier>
 					<repeatable>false</repeatable>
-					<label>Imprenta</label>
+					<label>Fonte</label>
 					<input-type>textarea</input-type>
-					<hint>Não é uma citação, é uma imprenta: revista, cidade, volume, número, páginas inicial e final, ano. Ex: "Revista do Hospital das Clínicas, São Paulo, v.6, n.14, p.95-106, 1992"</hint>
+					<hint>Dados de: revista, cidade, volume, número, páginas inicial e final, ano. Ex: "Revista do Hospital das Clínicas, São Paulo, v.6, n.14, p.95-106, 1992"</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>
@@ -2553,9 +2553,9 @@
 					<dc-element>identifier</dc-element>
 					<dc-qualifier>citation</dc-qualifier>
 					<repeatable>false</repeatable>
-					<label>Imprenta</label>
+					<label>Fonte</label>
 					<input-type>textarea</input-type>
-					<hint>Não é uma citação. É uma imprenta. Ex. Encontro Internacional de Neonatologia, III, 2013, São Paulo.</hint>
+					<hint>Dados de: dados do evento, ano e local. Ex. Encontro Internacional de Neonatologia, III, 2013, São Paulo.</hint>
 					<required/>
 					<visibility>workflow</visibility>
 				</field>
