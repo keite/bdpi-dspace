@@ -65,6 +65,9 @@
     -->
     <xsl:template match="dri:document">
         <html class="no-js" xmlns:fb="http://ogp.me/ns/fb#">
+	
+	    <xsl:call-template name="buildMetas" />
+	
             <!-- First of all, build the HTML head element -->
             <xsl:call-template name="buildHead"/>
             <!-- Then proceed to the body -->
@@ -653,20 +656,29 @@
                 </xsl:choose>
             </title>
             
+        </head>
+    </xsl:template>
+
+    <xsl:template name="buildMetas">
+            <xsl:text><![CDATA[
+
+]]></xsl:text>
+            <!-- Add all Google Scholar Metadata values -->
+            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[substring(@element, 1, 9) = 'citation_']">
+                <meta name="{@element}" content="{.}"></meta>
+            </xsl:for-each>
+            <xsl:text><![CDATA[
+
+]]></xsl:text>
             <!-- Head metadata in item pages -->
             <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']">
                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']"
                               disable-output-escaping="yes"/>
             </xsl:if>
+	    <xsl:text><![CDATA[
 
-            <!-- Add all Google Scholar Metadata values -->
-            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[substring(@element, 1, 9) = 'citation_']">
-                <meta name="{@element}" content="{.}"></meta>
-            </xsl:for-each>
-
-        </head>
+]]></xsl:text>
     </xsl:template>
-
 
     <!-- The header (distinct from the HTML head element) contains the title, subtitle, login box and various
         placeholders for header images -->
