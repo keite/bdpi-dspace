@@ -65,13 +65,13 @@
     -->
     <xsl:template match="dri:document">
         <html class="no-js" xmlns:fb="http://ogp.me/ns/fb#">
-	
-	    <xsl:call-template name="buildMetas" />
-	
+		
             <!-- First of all, build the HTML head element -->
-            <xsl:call-template name="buildHead"/>
+            <xsl:call-template name="buildHead" />
             <!-- Then proceed to the body -->
-            
+
+	    <xsl:call-template name="buildMetas" />        
+	    
             <!--paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/-->
             <xsl:text disable-output-escaping="yes">&lt;!--[if lt IE 7 ]&gt; &lt;body class="ie6"&gt; &lt;![endif]--&gt;
                 &lt;!--[if IE 7 ]&gt;    &lt;body class="ie7"&gt; &lt;![endif]--&gt;
