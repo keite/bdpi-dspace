@@ -70,7 +70,9 @@
             <xsl:call-template name="buildHead" />
             <!-- Then proceed to the body -->
 
-	    <xsl:call-template name="buildMetas" />        
+	    <xsl:call-template name="buildMetas" />
+	    
+	    <body>
 	    
             <!--paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/-->
             <xsl:text disable-output-escaping="yes">&lt;!--[if lt IE 7 ]&gt; &lt;body class="ie6"&gt; &lt;![endif]--&gt;
@@ -128,7 +130,7 @@
                 <!-- Javascript at the bottom for fast page loading -->
               <xsl:call-template name="addJavascript"/>
 
-            <xsl:text disable-output-escaping="yes">&lt;/body&gt;</xsl:text>
+            </body>
         </html>
     </xsl:template>
 
