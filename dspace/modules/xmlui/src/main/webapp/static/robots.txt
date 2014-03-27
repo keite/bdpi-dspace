@@ -14,7 +14,11 @@ Disallow: /displaystats
 # and you have verified that your site is being indexed correctly.
 Disallow: /browse
 Disallow: /*/browse
- 
+
+Disallow: /*/author
+Disallow: /*/coauthor
+Disallow: /*/interunit
+
 # You also may wish to disallow access to the following paths, in order
 # to stop web spiders from accessing user-based content:
 Disallow: /advanced-search
