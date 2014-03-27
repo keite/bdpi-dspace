@@ -770,7 +770,7 @@ a.coautoria_link:visited {
    /*height: 160px;*/ 
    height: 140px;
    /*background-color: white;*/ 
-   background-image:url("/themes/Mirage/images/autorUSP/imagens/2x1.gif"); 
+   background-image:url("/themes/BDPI/images/autorUSP/imagens/2x1.gif"); 
    background-repeat:repeat-x; 
    float: left; 
    border:1px solid #D5D1CA; 
@@ -819,7 +819,7 @@ a.coautoria_link:visited {
    text-align: center; 
    width: 96px; 
    /* height: 160px;*/ 
-   height: 140px; background-image: url('/themes/Mirage/images/autorUSP/imagens/3x1.gif'); 
+   height: 140px; background-image: url('/themes/BDPI/images/autorUSP/imagens/3x1.gif'); 
    background-repeat: repeat; 
 } 
 

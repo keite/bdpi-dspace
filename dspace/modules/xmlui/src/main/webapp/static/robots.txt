@@ -6,6 +6,10 @@ Disallow: /*/discover
 Disallow: /search-filter
 Disallow: /*/search-filter
 
+Disallow: /themes/Mirage/*
+Disallow: /feed/*
+Disallow: /*/statistics
+
 # If you have configured DSpace (Solr-based) Statistics to be publicly accessible,
 # then you likely do not want this content to be indexed
 Disallow: /displaystats

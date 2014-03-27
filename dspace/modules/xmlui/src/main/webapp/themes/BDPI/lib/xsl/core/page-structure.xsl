@@ -69,8 +69,6 @@
             <!-- First of all, build the HTML head element -->
             <xsl:call-template name="buildHead" />
             <!-- Then proceed to the body -->
-
-	    <xsl:call-template name="buildMetas" />
 	    
 	    <body>
             <xsl:choose>
@@ -163,6 +161,7 @@
 <!-- FIM 130327 andre.assada@usp.br nova barra usp by Marcio Eichler, agora com codigo centralizado em server unico FIM -->
 
 
+            <xsl:call-template name="buildMetas" />
 
 
             <link rel="shortcut icon">
@@ -657,19 +656,19 @@
             <xsl:text><![CDATA[
 
 ]]></xsl:text>
-            <!-- Add all Google Scholar Metadata values -->
-            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[substring(@element, 1, 9) = 'citation_']">
-                <meta name="{@element}" content="{.}"></meta>
-            </xsl:for-each>
-            <xsl:text><![CDATA[
-
-]]></xsl:text>
             <!-- Head metadata in item pages -->
             <xsl:if test="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']">
                 <xsl:value-of select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[@element='xhtml_head_item']"
                               disable-output-escaping="yes"/>
             </xsl:if>
 	    <xsl:text><![CDATA[
+
+]]></xsl:text>
+            <!-- Add all Google Scholar Metadata values -->
+            <xsl:for-each select="/dri:document/dri:meta/dri:pageMeta/dri:metadata[substring(@element, 1, 9) = 'citation_']">
+                <meta name="{@element}" content="{.}"></meta>
+            </xsl:for-each>
+            <xsl:text><![CDATA[
 
 ]]></xsl:text>
     </xsl:template>
@@ -1209,7 +1208,7 @@
                 <xsl:when test="starts-with($request-uri, 'page/about')">
                     <div>
                         <h1>About This Repository</h1>
-                        <p>To add your own content to this page, edit webapps/xmlui/themes/Mirage/lib/xsl/core/page-structure.xsl and
+                        <p>To add your own content to this page, edit webapps/xmlui/themes/BDPI/lib/xsl/core/page-structure.xsl and
                             add your own content to the title, trail, and body. If you wish to add additional pages, you
                             will need to create an additional xsl:when block and match the request-uri to whatever page
                             you are adding. Currently, static pages created through altering XSL are only available
