@@ -1,11 +1,11 @@
 User-agent: *
+
 Disallow: /discover 
+Disallow: /*/discover
+
 Disallow: /search-filter
- 
-# This should be the FULL URL to your HTML Sitemap.  
-# Make sure to replace "[dspace.url]" with the value of your 'dspace.url' setting in your dspace.cfg file.
-Sitemap: http://www.producao.usp.br/htmlmap
- 
+Disallow: /*/search-filter
+
 # If you have configured DSpace (Solr-based) Statistics to be publicly accessible,
 # then you likely do not want this content to be indexed
 Disallow: /displaystats
@@ -28,3 +28,8 @@ Disallow: /forgot
 Disallow: /login
 Disallow: /register
 Disallow: /search
+
+# This should be the FULL URL to your HTML Sitemap.
+# Make sure to replace "[dspace.url]" with the value of your 'dspace.url' setting in your dspace.cfg file.
+Sitemap: http://www.producao.usp.br/htmlmap
+
