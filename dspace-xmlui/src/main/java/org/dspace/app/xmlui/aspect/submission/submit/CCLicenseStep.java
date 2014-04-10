@@ -78,6 +78,7 @@ public class CCLicenseStep extends AbstractSubmissionStep
     /** CC specific variables */
     private String ccLocale;
 
+
 	/**
 	 * Establish our required parameters, abstractStep will enforce these.
 	 */
@@ -85,10 +86,12 @@ public class CCLicenseStep extends AbstractSubmissionStep
 	{
 	    this.requireSubmission = true;
 	    this.requireStep = true;
-		this.ccLocale = ConfigurationManager.getProperty("cc.license.locale");
+        this.ccLocale = ConfigurationManager.getProperty("cc.license.locale");
         /** Default locale to 'en' */
         this.ccLocale = (this.ccLocale != null) ? this.ccLocale : "en";
-	}	
+	}
+	
+	
 	public void addBody(Body body) throws SAXException, WingException,
 	UIException, SQLException, IOException, AuthorizeException
 	{

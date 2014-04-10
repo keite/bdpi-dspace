@@ -93,9 +93,8 @@ Common usage:
     </tstamp>
 
     <!-- Default location of GeoLiteCity.dat.gz to download. This may be overridden, if URL path changes. -->
-    <!--property name="geolite" value="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" /-->
-    <property name="geolite" value="file://${dspace.dir}/../src/dat/GeoLiteCity.dat.gz" />
-    
+    <property name="geolite" value="http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" />
+
     <!-- ============================================================= -->
     <!-- The DSpace class path for executing installation targets      -->
     <!-- ============================================================= -->
@@ -143,8 +142,9 @@ Common usage:
         <echo message="load_registries --> Load metadata &amp; file format registries into the " />
         <echo message="                    database" />
         <echo message="" />
-        <echo message="clean_backups  --> Remove .bak directories under install directory" />
+        <echo message="clean_backups   --> Remove .bak directories under install directory" />
         <echo message="clean_database  --> Remove DSpace database tables, destroying data" />
+        <echo message="test_database   --> Attempt to connect to the DSpace database in order to verify that configuration is correct" />
         <echo message="" />
         <echo message="" />
         <echo message="Available parameters are:" />
@@ -358,6 +358,7 @@ Common usage:
                 <expandproperties />
             </filterchain>
         </copy>
+        <echo file='config-temp/ant.properties' message='ant.version = ${ant.version}'/>
 
     </target>
 
@@ -575,7 +576,7 @@ Common usage:
     	<copy todir="${dspace.dir}/solr" preservelastmodified="true">
     	     <fileset dir="solr"/>
     	</copy>
-		
+
         <echo>
 ====================================================================
  ${dspace.dir}/bin was backed up to
@@ -645,41 +646,6 @@ Common usage:
 ====================================================================
         </echo>
 
-	<symlink failonerror="false" link="${dspace.dir}/assetstore" action="delete"/>
-	<symlink failonerror="false" link="${dspace.dir}/solr/oai/data" action="delete"/>
-	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" action="delete"/>
-	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" action="delete"/>
-	<symlink failonerror="false" link="${dspace.dir}/var" action="delete"/>
-
-	<symlink failonerror="false" link="${dspace.dir}/reports" action="delete"/>
-	<symlink failonerror="false" link="${dspace.dir}/upload" action="delete"/>
-
-	<!--chmod file="${dspace.dir}/solr/**" perm="a+rw" type="both"/-->
-	        
-	<symlink failonerror="false" link="${dspace.dir}/assetstore" resource="${env.DATAVARBASEFOLDER}/assetstore"/>
-	<symlink failonerror="false" link="${dspace.dir}/solr/oai/data" resource="${env.DATAVARBASEFOLDER}/solr/oai/data"/>
-	<symlink failonerror="false" link="${dspace.dir}/solr/search/data" resource="${env.DATAVARBASEFOLDER}/solr/search/data"/>
-	<symlink failonerror="false" link="${dspace.dir}/solr/statistics/data" resource="${env.DATAVARBASEFOLDER}/solr/statistics/data"/>
-	<symlink failonerror="false" link="${dspace.dir}/var" resource="${env.DATAVARBASEFOLDER}/oai/var"/>
-
-	<symlink failonerror="false" link="${dspace.dir}/reports" resource="${env.DATAVARBASEFOLDER}/reports"/>
-	<symlink failonerror="false" link="${dspace.dir}/upload" resource="${env.DATAVARBASEFOLDER}/upload"/>
-	
-	<mkdir dir="${dspace.dir}/log" />
-	<!--chmod file="${dspace.dir}/log/**" perm="a+rw" type="both"/-->
-		
-        <!--<symlink failonerror="false" link="${dspace.dir}/webapps/xmlui/themes/BDPI/images/cv" resource="${env.DATAVARBASEFOLDER}/cv"/>-->
-		
-		<!-- 130514 - Dan Shinkai -->
-		<!-- Trecho que permite autorizacao de qualquer usuario para escrita no diretorio das fotos de autores USP do CV -->
-		<!--chmod  perm="777" type="both">
-			<dirset dir="${dspace.dir}/webapps/xmlui/themes/BDPI/images/autorUSP/**" />
-		</chmod-->
-		<!-- ============ FIM ============ -->
-
-	<!--chmod file="${dspace.dir}/webapps/xmlui/themes/BDPI/images/autorUSP/**" perm="a+rw" type="both"/-->
-
-
     </target>
 
 
@@ -730,6 +696,10 @@ Common usage:
 
         <war destfile="${dspace.dir}/webapps/jspui.war">
             <fileset dir="${dspace.dir}/webapps/jspui/" />
+        </war>
+
+        <war destfile="${dspace.dir}/webapps/rest.war">
+            <fileset dir="${dspace.dir}/webapps/rest/"/>
         </war>
 
         <war destfile="${dspace.dir}/webapps/sword.war">
@@ -801,6 +771,8 @@ Common usage:
         </copy>
 
         <copy file="${config}" tofile="${dspace.dir}/config/dspace.cfg" preservelastmodified="true" />
+
+        <echo file='${dspace.dir}/config/ant.properties' message='ant.version = ${ant.version}'/>
 
 
     </target>
@@ -897,6 +869,14 @@ Common usage:
             <sysproperty key="dspace.log.init.disable" value="true" />
             <sysproperty key="dspace.configuration" value="${config}" />
             <arg line="-f '${dspace.dir}/config/registries/dublin-core-types.xml'" />
+        </java>
+
+        <!-- Import the new DCTerms schema -->
+        <java classname="org.dspace.administer.MetadataImporter" classpathref="class.path" fork="yes" failonerror="yes">
+            <sysproperty key="log4j.configuration" value="file:config/log4j-console.properties" />
+            <sysproperty key="dspace.log.init.disable" value="true" />
+            <sysproperty key="dspace.configuration" value="${config}" />
+            <arg line="-f '${dspace.dir}/config/registries/dcterms-types.xml'" />
         </java>
 
         <!-- FIXME: this should be more modular -->

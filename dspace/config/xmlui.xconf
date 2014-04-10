@@ -82,9 +82,7 @@
         <!-- Base DSpace XMLUI Aspects for Display, Browse, Search, Admin, Login and Submission -->
         <aspect name="Displaying Artifacts" path="resource://aspects/ViewArtifacts/" />
         <aspect name="Browsing Artifacts" path="resource://aspects/BrowseArtifacts/" />
-        <!-- [START] comentado para habilitar o DISCOVERY janll 26abr2013
-	<aspect name="Searching Artifacts" path="resource://aspects/SearchArtifacts/" />
-	     [END] -->
+        <aspect name="Discovery" path="resource://aspects/Discovery/" />
         <aspect name="Administration" path="resource://aspects/Administrative/" />
         <aspect name="E-Person" path="resource://aspects/EPerson/" />
         <aspect name="Submission and Workflow" path="resource://aspects/Submission/" />
@@ -119,22 +117,28 @@
              ============== -->
         <!-- By default, DSpace uses a basic (Lucene based) search engine (see SearchArtifacts aspect above) -->
         <!--
-            To enable Discovery (faceted/filtered search), uncomment this aspect.
-            Also make sure to comment out the above 'SearchArtifacts' aspect 
+            To enable the old lucene based search (no facets, filters), uncomment this aspect.
+            Also make sure to comment out the above 'Discovery' aspect
             (in the "Basic Features/Aspects" group) as leaving it on together
-            with Discovery will cause UI overlap issues
+            with Searching Artifacts aspect will cause UI overlap issues
+            
+			@deprecated Since DSpace 4 the system use an abstraction layer named
+ 			Discovery to provide access to different search provider. The
+ 			legacy system build upon Apache Lucene is likely to be removed in
+ 			a future version. If you are interested in use Lucene as backend
+ 			for the DSpace search system please consider to build a Lucene
+ 			implementation of the Discovery interfaces
         -->
-	<!-- [START] descomentado para habilitar o DISCOVERY janll 26abr2013 -->
-        <aspect name="Discovery" path="resource://aspects/Discovery/" />
-	<!-- [END] -->
-	
+        <!--<aspect name="Searching Artifacts" path="resource://aspects/SearchArtifacts/" />-->
+
+
         <!-- ==============
              SWORDv1 Client
              ============== -->
         <!-- DSpace also comes with an option SWORD Client aspect, which allows
              you to submit content FROM your DSpace TO another SWORD-enabled repository.
              To enable this feature, uncomment the aspect below. -->
-        <aspect name="SwordClient" path="resource://aspects/SwordClient/" />
+        <!-- <aspect name="SwordClient" path="resource://aspects/SwordClient/" /> -->
 
         <!--
             This demo aspect tests the various possible DRI features.

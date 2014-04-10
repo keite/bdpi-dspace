@@ -1,15 +1,9 @@
+Installation instructions may be found in DSpace-Manual.pdf, offered 
+with the source archives in the SourceForge project:
 
-Documentação
+  http://sourceforge.net/projects/dspace/files/DSpace%20Stable/VERSION/
 
-http://atena.sibi.usp.br/docs/index.php/BDPI
-
-
-######################################################################################
-
-
-Installation instructions are included in this release package under
-
- - dspace/docs/DSpace-Manual.pdf
+(Replace "VERSION" with the version you are installing, such as "4.0".)
 
 DSpace version information can be viewed online at
  - https://wiki.duraspace.org/display/DSDOC/

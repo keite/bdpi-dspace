@@ -16,7 +16,9 @@ import org.apache.cocoon.environment.Redirector;
 import org.apache.cocoon.environment.SourceResolver;
 import org.apache.cocoon.i18n.I18nUtils;
 import org.apache.cocoon.i18n.I18nUtils.LocaleValidator;
+import org.dspace.app.xmlui.utils.ContextUtil;
 import org.dspace.core.ConfigurationManager;
+import org.dspace.core.Context;
 import org.dspace.core.I18nUtil;
 
 import java.util.ArrayList;
@@ -24,11 +26,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-
-/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842*/
-import org.dspace.app.xmlui.utils.ContextUtil;
-import org.dspace.core.Context;
-/*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
 
 /**
  * This action looks at several places to determine what locale should be used for 
@@ -102,23 +99,15 @@ public class DSpaceLocaleAction extends ServiceableAction implements Configurabl
         }
 
         I18nUtils.storeLocale(objectModel,
-/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842
-                              "locale-attribute",
-                              localeStr,
-                              false,
-                              false,
-                              false,
-                              false);
-*/
-                            "locale-attribute",
-                            localeStr,
-                            false,
-                            true,
-                            false,
-                            false);
+                "locale-attribute",
+                localeStr,
+                false,
+                true,
+                false,
+                false);
+
         Context context = ContextUtil.obtainContext(objectModel);
         context.setCurrentLocale(locale);
-/*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
 
         // Set up a map for sitemap parameters
         Map<String, String> map = new HashMap<String, String>();
@@ -132,7 +121,7 @@ public class DSpaceLocaleAction extends ServiceableAction implements Configurabl
     
     /**
      * This validator class works with cocoon's i18nutils class to test if locales are valid. 
-     * For dspace we define a locale as valid if it is listed in xmlui.supported.locales config 
+     * For dspace we define a locale as valid if it is listed in webui.supported.locales config 
      * parameter.
      */
     public static class DSpaceLocaleValidator implements LocaleValidator {
@@ -145,14 +134,11 @@ public class DSpaceLocaleAction extends ServiceableAction implements Configurabl
     	 */
     	public DSpaceLocaleValidator()
     	{
-/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842            if (ConfigurationManager.getProperty("xmlui.supported.locales") != null) */
-            if (ConfigurationManager.getProperty("xmlui.supported.locales") != null) /*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
-
+            if (ConfigurationManager.getProperty("webui.supported.locales") != null)
             {
             	supportedLocales = new ArrayList<Locale>();
             	
-/*130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842                String supportedLocalesConfig = ConfigurationManager.getProperty("xmlui.supported.locales"); */
-                String supportedLocalesConfig = ConfigurationManager.getProperty("webui.supported.locales"); /*FIM 130417 andre.assada@usp.br locale switcher, cf. JIRA DS-842 FIM*/
+                String supportedLocalesConfig = ConfigurationManager.getProperty("webui.supported.locales");
                 
                 String[] parts = supportedLocalesConfig.split(",");
                 
