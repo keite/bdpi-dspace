@@ -93,7 +93,7 @@ if [ -d "$TOMCAT_CONTEXTDIR" ]
 then if [ -d "$BDPIINSTALLDIR/webapps" ]
      then cd "$BDPIINSTALLDIR/webapps"
           for w in *
-          do if [ "$w" = "jspui" ]
+          do if [ "$w" = "xmlui" ]
 	    then echo "<Context docBase=\"$BDPIINSTALLDIR/webapps/$w\"/>" > "$TOMCAT_CONTEXTDIR/ROOT.xml"
 	    else echo "<Context docBase=\"$BDPIINSTALLDIR/webapps/$w\"/>" > "$TOMCAT_CONTEXTDIR/$w.xml"
 	    fi
