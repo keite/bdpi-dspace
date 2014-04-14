@@ -16,68 +16,89 @@
 	<xsl:template match="/">
 		<dim:dim xmlns:dim="http://www.dspace.org/xmlns/dspace/dim" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 			xsi:schemaLocation="http://www.dspace.org/xmlns/dspace/dim http://www.dspace.org/schema/dim.xsd">
-			<xsl:for-each select="doc:metadata/doc:element[@name='dc']/doc:element/doc:element">
+			<xsl:for-each select="doc:metadata/doc:element/doc:element/doc:element">
 				<xsl:choose>
-					<xsl:when test="doc:element">
-						<dim:field>
-							<xsl:attribute name="mdschema">
-								<xsl:value-of select="../../@name" />
-							</xsl:attribute>
-							<xsl:attribute name="element">
-								<xsl:value-of select="../@name" />
-							</xsl:attribute>
-							<xsl:attribute name="qualifier">
-								<xsl:value-of select="@name" />
-							</xsl:attribute>
+					<xsl:when test="doc:element">					
+						<xsl:variable name="schema" select="../../@name"/>
+						<xsl:variable name="element" select="../@name"/>
+						<xsl:variable name="qualifier" select="@name"/>
+						<xsl:variable name="language">
 							<xsl:choose>
 								<xsl:when test="doc:element[@name='none']"></xsl:when>
 								<xsl:otherwise>
-									<xsl:attribute name="lang">
-										<xsl:value-of select="doc:element/@name" />
-									</xsl:attribute>
+									<xsl:value-of select="doc:element/@name" />									
 								</xsl:otherwise>
 							</xsl:choose>
-							<xsl:if test="doc:element/doc:field[@name='authority']">
-								<xsl:attribute name="authority">
-									<xsl:value-of select="doc:element/doc:field[@name='authority']/text()" />
+						</xsl:variable>					
+						<xsl:for-each select="doc:element/doc:field[@name='value']">
+							<dim:field>
+								<xsl:attribute name="mdschema">
+									<xsl:value-of select="$schema" />
 								</xsl:attribute>
-							</xsl:if>
-							<xsl:if test="doc:element/doc:field[@name='confidence']">
-								<xsl:attribute name="confidence">
-									<xsl:value-of select="doc:element/doc:field[@name='confidence']/text()" />
+								<xsl:attribute name="element">
+									<xsl:value-of select="$element" />
 								</xsl:attribute>
-							</xsl:if>
-							<xsl:value-of select="doc:element/doc:field[@name='value']/text()"></xsl:value-of>
-						</dim:field>
+								<xsl:attribute name="qualifier">
+									<xsl:value-of select="$qualifier" />
+								</xsl:attribute>
+								<xsl:attribute name="lang">
+									<xsl:value-of select="$language" />
+								</xsl:attribute>							
+								<xsl:if test="following-sibling::doc:field[position()=1][@name='authority']">
+									<xsl:attribute name="authority">
+										<xsl:value-of select="following-sibling::doc:field[position()=1][@name='authority']/text()" />
+									</xsl:attribute>
+									</xsl:if>
+									<xsl:if test="following-sibling::doc:field[position()=2][@name='confidence']">
+										<xsl:attribute name="confidence">
+											<xsl:value-of select="following-sibling::doc:field[position()=2][@name='confidence']" />
+    										
+										</xsl:attribute>
+									</xsl:if>
+																
+								<xsl:value-of select="text()"></xsl:value-of>							
+							</dim:field>				
+						</xsl:for-each>
+						
 					</xsl:when>
 					<xsl:otherwise>
-						<dim:field>
-							<xsl:attribute name="mdschema">
-								<xsl:value-of select="../../@name" />
-							</xsl:attribute>
-							<xsl:attribute name="element">
-								<xsl:value-of select="../@name" />
-							</xsl:attribute>
+						<xsl:variable name="schema" select="../../@name"/>
+						<xsl:variable name="element" select="../@name"/>
+						<xsl:variable name="language">
 							<xsl:choose>
 								<xsl:when test="@name='none'"></xsl:when>
 								<xsl:otherwise>
-									<xsl:attribute name="lang">
-										<xsl:value-of select="@name" />
-									</xsl:attribute>
+									<xsl:value-of select="@name" />									
 								</xsl:otherwise>
 							</xsl:choose>
-							<xsl:if test="doc:field[@name='authority']">
-								<xsl:attribute name="authority">
-									<xsl:value-of select="doc:field[@name='authority']/text()" />
+						</xsl:variable>					
+						<xsl:for-each select="doc:field[@name='value']">					
+							<dim:field>
+								<xsl:attribute name="mdschema">
+									<xsl:value-of select="$schema" />
 								</xsl:attribute>
-							</xsl:if>
-							<xsl:if test="doc:field[@name='confidence']">
-								<xsl:attribute name="confidence">
-									<xsl:value-of select="doc:field[@name='confidence']/text()" />
+								<xsl:attribute name="element">
+									<xsl:value-of select="$element" />
 								</xsl:attribute>
-							</xsl:if>
-							<xsl:value-of select="doc:field[@name='value']/text()"></xsl:value-of>
-						</dim:field>
+								<xsl:attribute name="lang">
+									<xsl:value-of select="$language" />
+								</xsl:attribute>
+								<xsl:if test="following-sibling::doc:field[position()=1][@name='authority']">
+									<xsl:attribute name="authority">
+										<xsl:value-of select="following-sibling::doc:field[position()=1][@name='authority']/text()" />
+									</xsl:attribute>
+								</xsl:if>
+									<xsl:if test="following-sibling::doc:field[position()=2][@name='confidence']">
+										<xsl:attribute name="confidence">
+											
+      										<xsl:value-of select="following-sibling::doc:field[position()=2][@name='confidence']" />
+    										
+										</xsl:attribute>
+									</xsl:if>
+															
+								<xsl:value-of select="text()"></xsl:value-of>
+							</dim:field>
+						</xsl:for-each>
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:for-each>
