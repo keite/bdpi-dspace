@@ -44,7 +44,7 @@
                <entry key="default" value-ref="defaultConfiguration" />
 
                <!--Use site to override the default configuration for the home page & default discovery page-->
-               <entry key="site" value-ref="homepageConfiguration" />
+               <!--<entry key="site" value-ref="defaultConfiguration" />-->
                <!--<entry key="123456789/7621" value-ref="defaultConfiguration"/>-->
             </map>
         </property>
