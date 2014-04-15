@@ -2,101 +2,88 @@
 <openurl>
 	<query-pairs>
 	  <field>
+		<querystring>rft_id=info:doi/</querystring>
+		<dc-schema>dc</dc-schema>
+		<dc-element>identifier</dc-element>
+		<dc-qualifier>doi</dc-qualifier>
+	  </field>
+	  <field>
+		<querystring>rft.atitle=</querystring>
+		<dc-schema>dc</dc-schema>
+		<dc-element>title</dc-element>
+		<dc-qualifier></dc-qualifier>
+	  </field>
+	  <field>
 	  	<querystring>rft.issn=</querystring>
 	  	<dc-schema>dc</dc-schema>
 	  	<dc-element>identifier</dc-element>
 	  	<dc-qualifier>issn</dc-qualifier>
 	  </field>
-
 	  <field>
-	  <querystring>rft.year=</querystring>
-	  <dc-schema>dc</dc-schema>
-	  <dc-element>date</dc-element>
-	  <dc-qualifier>issued</dc-qualifier>
- 	  </field>
-	  <field>
-	  <querystring>rft.volume=</querystring>
-	  <dc-schema>usp</dc-schema>
-	  <dc-element>description</dc-element>
-	  <dc-qualifier>volume</dc-qualifier>
- 	  </field>
-	  <field>
-	  <querystring>rft.issue=</querystring>
-	  <dc-schema>usp</dc-schema>
-	  <dc-element>description</dc-element>
-	  <dc-qualifier>issue</dc-qualifier>
- 	  </field>
-	  <field>
-	  <querystring>rft.spage=</querystring>
-	  <dc-schema>usp</dc-schema>
-	  <dc-element>description</dc-element>
-	  <dc-qualifier>initialpage</dc-qualifier>
- 	  </field>
-	  <field>
-	  <querystring>rft.epage=</querystring>
-	  <dc-schema>usp</dc-schema>
-	  <dc-element>description</dc-element>
-	  <dc-qualifier>lastpage</dc-qualifier>
- 	  </field>
-	  <field>
-	  <querystring>rft.genre=</querystring>
-	  <dc-schema>dc</dc-schema>
-	  <dc-element>type</dc-element>
-	  <dc-qualifier></dc-qualifier>
- 	  </field>
-
-	  </query-pairs>
-
-	<query-pairs>
-	  <field>
-	  	<querystring>rft.isbn=</querystring>
-	  	<dc-schema>dc</dc-schema>
-	  	<dc-element>identifier</dc-element>
-	  	<dc-qualifier>isbn</dc-qualifier>
+		<querystring>rft.isbn=</querystring>
+		<dc-schema>dc</dc-schema>
+		<dc-element>identifier</dc-element>
+		<dc-qualifier>isbn</dc-qualifier>
 	  </field>
 	  <field>
-	  	<querystring>rft.atitle=</querystring>
-	  	<dc-schema>dc</dc-schema>
-	  	<dc-element>title</dc-element>
-	  	<dc-qualifier></dc-qualifier>
+		  <querystring>rft.year=</querystring>
+		  <dc-schema>dc</dc-schema>
+		  <dc-element>date</dc-element>
+		  <dc-qualifier>issued</dc-qualifier>
+ 	  </field>
+	  <field>
+		  <querystring>rft.volume=</querystring>
+		  <dc-schema>usp</dc-schema>
+		  <dc-element>description</dc-element>
+		  <dc-qualifier>volume</dc-qualifier>
+ 	  </field>
+	  <field>
+		  <querystring>rft.issue=</querystring>
+		  <dc-schema>usp</dc-schema>
+		  <dc-element>description</dc-element>
+		  <dc-qualifier>issue</dc-qualifier>
+ 	  </field>
+	  <field>
+		  <querystring>rft.spage=</querystring>
+		  <dc-schema>usp</dc-schema>
+		  <dc-element>description</dc-element>
+		  <dc-qualifier>initialpage</dc-qualifier>
+ 	  </field>
+	  <field>
+		  <querystring>rft.epage=</querystring>
+		  <dc-schema>usp</dc-schema>
+		  <dc-element>description</dc-element>
+		  <dc-qualifier>lastpage</dc-qualifier>
+ 	  </field>
+	  <field>
+		  <querystring>rft.genre=</querystring>
+		  <dc-schema>dc</dc-schema>
+		  <dc-element>type</dc-element>
+		  <dc-qualifier></dc-qualifier>
+ 	  </field>
+	  <field>
+		<querystring>rft.aulast=</querystring>
+		<dc-schema>dc</dc-schema>
+		<dc-element>contributor</dc-element>
+		<dc-qualifier>author</dc-qualifier>
 	  </field>
 	  <field>
-	  	<querystring>rft.aulast=</querystring>
-	  	<dc-schema>dc</dc-schema>
-	  	<dc-element>contributor</dc-element>
-	  	<dc-qualifier>author</dc-qualifier>
+		<querystring>rft.aufirst=</querystring>
+		<dc-schema>dc</dc-schema>
+		<dc-element>contributor</dc-element>
+		<dc-qualifier>author</dc-qualifier>
 	  </field>
 	  <field>
-	  	<querystring>rft.aufirst=</querystring>
-	  	<dc-schema>dc</dc-schema>
-	  	<dc-element>contributor</dc-element>
-	  	<dc-qualifier>author</dc-qualifier>
+		<querystring>rft_id=info:pmid/</querystring>
+		<dc-schema>dc</dc-schema>
+		<dc-element>identifier</dc-element>
+		<dc-qualifier>pmid</dc-qualifier>
 	  </field>
 	  <field>
-	  <querystring>rft.date=</querystring>
-	 	  <dc-schema>dc</dc-schema>
-	  	<dc-element>date</dc-element>
-	  	<dc-qualifier>issued</dc-qualifier>
+		<querystring>rft.date=</querystring>
+		<dc-schema>dc</dc-schema>
+		<dc-element>date</dc-element>
+		<dc-qualifier>issued</dc-qualifier>
  	  </field>
 	</query-pairs>
-
-
-	<query-pairs>
-	  <field>
-	  	<querystring>rft_id=info:pmid/</querystring>
-	  	<dc-schema>dc</dc-schema>
-	  	<dc-element>identifier</dc-element>
-	  	<dc-qualifier>pmid</dc-qualifier>
-	  </field>
-	</query-pairs>
-
-	<query-pairs>
-	  <field>
-	  	<querystring>rft_id=info:doi/</querystring>
-	  	<dc-schema>dc</dc-schema>
-	  	<dc-element>identifier</dc-element>
-	  	<dc-qualifier>doi</dc-qualifier>
-	  </field>
-	</query-pairs>
-
 </openurl>
