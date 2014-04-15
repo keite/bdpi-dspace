@@ -318,6 +318,8 @@
 	<!-- 130812 - Dan Shinkai - Adicionado parametro utilizado no JQuery para mostrar metricas alternativas -->
 	<message key="xmlui.ArtifactBrowser.ItemViewer.item.ds_list_head">Métricas Alternativas</message>
 	
+    <message key="xmlui.ArtifactBrowser.ItemViewer.withdrawn">Este item foi removido e não está mais disponível.</message>
+
 	<!-- 04dez2013 - Jan LL - Aviso clicar na imagem para mostrar video -->
 	<message key="xmlui.ArtifactBrowser.ItemViewer.clicktowatch">Clique abaixo para assistir ao vídeo:</message>
 
@@ -756,14 +758,17 @@
     <message key="xmlui.Submission.submit.AccessStep.name">Nome</message>
     <message key="xmlui.Submission.submit.AccessStep.description">Descrição</message>
     <message key="xmlui.Submission.submit.AccessStep.reason">Justificativa</message>
+	<message key="xmlui.Submission.submit.AccessStep.reason_help">A razão para o embargo para uso interno. Opcional.</message>
     <message key="xmlui.Submission.submit.AccessStep.submit_add_policy">Confirmar política &amp; adicionar outra</message>
     <message key="xmlui.Submission.submit.AccessStep.list_assigned_groups">Grupos</message>
     <message key="xmlui.Submission.submit.AccessStep.error_format_date">Erro no formato da data</message>
     <message key="xmlui.Submission.submit.AccessStep.error_missing_date">Quando a opção de embargo é selecionada, a data torna-se obrigatória</message>
     <message key="xmlui.Submission.submit.AccessStep.error_duplicated_policy">Uma política identica ao grupo e essa ação está vigente.</message>
+	<message key="xmlui.Submission.submit.AccessStep.new_policy_head">Embargo</message>
     <message key="xmlui.Submission.submit.AccessStep.table_policies">Lista de políticas</message>
     <message key="xmlui.Submission.submit.AccessStep.private_settings">Itens restritos</message>
-    <message key="xmlui.Submission.submit.AccessStep.private_settings_help">Se selecionado, as informações do item não serão indexados para busca</message>
+    <message key="xmlui.Submission.submit.AccessStep.private_settings_help">Se selecionado, o registro inteiro será acessível somente aos administradores e não será indexado para busca</message>
+	<message key="xmlui.Submission.submit.AccessStep.private_settings_label">Privado</message>
     <message key="xmlui.Submission.submit.AccessStep.column0">Nome</message>
     <message key="xmlui.Submission.submit.AccessStep.column1">Ação</message>
     <message key="xmlui.Submission.submit.AccessStep.column2">Grupo</message>
